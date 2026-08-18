@@ -1,0 +1,15 @@
+# Reference list of the four content tracks. Set a post's `series:` front matter
+# to one of these slugs. Not wired into templates yet — useful once series index/nav
+# pages are built, and as the single source of truth for series titles until then.
+- slug: jargon
+  title: "Jargon, Decoded"
+  description: "One financial term or ratio at a time — P/E, ROCE, P/B, and the rest, explained with a worked example."
+- slug: fundamental-analysis
+  title: "Fundamental Analysis — Beginner to Expert"
+  description: "Reading financial statements, key ratios, and valuation basics, from first principles to DCF."
+- slug: technical-analysis
+  title: "Technical Analysis — Zero to Hero"
+  description: "Candlesticks to chart patterns — plus an honest look at what technical analysis can't tell you."
+- slug: mutual-funds
+  title: "Mutual Funds, Minus the Marketing"
+  description: "Rolling returns, expense ratios, drawdowns, SIP myths, and how to actually read a factsheet."

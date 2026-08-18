@@ -1,4 +1,53 @@
 title: Wealth Primer
-description: Financial education, one concept at a time
-url: "https://dummynotes.com"
+description: >-
+  Financial education, one concept at a time — fundamental analysis, technical
+  analysis, mutual funds, and financial jargon explained for Indian retail
+  investors. Educational content only, not investment advice.
+url: "https://dummynotes.com" # TODO: confirm this is the real domain (see CNAME) — update both together if not
 baseurl: ""
+
+lang: en-IN
+timezone: Asia/Kolkata # keeps scheduled/dated posts publishing on IST, not the CI runner's UTC clock
+
+# --- theme ---
+theme: minima
+minima:
+  skin: classic
+  show_excerpts: true
+  social_links:
+    - { platform: twitter, user_url: "https://twitter.com/TODO_HANDLE" } # TODO: real handle
+    - { platform: github, user_url: "https://github.com/TODO_HANDLE" } # TODO: real handle, or delete this line
+
+# --- author / SEO / social (used by jekyll-seo-tag for meta tags, OG cards, JSON-LD) ---
+author: TODO Author Name
+twitter:
+  username: TODO_HANDLE # TODO
+  card: summary_large_image
+social:
+  name: Wealth Primer
+  links:
+    - "https://twitter.com/TODO_HANDLE" # TODO
+# logo: /assets/logo.png # TODO: add a square logo/social-share image, then uncomment
+
+# --- plugins (all run fine here since Pages deploys via GitHub Actions, not the legacy
+#     restricted Pages builder — any plugin in the Gemfile's jekyll_plugins group works) ---
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# --- publishing pipeline ---
+# false (the default, made explicit here) means a post whose `date:` is still in the
+# future is left OUT of the build entirely — this is what makes "schedule a post for
+# a future date" work. Never flip this to true.
+future: false
+permalink: /:year/:month/:day/:title/
+
+# --- don't ship repo/editorial files as public pages ---
+exclude:
+  - CLAUDE.md
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - node_modules

@@ -43,7 +43,16 @@ Jargon, Decoded — case study & roadmap
   needs Net Margin + Asset Turnover + Equity Multiplier to already exist as
   Jargon posts to link to): DuPont ROE Decomposition, and eventually a capstone
   post applying the whole toolkit to a real stock end-to-end.
-- Not yet started: drafting the actual M0 posts.
+- M0 drafted (in _drafts/, not yet reviewed/scheduled): meet-desi-bites-foods,
+  reading-a-balance-sheet, reading-an-income-statement,
+  reading-a-cash-flow-statement. All Desi-Bites-only, no real-company data
+  needed for these four.
+- Starting M1, each post needs real Britannia numbers for the "real company"
+  worked example — these have to come from actual research (WebSearch/
+  WebFetch), not from memory, and need a verified as-of date >=3 months old.
+  Worth building a matching _data/real_company.yml (mirroring case_study.yml)
+  once at the start of M1 so every post after that pulls from one verified,
+  dated source instead of re-researching per post.
 
 Lower-priority, not done (say the word if you want these next)
 

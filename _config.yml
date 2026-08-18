@@ -3,7 +3,7 @@ description: >-
   Financial education, one concept at a time — fundamental analysis, technical
   analysis, mutual funds, and financial jargon explained for Indian retail
   investors. Educational content only, not investment advice.
-url: "https://dummynotes.com" # TODO: confirm this is the real domain (see CNAME) — update both together if not
+url: "https://dummynotes.com"
 baseurl: ""
 
 lang: en-IN

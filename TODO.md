@@ -1,8 +1,11 @@
-Still needs your input
+Resolved
 
-- Domain: CNAME and _config.yml both say dummynotes.com — is that your real, registered domain, or a placeholder that needs replacing? Everything (sitemap, canonical URLs, OG tags, future ads.txt) derives from this.
-- Twitter/X handle and author name — for the _config.yml TODOs (social meta tags, byline).
-- Contact email — for the privacy page.
+- Domain: confirmed dummynotes.com is correct.
+- Twitter/X handle, author name, LinkedIn, contact email: filled in (see _config.yml, about.markdown, privacy.markdown).
+
+Still open
+
+- Avatar/photo for the About page — external AI-generated image, or an SVG monogram placeholder?
 
 Lower-priority, not done (say the word if you want these next)
 

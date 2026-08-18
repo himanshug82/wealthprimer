@@ -1,0 +1,173 @@
+# Desi Bites Foods Pvt Ltd — the running case study for the Jargon, Decoded series.
+# Fictional company, built as a fully reconciled 3-statement model (balance sheet
+# balances to zero every year, cash flow ties to the balance sheet cash figure).
+# Single source of truth: posts should pull numbers from here via Liquid rather
+# than retyping them, so a correction only has to happen in one place.
+# Full narrative + rendered tables live at /case-study/ — link there, don't
+# re-paste these tables into individual posts.
+
+company:
+  name: "Desi Bites Foods Pvt Ltd"
+  type: "Packaged namkeen & snacks manufacturer (fictional, for illustration only)"
+  currency_note: "All figures in Rs Lakh unless noted"
+  fiscal_year_end: "31 March"
+  reference_url: "/case-study/"
+
+income_statement:
+  FY23:
+    revenue: 1800
+    cogs: 1152
+    gross_profit: 648
+    opex: 396
+    ebitda: 252
+    depreciation: 90
+    ebit: 162
+    interest: 45
+    pbt: 117
+    tax: 29
+    pat: 88
+    dividend: 26
+  FY24:
+    revenue: 2160
+    cogs: 1361
+    gross_profit: 799
+    opex: 464
+    ebitda: 335
+    depreciation: 100
+    ebit: 235
+    interest: 48
+    pbt: 187
+    tax: 47
+    pat: 140
+    dividend: 49
+  FY25:
+    revenue: 2592
+    cogs: 1607
+    gross_profit: 985
+    opex: 544
+    ebitda: 441
+    depreciation: 115
+    ebit: 326
+    interest: 47
+    pbt: 279
+    tax: 70
+    pat: 209
+    dividend: 84
+
+balance_sheet:
+  FY22:
+    net_fixed_assets: 630
+    inventory: 140
+    receivables: 135
+    cash: 60
+    total_assets: 965
+    equity: 400
+    term_loan: 400
+    payables: 115
+    other_current_liabilities: 50
+    total_liab_eq: 965
+  FY23:
+    net_fixed_assets: 640
+    inventory: 158
+    receivables: 148
+    cash: 111
+    total_assets: 1057
+    equity: 462
+    term_loan: 410
+    payables: 126
+    other_current_liabilities: 59
+    total_liab_eq: 1057
+  FY24:
+    net_fixed_assets: 690
+    inventory: 186
+    receivables: 178
+    cash: 178
+    total_assets: 1232
+    equity: 553
+    term_loan: 460
+    payables: 149
+    other_current_liabilities: 70
+    total_liab_eq: 1232
+  FY25:
+    net_fixed_assets: 655
+    inventory: 211
+    receivables: 199
+    cash: 280
+    total_assets: 1345
+    equity: 678
+    term_loan: 400
+    payables: 185
+    other_current_liabilities: 82
+    total_liab_eq: 1345
+
+cash_flow:
+  FY23:
+    cfo: 167
+    cfi: -100
+    cff: -16
+    net_change: 51
+    opening_cash: 60
+    closing_cash: 111
+  FY24:
+    cfo: 216
+    cfi: -150
+    cff: 1
+    net_change: 67
+    opening_cash: 111
+    closing_cash: 178
+  FY25:
+    cfo: 326
+    cfi: -80
+    cff: -144
+    net_change: 102
+    opening_cash: 178
+    closing_cash: 280
+
+ratios:
+  FY23:
+    gross_margin: 36.0
+    ebitda_margin: 14.0
+    net_margin: 4.9
+    roe: 20.4
+    roce: 19.4
+    debt_equity: 0.89
+    current_ratio: 2.25
+    quick_ratio: 1.4
+    interest_coverage: 3.6
+    inventory_days: 50
+    receivable_days: 30
+    payable_days: 40
+    fcf: 67
+  FY24:
+    gross_margin: 37.0
+    ebitda_margin: 15.5
+    net_margin: 6.5
+    roe: 27.6
+    roce: 24.9
+    debt_equity: 0.83
+    current_ratio: 2.47
+    quick_ratio: 1.63
+    interest_coverage: 4.9
+    inventory_days: 50
+    receivable_days: 30
+    payable_days: 40
+    fcf: 66
+  FY25:
+    gross_margin: 38.0
+    ebitda_margin: 17.0
+    net_margin: 8.1
+    roe: 34.0
+    roce: 31.2
+    debt_equity: 0.59
+    current_ratio: 2.58
+    quick_ratio: 1.79
+    interest_coverage: 6.9
+    inventory_days: 48
+    receivable_days: 28
+    payable_days: 42
+    fcf: 246
+
+share_data:
+  face_value: 10
+  shares_outstanding_lakh: 10
+  share_capital: 100

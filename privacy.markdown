@@ -21,6 +21,7 @@ SEBI-registered adviser, before making investment decisions.
 This site does not require you to create an account or submit personal
 information to read it.
 
+<!--
 - **Analytics**: TODO — name the analytics tool once one is added (e.g. Google
   Analytics, Plausible, GoatCounter) and what it collects.
 - **Advertising**: TODO — once ads are enabled (e.g. Google AdSense), disclose
@@ -28,6 +29,7 @@ information to read it.
   on visits to this and other sites, and link to Google's own ad settings
   (adssettings.google.com).
 - **Comments**: TODO — if comments are enabled, note what's collected.
+-->
 
 ## Contact
 

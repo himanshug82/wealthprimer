@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Meet Desi Bites Foods: the company we'll use to decode every ratio"
+date: 2026-08-18 09:00:00 +0530
 series: jargon
 ---
 

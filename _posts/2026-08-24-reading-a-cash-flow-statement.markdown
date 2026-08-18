@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Reading a Cash Flow Statement, using a snacks company"
+date: 2026-08-24 09:00:00 +0530
 series: jargon
 ---
 

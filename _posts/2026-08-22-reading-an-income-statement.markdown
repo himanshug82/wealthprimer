@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Reading an Income Statement (P&L), using a snacks company"
+date: 2026-08-22 09:00:00 +0530
 series: jargon
 ---
 

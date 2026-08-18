@@ -43,10 +43,12 @@ Jargon, Decoded — case study & roadmap
   needs Net Margin + Asset Turnover + Equity Multiplier to already exist as
   Jargon posts to link to): DuPont ROE Decomposition, and eventually a capstone
   post applying the whole toolkit to a real stock end-to-end.
-- M0 drafted (in _drafts/, not yet reviewed/scheduled): meet-desi-bites-foods,
-  reading-a-balance-sheet, reading-an-income-statement,
-  reading-a-cash-flow-statement. All Desi-Bites-only, no real-company data
-  needed for these four.
+- M0 reviewed and scheduled (moved to _posts/): meet-desi-bites-foods
+  (2026-08-18, live), reading-a-balance-sheet (2026-08-20),
+  reading-an-income-statement (2026-08-22), reading-a-cash-flow-statement
+  (2026-08-24) — staggered a few days apart, auto-publishing via the daily
+  Pages rebuild. All Desi-Bites-only, no real-company data needed for these
+  four.
 - Starting M1, each post needs real Britannia numbers for the "real company"
   worked example — these have to come from actual research (WebSearch/
   WebFetch), not from memory, and need a verified as-of date >=3 months old.

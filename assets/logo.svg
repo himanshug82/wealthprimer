@@ -1,0 +1,9 @@
+<svg width="100%" viewBox="0 0 680 260" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Wealth Primer logo</title>
+<desc>A minimal monogram of the letters W and P formed as an ascending line chart, next to the wordmark Wealth Primer with a tagline.</desc>
+<rect x="40" y="60" width="140" height="140" rx="24" fill="#cde2fb"/>
+<polyline points="70,160 100,130 120,150 150,90 160,105" fill="none" stroke="#184f95" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="160" cy="105" r="6" fill="#184f95"/>
+<text x="215" y="120" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="40" font-weight="500" fill="#0b0b0b">Wealth Primer</text>
+<text x="216" y="148" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="16" fill="#52514e" letter-spacing="1.5">LEARN. INVEST. GROW.</text>
+</svg>

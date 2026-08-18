@@ -35,7 +35,7 @@ social:
   links:
     - "https://twitter.com/wealthprimer_in"
     - "https://www.linkedin.com/in/himanshug/"
-# logo: /assets/logo.png # TODO: add a square logo/social-share image, then uncomment
+logo: /assets/icon.png  # square mark, used for schema.org/JSON-LD logo
 
 # --- plugins (all run fine here since Pages deploys via GitHub Actions, not the legacy
 #     restricted Pages builder — any plugin in the Gemfile's jekyll_plugins group works) ---
@@ -50,6 +50,16 @@ plugins:
 # a future date" work. Never flip this to true.
 future: false
 permalink: /:year/:month/:day/:title/
+
+# --- front matter defaults ---
+# jekyll-seo-tag's og:image/twitter:image only reads `image:` from a page's own
+# front matter (not site config), so set it here as a default every page/post
+# inherits; a post can still override with its own `image:` front matter.
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/logo.png
 
 # --- don't ship repo/editorial files as public pages ---
 exclude:

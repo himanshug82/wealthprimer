@@ -1,0 +1,6 @@
+<svg width="100%" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Wealth Primer icon</title>
+<rect width="140" height="140" rx="24" fill="#cde2fb"/>
+<polyline points="30,100 60,70 80,90 110,30 120,45" fill="none" stroke="#184f95" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="120" cy="45" r="6" fill="#184f95"/>
+</svg>

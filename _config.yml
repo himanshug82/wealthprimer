@@ -64,8 +64,8 @@ defaults:
 # --- don't ship repo/editorial files as public pages ---
 exclude:
   - CLAUDE.md
+  - TODO.md
   - Gemfile
   - Gemfile.lock
   - README.md
   - vendor
-  - node_modules

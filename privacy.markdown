@@ -31,4 +31,4 @@ information to read it.
 
 ## Contact
 
-Questions about this policy? Reach out at TODO_EMAIL.
+Questions about this policy? Reach out at himanshu.direct@gmail.com.

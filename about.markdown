@@ -4,15 +4,25 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+I've spent 20 years writing software — starting out on order and inventory
+management systems for large retailers, and later moving into large-scale
+distributed systems, including open-source work in the supply-chain space.
+Somewhere along the way I became this blog's target audience too: I've been a
+retail investor for the last decade, and I've made my fair share of mistakes
+along the way. The last few years, I've been trying to bring more structure
+to that by moving toward rule-based, systematic trading — and Wealth Primer
+is part of that effort. I write up what I'm learning, partly to hold myself
+accountable to actually understanding it, and share it because it might be
+useful to someone else working through the same things.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+I'm not a SEBI-registered Research Analyst or Investment Adviser — just a
+retail investor and hobby coder doing my homework in public. Take everything
+here as a fellow learner's notes, not advice. See the
+[privacy & disclaimer policy]({{ '/privacy/' | relative_url }}) for the full
+version.
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+## Elsewhere
 
-
-[jekyll-organization]: https://github.com/jekyll
+- Twitter/X: [@wealthprimer_in](https://twitter.com/wealthprimer_in)
+- LinkedIn: [linkedin.com/in/himanshug](https://www.linkedin.com/in/himanshug/)
+- Code & calculators: [github.com/wealthprimer/wealthprimer](https://github.com/wealthprimer/wealthprimer)

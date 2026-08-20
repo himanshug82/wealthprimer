@@ -1,0 +1,96 @@
+---
+layout: post
+title: "PEG: is the P/E actually justified by how fast the company is growing"
+date: 2026-10-21 09:00:00 +0530
+series: jargon
+---
+
+{% assign listing = site.data.case_study.listing %}
+{% assign bi_market = site.data.real_company.market %}
+{% assign bi_is25 = site.data.real_company.income_statement.FY25 %}
+{% assign db_pe = listing.ipo_price | divided_by: listing.eps_diluted | round: 1 %}
+{% assign bi_pe = bi_market.price | divided_by: bi_is25.eps | round: 1 %}
+{% assign db_peg = db_pe | divided_by: listing.pat_growth_fy24_fy25_pct | round: 2 %}
+{% assign bi_peg = bi_pe | divided_by: bi_market.pat_growth_fy24_fy25_pct | round: 1 %}
+
+## What PEG means
+
+[P/E]({% post_url 2026-10-11-price-to-earnings %}) told us how many years of current earnings the market is
+charging for. It never asked how *fast* those earnings are growing — and a
+30x P/E on a company doubling profit every couple of years is a very
+different proposition from a 30x P/E on one barely growing at all. **PEG —
+Price/Earnings to Growth** — divides P/E by the earnings growth rate to put
+that question front and centre.
+
+## The formula
+
+```
+PEG = P/E / Earnings Growth Rate (%)
+```
+
+A PEG below 1 is the classic "growth at a reasonable price" signal — the
+P/E looks justified, or even cheap, relative to how fast earnings are
+growing. This series uses each company's single most recent year of PAT
+growth (FY24 to FY25) as the growth figure — a simplification worth
+watching closely in the second example below.
+
+## Worked example: Desi Bites Foods Ltd
+
+| | |
+|---|---:|
+| P/E (from the last post) | {{ db_pe }}x |
+| ÷ PAT Growth, FY24→FY25 | {{ listing.pat_growth_fy24_fy25_pct }}% |
+| **PEG** | **{{ db_peg }}** |
+
+A PEG of {{ db_peg }} — comfortably under 1 — reads as a classic growth-at-a-
+reasonable-price small-cap story: a rich-looking P/E that's actually backed
+by real, fast profit growth.
+
+## Worked example: Britannia Industries
+
+Same {{ bi_market.price_date }} price and FY25 figures used throughout this module —
+[audited consolidated FY25 results](https://media.britannia.co.in/Audited_Consolidated_Financial_Results_31_03_2025_74a7c03628.pdf).
+For illustration only.
+
+| | |
+|---|---:|
+| P/E (from the last post) | {{ bi_pe }}x |
+| ÷ PAT Growth, FY24→FY25 | {{ bi_market.pat_growth_fy24_fy25_pct }}% |
+| **PEG** | **{{ bi_peg }}** |
+
+A PEG of {{ bi_peg }} looks absurd — and it is, but not because Britannia is a bad
+business. It's because FY25 happened to be a genuinely weak single-year
+growth year (remember the [margin compression]({% post_url 2026-08-26-gross-margin %}) from earlier in this
+series) — dividing a high P/E by a growth rate close to zero produces a
+wildly unstable number. This is exactly the failure mode PEG is known for:
+it leans entirely on one growth figure, and a single unusually slow (or
+unusually fast) year can make an otherwise reasonable P/E look absurd, or an
+otherwise expensive one look cheap. Professional use of PEG typically
+substitutes a multi-year CAGR or a forward growth estimate instead of one
+year's number — this series used a single year deliberately, to make that
+weakness visible rather than hide it.
+
+## Common mistakes
+
+- **Using a single year's growth rate, as shown starkly above.** A
+  multi-year CAGR, or a forward estimate, smooths out the kind of one-year
+  noise that made Britannia's PEG here practically meaningless.
+- **PEG breaking down entirely at low or negative growth.** Dividing by a
+  small or negative number produces wild, uninterpretable results — PEG
+  simply isn't a usable tool for companies with near-zero or shrinking
+  earnings in the period being measured.
+- **Treating PEG below 1 as automatically cheap.** It still matters *how*
+  that growth was achieved — growth funded by deteriorating margins or
+  unsustainable debt is a very different story from genuinely
+  accretive growth, even at an identical PEG.
+- **Comparing PEG across sectors with different natural growth rates and
+  valuation norms.** A "normal" PEG for a fast-growing small-cap and a
+  mature large-cap aren't the same number.
+
+**Takeaway:** PEG asks whether a P/E is justified by growth — useful when
+growth is measured sensibly, but as Britannia's single weak year here shows,
+it can produce a wildly misleading number if the growth figure behind it
+isn't examined first. That's a fitting closing note for this whole
+series: every ratio in it is a starting question, not a final verdict, and
+the moment any one of them is trusted blindly is the moment it stops being
+useful.

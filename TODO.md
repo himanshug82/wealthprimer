@@ -85,13 +85,34 @@ Jargon, Decoded — case study & roadmap
   rising FCF is automatically an operating improvement. Added a
   cash_flow: block (cfo, capex) to real_company.yml, and
   ocf_pat/capex_intensity to case_study.yml's ratios.
-- M5 (Valuation / Market) needs a "Desi Bites goes public" narrative beat
-  designed before any posts can be drafted — a listing price, share count,
-  and market cap for the fictional company — plus real Britannia share
-  price/valuation data (P/E, P/B, EV/EBITDA etc. need a market price,
-  which is different from the financial-statement data used so far and
-  will need its own lagged, cited, as-of date). Don't start M5 without
-  first deciding the listing narrative with the user.
+- M5 reviewed and scheduled (moved to _posts/): book-value-per-share
+  (2026-10-07), eps (2026-10-09), price-to-earnings (2026-10-11),
+  price-to-book (2026-10-13), ev-ebitda (2026-10-15), market-cap
+  (2026-10-17), dividend-yield (2026-10-19), peg-ratio (2026-10-21) —
+  staggered a few days apart, same cadence as M0-M4. **This completes the
+  entire 33-post Jargon, Decoded roadmap (M0-M5).**
+  - "Desi Bites goes public" narrative (user-decided): fresh-issue IPO on
+    NSE Emerge, listed 15 June 2025 off FY25 financials, priced off the
+    fresh-issue dilution (undiluted vs diluted EPS deliberately kept
+    distinct as a teaching point). Full terms in
+    _data/case_study.yml's `listing:` block.
+  - Britannia's real market data lives in _data/real_company.yml's
+    `market:` block, separate from the financial-statement data — price
+    is the NSE close on 30 June 2025 (source: Yahoo Finance historical
+    data), dividend is the FY25 payout (source: stockanalysis.com),
+    shares outstanding is derived (PAT/EPS) and cross-checked against
+    reported share capital. This needed its own 3-month-lag check
+    independent of the financial-statement lag already satisfied.
+  - Notable real finding: Britannia's PEG ratio comes out to ~35.9 —
+    absurd-looking, not because it's a bad business but because FY25 PAT
+    growth was only ~1.8% (the margin-compression year from M1). Used
+    deliberately in the PEG post as a live illustration of why PEG breaks
+    down on single-year growth figures, rather than smoothed over.
+- Next possible work (not started, no roadmap yet): the DuPont ROE
+  Decomposition post and capstone post that were moved to the Fundamental
+  Analysis series (see above) — both now unblocked, since Net Margin,
+  Asset Turnover, and Equity Multiplier all exist as Jargon posts to link
+  to. No other Jargon, Decoded posts are planned beyond M0-M5.
 
 Lower-priority, not done (say the word if you want these next)
 

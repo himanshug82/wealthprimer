@@ -1,0 +1,89 @@
+---
+layout: post
+title: "EV/EBITDA: valuing the whole business, debt and all"
+date: 2026-10-15 09:00:00 +0530
+series: jargon
+---
+
+{% assign listing = site.data.case_study.listing %}
+{% assign db_is25 = site.data.case_study.income_statement.FY25 %}
+{% assign bi_market = site.data.real_company.market %}
+{% assign bi_is25 = site.data.real_company.income_statement.FY25 %}
+{% assign db_ev_ebitda = listing.ev | times: 1.0 | divided_by: db_is25.ebitda | round: 1 %}
+{% assign bi_ev_ebitda = bi_market.ev_cr | divided_by: bi_is25.ebitda | round: 1 %}
+
+## What EV/EBITDA means
+
+[P/E]({% post_url 2026-10-11-price-to-earnings %}) and [P/B]({% post_url 2026-10-13-price-to-book %}) both price the *equity* only — what shareholders'
+slice of the company costs. **EV/EBITDA** prices the *whole business*
+instead: what would it actually cost to buy every share **and** take on
+every rupee of debt, netting off the cash already sitting on the balance
+sheet?
+
+That total price tag is **Enterprise Value (EV)**. Comparing it to
+[EBITDA]({% post_url 2026-08-28-ebitda-margin %}) — rather than EPS or PAT — makes EV/EBITDA useful for
+comparing companies with very different debt levels: unlike P/E, it isn't
+distorted by how much of the company is funded by equity versus borrowing.
+
+## The formula
+
+```
+EV = Market Cap + Total Debt − Cash & Liquid Investments
+EV/EBITDA = EV / EBITDA
+```
+
+## Worked example: Desi Bites Foods Ltd
+
+| | ₹ Lakh |
+|---|---:|
+| Market Cap | {{ listing.market_cap }} |
+| + Debt | {{ listing.post_ipo_debt }} |
+| − Cash | {{ listing.post_ipo_cash }} |
+| **Enterprise Value** | **{{ listing.ev }}** |
+| EBITDA (FY25) | 441 |
+| **EV/EBITDA** | **{{ db_ev_ebitda }}x** |
+
+## Worked example: Britannia Industries
+
+From Britannia Industries' [audited consolidated FY25 results](https://media.britannia.co.in/Audited_Consolidated_Financial_Results_31_03_2025_74a7c03628.pdf)
+and the {{ bi_market.price_date }} closing price used throughout this module. For
+illustration only.
+
+| | ₹ Crore |
+|---|---:|
+| Market Cap | {{ bi_market.market_cap_cr | round: 2 }} |
+| + Debt | 1224.77 |
+| − Cash & Investments | 1424.12 |
+| **Enterprise Value** | **{{ bi_market.ev_cr }}** |
+| EBITDA (FY25) | {{ bi_is25.ebitda }} |
+| **EV/EBITDA** | **{{ bi_ev_ebitda }}x** |
+
+Both multiples are rich — Britannia's very much so — consistent with
+everything the [Leverage module]({% post_url 2026-09-29-net-debt-ebitda %}) already showed: a company genuinely being
+priced for quality, low risk, and negative net debt, not one being valued
+cheaply relative to peers.
+
+## Common mistakes
+
+- **Comparing EV/EBITDA across companies without checking capex needs.**
+  Two companies can share an identical EV/EBITDA while one needs to
+  reinvest far more of that EBITDA into capex just to sustain itself — see
+  [Capex Intensity]({% post_url 2026-10-05-capex-intensity %}). The "cheaper" multiple on paper isn't always
+  the cheaper business in practice.
+- **Using EBITDA without checking its quality.** EBITDA can be flattered by
+  aggressive accounting choices — pairing it with [EBITDA margin
+  trends]({% post_url 2026-08-28-ebitda-margin %}) and [OCF/PAT]({% post_url 2026-10-03-ocf-pat %}) is a useful sanity check before trusting the
+  multiple.
+- **Not updating EV when debt or cash changes materially.** A stale EV,
+  calculated before a large debt raise or a big cash payout, understates or
+  overstates the true multiple.
+- **Treating a lower EV/EBITDA as automatically cheaper on an apples-to-
+  apples basis.** Growth rates, margins, and capital intensity all differ
+  across companies — a lower multiple can simply reflect lower quality or
+  slower growth, not a bargain.
+
+**Takeaway:** EV/EBITDA prices the whole business — equity and debt
+together — making it a fairer comparison across companies with different
+capital structures than P/E alone, but like every multiple in this module,
+it only means something once it's read alongside growth, quality, and
+capex needs.

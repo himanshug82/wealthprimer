@@ -195,3 +195,35 @@ share_data:
   face_value: 10
   shares_outstanding_lakh: 10
   share_capital: 100
+
+# "Desi Bites goes public" — the M5 (Valuation/Market) narrative beat.
+# Desi Bites Foods Pvt Ltd converts to Desi Bites Foods Ltd and lists via a
+# fresh-issue IPO shortly after FY25 year-end, priced off the FY25 numbers
+# already in this file. All figures below are the fictional company's own
+# invented IPO terms — not derived from any real listing.
+listing:
+  company_name_post_listing: "Desi Bites Foods Ltd"
+  exchange: "NSE Emerge (SME platform, illustrative)"
+  listing_date: "15 June 2025"
+  ipo_price: 640                       # Rs per share
+  fresh_issue_shares_lakh: 2.5         # new shares issued, raising growth capital
+  pre_ipo_shares_lakh: 10              # unchanged from share_data above
+  post_ipo_shares_lakh: 12.5           # pre_ipo + fresh_issue
+  ipo_proceeds: 1600                   # Rs Lakh = fresh_issue_shares_lakh * ipo_price / 100, ignoring issue expenses for simplicity
+  post_ipo_equity: 2278                # FY25 closing equity (678) + ipo_proceeds (1600)
+  post_ipo_cash: 1880                  # FY25 closing cash (280) + ipo_proceeds (1600), assumes proceeds held as cash, no debt paydown
+  post_ipo_debt: 400                   # unchanged FY25 term loan — IPO proceeds weren't used to deleverage
+  market_cap: 8000                     # ipo_price * post_ipo_shares_lakh / 100000 * 100000... = 640 * 12,50,000 = Rs 80 crore = Rs 8,000 Lakh
+  # Two EPS figures deliberately kept distinct, for the EPS/P/E posts to
+  # contrast: undiluted uses the FY25 PAT over the PRE-ipo share count (the
+  # share count that actually earned that profit); diluted uses the POST-ipo
+  # share count (the share count an investor buying at listing actually
+  # owns a claim on). P/E should use diluted EPS — using undiluted EPS
+  # against the listing price is a common beginner mistake, covered in the
+  # EPS and P/E posts.
+  eps_undiluted: 20.90                 # FY25 PAT (209) / pre_ipo_shares_lakh (10)
+  eps_diluted: 16.72                   # FY25 PAT (209) / post_ipo_shares_lakh (12.5)
+  book_value_per_share: 182.24         # post_ipo_equity (2278) / post_ipo_shares_lakh (12.5)
+  dividend_per_share_fy25: 8.40        # FY25 dividend (84 Lakh) / pre_ipo_shares_lakh (10) — paid before the IPO, to pre-IPO holders
+  ev: 6520                             # market_cap (8000) + post_ipo_debt (400) - post_ipo_cash (1880)
+  pat_growth_fy24_fy25_pct: 49.3       # (209 - 140) / 140, for the PEG post

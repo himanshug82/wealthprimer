@@ -168,3 +168,27 @@ ratios:
     fcf: 2105.80
     ocf_pat: 1.14
     capex_intensity: 2.1
+
+# Market/valuation data — separate from the financial-statement figures
+# above, since a share price needs its own lag check under the SEBI
+# educational-content rule in CLAUDE.md. Price is the NSE closing price on
+# 30 June 2025 (source: Yahoo Finance historical data,
+# https://finance.yahoo.com/quote/BRITANNIA.NS/history/), well over a year
+# old at any post's publish date. Paired with the FY25 EPS/financials
+# above (year ended 31 March 2025) for the P/E, P/B etc. calculations —
+# i.e. this represents "the market's valuation shortly after FY25 results
+# were digested," not a live/current price.
+# shares_outstanding is derived, not separately reported: FY25 PAT
+# (2178.73) / reported EPS (90.45) = 24.09 crore shares, which also
+# equals equity_share_capital (24.09) at a face value of Rs 1 — self-
+# consistent, so not an estimate.
+# dividend_per_share is the single dividend paid during FY25 (ex-date
+# 5 Aug 2024): source https://stockanalysis.com/quote/nse/BRITANNIA/dividend/
+market:
+  price_date: "30 June 2025"
+  price: 5851.00                 # Rs per share, NSE close
+  shares_outstanding_cr: 24.09   # crore shares
+  market_cap_cr: 140950.59       # price * shares_outstanding_cr
+  dividend_per_share_fy25: 73.50 # Rs per share, ex-date 5 Aug 2024
+  ev_cr: 140751.24               # market_cap_cr + total_borrowings (FY25) - (cash_and_bank + current_investments) (FY25), all in Rs Cr
+  pat_growth_fy24_fy25_pct: 1.8  # (2178.73 - 2139.81) / 2139.81 — a genuinely low single-year growth number, kept deliberately for the PEG post

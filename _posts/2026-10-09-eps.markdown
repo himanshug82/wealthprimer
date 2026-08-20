@@ -1,0 +1,95 @@
+---
+layout: post
+title: "EPS: profit sliced into one share's worth"
+date: 2026-10-09 09:00:00 +0530
+series: jargon
+---
+
+{% assign listing = site.data.case_study.listing %}
+{% assign bi_is25 = site.data.real_company.income_statement.FY25 %}
+
+## What EPS means
+
+**EPS — Earnings Per Share** — takes PAT, the number we've used throughout
+the Profitability module, and slices it into one share's worth: how much
+profit does the company earn for each individual share outstanding? It's
+the building block the next post, P/E, is built directly on top of.
+
+Desi Bites' IPO from the last post makes this a genuinely useful example,
+because it raises a real distinction: **undiluted EPS** uses the share
+count that actually existed *while the profit was being earned* (the
+pre-IPO count); **diluted EPS** uses the full share count an investor
+buying at listing actually owns a claim on, including the freshly issued
+shares. For a company that just raised fresh capital, these two numbers can
+differ meaningfully — and the diluted figure is the one that matters once
+shares are trading.
+
+## The formula
+
+```
+EPS = PAT / Shares Outstanding
+```
+
+## Worked example: Desi Bites Foods Ltd, FY25
+
+| | |
+|---|---:|
+| FY25 PAT (₹ Lakh) | 209 |
+| ÷ Pre-IPO shares (Lakh) | {{ listing.pre_ipo_shares_lakh }} |
+| **Undiluted EPS** | **₹{{ listing.eps_undiluted }}** |
+| ÷ Post-IPO shares (Lakh) | {{ listing.post_ipo_shares_lakh }} |
+| **Diluted EPS** | **₹{{ listing.eps_diluted }}** |
+
+Same ₹209 Lakh of profit, two different EPS figures depending on which
+share count you divide by. An investor who bought shares at the IPO owns a
+claim on the diluted figure — the {{ listing.fresh_issue_shares_lakh }} lakh new shares are real,
+outstanding shares from day one of trading, even though the FY25 profit was
+earned before they existed.
+
+## Worked example: Britannia Industries, FY25
+
+From Britannia Industries' [audited consolidated FY25 results](https://media.britannia.co.in/Audited_Consolidated_Financial_Results_31_03_2025_74a7c03628.pdf)
+(year ended 31 March 2025, filed 8 May 2025). For illustration only.
+
+| | |
+|---|---:|
+| **EPS (basic and diluted)** | **₹{{ bi_is25.eps }}** |
+
+Britannia's basic and diluted EPS are the same number here, because there
+was no fresh share issuance during FY25 to create the kind of gap Desi
+Bites' IPO does — a reminder that the undiluted/diluted distinction only
+matters when the share count is actually changing.
+
+<details markdown="1">
+<summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
+
+Imagine 10 friends split a ₹200 pizza bill evenly — ₹20 each. Now imagine 2
+more friends show up right as the bill arrives and everyone agrees to split
+it 12 ways instead — ₹16.67 each. The pizza (profit) didn't get bigger; it
+just got sliced into more pieces. Diluted EPS is what each slice is worth
+*after* the new friends joined the table.
+
+</details>
+
+## Common mistakes
+
+- **Using undiluted EPS to value a stock right after a fresh issue.** As
+  shown above, it overstates what each share currently trading actually
+  earns — diluted EPS is the correct figure for [P/E]({% post_url 2026-10-11-price-to-earnings %}) and other valuation
+  ratios.
+- **Treating EPS growth as automatically good.** EPS can rise because
+  profit genuinely grew, or because a company bought back shares and
+  shrank the denominator — the same EPS number, very different underlying
+  story.
+- **Comparing EPS across companies directly.** EPS depends on how many
+  shares a company happens to have outstanding, which is arbitrary — a
+  ₹5 stock and a ₹5,000 stock can have wildly different EPS for reasons
+  that have nothing to do with which business is better. EPS is only
+  meaningful relative to price, which is exactly what P/E does next.
+- **Ignoring one-off items baked into PAT.** A one-time gain or exceptional
+  charge flows straight through into EPS for that year — the same caveat
+  already flagged back in the [Net Margin post]({% post_url 2026-08-30-net-margin %}).
+
+**Takeaway:** EPS slices profit into one share's worth, and — as Desi
+Bites' IPO shows — it matters a great deal *which* share count is used to do
+the slicing; on its own it's a building block, not a valuation verdict.

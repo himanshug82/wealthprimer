@@ -24,5 +24,5 @@ version.
 ## Elsewhere
 
 - Twitter/X: [@wealthprimer_in](https://twitter.com/wealthprimer_in)
-- LinkedIn: [linkedin.com/in/himanshug](https://www.linkedin.com/in/himanshug/)
+- LinkedIn: [linkedin.com/feed](https://www.linkedin.com/feed/)
 - Code & calculators: [github.com/wealthprimer/wealthprimer](https://github.com/wealthprimer/wealthprimer)

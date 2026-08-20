@@ -34,7 +34,7 @@ social:
   name: Himanshu Gupta
   links:
     - "https://twitter.com/wealthprimer_in"
-    - "https://www.linkedin.com/in/himanshug/"
+    - "https://www.linkedin.com/feed/"
 logo: /assets/icon.png  # square mark, used for schema.org/JSON-LD logo
 
 # --- plugins (all run fine here since Pages deploys via GitHub Actions, not the legacy

@@ -64,12 +64,22 @@ Jargon, Decoded — case study & roadmap
   from customers and turns inventory faster than it pays its own suppliers.
   No new research needed — used the inventory/receivables/payables already
   in _data/real_company.yml.
-- M3 (Leverage / Solvency) is next. Some of what it needs already exists in
-  _data/real_company.yml (total_borrowings, total_equity) and
-  _data/case_study.yml (term_loan, equity) — but Interest Coverage needs
-  EBIT/interest (have it) and Net Debt/EBITDA needs a cash figure for
-  Britannia, which isn't in real_company.yml yet (case_study.yml has cash
-  per year already). Check before assuming a field exists.
+- M3 reviewed and scheduled (moved to _posts/): net-working-capital
+  (2026-09-17), current-ratio (2026-09-19), quick-ratio (2026-09-21),
+  debt-to-equity (2026-09-23), equity-multiplier (2026-09-25),
+  interest-coverage (2026-09-27), net-debt-ebitda (2026-09-29) —
+  staggered a few days apart, same cadence as M0-M2. Notable real finding:
+  Britannia is in a net CASH position (Net Debt/EBITDA of -0.06x) — more
+  cash and liquid investments than borrowings. Added
+  total_current_assets/total_current_liabilities/cash_and_bank/
+  current_investments to real_company.yml, and
+  net_working_capital/equity_multiplier/net_debt_ebitda to case_study.yml.
+- M4 (Cash Flow Quality) is next: Free Cash Flow, OCF/PAT (earnings
+  quality), Capex Intensity. Needs Britannia's cash flow statement (CFO,
+  capex) — not yet in real_company.yml. The official FY25 filing (same PDF
+  cited throughout: https://media.britannia.co.in/Audited_Consolidated_Financial_Results_31_03_2025_74a7c03628.pdf)
+  has a consolidated cash flow statement; pull CFO and capex from there
+  rather than re-deriving or estimating.
 
 Lower-priority, not done (say the word if you want these next)
 

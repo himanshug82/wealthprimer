@@ -135,6 +135,9 @@ ratios:
     current_ratio: 2.25
     quick_ratio: 1.4
     interest_coverage: 3.6
+    net_working_capital: 232
+    equity_multiplier: 2.29
+    net_debt_ebitda: 1.19
     inventory_days: 50
     receivable_days: 30
     payable_days: 40
@@ -152,6 +155,9 @@ ratios:
     current_ratio: 2.47
     quick_ratio: 1.63
     interest_coverage: 4.9
+    net_working_capital: 323
+    equity_multiplier: 2.23
+    net_debt_ebitda: 0.84
     inventory_days: 50
     receivable_days: 30
     payable_days: 40
@@ -169,6 +175,9 @@ ratios:
     current_ratio: 2.58
     quick_ratio: 1.79
     interest_coverage: 6.9
+    net_working_capital: 423
+    equity_multiplier: 1.98
+    net_debt_ebitda: 0.27
     inventory_days: 48
     receivable_days: 28
     payable_days: 42

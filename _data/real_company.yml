@@ -87,6 +87,10 @@ balance_sheet:
     inventory: 1181.22
     trade_receivables: 393.33
     trade_payables: 1627.48          # micro/small enterprises (30.83) + other creditors (1596.65)
+    total_current_assets: 4848.66
+    total_current_liabilities: 4084.41
+    cash_and_bank: 446.35             # cash & cash equivalents (322.80) + other bank balances (123.55)
+    current_investments: 1696.51      # liquid/treasury investments, classified as current assets
     total_assets: 9073.56
   FY25:
     equity_share_capital: 24.09
@@ -100,6 +104,10 @@ balance_sheet:
     inventory: 1236.51
     trade_receivables: 448.61
     trade_payables: 1752.23          # micro/small enterprises (27.83) + other creditors (1724.40)
+    total_current_assets: 3913.68
+    total_current_liabilities: 3618.26
+    cash_and_bank: 312.48             # cash & cash equivalents (132.78) + other bank balances (179.70)
+    current_investments: 1111.64      # liquid/treasury investments, classified as current assets
     total_assets: 8838.55
 
 # Ratios for FY25, computed the same way as site.data.case_study.ratios for
@@ -113,6 +121,15 @@ balance_sheet:
 # receivable_days = 365 * trade_receivables / revenue, payable_days =
 # 365 * trade_payables / cogs. ccc = inventory_days + receivable_days -
 # payable_days. asset_turnover = revenue / average total_assets.
+# current_ratio/quick_ratio/net_working_capital use FY25 closing balances
+# (not average), same convention as case_study.yml. quick_ratio excludes
+# only inventory from current assets (not prepaid/other items), matching
+# the Desi Bites calculation. debt_equity and equity_multiplier use closing
+# total_borrowings/total_assets against total_equity (incl. NCI, since
+# these are whole-company capital-structure measures, same basis as ROCE).
+# interest_coverage = EBIT / interest (FY25). net_debt_ebitda: net debt =
+# total_borrowings - (cash_and_bank + current_investments) — a negative
+# value means the company holds more cash+liquid investments than debt.
 ratios:
   FY25:
     gross_margin: 40.9
@@ -126,3 +143,10 @@ ratios:
     payable_days: 60.3
     ccc: -8.6
     asset_turnover: 2.00
+    net_working_capital: 295.42
+    current_ratio: 1.08
+    quick_ratio: 0.74
+    debt_equity: 0.28
+    equity_multiplier: 2.02
+    interest_coverage: 20.7
+    net_debt_ebitda: -0.06

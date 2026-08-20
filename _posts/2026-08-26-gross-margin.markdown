@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Gross Margin: how much survives the cost of making the thing"
+date: 2026-08-26 09:00:00 +0530
 series: jargon
 ---
 

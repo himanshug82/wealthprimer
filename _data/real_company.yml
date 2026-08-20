@@ -84,6 +84,9 @@ balance_sheet:
     non_current_borrowings: 904.72
     current_borrowings: 1136.49
     total_borrowings: 2041.21
+    inventory: 1181.22
+    trade_receivables: 393.33
+    trade_payables: 1627.48          # micro/small enterprises (30.83) + other creditors (1596.65)
     total_assets: 9073.56
   FY25:
     equity_share_capital: 24.09
@@ -94,6 +97,9 @@ balance_sheet:
     non_current_borrowings: 712.94
     current_borrowings: 511.83
     total_borrowings: 1224.77
+    inventory: 1236.51
+    trade_receivables: 448.61
+    trade_payables: 1752.23          # micro/small enterprises (27.83) + other creditors (1724.40)
     total_assets: 8838.55
 
 # Ratios for FY25, computed the same way as site.data.case_study.ratios for

@@ -14,10 +14,12 @@ Jargon, Decoded — case study & roadmap
   3-year reconciled financial model. Data: _data/case_study.yml. Reference page:
   /case-study/ (case-study.markdown). Every ratio post should link there for the
   numbers instead of re-pasting statements.
-- Real-world anchor company for the "real example" half of each post: Britannia
-  Industries (proposed, not yet confirmed by name — swap if you'd rather use a
-  different company). Needs actual filings/price data at least 3 months old at
-  publish time, per the SEBI-lag rule in CLAUDE.md.
+- Real-world anchor company for the "real example" half of each post:
+  Britannia Industries (NSE: BRITANNIA, BSE: 500825) — confirmed. Numbers
+  sourced from the official audited consolidated FY25 results filing (year
+  ended 31 March 2025, filed with NSE/BSE 8 May 2025), not secondary
+  aggregators: _data/real_company.yml, cited with the source URL. Well past
+  the SEBI 3-month lag rule in CLAUDE.md.
 - Per-post structure for this series: definition -> formula -> Desi Bites
   walkthrough (fictional, always current) -> real-company walkthrough (real,
   lagged data) -> common mistakes -> takeaway.
@@ -49,12 +51,15 @@ Jargon, Decoded — case study & roadmap
   (2026-08-24) — staggered a few days apart, auto-publishing via the daily
   Pages rebuild. All Desi-Bites-only, no real-company data needed for these
   four.
-- Starting M1, each post needs real Britannia numbers for the "real company"
-  worked example — these have to come from actual research (WebSearch/
-  WebFetch), not from memory, and need a verified as-of date >=3 months old.
-  Worth building a matching _data/real_company.yml (mirroring case_study.yml)
-  once at the start of M1 so every post after that pulls from one verified,
-  dated source instead of re-researching per post.
+- M1 reviewed and scheduled (moved to _posts/): gross-margin (2026-08-26),
+  ebitda-margin (2026-08-28), net-margin (2026-08-30), roe (2026-09-01),
+  roce (2026-09-03), roa (2026-09-05) — staggered a few days apart, same
+  cadence as M0. Each pairs a Desi Bites walkthrough with a cited Britannia
+  FY25 walkthrough from _data/real_company.yml.
+- M2 (Efficiency / Working Capital) is next and doesn't need new
+  real-company data — Britannia's FY25 numbers in _data/real_company.yml
+  already have what those 5 posts need (inventory, receivables, payables,
+  COGS, revenue); extend that file rather than re-researching from scratch.
 
 Lower-priority, not done (say the word if you want these next)
 

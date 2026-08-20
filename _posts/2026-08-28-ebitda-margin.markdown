@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "EBITDA Margin: how the core business performs, before financing and accounting choices"
+date: 2026-08-28 09:00:00 +0530
 series: jargon
 ---
 

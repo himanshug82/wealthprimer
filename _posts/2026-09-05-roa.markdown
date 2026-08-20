@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "ROA (Return on Assets): how hard everything the company owns is working"
+date: 2026-09-05 09:00:00 +0530
 series: jargon
 ---
 

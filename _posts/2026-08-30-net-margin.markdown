@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Net Margin: what actually makes it to the bottom line"
+date: 2026-08-30 09:00:00 +0530
 series: jargon
 ---
 

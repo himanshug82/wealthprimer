@@ -56,10 +56,20 @@ Jargon, Decoded — case study & roadmap
   roce (2026-09-03), roa (2026-09-05) — staggered a few days apart, same
   cadence as M0. Each pairs a Desi Bites walkthrough with a cited Britannia
   FY25 walkthrough from _data/real_company.yml.
-- M2 (Efficiency / Working Capital) is next and doesn't need new
-  real-company data — Britannia's FY25 numbers in _data/real_company.yml
-  already have what those 5 posts need (inventory, receivables, payables,
-  COGS, revenue); extend that file rather than re-researching from scratch.
+- M2 reviewed and scheduled (moved to _posts/): inventory-days (2026-09-07),
+  debtor-days (2026-09-09), creditor-days (2026-09-11),
+  cash-conversion-cycle (2026-09-13), asset-turnover (2026-09-15) —
+  staggered a few days apart, same cadence as M0/M1. Notable real finding:
+  Britannia's cash conversion cycle is negative (-8.6 days) — it collects
+  from customers and turns inventory faster than it pays its own suppliers.
+  No new research needed — used the inventory/receivables/payables already
+  in _data/real_company.yml.
+- M3 (Leverage / Solvency) is next. Some of what it needs already exists in
+  _data/real_company.yml (total_borrowings, total_equity) and
+  _data/case_study.yml (term_loan, equity) — but Interest Coverage needs
+  EBIT/interest (have it) and Net Debt/EBITDA needs a cash figure for
+  Britannia, which isn't in real_company.yml yet (case_study.yml has cash
+  per year already). Check before assuming a field exists.
 
 Lower-priority, not done (say the word if you want these next)
 

@@ -138,6 +138,8 @@ ratios:
     inventory_days: 50
     receivable_days: 30
     payable_days: 40
+    ccc: 40
+    asset_turnover: 1.78
     fcf: 67
   FY24:
     gross_margin: 37.0
@@ -153,6 +155,8 @@ ratios:
     inventory_days: 50
     receivable_days: 30
     payable_days: 40
+    ccc: 40
+    asset_turnover: 1.89
     fcf: 66
   FY25:
     gross_margin: 38.0
@@ -168,6 +172,8 @@ ratios:
     inventory_days: 48
     receivable_days: 28
     payable_days: 42
+    ccc: 34
+    asset_turnover: 2.01
     fcf: 246
 
 share_data:

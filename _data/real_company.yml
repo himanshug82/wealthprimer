@@ -107,6 +107,12 @@ balance_sheet:
 # ROE uses PAT / average total_equity_owners; ROCE uses EBIT / average
 # (total_equity + total_borrowings); ROA uses PAT / average total_assets.
 # "Average" = mean of the FY24 and FY25 closing balance sheet above.
+# inventory_days/receivable_days/payable_days use the FY25 CLOSING balance
+# only (not average) — matches the convention already used in
+# case_study.yml's ratios, i.e. inventory_days = 365 * inventory / cogs,
+# receivable_days = 365 * trade_receivables / revenue, payable_days =
+# 365 * trade_payables / cogs. ccc = inventory_days + receivable_days -
+# payable_days. asset_turnover = revenue / average total_assets.
 ratios:
   FY25:
     gross_margin: 40.9
@@ -115,3 +121,8 @@ ratios:
     roe: 52.5
     roce: 49.5
     roa: 24.3
+    inventory_days: 42.6
+    receivable_days: 9.1
+    payable_days: 60.3
+    ccc: -8.6
+    asset_turnover: 2.00

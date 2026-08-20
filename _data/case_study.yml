@@ -144,6 +144,8 @@ ratios:
     ccc: 40
     asset_turnover: 1.78
     fcf: 67
+    ocf_pat: 1.90
+    capex_intensity: 5.6
   FY24:
     gross_margin: 37.0
     ebitda_margin: 15.5
@@ -164,6 +166,8 @@ ratios:
     ccc: 40
     asset_turnover: 1.89
     fcf: 66
+    ocf_pat: 1.54
+    capex_intensity: 6.9
   FY25:
     gross_margin: 38.0
     ebitda_margin: 17.0
@@ -184,6 +188,8 @@ ratios:
     ccc: 34
     asset_turnover: 2.01
     fcf: 246
+    ocf_pat: 1.56
+    capex_intensity: 3.1
 
 share_data:
   face_value: 10

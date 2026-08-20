@@ -110,6 +110,19 @@ balance_sheet:
     current_investments: 1111.64      # liquid/treasury investments, classified as current assets
     total_assets: 8838.55
 
+# Cash flow lines exactly as reported in the consolidated Statement of Cash
+# Flows, same source filing. cfo = net cash generated from operating
+# activities. capex = acquisition of property, plant and equipment, capital
+# work-in-progress and other intangible assets (the investing-activities
+# line), taken as a positive outflow figure.
+cash_flow:
+  FY24:
+    cfo: 2572.98
+    capex: 552.87
+  FY25:
+    cfo: 2480.65
+    capex: 374.85
+
 # Ratios for FY25, computed the same way as site.data.case_study.ratios for
 # an apples-to-apples comparison with Desi Bites: margins are on revenue;
 # ROE uses PAT / average total_equity_owners; ROCE uses EBIT / average
@@ -130,6 +143,8 @@ balance_sheet:
 # interest_coverage = EBIT / interest (FY25). net_debt_ebitda: net debt =
 # total_borrowings - (cash_and_bank + current_investments) — a negative
 # value means the company holds more cash+liquid investments than debt.
+# fcf = cfo - capex (FY25). ocf_pat = cfo / pat (FY25). capex_intensity =
+# capex / revenue (FY25), as a percentage.
 ratios:
   FY25:
     gross_margin: 40.9
@@ -150,3 +165,6 @@ ratios:
     equity_multiplier: 2.02
     interest_coverage: 20.7
     net_debt_ebitda: -0.06
+    fcf: 2105.80
+    ocf_pat: 1.14
+    capex_intensity: 2.1

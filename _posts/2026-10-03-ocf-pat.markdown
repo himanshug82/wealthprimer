@@ -1,0 +1,99 @@
+---
+layout: post
+title: "OCF/PAT: how much of reported profit actually shows up as cash"
+date: 2026-10-03 09:00:00 +0530
+series: jargon
+---
+
+{% assign db_cf25 = site.data.case_study.cash_flow.FY25 %}
+{% assign db_is25 = site.data.case_study.income_statement.FY25 %}
+{% assign bi_cf25 = site.data.real_company.cash_flow.FY25 %}
+{% assign bi_is25 = site.data.real_company.income_statement.FY25 %}
+{% assign bi_cf24 = site.data.real_company.cash_flow.FY24 %}
+{% assign bi_is24 = site.data.real_company.income_statement.FY24 %}
+
+## What OCF/PAT means
+
+We already know [profit is an accounting opinion, cash is a
+fact]({% post_url 2026-08-24-reading-a-cash-flow-statement %}) — a company can report solid PAT while collecting the
+cash behind it slowly, or not fully at all. **OCF/PAT** turns that idea into
+a single number, often called an **earnings quality** check: what fraction
+of reported profit actually shows up as real operating cash in the same
+year?
+
+A ratio comfortably above 1 is a good sign — the company is collecting more
+cash than its paper profit alone would suggest (often because depreciation,
+a non-cash cost, adds back more than working capital growth subtracts). A
+ratio persistently below 1 is worth a closer look — profit may be sitting
+in unpaid invoices or growing inventory rather than turning into cash.
+
+## The formula
+
+```
+OCF/PAT = Cash from Operations / PAT
+```
+
+## Worked example: Desi Bites Foods, FY25
+
+| | ₹ Lakh |
+|---|---:|
+| Cash from Operations | {{ db_cf25.cfo }} |
+| PAT | {{ db_is25.pat }} |
+| **OCF/PAT** | **{{ site.data.case_study.ratios.FY25.ocf_pat }}x** |
+
+## Worked example: Britannia Industries, FY25
+
+From Britannia Industries' [audited consolidated FY25 results](https://media.britannia.co.in/Audited_Consolidated_Financial_Results_31_03_2025_74a7c03628.pdf)
+(year ended 31 March 2025, filed 8 May 2025). For illustration only.
+
+| | ₹ Crore |
+|---|---:|
+| Cash from Operations | {{ bi_cf25.cfo }} |
+| PAT | {{ bi_is25.pat }} |
+| **OCF/PAT** | **{{ site.data.real_company.ratios.FY25.ocf_pat }}x** |
+
+Both companies clear 1.0x comfortably, which is a genuinely reassuring
+sign — reported profit at both is backed by real cash, not just accounting
+entries. Worth noting Britannia's ratio eased slightly from FY24's
+{{ bi_cf24.cfo | divided_by: bi_is24.pat | round: 2 }}x — the same filing's [statement of cash
+flows](https://media.britannia.co.in/Audited_Consolidated_Financial_Results_31_03_2025_74a7c03628.pdf)
+shows trade receivables grew during the year, which is
+consistent with the small dip: a bit more of this year's profit is
+currently sitting in unpaid customer invoices than last year's was.
+
+<details markdown="1">
+<summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
+
+If you did ₹500 of chores this month but two neighbours still owe you money
+for chores from *last* month that just landed in your pocket, you might
+actually collect more than ₹500 in cash this month — even though this
+month's "profit" was only ₹500. That's an OCF/PAT above 1: more cash came in
+than this month's paper earnings alone would suggest, because old money
+finally showed up.
+
+</details>
+
+## Common mistakes
+
+- **Reading one year's ratio as the whole picture.** Working capital timing
+  can swing this ratio around from year to year without anything
+  structural changing — a multi-year view is far more informative than one
+  data point.
+- **Treating a very high ratio as automatically great.** A ratio far above
+  1 can also mean a company is stretching its own suppliers unsustainably
+  (borrowing time on payables) rather than genuinely collecting well — worth
+  checking [creditor days]({% post_url 2026-09-11-creditor-days %}) alongside it.
+- **Using it as a standalone red flag without reading the actual cash flow
+  statement.** A low OCF/PAT in one year could be a genuine quality-of-
+  earnings concern, or it could be a one-off — like a large, deliberate
+  build-up of inventory ahead of a launch. The line items behind the ratio
+  matter.
+- **Comparing across industries with very different working capital
+  cycles.** A business with naturally high receivables (long B2B credit
+  terms) will structurally run a lower OCF/PAT than a cash-heavy retail
+  business, without either being poorly managed.
+
+**Takeaway:** OCF/PAT checks whether reported profit is actually backed by
+cash — comfortably above 1, like both companies here, is reassuring, but the
+ratio is only the starting point for asking why it moved, not the final
+answer on its own.

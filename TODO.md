@@ -74,12 +74,24 @@ Jargon, Decoded — case study & roadmap
   total_current_assets/total_current_liabilities/cash_and_bank/
   current_investments to real_company.yml, and
   net_working_capital/equity_multiplier/net_debt_ebitda to case_study.yml.
-- M4 (Cash Flow Quality) is next: Free Cash Flow, OCF/PAT (earnings
-  quality), Capex Intensity. Needs Britannia's cash flow statement (CFO,
-  capex) — not yet in real_company.yml. The official FY25 filing (same PDF
-  cited throughout: https://media.britannia.co.in/Audited_Consolidated_Financial_Results_31_03_2025_74a7c03628.pdf)
-  has a consolidated cash flow statement; pull CFO and capex from there
-  rather than re-deriving or estimating.
+- M4 reviewed and scheduled (moved to _posts/): free-cash-flow
+  (2026-10-01), ocf-pat (2026-10-03), capex-intensity (2026-10-05) —
+  staggered a few days apart, same cadence as M0-M3. This closes out the
+  Jargon, Decoded ratio roadmap (M0-M4); only M5 (Valuation/Market, 8
+  posts) remains, and it needs the hypothetical "Desi Bites goes public"
+  narrative beat first. Notable real finding: Britannia's FCF rose FY24 to
+  FY25 mainly because capex fell (3.3% to 2.1% of revenue), not because
+  operating cash generation improved — worth remembering before assuming a
+  rising FCF is automatically an operating improvement. Added a
+  cash_flow: block (cfo, capex) to real_company.yml, and
+  ocf_pat/capex_intensity to case_study.yml's ratios.
+- M5 (Valuation / Market) needs a "Desi Bites goes public" narrative beat
+  designed before any posts can be drafted — a listing price, share count,
+  and market cap for the fictional company — plus real Britannia share
+  price/valuation data (P/E, P/B, EV/EBITDA etc. need a market price,
+  which is different from the financial-statement data used so far and
+  will need its own lagged, cited, as-of date). Don't start M5 without
+  first deciding the listing narrative with the user.
 
 Lower-priority, not done (say the word if you want these next)
 

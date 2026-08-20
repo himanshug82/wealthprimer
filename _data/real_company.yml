@@ -1,0 +1,111 @@
+# Britannia Industries Ltd — the real, listed-company anchor for the "real
+# company" half of every Jargon, Decoded post (Desi Bites Foods for the
+# fictional half). Same broad sector as Desi Bites (packaged snacks/FMCG
+# manufacturer) so the ratios are intuitively comparable.
+#
+# All figures are the OFFICIAL AUDITED CONSOLIDATED numbers, taken directly
+# from Britannia's results filing for the quarter/year ended 31 March 2025 —
+# not estimates, not screener-style secondary aggregation. Do not edit these
+# numbers without re-deriving from the source filing below.
+#
+# Source: Britannia Industries Ltd, Audited Consolidated Financial Results
+# for the quarter and year ended 31 March 2025, filed with NSE/BSE on
+# 8 May 2025.
+#   https://media.britannia.co.in/Audited_Consolidated_Financial_Results_31_03_2025_74a7c03628.pdf
+# NSE: BRITANNIA · BSE: 500825 · CIN: L15412WB1918PLC002964
+#
+# As-of date for every figure below: FY ended 31 March 2025 (FY24 columns
+# are the filing's own comparative year, from the same document). Per the
+# SEBI educational-content lag rule in CLAUDE.md, this is well over 3 months
+# old at any post's publish date — safe to use without re-checking, unless
+# a post is later updated to a newer fiscal year.
+
+company:
+  name: "Britannia Industries Ltd"
+  type: "Listed packaged foods manufacturer (biscuits, bread, dairy, snacks)"
+  currency_note: "All figures in Rs Crore unless noted"
+  fiscal_year_end: "31 March"
+  exchange: "NSE: BRITANNIA, BSE: 500825"
+  source_url: "https://media.britannia.co.in/Audited_Consolidated_Financial_Results_31_03_2025_74a7c03628.pdf"
+  source_label: "Audited Consolidated Financial Results, year ended 31 March 2025, filed with NSE/BSE 8 May 2025"
+  as_of: "FY25 (year ended 31 March 2025), filed 8 May 2025"
+
+# Line items exactly as reported in the consolidated Statement of Profit and
+# Loss. cogs/gross_profit/opex/ebitda/ebit below are derived from these
+# reported lines (not separately reported line items themselves) — see the
+# comment on each. pbt/tax/pat are the actual reported figures (they include
+# other income, share of JV loss, and an exceptional item in FY25 — small
+# items a beginner-facing post can note rather than model line-by-line).
+income_statement:
+  FY24:
+    revenue: 16769.27
+    cost_of_materials_consumed: 8546.89
+    purchases_of_stock_in_trade: 941.48
+    changes_in_inventories: 3.66
+    cogs: 9492.03          # cost_of_materials_consumed + purchases + changes_in_inventories
+    gross_profit: 7277.24  # revenue - cogs
+    employee_benefits_expense: 708.70
+    other_expenses: 3398.70
+    opex: 4107.40           # employee_benefits_expense + other_expenses
+    ebitda: 3169.84         # gross_profit - opex
+    depreciation: 300.46
+    ebit: 2869.38            # ebitda - depreciation
+    interest: 164.00         # finance costs, as reported
+    pbt: 2913.47              # as reported (includes other income, JV share)
+    tax: 779.25
+    pat: 2139.81              # profit attributable to owners of the company
+    eps: 88.84
+  FY25:
+    revenue: 17942.67
+    cost_of_materials_consumed: 9859.45
+    purchases_of_stock_in_trade: 809.35
+    changes_in_inventories: -64.75
+    cogs: 10604.05
+    gross_profit: 7338.62
+    employee_benefits_expense: 704.59
+    other_expenses: 3446.88
+    opex: 4151.47
+    ebitda: 3187.15
+    depreciation: 313.34
+    ebit: 2873.81
+    interest: 138.80
+    pbt: 2926.57
+    tax: 748.71
+    pat: 2178.73
+    eps: 90.45
+
+balance_sheet:
+  FY24:
+    equity_share_capital: 24.09
+    other_equity: 3917.43
+    total_equity_owners: 3941.52    # equity attributable to owners of the parent
+    non_controlling_interests: 24.50
+    total_equity: 3966.02            # total_equity_owners + non_controlling_interests
+    non_current_borrowings: 904.72
+    current_borrowings: 1136.49
+    total_borrowings: 2041.21
+    total_assets: 9073.56
+  FY25:
+    equity_share_capital: 24.09
+    other_equity: 4331.63
+    total_equity_owners: 4355.72
+    non_controlling_interests: 25.60
+    total_equity: 4381.32
+    non_current_borrowings: 712.94
+    current_borrowings: 511.83
+    total_borrowings: 1224.77
+    total_assets: 8838.55
+
+# Ratios for FY25, computed the same way as site.data.case_study.ratios for
+# an apples-to-apples comparison with Desi Bites: margins are on revenue;
+# ROE uses PAT / average total_equity_owners; ROCE uses EBIT / average
+# (total_equity + total_borrowings); ROA uses PAT / average total_assets.
+# "Average" = mean of the FY24 and FY25 closing balance sheet above.
+ratios:
+  FY25:
+    gross_margin: 40.9
+    ebitda_margin: 17.8
+    net_margin: 12.1
+    roe: 52.5
+    roce: 49.5
+    roa: 24.3

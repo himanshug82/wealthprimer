@@ -1,0 +1,91 @@
+---
+layout: post
+title: "ROE (Return on Equity): what shareholders' own money is earning"
+series: jargon
+---
+
+{% assign db_bs24 = site.data.case_study.balance_sheet.FY24 %}
+{% assign db_bs25 = site.data.case_study.balance_sheet.FY25 %}
+{% assign db_is25 = site.data.case_study.income_statement.FY25 %}
+{% assign bi_bs24 = site.data.real_company.balance_sheet.FY24 %}
+{% assign bi_bs25 = site.data.real_company.balance_sheet.FY25 %}
+{% assign bi_is25 = site.data.real_company.income_statement.FY25 %}
+
+## What ROE means
+
+Margins ([gross]({% post_url 2026-08-26-gross-margin %}), [EBITDA]({% post_url 2026-08-28-ebitda-margin %}), [net]({% post_url 2026-08-30-net-margin %})) all measure profit
+against *revenue*. **ROE — Return on Equity** — asks a different question:
+how much profit did the company generate on the money its own shareholders
+put in and left in the business (equity, from the [balance sheet]({% post_url 2026-08-20-reading-a-balance-sheet %}))?
+
+It's the number that answers "for every ₹100 that belongs to shareholders,
+how much did the company earn this year?" — which is a more direct read on
+how well a company uses *your* money specifically than any revenue-based
+margin.
+
+## The formula
+
+```
+ROE (%) = PAT / Average Equity × 100
+```
+
+We use the **average** of opening and closing equity (not just the closing
+balance) because equity changes over the year — profit gets added, dividends
+get paid out — and averaging gives a fairer sense of what capital was
+actually at work across the year.
+
+## Worked example: Desi Bites Foods, FY25
+
+| | ₹ Lakh |
+|---|---:|
+| PAT (FY25) | {{ db_is25.pat }} |
+| Equity, start of year (FY24 closing) | {{ db_bs24.equity }} |
+| Equity, end of year (FY25 closing) | {{ db_bs25.equity }} |
+| Average equity | {{ db_bs24.equity | plus: db_bs25.equity | divided_by: 2.0 }} |
+| **ROE** | **{{ site.data.case_study.ratios.FY25.roe }}%** |
+
+## Worked example: Britannia Industries, FY25
+
+From Britannia Industries' [audited consolidated FY25 results](https://media.britannia.co.in/Audited_Consolidated_Financial_Results_31_03_2025_74a7c03628.pdf)
+(year ended 31 March 2025, filed 8 May 2025). Equity here is equity
+attributable to owners of the company (excluding non-controlling interests),
+matched against PAT attributable to owners. For illustration only.
+
+| | ₹ Crore |
+|---|---:|
+| PAT (FY25) | {{ bi_is25.pat }} |
+| Equity, start of year (FY24 closing) | {{ bi_bs24.total_equity_owners }} |
+| Equity, end of year (FY25 closing) | {{ bi_bs25.total_equity_owners }} |
+| Average equity | {{ bi_bs24.total_equity_owners | plus: bi_bs25.total_equity_owners | divided_by: 2.0 }} |
+| **ROE** | **{{ site.data.real_company.ratios.FY25.roe }}%** |
+
+A {{ site.data.real_company.ratios.FY25.roe }}% ROE is high, even for a well-run FMCG business — a large part
+of the reason is that Britannia doesn't need much shareholder capital
+relative to its profit (a strong, asset-light, brand-led business). That's
+worth remembering for the next post: a high ROE alone doesn't tell you *why*
+it's high, and one common reason — leverage — deserves real scrutiny.
+
+## Common mistakes
+
+- **Not checking what's driving a high ROE.** A company can boost ROE two
+  ways: earning more profit (good), or shrinking its equity base through
+  debt-funded buybacks or heavy borrowing instead of using shareholder
+  capital (not automatically good — it means more of the company's capital
+  is other people's money, which carries its own risk). ROE alone can't tell
+  these apart — that's exactly what [ROCE]({% post_url 2026-09-03-roce %}) is for.
+- **Using closing equity instead of average.** If a company raised a large
+  chunk of fresh equity partway through the year, closing-equity ROE
+  understates true returns on the capital that was actually deployed for
+  most of the year — average smooths this out.
+- **Comparing ROE across industries with different capital needs.** A
+  capital-heavy business (steel, cement) and a capital-light one (FMCG,
+  services) will show structurally different ROE even if both are equally
+  well managed.
+- **Treating one strong year as proof of quality.** A single year's ROE can
+  be inflated by a one-off gain in that year's PAT — check the trend over
+  several years, not one data point, before drawing conclusions.
+
+**Takeaway:** ROE tells you how hard shareholders' own money is working, but
+it doesn't tell you *how* that return was achieved — a business earning a
+high ROE mostly through debt looks very different, and carries different
+risk, from one earning it through genuinely efficient operations.

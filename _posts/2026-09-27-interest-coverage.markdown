@@ -68,7 +68,8 @@ the last two posts already showed: a company carrying genuinely light debt.
 - **Treating comfortable coverage as proof the debt itself is small.**
   Coverage measures serviceability, not size — a company can have very
   comfortable interest coverage and still carry a large absolute debt
-  load. That's what [Debt-to-Equity]({% post_url 2026-09-23-debt-to-equity %}) and [Net Debt/EBITDA]({% post_url 2026-09-29-net-debt-ebitda %}) are for.
+  load. That's what [Debt-to-Equity]({% post_url 2026-09-23-debt-to-equity %}) and Net Debt/EBITDA,
+  covered in the next post, are for.
 
 **Takeaway:** interest coverage measures whether a company's operating
 profit can comfortably afford its interest bill — a high number is

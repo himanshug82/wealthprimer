@@ -75,8 +75,8 @@ just got sliced into more pieces. Diluted EPS is what each slice is worth
 
 - **Using undiluted EPS to value a stock right after a fresh issue.** As
   shown above, it overstates what each share currently trading actually
-  earns — diluted EPS is the correct figure for [P/E]({% post_url 2026-10-11-price-to-earnings %}) and other valuation
-  ratios.
+  earns — diluted EPS is the correct figure for P/E (the price-to-earnings
+  ratio, covered in the next post) and other valuation ratios.
 - **Treating EPS growth as automatically good.** EPS can rise because
   profit genuinely grew, or because a company bought back shares and
   shrank the denominator — the same EPS number, very different underlying

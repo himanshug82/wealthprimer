@@ -192,3 +192,32 @@ market:
   dividend_per_share_fy25: 73.50 # Rs per share, ex-date 5 Aug 2024
   ev_cr: 140751.24               # market_cap_cr + total_borrowings (FY25) - (cash_and_bank + current_investments) (FY25), all in Rs Cr
   pat_growth_fy24_fy25_pct: 1.8  # (2178.73 - 2139.81) / 2139.81 — a genuinely low single-year growth number, kept deliberately for the PEG post
+
+# DuPont decomposition of FY25 ROE, for the Fundamental Analysis series.
+# Same averaging basis as case_study.yml's `dupont` block so the two
+# companies are directly comparable and the identity reconciles exactly:
+# net margin on FY25 revenue, asset turnover on AVERAGE total assets, and
+# equity multiplier on AVERAGE total assets / AVERAGE equity attributable
+# to owners (the same equity base the ROE above uses). Note this differs
+# from the closing-balance `equity_multiplier: 2.02` under `ratios.FY25`,
+# which is on total equity incl. NCI — see the comment there.
+dupont:
+  FY25:
+    net_margin: 12.14              # PAT 2178.73 / revenue 17942.67
+    asset_turnover: 2.00           # revenue 17942.67 / avg total assets 8956.06
+    equity_multiplier_avg: 2.16    # avg total assets 8956.06 / avg equity 4148.62
+    avg_total_assets: 8956.06      # (FY24 9073.56 + FY25 8838.55) / 2
+    avg_equity_owners: 4148.62     # (FY24 3941.52 + FY25 4355.72) / 2
+    roe_reconciled: 52.5           # 12.143% x 2.0034 x 2.1588 = 52.52%, i.e. the reported ROE
+
+# Valuation multiples at the 30 June 2025 price above, against FY25
+# financials — for the relative-valuation (comparables) post. Computed here
+# rather than in Liquid so the arithmetic is reviewable in one place.
+# book_value_per_share = total_equity_owners (4355.72 Cr) / shares (24.09 Cr).
+multiples:
+  as_of: "Price 30 June 2025, financials FY25 (year ended 31 March 2025)"
+  pe: 64.7                         # price 5851 / EPS 90.45
+  book_value_per_share: 180.81     # 4355.72 / 24.09
+  pb: 32.4                         # price 5851 / 180.81
+  ev_ebitda: 44.2                  # ev_cr 140751.24 / EBITDA 3187.15
+  dividend_yield: 1.26             # DPS 73.50 / price 5851 x 100

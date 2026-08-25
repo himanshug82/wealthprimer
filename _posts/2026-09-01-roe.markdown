@@ -73,7 +73,8 @@ it's high, and one common reason — leverage — deserves real scrutiny.
   debt-funded buybacks or heavy borrowing instead of using shareholder
   capital (not automatically good — it means more of the company's capital
   is other people's money, which carries its own risk). ROE alone can't tell
-  these apart — that's exactly what [ROCE]({% post_url 2026-09-03-roce %}) is for.
+  these apart — that's exactly what ROCE (Return on Capital Employed), the
+  subject of the next post, is for.
 - **Using closing equity instead of average.** If a company raised a large
   chunk of fresh equity partway through the year, closing-equity ROE
   understates true returns on the capital that was actually deployed for

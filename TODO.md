@@ -108,11 +108,79 @@ Jargon, Decoded — case study & roadmap
     growth was only ~1.8% (the margin-compression year from M1). Used
     deliberately in the PEG post as a live illustration of why PEG breaks
     down on single-year growth figures, rather than smoothed over.
-- Next possible work (not started, no roadmap yet): the DuPont ROE
-  Decomposition post and capstone post that were moved to the Fundamental
-  Analysis series (see above) — both now unblocked, since Net Margin,
-  Asset Turnover, and Equity Multiplier all exist as Jargon posts to link
-  to. No other Jargon, Decoded posts are planned beyond M0-M5.
+Fundamental Analysis — Beginner to Expert — roadmap
+
+- Scope decision: the statement-reading and ratio ground this series would
+  normally cover is already done in Jargon, Decoded (M0-M5, 33 posts). So this
+  series picks up where the ratios stop: synthesis (DuPont) and valuation
+  (comparables, discounting, WACC, DCF, margin of safety), closing with a
+  capstone that applies the whole toolkit end-to-end.
+- Same two-company structure as Jargon, Decoded (Desi Bites for the fictional
+  walkthrough, Britannia for the real one) with ONE deliberate exception: the
+  DCF itself is built only on Desi Bites. A DCF that outputs an intrinsic
+  value for a real listed stock reads as a price target, which CLAUDE.md's
+  compliance guardrails rule out. Britannia still appears in these posts for
+  observable inputs (its actual cost of debt, effective tax rate, FCF,
+  multiples) — just never as the subject of a value-per-share output.
+- Deviation from CLAUDE.md worth noting: CLAUDE.md says the DCF post should
+  link out to a Jargon post on WACC. No such Jargon post exists and the
+  Jargon roadmap is closed at M0-M5, so WACC is covered as FA-4 in this
+  series instead, and the DCF posts link there.
+- Data added for this module: `dupont:` and `dcf:` blocks in
+  _data/case_study.yml (the DCF block holds assumptions, the FY26-FY30
+  forecast, the result, a reverse-DCF, and a WACC x terminal-growth
+  sensitivity grid); `dupont:` and `multiples:` blocks in
+  _data/real_company.yml. No new external sourcing was needed — the DCF is
+  built off figures already in the case study, and Britannia's multiples come
+  from the already-cited FY25 filing plus the already-lag-checked 30 June 2025
+  price.
+- Roadmap, 8 posts, proposed dates on the same 2-day cadence as M0-M5:
+  - FA-1 DuPont ROE decomposition (2026-10-23)
+  - FA-2 Relative valuation: comparables and the peer set (2026-10-25)
+  - FA-3 Discounting: what a future rupee is worth today (2026-10-27)
+  - FA-4 Cost of capital: WACC (2026-10-29)
+  - FA-5 Forecasting free cash flow (2026-10-31)
+  - FA-6 Terminal value and the full DCF (2026-11-02)
+  - FA-7 Margin of safety and sensitivity (2026-11-04)
+  - FA-8 Capstone: Britannia end to end (2026-11-06)
+- Notable finding baked into the module: the Desi Bites DCF values the share
+  at Rs 398 against its Rs 640 IPO price — a 38% gap. Kept honestly rather
+  than tuning assumptions to match the price (which is exactly the bad
+  practice FA-7 warns about). It sets up the reverse-DCF beat: Rs 640 implies
+  either a 9.6% perpetual growth rate, or roughly 25-30% revenue growth for
+  five years with EBITDA margins expanding to ~20%.
+- FA-1 to FA-8 reviewed and scheduled (moved to _posts/): dupont-roe-decomposition
+  (2026-10-23), relative-valuation-comparables (2026-10-25),
+  discounting-time-value-of-money (2026-10-27), wacc-cost-of-capital
+  (2026-10-29), forecasting-free-cash-flow (2026-10-31),
+  terminal-value-and-the-full-dcf (2026-11-02),
+  margin-of-safety-and-sensitivity (2026-11-04),
+  capstone-britannia-end-to-end (2026-11-06) — staggered a few days apart,
+  same cadence as M0-M5. All intra-module links converted to {% post_url %}.
+- IMPORTANT build rule learned while scheduling this module: a
+  {% post_url %} pointing at a post whose date is still in the FUTURE does
+  not merely 404 — it fails the ENTIRE Jekyll build ("Could not find post
+  ... in tag 'post_url'"), because `future: false` keeps unpublished posts
+  out of site.posts. So a post may only post_url a post dated on or BEFORE
+  its own date. Forward references must be plain prose with no link.
+  - This turned up four pre-existing posts that would have taken the live
+    site down on their own publish dates, now fixed by dropping the link and
+    keeping the prose: roe -> roce (would have broken 2026-09-01),
+    interest-coverage -> net-debt-ebitda (2026-09-27), book-value-per-share
+    -> price-to-book (2026-10-07), eps -> price-to-earnings (2026-10-09).
+  - Guard for future modules: check every post_url target exists and is
+    backward-dated, then simulate the build on each publish date (build with
+    posts dated after that day temporarily moved aside). Both checks were run
+    across all 41 posts and pass.
+- Open item for this module: FA-6 calls for the Google Sheet DCF calculator
+  that CLAUDE.md asks for. The draft ships a working Python/pandas snippet
+  (which stands on its own) plus a placeholder for the Sheet link — the Sheet
+  itself still needs to be built and shared view-only. Search the draft for
+  GOOGLE-SHEET-TODO.
+- Possible enhancement, not done: FA-2 teaches peer-set selection using only
+  Desi Bites and Britannia, because adding a real peer table (Nestle India,
+  Tata Consumer, etc.) means sourcing each peer's multiples from their own
+  filings. Deliberately not faked. Say the word if you want that sourced.
 
 Lower-priority, not done (say the word if you want these next)
 

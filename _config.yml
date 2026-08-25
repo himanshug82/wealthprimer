@@ -26,6 +26,16 @@ rss: RSS
 # github_username intentionally left unset: github.com/wealthprimer/wealthprimer is the
 # blog's demo-scripts repo, not a personal profile — linked separately from the About page.
 
+# --- navigation ---
+# minima's header lists EVERY page with a title unless header_pages is set.
+# With four series pages now under /series/, the nav needs explicit control —
+# the individual series pages are reached from /series/, not the top nav.
+header_pages:
+  - series.markdown
+  - case-study.markdown
+  - about.markdown
+  - privacy.markdown
+
 # --- SEO / social meta (used by jekyll-seo-tag for OG cards, Twitter cards, JSON-LD) ---
 twitter:
   username: wealthprimer_in

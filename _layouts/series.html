@@ -1,0 +1,31 @@
+---
+layout: page
+---
+{%- assign meta = site.data.series | where: "slug", page.series_slug | first -%}
+{%- assign in_series = site.posts | where: "series", page.series_slug | sort: "date" -%}
+
+{%- if meta.description -%}
+<p class="series-description"><em>{{ meta.description }}</em></p>
+{%- endif -%}
+
+{{ content }}
+
+{%- if in_series.size > 0 -%}
+<p class="series-count">
+  {{ in_series.size }} post{% if in_series.size != 1 %}s{% endif %} published so far, in reading order.
+</p>
+
+<ol class="series-list">
+  {%- for post in in_series -%}
+  <li>
+    <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+    <span class="series-date">{{ post.date | date: "%-d %b %Y" }}</span>
+  </li>
+  {%- endfor -%}
+</ol>
+{%- else -%}
+<p><em>No posts in this series have published yet — the first one is on its way.
+Everything on Wealth Primer publishes on a schedule.</em></p>
+{%- endif -%}
+
+<p><a href="{{ '/series/' | relative_url }}">← All series</a></p>

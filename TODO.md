@@ -351,7 +351,17 @@ Mutual Funds, Minus the Marketing — roadmap
 
 Lower-priority, not done (say the word if you want these next)
 
-- Series index pages — _data/series.yml has the four series, titles, slugs as a source of truth, but there's no /series/fundamental-analysis/ listing page yet.
+- DONE: Series index pages. /series/ lists all four tracks with a live
+  published-post count; /series/<slug>/ lists that series' posts in reading
+  order (oldest first, since these are learning series). Built from
+  _data/series.yml plus each post's `series:` front matter, so adding a post
+  needs no page edits. New: _layouts/series.html, series.markdown, and
+  series/<slug>.markdown x4, plus styles in assets/main.scss.
+  - Note: minima's header auto-lists EVERY titled page, so `header_pages` is
+    now set explicitly in _config.yml (Series, Case study, About, Privacy).
+    The four individual series pages are deliberately NOT in the top nav —
+    they're reached from /series/. If you add a page and it doesn't appear in
+    the nav, that's why.
 - Analytics (GA4/Plausible/GoatCounter) — not added, your call which one.
 - Formula rendering (MathJax/KaTeX) if you want real math notation rather than code-block formulas.
 - Minor: minima's bundled SCSS throws harmless Dart-Sass deprecation warnings during build (lighten() is deprecated) — cosmetic build noise, not a bug, will resolve itself on minima's next release.

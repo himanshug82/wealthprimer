@@ -1,0 +1,216 @@
+# Mutual Funds, Minus the Marketing — the NAV data behind the series.
+#
+# SOURCES (both are AMFI's official NAV history, served via the free mfapi.in
+# wrapper; AMFI is the industry body whose published NAV is the authoritative
+# record for Indian mutual funds):
+#   UTI Nifty 50 Index Fund   regular scheme code 100822, direct 120716
+#     -> assets/data/uti-nifty50-index-fund-nav.csv
+#   Parag Parikh Flexi Cap    regular scheme code 122640, direct 122639
+#     -> assets/data/parag-parikh-flexicap-nav.csv
+#   API: https://api.mfapi.in/mf/<schemeCode>   (data originates from AMFI)
+#
+# WHY THESE TWO: the index fund is the workhorse for every calculation
+# (20 years of history, spanning the 2008 and 2020 crashes). The second fund
+# appears in exactly ONE post, the expense-ratio one, and ONLY as a
+# direct-vs-regular comparison of the fund against ITSELF. Nothing in this
+# series assesses whether either fund is worth owning, ranks funds, or
+# compares one manager to another — see the compliance note in TODO.md.
+#
+# LAG CHECK (CLAUDE.md guardrail 2): both series are truncated at
+# 31 March 2026 (FY26 close). The earliest post publishes 2026-11-28, nearly
+# eight months later. Do not extend toward the present without re-checking.
+#
+# CROSS-CHECK: the index fund's NAV falls -14.6% between 1 Jan and 31 Mar 2026,
+# consistent with the Q1 2026 decline independently visible in the Britannia
+# price data in _data/ta.yml (-13.5% over the same quarter). Two unrelated
+# sources agreeing is a good sign neither is corrupted.
+#
+# Every figure below is DERIVED from the CSVs by script, not typed by hand.
+
+index_fund:
+  name: "UTI Nifty 50 Index Fund"
+  plan_regular: "Regular Plan - Growth (AMFI scheme code 100822)"
+  plan_direct: "Direct Plan - Growth (AMFI scheme code 120716)"
+  category: "Index Fund (Nifty 50)"
+  csv_path: "/assets/data/uti-nifty50-index-fund-nav.csv"
+  source_url: "https://api.mfapi.in/mf/100822"
+  source_label: "AMFI NAV history via mfapi.in"
+  regular_start: "2006-04-03"
+  regular_end: "2026-03-31"
+  regular_points: 4915
+  regular_nav_start: 22.0557
+  regular_nav_end: 153.8204
+  direct_start: "2013-01-02"
+  direct_points: 3258
+  years_of_history: 20.0
+
+# The SAME fund over five-year windows with different start dates. This is
+# the point-to-point returns post: one fund, one holding period length, and
+# a range from 2.6% to 23.9% a year depending only on the month
+# you happened to start.
+point_to_point:
+  windows:
+    - { label: "5 years from Jan 2007 (just before the crash)", start: "2007-01-01", end: "2012-01-01", cagr: 2.56 }
+    - { label: "5 years from Jan 2009 (just after it)", start: "2009-01-01", end: "2014-01-01", cagr: 15.51 }
+    - { label: "5 years from Jan 2015", start: "2015-01-01", end: "2020-01-01", cagr: 9.03 }
+    - { label: "5 years from Apr 2020 (the COVID low)", start: "2020-04-01", end: "2025-04-01", cagr: 23.92 }
+    - { label: "5 years from Jan 2021", start: "2021-01-01", end: "2026-01-01", cagr: 14.25 }
+  best_minus_worst_pp: 21.4
+
+# Rolling returns: every possible start date, not a chosen one. Note how the
+# RANGE narrows as the holding period lengthens while the MEDIAN barely
+# moves — that is the whole argument for holding equity longer.
+rolling_returns:
+  note: "Regular plan. Every daily start date with a full window inside the data."
+  years_3:
+    windows: 4180
+    min: -4.82
+    median: 11.82
+    max: 31.95
+    pct_negative: 2.9
+    pct_below_8: 27.9
+    worst_window_start: "2017-03-23"
+    best_window_start: "2020-03-23"
+  years_5:
+    windows: 3685
+    min: -1.58
+    median: 12.25
+    max: 26.14
+    pct_negative: 1.5
+    pct_below_8: 23.8
+    worst_window_start: "2007-11-19"
+    best_window_start: "2020-03-23"
+  years_7:
+    windows: 3192
+    min: 3.57
+    median: 11.66
+    max: 18.29
+    pct_negative: 0.0
+    pct_below_8: 15.4
+    worst_window_start: "2008-01-07"
+    best_window_start: "2008-10-27"
+  years_10:
+    windows: 2453
+    min: 4.39
+    median: 11.81
+    max: 16.11
+    pct_negative: 0.0
+    pct_below_8: 14.0
+    worst_window_start: "2010-03-23"
+    best_window_start: "2009-03-12"
+
+# Drawdowns: peak-to-trough falls of more than 15%, and how long the fund
+# took to get back to its previous high. The 2008 recovery took nearly six
+# years, which is the number most SIP marketing leaves out.
+drawdowns:
+  worst_pct: -59.7
+  worst_date: "2008-10-27"
+  episodes:
+    - { peak_date: "2008-01-08", peak_nav: 39.76, trough_date: "2008-10-27", trough_nav: 16.04, fall_pct: -59.7, recovered_date: "2013-12-09", days_peak_to_peak: 2162 }
+    - { peak_date: "2020-01-14", peak_nav: 81.15, trough_date: "2020-03-23", trough_nav: 49.97, fall_pct: -38.4, recovered_date: "2020-11-09", days_peak_to_peak: 300 }
+    - { peak_date: "2006-05-10", peak_nav: 23.84, trough_date: "2006-06-14", trough_nav: 16.73, fall_pct: -29.8, recovered_date: "2006-10-30", days_peak_to_peak: 173 }
+    - { peak_date: "2015-03-03", peak_nav: 56.35, trough_date: "2016-02-25", trough_nav: 44.06, fall_pct: -21.8, recovered_date: "2016-09-06", days_peak_to_peak: 553 }
+    - { peak_date: "2021-10-18", peak_nav: 122.83, trough_date: "2022-06-17", trough_nav: 102.42, fall_pct: -16.6, recovered_date: "2022-11-11", days_peak_to_peak: 389 }
+
+volatility_and_sharpe:
+  annualised_return_pct: 10.20
+  annualised_volatility_pct: 20.99
+  risk_free_pct: 6.5
+  sharpe: 0.176
+  period: "2006-04-03 to 2026-03-31"
+  note: >-
+    Annualised return here (10.20%) is BELOW the median rolling return
+    (12.25% over 5-year windows) because this single window happens to
+    start near a 2006 high and end at a Q1 2026 low. That gap between one
+    point-to-point figure and the distribution of all of them is exactly
+    what the rolling-returns post is about.
+
+# Direct vs regular plans of the SAME fund. Same portfolio, same manager,
+# same everything except the distributor commission embedded in the regular
+# plan's expense ratio. The entire NAV divergence IS the fee.
+expense_ratio:
+  index_fund:
+    start: "2013-01-02"
+    end: "2026-03-31"
+    years: 13.2
+    regular_cagr: 11.271
+    direct_cagr: 11.395
+    gap_pp: 0.125
+    lumpsum_1lakh_regular: 411243
+    lumpsum_1lakh_direct: 417378
+    lumpsum_difference: 6135
+    difference_pct: 1.5
+  active_fund:
+    name: "Parag Parikh Flexi Cap Fund"
+    csv_path: "/assets/data/parag-parikh-flexicap-nav.csv"
+    source_url: "https://api.mfapi.in/mf/122640"
+    disclaimer: >-
+      Used ONLY to show the direct-vs-regular fee gap on a fund with a
+      typical actively-managed expense ratio. This is the same fund on both
+      sides of the comparison. Nothing here assesses the fund itself.
+    start: "2013-05-28"
+    end: "2026-03-31"
+    years: 12.8
+    regular_cagr: 17.380
+    direct_cagr: 18.210
+    gap_pp: 0.830
+    lumpsum_1lakh_regular: 782713
+    lumpsum_1lakh_direct: 856848
+    lumpsum_difference: 74134
+    difference_pct: 9.5
+
+# Monthly SIP of Rs 10,000 into the index fund's regular plan. The GFC row
+# is the one that matters: five years of disciplined monthly investing that
+# returned essentially nothing. SIPs are a habit, not a guarantee.
+sip:
+  monthly_amount: 10000
+  scenarios:
+    - { label: "Full 20 years", start: "2006-04-01", end: "2026-03-31", instalments: 239, invested: 2390000, value: 7780190, xirr: 10.69 }
+    - { label: "Last 10 years", start: "2016-04-01", end: "2026-03-31", instalments: 120, invested: 1200000, value: 2075891, xirr: 10.57 }
+    - { label: "Last 5 years", start: "2021-04-01", end: "2026-03-31", instalments: 60, invested: 600000, value: 688376, xirr: 5.44 }
+    - { label: "Jan 2007 to Jan 2012, through the crash", start: "2007-01-01", end: "2012-01-01", instalments: 61, invested: 610000, value: 609712, xirr: -0.02 }
+  # The first scheduled instalment (1 Apr 2006) falls before the fund's first
+  # published NAV (3 Apr 2006), so it is skipped — 239 instalments, not 240.
+  underwater:
+    months_below_invested: 12
+    months_total: 239
+    longest_stretch_start: "2008-10-01"
+    longest_stretch_end: "2009-05-01"
+    longest_stretch_months: 8
+    worst_deficit: -109317
+    note: >-
+      Even across a 60% market fall, the 20-year SIP's value sat below the
+      amount invested in only 12 of 239 months. That is a genuine point in
+      favour of the habit — and it is NOT the same claim as "a SIP always
+      works", which the Jan 2007 to Jan 2012 scenario above (-0.02% XIRR
+      over five years of monthly investing) directly contradicts.
+
+# Benchmarking. The Nifty 50 PRICE index (PRI) excludes dividends; a fund
+# that holds the same fifty stocks RECEIVES those dividends. So an index
+# fund can "beat its index" without any skill whatsoever — the gap is the
+# dividend yield, less fees and tracking error.
+#
+# This is why SEBI mandated benchmarking against TOTAL RETURN indices (TRI)
+# from 1 February 2018: before that, funds could be measured against a
+# benchmark that structurally understated itself by roughly the dividend
+# yield, flattering every fund compared to it.
+#
+# Source for the index: Yahoo Finance daily close for ^NSEI (Nifty 50 price
+# index), truncated at 31 March 2026. assets/data/nifty50-price-index.csv
+benchmark:
+  index_name: "Nifty 50 (price index, PRI)"
+  csv_path: "/assets/data/nifty50-price-index.csv"
+  source_url: "https://finance.yahoo.com/quote/%5ENSEI/history/"
+  source_label: "Yahoo Finance daily close, ^NSEI"
+  common_start: "2007-09-17"
+  common_end: "2026-03-31"
+  years: 18.5
+  index_pri_cagr: 9.03
+  fund_regular_cagr: 9.45
+  fund_minus_pri_pp: +0.42
+  tri_mandated_from: "1 February 2018"
+  note: >-
+    The fund out-returned the price index by 0.42 percentage points a year
+    over 18.5 years. None of that is manager skill — it is a passive index
+    fund. It is the dividend yield of the underlying fifty companies,
+    reduced by the fund's expense ratio and tracking error.

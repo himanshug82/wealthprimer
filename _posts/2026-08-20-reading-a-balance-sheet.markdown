@@ -70,9 +70,9 @@ Full three-year version, with FY22–FY24 for comparison, is on the
 | Other current liabilities | {{ bs.other_current_liabilities }} |
 | **Total Liabilities + Equity** | **{{ bs.total_liab_eq }}** |
 
-Read it left to right: Desi Bites owns ₹{{ bs.total_assets }}L worth of stuff.
-₹{{ bs.equity }}L of that belongs to its own shareholders; the rest —
-₹{{ bs.term_loan }}L in a term loan plus ₹{{ bs.payables | plus: bs.other_current_liabilities }}L
+Read it left to right: Desi Bites owns ₹{% include inr.html n=bs.total_assets %}L worth of stuff.
+₹{% include inr.html n=bs.equity %}L of that belongs to its own shareholders; the rest —
+₹{% include inr.html n=bs.term_loan %}L in a term loan plus ₹{{ bs.payables | plus: bs.other_current_liabilities }}L
 owed to suppliers and other short-term obligations — belongs to outsiders. Add
 the shareholders' share and the outsiders' share together, and you get back
 to total assets. That's the equation, working exactly as it should.

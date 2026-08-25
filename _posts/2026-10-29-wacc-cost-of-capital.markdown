@@ -118,8 +118,8 @@ Then the cost of debt, which for once comes straight out of the
 
 Now the weights. These use **market** values, not book values — the whole
 point is what capital costs today, and Desi Bites' equity is worth its
-₹{{ site.data.case_study.listing.market_cap }} Lakh market capitalisation at the IPO price, not the
-₹{{ site.data.case_study.listing.post_ipo_equity }} Lakh of book equity:
+₹{% include inr.html n=site.data.case_study.listing.market_cap %} Lakh market capitalisation at the IPO price, not the
+₹{% include inr.html n=site.data.case_study.listing.post_ipo_equity %} Lakh of book equity:
 
 | | ₹ Lakh | Weight |
 |---|---:|---:|
@@ -160,7 +160,7 @@ For illustration only.
 | Average borrowings | {{ bi_avg_debt }} |
 | **Cost of debt, pre-tax** | **{{ bi_kd }}%** |
 
-Its effective tax rate is also observable — ₹{{ bi_is25.tax }} Cr of tax on ₹{{ bi_is25.pbt }} Cr of
+Its effective tax rate is also observable — ₹{% include inr.html n=bi_is25.tax %} Cr of tax on ₹{% include inr.html n=bi_is25.pbt %} Cr of
 pre-tax profit, or {{ bi_tax_rate }}%. So Britannia's after-tax cost of debt is roughly
 {{ bi_kd }} × (1 − {{ bi_tax_rate }}%), a little over 6%.
 

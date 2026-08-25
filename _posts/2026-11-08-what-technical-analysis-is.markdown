@@ -84,8 +84,8 @@ analysing:
 Britannia (NSE: BRITANNIA), daily closing price, {{ ds.as_of }}. Source:
 [Yahoo Finance]({{ ds.source_url }}). Historical data, for illustration only.
 
-Two years, {{ ds.bars }} trading days. The stock peaked at ₹{{ ta.price_summary.period_high }} on
-{{ ta.major_decline.peak_date }}, fell {{ ta.major_decline.decline_pct }}% to ₹{{ ta.price_summary.period_low }} by {{ ta.major_decline.trough_date }},
+Two years, {{ ds.bars }} trading days. The stock peaked at ₹{% include inr.html n=ta.price_summary.period_high %} on
+{{ ta.major_decline.peak_date }}, fell {{ ta.major_decline.decline_pct }}% to ₹{% include inr.html n=ta.price_summary.period_low %} by {{ ta.major_decline.trough_date }},
 then spent a year recovering.
 
 A fundamental analyst looks at that and asks what changed about the business.

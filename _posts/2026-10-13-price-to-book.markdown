@@ -28,8 +28,8 @@ P/B = Price per Share / Book Value per Share
 
 | | |
 |---|---:|
-| IPO Price | ₹{{ listing.ipo_price }} |
-| ÷ Book Value per Share | ₹{{ listing.book_value_per_share }} |
+| IPO Price | ₹{% include inr.html n=listing.ipo_price %} |
+| ÷ Book Value per Share | ₹{% include inr.html n=listing.book_value_per_share %} |
 | **P/B** | **{{ db_pb }}x** |
 
 ## Worked example: Britannia Industries
@@ -39,7 +39,7 @@ module. For illustration only.
 
 | | |
 |---|---:|
-| Price ({{ bi_market.price_date }}) | ₹{{ bi_market.price }} |
+| Price ({{ bi_market.price_date }}) | ₹{% include inr.html n=bi_market.price %} |
 | ÷ Book Value per Share | ₹{{ bi_bvps | round: 2 }} |
 | **P/B** | **{{ bi_pb }}x** |
 

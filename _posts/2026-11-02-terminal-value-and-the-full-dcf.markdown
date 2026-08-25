@@ -115,7 +115,7 @@ after the lenders are paid, so subtract net debt:
 | **Equity value** | **{{ r.equity_value }}** |
 
 Desi Bites holds far more cash than debt after its IPO — net debt of
-₹{{ r.net_debt }} Lakh, i.e. net *cash* of ₹1,480 Lakh — so this step adds value rather
+₹{% include inr.html n=r.net_debt %} Lakh, i.e. net *cash* of ₹1,480 Lakh — so this step adds value rather
 than subtracting it. Subtracting a negative is a reliable place to fumble a
 sign; the sanity check is that a company with spare cash must be worth more
 than the same company without it.
@@ -124,20 +124,20 @@ than the same company without it.
 
 | | |
 |---|---:|
-| Equity value | ₹{{ r.equity_value }} Lakh |
+| Equity value | ₹{% include inr.html n=r.equity_value %} Lakh |
 | Shares outstanding | {{ r.shares_lakh }} lakh |
-| **Value per share** | **₹{{ r.value_per_share }}** |
+| **Value per share** | **₹{% include inr.html n=r.value_per_share %}** |
 
 ## The model disagrees with the market
 
-Desi Bites listed at ₹{{ r.ipo_price }}. This DCF says ₹{{ r.value_per_share }} — some 38% below the IPO price.
+Desi Bites listed at ₹{% include inr.html n=r.ipo_price %}. This DCF says ₹{% include inr.html n=r.value_per_share %} — some 38% below the IPO price.
 
 The tempting move here is to go back and adjust assumptions until the model
 agrees with the price. Resist it, thoroughly. A model tuned to match a price
 you already knew has told you nothing you didn't already know.
 
 The useful move is to run the logic backwards and ask: *what would have to be
-true* for ₹{{ r.ipo_price }} to be right? Holding the same forecast and the same WACC, that
+true* for ₹{% include inr.html n=r.ipo_price %} to be right? Holding the same forecast and the same WACC, that
 price implies a perpetual growth rate of **{{ dcf.reverse.implied_terminal_growth }}%** — a claim that Desi
 Bites grows at roughly the pace of the entire Indian economy, forever.
 
@@ -146,11 +146,11 @@ assumptions instead:
 
 | Scenario | Assumptions | Value per share |
 |---|---|---:|
-| Base case | Growth fading 18% → 10%, [EBITDA]({% post_url 2026-08-28-ebitda-margin %}) margin to 17.5% | ₹{{ r.value_per_share }} |
-| Market case | Growth 25% for five years, EBITDA margin to 20% | ₹{{ dcf.reverse.scenario_market_case }} |
-| Aggressive | Growth 30% for five years, EBITDA margin to 22% | ₹{{ dcf.reverse.scenario_aggressive }} |
+| Base case | Growth fading 18% → 10%, [EBITDA]({% post_url 2026-08-28-ebitda-margin %}) margin to 17.5% | ₹{% include inr.html n=r.value_per_share %} |
+| Market case | Growth 25% for five years, EBITDA margin to 20% | ₹{% include inr.html n=dcf.reverse.scenario_market_case %} |
+| Aggressive | Growth 30% for five years, EBITDA margin to 22% | ₹{% include inr.html n=dcf.reverse.scenario_aggressive %} |
 
-Now the ₹{{ r.ipo_price }} price says something specific and testable: it's priced for
+Now the ₹{% include inr.html n=r.ipo_price %} price says something specific and testable: it's priced for
 sustained 25–30% revenue growth with meaningful margin expansion. Whether
 that's optimistic or reasonable is a judgement about the business — but at
 least it's a judgement about something concrete, rather than a squabble about
@@ -217,8 +217,8 @@ print(f"Value per share  {equity / SHARES:8.2f}")
   subtracting a negative — which adds. Sanity-check the direction every time.
 - **Using the wrong share count.** Use the diluted, post-issue count, as the
   [EPS post]({% post_url 2026-10-09-eps %}) covered. Dividing by the pre-IPO count here would have
-  produced ₹497 a share instead of ₹{{ r.value_per_share }} — a 25% error from one wrong cell.
-- **Presenting the output as a precise number.** ₹{{ r.value_per_share }} is the arithmetic
+  produced ₹497 a share instead of ₹{% include inr.html n=r.value_per_share %} — a 25% error from one wrong cell.
+- **Presenting the output as a precise number.** ₹{% include inr.html n=r.value_per_share %} is the arithmetic
   consequence of a stack of estimates. It is not what the share is worth to
   two decimal places, and the next post is entirely about why.
 

@@ -16,7 +16,7 @@ with no share price at all. That changes here. Shortly after FY25 closed,
 Desi Bites converted to a public limited company and listed on {{ listing.exchange }}
 on {{ listing.listing_date }}, as **{{ listing.company_name_post_listing }}** — raising fresh growth
 capital by issuing {{ listing.fresh_issue_shares_lakh }} lakh new shares at an IPO price of
-₹{{ listing.ipo_price }}, on top of the {{ listing.pre_ipo_shares_lakh }} lakh shares that already existed. That's a
+₹{% include inr.html n=listing.ipo_price %}, on top of the {{ listing.pre_ipo_shares_lakh }} lakh shares that already existed. That's a
 fictional event, invented for this series — but it's what makes the next
 eight posts (Valuation & Market) possible, since valuation ratios need a
 share price to work with.
@@ -41,10 +41,10 @@ Book Value per Share = Total Equity / Shares Outstanding
 |---|---:|
 | Post-IPO Equity (₹ Lakh) | {{ listing.post_ipo_equity }} |
 | Post-IPO Shares Outstanding (Lakh) | {{ listing.post_ipo_shares_lakh }} |
-| **Book Value per Share** | **₹{{ listing.book_value_per_share }}** |
+| **Book Value per Share** | **₹{% include inr.html n=listing.book_value_per_share %}** |
 
 Post-IPO equity is the FY25 closing equity (₹678 Lakh) plus the
-₹{{ listing.ipo_proceeds }} Lakh raised in the fresh issue — the company's own accounting net
+₹{% include inr.html n=listing.ipo_proceeds %} Lakh raised in the fresh issue — the company's own accounting net
 worth grew the moment it took in fresh shareholder capital.
 
 ## Worked example: Britannia Industries, FY25
@@ -62,7 +62,7 @@ separate estimate. For illustration only.
 | **Book Value per Share** | **₹{{ bi_bs25.total_equity_owners | divided_by: bi_market.shares_outstanding_cr | round: 2 }}** |
 
 Genuinely a coincidence, not a designed one — Desi Bites' and Britannia's
-book values per share land in a similar range (₹{{ listing.book_value_per_share }} and
+book values per share land in a similar range (₹{% include inr.html n=listing.book_value_per_share %} and
 ₹{{ bi_bs25.total_equity_owners | divided_by: bi_market.shares_outstanding_cr | round: 2 }}) despite the two companies being wildly
 different in scale. Book value per share depends entirely on how many
 shares exist, which has nothing to do with how big or valuable a company

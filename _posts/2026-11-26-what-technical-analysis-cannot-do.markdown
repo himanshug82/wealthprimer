@@ -127,7 +127,7 @@ Yes — held at the right level of confidence.
 - **A compact description of what happened.** A candlestick chart genuinely
   packs more information into less space than any table of prices.
 - **Identifying where price has previously reacted.** The
-  ₹{{ ta.resistance_zone.low }}–₹{{ ta.resistance_zone.high }} band was tested seven times over seventeen months. That is a
+  ₹{% include inr.html n=ta.resistance_zone.low %}–₹{% include inr.html n=ta.resistance_zone.high %} band was tested seven times over seventeen months. That is a
   real, observable fact about this stock, not an interpretation.
 - **Imposing discipline.** Deciding in advance what would count as a break,
   and writing it down, is a genuinely useful habit — arguably more valuable

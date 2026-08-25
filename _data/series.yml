@@ -13,3 +13,6 @@
 - slug: mutual-funds
   title: "Mutual Funds, Minus the Marketing"
   description: "Rolling returns, expense ratios, drawdowns, SIP myths, and how to actually read a factsheet."
+- slug: tax
+  title: "The Tax Side of Investing"
+  description: "How capital gains, dividends and losses are actually taxed in India — mechanics first, with worked examples on real fund data."

@@ -37,15 +37,15 @@ happens.
 
 Britannia in late 2025 offers what looks like a beautiful example:
 
-- A peak on **{{ dt.cherry_picked_peak1_date }}** at **₹{{ dt.cherry_picked_peak1_high }}**
-- A trough between them at **₹{{ dt.trough_between_low }}**
-- A second peak on **{{ dt.cherry_picked_peak2_date }}** at **₹{{ dt.cherry_picked_peak2_high }}**
+- A peak on **{{ dt.cherry_picked_peak1_date }}** at **₹{% include inr.html n=dt.cherry_picked_peak1_high %}**
+- A trough between them at **₹{% include inr.html n=dt.trough_between_low %}**
+- A second peak on **{{ dt.cherry_picked_peak2_date }}** at **₹{% include inr.html n=dt.cherry_picked_peak2_high %}**
 
 The two peaks are **{{ dt.cherry_picked_peak_gap_pct }}%** apart — ₹9.50 on a ₹6,270 stock — separated by
 about two months. If you were looking for a double top, you could hardly ask
-for a cleaner one. The measured move projects to ₹{{ dt.measured_target }}.
+for a cleaner one. The measured move projects to ₹{% include inr.html n=dt.measured_target %}.
 
-And the direction was right. The stock fell from ₹{{ dt.cherry_picked_peak2_high }} to ₹{{ dt.close_at_series_end }} by
+And the direction was right. The stock fell from ₹{% include inr.html n=dt.cherry_picked_peak2_high %} to ₹{% include inr.html n=dt.close_at_series_end %} by
 {{ dt.lowest_low_date }} — a decline of {{ dt.decline_from_peak2_pct }}%.
 
 A post that stopped here would be a good advertisement for chart patterns.
@@ -63,9 +63,9 @@ stretch:
 
 | Date | High | |
 |---|---:|---|{% for h in dt.all_swing_highs_in_band %}
-| {{ h.date }} | ₹{{ h.high }} | {% if h.date == dt.cherry_picked_peak1_date %}← picked as "peak 1"{% elsif h.date == dt.cherry_picked_peak2_date %}← picked as "peak 2"{% endif %} |{% endfor %}
+| {{ h.date }} | ₹{% include inr.html n=h.high %} | {% if h.date == dt.cherry_picked_peak1_date %}← picked as "peak 1"{% elsif h.date == dt.cherry_picked_peak2_date %}← picked as "peak 2"{% endif %} |{% endfor %}
 
-Six swing highs, all inside a band of ₹{{ dt.band_low }} to ₹{{ dt.band_high }} — a range of just {{ dt.band_width_pct }}%.
+Six swing highs, all inside a band of ₹{% include inr.html n=dt.band_low %} to ₹{% include inr.html n=dt.band_high %} — a range of just {{ dt.band_width_pct }}%.
 
 And two details ruin the story completely:
 
@@ -87,7 +87,7 @@ exists if you select two of the six highs and quietly discard the other four.
 ## And the target was never reached
 
 One more thing, since we're being complete. The measured move projected
-₹{{ dt.measured_target }}. The lowest the stock actually traded was ₹{{ dt.lowest_low_after_peak2 }}, on the final day of
+₹{% include inr.html n=dt.measured_target %}. The lowest the stock actually traded was ₹{% include inr.html n=dt.lowest_low_after_peak2 %}, on the final day of
 the dataset. The target was **not reached**.
 
 So even granting the pattern, the specific quantitative prediction it makes —

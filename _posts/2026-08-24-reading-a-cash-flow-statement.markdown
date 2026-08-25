@@ -65,14 +65,14 @@ standard "indirect method":
 | Opening cash | {{ cf.opening_cash }} |
 | **Closing cash** | **{{ cf.closing_cash }}** |
 
-PAT for FY25 was ₹{{ is.pat }}L. Add back depreciation (a real cost, but not
+PAT for FY25 was ₹{% include inr.html n=is.pat %}L. Add back depreciation (a real cost, but not
 a cash one), adjust for the fact that inventory and receivables grew (cash
 tied up in stock and in what distributors owe, but haven't paid) while
 payables also grew (cash the company is temporarily holding onto before
-paying its own suppliers) — and operating cash comes out to ₹{{ cf.cfo }}L,
+paying its own suppliers) — and operating cash comes out to ₹{% include inr.html n=cf.cfo %}L,
 higher than PAT. From there, Desi Bites spent ₹{{ cf.cfi | abs }}L expanding
 the plant and used ₹{{ cf.cff | abs }}L net on loan repayment and dividends,
-landing at a closing cash balance of ₹{{ cf.closing_cash }}L — which is
+landing at a closing cash balance of ₹{% include inr.html n=cf.closing_cash %}L — which is
 exactly what shows up on the [balance
 sheet]({{ '/case-study/' | relative_url }}) for the same year.
 

@@ -84,7 +84,7 @@ Every volume spike above three times the 50-day average, across two years:
 
 | Date | Volume | vs 50-day avg | Close | Day's move |
 |---|---:|---:|---:|---:|{% for v in ta.volume_spikes %}
-| {{ v.date }} | {{ v.volume }} | {{ v.x_avg }}x | ₹{{ v.close }} | {{ v.change_pct }}% |{% endfor %}
+| {{ v.date }} | {{ v.volume }} | {{ v.x_avg }}x | ₹{% include inr.html n=v.close %} | {{ v.change_pct }}% |{% endfor %}
 
 Look at **27 March 2025**. It is by a wide margin the largest volume day in
 the dataset — {{ ta.volume_spikes[2].x_avg }} times the average — over 67 lakh shares against a

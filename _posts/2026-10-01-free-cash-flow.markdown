@@ -49,9 +49,9 @@ flows. For illustration only.
 | − Capex | {{ bi_cf25.capex }} |
 | **Free Cash Flow** | **{{ site.data.real_company.ratios.FY25.fcf }}** |
 
-For context, FY24's FCF (same filing) was ₹{{ bi_fcf24 }} crore — so FCF actually
+For context, FY24's FCF (same filing) was ₹{% include inr.html n=bi_fcf24 %} crore — so FCF actually
 *rose* year on year, even though operating cash flow itself fell slightly
-(₹{{ bi_cf24.cfo }} crore in FY24 versus ₹{{ bi_cf25.cfo }} crore in FY25). The reason is on the other
+(₹{% include inr.html n=bi_cf24.cfo %} crore in FY24 versus ₹{% include inr.html n=bi_cf25.cfo %} crore in FY25). The reason is on the other
 side of the formula — capex — which is exactly what the last post in this
 module, Capex Intensity, digs into.
 

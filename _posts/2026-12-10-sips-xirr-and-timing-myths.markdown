@@ -75,7 +75,7 @@ Historical data, for illustration only.
 
 | Scenario | Instalments | Invested | Final value | XIRR |
 |---|---:|---:|---:|---:|{% for sc in s.scenarios %}
-| {{ sc.label }} | {{ sc.instalments }} | ₹{{ sc.invested }} | ₹{{ sc.value }} | **{{ sc.xirr }}%** |{% endfor %}
+| {{ sc.label }} | {{ sc.instalments }} | ₹{% include inr.html n=sc.invested %} | ₹{% include inr.html n=sc.value %} | **{{ sc.xirr }}%** |{% endfor %}
 
 The full twenty-year row is the one that gets quoted: ₹23.9 lakh invested
 becomes ₹77.8 lakh. That's a real result and a good advertisement for the

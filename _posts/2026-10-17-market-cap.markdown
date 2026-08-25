@@ -27,9 +27,9 @@ Market Cap = Price per Share × Shares Outstanding
 
 | | |
 |---|---:|
-| IPO Price | ₹{{ listing.ipo_price }} |
+| IPO Price | ₹{% include inr.html n=listing.ipo_price %} |
 | × Shares Outstanding (Lakh) | {{ listing.post_ipo_shares_lakh }} |
-| **Market Cap** | **₹{{ listing.market_cap }} Lakh (₹80 Crore)** |
+| **Market Cap** | **₹{% include inr.html n=listing.market_cap %} Lakh (₹80 Crore)** |
 
 At ₹80 crore, Desi Bites Foods Ltd is a genuinely tiny listing —
 small/micro-cap territory, exactly what you'd expect for a company that
@@ -42,9 +42,9 @@ For illustration only.
 
 | | |
 |---|---:|
-| Price ({{ bi_market.price_date }}) | ₹{{ bi_market.price }} |
+| Price ({{ bi_market.price_date }}) | ₹{% include inr.html n=bi_market.price %} |
 | × Shares Outstanding (Crore) | {{ bi_market.shares_outstanding_cr }} |
-| **Market Cap** | **₹{{ bi_market.market_cap_cr | round: 0 }} Crore** |
+| **Market Cap** | **₹{% assign _mc = bi_market.market_cap_cr | round: 0 %}{% include inr.html n=_mc %} Crore** |
 
 At roughly ₹1.4 lakh crore, Britannia sits firmly in large-cap territory —
 about {{ cap_ratio }} times Desi Bites' market cap. The gap between the two

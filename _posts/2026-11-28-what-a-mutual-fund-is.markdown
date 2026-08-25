@@ -104,7 +104,7 @@ means nothing here can be read as a view on current markets.
 {{ f.name }}, {{ f.plan_regular }}. Source: [AMFI via mfapi.in]({{ f.source_url }}).
 Historical data, for illustration only.
 
-NAV went from ₹{{ f.regular_nav_start }} to ₹{{ f.regular_nav_end }} over twenty years. Note the log scale —
+NAV went from ₹{% include inr.html n=f.regular_nav_start %} to ₹{% include inr.html n=f.regular_nav_end %} over twenty years. Note the log scale —
 on a log axis, equal vertical distances are equal *percentage* moves, which
 is the honest way to show anything that compounds. On a linear axis, the 2008
 crash would look like a small notch near the bottom and the recent years

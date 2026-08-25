@@ -1,0 +1,118 @@
+# The Tax Side of Investing — worked examples for the series.
+#
+# IMPORTANT — how to keep this series accurate:
+# Rates below are as of FY 2026-27 and were verified against public sources
+# in August 2026, not written from memory. Budget 2026 left capital gains
+# rates unchanged from the Budget 2024 position.
+#
+# The Income-tax Act, 2025 REPLACED the Income-tax Act, 1961 with effect
+# from 1 April 2026. Rates and slabs carried over unchanged, but almost all
+# section numbers were renumbered (the old section 80C became 123), and
+# "Previous Year"/"Assessment Year" were replaced by a single "Tax Year".
+# The posts in this series therefore teach MECHANICS and deliberately avoid
+# leaning on section numbers, so they do not rot as the numbering settles.
+# Every post states the financial year its rules apply to.
+#
+# Worked examples are computed from the fund NAV history already committed
+# for the Mutual Funds series (assets/data/uti-nifty50-index-fund-nav.csv,
+# AMFI data via mfapi.in), so the tax arithmetic sits on real prices rather
+# than invented ones.
+
+rates:
+  financial_year: "FY 2026-27"
+  verified_on: "August 2026"
+  equity_stcg_pct: 20            # listed equity & equity-oriented funds, holding <= 12 months
+  equity_ltcg_pct: 12.5          # holding > 12 months
+  ltcg_annual_exemption: 125000  # per financial year, across all equity LTCG
+  equity_holding_months: 12
+  other_holding_months: 24       # unlisted shares, property, gold and the rest
+  cess_pct: 4                    # health & education cess, applied ON the tax
+  debt_funds_note: >-
+    Units of specified debt funds bought on or after 1 April 2023 are taxed
+    at the investor's slab rate whatever the holding period — no long-term
+    rate, no indexation.
+  carry_forward_years: 8
+  grandfathering_date: "2018-01-31"
+
+# Example A — lump sum, comfortably long-term, and enough gain that tax is
+# actually payable. Used in the equity post.
+example_lumpsum:
+  buy_date: "2020-04-01"
+  buy_nav: 54.1659
+  invested: 500000
+  units: 9230.8999
+  sell_date: "2026-03-31"
+  sell_nav: 153.8204
+  value: 1419901
+  gain: 919901
+  holding_days: 2190
+  term: "long"
+  exempt: 125000
+  taxable: 794901
+  tax_before_cess: 99363
+  tax_with_cess: 103337
+
+# Example B — a five-year SIP redeemed in one go. Each instalment is its own
+# tax lot with its own holding period, so ONE redemption produces 48
+# long-term lots and 12 short-term ones. Used in the FIFO/SIP post.
+# Note the outcome: a real Rs 88,376 gain on which NO tax is payable, because
+# the long-term gain sits under the annual exemption and the short-term lots
+# are at a loss that can be set off.
+example_sip:
+  monthly_amount: 10000
+  start: "2021-04-01"
+  last_instalment: "2026-03-01"
+  redemption_date: "2026-03-31"
+  redemption_nav: 153.8204
+  instalments_total: 60
+  long_term_lots: 48
+  short_term_lots: 12
+  invested: 600000
+  value: 688376
+  total_gain: 88376
+  long_term_gain: 100905
+  short_term_gain: -12529
+  short_term_loss_abs: 12529   # same figure as a positive number, for display
+  tax_payable: 0
+  why_zero: >-
+    The long-term gain is below the Rs 1,25,000 annual exemption, and the
+    short-term lots are at a loss, which can be set off. A real gain, and no
+    tax — but only because of where the exemption sits, not by any planning.
+
+# Example C — a two-year SIP that ended in a LOSS, thanks to the Q1 2026
+# decline visible in the fund NAV data. Used in the losses post, because a
+# loss split across long-term and short-term lots is exactly what the
+# set-off rules are about.
+example_loss:
+  monthly_amount: 10000
+  start: "2024-04-01"
+  redemption_date: "2026-03-31"
+  instalments: 24
+  invested: 240000
+  value: 221708
+  total_loss: -18292
+  total_loss_abs: 18292
+  long_term_loss: -5763
+  long_term_loss_abs: 5763
+  short_term_loss: -12529
+  short_term_loss_abs: 12529
+  long_term_lots: 12
+  short_term_lots: 12
+
+# Example D — grandfathering. Equity bought on or before 31 Jan 2018 takes
+# the HIGHER of actual cost and the 31 Jan 2018 value as its cost, capped at
+# the sale price. Used in the equity post.
+example_grandfathering:
+  buy_date: "2017-01-02"
+  buy_nav: 52.1370
+  invested: 200000
+  units: 3836.0473
+  fmv_date: "2018-01-31"
+  fmv_nav: 70.8353
+  fmv_value: 271728
+  sell_date: "2026-03-31"
+  sale_value: 590062
+  grandfathered_cost: 271728
+  gain_with_grandfathering: 318335
+  gain_without: 390062
+  gain_excluded: 71728

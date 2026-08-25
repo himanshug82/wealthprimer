@@ -107,11 +107,11 @@ One. In two years. And that single crossover, on {{ x.golden_cross.date }}:
 
 | | |
 |---|---:|
-| Close on the day | ₹{{ x.golden_cross.close }} |
-| 50-day SMA | ₹{{ x.golden_cross.sma50 }} |
-| 200-day SMA | ₹{{ x.golden_cross.sma200 }} |
-| Close three months later | ₹{{ x.golden_cross.close_3m_later }} |
-| Close at the end of the dataset | ₹{{ x.golden_cross.close_at_series_end }} |
+| Close on the day | ₹{% include inr.html n=x.golden_cross.close %} |
+| 50-day SMA | ₹{% include inr.html n=x.golden_cross.sma50 %} |
+| 200-day SMA | ₹{% include inr.html n=x.golden_cross.sma200 %} |
+| Close three months later | ₹{% include inr.html n=x.golden_cross.close_3m_later %} |
+| Close at the end of the dataset | ₹{% include inr.html n=x.golden_cross.close_at_series_end %} |
 
 Read that sequence honestly. Price rose about 10% over the following three
 months, which looks like a success. Then it gave all of it back and more,

@@ -76,7 +76,7 @@ two swing points and extending. No adjusting, no curves.
 Britannia (NSE: BRITANNIA), daily, September 2024 to March 2026. Source:
 [Yahoo Finance]({{ ta.dataset.source_url }}). Historical data, for illustration only.
 
-**The downtrend line.** Connect the {{ ta.major_decline.peak_date }} high of ₹{{ ta.major_decline.peak_high }} to the
+**The downtrend line.** Connect the {{ ta.major_decline.peak_date }} high of ₹{% include inr.html n=ta.major_decline.peak_high %} to the
 11 November 2024 high of ₹5,902.1 and extend. That line describes a fall of
 about ₹14.6 a day.
 
@@ -85,7 +85,7 @@ line sitting at ₹4,883.0. A margin of ₹2.4 — which tells you something
 important about how unclean these signals are in practice. On the day, that
 break would have looked like nothing at all.
 
-**The uptrend line.** Connect the {{ ta.major_decline.trough_date }} low of ₹{{ ta.major_decline.trough_low }} to the
+**The uptrend line.** Connect the {{ ta.major_decline.trough_date }} low of ₹{% include inr.html n=ta.major_decline.trough_low %} to the
 7 April 2025 low of ₹4,605.1 and extend. That line rises about ₹2.9 a day.
 
 It then held for **384 days** — every dip through the rest of 2025 found

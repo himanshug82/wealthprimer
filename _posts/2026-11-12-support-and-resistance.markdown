@@ -60,18 +60,18 @@ Britannia (NSE: BRITANNIA), daily, {{ ta.dataset.as_of }}. Source:
 
 Two areas stand out across these two years.
 
-**Resistance, roughly ₹{{ rz.low }}–₹{{ rz.high }}.** Seven separate swing highs landed in this
+**Resistance, roughly ₹{% include inr.html n=rz.low %}–₹{% include inr.html n=rz.high %}.** Seven separate swing highs landed in this
 band, spread across seventeen months:
 
 | Date | High reached |
 |---|---:|{% for t in rz.tests %}
-| {{ t.date }} | ₹{{ t.high }} |{% endfor %}
+| {{ t.date }} | ₹{% include inr.html n=t.high %} |{% endfor %}
 
-**Support, roughly ₹{{ sz.low }}–₹{{ sz.high }}.** Five separate swing lows found buyers here:
+**Support, roughly ₹{% include inr.html n=sz.low %}–₹{% include inr.html n=sz.high %}.** Five separate swing lows found buyers here:
 
 | Date | Low reached |
 |---|---:|{% for t in sz.tests %}
-| {{ t.date }} | ₹{{ t.low }} |{% endfor %}
+| {{ t.date }} | ₹{% include inr.html n=t.low %} |{% endfor %}
 
 Notice the spread. The resistance highs run from ₹6,145 to ₹6,469.9 — a range
 of over ₹300, or about 5%. Anyone who had drawn a precise line at ₹6,200
@@ -106,7 +106,7 @@ at the old ceiling now watches it become the floor, and some of them buy it
 back.
 
 Does it hold up here? Partly. The ₹4,500–4,750 support zone held five times.
-But look at the {{ ta.major_decline.trough_date }} low of ₹{{ ta.major_decline.trough_low }} — it broke *below* the
+But look at the {{ ta.major_decline.trough_date }} low of ₹{% include inr.html n=ta.major_decline.trough_low %} — it broke *below* the
 prior lows of ₹4,641 and ₹4,663.8 before recovering. If you had treated
 ₹4,640 as a hard floor, you'd have been wrong by about 3%, for about three
 weeks, before being right again.

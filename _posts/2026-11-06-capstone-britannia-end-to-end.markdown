@@ -139,7 +139,7 @@ not a finding.
 
 | Ratio | Britannia FY25 |
 |---|---:|
-| [Free cash flow]({% post_url 2026-10-01-free-cash-flow %}) | ₹{{ r.fcf }} Cr |
+| [Free cash flow]({% post_url 2026-10-01-free-cash-flow %}) | ₹{% include inr.html n=r.fcf %} Cr |
 | [OCF/PAT]({% post_url 2026-10-03-ocf-pat %}) | {{ r.ocf_pat }}x |
 | [Capex intensity]({% post_url 2026-10-05-capex-intensity %}) | {{ r.capex_intensity }}% |
 
@@ -155,7 +155,7 @@ better operations, and only one of them is repeatable.
 
 ## Step 7: what is the market paying?
 
-At the {{ mk.price_date }} closing price of ₹{{ mk.price }}:
+At the {{ mk.price_date }} closing price of ₹{% include inr.html n=mk.price %}:
 
 | Multiple | Britannia |
 |---|---:|
@@ -181,7 +181,7 @@ business's long-run trajectory.
 
 The natural next step would be a
 [discounted cash flow model]({% post_url 2026-11-02-terminal-value-and-the-full-dcf %}),
-a value per share, and a comparison against the ₹{{ mk.price }} price. This blog stops here, on
+a value per share, and a comparison against the ₹{% include inr.html n=mk.price %} price. This blog stops here, on
 purpose, and it's worth being straight about why.
 
 **The compliance reason.** Wealth Primer is educational. Publishing an

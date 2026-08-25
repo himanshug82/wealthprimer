@@ -51,7 +51,7 @@ From Britannia Industries' [audited consolidated FY25 results](https://media.bri
 
 Look at those two numbers next to each other: Britannia is a vastly bigger
 company than Desi Bites, yet its net working capital cushion
-(₹{{ site.data.real_company.ratios.FY25.net_working_capital }} crore) is proportionally much thinner relative to
+(₹{% include inr.html n=site.data.real_company.ratios.FY25.net_working_capital %} crore) is proportionally much thinner relative to
 its current liabilities than Desi Bites' is. That's not a red flag on its
 own — it's the first clue in a story the next two posts (Current Ratio,
 Quick Ratio) will unpack properly.

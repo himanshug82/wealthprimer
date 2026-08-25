@@ -32,11 +32,11 @@ that matters.
 
 | | |
 |---|---:|
-| IPO Price | ₹{{ listing.ipo_price }} |
-| ÷ Diluted EPS | ₹{{ listing.eps_diluted }} |
+| IPO Price | ₹{% include inr.html n=listing.ipo_price %} |
+| ÷ Diluted EPS | ₹{% include inr.html n=listing.eps_diluted %} |
 | **P/E** | **{{ db_pe }}x** |
 
-Worth seeing the mistake explicitly: had we used *undiluted* EPS (₹{{ listing.eps_undiluted }})
+Worth seeing the mistake explicitly: had we used *undiluted* EPS (₹{% include inr.html n=listing.eps_undiluted %})
 instead, P/E would come out to {{ db_wrong_pe }}x — a materially different, and
 wrong, number for a stock that just diluted its share count via a fresh
 issue.
@@ -52,8 +52,8 @@ signal to act on.
 
 | | |
 |---|---:|
-| Price ({{ bi_market.price_date }}) | ₹{{ bi_market.price }} |
-| ÷ EPS | ₹{{ bi_is25.eps }} |
+| Price ({{ bi_market.price_date }}) | ₹{% include inr.html n=bi_market.price %} |
+| ÷ EPS | ₹{% include inr.html n=bi_is25.eps %} |
 | **P/E** | **{{ bi_pe }}x** |
 
 A P/E of {{ bi_pe }}x means the market was pricing Britannia at roughly {{ bi_pe }} years of

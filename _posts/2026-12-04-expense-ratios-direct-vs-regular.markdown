@@ -86,9 +86,9 @@ Source: [AMFI via mfapi.in]({{ f.source_url }}). Historical data, for illustrati
 | | Regular | Direct |
 |---|---:|---:|
 | CAGR | {{ ei.regular_cagr }}% | {{ ei.direct_cagr }}% |
-| ₹1,00,000 grew to | ₹{{ ei.lumpsum_1lakh_regular }} | ₹{{ ei.lumpsum_1lakh_direct }} |
+| ₹1,00,000 grew to | ₹{% include inr.html n=ei.lumpsum_1lakh_regular %} | ₹{% include inr.html n=ei.lumpsum_1lakh_direct %} |
 
-A gap of **{{ ei.gap_pp }} percentage points a year**, worth ₹{{ ei.lumpsum_difference }} — about {{ ei.difference_pct }}% more money
+A gap of **{{ ei.gap_pp }} percentage points a year**, worth ₹{% include inr.html n=ei.lumpsum_difference %} — about {{ ei.difference_pct }}% more money
 for doing nothing except buying the same fund a different way.
 
 That's a modest number, and it's modest for a good reason: index funds are
@@ -101,10 +101,10 @@ second comparison the instructive one.
 | | Regular | Direct |
 |---|---:|---:|
 | CAGR | {{ ea.regular_cagr }}% | {{ ea.direct_cagr }}% |
-| ₹1,00,000 grew to | ₹{{ ea.lumpsum_1lakh_regular }} | ₹{{ ea.lumpsum_1lakh_direct }} |
+| ₹1,00,000 grew to | ₹{% include inr.html n=ea.lumpsum_1lakh_regular %} | ₹{% include inr.html n=ea.lumpsum_1lakh_direct %} |
 
 Here the gap is **{{ ea.gap_pp }} percentage points a year** — and on ₹1,00,000 over thirteen
-years that comes to **₹{{ ea.lumpsum_difference }}**, or {{ ea.difference_pct }}% more money.
+years that comes to **₹{% include inr.html n=ea.lumpsum_difference %}**, or {{ ea.difference_pct }}% more money.
 
 To be explicit about what this comparison is and isn't: the fund on both
 sides of that table is the *same fund*. This post takes no view on whether it

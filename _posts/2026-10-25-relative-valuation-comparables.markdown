@@ -68,25 +68,25 @@ companies, EV/EBITDA is usually the fairer comparison.
 
 ## Worked example: Desi Bites Foods Ltd at its IPO
 
-Desi Bites listed at ₹{{ listing.ipo_price }} a share on {{ listing.listing_date }}. Here's the full
+Desi Bites listed at ₹{% include inr.html n=listing.ipo_price %} a share on {{ listing.listing_date }}. Here's the full
 multiple set at that price, using the FY25 figures from the
 [case study](/case-study/):
 
 | Multiple | Calculation | Value |
 |---|---|---:|
-| P/E | ₹{{ listing.ipo_price }} / diluted EPS ₹{{ listing.eps_diluted }} | {{ db_pe }}x |
-| P/B | ₹{{ listing.ipo_price }} / BVPS ₹{{ listing.book_value_per_share }} | {{ db_pb }}x |
-| EV/EBITDA | EV ₹{{ listing.ev }} Lakh / EBITDA ₹441 Lakh | {{ db_evebitda }}x |
+| P/E | ₹{% include inr.html n=listing.ipo_price %} / diluted EPS ₹{% include inr.html n=listing.eps_diluted %} | {{ db_pe }}x |
+| P/B | ₹{% include inr.html n=listing.ipo_price %} / BVPS ₹{% include inr.html n=listing.book_value_per_share %} | {{ db_pb }}x |
+| EV/EBITDA | EV ₹{% include inr.html n=listing.ev %} Lakh / EBITDA ₹441 Lakh | {{ db_evebitda }}x |
 
 Notice how differently the same company looks depending on which lens you
 pick. The P/E of {{ db_pe }}x reads as a fairly demanding growth valuation. The
 EV/EBITDA of {{ db_evebitda }}x looks far more modest — because enterprise value
-subtracts the ₹{{ listing.post_ipo_cash }} Lakh of cash sitting on the post-IPO balance sheet, most
+subtracts the ₹{% include inr.html n=listing.post_ipo_cash %} Lakh of cash sitting on the post-IPO balance sheet, most
 of it the IPO proceeds themselves. Same company, same day, same price;
 two defensible-looking answers.
 
 That's not a flaw to be resolved. It's the method telling you something
-real: a large chunk of what an investor pays at ₹{{ listing.ipo_price }} is cash, not
+real: a large chunk of what an investor pays at ₹{% include inr.html n=listing.ipo_price %} is cash, not
 operating business, and any multiple that ignores the balance sheet will
 miss that.
 
@@ -99,9 +99,9 @@ Historical, for illustration only.
 
 | Multiple | Calculation | Value |
 |---|---|---:|
-| P/E | ₹{{ bi_market.price }} / EPS ₹90.45 | {{ m.pe }}x |
-| P/B | ₹{{ bi_market.price }} / BVPS ₹{{ m.book_value_per_share }} | {{ m.pb }}x |
-| EV/EBITDA | EV ₹{{ bi_market.ev_cr }} Cr / EBITDA ₹3,187.15 Cr | {{ m.ev_ebitda }}x |
+| P/E | ₹{% include inr.html n=bi_market.price %} / EPS ₹90.45 | {{ m.pe }}x |
+| P/B | ₹{% include inr.html n=bi_market.price %} / BVPS ₹{% include inr.html n=m.book_value_per_share %} | {{ m.pb }}x |
+| EV/EBITDA | EV ₹{% include inr.html n=bi_market.ev_cr %} Cr / EBITDA ₹3,187.15 Cr | {{ m.ev_ebitda }}x |
 
 ## Why you cannot simply compare these two
 

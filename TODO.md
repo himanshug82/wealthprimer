@@ -349,6 +349,99 @@ Mutual Funds, Minus the Marketing — roadmap
   calculators. Every post ships working Python instead; search the drafts
   for GOOGLE-SHEET-TODO.
 
+The Tax Side of Investing — roadmap (fifth series, beyond CLAUDE.md's four)
+
+- Scope decision (user-approved): a fifth series on how investment income is
+  actually taxed in India. Written MECHANICS-FIRST, deliberately light on
+  section numbers — see the accuracy note below for why that matters.
+- ACCURACY / STALENESS — read before editing any post in this series:
+  - Rates were VERIFIED against public sources in August 2026, not written
+    from memory. Budget 2026 left capital gains rates unchanged from the
+    Budget 2024 position: equity STCG 20%, equity LTCG 12.5% above a
+    Rs 1,25,000 annual exemption, debt funds bought on/after 1 Apr 2023 at
+    slab rate, 12-month holding period for listed securities and 24 for the
+    rest, plus 4% health & education cess on the tax itself.
+  - The Income-tax Act, 2025 REPLACED the Income-tax Act, 1961 from
+    1 April 2026 — i.e. exactly the period these posts describe. Rates and
+    slabs carried over unchanged, but nearly every section was renumbered
+    (old 80C became 123), "Previous Year"/"Assessment Year" collapsed into a
+    single "Tax Year", and Income Tax Rules 2026 replaced the 1962 Rules.
+  - That is why the series teaches mechanics and avoids citing section
+    numbers: holding periods, rates, set-off rules, FIFO and grandfathering
+    are stable, while the numbering is not. Every post states the financial
+    year its rules apply to.
+  - incometaxindia.gov.in blocks automated fetches (HTTP 403), so nothing
+    here is sourced from the primary text. Before publishing, these posts
+    are worth a pass by someone who files professionally.
+  - Every post carries a line saying it is educational and not tax advice,
+    on top of the standard site disclaimer.
+- Data: no new sourcing. Worked examples are computed from the fund NAV
+  history already committed for the Mutual Funds series
+  (assets/data/uti-nifty50-index-fund-nav.csv), so the tax arithmetic sits
+  on real prices. Derived figures in _data/tax.yml.
+- Roadmap, 9 posts, usual 2-day cadence:
+  - TAX-1 How investment income is taxed: the map (2026-12-16)
+  - TAX-2 Short-term vs long-term: the holding period decides (2026-12-18)
+  - TAX-3 Equity and equity funds (2026-12-20)
+  - TAX-4 Debt funds, gold and the rest (2026-12-22)
+  - TAX-5 Dividends and interest (2026-12-24)
+  - TAX-6 Losses: set-off, carry-forward and harvesting (2026-12-26)
+  - TAX-7 SIPs and FIFO: one redemption, many tax lots (2026-12-28)
+  - TAX-8 ELSS and the deduction that moved (2026-12-30)
+  - TAX-9 Before you file (2027-01-01)
+- Worked examples, all computed from real NAV data:
+  - Lump sum Rs 5,00,000 (Apr 2020 to Mar 2026): gain Rs 9,19,901, tax
+    Rs 99,363 before cess, Rs 1,03,337 with it.
+  - Five-year SIP (Rs 10,000/month, Apr 2021 to Mar 2026): ONE redemption
+    produces 48 long-term lots and 12 short-term ones. Real gain of
+    Rs 88,376 and ZERO tax — the long-term gain sits under the exemption
+    and the short-term lots are at a loss. Used for the FIFO post.
+  - Two-year SIP (Apr 2024 to Mar 2026): an actual LOSS of Rs 18,292, split
+    into a long-term and a short-term component by the Q1 2026 decline.
+    Used for the set-off post, since that split is the whole subject.
+  - Grandfathering: units bought Jan 2017 take their 31 Jan 2018 value as
+    cost, excluding Rs 71,728 of gain from tax.
+- TAX-1 to TAX-9 reviewed and scheduled (moved to _posts/):
+  how-investment-income-is-taxed (2026-12-16), short-term-vs-long-term
+  (2026-12-18), equity-and-equity-funds (2026-12-20),
+  debt-funds-gold-and-the-rest (2026-12-22), dividends-and-interest
+  (2026-12-24), losses-set-off-and-harvesting (2026-12-26), sips-and-fifo
+  (2026-12-28), elss-and-the-deduction-that-moved (2026-12-30),
+  before-you-file (2027-01-01). None link forward. Verified the site builds
+  on all 69 publish dates.
+- STILL OPEN for this series: have someone who files professionally read
+  these before they go out. Nothing here is sourced from the primary text of
+  the Act, because incometaxindia.gov.in blocks automated fetches.
+- Also added: `tax` entry in _data/series.yml and series/tax.markdown, so the
+  series appears at /series/ and /series/tax/ automatically.
+
+DONE — Indian number formatting in posts (site-wide)
+
+- CLAUDE.md asks for Indian digit grouping on currency (Rs 12,34,567), but
+  figures pulled from _data rendered bare ("Rs 919901"). Fixed across the
+  whole site: 166 currency outputs in 36 files now run through a new
+  _includes/inr.html.
+- IMPORTANT, do not "simplify" this into a plugin: the deploy workflow uses
+  actions/jekyll-build-pages, which runs Jekyll in SAFE MODE. A custom Liquid
+  filter in _plugins/ would work locally and be SILENTLY IGNORED in
+  production. The include is pure Liquid for that reason.
+- Two gotchas worth knowing if you extend it:
+  - Jekyll's include tag rejects array subscripts as parameters
+    (n=dcf.forecast[0].fcff fails to build). Pre-assign to a variable first.
+    The forecasting-free-cash-flow post does this.
+  - Do NOT apply the include to every numeric output. Values under 1,000 pass
+    through untouched, but a DATE string like "2026-03-31" would be mangled,
+    and a bare year would become "2,026". It is deliberately applied only to
+    Rs-prefixed currency outputs.
+- Verified by diffing the rendered text of all 69 posts before and after:
+  30 posts changed, and in every case the ONLY difference was inserted
+  comma separators.
+- Not done, and fine to leave: figures inside tables whose column header
+  says "Rs Lakh"/"Rs Crore" but which have no Rs prefix on the value itself
+  (e.g. Britannia revenue rendering as 17942.67). Formatting those means
+  targeting bare numeric outputs, which is where the date-mangling risk
+  lives, so it needs a more careful pass than a regex.
+
 Lower-priority, not done (say the word if you want these next)
 
 - DONE: Series index pages. /series/ lists all four tracks with a live

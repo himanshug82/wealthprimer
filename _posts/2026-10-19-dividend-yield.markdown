@@ -31,8 +31,8 @@ Desi Bites' FY25 dividend (₹84 Lakh) was paid before the IPO, to the
 
 | | |
 |---|---:|
-| Dividend per Share (FY25) | ₹{{ listing.dividend_per_share_fy25 }} |
-| ÷ IPO Price | ₹{{ listing.ipo_price }} |
+| Dividend per Share (FY25) | ₹{% include inr.html n=listing.dividend_per_share_fy25 %} |
+| ÷ IPO Price | ₹{% include inr.html n=listing.ipo_price %} |
 | **Dividend Yield** | **{{ db_yield }}%** |
 
 ## Worked example: Britannia Industries
@@ -45,8 +45,8 @@ only.
 
 | | |
 |---|---:|
-| Dividend per Share (FY25) | ₹{{ bi_market.dividend_per_share_fy25 }} |
-| ÷ Price ({{ bi_market.price_date }}) | ₹{{ bi_market.price }} |
+| Dividend per Share (FY25) | ₹{% include inr.html n=bi_market.dividend_per_share_fy25 %} |
+| ÷ Price ({{ bi_market.price_date }}) | ₹{% include inr.html n=bi_market.price %} |
 | **Dividend Yield** | **{{ bi_yield }}%** |
 
 Another coincidence worth flagging rather than reading too much into: both

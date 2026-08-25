@@ -1,0 +1,39 @@
+{%- comment -%}
+Formats a number with Indian digit grouping: 1234567.89 -> 12,34,567.89
+Usage:  {% include inr.html n=some.value %}
+
+Pure Liquid on purpose. The Pages deploy uses actions/jekyll-build-pages,
+which runs Jekyll in SAFE MODE, so a custom filter in _plugins/ would work
+locally and be silently ignored in production. Do not "simplify" this into
+a plugin without changing the workflow first.
+{%- endcomment -%}
+{%- assign _s = include.n | append: '' -%}
+{%- assign _neg = false -%}
+{%- if _s contains '-' -%}{%- assign _neg = true -%}{%- assign _s = _s | remove_first: '-' -%}{%- endif -%}
+{%- assign _parts = _s | split: '.' -%}
+{%- assign _int = _parts[0] -%}
+{%- assign _dec = '' -%}
+{%- if _parts.size > 1 -%}{%- assign _dec = _parts[1] -%}{%- endif -%}
+{%- assign _len = _int | size -%}
+{%- if _len <= 3 -%}
+{%- assign _out = _int -%}
+{%- else -%}
+{%- assign _out = _int | slice: -3, 3 -%}
+{%- assign _headlen = _len | minus: 3 -%}
+{%- assign _rem = _int | slice: 0, _headlen -%}
+{%- for _i in (1..12) -%}
+{%- assign _rlen = _rem | size -%}
+{%- if _rlen == 0 -%}{%- break -%}{%- endif -%}
+{%- if _rlen <= 2 -%}
+{%- assign _out = _rem | append: ',' | append: _out -%}
+{%- assign _rem = '' -%}
+{%- else -%}
+{%- assign _g = _rem | slice: -2, 2 -%}
+{%- assign _nl = _rlen | minus: 2 -%}
+{%- assign _rem = _rem | slice: 0, _nl -%}
+{%- assign _out = _g | append: ',' | append: _out -%}
+{%- endif -%}
+{%- endfor -%}
+{%- endif -%}
+{%- if _dec != '' -%}{%- assign _out = _out | append: '.' | append: _dec -%}{%- endif -%}
+{%- if _neg -%}-{%- endif -%}{{- _out -}}

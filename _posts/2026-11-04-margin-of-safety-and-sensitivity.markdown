@@ -12,7 +12,7 @@ series: fundamental-analysis
 ## A false sense of precision
 
 The [last post]({% post_url 2026-11-02-terminal-value-and-the-full-dcf %}) ended with a
-value of ₹{{ r.value_per_share }} a share for Desi Bites. Two decimal places. It looks like a
+value of ₹{% include inr.html n=r.value_per_share %} a share for Desi Bites. Two decimal places. It looks like a
 measurement.
 
 It isn't. It's the output of a chain of estimates — a growth rate that fades
@@ -21,7 +21,7 @@ on a schedule someone chose, a
 from a sector, an equity risk premium that reasonable people put anywhere in
 a two-point range, and a perpetual growth rate for a company that will
 outlive everyone reading this. Every one of those is arguable. The
-spreadsheet reports ₹{{ r.value_per_share }} because spreadsheets always report something.
+spreadsheet reports ₹{% include inr.html n=r.value_per_share %} because spreadsheets always report something.
 
 This post is about the two habits that keep a discounted cash flow (DCF)
 model honest: showing how much
@@ -41,12 +41,12 @@ growth rates:
 |---|{% for c in s.terminal_growth_cols %}---:|{% endfor %}{% for row in s.rows %}
 | {{ row.wacc }}% |{% for v in row.values %} {{ v }} |{% endfor %}{% endfor %}
 
-The base case sits in the middle at ₹{{ r.value_per_share }}. But move one percentage point
+The base case sits in the middle at ₹{% include inr.html n=r.value_per_share %}. But move one percentage point
 in each direction on both inputs — a range no analyst would call
 unreasonable — and the answer runs from about **₹334 to ₹525**. The high end
 is 57% above the low end.
 
-That's the honest output of this model. Not ₹{{ r.value_per_share }}, but "somewhere in the
+That's the honest output of this model. Not ₹{% include inr.html n=r.value_per_share %}, but "somewhere in the
 high 300s to low 400s if my central assumptions hold, and plausibly ₹330 to
 ₹525 across assumptions I can't rule out."
 
@@ -144,7 +144,7 @@ defensible.
   cuts both ways, and a business that outperforms your fade assumption is
   worth more than your model says. Margin of safety is about surviving errors,
   not about assuming the worst case is the true case.
-- **Believing precision equals accuracy.** ₹{{ r.value_per_share }} is precise. Whether it's
+- **Believing precision equals accuracy.** ₹{% include inr.html n=r.value_per_share %} is precise. Whether it's
   accurate depends entirely on assumptions no spreadsheet can check.
 
 **Takeaway:** A DCF produces a number, but what it actually supports is a

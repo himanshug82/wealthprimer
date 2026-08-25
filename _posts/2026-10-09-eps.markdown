@@ -36,9 +36,9 @@ EPS = PAT / Shares Outstanding
 |---|---:|
 | FY25 PAT (₹ Lakh) | 209 |
 | ÷ Pre-IPO shares (Lakh) | {{ listing.pre_ipo_shares_lakh }} |
-| **Undiluted EPS** | **₹{{ listing.eps_undiluted }}** |
+| **Undiluted EPS** | **₹{% include inr.html n=listing.eps_undiluted %}** |
 | ÷ Post-IPO shares (Lakh) | {{ listing.post_ipo_shares_lakh }} |
-| **Diluted EPS** | **₹{{ listing.eps_diluted }}** |
+| **Diluted EPS** | **₹{% include inr.html n=listing.eps_diluted %}** |
 
 Same ₹209 Lakh of profit, two different EPS figures depending on which
 share count you divide by. An investor who bought shares at the IPO owns a
@@ -53,7 +53,7 @@ From Britannia Industries' [audited consolidated FY25 results](https://media.bri
 
 | | |
 |---|---:|
-| **EPS (basic and diluted)** | **₹{{ bi_is25.eps }}** |
+| **EPS (basic and diluted)** | **₹{% include inr.html n=bi_is25.eps %}** |
 
 Britannia's basic and diluted EPS are the same number here, because there
 was no fresh share issuance during FY25 to create the kind of gap Desi

@@ -83,7 +83,7 @@ large bases are harder to grow, and the fade is the norm. Assume otherwise
 and you should be able to say why.
 
 Also note what the capex assumption is doing. Desi Bites raised
-₹{{ site.data.case_study.listing.ipo_proceeds }} Lakh in its IPO explicitly to expand. Modelling flat capex
+₹{% include inr.html n=site.data.case_study.listing.ipo_proceeds %} Lakh in its IPO explicitly to expand. Modelling flat capex
 while that cash sits on the balance sheet would give you the cash *and* the
 growth for free. If the money is being spent, the model has to spend it.
 
@@ -108,7 +108,7 @@ All figures ₹ Lakh, built off the FY25 actuals in the
 
 Now read the FCFF row, because it tells a story the revenue row hides.
 Revenue climbs smoothly every single year. Free cash flow does not — it sits
-at ₹{{ dcf.forecast[0].fcff }} Lakh in FY26 and ₹{{ dcf.forecast[1].fcff }} Lakh in FY27, then jumps to ₹{{ dcf.forecast[2].fcff }} Lakh in
+at ₹{% assign _f0 = dcf.forecast[0].fcff %}{% include inr.html n=_f0 %} Lakh in FY26 and ₹{% assign _f1 = dcf.forecast[1].fcff %}{% include inr.html n=_f1 %} Lakh in FY27, then jumps to ₹{% assign _f2 = dcf.forecast[2].fcff %}{% include inr.html n=_f2 %} Lakh in
 FY28 and keeps climbing.
 
 Nothing improved operationally in FY28. Capex intensity simply dropped from

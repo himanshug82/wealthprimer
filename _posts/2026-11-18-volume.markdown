@@ -1,0 +1,163 @@
+---
+layout: post
+title: "Volume: how much conviction was behind the move"
+date: 2026-11-18 09:00:00 +0530
+series: technical-analysis
+---
+
+{% assign ta = site.data.ta %}
+
+## The second dimension
+
+Every chart so far in this series has been about price. But each bar carries
+a second number that most beginners scroll past: **volume**, the number of
+shares that changed hands.
+
+Price tells you where buyers and sellers agreed. Volume tells you how many
+of them were involved in the agreement. A 3% rise on a quiet Tuesday and a 3%
+rise on the heaviest trading day of the year are the same move on a line
+chart and very different events.
+
+The standard framing is that volume measures *conviction*. That's a decent
+intuition, but it needs one correction immediately, because it's the thing
+almost everyone gets wrong.
+
+## Every trade has two sides
+
+You will constantly read that "buying volume" pushed a stock up, or that
+"selling volume" drove it down. Taken literally this is nonsense: every share
+bought was sold by someone. Volume is not a measure of buyers exceeding
+sellers, because buyers can never exceed sellers. They match exactly, always.
+
+What volume actually measures is **participation** — how much the asset
+changed hands. High volume means many people revised their view enough to act
+on it. It says nothing, by itself, about which direction they were leaning.
+
+Hold onto that, because the chart below makes the point better than any
+argument could.
+
+<details markdown="1">
+<summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
+
+Imagine a school playground where kids swap trading cards.
+
+The **price** is how many sweets one card is worth today. The **volume** is
+how many cards actually got swapped.
+
+If one card gets swapped and the price jumps, maybe two kids were being
+silly. If four hundred cards get swapped and the price jumps, something real
+happened — a rumour that the card is being discontinued, maybe.
+
+But here's the catch: for every kid who *got* a card, another kid *gave one
+away*. So a busy day doesn't mean everyone wanted to buy. It means everyone
+wanted to *trade*. Those are different things.
+
+</details>
+
+## The conventional readings
+
+The usual claims about volume, stated as most sources state them:
+
+| Pattern | Conventional reading |
+|---|---|
+| Price rises on rising volume | Move has participation behind it |
+| Price rises on falling volume | Fewer participants; move may be running out |
+| Price falls on rising volume | Selling has conviction behind it |
+| Volume spike at an extreme | Possible exhaustion — the last of the crowd acting |
+| Breakout on heavy volume | More persuasive than a breakout on light volume |
+
+That last row is the one with the most practical use. A price pushing through
+a [resistance zone]({% post_url 2026-11-12-support-and-resistance %}) on triple the usual
+volume means a lot of people participated in that decision. The same
+breakout on thin volume could be a handful of orders in a quiet session.
+
+Now here is where the conventional readings meet reality.
+
+## The chart, and the day that breaks the story
+
+![Britannia price with volume]({{ '/assets/charts/ta-volume.svg' | relative_url }})
+
+Britannia (NSE: BRITANNIA), daily, {{ ta.dataset.as_of }}. Source:
+[Yahoo Finance]({{ ta.dataset.source_url }}). Historical data, for illustration only.
+
+Every volume spike above three times the 50-day average, across two years:
+
+| Date | Volume | vs 50-day avg | Close | Day's move |
+|---|---:|---:|---:|---:|{% for v in ta.volume_spikes %}
+| {{ v.date }} | {{ v.volume }} | {{ v.x_avg }}x | ₹{{ v.close }} | {{ v.change_pct }}% |{% endfor %}
+
+Look at **27 March 2025**. It is by a wide margin the largest volume day in
+the dataset — {{ ta.volume_spikes[2].x_avg }} times the average — over 67 lakh shares against a
+median day of about 2,96,000. If volume signalled direction, something
+dramatic should have happened.
+
+The close moved **−0.2%**.
+
+Enormous participation, no price change. Something moved a very large number
+of shares between holders that day — an index rebalancing, a block deal, a
+large fund repositioning — and the price barely noticed, because the buying
+and selling were matched by design.
+
+Contrast it with **12 November 2024**: 6.7 times average volume and a −7.5%
+day. Same category of signal on a volume screen; completely different event.
+
+Volume tells you *how many*. It does not tell you *which way*. You need the
+price to tell you that, and you need the news to tell you why.
+
+## Volume in Indian markets: two practical cautions
+
+**Delivery volume matters.** Indian exchanges publish delivery percentage —
+the share of traded volume that resulted in actual delivery rather than
+being squared off intraday. A day with huge volume but 20% delivery is mostly
+day traders passing shares around; 70% delivery means people took real
+positions. NSE and BSE both publish this, and it's more informative than raw
+volume.
+
+**Volume is exchange-specific.** A stock listed on both NSE and BSE has
+separate volume on each. Charts usually show one. It's rarely a problem for
+large caps, where NSE dominates, but it's worth knowing what your chart is
+counting.
+
+## Doing it in Python
+
+```python
+import pandas as pd
+
+df = pd.read_csv("britannia-ohlcv-2024-04-to-2026-03.csv",
+                 parse_dates=["date"]).set_index("date")
+
+df["vol_avg50"] = df.volume.rolling(50).mean()
+df["vol_ratio"] = df.volume / df.vol_avg50
+df["day_move"]  = df.close.pct_change() * 100
+
+spikes = df[df.vol_ratio > 3]
+print(spikes[["volume", "vol_ratio", "close", "day_move"]].round(2))
+```
+
+The always-useful comparison is volume *relative to its own recent average*,
+never volume in absolute terms. Half a million shares is enormous for one
+stock and a quiet morning for another.
+
+## Common mistakes
+
+- **Talking about "buying volume" and "selling volume."** Every trade has a
+  buyer and a seller. Volume measures participation, not the balance of
+  intent.
+- **Reading a volume spike as directional.** As 27 March 2025 shows plainly,
+  the largest volume day in two years moved the close by −0.2%.
+- **Comparing raw volume across stocks.** Only the ratio to that stock's own
+  average means anything.
+- **Ignoring index rebalancing, block deals, and expiry days.** These
+  generate enormous volume for structural reasons that have nothing to do
+  with anyone's view of the company.
+- **Forgetting the delivery percentage.** High volume with low delivery is
+  churn, not accumulation.
+- **Expecting volume to confirm on demand.** Plenty of genuine, durable moves
+  happen on unremarkable volume. Absence of a volume spike is not evidence
+  against a move.
+
+**Takeaway:** Volume measures how many shares changed hands, which is
+participation — not the balance of buyers over sellers, because that balance
+is always exactly zero. Compare it to the stock's own recent average, use it
+to judge how many people were involved in a move, and remember the largest
+volume day in this entire dataset moved the price by two-tenths of a percent.

@@ -1,0 +1,194 @@
+# Technical Analysis — Zero to Hero: the price data behind every chart in
+# the series, plus the specific, verified events each post is built on.
+#
+# SOURCE: Yahoo Finance historical daily OHLCV for BRITANNIA.NS (NSE).
+#   https://finance.yahoo.com/quote/BRITANNIA.NS/history/
+# The full series is committed at
+#   assets/data/britannia-ohlcv-2024-04-to-2026-03.csv
+# (495 daily bars, 2024-04-01 to 2026-03-30, no missing bars).
+#
+# WHY BRITANNIA: same anchor company as the Jargon, Decoded and Fundamental
+# Analysis series, so a reader can connect what the charts show to the
+# financials already covered in _data/real_company.yml.
+#
+# LAG CHECK (CLAUDE.md compliance guardrail 2): the series ENDS
+# 2026-03-30. The earliest TA post publishes 2026-11-08, i.e. over
+# seven months later — comfortably past the 3-month rule. Do NOT extend this
+# dataset toward the present without re-checking that gap.
+#
+# SOURCE CROSS-CHECK: this feed's close for 30 June 2025 is Rs 5851.00,
+# which matches the price already committed in _data/real_company.yml's
+# `market:` block from the same source. The two series are consistent.
+#
+# Every figure below is DERIVED from the CSV, not typed by hand. Indicator
+# conventions: SMA is a simple rolling mean; RSI is 14-period Wilder
+# smoothing (alpha = 1/14, EWM); MACD is EMA(12) - EMA(26) with a 9-period
+# EMA signal line. Values quoted from an indicator always exclude its warmup
+# window — see `warmup_note`.
+
+dataset:
+  symbol: "BRITANNIA.NS"
+  exchange: "NSE"
+  currency: "INR"
+  bars: 495
+  start: "2024-04-01"
+  end: "2026-03-30"
+  csv_path: "/assets/data/britannia-ohlcv-2024-04-to-2026-03.csv"
+  source_url: "https://finance.yahoo.com/quote/BRITANNIA.NS/history/"
+  source_label: "Yahoo Finance daily historical OHLCV, BRITANNIA.NS"
+  as_of: "Daily bars, 1 April 2024 to 30 March 2026"
+  warmup_note: >-
+    An indicator needs history before it means anything. RSI over the first
+    ~14 bars and MACD over the first ~35 bars of any series are warmup
+    artefacts — the very first RSI reading in this dataset computes as 100.0
+    purely because no down-day had occurred yet. Every RSI/MACD figure below
+    is taken after its warmup window.
+
+price_summary:
+  first_close: 4895.2
+  last_close: 5423.0
+  period_high: 6469.9
+  period_high_date: "2024-10-03"
+  period_low: 4506.0
+  period_low_date: "2025-03-04"
+  median_daily_volume: 296418
+
+# The big move in this dataset: a peak in Oct 2024 followed by a five-month
+# decline. Used for trend lines, support/resistance and drawdown.
+major_decline:
+  peak_date: "2024-10-03"
+  peak_high: 6469.9
+  trough_date: "2025-03-04"
+  trough_low: 4506.0
+  decline_pct: -30.4
+
+# A price band the stock repeatedly failed to clear — seven separate swing
+# highs between Rs 6,145 and Rs 6,470 across 17 months.
+resistance_zone:
+  low: 6145
+  high: 6470
+  tests:
+    - { date: "2024-10-03", high: 6469.9 }
+    - { date: "2025-09-04", high: 6336.0 }
+    - { date: "2025-10-17", high: 6149.0 }
+    - { date: "2025-11-10", high: 6261.5 }
+    - { date: "2025-12-16", high: 6145.0 }
+    - { date: "2026-01-07", high: 6271.0 }
+    - { date: "2026-02-25", high: 6208.5 }
+
+support_zone:
+  low: 4500
+  high: 4750
+  tests:
+    - { date: "2024-04-19", low: 4641.0 }
+    - { date: "2024-11-21", low: 4746.9 }
+    - { date: "2024-12-23", low: 4663.8 }
+    - { date: "2025-03-04", low: 4506.0 }
+    - { date: "2025-04-07", low: 4605.1 }
+
+# Exactly ONE 50/200 SMA crossover occurs in two years of data, and no death
+# cross at all. That scarcity is the point the moving-average post makes:
+# a signal this rare cannot be evaluated from one chart.
+sma_crossover:
+  golden_cross_count: 1
+  death_cross_count: 0
+  golden_cross:
+    date: "2025-06-04"
+    close: 5542.0
+    sma50: 5321.8
+    sma200: 5307.6
+    close_3m_later: 6083.0
+    close_at_series_end: 5423.0
+
+# Two RSI episodes that point in opposite directions, both real, both in this
+# dataset. The honest RSI post uses them together.
+rsi:
+  period: 14
+  days_above_70: 44
+  days_below_30: 18
+  overbought_but_kept_rising:
+    date: "2024-07-09"
+    rsi: 70.6
+    close: 5668.9
+    close_later: 6338.1
+    later_date: "2024-09-30"
+    change_pct: 11.8
+  overbought_then_fell:
+    date: "2024-09-20"
+    rsi: 72.0
+    close: 6210.6
+    close_later: 4575.2
+    later_date: "2025-03-04"
+    change_pct: -26.3
+  oversold_but_kept_falling:
+    date: "2024-11-12"
+    rsi: 23.2
+    close: 5027.6
+    close_later: 4575.2
+    later_date: "2025-03-04"
+    change_pct: -9.0
+
+macd:
+  fast: 12
+  slow: 26
+  signal: 9
+  bullish_crossovers: 15
+  bearish_crossovers: 16
+  total_crossovers: 31
+  bars_measured: 460
+  avg_trading_days_between_signals: 15
+
+# Volume spikes above 3x the 50-day average. Note 27 March 2025: the single
+# largest volume day in the dataset moved the close by -0.2%. Volume alone
+# says almost nothing about direction.
+volume_spikes:
+  - { date: "2024-08-05", volume: 1114298, x_avg: 3.3, close: 5698.0, change_pct: -0.4 }
+  - { date: "2024-11-12", volume: 2441209, x_avg: 6.7, close: 5028.0, change_pct: -7.5 }
+  - { date: "2025-03-27", volume: 6750074, x_avg: 13.2, close: 4841.0, change_pct: -0.2 }
+  - { date: "2025-08-06", volume: 1123534, x_avg: 4.0, close: 5402.0, change_pct: -4.1 }
+  - { date: "2025-08-26", volume: 1307463, x_avg: 4.0, close: 5766.0, change_pct: 3.9 }
+  - { date: "2025-09-04", volume: 1385580, x_avg: 3.8, close: 6083.0, change_pct: 3.0 }
+  - { date: "2025-11-11", volume: 2154927, x_avg: 5.7, close: 5950.0, change_pct: -3.0 }
+  - { date: "2026-01-27", volume: 1044402, x_avg: 3.6, close: 5886.0, change_pct: 0.9 }
+
+# NOT a clean double top — and that is precisely why it is in the series.
+#
+# Between Sep 2025 and Feb 2026 the stock printed SIX swing highs inside a
+# ~3% band (6,145 to 6,336). A pattern-hunter can pick the 10 Nov 2025 and
+# 7 Jan 2026 highs — 0.15% apart, two months apart, with a trough between —
+# and present a textbook double top. But that reading only survives by
+# ignoring the four other highs at the same level, including the HIGHEST of
+# them all (6,336 on 4 Sep 2025), which came BEFORE both of the chosen peaks.
+#
+# Read honestly, this is a range oscillating under the resistance_zone
+# above, not a reversal pattern. The chart-patterns post uses it to show how
+# a pattern appears when you select two points and discard the rest, and the
+# limitations post refers back to it.
+apparent_double_top:
+  is_genuine_pattern: false
+  all_swing_highs_in_band:
+    - { date: "2025-09-04", high: 6336.0 }   # highest of the six, and earliest
+    - { date: "2025-10-17", high: 6149.0 }
+    - { date: "2025-11-10", high: 6261.5 }   # "peak 1" if cherry-picked
+    - { date: "2025-12-16", high: 6145.0 }
+    - { date: "2026-01-07", high: 6271.0 }   # "peak 2" if cherry-picked
+    - { date: "2026-02-25", high: 6208.5 }   # came AFTER the supposed confirmation
+  band_low: 6145.0
+  band_high: 6336.0
+  band_width_pct: 3.1
+  cherry_picked_peak1_date: "2025-11-10"
+  cherry_picked_peak1_high: 6261.5
+  cherry_picked_peak2_date: "2026-01-07"
+  cherry_picked_peak2_high: 6271.0
+  cherry_picked_peak_gap_pct: 0.15
+  trough_between_date: "2025-11-11"
+  trough_between_low: 5723.0
+  # If the cherry-picked reading were traded, the textbook measured move
+  # (neckline minus pattern height) targets 5,175 and was never reached.
+  neckline: 5723.0
+  measured_target: 5175.0
+  lowest_low_after_peak2: 5364.5
+  lowest_low_date: "2026-03-30"
+  close_at_series_end: 5423.0
+  decline_from_peak2_pct: -13.5
+  target_reached: false

@@ -444,8 +444,9 @@ DONE — Indian number formatting in posts (site-wide)
 
 Lower-priority, not done (say the word if you want these next)
 
-- DONE: Series index pages. /series/ lists all four tracks with a live
-  published-post count; /series/<slug>/ lists that series' posts in reading
+- DONE: Series index pages. /series/ lists every track in _data/series.yml
+  with a live published-post count (the count of series is rendered from the
+  data too, so adding a sixth series cannot leave stale copy behind); /series/<slug>/ lists that series' posts in reading
   order (oldest first, since these are learning series). Built from
   _data/series.yml plus each post's `series:` front matter, so adding a post
   needs no page edits. New: _layouts/series.html, series.markdown, and

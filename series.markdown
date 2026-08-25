@@ -4,7 +4,7 @@ title: "Series"
 permalink: /series/
 ---
 
-Wealth Primer is organised into four learning series. Each one is written to be
+Wealth Primer is organised into {{ site.data.series | size }} learning series. Each one is written to be
 read in order — later posts link back to earlier ones instead of re-explaining
 the same ground twice.
 

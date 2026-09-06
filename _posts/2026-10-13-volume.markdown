@@ -3,7 +3,7 @@ layout: post
 title: "Volume: how much conviction was behind the move"
 description: "Price says where buyers and sellers agreed; volume says how many were involved. Reading conviction behind a move, and where volume analysis breaks down."
 image: /assets/og/volume.png
-date: 2026-11-18 09:00:00 +0530
+date: 2026-10-13 09:00:00 +0530
 series: technical-analysis
 ---
 
@@ -69,7 +69,7 @@ The usual claims about volume, stated as most sources state them:
 | Breakout on heavy volume | More persuasive than a breakout on light volume |
 
 That last row is the one with the most practical use. A price pushing through
-a [resistance zone]({% post_url 2026-11-12-support-and-resistance %}) on triple the usual
+a [resistance zone]({% post_url 2026-10-10-support-and-resistance %}) on triple the usual
 volume means a lot of people participated in that decision. The same
 breakout on thin volume could be a handful of orders in a quiet session.
 

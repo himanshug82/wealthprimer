@@ -3,7 +3,7 @@ layout: post
 title: "Capex Intensity: how capital-hungry the business actually is"
 description: "What share of revenue a company must plough back into plant and equipment just to keep going, and how capital-hungry business models show up in the numbers."
 image: /assets/og/capex-intensity.png
-date: 2026-10-05 09:00:00 +0530
+date: 2026-09-21 09:00:00 +0530
 series: jargon
 ---
 
@@ -16,7 +16,7 @@ series: jargon
 
 ## What capex intensity means
 
-The last post noted that Britannia's [Free Cash Flow]({% post_url 2026-10-01-free-cash-flow %}) rose year on year
+The last post noted that Britannia's [Free Cash Flow]({% post_url 2026-09-19-free-cash-flow %}) rose year on year
 partly because capex fell. **Capex Intensity** turns that observation into
 its own ratio: what share of revenue does a company have to plough back
 into fixed assets — plant, equipment, capacity — just to sustain or grow

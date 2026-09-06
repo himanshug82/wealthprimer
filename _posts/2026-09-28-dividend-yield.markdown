@@ -3,7 +3,7 @@ layout: post
 title: "Dividend Yield: how much cash you're paid back, relative to what you paid"
 description: "The cash a share pays back each year as a percentage of its price. How dividend yield is computed, and why an unusually high yield is often a falling price."
 image: /assets/og/dividend-yield.png
-date: 2026-10-19 09:00:00 +0530
+date: 2026-09-28 09:00:00 +0530
 series: jargon
 ---
 

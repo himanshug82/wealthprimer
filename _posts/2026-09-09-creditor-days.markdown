@@ -3,7 +3,7 @@ layout: post
 title: "Creditor Days: how long a company takes to pay its own suppliers"
 description: "How long a company takes to pay its own suppliers, and why stretching payables is interest-free funding right up until the point that it isn't."
 image: /assets/og/creditor-days.png
-date: 2026-09-11 09:00:00 +0530
+date: 2026-09-09 09:00:00 +0530
 series: jargon
 ---
 
@@ -15,7 +15,7 @@ series: jargon
 ## What creditor days means
 
 We've covered how long stock sits before it sells ([Inventory Days]({% post_url 2026-09-07-inventory-days %})) and
-how long customers take to pay ([Debtor Days]({% post_url 2026-09-09-debtor-days %})). **Creditor Days** — also called
+how long customers take to pay ([Debtor Days]({% post_url 2026-09-08-debtor-days %})). **Creditor Days** — also called
 Days Payable Outstanding (DPO), or payable days — flips the debtor-days
 question around: how many days does the company itself take to pay *its*
 suppliers?

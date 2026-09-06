@@ -3,7 +3,7 @@ layout: post
 title: "Interest Coverage: can operating profit comfortably pay the interest bill"
 description: "Whatever the debt load, can operating profit comfortably pay the interest bill? EBIT over interest, and why lenders reach for this ratio first."
 image: /assets/og/interest-coverage.png
-date: 2026-09-27 09:00:00 +0530
+date: 2026-09-17 09:00:00 +0530
 series: jargon
 ---
 
@@ -12,7 +12,7 @@ series: jargon
 
 ## What interest coverage means
 
-[Debt-to-Equity]({% post_url 2026-09-23-debt-to-equity %}) and the [Equity Multiplier]({% post_url 2026-09-25-equity-multiplier %}) both look at how much debt
+[Debt-to-Equity]({% post_url 2026-09-15-debt-to-equity %}) and the [Equity Multiplier]({% post_url 2026-09-16-equity-multiplier %}) both look at how much debt
 and leverage sit on the balance sheet. **Interest Coverage** asks a more
 immediate question: whatever the debt load, can the company comfortably
 afford the interest payments on it out of its regular operating profit?
@@ -70,7 +70,7 @@ the last two posts already showed: a company carrying genuinely light debt.
 - **Treating comfortable coverage as proof the debt itself is small.**
   Coverage measures serviceability, not size — a company can have very
   comfortable interest coverage and still carry a large absolute debt
-  load. That's what [Debt-to-Equity]({% post_url 2026-09-23-debt-to-equity %}) and Net Debt/EBITDA,
+  load. That's what [Debt-to-Equity]({% post_url 2026-09-15-debt-to-equity %}) and Net Debt/EBITDA,
   covered in the next post, are for.
 
 **Takeaway:** interest coverage measures whether a company's operating

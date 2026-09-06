@@ -3,7 +3,7 @@ layout: post
 title: "PEG: is the P/E actually justified by how fast the company is growing"
 description: "PEG divides P/E by the growth rate to ask whether a multiple is justified. A useful framing built on a genuinely fragile input, and how to treat it as one."
 image: /assets/og/peg-ratio.png
-date: 2026-10-21 09:00:00 +0530
+date: 2026-09-29 09:00:00 +0530
 series: jargon
 ---
 
@@ -17,7 +17,7 @@ series: jargon
 
 ## What PEG means
 
-[P/E]({% post_url 2026-10-11-price-to-earnings %}) told us how many years of current earnings the market is
+[P/E]({% post_url 2026-09-24-price-to-earnings %}) told us how many years of current earnings the market is
 charging for. It never asked how *fast* those earnings are growing — and a
 30x P/E on a company doubling profit every couple of years is a very
 different proposition from a 30x P/E on one barely growing at all. **PEG —

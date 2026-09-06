@@ -3,7 +3,7 @@ layout: post
 title: "Net Working Capital: the cushion for day-to-day operations"
 description: "Current assets minus current liabilities: the rupee cushion between short-term resources and short-term obligations, and when a large cushion is a bad sign."
 image: /assets/og/net-working-capital.png
-date: 2026-09-17 09:00:00 +0530
+date: 2026-09-12 09:00:00 +0530
 series: jargon
 ---
 
@@ -15,7 +15,7 @@ series: jargon
 ## What net working capital means
 
 The last module looked at the individual pieces of a company's operating
-cycle — [inventory]({% post_url 2026-09-07-inventory-days %}), [receivables]({% post_url 2026-09-09-debtor-days %}), and [payables]({% post_url 2026-09-11-creditor-days %}). This module
+cycle — [inventory]({% post_url 2026-09-07-inventory-days %}), [receivables]({% post_url 2026-09-08-debtor-days %}), and [payables]({% post_url 2026-09-09-creditor-days %}). This module
 asks a different question about the same balance sheet: does the company
 have enough short-term resources to comfortably cover its short-term
 obligations? **Net Working Capital (NWC)** is the starting point.

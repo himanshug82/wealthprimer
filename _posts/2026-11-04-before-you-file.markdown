@@ -3,7 +3,7 @@ layout: post
 title: "Before you file: the statement, the AIS, and what to reconcile"
 description: "The department already holds most of your numbers. Reconciling a capital gains statement against the AIS, and the checks worth doing before you submit."
 image: /assets/og/before-you-file.png
-date: 2027-01-01 09:00:00 +0530
+date: 2026-11-04 09:00:00 +0530
 series: tax
 ---
 
@@ -36,7 +36,7 @@ mismatches, not from honest arithmetic errors.
 The capital gains statement is the one that saves the most work. A
 consolidated statement from CAMS or KFintech covers most fund houses at once
 and does the FIFO matching for you — which, as
-[the SIP post]({% post_url 2026-12-28-sips-and-fifo %}) showed, is genuinely tedious by
+[the SIP post]({% post_url 2026-11-02-sips-and-fifo %}) showed, is genuinely tedious by
 hand when a single redemption touches sixty lots.
 
 ## Reading a capital gains statement
@@ -56,12 +56,12 @@ Four things worth verifying rather than assuming:
 **Grandfathering has been applied.** For equity bought on or before 31
 January 2018, the cost should be the higher of actual cost and the 31 January
 2018 value. Some statements handle this cleanly; check rather than assume, as
-[the equity post]({% post_url 2026-12-20-equity-and-equity-funds %}) showed it can exclude
+[the equity post]({% post_url 2026-10-29-equity-and-equity-funds %}) showed it can exclude
 a substantial slice of gain.
 
 **Debt units are split by purchase date.** Units bought before and on/after
 1 April 2023 follow different rules, per
-[the debt post]({% post_url 2026-12-22-debt-funds-gold-and-the-rest %}). If the statement
+[the debt post]({% post_url 2026-10-30-debt-funds-gold-and-the-rest %}). If the statement
 doesn't distinguish them, chase it.
 
 **The exemption is applied once, across everything.** A statement from one
@@ -98,7 +98,7 @@ deferring to either automatically.
 4. **Separate pre- and post-April-2023 debt units.**
 5. **Include switches** as redemptions.
 6. **Apply losses** — this year's, then anything carried forward, respecting
-   [the set-off rules]({% post_url 2026-12-26-losses-set-off-and-harvesting %}).
+   [the set-off rules]({% post_url 2026-11-01-losses-set-off-and-harvesting %}).
 7. **Reconcile against the AIS**, and file feedback on anything wrong.
 8. **Check TDS in Form 26AS** and claim credit for it.
 9. **Add {{ r.cess_pct }}% cess** on the computed tax.
@@ -115,8 +115,8 @@ ago, through a broker that no longer exists.
 ## What this series didn't cover
 
 Being clear about the edges, in the spirit of the honest closing posts in the
-[technical analysis]({% post_url 2026-11-26-what-technical-analysis-cannot-do %}) and
-[mutual funds]({% post_url 2026-12-14-reading-a-factsheet %}) series.
+[technical analysis]({% post_url 2026-10-17-what-technical-analysis-cannot-do %}) and
+[mutual funds]({% post_url 2026-10-26-reading-a-factsheet %}) series.
 
 - **Non-resident taxation.** NRIs face different rules, TDS on redemptions,
   and potentially a double-taxation treaty. Genuinely different subject.

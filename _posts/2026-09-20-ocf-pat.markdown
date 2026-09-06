@@ -3,7 +3,7 @@ layout: post
 title: "OCF/PAT: how much of reported profit actually shows up as cash"
 description: "An earnings quality check: how much reported profit turns up as real operating cash in the same year, and what a persistent gap between them tends to mean."
 image: /assets/og/ocf-pat.png
-date: 2026-10-03 09:00:00 +0530
+date: 2026-09-20 09:00:00 +0530
 series: jargon
 ---
 
@@ -84,7 +84,7 @@ finally showed up.
 - **Treating a very high ratio as automatically great.** A ratio far above
   1 can also mean a company is stretching its own suppliers unsustainably
   (borrowing time on payables) rather than genuinely collecting well — worth
-  checking [creditor days]({% post_url 2026-09-11-creditor-days %}) alongside it.
+  checking [creditor days]({% post_url 2026-09-09-creditor-days %}) alongside it.
 - **Using it as a standalone red flag without reading the actual cash flow
   statement.** A low OCF/PAT in one year could be a genuine quality-of-
   earnings concern, or it could be a one-off — like a large, deliberate

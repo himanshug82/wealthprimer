@@ -3,7 +3,7 @@ layout: post
 title: "Moving averages: smoothing the noise, at a price"
 description: "A moving average smooths price into something readable, and the price of that is lag. SMA versus EMA, crossovers, and how both behave in a sideways market."
 image: /assets/og/moving-averages.png
-date: 2026-11-16 09:00:00 +0530
+date: 2026-10-12 09:00:00 +0530
 series: technical-analysis
 ---
 
@@ -17,7 +17,7 @@ nothing to do with anything durable — a large order, a quiet holiday week,
 someone rebalancing a fund. Underneath that noise there may be a direction,
 and a **moving average** is the simplest tool for seeing it.
 
-Where a [trend line]({% post_url 2026-11-14-trend-lines %}) is a straight edge you draw by
+Where a [trend line]({% post_url 2026-10-11-trend-lines %}) is a straight edge you draw by
 hand through two chosen points, a moving average is computed from every
 price in its window — no choices about which points count.
 

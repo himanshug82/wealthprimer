@@ -3,7 +3,7 @@ layout: post
 title: "WACC: the discount rate, and where it actually comes from"
 description: "Where the discount rate comes from. Cost of equity via CAPM, cost of debt after tax, and how the two blend into the input that moves a DCF more than any other."
 image: /assets/og/wacc-cost-of-capital.png
-date: 2026-10-29 09:00:00 +0530
+date: 2026-10-03 09:00:00 +0530
 series: fundamental-analysis
 ---
 
@@ -14,7 +14,7 @@ series: fundamental-analysis
 
 ## The rate you were told to take as given
 
-The [last post]({% post_url 2026-10-27-discounting-time-value-of-money %}) discounted
+The [last post]({% post_url 2026-10-02-discounting-time-value-of-money %}) discounted
 cash flows at {{ w.wacc }}% and asked you to accept the number on faith. It also showed
 that this single input swings the answer more than almost anything else in a
 valuation. Time to earn it.

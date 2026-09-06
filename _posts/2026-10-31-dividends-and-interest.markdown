@@ -3,7 +3,7 @@ layout: post
 title: "Dividends and interest: taxed at your slab, with TDS on top"
 description: "Both are simply added to your income and taxed at your slab rate. What changed when the dividend distribution tax went, and how TDS arrives before you file."
 image: /assets/og/dividends-and-interest.png
-date: 2026-12-24 09:00:00 +0530
+date: 2026-10-31 09:00:00 +0530
 series: tax
 ---
 
@@ -42,7 +42,7 @@ in the highest slab, **dividend income is taxed more heavily than long-term
 capital gains on the same shares**.
 
 This is the reasoning behind a point made back in the
-[opening mutual funds post]({% post_url 2026-11-28-what-a-mutual-fund-is %}): choosing the IDCW option over
+[opening mutual funds post]({% post_url 2026-10-18-what-a-mutual-fund-is %}): choosing the IDCW option over
 growth doesn't create extra income. It converts what would have been a
 capital gain — taxed at {{ r.equity_ltcg_pct }}% with an exemption, and only when you choose to
 sell — into income taxed at your slab rate, now, whether you wanted it or

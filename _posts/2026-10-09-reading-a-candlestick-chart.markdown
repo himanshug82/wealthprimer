@@ -3,7 +3,7 @@ layout: post
 title: "Reading a candlestick chart: four prices in one bar"
 description: "Open, high, low and close packed into a single bar. How to read candlesticks, what bodies and wicks mean, and why a line chart throws most of it away."
 image: /assets/og/reading-a-candlestick-chart.png
-date: 2026-11-10 09:00:00 +0530
+date: 2026-10-09 09:00:00 +0530
 series: technical-analysis
 ---
 
@@ -11,7 +11,7 @@ series: technical-analysis
 
 ## Why not just a line?
 
-The [last post]({% post_url 2026-11-08-what-technical-analysis-is %}) showed Britannia's
+The [last post]({% post_url 2026-10-08-what-technical-analysis-is %}) showed Britannia's
 price as a simple line — one dot per day, joined up. It's readable, and it
 throws away most of the information.
 

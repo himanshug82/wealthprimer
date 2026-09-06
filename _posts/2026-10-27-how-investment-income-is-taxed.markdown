@@ -3,7 +3,7 @@ layout: post
 title: "How investment income is taxed in India: the map"
 description: "Capital gains, dividends and interest are taxed under genuinely different rules. The map of how investment income is taxed in India, mechanics first."
 image: /assets/og/how-investment-income-is-taxed.png
-date: 2026-12-16 09:00:00 +0530
+date: 2026-10-27 09:00:00 +0530
 series: tax
 ---
 
@@ -141,7 +141,7 @@ its date. That's post four in this series.
 | Before you file | Reading a capital gains statement against your AIS |
 
 Every worked example runs on the real fund NAV history used in the
-[Mutual Funds series]({% post_url 2026-11-28-what-a-mutual-fund-is %}), so the tax arithmetic sits on
+[Mutual Funds series]({% post_url 2026-10-18-what-a-mutual-fund-is %}), so the tax arithmetic sits on
 actual prices rather than round invented numbers.
 
 ## Common mistakes

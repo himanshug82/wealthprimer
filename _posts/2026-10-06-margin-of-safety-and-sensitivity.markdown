@@ -3,7 +3,7 @@ layout: post
 title: "Margin of safety: what to do with a valuation you don't fully trust"
 description: "A DCF gives a number to two decimals and supports a range. Sensitivity tables, margin of safety, and what to do with a valuation you don't fully trust."
 image: /assets/og/margin-of-safety-and-sensitivity.png
-date: 2026-11-04 09:00:00 +0530
+date: 2026-10-06 09:00:00 +0530
 series: fundamental-analysis
 ---
 
@@ -13,13 +13,13 @@ series: fundamental-analysis
 
 ## A false sense of precision
 
-The [last post]({% post_url 2026-11-02-terminal-value-and-the-full-dcf %}) ended with a
+The [last post]({% post_url 2026-10-05-terminal-value-and-the-full-dcf %}) ended with a
 value of ₹{% include inr.html n=r.value_per_share %} a share for Desi Bites. Two decimal places. It looks like a
 measurement.
 
 It isn't. It's the output of a chain of estimates — a growth rate that fades
 on a schedule someone chose, a
-[margin path]({% post_url 2026-10-31-forecasting-free-cash-flow %}) someone assumed, a beta borrowed
+[margin path]({% post_url 2026-10-04-forecasting-free-cash-flow %}) someone assumed, a beta borrowed
 from a sector, an equity risk premium that reasonable people put anywhere in
 a two-point range, and a perpetual growth rate for a company that will
 outlive everyone reading this. Every one of those is arguable. The

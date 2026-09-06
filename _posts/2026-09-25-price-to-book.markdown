@@ -3,7 +3,7 @@ layout: post
 title: "P/B: how much the market pays over accounting net worth"
 description: "How many rupees the market pays for each rupee of accounting net worth. P/B, why it pairs naturally with ROE, and where book value stops meaning much."
 image: /assets/og/price-to-book.png
-date: 2026-10-13 09:00:00 +0530
+date: 2026-09-25 09:00:00 +0530
 series: jargon
 ---
 
@@ -16,7 +16,7 @@ series: jargon
 
 ## What P/B means
 
-[Book Value per Share]({% post_url 2026-10-07-book-value-per-share %}) told us what a share is worth on the accounting
+[Book Value per Share]({% post_url 2026-09-22-book-value-per-share %}) told us what a share is worth on the accounting
 books. **P/B — Price-to-Book** — closes that gap: how many rupees is the
 market paying for each rupee of that accounting net worth?
 

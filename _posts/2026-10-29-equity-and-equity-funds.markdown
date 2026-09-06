@@ -3,7 +3,7 @@ layout: post
 title: "Equity and equity funds: 20%, 12.5%, and the ₹1.25 lakh that isn't taxed"
 description: "Listed shares and equity funds: the short-term and long-term rates, the annual exemption, cess and grandfathering, with worked examples on real fund NAVs."
 image: /assets/og/equity-and-equity-funds.png
-date: 2026-12-20 09:00:00 +0530
+date: 2026-10-29 09:00:00 +0530
 series: tax
 ---
 
@@ -44,7 +44,7 @@ the losses post later in this series.
 ## Worked example: a real gain, and real tax
 
 Using the fund NAV history from the
-[Mutual Funds series]({% post_url 2026-11-28-what-a-mutual-fund-is %}) — a ₹{% include inr.html n=a.invested %} investment held
+[Mutual Funds series]({% post_url 2026-10-18-what-a-mutual-fund-is %}) — a ₹{% include inr.html n=a.invested %} investment held
 comfortably past the long-term line:
 
 | | |

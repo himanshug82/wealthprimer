@@ -3,7 +3,7 @@ layout: post
 title: "What a mutual fund is, and why a ₹10 NAV isn't cheap"
 description: "Units, NAV, AMCs, and why a ₹10 NAV is not cheaper than a ₹400 one. The mechanics of how a mutual fund works, before any performance number appears."
 image: /assets/og/what-a-mutual-fund-is.png
-date: 2026-11-28 09:00:00 +0530
+date: 2026-10-18 09:00:00 +0530
 series: mutual-funds
 ---
 
@@ -47,7 +47,7 @@ at ₹10 NAV and you get 10,000 units. Invest ₹1,00,000 at ₹150 NAV and you 
 666.67 units. If both portfolios rise 10%, both your holdings are worth
 ₹1,10,000. The unit count differs; the money doesn't.
 
-Compare that to a *share* price, where the [P/E ratio]({% post_url 2026-10-11-price-to-earnings %}) genuinely tells you
+Compare that to a *share* price, where the [P/E ratio]({% post_url 2026-09-24-price-to-earnings %}) genuinely tells you
 something about what you're paying for a claim on earnings. A fund's NAV has
 no equivalent meaning — the fund's holdings are marked at market value every
 day, so the NAV is already exactly what the underlying is worth.

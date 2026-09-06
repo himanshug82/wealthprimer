@@ -3,7 +3,7 @@ layout: post
 title: "Market Cap: what the market values the whole company at"
 description: "Price times shares outstanding: the number behind every large-cap, mid-cap and small-cap label, and why it is not what buying the company would cost."
 image: /assets/og/market-cap.png
-date: 2026-10-17 09:00:00 +0530
+date: 2026-09-27 09:00:00 +0530
 series: jargon
 ---
 
@@ -57,7 +57,7 @@ surprisingly close together.
 ## Common mistakes
 
 - **Confusing market cap with enterprise value.** Market cap only prices the
-  equity — it ignores debt and cash entirely, which is exactly why [EV]({% post_url 2026-10-15-ev-ebitda %})
+  equity — it ignores debt and cash entirely, which is exactly why [EV]({% post_url 2026-09-26-ev-ebitda %})
   exists as a separate, fuller measure of what it would cost to buy the
   whole business.
 - **Confusing market cap with revenue or total assets.** These are

@@ -3,7 +3,7 @@ layout: post
 title: "SIPs and XIRR: five years of discipline that returned nothing"
 description: "Why a SIP needs XIRR rather than a simple return, what rupee cost averaging does and does not do, and a real five-year SIP that returned almost nothing."
 image: /assets/og/sips-xirr-and-timing-myths.png
-date: 2026-12-10 09:00:00 +0530
+date: 2026-10-24 09:00:00 +0530
 series: mutual-funds
 ---
 
@@ -29,7 +29,7 @@ tests the claims against twenty years.
 
 ## Why you can't use CAGR
 
-With a lump sum, [CAGR]({% post_url 2026-11-30-point-to-point-returns %}) works — one
+With a lump sum, [CAGR]({% post_url 2026-10-19-point-to-point-returns %}) works — one
 amount, one start date, one end date.
 
 A SIP breaks that completely. Each instalment has been invested for a
@@ -137,7 +137,7 @@ is precisely what produced the recovery afterwards.
 purchase price. It cannot make a five-year decline profitable.
 
 **"Longer SIPs always work."** The {{ f.years_of_history }}-year record here is good. It is one
-market, one period. The [rolling returns post]({% post_url 2026-12-02-rolling-returns %})
+market, one period. The [rolling returns post]({% post_url 2026-10-20-rolling-returns %})
 made the same caution about any historical distribution.
 
 ## Doing it in Python
@@ -194,7 +194,7 @@ and not 240. Getting this wrong silently overstates what you invested.
 - **Pausing a SIP when markets look "high."** That's market timing, and it
   needs the same impossible foresight as any other timing decision.
 - **Judging a SIP over a period shorter than the asset's drawdown recovery.**
-  The 2008 recovery took [almost six years]({% post_url 2026-12-06-drawdown %}). A
+  The 2008 recovery took [almost six years]({% post_url 2026-10-22-drawdown %}). A
   three-year SIP horizon in equity is a bet on not meeting one of those.
 
 **Takeaway:** XIRR is the right way to measure a SIP, because each instalment

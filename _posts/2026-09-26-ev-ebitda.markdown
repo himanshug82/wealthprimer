@@ -3,7 +3,7 @@ layout: post
 title: "EV/EBITDA: valuing the whole business, debt and all"
 description: "Pricing the whole business, equity and debt together and net of cash. How enterprise value is built, and why EV/EBITDA compares differently-funded firms better."
 image: /assets/og/ev-ebitda.png
-date: 2026-10-15 09:00:00 +0530
+date: 2026-09-26 09:00:00 +0530
 series: jargon
 ---
 
@@ -16,7 +16,7 @@ series: jargon
 
 ## What EV/EBITDA means
 
-[P/E]({% post_url 2026-10-11-price-to-earnings %}) and [P/B]({% post_url 2026-10-13-price-to-book %}) both price the *equity* only — what shareholders'
+[P/E]({% post_url 2026-09-24-price-to-earnings %}) and [P/B]({% post_url 2026-09-25-price-to-book %}) both price the *equity* only — what shareholders'
 slice of the company costs. **EV/EBITDA** prices the *whole business*
 instead: what would it actually cost to buy every share **and** take on
 every rupee of debt, netting off the cash already sitting on the balance
@@ -61,7 +61,7 @@ illustration only.
 | **EV/EBITDA** | **{{ bi_ev_ebitda }}x** |
 
 Both multiples are rich — Britannia's very much so — consistent with
-everything the [Leverage module]({% post_url 2026-09-29-net-debt-ebitda %}) already showed: a company genuinely being
+everything the [Leverage module]({% post_url 2026-09-18-net-debt-ebitda %}) already showed: a company genuinely being
 priced for quality, low risk, and negative net debt, not one being valued
 cheaply relative to peers.
 
@@ -70,11 +70,11 @@ cheaply relative to peers.
 - **Comparing EV/EBITDA across companies without checking capex needs.**
   Two companies can share an identical EV/EBITDA while one needs to
   reinvest far more of that EBITDA into capex just to sustain itself — see
-  [Capex Intensity]({% post_url 2026-10-05-capex-intensity %}). The "cheaper" multiple on paper isn't always
+  [Capex Intensity]({% post_url 2026-09-21-capex-intensity %}). The "cheaper" multiple on paper isn't always
   the cheaper business in practice.
 - **Using EBITDA without checking its quality.** EBITDA can be flattered by
   aggressive accounting choices — pairing it with [EBITDA margin
-  trends]({% post_url 2026-08-28-ebitda-margin %}) and [OCF/PAT]({% post_url 2026-10-03-ocf-pat %}) is a useful sanity check before trusting the
+  trends]({% post_url 2026-08-28-ebitda-margin %}) and [OCF/PAT]({% post_url 2026-09-20-ocf-pat %}) is a useful sanity check before trusting the
   multiple.
 - **Not updating EV when debt or cash changes materially.** A stale EV,
   calculated before a large debt raise or a big cash payout, understates or

@@ -3,7 +3,7 @@ layout: post
 title: "DuPont: breaking ROE into the three things that actually drive it"
 description: "DuPont splits ROE into margin, asset turnover and leverage, turning a single score into a reason. The three-step decomposition, worked end to end."
 image: /assets/og/dupont-roe-decomposition.png
-date: 2026-10-23 09:00:00 +0530
+date: 2026-09-30 09:00:00 +0530
 series: fundamental-analysis
 ---
 
@@ -69,8 +69,8 @@ Each piece answers its own question, and each already has a post in this blog:
 | Component | Question it answers | Post |
 |---|---|---|
 | [Net margin]({% post_url 2026-08-30-net-margin %}) | How much of each rupee of sales survives to the bottom line? | Profitability |
-| [Asset turnover]({% post_url 2026-09-15-asset-turnover %}) | How much revenue does each rupee of assets generate? | Efficiency |
-| [Equity multiplier]({% post_url 2026-09-25-equity-multiplier %}) | How much of the asset base is funded by someone other than shareholders? | Leverage |
+| [Asset turnover]({% post_url 2026-09-11-asset-turnover %}) | How much revenue does each rupee of assets generate? | Efficiency |
+| [Equity multiplier]({% post_url 2026-09-16-equity-multiplier %}) | How much of the asset base is funded by someone other than shareholders? | Leverage |
 
 Read left to right, it's profitability × efficiency × leverage.
 
@@ -82,7 +82,7 @@ must use average assets over average equity too — not the closing-balance
 version.
 
 This matters because the equity multiplier quoted in the [earlier
-post]({% post_url 2026-09-25-equity-multiplier %}) uses closing balances, which is the more common
+post]({% post_url 2026-09-16-equity-multiplier %}) uses closing balances, which is the more common
 convention when you're looking at leverage on its own. Plug that number into
 DuPont and your product won't tie out to the reported ROE, and you'll waste
 an afternoon hunting a bug that isn't there. Recompute it on averages for
@@ -168,8 +168,8 @@ difference, go read the [gross margin]({% post_url 2026-08-26-gross-margin %}) a
 - **Treating a high equity multiplier as automatically bad.** Leverage
   amplifies returns in both directions — it isn't a flaw, it's a choice with
   a risk attached. The question DuPont sets up is whether the returns
-  justify that risk, which is what [interest coverage]({% post_url 2026-09-27-interest-coverage %}) and
-  [net debt/EBITDA]({% post_url 2026-09-29-net-debt-ebitda %}) are for. DuPont flags where to look; it
+  justify that risk, which is what [interest coverage]({% post_url 2026-09-17-interest-coverage %}) and
+  [net debt/EBITDA]({% post_url 2026-09-18-net-debt-ebitda %}) are for. DuPont flags where to look; it
   doesn't deliver the verdict.
 - **Reading one year in isolation.** A single year's split tells you the
   shape of the business. The *trend* in the split tells you whether ROE is

@@ -3,7 +3,7 @@ layout: post
 title: "Discounting: what a rupee five years from now is worth today"
 description: "Why a rupee in five years is worth less than a rupee today. Present value, discount rates, and just how sensitive a valuation is to the rate you pick."
 image: /assets/og/discounting-time-value-of-money.png
-date: 2026-10-27 09:00:00 +0530
+date: 2026-10-02 09:00:00 +0530
 series: fundamental-analysis
 ---
 
@@ -23,7 +23,7 @@ So a future rupee is worth less than a rupee today. **Discounting** is
 simply the arithmetic that says *how much* less. Everything in the next
 three posts — free cash flow forecasts, terminal value, and the full
 **discounted cash flow (DCF)** model that the
-[last post]({% post_url 2026-10-25-relative-valuation-comparables %}) promised — is this
+[last post]({% post_url 2026-10-01-relative-valuation-comparables %}) promised — is this
 single idea applied repeatedly.
 
 <details markdown="1">

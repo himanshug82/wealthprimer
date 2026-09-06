@@ -3,7 +3,7 @@ layout: post
 title: "Capstone: reading one real company with the whole toolkit"
 description: "One real company, the whole toolkit, in the order you would actually use it, and a straight explanation of why this blog stops short of a verdict on the stock."
 image: /assets/og/capstone-britannia-end-to-end.png
-date: 2026-11-06 09:00:00 +0530
+date: 2026-10-07 09:00:00 +0530
 series: fundamental-analysis
 ---
 
@@ -74,7 +74,7 @@ have them.
 
 ## Step 3: why the returns are what they are
 
-The [DuPont decomposition]({% post_url 2026-10-23-dupont-roe-decomposition %}) turns the
+The [DuPont decomposition]({% post_url 2026-09-30-dupont-roe-decomposition %}) turns the
 ROE from a score into an explanation:
 
 | Component | Britannia | Desi Bites |
@@ -95,10 +95,10 @@ utilisation.
 | Ratio | Britannia FY25 |
 |---|---:|
 | [Inventory days]({% post_url 2026-09-07-inventory-days %}) | {{ r.inventory_days }} |
-| [Debtor days]({% post_url 2026-09-09-debtor-days %}) | {{ r.receivable_days }} |
-| [Creditor days]({% post_url 2026-09-11-creditor-days %}) | {{ r.payable_days }} |
-| [Cash conversion cycle]({% post_url 2026-09-13-cash-conversion-cycle %}) | **{{ r.ccc }}** |
-| [Asset turnover]({% post_url 2026-09-15-asset-turnover %}) | {{ r.asset_turnover }}x |
+| [Debtor days]({% post_url 2026-09-08-debtor-days %}) | {{ r.receivable_days }} |
+| [Creditor days]({% post_url 2026-09-09-creditor-days %}) | {{ r.payable_days }} |
+| [Cash conversion cycle]({% post_url 2026-09-10-cash-conversion-cycle %}) | **{{ r.ccc }}** |
+| [Asset turnover]({% post_url 2026-09-11-asset-turnover %}) | {{ r.asset_turnover }}x |
 
 That negative cash conversion cycle is the most interesting number in this
 entire post. Britannia collects from its customers in about {{ r.receivable_days }} days while
@@ -115,11 +115,11 @@ constantly raising money.
 
 | Ratio | Britannia FY25 | Reads as |
 |---|---:|---|
-| [Current ratio]({% post_url 2026-09-19-current-ratio %}) | {{ r.current_ratio }} | Thin on its face |
-| [Quick ratio]({% post_url 2026-09-21-quick-ratio %}) | {{ r.quick_ratio }} | Below 1 |
-| [Debt-to-equity]({% post_url 2026-09-23-debt-to-equity %}) | {{ r.debt_equity }} | Low |
-| [Interest coverage]({% post_url 2026-09-27-interest-coverage %}) | {{ r.interest_coverage }}x | Very comfortable |
-| [Net debt/EBITDA]({% post_url 2026-09-29-net-debt-ebitda %}) | {{ r.net_debt_ebitda }}x | Net cash |
+| [Current ratio]({% post_url 2026-09-13-current-ratio %}) | {{ r.current_ratio }} | Thin on its face |
+| [Quick ratio]({% post_url 2026-09-14-quick-ratio %}) | {{ r.quick_ratio }} | Below 1 |
+| [Debt-to-equity]({% post_url 2026-09-15-debt-to-equity %}) | {{ r.debt_equity }} | Low |
+| [Interest coverage]({% post_url 2026-09-17-interest-coverage %}) | {{ r.interest_coverage }}x | Very comfortable |
+| [Net debt/EBITDA]({% post_url 2026-09-18-net-debt-ebitda %}) | {{ r.net_debt_ebitda }}x | Net cash |
 
 Here's where reading ratios in isolation would mislead you badly. A current
 ratio of {{ r.current_ratio }} and a quick ratio of {{ r.quick_ratio }} look, by textbook rules of thumb,
@@ -141,15 +141,15 @@ not a finding.
 
 | Ratio | Britannia FY25 |
 |---|---:|
-| [Free cash flow]({% post_url 2026-10-01-free-cash-flow %}) | ₹{% include inr.html n=r.fcf %} Cr |
-| [OCF/PAT]({% post_url 2026-10-03-ocf-pat %}) | {{ r.ocf_pat }}x |
-| [Capex intensity]({% post_url 2026-10-05-capex-intensity %}) | {{ r.capex_intensity }}% |
+| [Free cash flow]({% post_url 2026-09-19-free-cash-flow %}) | ₹{% include inr.html n=r.fcf %} Cr |
+| [OCF/PAT]({% post_url 2026-09-20-ocf-pat %}) | {{ r.ocf_pat }}x |
+| [Capex intensity]({% post_url 2026-09-21-capex-intensity %}) | {{ r.capex_intensity }}% |
 
 An OCF/PAT ratio above 1 means reported profit is converting into actual
 cash — the single most useful check against accounting that flatters the
 income statement. Britannia's {{ r.ocf_pat }}x is healthy.
 
-But apply the scepticism the [FCF post]({% post_url 2026-10-01-free-cash-flow %}) built in. Free cash flow
+But apply the scepticism the [FCF post]({% post_url 2026-09-19-free-cash-flow %}) built in. Free cash flow
 rose from FY24 to FY25 mainly because capex fell from 3.3% to {{ r.capex_intensity }}% of
 revenue — operating cash flow actually *declined* slightly. A rising FCF
 driven by a capex pause is a different fact from a rising FCF driven by
@@ -161,11 +161,11 @@ At the {{ mk.price_date }} closing price of ₹{% include inr.html n=mk.price %}
 
 | Multiple | Britannia |
 |---|---:|
-| [P/E]({% post_url 2026-10-11-price-to-earnings %}) | {{ m.pe }}x |
-| [P/B]({% post_url 2026-10-13-price-to-book %}) | {{ m.pb }}x |
-| [EV/EBITDA]({% post_url 2026-10-15-ev-ebitda %}) | {{ m.ev_ebitda }}x |
-| [Dividend yield]({% post_url 2026-10-19-dividend-yield %}) | {{ m.dividend_yield }}% |
-| [PEG]({% post_url 2026-10-21-peg-ratio %}) | ~35.9 (on 1.8% FY25 PAT growth) |
+| [P/E]({% post_url 2026-09-24-price-to-earnings %}) | {{ m.pe }}x |
+| [P/B]({% post_url 2026-09-25-price-to-book %}) | {{ m.pb }}x |
+| [EV/EBITDA]({% post_url 2026-09-26-ev-ebitda %}) | {{ m.ev_ebitda }}x |
+| [Dividend yield]({% post_url 2026-09-28-dividend-yield %}) | {{ m.dividend_yield }}% |
+| [PEG]({% post_url 2026-09-29-peg-ratio %}) | ~35.9 (on 1.8% FY25 PAT growth) |
 
 Every one of these needs the context the earlier posts supplied. The P/B of
 {{ m.pb }}x is extreme in the abstract, and less so once you know the business earns
@@ -175,14 +175,14 @@ decades and appears nowhere on the balance sheet. Book value simply isn't
 measuring the asset that matters.
 
 The PEG of ~35.9 is the one to be most careful with, and the
-[PEG post]({% post_url 2026-10-21-peg-ratio %}) covered why: it divides a high P/E by a single weak
+[PEG post]({% post_url 2026-09-29-peg-ratio %}) covered why: it divides a high P/E by a single weak
 year's growth. It's a statement about FY25 being a soft year, not about the
 business's long-run trajectory.
 
 ## Step 8: what this exercise cannot tell you
 
 The natural next step would be a
-[discounted cash flow model]({% post_url 2026-11-02-terminal-value-and-the-full-dcf %}),
+[discounted cash flow model]({% post_url 2026-10-05-terminal-value-and-the-full-dcf %}),
 a value per share, and a comparison against the ₹{% include inr.html n=mk.price %} price. This blog stops here, on
 purpose, and it's worth being straight about why.
 

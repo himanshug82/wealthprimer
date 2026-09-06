@@ -3,7 +3,7 @@ layout: post
 title: "Support and resistance: the price levels that keep mattering"
 description: "Why price stalls at roughly the same levels again and again. Drawing support and resistance as zones rather than lines, and what a break really tells you."
 image: /assets/og/support-and-resistance.png
-date: 2026-11-12 09:00:00 +0530
+date: 2026-10-10 09:00:00 +0530
 series: technical-analysis
 ---
 
@@ -13,7 +13,7 @@ series: technical-analysis
 
 ## Prices have memory
 
-The [candlestick post]({% post_url 2026-11-10-reading-a-candlestick-chart %}) was about
+The [candlestick post]({% post_url 2026-10-09-reading-a-candlestick-chart %}) was about
 reading a single session. This one zooms out. Look at enough charts and you
 notice something odd: prices stop falling at
 roughly the same level more than once, and stall on the way up at roughly

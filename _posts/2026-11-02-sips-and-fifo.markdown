@@ -3,7 +3,7 @@ layout: post
 title: "SIPs and FIFO: one redemption, sixty tax lots"
 description: "One redemption, sixty tax lots. Why each SIP instalment is a separate acquisition with its own holding-period clock, and how FIFO decides which units go first."
 image: /assets/og/sips-and-fifo.png
-date: 2026-12-28 09:00:00 +0530
+date: 2026-11-02 09:00:00 +0530
 series: tax
 ---
 
@@ -97,7 +97,7 @@ Work it through:
 - The long-term gain of ₹{% include inr.html n=s.long_term_gain %} is below the ₹{% include inr.html n=r.ltcg_annual_exemption %} annual exemption, so no tax
   is due on it.
 - The short-term result is a loss, so there's no short-term tax either — and
-  that loss can be [set off or carried forward]({% post_url 2026-12-26-losses-set-off-and-harvesting %}).
+  that loss can be [set off or carried forward]({% post_url 2026-11-01-losses-set-off-and-harvesting %}).
 
 **Total tax on a ₹{% include inr.html n=s.total_gain %} gain: zero.**
 
@@ -122,7 +122,7 @@ instalment's own purchase date, regardless of whether you're still investing.
 fund house — is a sale of one scheme and a purchase of another. It's a
 taxable event. So is moving from regular to direct plans of the same fund,
 which is worth knowing before acting on the
-[expense ratio post]({% post_url 2026-12-04-expense-ratios-direct-vs-regular %}): the ongoing saving is real, but
+[expense ratio post]({% post_url 2026-10-21-expense-ratios-direct-vs-regular %}): the ongoing saving is real, but
 the switch itself may trigger tax now.
 
 **Dividend reinvestment creates new lots.** Each reinvested payout is a fresh

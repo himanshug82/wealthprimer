@@ -3,7 +3,7 @@ layout: post
 title: "Expense ratios: what the same fund costs in two different plans"
 description: "The expense ratio is deducted from NAV daily, so you never see it charged. What the direct and regular plans of one fund actually cost you over time."
 image: /assets/og/expense-ratios-direct-vs-regular.png
-date: 2026-12-04 09:00:00 +0530
+date: 2026-10-21 09:00:00 +0530
 series: mutual-funds
 ---
 
@@ -21,7 +21,7 @@ quoted as a percentage of assets: a 1.5% expense ratio on ₹1,00,000 costs
 ₹1,500 a year.
 
 You will never see this charged. No debit appears, no statement line itemises
-it — as the [opening post]({% post_url 2026-11-28-what-a-mutual-fund-is %}) noted, every
+it — as the [opening post]({% post_url 2026-10-18-what-a-mutual-fund-is %}) noted, every
 NAV you have ever seen is already net of it. It's deducted from the fund's assets daily, before NAV is published. Every
 return you have ever seen quoted for a fund is already net of it.
 

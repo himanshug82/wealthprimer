@@ -3,7 +3,7 @@ layout: post
 title: "ELSS and the deduction that moved: 80C under the new regime"
 description: "The ₹1.5 lakh deduction still exists, but only in the old regime. What that means for ELSS, and how its lock-in interacts with tax on the way out."
 image: /assets/og/elss-and-the-deduction-that-moved.png
-date: 2026-12-30 09:00:00 +0530
+date: 2026-11-03 09:00:00 +0530
 series: tax
 ---
 
@@ -83,14 +83,14 @@ genuine advantage of ELSS within its category.
 fund locks each instalment for three years from *its own* date. The
 instalment made in month 36 is locked until month 72. People routinely expect
 the whole holding to unlock three years after they started; it doesn't. This
-is the same lot-by-lot logic as [FIFO]({% post_url 2026-12-28-sips-and-fifo %}), applied
+is the same lot-by-lot logic as [FIFO]({% post_url 2026-11-02-sips-and-fifo %}), applied
 to a lock-in instead of a holding period.
 
 ## And it's still an equity fund
 
 Whichever regime you're in, ELSS gains are taxed exactly like any other
 equity fund — covered in the
-[equity post]({% post_url 2026-12-20-equity-and-equity-funds %}):
+[equity post]({% post_url 2026-10-29-equity-and-equity-funds %}):
 
 | | |
 |---|---|

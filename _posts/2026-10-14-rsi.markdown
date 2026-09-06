@@ -3,7 +3,7 @@ layout: post
 title: "RSI: measuring momentum, and three times it was wrong"
 description: "RSI measures how one-sided the last fourteen sessions were. Wilder's smoothing, divergence, and three real signals from one chart that pointed opposite ways."
 image: /assets/og/rsi.png
-date: 2026-11-20 09:00:00 +0530
+date: 2026-10-14 09:00:00 +0530
 series: technical-analysis
 ---
 
@@ -13,8 +13,8 @@ series: technical-analysis
 ## From price to momentum
 
 Everything so far has looked at price directly — where it went, where it
-stalled, what its [average]({% post_url 2026-11-16-moving-averages %}) is doing, and how
-much [volume]({% post_url 2026-11-18-volume %}) came with it. **Oscillators** ask a different question:
+stalled, what its [average]({% post_url 2026-10-12-moving-averages %}) is doing, and how
+much [volume]({% post_url 2026-10-13-volume %}) came with it. **Oscillators** ask a different question:
 not *where* is the price, but how *fast* has it been moving, and is that pace
 sustainable?
 

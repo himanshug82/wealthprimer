@@ -3,7 +3,7 @@ layout: post
 title: "Benchmarks: how a passive fund 'beat its index' by doing nothing"
 description: "A benchmark decides what a return means. Price return versus total return indices, and how funds could once beat an index by doing nothing at all."
 image: /assets/og/benchmarks-and-comparing-like-with-like.png
-date: 2026-12-12 09:00:00 +0530
+date: 2026-10-25 09:00:00 +0530
 series: mutual-funds
 ---
 
@@ -139,7 +139,7 @@ Two smaller cautions: category definitions changed materially with SEBI's
 2017–18 scheme rationalisation, so pre- and post-2018 category comparisons
 aren't like-for-like. And within a category, funds can run very different
 risk levels — beating your category with far more volatility isn't obviously
-winning, which is what [Sharpe]({% post_url 2026-12-08-volatility-and-sharpe %}) was for.
+winning, which is what [Sharpe]({% post_url 2026-10-23-volatility-and-sharpe %}) was for.
 
 ## Doing it in Python
 

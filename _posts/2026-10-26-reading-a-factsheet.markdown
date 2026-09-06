@@ -3,7 +3,7 @@ layout: post
 title: "Reading a factsheet: what's in it, and what isn't"
 description: "Section by section through a real mutual fund factsheet: holdings, costs, risk numbers, portfolio turnover, and what the document deliberately leaves out."
 image: /assets/og/reading-a-factsheet.png
-date: 2026-12-14 09:00:00 +0530
+date: 2026-10-26 09:00:00 +0530
 series: mutual-funds
 ---
 
@@ -31,7 +31,7 @@ factsheet cannot tell you.
 |---|---|
 | Category | SEBI-defined. Decides what the fund is *allowed* to hold and which benchmark applies |
 | Inception date | How much history exists. A fund launched after 2013 has never seen a 2008 |
-| Benchmark | Is it a **TRI**? [The last post]({% post_url 2026-12-12-benchmarks-and-comparing-like-with-like %}) explains why this matters more than it looks |
+| Benchmark | Is it a **TRI**? [The last post]({% post_url 2026-10-25-benchmarks-and-comparing-like-with-like %}) explains why this matters more than it looks |
 | Fund manager & tenure | A ten-year record under a manager who left last year is not this fund's record |
 | AUM | Very large AUM can constrain a small-cap strategy; very small AUM raises viability questions |
 
@@ -40,7 +40,7 @@ to whoever produced it.
 
 ### Expense ratio
 
-Two numbers, direct and regular. From [the expense post]({% post_url 2026-12-04-expense-ratios-direct-vs-regular %}):
+Two numbers, direct and regular. From [the expense post]({% post_url 2026-10-21-expense-ratios-direct-vs-regular %}):
 the gap between them is pure distribution commission, and on an actively
 managed fund it was {{ mf.expense_ratio.active_fund.gap_pp }} percentage points a year — about {{ mf.expense_ratio.active_fund.difference_pct }}% of the final
 corpus over thirteen years.
@@ -67,23 +67,23 @@ Indian retail investors who own many funds.
 ### Performance
 
 Point-to-point returns for 1, 3, 5 years and since inception, alongside the
-benchmark. As [MF-2]({% post_url 2026-11-30-point-to-point-returns %}) showed, these all
+benchmark. As [MF-2]({% post_url 2026-10-19-point-to-point-returns %}) showed, these all
 end on the same date — so they share the same endpoint bias. The same fund
 showed 2.56% and 23.92% over five-year windows depending on the start month.
 
 If the AMC publishes rolling returns or a SIP-return table, that's more
 informative. If it doesn't, you can compute them yourself — that's what the
-Python in [MF-3]({% post_url 2026-12-02-rolling-returns %}) is for.
+Python in [MF-3]({% post_url 2026-10-20-rolling-returns %}) is for.
 
 ### Risk measures
 
 Usually standard deviation, beta, Sharpe, sometimes maximum drawdown. From
-[MF-6]({% post_url 2026-12-08-volatility-and-sharpe %}): always check the period and the
+[MF-6]({% post_url 2026-10-23-volatility-and-sharpe %}): always check the period and the
 risk-free rate, and never compare a Sharpe across categories.
 
 And note what's usually missing: **drawdown recovery time**. A factsheet may
 tell you the fund fell 59.7%. It rarely tells you the last such fall took
-[almost six years]({% post_url 2026-12-06-drawdown %}) to recover. That's the number that
+[almost six years]({% post_url 2026-10-22-drawdown %}) to recover. That's the number that
 decides whether you'd still have been holding.
 
 ## A worked read
@@ -120,7 +120,7 @@ actually like.
 ## What a factsheet cannot tell you
 
 The honest close, in the spirit of [what technical analysis cannot
-do]({% post_url 2026-11-26-what-technical-analysis-cannot-do %}).
+do]({% post_url 2026-10-17-what-technical-analysis-cannot-do %}).
 
 **Whether past returns will continue.** The strongest, most consistent finding
 in fund research is that past performance predicts future performance weakly

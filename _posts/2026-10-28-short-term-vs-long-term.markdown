@@ -3,7 +3,7 @@ layout: post
 title: "Short-term vs long-term: the date that changes the rate"
 description: "Twelve months for listed equity, twenty-four for most other assets. How the holding period is counted, and why a day either side of the line changes the rate."
 image: /assets/og/short-term-vs-long-term.png
-date: 2026-12-18 09:00:00 +0530
+date: 2026-10-28 09:00:00 +0530
 series: tax
 ---
 
@@ -15,7 +15,7 @@ advice.*
 
 ## One line, two very different outcomes
 
-The [last post]({% post_url 2026-12-16-how-investment-income-is-taxed %}) said the holding
+The [last post]({% post_url 2026-10-27-how-investment-income-is-taxed %}) said the holding
 period decides most of what happens to a capital gain. This post is about
 exactly where that line sits and how it's counted, because the difference
 either side of it is large and entirely mechanical.
@@ -56,7 +56,7 @@ Two things worth noting.
 only if it holds at least 65% in Indian equity. Some funds you'd assume are
 equity funds — certain international funds, some hybrids, funds of funds —
 don't clear that bar and are taxed under the other rules entirely. The
-factsheet tells you; [the post on reading one]({% post_url 2026-12-14-reading-a-factsheet %}) covers where
+factsheet tells you; [the post on reading one]({% post_url 2026-10-26-reading-a-factsheet %}) covers where
 to look.
 
 **That last row is not an oversight.** Debt funds bought from April 2023

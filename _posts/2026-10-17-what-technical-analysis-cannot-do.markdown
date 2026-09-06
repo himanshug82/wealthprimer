@@ -3,7 +3,7 @@ layout: post
 title: "What technical analysis cannot do"
 description: "The honest reckoning that closes the series: hindsight bias, subjectivity, overfitting, and the questions about a business that no chart can answer."
 image: /assets/og/what-technical-analysis-cannot-do.png
-date: 2026-11-26 09:00:00 +0530
+date: 2026-10-17 09:00:00 +0530
 series: technical-analysis
 ---
 
@@ -26,12 +26,12 @@ This is the structural limit, and no indicator gets around it.
 A price series knows nothing about whether the company is solvent, whether
 its auditors resigned, whether receivables are being recognised aggressively,
 or whether the promoter has pledged their shareholding. The
-[fundamental toolkit]({% post_url 2026-11-06-capstone-britannia-end-to-end %}) exists precisely because those questions
+[fundamental toolkit]({% post_url 2026-10-07-capstone-britannia-end-to-end %}) exists precisely because those questions
 cannot be answered from a chart.
 
 When a company fails, the chart shows the failure happening. It does not show
 it coming, and afterwards everyone points to the chart and says it was
-obvious. The [OCF/PAT ratio]({% post_url 2026-10-03-ocf-pat %}) can raise a question about earnings
+obvious. The [OCF/PAT ratio]({% post_url 2026-09-20-ocf-pat %}) can raise a question about earnings
 quality. A moving average cannot, ever, in principle.
 
 ## 2. Signals are far rarer, or far noisier, than the tutorials suggest
@@ -57,7 +57,7 @@ indicators — it's the general shape of the problem.
 
 ## 3. The same signal produces opposite outcomes
 
-The RSI table from [that post]({% post_url 2026-11-20-rsi %}) is worth repeating, because
+The RSI table from [that post]({% post_url 2026-10-14-rsi %}) is worth repeating, because
 it is the single most honest thing in this series:
 
 | Signal | Date | RSI | What followed |
@@ -72,7 +72,7 @@ available *at the time* distinguished them.
 
 ## 4. It is trivially easy to fool yourself
 
-The [chart patterns post]({% post_url 2026-11-24-chart-patterns %}) demonstrated this
+The [chart patterns post]({% post_url 2026-10-16-chart-patterns %}) demonstrated this
 rather than asserting it. A textbook double top — two peaks {{ ta.apparent_double_top.cherry_picked_peak_gap_pct }}% apart —
 dissolved once every swing high in the window was listed: six of them, in a
 {{ ta.apparent_double_top.band_width_pct }}% band, with the tallest occurring *before* both chosen peaks and
@@ -95,7 +95,7 @@ because someone chose the parameters:
 - Does a trend line break on one close beyond it, or two?
 
 Every one of those changes the signals. And the [trend lines
-post]({% post_url 2026-11-14-trend-lines %}) showed how much can ride on it: the January
+post]({% post_url 2026-10-11-trend-lines %}) showed how much can ride on it: the January
 2025 downtrend break happened by **₹2.40** on a single close. A slightly
 different rule, and there was no signal that day at all.
 

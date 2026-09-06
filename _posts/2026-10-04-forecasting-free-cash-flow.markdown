@@ -3,7 +3,7 @@ layout: post
 title: "Forecasting free cash flow: the half of a DCF that actually matters"
 description: "The half of a DCF that actually decides the answer. Building an FCFF forecast from revenue growth, margins, tax, depreciation, capex and working capital."
 image: /assets/og/forecasting-free-cash-flow.png
-date: 2026-10-31 09:00:00 +0530
+date: 2026-10-04 09:00:00 +0530
 series: fundamental-analysis
 ---
 
@@ -26,10 +26,10 @@ transaction belongs to. Depreciation reduces profit without any money
 leaving; a factory purchase drains the bank account without touching profit
 much at all. A discounted cash flow (DCF) model values cash because cash is what you can
 actually pay out.
-This blog's post on [OCF/PAT]({% post_url 2026-10-03-ocf-pat %}) is the same argument in ratio form.
+This blog's post on [OCF/PAT]({% post_url 2026-09-20-ocf-pat %}) is the same argument in ratio form.
 
 **To the firm**, not to shareholders. FCFF is measured *before* interest
-payments, which is why it pairs with [WACC]({% post_url 2026-10-29-wacc-cost-of-capital %})
+payments, which is why it pairs with [WACC]({% post_url 2026-10-03-wacc-cost-of-capital %})
 — the blended cost of all capital. The debt gets accounted for on the other
 side, when we subtract net debt at the end. Handle it in both places and
 you've charged for the borrowing twice.
@@ -54,10 +54,10 @@ Line by line:
 - **Subtract capex.** Machines wear out and factories need building. Skip
   this and you've valued a business that never reinvests, which is a business
   that eventually stops existing.
-- **Subtract the increase in [net working capital]({% post_url 2026-09-17-net-working-capital %}) (NWC).** Growth swallows cash.
+- **Subtract the increase in [net working capital]({% post_url 2026-09-12-net-working-capital %}) (NWC).** Growth swallows cash.
   Selling more means holding more inventory and waiting on more receivables,
   and that money is tied up until the business shrinks again. The
-  [cash conversion cycle]({% post_url 2026-09-13-cash-conversion-cycle %}) post covers the mechanics.
+  [cash conversion cycle]({% post_url 2026-09-10-cash-conversion-cycle %}) post covers the mechanics.
 
 Note that working capital enters as the *change*, not the level. A company
 with steady working capital consumes no incremental cash even if the balance
@@ -118,7 +118,7 @@ Nothing improved operationally in FY28. Capex intensity simply dropped from
 plenty of operating cash in FY26 and FY27; it was spending it on factories.
 
 This is worth dwelling on, because the same effect appears in real accounts.
-The [free cash flow post]({% post_url 2026-10-01-free-cash-flow %}) noted that Britannia's FCF rose
+The [free cash flow post]({% post_url 2026-09-19-free-cash-flow %}) noted that Britannia's FCF rose
 between FY24 and FY25 mainly because capex fell from 3.3% to {{ bi_r.capex_intensity }}% of revenue,
 not because operations got better. Weak free cash flow during a build-out
 phase is not the same thing as a weak business — and strong free cash flow

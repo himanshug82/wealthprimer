@@ -3,7 +3,7 @@ layout: post
 title: "Cash Conversion Cycle: how long cash is actually stuck in the business"
 description: "Inventory, debtor and creditor days combined into one number: how many days cash is genuinely stuck in the business, and what a negative cycle means."
 image: /assets/og/cash-conversion-cycle.png
-date: 2026-09-13 09:00:00 +0530
+date: 2026-09-10 09:00:00 +0530
 series: jargon
 ---
 
@@ -14,8 +14,8 @@ series: jargon
 
 The last three posts each measured one leg of the same journey: how long
 stock sits before it sells ([Inventory Days]({% post_url 2026-09-07-inventory-days %})), how long customers take to
-pay ([Debtor Days]({% post_url 2026-09-09-debtor-days %})), and how long the company itself takes to pay its
-suppliers ([Creditor Days]({% post_url 2026-09-11-creditor-days %})). The **Cash Conversion Cycle (CCC)** stitches all
+pay ([Debtor Days]({% post_url 2026-09-08-debtor-days %})), and how long the company itself takes to pay its
+suppliers ([Creditor Days]({% post_url 2026-09-09-creditor-days %})). The **Cash Conversion Cycle (CCC)** stitches all
 three together into one number: how many days does cash stay tied up in the
 operating cycle — from paying for raw material, to holding inventory, to
 collecting from customers — before it's back in the company's hands?

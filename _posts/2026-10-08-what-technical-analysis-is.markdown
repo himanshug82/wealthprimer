@@ -3,7 +3,7 @@ layout: post
 title: "What technical analysis is, and what it quietly assumes"
 description: "Technical analysis studies price and volume rather than the business. What it assumes, where those assumptions come from, and how it differs from fundamentals."
 image: /assets/og/what-technical-analysis-is.png
-date: 2026-11-08 09:00:00 +0530
+date: 2026-10-08 09:00:00 +0530
 series: technical-analysis
 ---
 
@@ -14,7 +14,7 @@ series: technical-analysis
 
 Everything on this blog so far has asked one question: *what is this business
 worth?* Read the statements, compute the ratios, forecast the cash flows,
-discount them back. The [capstone]({% post_url 2026-11-06-capstone-britannia-end-to-end %}) closed that arc.
+discount them back. The [capstone]({% post_url 2026-10-07-capstone-britannia-end-to-end %}) closed that arc.
 
 **Technical analysis** asks something else: *what is this price doing?* It
 studies the record of what buyers and sellers actually did — price and
@@ -179,7 +179,7 @@ skipped the ninth post would be selling something.
   small-cap, a "pattern" may be three trades by two people.
 - **Skipping the question of whether the company is solvent.** A chart cannot
   tell you a company is a fraud, or that its debt is about to be
-  restructured. The [ratio toolkit]({% post_url 2026-11-06-capstone-britannia-end-to-end %}) exists for the questions
+  restructured. The [ratio toolkit]({% post_url 2026-10-07-capstone-britannia-end-to-end %}) exists for the questions
   a price series structurally cannot answer.
 
 **Takeaway:** Technical analysis studies price and volume rather than the

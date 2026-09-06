@@ -3,7 +3,7 @@ layout: post
 title: "Trend lines: drawing a trend, and knowing when it broke"
 description: "An uptrend has a definition, not a mood: higher highs and higher lows. Drawing trend lines, knowing when one broke, and why ranges are commoner than trends."
 image: /assets/og/trend-lines.png
-date: 2026-11-14 09:00:00 +0530
+date: 2026-10-11 09:00:00 +0530
 series: technical-analysis
 ---
 
@@ -22,7 +22,7 @@ That third category matters more than most introductions admit. A stock is
 often not trending at all — it's oscillating, and forcing a trend line onto
 a range is one of the quickest ways to fool yourself.
 
-Where [support and resistance]({% post_url 2026-11-12-support-and-resistance %}) described
+Where [support and resistance]({% post_url 2026-10-10-support-and-resistance %}) described
 *horizontal* levels, a trend line describes a *sloping* one — and the logic
 is the same: a price area that has repeatedly mattered.
 

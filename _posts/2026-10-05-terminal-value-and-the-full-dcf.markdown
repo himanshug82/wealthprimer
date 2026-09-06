@@ -3,7 +3,7 @@ layout: post
 title: "Terminal value: the number that quietly becomes most of your valuation"
 description: "Terminal value is usually most of a DCF's answer. The perpetuity growth and exit multiple methods, and the full valuation finally assembled end to end."
 image: /assets/og/terminal-value-and-the-full-dcf.png
-date: 2026-11-02 09:00:00 +0530
+date: 2026-10-05 09:00:00 +0530
 series: fundamental-analysis
 ---
 
@@ -13,7 +13,7 @@ series: fundamental-analysis
 
 ## The problem with stopping at year five
 
-The [last post]({% post_url 2026-10-31-forecasting-free-cash-flow %}) forecast Desi Bites'
+The [last post]({% post_url 2026-10-04-forecasting-free-cash-flow %}) forecast Desi Bites'
 free cash flow to the firm (FCFF) through FY30. But the company doesn't dissolve on 31 March
 2030. It carries on generating cash for decades, and all of that has value
 too.
@@ -224,7 +224,7 @@ print(f"Value per share  {equity / SHARES:8.2f}")
   value. When the company holds net cash, net debt is negative and you're
   subtracting a negative — which adds. Sanity-check the direction every time.
 - **Using the wrong share count.** Use the diluted, post-issue count, as the
-  [EPS post]({% post_url 2026-10-09-eps %}) covered. Dividing by the pre-IPO count here would have
+  [EPS post]({% post_url 2026-09-23-eps %}) covered. Dividing by the pre-IPO count here would have
   produced ₹497 a share instead of ₹{% include inr.html n=r.value_per_share %} — a 25% error from one wrong cell.
 - **Presenting the output as a precise number.** ₹{% include inr.html n=r.value_per_share %} is the arithmetic
   consequence of a stack of estimates. It is not what the share is worth to

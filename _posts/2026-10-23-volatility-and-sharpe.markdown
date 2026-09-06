@@ -3,7 +3,7 @@ layout: post
 title: "Volatility and Sharpe: was the return worth the ride?"
 description: "Two funds return 12% very differently. Standard deviation as a measure of the ride, the Sharpe ratio, and the assumptions Sharpe quietly makes about returns."
 image: /assets/og/volatility-and-sharpe.png
-date: 2026-12-08 09:00:00 +0530
+date: 2026-10-23 09:00:00 +0530
 series: mutual-funds
 ---
 
@@ -106,7 +106,7 @@ window, a Nifty 50 index fund delivered a fairly unimpressive amount of
 return for the volatility endured.
 
 But notice the phrase doing the work: *this particular window*. The
-[point-to-point post]({% post_url 2026-11-30-point-to-point-returns %}) showed this window
+[point-to-point post]({% post_url 2026-10-19-point-to-point-returns %}) showed this window
 starts near an April 2006 high and ends after a weak Q1 2026, and that the
 whole-period return of {{ v.annualised_return_pct }}% sits below the {{ mf.rolling_returns.years_5.median }}% median of five-year rolling
 windows. Sharpe inherits that problem completely — the numerator is a
@@ -128,7 +128,7 @@ divides by downside deviation only, counting just the falls.
 **It assumes returns are normally distributed.** They aren't. Real market
 returns have fat tails: extreme events happen far more often than a normal
 distribution predicts. The 2008 crash covered in the
-[drawdown post]({% post_url 2026-12-06-drawdown %}) was a many-standard-deviation event
+[drawdown post]({% post_url 2026-10-22-drawdown %}) was a many-standard-deviation event
 that a normal distribution says should essentially never occur.
 
 **It says nothing about how long you suffered.** A fund can post a decent

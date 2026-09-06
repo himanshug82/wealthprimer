@@ -3,7 +3,7 @@ layout: post
 title: "Quick Ratio: coverage without counting on inventory"
 description: "The acid test: coverage once inventory is stripped out entirely. Why the quick ratio is the stricter cousin of the current ratio, and when the gap matters."
 image: /assets/og/quick-ratio.png
-date: 2026-09-21 09:00:00 +0530
+date: 2026-09-14 09:00:00 +0530
 series: jargon
 ---
 
@@ -16,7 +16,7 @@ series: jargon
 
 ## What the quick ratio means
 
-[Current Ratio]({% post_url 2026-09-19-current-ratio %}) treats every current asset as equally able to cover a
+[Current Ratio]({% post_url 2026-09-13-current-ratio %}) treats every current asset as equally able to cover a
 bill — but inventory is the least liquid one. It has to actually be sold,
 and sold at the expected price, before it turns into cash. **Quick Ratio**
 (also called the acid-test ratio) strips inventory out entirely, leaving
@@ -52,7 +52,7 @@ Strip out inventory, and Britannia's coverage looks tighter still —
 {{ site.data.real_company.ratios.FY25.quick_ratio }}, below 1. On paper, that's the kind of number that would
 normally deserve real scrutiny at most companies. For Britannia specifically,
 it's a case where the number needs company: paired with its 20-day-faster
-collection cycle than payment cycle ([negative CCC]({% post_url 2026-09-13-cash-conversion-cycle %})), a sub-1 quick
+collection cycle than payment cycle ([negative CCC]({% post_url 2026-09-10-cash-conversion-cycle %})), a sub-1 quick
 ratio isn't the same warning sign it would be at a company that actually
 waits on customers to pay before it can pay its own bills. That said — this
 is genuinely the exception, not the rule. For most companies, a quick ratio

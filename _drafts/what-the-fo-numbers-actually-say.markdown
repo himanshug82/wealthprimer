@@ -3,7 +3,7 @@ layout: post
 title: "What the F&O numbers actually say"
 description: "SEBI has counted, five years running: the overwhelming majority of individual derivatives traders lose money. What the data shows, and the arithmetic behind why."
 image: /assets/og/what-the-fo-numbers-actually-say.png
-date: 2027-01-05 09:00:00 +0530
+date: 2026-11-05 09:00:00 +0530
 ---
 
 {% comment %}
@@ -27,8 +27,8 @@ DRAFT — three decisions for you before this is scheduled:
    flagged figures against the actual PDF first. Sources disagree on the
    FY26 participant count, so this post deliberately never quotes one.
 
-3. DATE. Set to 2027-01-05 purely to sit after the tax series ends
-   (2027-01-01) and keep the two-day cadence. Move it wherever you like.
+3. DATE. Set to 2026-11-05 purely to sit after the tax series ends
+   (2026-11-04) and keep the daily cadence. Move it wherever you like.
 
 Compliance note: this post takes a strong position on a market segment, which
 CLAUDE.md explicitly allows ("it's fine to have a point of view... as long as
@@ -220,9 +220,9 @@ mostly not individuals.
   doesn't, and the counterparty is usually a machine.
 - **Forgetting F&O is taxed differently.** F&O gains and losses are generally
   treated as **business income**, not capital gains — so the
-  [holding-period rules]({% post_url 2026-12-18-short-term-vs-long-term %})
+  [holding-period rules]({% post_url 2026-10-28-short-term-vs-long-term %})
   and the
-  [₹1.25 lakh exemption]({% post_url 2026-12-20-equity-and-equity-funds %})
+  [₹1.25 lakh exemption]({% post_url 2026-10-29-equity-and-equity-funds %})
   that this blog's tax series covers do not apply to them. Different return
   form, different rules, often an audit requirement. Worth its own post.
 

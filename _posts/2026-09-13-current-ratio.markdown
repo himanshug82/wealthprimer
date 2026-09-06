@@ -3,7 +3,7 @@ layout: post
 title: "Current Ratio: can short-term assets cover short-term bills"
 description: "Can short-term assets cover short-term bills? The current ratio, why textbook thresholds mislead, and the four numbers to read around it before trusting it."
 image: /assets/og/current-ratio.png
-date: 2026-09-19 09:00:00 +0530
+date: 2026-09-13 09:00:00 +0530
 series: jargon
 ---
 
@@ -14,7 +14,7 @@ series: jargon
 
 ## What the current ratio means
 
-[Net Working Capital]({% post_url 2026-09-17-net-working-capital %}) gave us a rupee cushion, but a rupee cushion only means
+[Net Working Capital]({% post_url 2026-09-12-net-working-capital %}) gave us a rupee cushion, but a rupee cushion only means
 something relative to the size of the bills it needs to cover. **Current
 Ratio** fixes that by turning the same two numbers into a ratio instead of a
 difference: for every rupee of current liabilities, how many rupees of
@@ -54,7 +54,7 @@ From Britannia Industries' [audited consolidated FY25 results](https://media.bri
 
 At {{ site.data.real_company.ratios.FY25.current_ratio }}, Britannia's current ratio is barely above 1 — far tighter than
 Desi Bites'. Read on its own, that might look like a warning sign. But
-remember Britannia's [cash conversion cycle]({% post_url 2026-09-13-cash-conversion-cycle %}) is *negative* — it collects
+remember Britannia's [cash conversion cycle]({% post_url 2026-09-10-cash-conversion-cycle %}) is *negative* — it collects
 from customers and moves inventory faster than it pays its own suppliers. A
 company that fast doesn't need to sit on a large buffer of current assets to
 stay safe; the cash keeps arriving quickly enough on its own. This is

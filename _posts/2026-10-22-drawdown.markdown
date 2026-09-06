@@ -3,7 +3,7 @@ layout: post
 title: "Drawdown: not just how far it fell, but how long you waited"
 description: "Not just how far a fund fell, but how long you waited to get back. Maximum drawdown, recovery time, and why the journey is what investors quit during."
 image: /assets/og/drawdown.png
-date: 2026-12-06 09:00:00 +0530
+date: 2026-10-22 09:00:00 +0530
 series: mutual-funds
 ---
 
@@ -93,7 +93,7 @@ you may reach your deadline still underwater — the recovery took nearly six.
 That isn't a hypothetical: it's what the first row of that table describes.
 
 It's also the honest version of the point the
-[rolling returns post]({% post_url 2026-12-02-rolling-returns %}) made. Three-year windows
+[rolling returns post]({% post_url 2026-10-20-rolling-returns %}) made. Three-year windows
 were negative {{ mf.rolling_returns.years_3.pct_negative }}% of the time; seven-year windows never were. Drawdown
 recovery is the mechanism behind those statistics — the reason short horizons
 are risky isn't that returns are lower, it's that you might be forced to sell

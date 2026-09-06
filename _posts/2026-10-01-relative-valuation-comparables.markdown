@@ -3,7 +3,7 @@ layout: post
 title: "Relative valuation: what a company is worth compared to whom"
 description: "Valuing a company against its peers. How multiples-based valuation works in practice, how the peer set gets chosen, and the traps that make cheap look cheap."
 image: /assets/og/relative-valuation-comparables.png
-date: 2026-10-25 09:00:00 +0530
+date: 2026-10-01 09:00:00 +0530
 series: fundamental-analysis
 ---
 
@@ -56,14 +56,14 @@ reference table rather than a re-explanation:
 
 | Multiple | What it compares | Best for | Breaks down when |
 |---|---|---|---|
-| [P/E]({% post_url 2026-10-11-price-to-earnings %}) | Price to earnings per share | Profitable, stable companies | Earnings are negative, tiny, or distorted by one-offs |
-| [P/B]({% post_url 2026-10-13-price-to-book %}) | Price to book value per share | Banks, financials, asset-heavy businesses | Most value is intangible (brands, software) |
-| [EV/EBITDA]({% post_url 2026-10-15-ev-ebitda %}) | Enterprise value to operating profit | Comparing across different debt levels | Capex needs differ wildly between peers |
+| [P/E]({% post_url 2026-09-24-price-to-earnings %}) | Price to earnings per share | Profitable, stable companies | Earnings are negative, tiny, or distorted by one-offs |
+| [P/B]({% post_url 2026-09-25-price-to-book %}) | Price to book value per share | Banks, financials, asset-heavy businesses | Most value is intangible (brands, software) |
+| [EV/EBITDA]({% post_url 2026-09-26-ev-ebitda %}) | Enterprise value to operating profit | Comparing across different debt levels | Capex needs differ wildly between peers |
 
 EV/EBITDA deserves a note here, because it's the one that most often belongs
 in a comps table. P/E is computed on the equity value alone, so two identical
 businesses with different borrowings will show different P/Es purely because
-of how they're financed. [Enterprise value]({% post_url 2026-10-15-ev-ebitda %}) adds debt back and
+of how they're financed. [Enterprise value]({% post_url 2026-09-26-ev-ebitda %}) adds debt back and
 strips cash out, which puts companies with different capital structures onto
 a common footing. When your peer set has a mix of debt-laden and net-cash
 companies, EV/EBITDA is usually the fairer comparison.
@@ -121,7 +121,7 @@ mistake this post exists to prevent. Both companies make packaged food in
 India. That is roughly where the similarity ends, and the gaps explain
 almost the entire spread:
 
-- **Return on equity.** From the [last post]({% post_url 2026-10-23-dupont-roe-decomposition %}),
+- **Return on equity.** From the [last post]({% post_url 2026-09-30-dupont-roe-decomposition %}),
   Britannia earns 52.5% on shareholders' equity against Desi Bites'
   34.0%. A business that compounds equity faster is *worth* a higher
   multiple of that equity. Much of the P/B gap is this and nothing more.

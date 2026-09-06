@@ -3,7 +3,7 @@ layout: post
 title: "Point-to-point returns: the same fund, from 2.6% to 23.9% a year"
 description: "The same index fund returned 2.6% and 23.9% a year over five-year windows, depending only on the start month. Why a quoted return is a choice of dates."
 image: /assets/og/point-to-point-returns.png
-date: 2026-11-30 09:00:00 +0530
+date: 2026-10-19 09:00:00 +0530
 series: mutual-funds
 ---
 
@@ -15,7 +15,7 @@ series: mutual-funds
 
 Open any fund factsheet, advertisement or app screen and you'll see something
 like "5-year return: 14.2%" against the
-[NAV]({% post_url 2026-11-28-what-a-mutual-fund-is %}) you're buying at. That's a **point-to-point return** — take the
+[NAV]({% post_url 2026-10-18-what-a-mutual-fund-is %}) you're buying at. That's a **point-to-point return** — take the
 NAV on one date, the NAV on another, and annualise the change between them.
 
 It's the standard way returns get quoted. It's also, on its own, close to

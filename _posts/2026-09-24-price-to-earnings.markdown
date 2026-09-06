@@ -3,7 +3,7 @@ layout: post
 title: "P/E: how many years of earnings you're paying for"
 description: "How many years of current earnings the market is charging for. The P/E formula, why high is not automatically expensive, and the earnings quality behind the E."
 image: /assets/og/price-to-earnings.png
-date: 2026-10-11 09:00:00 +0530
+date: 2026-09-24 09:00:00 +0530
 series: jargon
 ---
 
@@ -27,7 +27,7 @@ profit an investor is paying for at today's price.
 P/E = Price per Share / EPS
 ```
 
-This series always uses **diluted** EPS — the [last post]({% post_url 2026-10-09-eps %}) showed exactly why
+This series always uses **diluted** EPS — the [last post]({% post_url 2026-09-23-eps %}) showed exactly why
 that matters.
 
 ## Worked example: Desi Bites Foods Ltd
@@ -61,7 +61,7 @@ signal to act on.
 A P/E of {{ bi_pe }}x means the market was pricing Britannia at roughly {{ bi_pe }} years of
 its FY25 earnings. That's a rich multiple — but not an irrational one for a
 company that, across this whole series, has shown [ROE above 50%]({% post_url 2026-09-01-roe %}),
-[negative net debt]({% post_url 2026-09-29-net-debt-ebitda %}), and [a negative cash conversion cycle]({% post_url 2026-09-13-cash-conversion-cycle %}). A high
+[negative net debt]({% post_url 2026-09-18-net-debt-ebitda %}), and [a negative cash conversion cycle]({% post_url 2026-09-10-cash-conversion-cycle %}). A high
 P/E is what a market paying up for genuine, demonstrated quality looks
 like — whether {{ bi_pe }}x specifically is a *good price* to pay for that quality is
 a separate question this series deliberately doesn't answer.
@@ -82,7 +82,7 @@ a separate question this series deliberately doesn't answer.
   "reasonable" P/Es that mean completely different things.
 - **Ignoring earnings quality behind the E.** A great P/E on paper means
   little if the earnings themselves aren't backed by real cash — worth
-  checking [OCF/PAT]({% post_url 2026-10-03-ocf-pat %}) before trusting a P/E at face value.
+  checking [OCF/PAT]({% post_url 2026-09-20-ocf-pat %}) before trusting a P/E at face value.
 
 **Takeaway:** P/E measures how many years of current earnings the market is
 charging for a share — useful as a starting comparison, but it only means

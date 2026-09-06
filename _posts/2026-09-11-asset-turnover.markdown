@@ -3,7 +3,7 @@ layout: post
 title: "Asset Turnover: how much revenue a company squeezes out of what it owns"
 description: "How much revenue a company generates per rupee of assets. Asset turnover as a pure efficiency measure, and why it says nothing at all about margins."
 image: /assets/og/asset-turnover.png
-date: 2026-09-15 09:00:00 +0530
+date: 2026-09-11 09:00:00 +0530
 series: jargon
 ---
 

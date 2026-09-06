@@ -3,7 +3,7 @@ layout: post
 title: "Chart patterns: the double top that wasn't"
 description: "The pattern vocabulary is worth knowing and worth being sceptical about. Double tops, head and shoulders, and one textbook formation that did not play out."
 image: /assets/og/chart-patterns.png
-date: 2026-11-24 09:00:00 +0530
+date: 2026-10-16 09:00:00 +0530
 series: technical-analysis
 ---
 
@@ -82,7 +82,7 @@ price returned to ₹6,208.5 — right back into the band.
 
 Read without the pattern imposed on it, this isn't a double top at all. It's
 a **range**: a stock oscillating underneath the
-[resistance zone]({% post_url 2026-11-12-support-and-resistance %}) established back in
+[resistance zone]({% post_url 2026-10-10-support-and-resistance %}) established back in
 2024, bouncing off it six times over seven months. The "double top" only
 exists if you select two of the six highs and quietly discard the other four.
 

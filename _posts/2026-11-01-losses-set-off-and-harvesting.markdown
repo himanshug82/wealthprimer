@@ -3,7 +3,7 @@ layout: post
 title: "Losses: set-off, carry-forward, and the ₹1.25 lakh you can use each year"
 description: "A capital loss is an asset for tax purposes. Which losses offset which gains, the carry-forward window, and how harvesting works against the annual exemption."
 image: /assets/og/losses-set-off-and-harvesting.png
-date: 2026-12-26 09:00:00 +0530
+date: 2026-11-01 09:00:00 +0530
 series: tax
 ---
 
@@ -117,7 +117,7 @@ so the tax saving needs to exceed the friction.
 
 **Harvesting gains is the more interesting idea**, and it's specific to
 Indian equity taxation. Recall from the
-[equity post]({% post_url 2026-12-20-equity-and-equity-funds %}) that the first
+[equity post]({% post_url 2026-10-29-equity-and-equity-funds %}) that the first
 ₹{% include inr.html n=r.ltcg_annual_exemption %} of long-term gains each financial year is exempt, and that the
 allowance does not carry forward. Unused, it expires on 31 March.
 

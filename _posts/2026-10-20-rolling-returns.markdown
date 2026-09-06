@@ -3,7 +3,7 @@ layout: post
 title: "Rolling returns: every start date, not the flattering one"
 description: "Rolling returns compute the outcome from every possible start date instead of one flattering window. How to build them, and how to read the distribution."
 image: /assets/og/rolling-returns.png
-date: 2026-12-02 09:00:00 +0530
+date: 2026-10-20 09:00:00 +0530
 series: mutual-funds
 ---
 
@@ -13,7 +13,7 @@ series: mutual-funds
 
 ## The fix
 
-The [last post]({% post_url 2026-11-30-point-to-point-returns %}) showed the same index
+The [last post]({% post_url 2026-10-19-point-to-point-returns %}) showed the same index
 fund returning anywhere from 2.56% to 23.92% a year over five-year windows,
 depending only on the start month. The problem was that any single window is
 a choice.
@@ -108,7 +108,7 @@ distribution, and only one of them gets printed.
 
 ## A discrepancy worth understanding
 
-The [last post]({% post_url 2026-11-30-point-to-point-returns %}) gave the fund's
+The [last post]({% post_url 2026-10-19-point-to-point-returns %}) gave the fund's
 whole-period return as **{{ mf.volatility_and_sharpe.annualised_return_pct }}% a year**. But the median 5-year rolling return
 here is **{{ rr.years_5.median }}%** — a gap of about two percentage points.
 

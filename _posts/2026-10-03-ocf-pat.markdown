@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "OCF/PAT: how much of reported profit actually shows up as cash"
+description: "An earnings quality check: how much reported profit turns up as real operating cash in the same year, and what a persistent gap between them tends to mean."
+image: /assets/og/ocf-pat.png
 date: 2026-10-03 09:00:00 +0530
 series: jargon
 ---

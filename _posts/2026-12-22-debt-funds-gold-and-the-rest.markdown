@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Debt funds, gold and the rest: where the slab rate takes over"
+description: "Where the concessional rates stop and your slab rate takes over. Debt fund units bought from April 2023, gold, property, and the end of indexation."
+image: /assets/og/debt-funds-gold-and-the-rest.png
 date: 2026-12-22 09:00:00 +0530
 series: tax
 ---

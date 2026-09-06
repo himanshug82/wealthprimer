@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "P/B: how much the market pays over accounting net worth"
+description: "How many rupees the market pays for each rupee of accounting net worth. P/B, why it pairs naturally with ROE, and where book value stops meaning much."
+image: /assets/og/price-to-book.png
 date: 2026-10-13 09:00:00 +0530
 series: jargon
 ---

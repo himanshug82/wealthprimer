@@ -19,6 +19,13 @@ layout: default
     {{ content }}
   </div>
 
+  {%- comment -%}
+    Newsletter sits ABOVE the disclaimer on purpose: a signup buried under a
+    block of legal text is a signup nobody sees. It self-hides unless
+    `newsletter.action` is configured.
+  {%- endcomment -%}
+  {%- include newsletter.html -%}
+
   {%- include disclaimer.html -%}
 
   {%- if site.disqus.shortname -%}

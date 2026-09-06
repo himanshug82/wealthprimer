@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "WACC: the discount rate, and where it actually comes from"
+description: "Where the discount rate comes from. Cost of equity via CAPM, cost of debt after tax, and how the two blend into the input that moves a DCF more than any other."
+image: /assets/og/wacc-cost-of-capital.png
 date: 2026-10-29 09:00:00 +0530
 series: fundamental-analysis
 ---

@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Interest Coverage: can operating profit comfortably pay the interest bill"
+description: "Whatever the debt load, can operating profit comfortably pay the interest bill? EBIT over interest, and why lenders reach for this ratio first."
+image: /assets/og/interest-coverage.png
 date: 2026-09-27 09:00:00 +0530
 series: jargon
 ---

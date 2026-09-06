@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "PEG: is the P/E actually justified by how fast the company is growing"
+description: "PEG divides P/E by the growth rate to ask whether a multiple is justified. A useful framing built on a genuinely fragile input, and how to treat it as one."
+image: /assets/og/peg-ratio.png
 date: 2026-10-21 09:00:00 +0530
 series: jargon
 ---

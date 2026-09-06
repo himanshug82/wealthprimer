@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Reading an Income Statement (P&L), using a snacks company"
+description: "The P&L is a waterfall from revenue down to profit. Every stopping point along the way, from gross profit to EBITDA to PAT, and what each one tells you."
+image: /assets/og/reading-an-income-statement.png
 date: 2026-08-22 09:00:00 +0530
 series: jargon
 ---
@@ -51,6 +53,11 @@ stand and pay interest on it, subtract that too. What's left after every cost
 is the only number that tells you what you actually get to keep.
 
 </details>
+
+![Income statement waterfall: revenue reduced step by step down to profit after tax]({{ '/assets/charts/fa-income-waterfall.svg' | relative_url }})
+
+Desi Bites Foods, FY25 — the fictional case study, drawn to scale from the
+same figures used in the tables below. Illustration only.
 
 ## Worked example: Desi Bites Foods, FY25
 

@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Debt-to-Equity: how much of the business runs on borrowed money"
+description: "How much of a business runs on borrowed money. D/E, why this series counts only interest-bearing debt, and why high leverage is not automatically bad."
+image: /assets/og/debt-to-equity.png
 date: 2026-09-23 09:00:00 +0530
 series: jargon
 ---

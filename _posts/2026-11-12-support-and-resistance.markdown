@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Support and resistance: the price levels that keep mattering"
+description: "Why price stalls at roughly the same levels again and again. Drawing support and resistance as zones rather than lines, and what a break really tells you."
+image: /assets/og/support-and-resistance.png
 date: 2026-11-12 09:00:00 +0530
 series: technical-analysis
 ---

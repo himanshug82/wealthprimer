@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" width="100%" role="img" aria-labelledby="t d">
+<title id="t">Composition of a DCF valuation</title>
+<desc id="d">A bar showing that 74.2 percent of enterprise value comes from terminal value, then the bridge from enterprise value to a per-share figure.</desc>
+<rect width="720" height="360" fill="#ffffff"/>
+<text x="360.0" y="30.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" fill="#0b0b0b" font-weight="600" text-anchor="middle">What a DCF is actually made of</text>
+<text x="360.0" y="50.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#52514e" font-weight="normal" text-anchor="middle">Desi Bites Foods — figures in Rs Lakh</text>
+<rect x="60.0" y="84.0" width="155.1" height="48.0" rx="4" fill="#184f95"/>
+<rect x="215.1" y="84.0" width="444.9" height="48.0" rx="4" fill="#cde2fb" stroke="#d8d8d8" stroke-width="1"/>
+<text x="137.5" y="114.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#ffffff" font-weight="600" text-anchor="middle">26%</text>
+<text x="437.5" y="114.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#0b0b0b" font-weight="600" text-anchor="middle">74.2%</text>
+<text x="60.0" y="74.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#184f95" font-weight="600" text-anchor="start">PV of 5 forecast years</text>
+<text x="221.1" y="74.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#52514e" font-weight="600" text-anchor="start">PV of terminal value</text>
+<text x="60.0" y="152.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#52514e" font-weight="normal" text-anchor="start">902.5</text>
+<text x="221.1" y="152.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#52514e" font-weight="normal" text-anchor="start">2,589.0</text>
+<text x="360.0" y="180.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#b3403a" font-weight="600" text-anchor="middle">74.2% of the answer comes from a single assumption about life after year five.</text>
+<text x="60.0" y="210.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#52514e" font-weight="normal" text-anchor="start">Enterprise value</text>
+<text x="660.0" y="210.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#52514e" font-weight="normal" text-anchor="end">3,491.5</text>
+<text x="60.0" y="236.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#52514e" font-weight="normal" text-anchor="start">less net debt (a net cash position)</text>
+<text x="660.0" y="236.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#52514e" font-weight="normal" text-anchor="end">-1,480</text>
+<text x="60.0" y="262.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#0b0b0b" font-weight="600" text-anchor="start">Equity value</text>
+<text x="660.0" y="262.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#0b0b0b" font-weight="600" text-anchor="end">4,971.5</text>
+<line x1="60" y1="270.0" x2="660" y2="270.0" stroke="#d8d8d8" stroke-width="1"/>
+<text x="60.0" y="288.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#52514e" font-weight="normal" text-anchor="start">÷ shares outstanding (lakh)</text>
+<text x="660.0" y="288.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#52514e" font-weight="normal" text-anchor="end">12.5</text>
+<text x="60.0" y="314.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#0b0b0b" font-weight="600" text-anchor="start">Value per share</text>
+<text x="660.0" y="314.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#0b0b0b" font-weight="600" text-anchor="end">Rs 397.72</text>
+<line x1="60" y1="322.0" x2="660" y2="322.0" stroke="#d8d8d8" stroke-width="1"/>
+<text x="360.0" y="346.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.5" fill="#52514e" font-weight="normal" text-anchor="middle">Computed on the FICTIONAL case study — never on a listed stock. Illustration of a method only.</text>
+</svg>

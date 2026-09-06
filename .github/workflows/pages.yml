@@ -15,6 +15,20 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 jobs:
+  # Deliberately NOT a dependency of build/deploy. Renaming a post title makes its
+  # social card stale, and this surfaces that as a red check — but publishing runs
+  # on a daily cron, so a forgotten `python3 scripts/make_og_cards.py` must never
+  # be able to stop scheduled posts from going live. Advisory, not a gate.
+  og-cards:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pyyaml pillow
+      - run: python3 scripts/make_og_cards.py --check
+
   build:
     runs-on: ubuntu-latest
     steps:

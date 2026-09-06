@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" width="100%" role="img" aria-labelledby="t d">
+<title id="t">Cash flow bridge</title>
+<desc id="d">Opening cash of 178 lakh, adjusted by operating, investing and financing cash flows, reaching closing cash of 280 lakh.</desc>
+<rect width="720" height="380" fill="#ffffff"/>
+<text x="360.0" y="30.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" fill="#0b0b0b" font-weight="600" text-anchor="middle">Where the cash actually went</text>
+<text x="360.0" y="50.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#52514e" font-weight="normal" text-anchor="middle">Desi Bites Foods, FY25 — figures in Rs Lakh</text>
+<line x1="30" y1="250" x2="690" y2="250" stroke="#d8d8d8" stroke-width="1"/>
+<rect x="40.0" y="179.0" width="96.0" height="71.0" rx="3" fill="#184f95"/>
+<text x="88.0" y="171.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#0b0b0b" font-weight="600" text-anchor="middle">178</text>
+<text x="88.0" y="337.4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#0b0b0b" font-weight="500" text-anchor="middle">Opening cash</text>
+<rect x="176.0" y="120.0" width="96.0" height="130.0" rx="3" fill="#2e7d5b"/>
+<text x="224.0" y="112.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#0b0b0b" font-weight="600" text-anchor="middle">326</text>
+<text x="224.0" y="337.4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#0b0b0b" font-weight="500" text-anchor="middle">Operating (CFO)</text>
+<text x="224.0" y="352.4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="9" fill="#52514e" font-weight="normal" text-anchor="middle">Cash the business</text>
+<text x="224.0" y="363.4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="9" fill="#52514e" font-weight="normal" text-anchor="middle">itself threw off</text>
+<rect x="312.0" y="250.0" width="96.0" height="31.9" rx="3" fill="#b3403a"/>
+<text x="360.0" y="297.9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#0b0b0b" font-weight="600" text-anchor="middle">-80</text>
+<text x="360.0" y="337.4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#0b0b0b" font-weight="500" text-anchor="middle">Investing (CFI)</text>
+<text x="360.0" y="352.4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="9" fill="#52514e" font-weight="normal" text-anchor="middle">Mostly capex — buying</text>
+<text x="360.0" y="363.4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="9" fill="#52514e" font-weight="normal" text-anchor="middle">capacity</text>
+<rect x="448.0" y="250.0" width="96.0" height="57.4" rx="3" fill="#b3403a"/>
+<text x="496.0" y="323.4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#0b0b0b" font-weight="600" text-anchor="middle">-144</text>
+<text x="496.0" y="337.4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#0b0b0b" font-weight="500" text-anchor="middle">Financing (CFF)</text>
+<text x="496.0" y="352.4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="9" fill="#52514e" font-weight="normal" text-anchor="middle">Debt repaid and</text>
+<text x="496.0" y="363.4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="9" fill="#52514e" font-weight="normal" text-anchor="middle">dividends paid</text>
+<rect x="584.0" y="138.3" width="96.0" height="111.7" rx="3" fill="#184f95"/>
+<text x="632.0" y="130.3" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#0b0b0b" font-weight="600" text-anchor="middle">280</text>
+<text x="632.0" y="337.4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#0b0b0b" font-weight="500" text-anchor="middle">Closing cash</text>
+<text x="360.0" y="78.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#52514e" font-weight="normal" text-anchor="middle">Profit was 209 lakh. Operating cash was 326 lakh. The gap is the whole point of this statement.</text>
+</svg>

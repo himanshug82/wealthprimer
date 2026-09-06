@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Free Cash Flow: what's actually left over to spend, save, or return to shareholders"
+description: "After running the business and paying for capex, how much cash is genuinely left over? FCF, the formula, and why negative FCF is sometimes good news."
+image: /assets/og/free-cash-flow.png
 date: 2026-10-01 09:00:00 +0530
 series: jargon
 ---

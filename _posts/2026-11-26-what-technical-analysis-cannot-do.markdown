@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "What technical analysis cannot do"
+description: "The honest reckoning that closes the series: hindsight bias, subjectivity, overfitting, and the questions about a business that no chart can answer."
+image: /assets/og/what-technical-analysis-cannot-do.png
 date: 2026-11-26 09:00:00 +0530
 series: technical-analysis
 ---

@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "What technical analysis is, and what it quietly assumes"
+description: "Technical analysis studies price and volume rather than the business. What it assumes, where those assumptions come from, and how it differs from fundamentals."
+image: /assets/og/what-technical-analysis-is.png
 date: 2026-11-08 09:00:00 +0530
 series: technical-analysis
 ---

@@ -1,0 +1,63 @@
+# SEBI's own studies on how individual traders actually do in the equity
+# derivatives (F&O) segment. Used by the F&O reality-check post.
+#
+# ── VERIFY BEFORE PUBLISHING ────────────────────────────────────────────────
+# These figures were taken from SEBI's press release and from secondary
+# reporting of the August 2026 study, NOT from the primary PDF — sebi.gov.in
+# serves the study PDFs behind a landing page that automated fetches could not
+# get through. Same situation as the tax series and incometaxindia.gov.in.
+#
+# Before this post goes out, open the two Aug 2026 studies and check every
+# number marked `corroborated: false` below against the actual PDF:
+#   https://www.sebi.gov.in/reports-and-statistics/research/aug-2026/study-profitability-of-individual-traders-in-the-equity-derivatives-segment-fy25-fy26-_103835.html
+#   https://www.sebi.gov.in/reports-and-statistics/research/aug-2026/study-trading-behaviour-of-individual-traders-in-the-equity-derivatives-segment-fy25-fy26-_103836.html
+#
+# KNOWN CONFLICT: sources disagree on how many individual traders participated
+# in FY26 — one reports ~87.5 lakh, another ~78.6 lakh "active" traders. These
+# are probably two different definitions (all participants vs. active). The post
+# deliberately does NOT quote a participant count until the PDF settles it.
+# ────────────────────────────────────────────────────────────────────────────
+
+sources:
+  fy22_study:
+    label: "SEBI, Analysis of Profit and Loss of Individual Traders dealing in Equity F&O Segment"
+    date: "January 2023"
+    url: "https://www.sebi.gov.in/reports-and-statistics/research/jan-2023/study-analysis-of-profit-and-loss-of-individual-traders-dealing-in-equity-fando-segment_67525.html"
+  fy22_fy24_study:
+    label: "SEBI press release 37/2024, updated study on individual traders in equity F&O"
+    date: "23 September 2024"
+    url: "https://www.sebi.gov.in/media-and-notifications/press-releases/sep-2024/updated-sebi-study-reveals-93-of-individual-traders-incurred-losses-in-equity-fando-between-fy22-and-fy24-aggregate-losses-exceed-1-8-lakh-crores-over-three-years_86906.html"
+  fy25_fy26_study:
+    label: "SEBI, Profitability of Individual Traders in the Equity Derivatives Segment (FY25–FY26)"
+    date: "20 August 2026"
+    url: "https://www.sebi.gov.in/reports-and-statistics/research/aug-2026/study-profitability-of-individual-traders-in-the-equity-derivatives-segment-fy25-fy26-_103835.html"
+
+# Headline figures, confirmed against SEBI's own press release page.
+fy22:
+  loss_pct: 89
+  corroborated: true          # SEBI Jan 2023 study, widely reported
+
+fy22_fy24:
+  loss_pct: 93
+  aggregate_loss_cr: 180000   # "exceed Rs 1.8 lakh crore" — press release headline
+  corroborated: true          # verified on sebi.gov.in press release 37/2024
+
+fy26:
+  loss_pct: 87.7
+  aggregate_loss_cr: 91685
+  options_share_of_losses_pct: 92
+  corroborated: true          # two independent secondary sources agree
+
+# Single-source figures. USEFUL BUT UNVERIFIED — check each against the PDF.
+# The post uses only the ones flagged in-line as needing a check, and leans on
+# the corroborated block above for anything load-bearing.
+fy26_unverified:
+  avg_loss_per_trader: 117000
+  aggregate_loss_cr_fy25: 112000
+  transaction_costs_cr_fy26: 25000
+  transaction_costs_cr_fy22_fy26: 100000
+  repeat_loser_pct: 90            # of those who lost two years running
+  options_buyers_pct: 97
+  options_sellers_pct: 2
+  loss_pct_zero_equity_holdings: 93
+  loss_pct_over_10cr_holdings: 58

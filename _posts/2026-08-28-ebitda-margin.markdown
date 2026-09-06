@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "EBITDA Margin: how the core business performs, before financing and accounting choices"
+description: "EBITDA margin isolates the core operating business before interest, tax and depreciation. What it usefully strips out, and what it conveniently hides."
+image: /assets/og/ebitda-margin.png
 date: 2026-08-28 09:00:00 +0530
 series: jargon
 ---

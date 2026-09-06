@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Chart patterns: the double top that wasn't"
+description: "The pattern vocabulary is worth knowing and worth being sceptical about. Double tops, head and shoulders, and one textbook formation that did not play out."
+image: /assets/og/chart-patterns.png
 date: 2026-11-24 09:00:00 +0530
 series: technical-analysis
 ---

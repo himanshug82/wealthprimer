@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Net Debt/EBITDA: how many years of profit it would take to pay off the debt"
+description: "How many years of operating profit it would take to clear the debt. The ratio credit rating agencies watch, and what a negative reading actually means."
+image: /assets/og/net-debt-ebitda.png
 date: 2026-09-29 09:00:00 +0530
 series: jargon
 ---

@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Reading a Balance Sheet, using a snacks company"
+description: "A balance sheet is a photograph, not a video. What a company owns, what it owes, and why assets always equal liabilities plus equity, read line by line."
+image: /assets/og/reading-a-balance-sheet.png
 date: 2026-08-20 09:00:00 +0530
 series: jargon
 ---
@@ -50,6 +52,11 @@ suppliers), non-current liabilities aren't (like a multi-year loan).
 **Equity** — what's left over for shareholders after you subtract liabilities
 from assets. It's share capital (money shareholders originally put in) plus
 reserves (profit the company has kept and reinvested instead of paying out).
+
+![Balance sheet drawn to scale: assets on the left, the equity and liabilities funding them on the right]({{ '/assets/charts/fa-balance-sheet.svg' | relative_url }})
+
+Desi Bites Foods, FY25 — the fictional case study, drawn to scale from the
+same figures used in the tables below. Illustration only.
 
 ## Worked example: Desi Bites Foods, FY25
 

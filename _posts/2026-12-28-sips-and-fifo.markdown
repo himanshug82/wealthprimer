@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "SIPs and FIFO: one redemption, sixty tax lots"
+description: "One redemption, sixty tax lots. Why each SIP instalment is a separate acquisition with its own holding-period clock, and how FIFO decides which units go first."
+image: /assets/og/sips-and-fifo.png
 date: 2026-12-28 09:00:00 +0530
 series: tax
 ---

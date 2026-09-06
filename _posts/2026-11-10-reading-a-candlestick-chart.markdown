@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Reading a candlestick chart: four prices in one bar"
+description: "Open, high, low and close packed into a single bar. How to read candlesticks, what bodies and wicks mean, and why a line chart throws most of it away."
+image: /assets/og/reading-a-candlestick-chart.png
 date: 2026-11-10 09:00:00 +0530
 series: technical-analysis
 ---

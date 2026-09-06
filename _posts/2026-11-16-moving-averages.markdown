@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Moving averages: smoothing the noise, at a price"
+description: "A moving average smooths price into something readable, and the price of that is lag. SMA versus EMA, crossovers, and how both behave in a sideways market."
+image: /assets/og/moving-averages.png
 date: 2026-11-16 09:00:00 +0530
 series: technical-analysis
 ---

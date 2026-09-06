@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Capex Intensity: how capital-hungry the business actually is"
+description: "What share of revenue a company must plough back into plant and equipment just to keep going, and how capital-hungry business models show up in the numbers."
+image: /assets/og/capex-intensity.png
 date: 2026-10-05 09:00:00 +0530
 series: jargon
 ---

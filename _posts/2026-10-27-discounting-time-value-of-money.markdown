@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Discounting: what a rupee five years from now is worth today"
+description: "Why a rupee in five years is worth less than a rupee today. Present value, discount rates, and just how sensitive a valuation is to the rate you pick."
+image: /assets/og/discounting-time-value-of-money.png
 date: 2026-10-27 09:00:00 +0530
 series: fundamental-analysis
 ---

@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Volatility and Sharpe: was the return worth the ride?"
+description: "Two funds return 12% very differently. Standard deviation as a measure of the ride, the Sharpe ratio, and the assumptions Sharpe quietly makes about returns."
+image: /assets/og/volatility-and-sharpe.png
 date: 2026-12-08 09:00:00 +0530
 series: mutual-funds
 ---

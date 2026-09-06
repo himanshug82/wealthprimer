@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "What a mutual fund is, and why a ₹10 NAV isn't cheap"
+description: "Units, NAV, AMCs, and why a ₹10 NAV is not cheaper than a ₹400 one. The mechanics of how a mutual fund works, before any performance number appears."
+image: /assets/og/what-a-mutual-fund-is.png
 date: 2026-11-28 09:00:00 +0530
 series: mutual-funds
 ---

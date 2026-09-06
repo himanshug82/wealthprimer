@@ -1,0 +1,52 @@
+{%- comment -%}
+Email signup. Renders ONLY when `newsletter.action` is set in _config.yml, so
+nothing half-built ever ships — an unset key means the block simply isn't there.
+
+Deliberately a plain HTML form POSTing straight to the provider: no provider
+JavaScript, no tracking pixel, no third-party stylesheet. That keeps the site's
+"loads no external resources" property true for every page render; the only
+request to the provider happens when a reader actually submits the form.
+
+MAILCHIMP setup:
+  Audience > Signup forms > Embedded form. From the generated <form action="...">
+  copy the WHOLE url (it already contains ?u=...&id=...) into `action` below.
+  Then find the hidden bot-trap input near the end of their markup — it is named
+  b_<u-value>_<id-value> — and copy that field NAME into `honeypot`.
+  Leave `provider: mailchimp` so the email field is named EMAIL, which is what
+  Mailchimp expects.
+
+BUTTONDOWN setup:
+  action: https://buttondown.com/api/emails/embed-subscribe/YOUR-USERNAME
+  provider: buttondown        (email field becomes `email`, no honeypot needed)
+  honeypot: ""
+
+Switching providers is these three keys — no template change.
+{%- endcomment -%}
+{%- assign nl = site.newsletter -%}
+{%- if nl.action and nl.action != '' -%}
+{%- if nl.provider == 'buttondown' -%}
+  {%- assign email_field = 'email' -%}
+{%- else -%}
+  {%- assign email_field = 'EMAIL' -%}
+{%- endif -%}
+<aside class="newsletter" aria-labelledby="newsletter-heading">
+  <h2 id="newsletter-heading">{{ nl.heading | default: "Get each post when it lands" }}</h2>
+  <p class="newsletter-blurb">
+    {{ nl.blurb | default: "One concept at a time, every couple of days. No tips, no calls, no hype — just the explainers. Unsubscribe whenever." }}
+  </p>
+  <form class="newsletter-form" action="{{ nl.action }}" method="post" target="_blank" novalidate>
+    <label class="visually-hidden" for="newsletter-email">Email address</label>
+    <input class="newsletter-email" id="newsletter-email" type="email" name="{{ email_field }}"
+           placeholder="you@example.com" autocomplete="email" required>
+    {%- if nl.honeypot and nl.honeypot != '' -%}
+    {%- comment -%}Bot trap: off-screen, never focusable, never announced.{%- endcomment -%}
+    <div class="newsletter-trap" aria-hidden="true"><input type="text" name="{{ nl.honeypot }}" tabindex="-1" value="" autocomplete="off"></div>
+    {%- endif -%}
+    <button class="newsletter-button" type="submit">Subscribe</button>
+  </form>
+  <p class="newsletter-fineprint">
+    Educational posts only — never a recommendation to buy or sell anything.
+    Or subscribe <a href="{{ '/feed.xml' | relative_url }}">via RSS</a> instead.
+  </p>
+</aside>
+{%- endif -%}

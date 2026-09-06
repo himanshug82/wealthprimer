@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Net Margin: what actually makes it to the bottom line"
+description: "Net margin is what survives every single cost, including interest and tax. How to read it alongside gross and EBITDA margin rather than on its own."
+image: /assets/og/net-margin.png
 date: 2026-08-30 09:00:00 +0530
 series: jargon
 ---

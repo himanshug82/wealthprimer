@@ -442,6 +442,137 @@ DONE — Indian number formatting in posts (site-wide)
   targeting bare numeric outputs, which is where the date-mangling risk
   lives, so it needs a more careful pass than a regex.
 
+DONE — SEO metadata and dead links (site-wide)
+
+- PROBLEM FOUND: every post shipped the SAME <meta name="description">. Cause:
+  68 of 69 posts open with a `{% assign %}` block, so Jekyll's auto-excerpt was
+  that block, which renders to an empty string; jekyll-seo-tag then fell back to
+  site.description on all 69 pages. Verified in the built HTML, not assumed.
+- FIX: an explicit `description:` in every post's front matter, written from
+  that post's own content (140-160 chars, the length Google shows). All 69 are
+  distinct — verified by building with --future and diffing the rendered meta
+  tags: 69 posts, 69 unique descriptions.
+- Note this does NOT fix the homepage excerpts. `show_excerpts: true` is still
+  silently rendering nothing for the same underlying reason, so /index.html is
+  a bare list of titles. Fixing that needs `excerpt_separator` plus a marker in
+  each post, or an explicit `excerpt:` — separate job, not done here.
+- FIXED: twitter:creator was shipping as `@Himanshu Gupta` — a handle with a
+  space in it. jekyll-seo-tag's AuthorDrop falls back to the author's NAME as
+  the handle when none is set. `author:` in _config.yml cannot simply become a
+  hash, because minima's footer prints `{{ site.author | escape }}` and would
+  render the raw hash. Fix: keep `author:` a string and add _data/authors.yml,
+  which seo-tag merges by name (AuthorDrop#site_data_hash). The top-level key
+  in that file must stay identical to `author:` in _config.yml.
+- FIXED: THREE dead LinkedIn links, all pointing somewhere useless.
+  about.markdown and the `social.links` sameAs both used
+  linkedin.com/feed/ — which sends a visitor to their OWN feed — and minima's
+  social.html was separately rendering linkedin.com/in/wealthprimer_in out of
+  `linkedin_username`, a profile that doesn't exist. All three removed
+  (user's call) rather than pointed at a guess. If a real profile or company
+  page is ever created, all three come back together — see the comment at
+  `linkedin_username` in _config.yml. About now lists the contact email instead.
+- FIXED: privacy.markdown was shipping three literal "TODO —" bullets to a
+  public page, on the one page whose whole job is establishing credibility.
+  Replaced with what is actually true today: no analytics, no cookies, no
+  third-party resources, no ads, no comments, plus an honest note that GitHub
+  Pages logs requests as any host does. Each of those is verifiable by a
+  reader opening devtools, so there is a MAINTENANCE comment in the file: add
+  any of them and the list must be updated in the same commit.
+
+DONE — analytics, email capture, homepage, diagrams, social cards
+
+- ANALYTICS: GoatCounter, in _includes/analytics.html, wired into head.html
+  (replacing the never-configured google_analytics block). Renders ONLY when
+  `goatcounter:` is set in _config.yml AND the build is production, so local
+  serve stays clean. Set it to the site CODE from https://CODE.goatcounter.com,
+  not the full URL. Chosen over GA4 so /privacy/ can keep saying no cookies.
+- EMAIL: _includes/newsletter.html, on every post (above the disclaimer, since
+  a signup under a wall of legal text is a signup nobody sees) and on the
+  homepage. Renders nothing until `newsletter.action` is set, so a
+  half-configured list ships nothing. Deliberately a PLAIN HTML form posting
+  straight to the provider — no provider JS, no tracking pixel — which is what
+  keeps the "loads no external resources" property true on page render.
+  Configured for Mailchimp; switching to Buttondown is three config keys and no
+  template change. Setup steps are in the include's own comment.
+  - Mailchimp's free tier is 500 contacts / 1,000 sends a month with their
+    branding in the footer. Buttondown's is 100 subscribers with neither. Worth
+    revisiting once the list is real; the switch is one config edit.
+- PRIVACY PAGE IS NOW SELF-MAINTAINING: the analytics, cookie, third-party and
+  email bullets are rendered CONDITIONALLY on the same two config keys that
+  switch those features on. Turning a feature on turns its disclosure on in the
+  same act — they cannot silently disagree, which was the exact failure mode
+  flagged last round. Claims not driven by a key (no ads, no comments) are still
+  asserted as plain fact and still need a manual edit if that changes.
+- HOMEPAGE: _layouts/home.html now overrides minima's. Was a bare reverse-chron
+  list of every title, so a first-time reader landed on whatever ratio published
+  last with no signal it was post 21 of 33. Now: a hero, a "Start here" grid of
+  the five series (rendered from _data/series.yml, so a sixth series needs no
+  edit here), then the 8 latest posts WITH one-line summaries, then the signup.
+  - This is also the excerpt fix. Rather than fight Jekyll's auto-excerpt — which
+    returns an empty string because 68 of 69 posts open with a {% assign %} block
+    — the layout uses each post's `description:` front matter. That same field
+    already feeds the meta description AND (checked in jekyll-feed's template)
+    the RSS <summary>, which the descriptions silently fixed too. One sentence
+    per post, written once, used in three places.
+  - `show_excerpts: true` REMOVED from _config.yml. It was a no-op. Re-adding it
+    will not bring excerpts back; the layout no longer reads post.excerpt.
+  - Series with nothing published yet now read "Publishing soon" instead of
+    "0 posts published so far" — four of five said the latter for months.
+- DIAGRAMS: six schematics for the Jargon/FA posts, which had NO images at all
+  across 41 posts (charts existed only in TA and MF). Balance sheet identity,
+  income waterfall, cash flow bridge, cash conversion cycle, DuPont tree, and
+  the composition of a DCF — inserted into the six posts they belong to.
+  - GENERATED, NOT HAND-DRAWN: scripts/make_diagrams.py READS _data/case_study.yml
+    and emits the SVG. Every number in these diagrams also appears in a post,
+    rendered from that same YAML; hand-drawing would have created two sources of
+    truth that drift apart silently. If the case study model changes, re-run it.
+  - Authored as SVG rather than through matplotlib (unlike the TA/MF charts)
+    because these are schematics, not plots of a dataset. Palette comes from
+    assets/logo.svg so the whole site stays one visual system.
+- SOCIAL CARDS: scripts/make_og_cards.py generates a per-post 1200x630 card into
+  assets/og/, and every post now carries `image:` front matter pointing at its
+  own. All 69 posts previously fell back to the site default, so every link to
+  this blog on Twitter/LinkedIn/WhatsApp/Slack looked identical — the biggest
+  click-through lever a text blog has, thrown away.
+  - RE-RUN THIS WHEN A POST TITLE CHANGES or the card shows the old title. Each
+    PNG stores the title+series it was built from in its own metadata, and
+    `--check` compares them, so this is catchable rather than a silent rot.
+  - .github/workflows/pages.yml runs that check as an ADVISORY job. It is
+    deliberately NOT a dependency of build/deploy: publishing runs on a daily
+    cron, and a forgotten regeneration must never be able to stop scheduled
+    posts from going live. Red check, successful deploy.
+  - The script also covers _drafts, so a draft's card exists before promotion.
+
+DRAFT WRITTEN — "What the F&O numbers actually say" (_drafts/)
+
+- The gap flagged in review: the blog teaches RSI and MACD but never mentions
+  that SEBI has counted, five years running, and the large majority of
+  individual derivatives traders lose money. Highest-traffic, highest-
+  credibility topic available, and it fits the "honest about limitations"
+  brand the TA series already closes on.
+- Figures live in _data/fno.yml, NOT inline. READ THE "VERIFY BEFORE PUBLISHING"
+  BLOCK AT THE TOP OF THAT FILE before scheduling this.
+  - Corroborated and safe: 89% (FY22), 93% and >Rs 1.8 lakh crore (FY22-FY24,
+    confirmed on SEBI's own press release page), 87.7% and Rs 91,685 crore and
+    the 92% options share (FY26, two independent sources agreeing).
+  - Single-source and flagged `corroborated: false`: average loss per trader,
+    transaction costs, repeat-loser rate, the portfolio-size split. SEBI serves
+    its study PDFs behind a landing page that automated fetches could not get
+    through — same situation as incometaxindia.gov.in and the tax series.
+  - KNOWN CONFLICT: sources disagree on the FY26 participant count (~87.5 lakh
+    vs ~78.6 lakh "active"), probably two different definitions. The post
+    therefore never quotes a participant count. Settle it from the PDF.
+- THREE DECISIONS FOR YOU, spelled out in a comment at the top of the draft:
+  which series (it has no `series:` key on purpose — it is not technical
+  analysis and not mutual funds; either standalone, or the opener of a sixth
+  risk series), whether the flagged numbers check out, and the publish date
+  (set to 2027-01-05 just to follow the tax series and hold the 2-day cadence).
+- Compliance: names no security, recommends no transaction, and has a section
+  saying plainly that a base rate is not an instruction. It DOES take a strong
+  view on the segment, which CLAUDE.md explicitly permits. Also notes that F&O
+  is taxed as business income, so the tax series' capital-gains rules do not
+  apply to it — that is arguably its own post later.
+
 Lower-priority, not done (say the word if you want these next)
 
 - DONE: Series index pages. /series/ lists every track in _data/series.yml

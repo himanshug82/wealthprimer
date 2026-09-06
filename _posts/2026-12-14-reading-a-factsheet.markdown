@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Reading a factsheet: what's in it, and what isn't"
+description: "Section by section through a real mutual fund factsheet: holdings, costs, risk numbers, portfolio turnover, and what the document deliberately leaves out."
+image: /assets/og/reading-a-factsheet.png
 date: 2026-12-14 09:00:00 +0530
 series: mutual-funds
 ---

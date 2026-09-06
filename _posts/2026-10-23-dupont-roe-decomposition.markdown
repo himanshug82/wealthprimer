@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "DuPont: breaking ROE into the three things that actually drive it"
+description: "DuPont splits ROE into margin, asset turnover and leverage, turning a single score into a reason. The three-step decomposition, worked end to end."
+image: /assets/og/dupont-roe-decomposition.png
 date: 2026-10-23 09:00:00 +0530
 series: fundamental-analysis
 ---
@@ -85,6 +87,11 @@ convention when you're looking at leverage on its own. Plug that number into
 DuPont and your product won't tie out to the reported ROE, and you'll waste
 an afternoon hunting a bug that isn't there. Recompute it on averages for
 this exercise.
+
+![DuPont tree: ROE split into net margin, asset turnover and equity multiplier]({{ '/assets/charts/fa-dupont-tree.svg' | relative_url }})
+
+Desi Bites Foods, FY25 — the fictional case study, drawn to scale from the
+same figures used in the tables below. Illustration only.
 
 ## Worked example: Desi Bites Foods, FY25
 

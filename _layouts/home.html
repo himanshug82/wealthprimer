@@ -1,0 +1,86 @@
+---
+layout: default
+---
+{%- comment -%}
+Overrides minima's home layout, which was a bare reverse-chronological list of
+every post title.
+
+Two problems that fixed: a first-time reader landed on whatever ratio happened
+to publish last (with no way to tell that it was post 21 of a 33-part series),
+and minima's `show_excerpts` silently rendered NOTHING, because 68 of 69 posts
+open with a {% raw %}{% assign %}{% endraw %} block — which is what Jekyll took as the first
+paragraph, and it renders to an empty string. Rather than fight the auto-excerpt,
+this layout uses each post's explicit `description:` front matter, which is the
+same one-line summary that feeds the meta description and the RSS summary. One
+sentence per post, written once, used in three places.
+{%- endcomment -%}
+
+<div class="home">
+
+  <section class="hero">
+    <h1 class="hero-title">Financial concepts, one at a time.</h1>
+    <p class="hero-sub">
+      Wealth Primer explains how to read a company, a chart, a fund and a tax
+      rule — in plain language, with worked examples on real Indian numbers.
+      It teaches concepts. It never tells you what to buy.
+    </p>
+  </section>
+
+  {%- comment -%}
+    Series first, because these are learning tracks meant to be read in order,
+    not a feed. Counts come from the same _data/series.yml + `series:` front
+    matter that drives /series/, so this can never go stale.
+  {%- endcomment -%}
+  <section class="start-here">
+    <h2 class="section-heading">Start here</h2>
+    <div class="series-cards">
+      {%- for s in site.data.series -%}
+      {%- assign in_series = site.posts | where: "series", s.slug | sort: "date" -%}
+      {%- assign first_post = in_series | first -%}
+      <a class="series-card" href="{{ '/series/' | append: s.slug | append: '/' | relative_url }}">
+        <h3 class="series-card-title">{{ s.title }}</h3>
+        <p class="series-card-desc">{{ s.description }}</p>
+        <p class="series-card-meta">
+          {%- if in_series.size > 0 -%}
+            {{ in_series.size }} post{% if in_series.size != 1 %}s{% endif %} &middot; start with
+            &ldquo;{{ first_post.title | split: ":" | first | escape | truncatewords: 9 }}&rdquo;
+          {%- else -%}
+            Publishing soon
+          {%- endif -%}
+        </p>
+      </a>
+      {%- endfor -%}
+    </div>
+  </section>
+
+  {{ content }}
+
+  {%- assign recent = site.posts | slice: 0, 8 -%}
+  {%- if recent.size > 0 -%}
+  <section class="latest">
+    <h2 class="section-heading">Latest posts</h2>
+    <ul class="post-list">
+      {%- for post in recent -%}
+      {%- assign meta = site.data.series | where: "slug", post.series | first -%}
+      <li>
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        <span class="post-meta">
+          {{ post.date | date: date_format }}
+          {%- if meta %} &middot; <a class="post-series-tag" href="{{ '/series/' | append: post.series | append: '/' | relative_url }}">{{ meta.title }}</a>{% endif -%}
+        </span>
+        <h3><a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+        {%- if post.description -%}
+        <p class="post-summary">{{ post.description | escape }}</p>
+        {%- endif -%}
+      </li>
+      {%- endfor -%}
+    </ul>
+    {%- if site.posts.size > recent.size -%}
+    <p class="all-posts-link"><a href="{{ '/series/' | relative_url }}">Browse all {{ site.posts.size }} posts by series &rarr;</a></p>
+    {%- endif -%}
+  </section>
+  {%- endif -%}
+
+  {%- include newsletter.html -%}
+
+</div>

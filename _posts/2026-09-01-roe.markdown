@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "ROE (Return on Equity): what shareholders' own money is earning"
+description: "ROE asks what shareholders' own money earned this year. The formula, why the average equity denominator matters, and how leverage can flatter the number."
+image: /assets/og/roe.png
 date: 2026-09-01 09:00:00 +0530
 series: jargon
 ---

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" width="100%" role="img" aria-labelledby="t d">
+<title id="t">Cash conversion cycle</title>
+<desc id="d">Inventory days of 48 plus receivable days of 28 minus payable days of 42 gives a cash conversion cycle of 34 days.</desc>
+<rect width="720" height="330" fill="#ffffff"/>
+<text x="360.0" y="30.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" fill="#0b0b0b" font-weight="600" text-anchor="middle">The cash conversion cycle</text>
+<text x="360.0" y="50.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#52514e" font-weight="normal" text-anchor="middle">Desi Bites Foods, FY25 — days</text>
+<text x="60.0" y="104.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#52514e" font-weight="normal" text-anchor="start">The operating cycle: raw material in → cash back from the customer</text>
+<rect x="60.0" y="130.0" width="384.0" height="30.0" rx="3" fill="#cde2fb" stroke="#d8d8d8" stroke-width="1"/>
+<text x="252.0" y="149.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#0b0b0b" font-weight="500" text-anchor="middle">Inventory 48 d</text>
+<rect x="444.0" y="130.0" width="224.0" height="30.0" rx="3" fill="#e8f1fc" stroke="#d8d8d8" stroke-width="1"/>
+<text x="556.0" y="149.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#0b0b0b" font-weight="500" text-anchor="middle">Receivables 28 d</text>
+<rect x="60.0" y="182.0" width="336.0" height="30.0" rx="3" fill="#9ec9b5" stroke="#d8d8d8" stroke-width="1"/>
+<text x="228.0" y="201.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#0b0b0b" font-weight="500" text-anchor="middle">Payables 42 d</text>
+<text x="406.0" y="201.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#2e7d5b" font-weight="normal" text-anchor="start">← the supplier funds this stretch, free</text>
+<rect x="396.0" y="244.0" width="272.0" height="30.0" rx="3" fill="#f6d9a8" stroke="#c99a3f" stroke-width="1"/>
+<text x="532.0" y="263.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#0b0b0b" font-weight="600" text-anchor="middle">34 d</text>
+<text x="668.0" y="235.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#0b0b0b" font-weight="500" text-anchor="end">the company's own cash is tied up here ↓</text>
+<line x1="60.0" y1="130" x2="60.0" y2="274" stroke="#d8d8d8" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="396.0" y1="130" x2="396.0" y2="274" stroke="#d8d8d8" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="668.0" y1="130" x2="668.0" y2="274" stroke="#d8d8d8" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="60.0" y="308.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#184f95" font-weight="600" text-anchor="start">48  +  28  −  42  =  34 days</text>
+<text x="60.0" y="328.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#52514e" font-weight="normal" text-anchor="start">Shorter is better. Negative means suppliers fund the whole cycle and the company never dips in.</text>
+</svg>

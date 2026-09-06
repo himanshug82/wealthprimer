@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Net Working Capital: the cushion for day-to-day operations"
+description: "Current assets minus current liabilities: the rupee cushion between short-term resources and short-term obligations, and when a large cushion is a bad sign."
+image: /assets/og/net-working-capital.png
 date: 2026-09-17 09:00:00 +0530
 series: jargon
 ---

@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Book Value per Share: what each share is worth on paper"
+description: "What each share is worth on the books. Desi Bites lists on the exchange, and book value per share becomes the first ratio with a share price attached to it."
+image: /assets/og/book-value-per-share.png
 date: 2026-10-07 09:00:00 +0530
 series: jargon
 ---

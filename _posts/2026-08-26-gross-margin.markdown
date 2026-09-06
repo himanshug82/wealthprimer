@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Gross Margin: how much survives the cost of making the thing"
+description: "Out of every rupee of sales, how much survives the direct cost of making the thing? Gross margin, COGS, and the pricing power the number quietly reveals."
+image: /assets/og/gross-margin.png
 date: 2026-08-26 09:00:00 +0530
 series: jargon
 ---

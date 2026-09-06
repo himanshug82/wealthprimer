@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Debtor Days: how long customers take to actually pay"
+description: "Once a sale is made on credit, how long until the cash actually arrives? Debtor days, DSO, and why receivables are a claim on money rather than money."
+image: /assets/og/debtor-days.png
 date: 2026-09-09 09:00:00 +0530
 series: jargon
 ---

@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Reading a Cash Flow Statement, using a snacks company"
+description: "Profit is an accounting opinion; cash is a fact. How the three sections of a cash flow statement reveal what an income statement can quietly hide."
+image: /assets/og/reading-a-cash-flow-statement.png
 date: 2026-08-24 09:00:00 +0530
 series: jargon
 ---
@@ -44,6 +46,11 @@ money. That gap between what you *earned* and what you actually *have* is
 exactly what a cash flow statement tracks.
 
 </details>
+
+![Cash flow bridge: opening cash, plus operating, investing and financing flows, to closing cash]({{ '/assets/charts/fa-cash-flow-bridge.svg' | relative_url }})
+
+Desi Bites Foods, FY25 — the fictional case study, drawn to scale from the
+same figures used in the tables below. Illustration only.
 
 ## Worked example: Desi Bites Foods, FY25
 

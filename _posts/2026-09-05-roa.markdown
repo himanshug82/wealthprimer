@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "ROA (Return on Assets): how hard everything the company owns is working"
+description: "ROA measures the profit a company squeezes out of everything it owns. How it differs from ROE and ROCE, and why asset-light businesses score so differently."
+image: /assets/og/roa.png
 date: 2026-09-05 09:00:00 +0530
 series: jargon
 ---

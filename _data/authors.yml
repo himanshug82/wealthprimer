@@ -1,0 +1,14 @@
+# Author metadata for jekyll-seo-tag.
+#
+# Why this file exists: seo-tag derives twitter:creator from the author, and
+# when `site.author` is a plain STRING it falls back to using the NAME as the
+# handle — which shipped `twitter:creator="@Himanshu Gupta"` (a handle with a
+# space in it). Setting `author:` as a hash in _config.yml would fix that, but
+# minima's footer does `{{ site.author | escape }}` and would then print the
+# raw hash.
+#
+# So: `site.author` stays a flat string for minima, and seo-tag merges the
+# extra keys from here, matched on the author's name (AuthorDrop#site_data_hash).
+# The top-level key below MUST stay identical to `author:` in _config.yml.
+Himanshu Gupta:
+  twitter: wealthprimer_in

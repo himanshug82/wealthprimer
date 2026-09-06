@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "SIPs and XIRR: five years of discipline that returned nothing"
+description: "Why a SIP needs XIRR rather than a simple return, what rupee cost averaging does and does not do, and a real five-year SIP that returned almost nothing."
+image: /assets/og/sips-xirr-and-timing-myths.png
 date: 2026-12-10 09:00:00 +0530
 series: mutual-funds
 ---

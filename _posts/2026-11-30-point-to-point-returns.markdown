@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Point-to-point returns: the same fund, from 2.6% to 23.9% a year"
+description: "The same index fund returned 2.6% and 23.9% a year over five-year windows, depending only on the start month. Why a quoted return is a choice of dates."
+image: /assets/og/point-to-point-returns.png
 date: 2026-11-30 09:00:00 +0530
 series: mutual-funds
 ---

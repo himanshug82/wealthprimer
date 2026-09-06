@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Quick Ratio: coverage without counting on inventory"
+description: "The acid test: coverage once inventory is stripped out entirely. Why the quick ratio is the stricter cousin of the current ratio, and when the gap matters."
+image: /assets/og/quick-ratio.png
 date: 2026-09-21 09:00:00 +0530
 series: jargon
 ---

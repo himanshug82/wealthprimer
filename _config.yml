@@ -9,19 +9,57 @@ baseurl: ""
 lang: en-IN
 timezone: Asia/Kolkata # keeps scheduled/dated posts publishing on IST, not the CI runner's UTC clock
 
+# --- analytics ---
+# GoatCounter. Set this to the site CODE only — the "CODE" in
+# https://CODE.goatcounter.com — NOT the full URL. Leave blank/unset and no
+# analytics script is emitted at all (see _includes/analytics.html), and
+# /privacy/ automatically keeps saying the site runs no analytics. Setting it
+# flips BOTH the script and the privacy disclosure on together, by design:
+# the two must never disagree.
+goatcounter: ""
+
+# --- email list ---
+# Renders _includes/newsletter.html on every post and the homepage. Nothing is
+# emitted until `action` is non-empty, so a half-configured list ships nothing.
+# Mailchimp: paste the whole <form action="..."> URL from the embedded-form
+# builder (it already carries ?u=...&id=...), then copy that form's hidden
+# bot-trap field NAME — b_<u>_<id> — into `honeypot`.
+# Buttondown: set provider to `buttondown`, action to
+# https://buttondown.com/api/emails/embed-subscribe/USERNAME, honeypot to "".
+# Full setup notes live in _includes/newsletter.html.
+newsletter:
+  provider: mailchimp
+  action: ""
+  honeypot: ""
+  heading: "Get each post when it lands"
+  blurb: >-
+    One concept at a time, every couple of days. No tips, no calls, no hype —
+    just the explainers. Unsubscribe whenever.
+
 # --- theme ---
 theme: minima
 minima:
   skin: classic
-  show_excerpts: true
+  # show_excerpts REMOVED — it was a no-op. minima's home layout prints
+  # `post.excerpt`, but 68 of 69 posts open with a {% assign %} block, which is
+  # what Jekyll takes as the first paragraph, and it renders to an empty string.
+  # _layouts/home.html now overrides minima's and prints each post's explicit
+  # `description:` instead. Re-adding this key will not bring excerpts back.
 
 # --- author / contact ---
 # NOTE: minima's footer/social include reads these as flat top-level keys
-# (site.author, site.twitter_username, etc.) — not a nested list.
+# (site.author, site.twitter_username, etc.) — not a nested list. In particular
+# `author:` must stay a STRING: minima's footer prints `{{ site.author | escape }}`
+# and would render a raw hash otherwise. jekyll-seo-tag needs the Twitter handle
+# too, so that lives in _data/authors.yml, keyed on this exact name — see the
+# comment in that file before renaming the author here.
 author: Himanshu Gupta
 email: himanshu.direct@gmail.com
 twitter_username: wealthprimer_in
-linkedin_username: wealthprimer_in
+# linkedin_username: intentionally unset — there is no Wealth Primer LinkedIn
+# presence yet. It previously pointed at linkedin.com/feed/, which just sends a
+# visitor to their OWN feed. Set this (and the sameAs link below, and the About
+# page bullet) together, once a real profile or company page exists.
 rss: RSS
 # github_username intentionally left unset: github.com/wealthprimer/wealthprimer is the
 # blog's demo-scripts repo, not a personal profile — linked separately from the About page.
@@ -44,7 +82,6 @@ social:
   name: Himanshu Gupta
   links:
     - "https://twitter.com/wealthprimer_in"
-    - "https://www.linkedin.com/feed/"
 logo: /assets/icon.png  # square mark, used for schema.org/JSON-LD logo
 
 # --- plugins (all run fine here since Pages deploys via GitHub Actions, not the legacy

@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Benchmarks: how a passive fund 'beat its index' by doing nothing"
+description: "A benchmark decides what a return means. Price return versus total return indices, and how funds could once beat an index by doing nothing at all."
+image: /assets/og/benchmarks-and-comparing-like-with-like.png
 date: 2026-12-12 09:00:00 +0530
 series: mutual-funds
 ---

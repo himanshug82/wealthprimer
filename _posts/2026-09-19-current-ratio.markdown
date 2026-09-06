@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Current Ratio: can short-term assets cover short-term bills"
+description: "Can short-term assets cover short-term bills? The current ratio, why textbook thresholds mislead, and the four numbers to read around it before trusting it."
+image: /assets/og/current-ratio.png
 date: 2026-09-19 09:00:00 +0530
 series: jargon
 ---

@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Drawdown: not just how far it fell, but how long you waited"
+description: "Not just how far a fund fell, but how long you waited to get back. Maximum drawdown, recovery time, and why the journey is what investors quit during."
+image: /assets/og/drawdown.png
 date: 2026-12-06 09:00:00 +0530
 series: mutual-funds
 ---

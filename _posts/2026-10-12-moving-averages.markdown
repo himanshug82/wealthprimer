@@ -104,9 +104,14 @@ Here is what two full years of Britannia data contains:
 | | |
 |---|---:|
 | Golden crosses (50 above 200) | **{{ x.golden_cross_count }}** |
-| Death crosses (50 below 200) | **{{ x.death_cross_count }}** |
+| Death crosses (50 below 200) | **{{ x.death_cross_count }}** observed |
 
-One. In two years. And that single crossover, on {{ x.golden_cross.date }}:
+One. In two years. And the zero needs an asterisk: when the 200-day first
+existed, on {{ x.sma200_first_date }}, the 50-day was already below it. So if
+there was a death cross, it happened during the warmup, where this data can't
+see it.
+
+That single golden cross, on {{ x.golden_cross.date }}:
 
 | | |
 |---|---:|
@@ -128,8 +133,13 @@ about whether golden crosses work from a single occurrence, in the same way
 you cannot learn whether a coin is fair from one flip. Any article showing
 you a golden cross that preceded a rally is showing you one flip. The honest
 version of this question needs thousands of crossovers across many stocks and
-decades, and when researchers do that work, the results are considerably less
-exciting than the name suggests.
+decades. When researchers have done that work, the results are much less
+exciting than the name suggests. Brock, Lakonishok and LeBaron (1992) found
+simple moving-average rules had some predictive power over a century of Dow
+Jones data — but Sullivan, Timmermann and White (1999) found that edge didn't
+hold up in the decade after the original sample, and Park and Irwin's 2007
+survey of the literature (*Journal of Economic Surveys*) concluded that many
+positive results were weakened by data snooping and understated trading costs.
 
 ## Which N should you use?
 
@@ -186,5 +196,5 @@ than rolling your own.
 **Takeaway:** A moving average smooths price into something you can read a
 direction from, at the unavoidable cost of lag — smoother always means later.
 The crossover signals built on them are worth understanding, but two years of
-Britannia data contains exactly one golden cross and no death cross, which is
+Britannia data contains exactly one golden cross and no observable death cross, which is
 a useful reminder that a single chart can never tell you whether a rule works.

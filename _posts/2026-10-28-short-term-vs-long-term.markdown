@@ -107,9 +107,11 @@ redemption can produce both long-term and short-term gains at once.
 
 ## Worked example: one day either side
 
-Take the real fund used throughout this blog. Suppose a ₹5,00,000 investment
-gained ₹5,00,000 — a clean doubling — and compare selling just before and
-just after the twelve-month mark:
+Take the real fund used throughout this blog — UTI Nifty 50 Index Fund
+(regular plan, growth), NAVs from AMFI (the Association of Mutual Funds in
+India), as of 31 March 2026, used for illustration only. Suppose a ₹5,00,000
+investment in it gained ₹5,00,000 — a clean doubling, rounded for the example
+— and compare selling just before and just after the twelve-month mark:
 
 | | Sold at 12 months | Sold at 12 months + 1 day |
 |---|---:|---:|
@@ -126,8 +128,10 @@ A day's patience, on a single transaction, worth ₹55,250.
 
 Now the honest caveat, because this is where tax thinking goes wrong.
 Holding an investment you want to sell purely to cross a tax line is a bet
-that the price won't fall more than the tax you'd save. Here the tax saving
-is about 11% of the gain. If the holding drops 15% while you wait, you've
+that the price won't fall more than the tax you'd save. On equity the saving
+is 7.8 percentage points of the gain (20.8% with cess against 13%), plus up
+to ₹16,250 more if your annual exemption is unused — about 11% of the gain in
+this example. If the holding drops 15% while you wait, you've
 paid more for the tax saving than it was worth. The tax tail should not wag
 the investment dog — but when the decision is genuinely marginal, and the
 date is close, it's free money to check.
@@ -143,11 +147,14 @@ date is close, it's free money to check.
 - **Treating "12 months" as inclusive.** You need *more than* twelve months.
 - **Forgetting each purchase has its own clock.** One holding is many lots.
 - **Holding a deteriorating investment for the tax rate.** The saving is
-  roughly 11% of the gain on equity. A larger price fall wipes it out.
+  7.8 percentage points of the gain, plus up to ₹16,250 if your exemption is
+  unused — about 11% of the gain in this example. A larger price fall wipes
+  it out.
 
 **Takeaway:** The holding period is the single most consequential fact about
 a capital gain — twelve months for listed equity and equity funds,
 twenty-four for most other assets, counted from allotment and needing to be
-*more than*, not equal to. On equity the difference is worth roughly 11% of
-the gain, which is worth a calendar check before you sell and never worth
+*more than*, not equal to. On equity the difference is 7.8 percentage points
+of the gain plus up to ₹16,250 of unused exemption — about 11% in this
+example — which is worth a calendar check before you sell and never worth
 holding something you've decided to be rid of.

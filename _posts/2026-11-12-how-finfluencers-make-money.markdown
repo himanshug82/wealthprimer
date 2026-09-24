@@ -31,10 +31,14 @@ No individuals are named. The structures are the point; the people change.
 trading app or investment platform pays a fee for every account opened
 through a link — often a flat amount per account, sometimes a share of the
 brokerage the referred client goes on to generate. Notice what that second
-kind rewards: not the client's returns, but the client's *activity*. The
-[F&O post]({% post_url 2026-11-05-what-the-fo-numbers-actually-say %}) put
-individual traders' transaction costs at roughly
-₹{% include inr.html n=u.transaction_costs_cr_fy26 %} crore in FY26 alone. A
+kind rewards: not the client's returns, but the client's *activity*. SEBI's
+[August 2026 study]({{ f.sources.fy25_fy26_study.url }}) put individual F&O
+traders' transaction costs at about
+₹{% include inr.html n=u.transaction_costs_cr_fy26 %} crore in FY26 alone —
+roughly ₹{% include inr.html n=u.transaction_costs_cr_fy22_fy26 %} crore over
+FY22–FY26, as the
+[F&O post]({% post_url 2026-11-05-what-the-fo-numbers-actually-say %}) noted,
+with brokerage nearly half of it. A
 slice of that flows back to whoever brought the traders in. Content that
 makes derivatives look accessible, exciting and frequently profitable is
 worth more under this model than content that quotes the loss rate.
@@ -102,21 +106,25 @@ the level I'm confident of; a compliance professional would add detail.
   recommendations for a fee requires registration as an Investment Adviser
   or Research Analyst. Unregistered persons doing so are in breach, and SEBI
   has passed orders against several, including disgorgement of fees.
-- **Regulated entities can't associate with them.** From 2024, SEBI
+- **Regulated entities can't associate with them.** Through amendments to
+  its Intermediaries Regulations notified on 29 August 2024, SEBI
   prohibited its regulated intermediaries — brokers, fund houses, registered
   advisers — from having any association, including paying referral fees,
   with persons who give unregistered advice or make performance claims. This
   is the rule aimed at revenue model one. It cut off the largest funding
   source for tip-based content at the intermediary end rather than trying to
   police every creator.
-- **Education is carved out — with conditions.** SEBI subsequently clarified
-  that regulated entities *may* associate with persons engaged purely in
-  investor education, provided the content makes no recommendations and no
-  claims about returns. In the same clarification, educational content was
-  told not to use recent live market data — which is where this blog's rule
-  that every real figure is at least three months old comes from. That
-  three-month lag is not a house style. It's the regulator's definition of
-  the boundary between education and a call.
+- **Education is carved out — with conditions.** The same framework left
+  room for regulated entities to associate with persons engaged purely in
+  investor education, and a SEBI circular of 29 January 2025 spelled out the
+  conditions: no recommendations, no claims about returns, and no use of
+  market price data from the preceding three months when naming a security.
+  A [circular of 8 May 2026](https://www.sebi.gov.in/legal/circulars/may-2026/norms-for-sharing-and-usage-of-price-data-for-educational-purposes_101293.html)
+  shortened that lag to thirty days, from 1 July 2026. This blog keeps the
+  stricter three months: every market price and worked-example figure here is
+  at least three months old. That lag isn't a house style — it grew out of a
+  condition SEBI attached to education content, and we'd rather sit well
+  inside the line than on it.
 - **Disclosure norms exist alongside.** The Advertising Standards Council of
   India's guidelines require influencers giving financial content to disclose
   material connections and, for advice, their registration. Enforcement is
@@ -163,7 +171,7 @@ know it's there.
 - **Assuming a large audience is a track record.** Audience measures
   distribution. Only a verifiable, complete record of calls — losses
   included — measures accuracy, and almost nobody publishes one.
-- **Mistaking a screenshot for a statement.** A P&L screenshot shows one
+- **Mistaking a screenshot for a statement.** A P&L (profit and loss) screenshot shows one
   account, one period, selected by the person who benefits from your seeing
   it.
 - **Concluding that all financial content is compromised.** Plenty of it is
@@ -174,6 +182,6 @@ know it's there.
 **Takeaway:** Financial content is mostly a funnel, and the funnel is paid by
 accounts opened, courses sold, sponsors served or views won — none of which
 reward being right, and all of which reward certainty, activity and drama.
-SEBI has cut off the referral pipe for unregistered advice and drawn a
-three-month line between education and a call. Before weighing any tip,
+SEBI has cut off the referral pipe for unregistered advice and put a time
+lag on the market data education may use. Before weighing any tip,
 including anything here, ask how the person telling you gets paid.

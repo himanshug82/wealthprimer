@@ -17,12 +17,12 @@ term: "Factsheet"
 
 Every mutual fund publishes a monthly **factsheet** — a two-or-three-page
 summary of what the fund holds, what it costs, and how it has done. It's free,
-it's on every AMC's website, and it is the single most useful document about
+it's on every AMC's (asset management company's) website, and it is the single most useful document about
 a fund that almost nobody opens.
 
 This post walks through it section by section, using everything the previous
-eight posts built. It closes the series, so it also says plainly what a
-factsheet cannot tell you.
+eight posts built. It closes the first half of the series, so it also says
+plainly what a factsheet cannot tell you.
 
 ## Section by section
 
@@ -32,9 +32,9 @@ factsheet cannot tell you.
 |---|---|
 | Category | SEBI-defined. Decides what the fund is *allowed* to hold and which benchmark applies |
 | Inception date | How much history exists. A fund launched after 2013 has never seen a 2008 |
-| Benchmark | Is it a **TRI**? [The last post]({% post_url 2026-10-25-benchmarks-and-comparing-like-with-like %}) explains why this matters more than it looks |
+| Benchmark | Is it a **TRI** (total return index)? [The last post]({% post_url 2026-10-25-benchmarks-and-comparing-like-with-like %}) explains why this matters more than it looks |
 | Fund manager & tenure | A ten-year record under a manager who left last year is not this fund's record |
-| AUM | Very large AUM can constrain a small-cap strategy; very small AUM raises viability questions |
+| AUM (assets under management — the fund's size in ₹) | Very large AUM can constrain a small-cap strategy; very small AUM raises viability questions |
 
 Manager tenure is the field most often skipped. Performance history belongs
 to whoever produced it.
@@ -78,7 +78,8 @@ Python in [MF-3]({% post_url 2026-10-20-rolling-returns %}) is for.
 
 ### Risk measures
 
-Usually standard deviation, beta, Sharpe, sometimes maximum drawdown. From
+Usually standard deviation, beta (how much the fund tends to move when its
+benchmark moves 1%), Sharpe, sometimes maximum drawdown. From
 [MF-6]({% post_url 2026-10-23-volatility-and-sharpe %}): always check the period and the
 risk-free rate, and never compare a Sharpe across categories.
 
@@ -96,13 +97,16 @@ The fund used throughout this series, read as if off a factsheet:
 | Fund | {{ f.name }} |
 | Category | {{ f.category }} |
 | History available | {{ f.regular_start }} to {{ f.regular_end }} ({{ f.years_of_history }} years) |
-| Return since inception | {{ v.annualised_return_pct }}% a year |
+| Return over the available history | {{ v.annualised_return_pct }}% a year |
 | Volatility | {{ v.annualised_volatility_pct }}% |
 | Sharpe (rf {{ v.risk_free_pct }}%) | {{ v.sharpe }} |
 | Maximum drawdown | {{ mf.drawdowns.worst_pct }}% ({{ mf.drawdowns.worst_date }}) |
 
 All figures computed from [AMFI NAV history via mfapi.in]({{ f.source_url }}),
 {{ f.regular_start }} to {{ f.regular_end }}. Historical data, for illustration only.
+The free AMFI history starts in April 2006, so the return row covers that
+window — a real factsheet's "since inception" figure runs from the fund's
+launch date and can differ.
 
 And the things a factsheet would not have told you, which this series
 computed:
@@ -137,7 +141,8 @@ excellent records arise by chance alone.
 published with a lag. An actively traded fund may look quite different now.
 
 **What it costs beyond the expense ratio.** Trading costs from portfolio
-turnover aren't in the TER. Neither is the tax you'll pay on redemption.
+turnover aren't in the TER (total expense ratio — the expense ratio's
+official name). Neither is the tax you'll pay on redemption.
 
 **Whether it suits you.** Nothing in the document knows your horizon, your
 other holdings, or whether you'd sell in a 60% drawdown. Suitability is not a

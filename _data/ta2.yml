@@ -105,7 +105,7 @@ relative_strength:
   index_total_return_pct: -0.6
   stock_minus_index_pp: 11.4
   ma_period: 50
-  pct_bars_rs_above_ma: 64.0
+  pct_bars_rs_above_ma: 64.5
   longest_stretch_below_ma_bars: 56
   longest_stretch_above_ma_bars: 49
   decline_window:
@@ -130,6 +130,11 @@ multi_timeframe:
   weekly_rsi_max: 73.7
   weekly_rsi_max_date: '2024-09-27'
   daily_oversold_events: 6
+  daily_oversold_events_all: 8
+  dropped_no_weekly_trend:
+  - '2024-04-18'
+  dropped_no_forward_data:
+  - '2026-03-23'
   in_weekly_uptrend:
     count: 1
     avg_fwd_20_bars_pct: -12.6
@@ -238,6 +243,7 @@ backtest:
         max_drawdown_pct: -13.9
         trades: 1
         pct_time_invested: 69.0
+      in_position_at_window_start: false
     sma_20_50:
       lookahead_no_cost:
         final_value: 72071.0
@@ -257,6 +263,7 @@ backtest:
         max_drawdown_pct: -29.7
         trades: 5
         pct_time_invested: 63.0
+      in_position_at_window_start: false
     rsi_30_70:
       lookahead_no_cost:
         final_value: 117515.0
@@ -276,6 +283,14 @@ backtest:
         max_drawdown_pct: -4.0
         trades: 3
         pct_time_invested: 12.0
+      in_position_at_window_start: true
+      next_day_with_cost_flat_start:
+        final_value: 113915.0
+        cagr_pct: 11.6
+        max_drawdown_pct: -4.0
+        trades: 2
+        pct_time_invested: 10.0
+      carried_in_from_oversold_date: '2024-12-23'
   grid:
   - fast: 10
     slow: 50

@@ -18,8 +18,11 @@ term: "OCF/PAT (cash conversion of profit)"
 ## What OCF/PAT means
 
 We already know [profit is an accounting opinion, cash is a
-fact]({% post_url 2026-08-24-reading-a-cash-flow-statement %}) — a company can report solid PAT while collecting the
-cash behind it slowly, or not fully at all. **OCF/PAT** turns that idea into
+fact]({% post_url 2026-08-24-reading-a-cash-flow-statement %}) — a company can report solid PAT (profit after tax, the
+bottom line of the [income statement]({% post_url 2026-08-22-reading-an-income-statement %})) while collecting the
+cash behind it slowly, or not fully at all. **OCF/PAT** — operating cash flow
+(OCF, the "cash from operations" line of the cash flow statement) divided by
+PAT — turns that idea into
 a single number, often called an **earnings quality** check: what fraction
 of reported profit actually shows up as real operating cash in the same
 year?
@@ -33,14 +36,14 @@ in unpaid invoices or growing inventory rather than turning into cash.
 ## The formula
 
 ```
-OCF/PAT = Cash from Operations / PAT
+OCF/PAT = Operating cash flow (OCF) / Profit after tax (PAT)
 ```
 
 ## Worked example: Desi Bites Foods, FY25
 
 | | ₹ Lakh |
 |---|---:|
-| Cash from Operations | {{ db_cf25.cfo }} |
+| Cash from operations | {{ db_cf25.cfo }} |
 | PAT | {{ db_is25.pat }} |
 | **OCF/PAT** | **{{ site.data.case_study.ratios.FY25.ocf_pat }}x** |
 
@@ -51,7 +54,7 @@ From Britannia Industries' [audited consolidated FY25 results](https://media.bri
 
 | | ₹ Crore |
 |---|---:|
-| Cash from Operations | {{ bi_cf25.cfo }} |
+| Cash from operations | {{ bi_cf25.cfo }} |
 | PAT | {{ bi_is25.pat }} |
 | **OCF/PAT** | **{{ site.data.real_company.ratios.FY25.ocf_pat }}x** |
 

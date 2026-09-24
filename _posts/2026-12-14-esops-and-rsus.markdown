@@ -85,7 +85,8 @@ Illustrative 30% slab plus {{ r.cess_pct }}% cess, no surcharge.
 
 Now the cash-flow problem, which is the real subject of this post. To
 exercise, she pays the company ₹{% include inr.html n=e.cash_to_exercise %}. Her employer must deduct
-₹{% include inr.html n=e.perquisite_tax_with_cess %} of TDS from her salary in the month of exercise. Total
+₹{% include inr.html n=e.perquisite_tax_with_cess %} of TDS (tax deducted at source) from her salary in the
+month of exercise. Total
 cash out: **₹{% include inr.html n=e.cash_out_total %}**. Cash in from the shares: **zero**, because she
 hasn't sold anything. She owns {% include inr.html n=e.shares %} shares worth ₹{% include inr.html n=paper_value %} on paper, and
 a smaller salary credit that month.
@@ -156,15 +157,22 @@ of the last post in this module.
 ## The startup deferral
 
 Employees of eligible startups get one concession, and it's narrower than it
-sounds. If the employer is DPIIT-recognised **and** holds the
-Inter-Ministerial Board certificate (the old section 80-IAC startups — DPIIT
-recognition alone is not enough), the tax on the perquisite is *computed*
-in the year of exercise but *paid* later: within 14 days of the earliest of
+sounds. If the employer is recognised by DPIIT (the Department for Promotion
+of Industry and Internal Trade) **and** holds the Inter-Ministerial Board
+(IMB) certificate (the old section 80-IAC startups — DPIIT recognition alone is not
+enough), the tax on the perquisite is *computed* in the year of exercise but
+*paid* later: within 14 days of the earliest of
 
-1. 48 months from the end of the assessment year in which the shares were
-   allotted,
+1. 60 months from the end of the tax year in which the shares were allotted,
 2. the date you sell the shares, or
 3. the date you leave the company.
+
+Older articles say "48 months from the end of the assessment year". That was
+the 1961 Act's wording, and it points to the same date: the assessment year
+ended a year after the year of allotment, and the Income-tax Act, 2025, which
+replaced it with a single Tax Year, counts 60 months from the end of the tax
+year itself (per the Act's text as published in September 2026 — worth
+confirming against the current version).
 
 It's a payment deferral, not a reduction. The rate is the rate of the year
 you exercised. And for most private-company employees it doesn't apply at

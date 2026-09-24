@@ -136,12 +136,12 @@ having paid out ₹{{ w08.withdrawn_total | divided_by: 100000 }} lakh — not a
 retirement from the 2010 one, and the difference is *which two years you were
 unlucky enough to start in*.
 
-That is **sequence-of-returns risk**: when you are withdrawing, the order of
+That is **[sequence-of-returns risk]({% post_url 2026-11-10-sequence-of-returns-risk %})**: when you are withdrawing, the order of
 returns matters, not just their average. A crash in year one of an SWP
 forces you to sell units cheaply to fund the withdrawal, and those units are
 gone when the recovery comes. The same crash in year fifteen barely matters.
-The risk series on this blog covers it in its own post; the table above is the
-short version.
+The risk series' post (linked above) covers it in full; the table above is
+the short version.
 
 One more column to notice: from the 2008 start, the parking fund ended with
 *more* corpus than the equity fund. (Before May 2018 it wasn't yet an
@@ -157,7 +157,7 @@ Both tools create taxable events every month:
   gains, taxed at slab rate) and a purchase into the equity fund — so it
   creates a fresh **tax lot** with its own holding period every month.
 - An **SWP** is a monthly redemption; each one is matched to your oldest
-  units first under FIFO (the
+  units first under FIFO — first in, first out (the
   [FIFO post]({% post_url 2026-11-02-sips-and-fifo %}) walks through it). So
   in a fund you've held for years, or built up through a SIP, the oldest (and usually
   cheapest) units go first, so the withdrawals are gain-heavy from the very
@@ -168,6 +168,13 @@ Both tools create taxable events every month:
 The [tax series]({% post_url 2026-10-27-how-investment-income-is-taxed %}) has
 the rates; the mechanics are the same as any redemption, just twelve times a
 year.
+
+Tax isn't the only deduction. An SWP from an equity fund that starts within
+the fund's [exit load]({% post_url 2026-12-01-exit-load %}) window — commonly
+1% on units held less than a year — pays that load on every early withdrawal. An STP out of a
+liquid fund can attract SEBI's small graded exit load on units redeemed in
+their first week; overnight funds generally carry none. Check the scheme's
+exit-load terms before you set either one up.
 
 ## Doing it in Python
 
@@ -205,13 +212,17 @@ is an STP.
   bad-timing risk meaningfully; a five-year STP mostly means holding cash for
   five years.
 - **Setting an SWP rate off a good decade.** 6% looked comfortable from 2010.
-  From 2008 it nearly halved the corpus. Withdrawal rates need to survive the
+  From 2008 it cut the corpus by more than half within 14 months, and the
+  corpus never recovered to ₹1 crore. Withdrawal rates need to survive the
   bad start, not the average one.
 - **Drawing an SWP from a 100% equity fund.** The 2008 row is what that
   looks like. A withdrawal portfolio usually wants a low-volatility bucket to
   draw from while equity recovers.
 - **Forgetting both create monthly tax lots.** Twelve redemptions a year is
   twelve entries in your capital gains statement.
+- **Starting an SWP inside the exit-load window.** Withdrawals from units
+  bought less than a year ago can each lose the exit load (often 1%), on top of
+  tax.
 
 **Takeaway:** An STP paces a lump sum into equity; an SWP paces a corpus out.
 Neither changes what the market does — it changes *how many months of it you're

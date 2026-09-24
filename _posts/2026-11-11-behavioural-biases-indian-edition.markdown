@@ -36,7 +36,8 @@ name the situation it lives in.
 ## 1. Loss aversion
 
 **What it is.** Losses hurt roughly twice as much as equivalent gains feel
-good. A ₹10,000 loss and a ₹10,000 gain are not emotional opposites; the loss
+good — the finding behind Kahneman and Tversky's prospect theory (1979);
+their 1992 follow-up put the ratio at about 2.25. A ₹10,000 loss and a ₹10,000 gain are not emotional opposites; the loss
 is heavier.
 
 **Where it lives.** In the underwater chart. Over twenty years and
@@ -73,10 +74,9 @@ return 30% a year. Someone who started in 2017 saw the bottom of it and
 concluded the opposite. Both were extrapolating three years into a forecast.
 Both were wrong in the same way.
 
-The most expensive version is the money that arrives *after* a great run —
-which is how retail flows into equity funds reliably peak near market highs —
-and leaves after a bad one, which is how the same flows turn negative near
-lows. Recency converts the market's past into the investor's future at
+The most expensive version is the money that arrives *after* a great run and
+leaves after a bad one — retail flows into equity funds have tended to be
+strongest after strong markets and weakest after falls. Recency converts the market's past into the investor's future at
 exactly the wrong moments.
 
 **The tell.** "This time it's different" and "it's been going up for years"
@@ -112,12 +112,16 @@ first and avoid the second.
 **Where it lives.** In the F&O data. The
 [F&O post]({% post_url 2026-11-05-what-the-fo-numbers-actually-say %}) noted
 that among individual traders who lost money two years running, about
-{{ u.repeat_loser_pct }}% lost again the following year. Part of that is
-structural — costs, counterparties, leverage. Part of it is this: SEBI's
-behaviour study found that for about {{ u.traders_avg_loss_exceeds_avg_gain_pct }}% of
-traders, the average losing trade was larger than the average winning one. Small wins taken quickly, large losses
-held in the hope of recovery. You can be right more often than wrong and still
-lose, and the disposition effect is the mechanism.
+{{ u.repeat_loser_pct }}% lost again the following year. On its own that
+can't separate skill from luck, and much of it is structural — costs,
+counterparties, leverage. But SEBI's
+[behaviour study]({{ f.sources.fy25_fy26_behaviour_study.url }}) (August 2026)
+adds a telling detail: among traders who had both profitable and losing
+quarters, about {{ u.traders_avg_loss_exceeds_avg_gain_pct }}% lost more in an
+average losing quarter than they made in an average winning one. That
+pattern — small wins, large losses — is consistent with the disposition
+effect: wins taken quickly, losses held in the hope of recovery. You can be
+right more often than wrong and still lose.
 
 For long-term investors the cost is quieter but real: a portfolio pruned of
 its winners and stocked with its losers, by design.
@@ -136,7 +140,11 @@ that has already bought.
 number of individual traders in the derivatives segment rising sharply
 through a bull market and falling sharply after — new entrants arriving when
 the activity was most visible, most discussed and most recently profitable,
-and leaving after the losses. The same pattern shows up in every IPO boom,
+and leaving after the losses. (The FY26 fall also followed SEBI's
+derivatives curbs, phased in from November 2024 — larger minimum contract
+sizes, weekly expiries limited to one index per exchange — so not all of it
+is the herd changing its mind; SEBI's own study says it can't establish
+cause.) The same pattern shows up in every IPO boom,
 every small-cap rally, every "everyone's buying" moment.
 
 Herding is also what makes correlations rise in a crash — the
@@ -200,13 +208,14 @@ wasn't looking at a red number.
 - **Learning the wrong lesson from a good outcome.** A trade that worked
   through luck teaches the same bias as one that worked through skill, and
   the market doesn't label which was which.
-- **Reading this post and changing nothing.** Knowing the names of the biases
-  has been shown to reduce them only slightly. Changing the process — the
+- **Reading this post and changing nothing.** Research on "debiasing" (the
+  classic review is Fischhoff, 1982) found that simply warning people about
+  a bias does little to reduce it. Changing the process — the
   automation, the rules, the checking frequency — is what moves the outcome.
 
 **Takeaway:** A diversified index fund spent {{ b.pct_days_below_10 }}% of
 twenty years more than 10% below its previous high, three-year returns on it
 ranged from {{ rr.years_3.min }}% to {{ rr.years_3.max }}%, and nine in ten
-losing F&O traders lost again — loss aversion, recency and the disposition
+F&O traders who lost two years running lost a third time — loss aversion, recency and the disposition
 effect each have a number, and each number is a moment you'll recognise. You
 don't beat these biases in the moment. You write the rule before it.

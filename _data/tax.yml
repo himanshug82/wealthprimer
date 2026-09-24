@@ -19,7 +19,7 @@
 # than invented ones.
 
 rates:
-  financial_year: "FY 2026-27"
+  financial_year: "Tax Year 2026-27 (FY 2026-27)"
   verified_on: "August 2026"
   equity_stcg_pct: 20            # listed equity & equity-oriented funds, holding <= 12 months
   equity_ltcg_pct: 12.5          # holding > 12 months

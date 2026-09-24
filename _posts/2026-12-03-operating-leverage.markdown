@@ -32,6 +32,8 @@ High operating leverage is a description of *amplification*, not of quality.
 ```
 Degree of operating leverage (DOL)  =  % change in EBIT / % change in revenue
 
+  EBIT = earnings before interest and tax (operating profit)
+
 Equivalently, at a point:
 
 DOL  =  Contribution / EBIT  =  (Revenue − Variable costs) / EBIT
@@ -92,9 +94,9 @@ From Britannia's [audited FY25 results](https://media.britannia.co.in/Audited_Co
 
 Revenue up {{ br.revenue_growth_pct }}%, operating profit essentially flat. A DOL of {{ br.dol_ebit }} —
 almost no leverage at all. That isn't because Britannia has no fixed costs; it's
-because FY25 was the year input costs (wheat, palm oil, cocoa) rose sharply,
-so the *variable* cost line jumped and swallowed the operating leverage the
-fixed-cost base would otherwise have delivered. The
+because the *variable* cost line jumped. Cost of goods sold (materials,
+mostly) grew {% assign bi24 = site.data.real_company.income_statement.FY24 %}{% assign bi25 = site.data.real_company.income_statement.FY25 %}{{ bi25.cogs | divided_by: bi24.cogs | minus: 1 | times: 100 | round: 1 }}% against revenue's {{ br.revenue_growth_pct }}%, and that swallowed the
+operating leverage the fixed-cost base would otherwise have delivered. The
 [gross margin post]({% post_url 2026-08-26-gross-margin %}) recorded the
 compression. Operating leverage is one lever among several, and in FY25 the
 input-cost lever was pulling harder.

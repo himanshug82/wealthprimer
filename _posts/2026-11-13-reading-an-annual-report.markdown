@@ -30,8 +30,8 @@ were written *at* you.
 
 Desi Bites Foods, the fictional snacks company this blog has followed since
 [its first post]({% post_url 2026-08-18-meet-desi-bites-foods %}), listed on
-NSE Emerge in June 2025. Its first annual report as a listed company covers
-{{ ar.fy }}, and it's the example throughout this module. Everything about
+the main boards of the NSE (National Stock Exchange) and BSE in June 2025. Its first annual report as a listed company covers
+{{ ar.fy | split: "," | first }}, and it's the example throughout this module. Everything about
 Desi Bites is invented; the *structure* of the report is what every Indian
 listed company files.
 
@@ -85,8 +85,9 @@ materially wrong. *Disclaimer* means the auditor couldn't get enough
 evidence to form a view at all. The last two are rare and are the loudest
 sound a document can make.
 
-**Key Audit Matters (KAMs).** Since 2018, auditors must list the areas that
-took the most judgement. These are, by definition, where the numbers are
+**Key Audit Matters (KAMs).** For listed companies, from audits of FY2018-19
+onward (auditing standard SA 701), auditors must list the areas that took the
+most judgement. These are, by definition, where the numbers are
 softest. For Desi Bites the KAM is *{{ ar.kam_example }}* — which is
 exactly the area the [next post]({{ '/series/fundamental-analysis/' | relative_url }})
 shows being abused.
@@ -139,8 +140,8 @@ slower than revenue. "Prudent working capital management" should show up in
 [inventory days]({% post_url 2026-09-07-inventory-days %}). When the words
 and the lines disagree, believe the lines.
 
-Desi Bites' MD&A says revenue grew {{ f.ratios.revenue_growth }}%. The notes say
-{{ f.ratios.organic_revenue_growth }}% of that was the existing business and the rest came from a
+Desi Bites' MD&A says revenue grew {{ f.ratios.revenue_growth }}%. The notes say the
+existing business grew {{ f.ratios.organic_revenue_growth }}%; the other {{ f.ratios.revenue_growth | minus: f.ratios.organic_revenue_growth | round: 1 }} points came from a
 company it bought in October. Both statements are true. Only one of them
 appears in the MD&A's opening paragraph.
 

@@ -29,14 +29,24 @@ lets you compare like with like, which the
 [benchmarks post]({% post_url 2026-10-25-benchmarks-and-comparing-like-with-like %})
 argued is most of the work in evaluating a fund.
 
-Definitions below are from the circular ({{ c.circular }}) as amended in 2020;
-check the current text before relying on a threshold, since these do get
-tweaked.
+Definitions below start from that circular ({{ c.circular }} in 2020), later
+consolidated in SEBI's {{ c.master_circular }}. SEBI then replaced
+that clause with a revised categorisation circular ({{ c.revision_2026 }}):
+value, contra, dividend yield and focused funds now need at least 80% in
+equity rather than 65%, a fund house may run both a value and a contra fund
+as long as their portfolios overlap by no more than 50%, sectoral and thematic
+funds face a similar overlap cap, and the "solution-oriented" category was
+discontinued. Existing schemes got six months to comply (three years for the
+sectoral/thematic overlap cap). The thresholds below reflect the 2026 revision
+as reported when this post was written — check the current text before
+relying on one, since these do get tweaked.
 
 ## Market cap bands: who counts as large, mid and small
 
-Every equity category starts from one list. Twice a year AMFI ranks all listed
-companies by average market capitalisation and publishes the cut-offs:
+Every equity category starts from one list. Twice a year AMFI (the Association
+of Mutual Funds in India) ranks all listed companies by average
+[market capitalisation]({% post_url 2026-09-27-market-cap %}) and publishes the
+cut-offs:
 
 ```
 Large cap  =  ranks   1 to 100
@@ -56,6 +66,11 @@ then has one month to rebalance to the updated list.
 | Category | The hard rule | Where it can invest |
 |---|---|---|{% for k in c.equity %}
 | **{{ k.category }}** | {{ k.rule }} | {{ k.universe }} |{% endfor %}
+
+That's the equity group only. SEBI also defines debt categories (below),
+hybrid categories, life-cycle funds, and an "other schemes" group that holds
+index funds, ETFs and funds of funds — hybrids and the
+rest are out of scope here.
 
 Read the rules for what they *don't* say.
 

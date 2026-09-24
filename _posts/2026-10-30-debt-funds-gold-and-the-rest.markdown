@@ -70,7 +70,7 @@ the *timing* advantage didn't.
 | Physical gold, jewellery | Long-term after {{ r.other_holding_months }} months |
 | Gold ETFs (listed) | Long-term after {{ r.equity_holding_months }} months, taxed at 12.5% |
 | Gold funds of funds (unlisted) | Long-term after {{ r.other_holding_months }} months, taxed at 12.5% |
-| Sovereign Gold Bonds | Held to maturity: capital gains exempt for individuals — the standout feature of the instrument |
+| Sovereign Gold Bonds | Redeemed at maturity: capital gains exempt for individuals — from 1 April 2026, only if you subscribed at issue and held continuously |
 
 **Why gold funds aren't on the slab rate any more.** Until 31 March 2025 the
 test for a "specified" fund was different — not more than 35% in Indian
@@ -82,10 +82,16 @@ units bought after 1 April 2023 and sold before 1 April 2025 were taxed at
 your slab rate.
 
 Sovereign Gold Bonds are worth a line of their own. Redeemed at maturity with
-the RBI, the capital gain is exempt for individual investors. Sell them on the
-secondary market before maturity instead and normal capital gains rules
-apply. Same instrument, entirely different tax outcome depending on how you
-exit.
+the RBI (Reserve Bank of India), the capital gain has long been exempt for
+individual investors. Budget 2026 narrowed that: from 1 April 2026 the
+exemption at redemption applies only if you subscribed at the original issue
+and held the bond continuously until it matured (Finance Act 2026, as
+summarised by the National Institute of Securities Markets and others). Bonds
+bought on the exchange no longer get it at maturity — the gain is taxed as a
+long-term gain at 12.5%. Sell before maturity and
+normal capital gains rules apply either way. Same instrument, very different
+tax outcomes depending on how you got in and how you exit; check the current
+rule before relying on the exemption.
 
 ## Property
 
@@ -105,9 +111,12 @@ in this whole series for paying a professional.
 ## Unlisted shares
 
 Long-term after {{ r.other_holding_months }} months. Relevant to anyone holding employee stock in an
-unlisted company, or investing in startups — and note that the shares
-becoming listed later doesn't retrospectively change how the earlier holding
-period was counted.
+unlisted company, or investing in startups. One wrinkle if the company later
+lists: the holding-period line follows what the shares are *on the day you
+sell*. Sell after listing and the {{ r.equity_holding_months }}-month line for listed shares applies,
+counted from when you originally acquired them. Which rate and exemption then
+apply can turn on further conditions, so pre-IPO (initial public offering)
+shares are worth a professional's check.
 
 ## International funds
 
@@ -150,7 +159,7 @@ fund full of foreign shares can miss the definition completely.
 | Physical gold | {{ r.other_holding_months }} months | Flat rate, no indexation |
 | Property | {{ r.other_holding_months }} months | Flat rate, transitional option for older purchases |
 | Unlisted shares | {{ r.other_holding_months }} months | Flat rate |
-| Sovereign Gold Bonds at maturity | — | Exempt for individuals |
+| Sovereign Gold Bonds at maturity | — | Exempt for individuals who subscribed at issue and held throughout (from 1 Apr 2026) |
 
 Plus {{ r.cess_pct }}% cess on the tax throughout.
 
@@ -165,7 +174,9 @@ Plus {{ r.cess_pct }}% cess on the tax throughout.
 - **Expecting international funds to be taxed as equity.** The 65% test is
   about Indian equity.
 - **Selling Sovereign Gold Bonds early without checking.** Held to maturity
-  the gain is exempt for individuals; sold on the exchange it isn't.
+  from the original issue, the gain is exempt for individuals; sold on the
+  exchange it isn't — and from 1 April 2026, bonds *bought* on the exchange
+  don't get the exemption at maturity either.
 - **Treating property like a large mutual fund.** Different holding period,
   transitional options, reinvestment reliefs and strict deadlines.
 - **Concluding debt funds are now pointless.** The rate advantage went; the

@@ -194,6 +194,11 @@ roll = rets.brit.rolling(60).corr(rets.nifty).dropna()
 # index fund vs its index: how close to 1 a "different large-cap fund" really is
 fund_vs_idx = pd.concat([r.rename("fund"), nifty.rename("nifty")], axis=1).dropna().pct_change().dropna()
 rho_fund_idx = fund_vs_idx.fund.corr(fund_vs_idx.nifty)
+# two real funds from this blog's data: an index fund vs a flexi-cap fund
+ppfas = pd.read_csv(DATA / "parag-parikh-flexicap-nav.csv", parse_dates=["date"]).set_index("date").nav_regular_growth
+two_funds = pd.concat([nav.nav_regular_growth.rename("uti"), ppfas.rename("ppfas")], axis=1).dropna()
+tf_daily = two_funds.pct_change().dropna()
+tf_monthly = two_funds.resample("ME").last().pct_change().dropna()
 sig_b, sig_n = rets.brit.std() * math.sqrt(252) * 100, rets.nifty.std() * math.sqrt(252) * 100
 sig_5050 = math.sqrt(0.25 * sig_b**2 + 0.25 * sig_n**2 + 2 * 0.25 * rho * sig_b * sig_n)
 two_asset = [{"rho": p, "portfolio_vol_pct": r2(math.sqrt(0.25 * 20**2 + 0.25 * 20**2 + 2 * 0.25 * p * 20 * 20), 1)} for p in (1.0, 0.9, 0.7, 0.5, 0.2, 0.0, -0.5)]
@@ -209,6 +214,11 @@ out["correlation"] = {
     "index_fund_nifty_window_start": str(fund_vs_idx.index.min().date()),
     "two_asset_table": two_asset, "n_asset_table": n_assets, "n_asset_rho": 0.7, "n_asset_sigma": 20,
     "rho_floor_vol_pct": r2(20 * math.sqrt(0.7), 1),
+    "eight_asset_vol_pct": r2(20 * math.sqrt(1 / 8 + (1 - 1 / 8) * 0.7), 1),
+    "two_funds_daily_rho": r2(tf_daily.uti.corr(tf_daily.ppfas), 2),
+    "two_funds_monthly_rho": r2(tf_monthly.uti.corr(tf_monthly.ppfas), 2),
+    "two_funds_window_start": str(two_funds.index.min().date()),
+    "two_funds_window_end": str(two_funds.index.max().date()),
 }
 fig, ax = plt.subplots(figsize=(5.2, 4.2))
 ax.scatter(rets.nifty * 100, rets.brit * 100, s=7, color=BLUE, alpha=0.55, edgecolors="none")

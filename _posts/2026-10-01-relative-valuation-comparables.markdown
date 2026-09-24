@@ -99,7 +99,7 @@ miss that.
 
 ## Worked example: Britannia Industries
 
-Same price and financials used across this blog's valuation posts — the NSE
+Same price and financials used across this blog's valuation posts — the NSE (National Stock Exchange)
 close on {{ bi_market.price_date }}, against the
 [audited consolidated FY25 results](https://media.britannia.co.in/Audited_Consolidated_Financial_Results_31_03_2025_74a7c03628.pdf).
 Historical, for illustration only.
@@ -145,10 +145,10 @@ almost the entire spread:
 - **Scale and track record.** Britannia has a century of history, national
   distribution, and brands people ask for by name. Desi Bites is a
   fictional mid-sized manufacturer with three years of audited accounts.
-- **The exchange and liquidity.** Desi Bites is listed on the SME
-  (small and medium enterprise) platform,
-  where shares trade thinly. Illiquidity means a buyer can't easily get out,
-  and the market prices that in with a discount.
+- **Size and liquidity.** Desi Bites is a ₹{% include inr.html n=listing.market_cap %} Lakh company on the main
+  board, with most of its shares still held by the promoters, so its free
+  float is tiny and the shares trade thinly. Illiquidity means a buyer can't
+  easily get out, and the market prices that in with a discount.
 - **The cash distortion, again.** Desi Bites' EV/EBITDA is held down by IPO
   cash that hasn't yet been put to work. Britannia's balance sheet has no
   equivalent lump.

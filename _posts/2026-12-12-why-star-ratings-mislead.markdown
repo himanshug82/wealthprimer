@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Why star ratings mislead: the same fund, five stars one year and two the next"
+title: "Why star ratings mislead — and why the same fund can swing from five stars to two"
 description: "Star ratings rank trailing risk-adjusted returns within a category. On one index fund that figure swung from −1% to 27% a year; past winners earned no more."
 image: /assets/og/why-star-ratings-mislead.png
 date: 2026-12-12 09:00:00 +0530
@@ -54,17 +54,20 @@ The same fund's "three-year return" — the headline input to a rating — range
 from **{{ r.trailing_3y_min_pct }}%** to **{{ r.trailing_3y_max_pct }}%** a year across all the dates it could have been
 read. On 31 March 2020 it was negative. Three years later it was 27%.
 
-Now imagine this fund inside a category of similar funds. In the years its
-trailing figure sat in the top of its own range, it would have been the kind of
-fund that gets five stars; in 2013, 2014 and 2020 it would have looked like a
-laggard. Nothing about it changed. The *window* changed.
+Nothing about the fund changed. The *window* changed. That's the first
+lesson: most of a trailing return is simply what the market did over those
+three years, not anything the fund did.
 
-A rating does compare against peers rather than against the fund's own
-history, and peers' numbers swing with the same market — so the ranking is
-steadier than these raw figures. But the ranking is decided by the small
-*differences* between funds' trailing returns, and those differences are
-mostly which fund happened to be tilted the right way for the window that
-just closed.
+The ranking point is separate. A rating compares a fund against peers, not
+against its own history — and in March 2020 every Nifty fund fell together,
+so this fund's *rank* among them would barely have moved. Peers swing with the
+same market, which makes the stars steadier than these raw figures. But it
+also means the ranking is decided by the small *differences* between funds'
+trailing returns, and those differences are mostly which fund happened to be
+tilted the right way for the window that just closed. When the window rolls
+on and a different tilt wins, a small gap in return can be enough to move a
+fund from the top tenth of its category to the bottom third — five stars to
+two, with the fund itself unchanged.
 
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
@@ -97,15 +100,20 @@ The dates when the fund had just delivered its *best* three-year stretches
 {{ mr.top_quartile_next_avg_pct }}%. The dates when it had just delivered its *worst* (averaging
 {{ mr.bottom_quartile_past_avg_pct }}%) were followed by three years averaging {{ mr.bottom_quartile_next_avg_pct }}%.
 Essentially the same. The correlation between past and next is
-{{ mr.corr_past3y_next3y }} — noise.
+{{ mr.corr_past3y_next3y }} — no detectable relationship in this sample. Hold that number
+loosely, though: neighbouring month-ends share almost all of their three-year
+windows, so those {{ mr.pairs }} pairs contain only about five or six genuinely
+independent three-year periods. That's enough to rule out strong persistence
+here, not enough to prove there's none.
 
 This is one fund, and a passive one, so it isolates the *market's* contribution
 to a trailing return: none of it persisted. The academic evidence on active
 funds points the same way — outperformance over one window is a weak
 predictor of the next, and the strongest persistent signal is *cost*, which
 the [expense ratio post]({% post_url 2026-10-21-expense-ratios-direct-vs-regular %})
-covered. The ratings that do a better job of predicting are usually the ones
-that quietly weight fees.
+covered. Morningstar's own study (Russel Kinnel, "How Expense Ratios and Star
+Ratings Predict Success", August 2010) found that low expense ratios predicted
+a fund's future success more reliably than its star rating did.
 
 ## Two more things ratings can't see
 

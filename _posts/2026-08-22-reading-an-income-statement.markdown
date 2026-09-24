@@ -103,8 +103,8 @@ scales) is on the [case study page]({{ '/case-study/' | relative_url }}).
   company whose gross margin itself is thin.
 - **Looking at one year in isolation.** A single year's P&L doesn't tell you
   whether a margin is stable, improving, or one good year in an otherwise
-  shaky trend — that's why every ratio post in this series looks at three
-  years, not one.
+  shaky trend — that's why the case study page shows three years, and we
+  compare prior years where it matters.
 
 **Takeaway:** an income statement is a waterfall from revenue down to profit,
 and every subtraction along the way answers a different question — reading

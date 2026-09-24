@@ -88,9 +88,10 @@ to total assets. That's the equation, working exactly as it should.
 Notice the plant (net fixed assets) is by far the largest asset, and it's
 funded by a mix of the term loan and shareholder money — which is a
 completely normal way for a manufacturer to finance a factory. Compare that
-to inventory and receivables, which are funded mostly by short-term supplier
-credit (payables) — also normal, and the kind of relationship the
-[Efficiency module]({{ '/' | relative_url }}) digs into later.
+to inventory and receivables, which are funded partly by supplier credit
+(payables cover ₹{% include inr.html n=bs.payables %}L of the
+₹{{ bs.inventory | plus: bs.receivables }}L) — also normal, and the kind of relationship the
+[Efficiency module]({{ '/2026/09/07/inventory-days/' | relative_url }}) digs into later.
 
 ## Common mistakes
 

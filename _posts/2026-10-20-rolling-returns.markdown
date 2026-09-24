@@ -159,8 +159,9 @@ window runs past the end of the data, every later one does too.
 ## Common mistakes
 
 - **Rolling monthly instead of daily and calling it the same thing.** Monthly
-  start dates give roughly a twelfth of the windows and can miss short sharp
-  episodes entirely. State your step size.
+  start dates give roughly a twentieth of the windows (there are about 20 NAV
+  days a month) and can miss short sharp episodes entirely. State your step
+  size.
 - **Quoting only the median.** The distribution is the output. A median
   without the range and the worst case throws away most of the information.
 - **Assuming the historical range bounds the future.** This fund's worst

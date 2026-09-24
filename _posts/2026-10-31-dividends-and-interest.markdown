@@ -31,11 +31,11 @@ taxed in the recipient's hands at their slab rate.**
 
 The practical effect depends entirely on your slab, and it's large:
 
-| Your slab | Tax on ₹1,00,000 of dividend |
-|---|---:|
-| 5% | ₹5,000 |
-| 20% | ₹20,000 |
-| 30% | ₹30,000 |
+| Your slab | Tax on ₹1,00,000 of dividend | With {{ r.cess_pct }}% cess |
+|---|---:|---:|
+| 5% | ₹5,000 | ₹5,200 |
+| 20% | ₹20,000 | ₹20,800 |
+| 30% | ₹30,000 | ₹31,200 |
 
 Compare that with long-term capital gains on equity at {{ r.equity_ltcg_pct }}% with a
 ₹{% include inr.html n=r.ltcg_annual_exemption %} annual exemption, and something important follows: for an investor
@@ -43,8 +43,9 @@ in the highest slab, **dividend income is taxed more heavily than long-term
 capital gains on the same shares**.
 
 This is the reasoning behind a point made back in the
-[opening mutual funds post]({% post_url 2026-10-18-what-a-mutual-fund-is %}): choosing the IDCW option over
-growth doesn't create extra income. It converts what would have been a
+[opening mutual funds post]({% post_url 2026-10-18-what-a-mutual-fund-is %}): choosing the IDCW (income
+distribution cum capital withdrawal, the payout option) over growth doesn't
+create extra income. It converts what would have been a
 capital gain — taxed at {{ r.equity_ltcg_pct }}% with an exemption, and only when you choose to
 sell — into income taxed at your slab rate, now, whether you wanted it or
 not.
@@ -71,7 +72,7 @@ gives you less say about when.
 
 Unlike capital gains, dividends and interest usually arrive with tax already
 withheld. **TDS — Tax Deducted at Source** — means the payer deducts a slice
-and deposits it against your PAN before paying you the rest.
+and deposits it against your PAN (permanent account number) before paying you the rest.
 
 | Income | Typically deducted at |
 |---|---|
@@ -97,8 +98,10 @@ holdings.
 Same treatment, added to income at your slab rate. Some specifics worth
 knowing:
 
-- **Savings account interest** attracts a modest deduction for individuals,
-  which the interest on most ordinary balances falls within.
+- **Savings account interest** gets a modest deduction — **in the old regime
+  only**: up to ₹10,000 a year for most individuals, or up to ₹50,000 on bank
+  and post-office interest (deposits included) for senior citizens. The new
+  regime, which is the default, doesn't allow it.
 - **Fixed deposit interest is taxable as it accrues each year**, not when the
   deposit matures. People with multi-year cumulative deposits routinely miss
   this and then face several years' tax at once.
@@ -121,7 +124,7 @@ transactions.
 Checking these before filing is the single most useful habit in this entire
 series, for a blunt reason: the tax department already has this data. A
 mismatch between what you report and what's in your AIS is what generates
-notices. The last post in this series covers reading them properly.
+notices. Part 9, *Before you file*, covers reading them properly.
 
 ## Common mistakes
 

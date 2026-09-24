@@ -13,6 +13,7 @@ term: "DRHP (draft red herring prospectus)"
 {% assign v = d.valuation_at_issue %}
 {% assign l = site.data.case_study.listing %}
 {% assign fy25 = site.data.case_study.income_statement.FY25 %}
+{% assign gcp_acq_pct = d.objects[1].pct | plus: d.objects[3].pct %}
 
 ## The longest document most investors never open
 
@@ -21,8 +22,9 @@ seventh goes back to the document that made it a listed company in the
 first place.
 
 A **DRHP — Draft Red Herring Prospectus** — is what a company files with
-SEBI (or, for the SME platforms, with the exchange) when it wants to sell
-shares to the public. "Draft" because it's filed for review; "red herring"
+SEBI (the Securities and Exchange Board of India) when it wants to sell
+shares to the public and list on the main board of the NSE (National Stock
+Exchange) and BSE. "Draft" because it's filed for review; "red herring"
 because the final price and quantity are left blank until close to the
 issue. Once approved and priced it becomes the RHP, and then the
 prospectus. It is typically 300 to 500 pages, it's free, and it's the most
@@ -30,8 +32,9 @@ complete, most legally accountable description of a business you will
 ever get — because every statement in it exposes the company and its
 bankers to liability if it's wrong.
 
-Desi Bites Foods filed its DRHP in March 2025 and listed on NSE Emerge on
-{{ l.listing_date }} at ₹{{ l.ipo_price }} a share. Fictional company, fictional filing,
+Desi Bites Foods filed its DRHP with SEBI in December 2024, filed the
+final RHP in June 2025 once its FY25 accounts were audited, and listed on
+the NSE and BSE main boards on {{ l.listing_date }} at ₹{{ l.ipo_price }} a share. Fictional company, fictional filing,
 real structure. Here's how to read one in an evening rather than a week.
 
 ## 1. Fresh issue or offer for sale?
@@ -68,15 +71,18 @@ the exchange every quarter until the funds are spent.
 
 Read the labels carefully. *Capex for a named project* is specific and
 checkable. *Working capital* is vaguer but legitimate. *General corporate
-purposes* is the catch-all — money with no stated use — and
-{{ d.gcp_cap_note | downcase }}, precisely because companies would otherwise
-put everything there. *Inorganic growth* means acquisitions not yet
-identified, which is a request to trust management's judgement on deals it
-hasn't found.
+purposes* (GCP) is the catch-all — money with no stated use. *Inorganic
+growth* means acquisitions not yet identified, which is a request to trust
+management's judgement on deals it hasn't found. Both are capped, precisely
+because companies would otherwise put everything there: {{ d.gcp_cap_note }}
+(the combined cap came in with the SEBI ICDR (Amendment) Regulations, 2022,
+notified 14 January 2022).
+Desi Bites sits just inside the combined limit: GCP plus unidentified
+acquisitions come to {{ gcp_acq_pct }}% of the issue.
 
 Now the reckoning. By 31 March 2026, Desi Bites had spent
-₹{% include inr.html n=d.actual_use_by_fy26_end.acquisitions %} lakh on an acquisition (against ₹500 lakh stated) and
-₹{% include inr.html n=d.actual_use_by_fy26_end.capex %} lakh on capex (against ₹700 lakh), with ₹{% include inr.html n=d.actual_use_by_fy26_end.unspent %} lakh unspent.
+₹{% include inr.html n=d.actual_use_by_fy26_end.acquisitions %} lakh on an acquisition (against ₹{{ d.objects[1].amount }} lakh stated) and
+₹{% include inr.html n=d.actual_use_by_fy26_end.capex %} lakh on capex (against ₹{{ d.objects[0].amount }} lakh), with ₹{% include inr.html n=d.actual_use_by_fy26_end.unspent %} lakh unspent.
 {{ d.deviation_note }} Neither deviation is scandalous; both are exactly
 the kind of thing the [capital allocation post]({% post_url 2026-11-18-capital-allocation %})
 said to watch, and the prospectus is the yardstick that makes watching
@@ -137,8 +143,9 @@ and the prospectus is where you first see how large it is.
 ## 5. The financials: restated, and three years of them
 
 A DRHP carries three years of **restated** financial statements — audited
-numbers re-presented on a consistent basis. For Desi Bites that's the
-FY23–FY25 model this blog has used all along, at [/case-study/]({{ '/case-study/' | relative_url }}).
+numbers re-presented on a consistent basis — and they're brought up to date
+as the process runs, which is why Desi Bites' June 2025 RHP carried FY25.
+For Desi Bites that's the FY23–FY25 model this blog has used all along, at [/case-study/]({{ '/case-study/' | relative_url }}).
 Three things to do with them that the summary page won't:
 
 - **Check the trend, not the last year.** Companies list after their best

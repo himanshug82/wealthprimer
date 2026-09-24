@@ -36,8 +36,9 @@ came from shareholders or lenders?
 **Capital Employed** = Equity + Borrowings — everyone who's put long-term
 money into the business, not just its owners. And because that capital
 belongs to lenders too (who get paid via interest, before shareholders see
-anything), ROCE uses **EBIT** — profit before interest and tax — instead of
-PAT, so the return isn't already net of what's owed to one of the two groups
+anything), ROCE uses **EBIT** — [earnings before interest and
+tax]({% post_url 2026-08-22-reading-an-income-statement %}) — instead of
+PAT (profit after tax), so the return isn't already net of what's owed to one of the two groups
 who supplied the capital.
 
 ## The formula
@@ -132,7 +133,7 @@ itself, not who financed it.
 - **Treating a high ROCE as a reason to buy at any price.** ROCE measures
   business quality, not value for money — a genuinely excellent business can
   still be a poor investment if bought at too high a price. That's a
-  separate question, covered in the Valuation module.
+  separate question, covered in the [Valuation module]({{ '/2026/09/24/price-to-earnings/' | relative_url }}).
 
 **Takeaway:** ROCE measures the return a business generates on *all* the
 capital invested in it — equity and debt alike — making it a fairer way to

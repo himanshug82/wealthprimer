@@ -81,7 +81,10 @@ NIM_Q4 = dict(on_total_assets=3.54, on_interest_earning_assets=3.73,
               core_on_total_assets=3.46, core_on_interest_earning_assets=3.65,
               tax_refund_interest_bn=7)
 CASA_FY25_PCT_REPORTED = 34.8
-REG_MIN = dict(crar=9.0, ccb=2.5, dsib_surcharge=0.2, total=11.7, cet1_min=5.5, tier1_min=7.0)
+# D-SIB surcharge: 0.20% (bucket 1) at 31 March 2025; RBI's D-SIB lists moved HDFC Bank
+# to bucket 2 (0.40%) with effect from 1 April 2025 (RBI press release, 13 November 2024).
+REG_MIN = dict(crar=9.0, ccb=2.5, dsib_surcharge=0.2, total=11.7, cet1_min=5.5, tier1_min=7.0,
+               dsib_surcharge_from_apr2025=0.4, total_from_apr2025=11.9)
 MARKET = dict(price_date="30 June 2025", price_adjusted_yahoo=1000.75, bonus_ratio="1:1",
               bonus_record_date="27 August 2025", price=2001.50,
               dividend_per_share_fy25=22.0,
@@ -207,14 +210,20 @@ def main():
         roe_on_closing_equity_pct=r(100 * f25["pat"] / f25["shareholders_equity"], 1),
     )
     V["pe_x_roe_check"] = r(V["pe"] * V["roe_on_closing_equity_pct"] / 100, 2)
-    # illustrative justified P/B = (ROE − g) / (Ke − g), stated as illustration with round inputs
-    # The point of the table is how VIOLENTLY the output moves with two guessed inputs —
-    # not which scenario is "right". BANK-6 draws no conclusion from it.
-    roe = D["roe_pct"]
+    # illustrative justified P/B = (ROE − g) / (Ke − g), on a GENERIC bank with a round ROE —
+    # not on HDFC Bank, and never compared with HDFC Bank's actual P/B (a discount rate
+    # applied to a real listed company is a valuation, which this blog doesn't publish).
+    # Growth stays at or below the ~10% long-run nominal GDP ceiling in the terminal-value
+    # post; scenario D is deliberately the aggressive g-close-to-Ke case and is labelled so.
+    # The point is how violently the output moves with two guessed inputs.
+    roe_illus = 15.0
+    V["justified_pb_illustrative_roe_pct"] = roe_illus
     V["justified_pb_scenarios"] = [
-        dict(label="A", cost_of_equity_pct=14.0, growth_pct=9.0, pb=r((roe - 9.0) / (14.0 - 9.0), 2)),
-        dict(label="B", cost_of_equity_pct=13.0, growth_pct=10.0, pb=r((roe - 10.0) / (13.0 - 10.0), 2)),
-        dict(label="C", cost_of_equity_pct=12.0, growth_pct=11.0, pb=r((roe - 11.0) / (12.0 - 11.0), 2)),
+        dict(label="A", cost_of_equity_pct=14.0, growth_pct=6.0, pb=r((roe_illus - 6.0) / (14.0 - 6.0), 2)),
+        dict(label="B", cost_of_equity_pct=13.0, growth_pct=7.0, pb=r((roe_illus - 7.0) / (13.0 - 7.0), 2)),
+        dict(label="C", cost_of_equity_pct=12.0, growth_pct=8.0, pb=r((roe_illus - 8.0) / (12.0 - 8.0), 2)),
+        dict(label="D (aggressive: g within 2 points of Ke)", cost_of_equity_pct=12.0, growth_pct=10.0,
+             pb=r((roe_illus - 10.0) / (12.0 - 10.0), 2)),
     ]
 
     out = {

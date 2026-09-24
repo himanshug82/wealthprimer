@@ -181,6 +181,8 @@ regulatory_minimum:
   total: 11.7
   cet1_min: 5.5
   tier1_min: 7.0
+  dsib_surcharge_from_apr2025: 0.4
+  total_from_apr2025: 11.9
 segments_fy25:
   treasury: 62227.48
   retail_banking: 283434.79
@@ -206,16 +208,21 @@ valuation:
   earnings_yield_pct: 4.41
   roe_on_closing_equity_pct: 13.5
   pe_x_roe_check: 3.06
+  justified_pb_illustrative_roe_pct: 15.0
   justified_pb_scenarios:
   - label: A
     cost_of_equity_pct: 14.0
-    growth_pct: 9.0
-    pb: 1.08
+    growth_pct: 6.0
+    pb: 1.12
   - label: B
     cost_of_equity_pct: 13.0
-    growth_pct: 10.0
-    pb: 1.47
+    growth_pct: 7.0
+    pb: 1.33
   - label: C
     cost_of_equity_pct: 12.0
-    growth_pct: 11.0
-    pb: 3.4
+    growth_pct: 8.0
+    pb: 1.75
+  - label: 'D (aggressive: g within 2 points of Ke)'
+    cost_of_equity_pct: 12.0
+    growth_pct: 10.0
+    pb: 2.5

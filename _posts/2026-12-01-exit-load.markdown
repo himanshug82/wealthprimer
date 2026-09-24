@@ -12,7 +12,7 @@ term: "Exit load"
 
 ## What an exit load is
 
-An **exit load** is a charge a mutual fund deducts from the redemption value
+An **exit load** is a charge a [mutual fund]({% post_url 2026-10-18-what-a-mutual-fund-is %}) deducts from the redemption value
 when you sell units before a specified holding period — most commonly **1% if
 redeemed within 365 days of purchase**, and nothing after. It exists to
 discourage hot money: investors who dart in and out force the fund to buy and
@@ -20,7 +20,8 @@ sell holdings, and those trading costs land on everyone who stayed.
 
 Two things to know before the arithmetic. The load goes to the *scheme*, not
 to the fund house — it is credited back to the fund's assets, so the remaining
-investors are compensated, not the AMC. And it is charged on the *value* at
+investors are compensated, not the AMC (asset management company, the fund
+house that runs the scheme). And it is charged on the *value* at
 redemption, not the amount you invested.
 
 Load structures vary: liquid funds use a graded load over the first seven
@@ -40,12 +41,14 @@ each purchase has its own date, so each has its own 365-day clock.
 
 ## Worked example: a fourteen-month SIP, redeemed at once
 
-Suppose ₹{% include inr.html n=x.sip_amount %} a month into an index fund from
+Suppose you run a [SIP]({% post_url 2026-10-24-sips-xirr-and-timing-myths %}) (systematic investment plan — a fixed amount invested
+every month) of ₹{% include inr.html n=x.sip_amount %} a month into an index fund from
 January 2025, fourteen instalments, then everything redeemed on
-{{ x.redeem_date }} at a NAV of ₹{{ x.redeem_nav }}. Assume a load of {{ x.load_pct }}% within
+{{ x.redeem_date }} at a NAV (net asset value, the per-unit price a fund
+publishes each day) of ₹{{ x.redeem_nav }}. Assume a load of {{ x.load_pct }}% within
 {{ x.load_window_days }} days, so anything bought after **{{ x.cutoff_date }}** is loaded.
 
-NAVs are the real published NAVs of the {{ x.fund }} (source: AMFI via mfapi.in,
+NAVs are the real published NAVs of the {{ x.fund }} (source: AMFI, the Association of Mutual Funds in India, via mfapi.in,
 data to 31 March 2026), used purely for the arithmetic. The load structure is
 hypothetical — this fund's own terms are not being described. Historical
 data, for illustration only.

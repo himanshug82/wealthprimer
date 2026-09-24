@@ -201,7 +201,13 @@ def durations(ytm_pct, coupon_pct=COUPON, years=YEARS, face=FACE):
 
 
 BUY_PRICE = 960.0
-ytm = solve_ytm(BUY_PRICE)
+ytm_exact = solve_ytm(BUY_PRICE)   # ~8.002% for a Rs 960 price
+# Everything shown to the reader is computed at the ROUNDED yield (8.00%), so
+# the PV schedule, the price ladder and the duration repricing all agree with
+# each other (Rs 960.07 at 8%, Rs 1,000.00 at 7%, Rs 922.21 at 9%). The exact
+# yield is kept only so the post can say it is a hair above 8%.
+ytm = round(ytm_exact, 2)
+price_at_ytm = bond_price(ytm)
 mac, mod, _ = durations(ytm)
 price_up = bond_price(ytm + 1)
 price_dn = bond_price(ytm - 1)
@@ -216,14 +222,16 @@ bond = {
     "annual_coupon": r2(FACE * COUPON / 100),
     "current_yield_pct": r2(FACE * COUPON / 100 / BUY_PRICE * 100),
     "ytm_pct": r2(ytm),
+    "ytm_exact_pct": round(ytm_exact, 3),
+    "price_at_ytm": r2(price_at_ytm),
     "price_ladder": ladder,
     "schedule_at_ytm": schedule,
     "macaulay_duration": r2(mac),
     "modified_duration": r2(mod),
     "price_if_ytm_plus_1pct": r2(price_up),
     "price_if_ytm_minus_1pct": r2(price_dn),
-    "pct_change_plus_1": r2((price_up / BUY_PRICE - 1) * 100),
-    "pct_change_minus_1": r2((price_dn / BUY_PRICE - 1) * 100),
+    "pct_change_plus_1": r2((price_up / price_at_ytm - 1) * 100),
+    "pct_change_minus_1": r2((price_dn / price_at_ytm - 1) * 100),
     "duration_estimate_pct": r2(-mod),
     "comparison": comp,
 }

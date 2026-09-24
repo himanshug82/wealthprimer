@@ -130,8 +130,11 @@ regA_company_tax = r(bb_gain * regA_rate)
 regB_tax = with_cess(bb_consideration * SLAB)
 regB_tds = r(bb_consideration * DIV_TDS)
 regB_capital_loss = bb_cost_total          # consideration deemed nil
-regB_loss_value_vs_stcg = r(bb_cost_total * STCG_EQ)
-regB_loss_value_vs_ltcg = r(bb_cost_total * LTCG_EQ)
+# Cess applied to the loss value too, so it nets cleanly against the
+# with-cess dividend tax. Shares bought June 2025 and bought back before
+# 31 Mar 2026 were held <= 12 months, so the loss is SHORT-term.
+regB_loss_value_vs_stcg = with_cess(bb_cost_total * STCG_EQ)
+regB_loss_value_vs_ltcg = with_cess(bb_cost_total * LTCG_EQ)
 regB_net_if_loss_used_stcg = regB_tax - regB_loss_value_vs_stcg
 
 # Regime C (from 1 Apr 2026): capital gains, cost deductible.
@@ -281,7 +284,7 @@ foreign = {
 # Rules, sources, verification — the part a professional should re-check
 # --------------------------------------------------------------------------
 verification = {
-    "financial_year": "FY 2026-27",
+    "financial_year": "Tax Year 2026-27 (FY 2026-27)",
     "verified_on": "September 2026",
     "how": "Each rule below was checked against at least two public secondary sources on the dates shown. The primary text (Income-tax Act, 2025 / Finance Act, 2026) could not be fetched from incometaxindia.gov.in by automated means, same as the rest of the tax series.",
     "esop": {
@@ -290,7 +293,7 @@ verification = {
             "RSU: perquisite = full FMV on vesting/settlement (exercise price nil); sell-to-cover is common.",
             "Capital gain at sale = sale price minus the FMV used for the perquisite; holding period runs from exercise/allotment.",
             "Indian listed shares: STCG 20% (<=12 months), LTCG 12.5% above Rs 1.25 lakh. Unlisted or foreign shares: slab up to 24 months, 12.5% beyond, no Rs 1.25 lakh exemption.",
-            "Deferral only for employees of DPIIT-recognised startups holding the Inter-Ministerial Board certificate (old s.80-IAC): tax/TDS due within 14 days of the earliest of 48 months from the end of the assessment year of allotment, sale of the shares, or leaving the employer. Tax is computed at the rates of the year of exercise; only payment moves.",
+            "Deferral only for employees of DPIIT-recognised startups holding the Inter-Ministerial Board certificate (old s.80-IAC): tax/TDS due within 14 days of the earliest of: 60 months from the end of the relevant tax year (Income-tax Act, 2025, s.289(3) read with s.392(3); the 1961 Act's s.192(1C) said 48 months from the end of the relevant assessment year, i.e. the same point in time), sale of the shares, or leaving the employer. Tax is computed at the rates of the year of exercise; only payment moves.",
         ],
         "sources": [
             "https://cleartax.in/s/taxation-on-esop-rsu-stock-options",
@@ -298,7 +301,7 @@ verification = {
             "https://www.patronaccounting.com/blog/esop-tax-deferral-startup-employees-dpiit-section-80-iac",
             "https://www.equitylist.co/blog-post/perquisite-tax-deferral-startups",
         ],
-        "disagreements": "One source phrases the deferral as 'five years from the end of the assessment year'; the statute's wording is 48 months from the end of the relevant assessment year. The posts use the 48-month wording.",
+        "disagreements": "One source phrases the deferral as 'five years from the end of the assessment year'. The 1961 Act (s.192(1C)) said 48 months from the end of the relevant assessment year; the 2025 Act (s.289(3), checked on eztax.in and indiankanoon.org in September 2026) says 60 months from the end of the relevant tax year. The post uses the 2025 Act wording and notes the old one.",
     },
     "buyback": {
         "rules": [
@@ -323,7 +326,7 @@ verification = {
             "Presumptive scheme: declare 6% of digital turnover as profit, available up to Rs 3 crore turnover (95%+ digital). A loss cannot be declared under it. Opting out within 5 years of opting in bars re-entry for 5 years and triggers audit if total income exceeds the basic exemption. Never having opted in, a loss can be declared without audit if turnover is under the threshold.",
             "Same-year set-off against any head EXCEPT salary; carry-forward 8 years against business income only, and ONLY if the return is filed by the due date. Form ITR-3 (ITR-4 only under presumptive).",
             "Expenses deductible against F&O income: brokerage, exchange charges, STT, software, internet, advisory, depreciation on equipment.",
-            "STT on futures/options sales rose from 1 April 2026 (futures 0.02% -> 0.05%; options premium 0.10% -> 0.15%; exercised options 0.125% -> 0.15%) per one source citing the Finance Act, 2026 — verify before quoting elsewhere.",
+            "STT on futures/options sales rose from 1 April 2026 (futures 0.02% -> 0.05%; options premium 0.10% -> 0.15%; exercised options 0.125% -> 0.15%) announced in the Union Budget 2026-27 and effective 1 April 2026; confirmed across several sources (ICICI Direct, HDFC Securities, ClearTax) in September 2026.",
         ],
         "sources": [
             "https://fnotax.com/articles/fo-taxation-turnover-guide-ay-2026-27-audits-expenses-rules/",
@@ -335,11 +338,11 @@ verification = {
     "foreign": {
         "rules": [
             "Foreign listed shares: long-term if held more than 24 months; LTCG 12.5% without indexation (sales from 23 July 2024); STCG at slab. The Rs 1.25 lakh exemption does NOT apply (it is for STT-paid Indian equity).",
-            "US dividends: 25% withheld in the US under the India-US DTAA; the gross dividend is taxed in India at slab and the US tax is credited via Form 67 (being renumbered) filed before the return, flowing through Schedule FSI and Schedule TR.",
+            "US dividends: 25% withheld in the US under the India-US DTAA; the gross dividend is taxed in India at slab and the US tax is credited via Form 67 (being renumbered). Rule 128(9) as amended by CBDT Notification 100/2022 allows Form 67 up to the end of the assessment year if the return itself is filed in time; filing it with or before the return is the safe route. Credit flows through Schedule FSI and Schedule TR.",
             "Schedule FA (ITR-2/ITR-3) must be filed by every Resident and Ordinarily Resident who held ANY foreign asset at ANY time in the CALENDAR year (1 Jan - 31 Dec) preceding the assessment year: shares, brokerage and bank accounts, RSUs/ESOPs of a foreign employer. No minimum. Report cost, peak value, closing value and income, in INR at the SBI TT buying rate.",
             "Black Money Act: Rs 10 lakh penalty for non-disclosure, not levied where aggregate foreign assets (excluding immovable property) are under Rs 20 lakh (from 1 Oct 2024) — the disclosure duty remains.",
             "TCS on LRS remittances for investment: 20% on the amount above Rs 10 lakh per financial year (threshold unchanged by Budget 2026); recoverable against tax when filing.",
-            "Exchange rate for computing gains: SBI TT buying rate on the last day of the month preceding the month of purchase/sale.",
+            "Exchange rate for computing gains: the common approach converts each leg at the SBI TT buying rate on the last day of the month preceding the month of purchase/sale. Practice differs (some apply Rule 115 to the gain computed in foreign currency instead) — flagged for professional review.",
         ],
         "sources": [
             "https://vested.blog/posts/schedule-fa-for-ay-2026-27-step-by-step",

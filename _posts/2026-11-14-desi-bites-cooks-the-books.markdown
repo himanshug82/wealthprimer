@@ -36,7 +36,7 @@ introduced. Here is what management could have done instead.
 |---|---|---|
 | **1. Channel stuffing** | Shipped ₹{% include inr.html n=t.channel_stuffing_revenue %} lakh of stock to distributors in the last week of March that nobody ordered, booked as sales | Revenue, gross profit, PAT |
 | **2. Capitalising expenses** | Booked ₹{% include inr.html n=t.capitalised_opex %} lakh of marketing and repairs as "plant and equipment" instead of expensing it | Opex down, EBITDA up, capex up |
-| **3. Related-party asset sale** | Sold old machinery with a book value of ₹{% include inr.html n=t.rp_asset_book_value %} lakh to a promoter-owned firm for ₹{% include inr.html n=t.rp_asset_sale_price %} lakh; the gain sits in "other income" | Other income, PBT |
+| **3. Related-party asset sale** | Sold old machinery with a book value of ₹{% include inr.html n=t.rp_asset_book_value %} lakh to a promoter-owned firm for ₹{% include inr.html n=t.rp_asset_sale_price %} lakh; the gain sits in "other income" | Other income, [PBT (profit before tax)]({% post_url 2026-08-22-reading-an-income-statement %}) |
 | **4. Provision write-back** | Reversed ₹{% include inr.html n=t.provision_reversal %} lakh of accrued expenses through the P&L | Opex down, EBITDA up |
 
 None of these involves a missing rupee, and each comes with a ready
@@ -167,9 +167,10 @@ quarters.
   profit, not a single reading.
 - **Assuming the auditor would have caught it.** Each of these four comes
   with a plausible story, and an audit is a sample, not a re-run of every
-  entry. Auditors test cut-off, but a well-papered March shipment can pass;
-  and they rarely second-guess the price a promoter's brother paid for a
-  machine.
+  entry. Auditors do test revenue cut-off and sample capex additions, but a
+  sample can miss a well-papered March shipment or a repair bill filed under
+  "plant"; and they rarely second-guess the price a promoter's brother paid
+  for a machine.
 - **Being reassured by an improving ratio.** Inventory days *fell* in the
   dressed version. Too-good-to-be-true works in both directions.
 - **Ignoring "other income."** For a snacks company, interest and gains on

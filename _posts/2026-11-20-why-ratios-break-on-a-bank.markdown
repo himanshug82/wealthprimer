@@ -36,7 +36,8 @@ strips out as a financing cost — *is* the bank's raw-material cost. Strip it
 out and there is nothing left to analyse.
 
 [Current ratio]({% post_url 2026-09-13-current-ratio %})? Almost all of a
-bank's liabilities are deposits repayable on demand, and most of its assets
+bank's liabilities are deposits its customers can withdraw at short notice,
+and most of its assets
 are loans due over years. Every bank on earth has a "current ratio" that
 would fail the test, by design.
 [Inventory days]({% post_url 2026-09-07-inventory-days %})? There is no
@@ -124,7 +125,7 @@ sales; the deposits are the cost of goods.
 |---|---:|---|---:|
 | Deposits | {% include inr.html n=f25.deposits %} | Advances (loans) | {% include inr.html n=f25.advances %} |
 | Borrowings | {% include inr.html n=f25.borrowings %} | Investments | {% include inr.html n=f25.investments %} |
-| Other liabilities | {% include inr.html n=f25.other_liabilities %} | Cash and balances with RBI | {% include inr.html n=f25.cash_with_rbi %} |
+| Other liabilities | {% include inr.html n=f25.other_liabilities %} | Cash and balances with the RBI (Reserve Bank of India) | {% include inr.html n=f25.cash_with_rbi %} |
 | Employee stock options outstanding | {% include inr.html n=f25.esop_outstanding %} | Balances with banks and call money | {% include inr.html n=f25.balances_with_banks_call_money %} |
 | Shareholders' equity | {% include inr.html n=f25.shareholders_equity %} | Fixed and other assets | {% include inr.html n=fixed_and_other %} |
 | **Total** | **{% include inr.html n=f25.total_assets %}** | **Total** | **{% include inr.html n=f25.total_assets %}** |
@@ -182,9 +183,9 @@ one that does the same job for a bank.
 | Manufacturer ratio | What it asked | Bank equivalent | Post |
 |---|---|---|---|
 | [Gross margin]({% post_url 2026-08-26-gross-margin %}) | What survives the cost of inputs? | Net interest margin (NIM) | 2 |
-| Cost of raw material | How cheap are the inputs? | Cost of funds; CASA ratio | 2, 3 |
-| [Debtor days]({% post_url 2026-09-08-debtor-days %}) | Are customers paying? | Gross and net NPA, provision coverage, credit cost | 4 |
-| [Debt-to-equity]({% post_url 2026-09-15-debt-to-equity %}), [interest coverage]({% post_url 2026-09-17-interest-coverage %}) | Can it survive a shock? | Capital adequacy ratio (CAR), CET1 | 5 |
+| Cost of raw material | How cheap are the inputs? | Cost of funds; CASA (current and savings account) ratio | 2, 3 |
+| [Debtor days]({% post_url 2026-09-08-debtor-days %}) | Are customers paying? | Gross and net NPA (non-performing assets), provision coverage, credit cost | 4 |
+| [Debt-to-equity]({% post_url 2026-09-15-debt-to-equity %}), [interest coverage]({% post_url 2026-09-17-interest-coverage %}) | Can it survive a shock? | Capital adequacy ratio (CAR), CET1 (common equity tier 1) | 5 |
 | [P/E]({% post_url 2026-09-24-price-to-earnings %}), EV/EBITDA | What is the market paying? | Price-to-book, anchored on ROE | 6 |
 
 Two old ratios survive nearly intact, because they were about the whole

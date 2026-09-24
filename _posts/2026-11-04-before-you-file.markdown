@@ -16,13 +16,13 @@ are meaningful.*
 
 ## The documents, and why reconciliation matters
 
-Eight posts of rules. This one is about the practical end: the papers you
+Eight posts of rules so far. This one is about the practical end: the papers you
 work from, and the checks worth doing before anything is submitted.
 
 The premise is simple and worth stating bluntly. **The tax department already
 has most of this data.** Mutual funds, brokers, banks and registrars report
-transactions against your PAN. Filing isn't telling them what happened; it's
-agreeing with a record they already hold. Notices overwhelmingly arise from
+transactions against your PAN (permanent account number). Filing isn't
+telling them what happened; it's agreeing with a record they already hold. Notices overwhelmingly arise from
 mismatches, not from honest arithmetic errors.
 
 ## The three documents
@@ -55,7 +55,7 @@ Four things worth verifying rather than assuming:
 
 **Grandfathering has been applied.** For equity bought on or before 31
 January 2018, the cost should be the higher of actual cost and the 31 January
-2018 value. Some statements handle this cleanly; check rather than assume, as
+2018 value (that value capped at the sale price). Some statements handle this cleanly; check rather than assume, as
 [the equity post]({% post_url 2026-10-29-equity-and-equity-funds %}) showed it can exclude
 a substantial slice of gain.
 
@@ -100,11 +100,15 @@ deferring to either automatically.
 6. **Apply losses** — this year's, then anything carried forward, respecting
    [the set-off rules]({% post_url 2026-11-01-losses-set-off-and-harvesting %}).
 7. **Reconcile against the AIS**, and file feedback on anything wrong.
-8. **Check TDS in Form 26AS** and claim credit for it.
-9. **Add {{ r.cess_pct }}% cess** on the computed tax.
-10. **File by the due date** — non-negotiable if you have losses to carry
+8. **Check TDS (tax deducted at source) in Form 26AS** and claim credit for it.
+9. **Check whether surcharge applies.** Above ₹50 lakh of total income a
+   surcharge is added to the tax — capped at 15% on equity gains, other
+   long-term gains and dividends, higher on other income (up to 25% in the new regime), as of
+   {{ r.financial_year }}.
+10. **Add {{ r.cess_pct }}% cess** on the computed tax (after any surcharge).
+11. **File by the due date** — non-negotiable if you have losses to carry
     forward, since late filing destroys them.
-11. **Keep the records.** Purchase dates and costs matter for as long as you
+12. **Keep the records.** Purchase dates and costs matter for as long as you
     hold the asset, which may be decades.
 
 That last point is quietly the most important. The single most common
@@ -112,17 +116,20 @@ practical problem in Indian investment tax isn't a misunderstood rule — it's
 someone unable to establish what they paid for shares bought fifteen years
 ago, through a broker that no longer exists.
 
-## What this series didn't cover
+## What this series doesn't cover
 
 Being clear about the edges, in the spirit of the honest closing posts in the
 [technical analysis]({% post_url 2026-10-17-what-technical-analysis-cannot-do %}) and
 [mutual funds]({% post_url 2026-10-26-reading-a-factsheet %}) series.
 
-- **Non-resident taxation.** NRIs face different rules, TDS on redemptions,
-  and potentially a double-taxation treaty. Genuinely different subject.
-- **Business income from trading.** Frequent trading, and derivatives in
-  particular, can be treated as business income rather than capital gains —
-  different rules, different forms, possibly an audit requirement.
+Parts 10–13 of this series pick up four topics this post leaves out: ESOPs
+and RSUs (employee stock options and restricted stock units), buybacks, F&O
+(futures and options) as business income, and foreign stocks with their
+disclosure rules. Beyond those, some edges stay uncovered:
+
+- **Non-resident taxation.** NRIs (non-resident Indians) face different
+  rules, TDS on redemptions, and potentially a double-taxation treaty.
+  Genuinely different subject.
 - **Property in detail.** Reinvestment reliefs, the transitional rate option,
   and strict deadlines. Large amounts and real complexity.
 - **Estate and gift matters.** Inheritance, gifting between relatives, and

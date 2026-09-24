@@ -17,8 +17,14 @@ advice.*
 
 ## The rules in full
 
-For listed shares and equity mutual funds — the assets most retail investors
-actually hold:
+These rules cover listed shares and equity mutual funds — the assets most
+retail investors actually hold — where securities transaction tax (STT) was paid on the sale.
+That's automatic on any sale through a stock exchange and on an equity-fund
+redemption. For long-term gains on shares, STT on the purchase is needed too,
+with notified exceptions such as shares allotted in an IPO (initial public
+offering). Short-term capital gains (STCG) and long-term capital gains (LTCG)
+split at the line explained in the
+[holding-period post]({% post_url 2026-10-28-short-term-vs-long-term %}):
 
 ```
 Held {{ r.equity_holding_months }} months or less   ->  STCG at {{ r.equity_stcg_pct }}%
@@ -43,8 +49,10 @@ the losses post later in this series.
 
 ## Worked example: a real gain, and real tax
 
-Using the fund NAV history from the
-[Mutual Funds series]({% post_url 2026-10-18-what-a-mutual-fund-is %}) — a ₹{% include inr.html n=a.invested %} investment held
+Using the fund NAV (net asset value, the per-unit price) history from the
+[Mutual Funds series]({% post_url 2026-10-18-what-a-mutual-fund-is %}) — UTI Nifty 50 Index Fund (regular
+plan, growth), NAVs from AMFI (the Association of Mutual Funds in India), as
+of 31 March 2026, used for illustration only — a ₹{% include inr.html n=a.invested %} investment held
 comfortably past the long-term line:
 
 | | |
@@ -70,6 +78,24 @@ exemption means the effective rate rises toward 13% as the gain grows and is
 zero for small gains. Quoting "LTCG is 12.5%" as though it were a flat charge
 overstates the tax on modest gains considerably.
 
+## Two quirks if your income is modest
+
+Both apply to resident individuals, and both are easy to miss.
+
+**Unused basic exemption can absorb these gains.** If your other income is
+below the basic exemption limit (the slab that's taxed at zero), the unused
+part can be set against short-term and long-term equity gains before the
+{{ r.equity_stcg_pct }}% or {{ r.equity_ltcg_pct }}% applies. A student or a retiree with little other income can
+owe less than the headline rate suggests.
+
+**The new-regime rebate doesn't cover them.** The new regime's rebate — up to
+₹60,000, for income up to ₹12 lakh, from FY 2025-26 — can't be used against
+tax on these special-rate gains; the Finance Act 2025 made that explicit after
+disputes over earlier years. So someone under ₹12 lakh can owe nothing on
+salary and still owe tax on an equity gain. How the ₹12 lakh limit itself
+counts such gains has been argued over; check the current rules, or a
+professional, if you're near it.
+
 ## Grandfathering: the 31 January 2018 rule
 
 Long-term gains on listed equity were entirely tax-free until 2018. When the
@@ -81,8 +107,9 @@ The rule, for equity acquired on or before **31 January 2018**:
 ```
 Cost for tax purposes = the HIGHER of
                           (a) what you actually paid, and
-                          (b) the value on 31 January 2018
-                        ...but capped at the sale price.
+                          (b) the LOWER of
+                                - the value on 31 January 2018, and
+                                - the sale price
 ```
 
 Worked through, on the same fund:
@@ -101,9 +128,11 @@ Worked through, on the same fund:
 ₹{% include inr.html n=g.gain_excluded %} of gain simply doesn't count, because it accrued before the tax
 existed. On this example that's worth roughly ₹9,300 in tax.
 
-The cap matters too: if the asset is now worth *less* than its 31 January
-2018 value, the cost is capped at the sale price, so grandfathering can't
-manufacture an artificial loss.
+The cap matters too, and it applies only to the 31 January 2018 leg: if the
+asset is now worth *less* than its 31 January 2018 value, that value is
+capped at the sale price, so grandfathering can't manufacture an artificial
+loss. But if your actual cost is above the sale price, you still get your real
+loss — the cap never pushes your actual cost down.
 
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
@@ -125,7 +154,7 @@ already gained by then doesn't count. Only growth after that day is taxed.
 Brokerage, exchange fees and GST on them are part of your cost of
 acquisition or reduce your sale proceeds, so they reduce the gain.
 
-**Securities Transaction Tax (STT) is the exception** — it is specifically
+**STT is the exception** — it is specifically
 not allowed as a deduction when computing capital gains. You pay it, and you
 can't net it off. Worth knowing because broker statements list it alongside
 charges that *are* deductible.

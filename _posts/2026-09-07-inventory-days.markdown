@@ -61,6 +61,11 @@ Britannia turns its inventory faster than Desi Bites —
 in packaged foods: a bigger, more efficient distribution network moves stock
 off shelves faster than a smaller manufacturer can manage.
 
+One caveat, flagged in the [gross margin post]({% post_url 2026-08-26-gross-margin %}): Britannia's
+COGS here is materials-only, since the filing has no single COGS line.
+A smaller denominator makes inventory days look *longer*, so on a full-cost
+basis Britannia's figure would be a little shorter still.
+
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
 

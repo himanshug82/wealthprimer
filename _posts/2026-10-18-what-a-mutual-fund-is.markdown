@@ -104,7 +104,8 @@ means nothing here can be read as a view on current markets.
 
 ![UTI Nifty 50 Index Fund NAV, 2006 to 2026]({{ '/assets/charts/mf-nav-history.svg' | relative_url }})
 
-{{ f.name }}, {{ f.plan_regular }}. Source: [AMFI via mfapi.in]({{ f.source_url }}).
+Source: [AMFI, the Association of Mutual Funds in India, via mfapi.in]({{ f.source_url }}) —
+{{ f.name }}, {{ f.plan_regular }}.
 Historical data, for illustration only.
 
 NAV went from ₹{% include inr.html n=f.regular_nav_start %} to ₹{% include inr.html n=f.regular_nav_end %} over twenty years. Note the log scale —

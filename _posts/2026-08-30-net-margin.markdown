@@ -20,7 +20,7 @@ been subtracted. It's **PAT** (Profit After Tax, sometimes called net profit)
 as a percentage of revenue: out of every rupee of sales, how much does the
 company actually get to keep, after every single cost?
 
-If gross margin and [EBITDA margin]({% post_url 2026-08-28-ebitda-margin %}) tell you how the core business is doing,
+If [gross margin]({% post_url 2026-08-26-gross-margin %}) and [EBITDA margin]({% post_url 2026-08-28-ebitda-margin %}) tell you how the core business is doing,
 net margin tells you what's left for shareholders once financing, tax, and
 everything else has taken its share.
 
@@ -54,12 +54,20 @@ recommendation.
 | PAT (Net Profit) | {{ bi25.pat }} |
 | **Net Margin** | **{{ site.data.real_company.ratios.FY25.net_margin }}%** |
 
-Worth noticing what *didn't* happen here: [gross margin]({% post_url 2026-08-26-gross-margin %}) and EBITDA margin
+Worth noticing what *didn't* happen here: gross margin and EBITDA margin
 both compressed from FY24 to FY25 at Britannia, but net margin only dipped
 slightly — from {{ bi24.pat | times: 100.0 | divided_by: bi24.revenue | round: 1 }}% in FY24 to {{ site.data.real_company.ratios.FY25.net_margin }}% in FY25. Below-the-line
 items (other income, interest, tax) don't always move in the same direction
 as operating costs, so margins at different checkpoints in the waterfall
 can tell slightly different stories in the same year.
+
+Britannia's FY25 PAT also carries exactly the kind of item the mistakes
+below warn about: an exceptional expense of ₹{{ bi25.exceptional_item }} Cr
+(before tax), mostly for a Voluntary Retirement Scheme at one of its
+factories (note 8 of the same filing). It's small — about
+{{ bi25.exceptional_item | times: 100.0 | divided_by: bi25.revenue | round: 2 }}% of revenue before
+tax — so it barely moves the net margin here. But it's the line to look for
+first whenever net margin jumps or dips.
 
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
@@ -92,7 +100,7 @@ the original ₹500 — everyone else's cut has already been paid.
 - **Assuming a high net margin means low risk.** Net margin describes
   profitability, not financial risk. A company can have a healthy net margin
   and still carry a debt load that makes it fragile — that's a separate
-  question, covered later in the Leverage module.
+  question, covered later in the [Leverage module]({{ '/2026/09/15/debt-to-equity/' | relative_url }}).
 
 **Takeaway:** net margin is what's actually left for shareholders after
 every cost — the last word on a given year's profitability, but not the

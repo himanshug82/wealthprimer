@@ -17,8 +17,8 @@
 # compares one manager to another — see the compliance note in TODO.md.
 #
 # LAG CHECK (CLAUDE.md guardrail 2): both series are truncated at
-# 31 March 2026 (FY26 close). The earliest post publishes 2026-11-28, nearly
-# eight months later. Do not extend toward the present without re-checking.
+# 31 March 2026 (FY26 close). The earliest post publishes 2026-10-18, about
+# six and a half months later. Do not extend toward the present without re-checking.
 #
 # CROSS-CHECK: the index fund's NAV falls -14.6% between 1 Jan and 31 Mar 2026,
 # consistent with the Q1 2026 decline independently visible in the Britannia

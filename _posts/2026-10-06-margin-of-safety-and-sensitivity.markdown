@@ -15,6 +15,8 @@ term: "Margin of safety"
 {% assign s_high = s.rows.first.values.last %}
 {% assign s_low1 = s.rows.last.values[1] %}
 {% assign s_high1 = s.rows.first.values[3] %}
+{% assign mos_gap = r.ipo_price | minus: r.value_per_share | times: 100.0 | divided_by: r.value_per_share | round: 0 %}
+{% assign mos30_price = r.value_per_share | times: 0.7 | round: 0 %}
 
 ## A false sense of precision
 
@@ -56,8 +58,8 @@ low end. Even at just one point on each input, it's ₹{{ s_low1 }} to
 ₹{{ s_high1 }}.
 
 That's the honest output of this model. Not ₹{% include inr.html n=r.value_per_share %}, but "somewhere in the
-high 300s to low 400s if my central assumptions hold, and plausibly ₹330 to
-₹525 across assumptions I can't rule out."
+high 300s to low 400s if my central assumptions hold, and plausibly ₹{{ s_low }} to
+₹{{ s_high }} across assumptions I can't rule out."
 
 A range is less satisfying than a number. It's also true, which is the better
 property for something you're about to risk money on.
@@ -92,6 +94,14 @@ probably the single most durable concept in fundamental analysis.
 ```
 Margin of Safety (%) = (Intrinsic Value − Price) / Intrinsic Value × 100
 ```
+
+Run it on Desi Bites at its IPO price. With a DCF value of about
+₹{% include inr.html n=r.value_per_share %} and a price of ₹{% include inr.html n=r.ipo_price %}, the margin of safety is
+(₹{% include inr.html n=r.value_per_share %} − ₹{% include inr.html n=r.ipo_price %}) / ₹{% include inr.html n=r.value_per_share %} ≈ **−{{ mos_gap }}%**. Negative: the price sits
+well *above* the model's value, so there's no buffer at all. For a 30%
+margin against this model, the price would need to be around ₹{{ mos30_price }}. That's
+arithmetic on a fictional company, not a price anyone should wait for — and
+the rest of this post is about how little the ₹{% include inr.html n=r.value_per_share %} itself deserves to be trusted.
 
 The logic is defensive rather than clever. Your model *will* be wrong; the
 question is only by how much and in which direction. A price well below your

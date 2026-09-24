@@ -138,8 +138,9 @@ Suppose you run a stall that sells water bottles. You buy each bottle for
 ₹9.05 and sell it for... wait, no: you *borrow* each bottle for ₹5.64 a year
 and *rent it out* for ₹9.05 a year. You keep about ₹3.41 per bottle.
 
-₹3.41 is not much. But you are renting out **39 lakh crore** bottles. Suddenly
-₹3.41 each is an enormous amount of money — and if the price of borrowing
+₹3.41 is not much. But say each bottle is a ₹100 bottle, and you are renting
+out **₹39 lakh crore worth** of them. Suddenly ₹3.41 on every one is an
+enormous amount of money — and if the price of borrowing
 bottles goes up by just 10 paise, you lose a fortune.
 
 That's a bank. Tiny margin, unimaginable volume, and every paisa matters.

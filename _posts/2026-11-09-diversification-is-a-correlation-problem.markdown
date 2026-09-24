@@ -15,7 +15,8 @@ term: "Correlation"
 ## "I'm diversified — I hold eight funds"
 
 Ask an Indian retail investor how they manage risk and the most common answer
-is a count: eight funds, twenty stocks, three AMCs. The count feels like
+is a count: eight funds, twenty stocks, three AMCs (asset management
+companies, the firms that run mutual funds). The count feels like
 safety. Often it isn't, because diversification was never about how many
 things you own. It's about whether they fall at the same time.
 
@@ -70,9 +71,14 @@ Two assets, each with 20% annual volatility, held 50/50:
 |---:|---:|{% for row in c.two_asset_table %}
 | {{ row.rho }} | **{{ row.portfolio_vol_pct }}%** |{% endfor %}
 
-At ρ = 1 you own two things and get one thing's risk. At ρ = 0.9 — which is
-roughly where two large-cap Indian equity funds sit relative to each other —
-you've shaved half a percentage point. You have to get down to a correlation
+At ρ = 1 you own two things and get one thing's risk. How correlated are real
+Indian equity funds? Two funds from this blog's data — the {{ d.fund_name }} and
+Parag Parikh Flexi Cap, a flexi-cap fund that also holds foreign stocks —
+correlated at {{ c.two_funds_daily_rho }} on daily returns and
+{{ c.two_funds_monthly_rho }} on monthly returns,
+{{ c.two_funds_window_start | slice: 0, 4 }}–{{ c.two_funds_window_end | slice: 0, 4 }}.
+Two large-cap funds holding the same companies will usually sit higher still.
+At ρ = 0.9 you've shaved half a percentage point. You have to get down to a correlation
 near zero before the portfolio is meaningfully calmer than either piece, and
 negative correlations, which are rare and unstable, are where the dramatic
 reductions live.
@@ -80,8 +86,9 @@ reductions live.
 ## Table two: what adding more of the same does
 
 Now hold *n* assets, equally weighted, each 20% volatile, every pair
-correlated at {{ c.n_asset_rho }} — a fair stand-in for "a lot of Indian
-equity funds":
+correlated at {{ c.n_asset_rho }} — a generous stand-in for "a lot of Indian
+equity funds", since the two real funds above were more correlated than
+that:
 
 | Holdings (n) | Portfolio volatility |
 |---:|---:|{% for row in c.n_asset_table %}
@@ -94,8 +101,9 @@ That floor is the risk the holdings share — the market itself — and the only
 way under it is to add things that *aren't* correlated, not more things that
 are.
 
-This is what "eight funds" usually buys: a portfolio at the floor, with eight
-expense ratios.
+This is what "eight funds" usually buys: a portfolio close to the floor
+({{ c.eight_asset_vol_pct }}% against {{ c.rho_floor_vol_pct }}%), with eight
+[expense ratios]({% post_url 2026-10-21-expense-ratios-direct-vs-regular %}).
 
 ## Worked example: Britannia and the Nifty 50
 
@@ -110,7 +118,7 @@ illustration only.
 | | |
 |---|---:|
 | Correlation, Britannia vs Nifty 50 | **{{ c.britannia_nifty_rho }}** |
-| Beta of Britannia to the Nifty 50 | {{ c.britannia_beta }} |
+| Beta of Britannia to the Nifty 50 (see below) | {{ c.britannia_beta }} |
 | 60-day rolling correlation, lowest | {{ c.rolling_60d_min }} ({{ c.rolling_60d_min_date }}) |
 | 60-day rolling correlation, highest | {{ c.rolling_60d_max }} ({{ c.rolling_60d_max_date }}) |
 | Britannia annualised volatility | {{ c.britannia_vol_pct }}% |
@@ -118,19 +126,25 @@ illustration only.
 | Naive average of the two | {{ c.naive_average_vol_pct }}% |
 | **Volatility of a 50/50 portfolio** | **{{ c.portfolio_5050_vol_pct }}%** |
 
+**Beta** measures how much a stock tends to move for each 1% move in the
+index: a beta of {{ c.britannia_beta }} means Britannia moved, on average,
+about {{ c.britannia_beta }}% for every 1% the Nifty 50 moved. It combines
+correlation with relative volatility.
+
 Two things here.
 
-First, a single FMCG stock and the broad index had a correlation of only
+First, a single FMCG (fast-moving consumer goods) stock and the broad index had a correlation of only
 {{ c.britannia_nifty_rho }} over these two years — lower than most people
-would guess for a Nifty 50 constituent. It moved on its own news (the margin
-squeeze the [ROE post]({% post_url 2026-09-01-roe %}) documented, for one) as
-much as on the market's. And the relationship wasn't stable: over 60-day
+would guess for a Nifty 50 constituent. It moved on its own news (the FY25 margin
+compression the [gross margin post]({% post_url 2026-08-26-gross-margin %})
+discussed, for one) as much as on the market's. And the relationship wasn't stable: over 60-day
 windows it ranged from {{ c.rolling_60d_min }} to {{ c.rolling_60d_max }}.
 Correlation is a description of a period, not a property of a stock.
 
 Second, look at what that did to a 50/50 mix. Averaging the two volatilities
 gives {{ c.naive_average_vol_pct }}%. The actual portfolio volatility was
-{{ c.portfolio_5050_vol_pct }}% — barely above the index alone, despite half
+{{ c.portfolio_5050_vol_pct }}% — barely above the index alone
+({{ c.nifty_vol_pct }}%), despite half
 the money sitting in a stock that was {{ c.britannia_vol_pct }}% volatile. The
 low correlation ate most of Britannia's extra bounce. *That* is
 diversification doing something.
@@ -195,8 +209,8 @@ your diversification is actually worth.
 - **Diversifying within one asset class and calling it done.** Fifty Indian
   stocks are still one exposure to Indian equity.
 - **Confusing low correlation with low risk.** Britannia was *more* volatile
-  than the index. It reduced the portfolio's risk only because it was
-  volatile at different times. Both facts matter.
+  than the index. It kept the 50/50 mix almost as calm as the index alone
+  only because it was volatile at different times. Both facts matter.
 - **Paying eight expense ratios for one portfolio.** If the funds are at the
   correlation floor, the fees are the only thing you've multiplied.
 

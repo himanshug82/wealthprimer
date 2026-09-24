@@ -17,10 +17,16 @@ term: "Sequence-of-returns risk"
 
 ## A risk that doesn't show up in any return figure
 
-Most return statistics on this blog — point-to-point CAGR, volatility,
-Sharpe — are computed from a sequence of returns, and none of them cares
-about the *order* of that sequence. Shuffle twenty years of annual returns
-and the CAGR is identical. So is the volatility. (XIRR is the exception: it's
+Most return statistics on this blog —
+[point-to-point CAGR]({% post_url 2026-10-19-point-to-point-returns %})
+(compound annual growth rate),
+[rolling returns]({% post_url 2026-10-20-rolling-returns %}), volatility, the
+[Sharpe ratio]({% post_url 2026-10-23-volatility-and-sharpe %}) — are computed
+from a sequence of returns, and none of them cares about the *order* of that
+sequence. Shuffle twenty years of annual returns and the CAGR is identical. So
+is the volatility.
+([XIRR]({% post_url 2026-10-24-sips-xirr-and-timing-myths %}), the extended
+internal rate of return, is the exception: it's
 built from your own cash flows, so order matters to it — which is exactly why
 two SIP investors in the same fund can end up with very different XIRRs.)
 
@@ -86,9 +92,11 @@ barely ₹27 lakh.
 
 Notice which way this cuts. For someone *accumulating*, an early crash is the
 good sequence — cheap units when the pile is small, growth when it's large.
-The Jan 2007 SIP investor from the earlier post lived through the bad
-version: five years of contributions, a crash landing on the accumulated
-pile, and a return of nothing. They weren't unlucky about *what* happened.
+{% assign fy12 = rk.arithmetic_of_losses.fy_returns | where: "fy", "FY12" | first %}The Jan 2007 SIP investor from the earlier post lived through the bad
+version. The 2008 crash came early, while the pile was small — that part
+helped. What hurt was the slide through 2011, in years four and five, when
+the pile was at its largest: the fund returned {{ fy12.return_pct | replace: "-", "−" }}% in FY12,
+and five years of contributions ended with a return of nothing. They weren't unlucky about *what* happened.
 They were unlucky about *when*.
 
 <details markdown="1">
@@ -119,7 +127,7 @@ orderings:
 |---|---:|
 | Actual | ₹{% include inr.html n=act.swp_final %} |
 | Best years first | **₹{% include inr.html n=best.swp_final %}** |
-| Worst years first | **₹0 — money ran out in year {{ worst.swp_depleted_year | round }}** |
+| Worst years first | **₹0 — money ran out after about {{ worst.swp_depleted_year }} years** |
 
 Now the early years dominate, because that's when the pile is largest and the
 withdrawals are eating into a falling balance. The ordering that was best for

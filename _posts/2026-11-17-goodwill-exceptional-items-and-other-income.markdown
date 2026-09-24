@@ -134,7 +134,7 @@ inside operating expenses:
 | Other income | +{{ f.other_income }} |
 | Exceptional items | {{ f.exceptional_items }} |
 | Interest | −{{ f.interest }} |
-| **PBT** | **{{ f.pbt }}** |
+| **[PBT (profit before tax)]({% post_url 2026-08-22-reading-an-income-statement %})** | **{{ f.pbt }}** |
 
 Separating it is the honest presentation — it lets you see the operating
 business without the deal costs. The abuse is in the *labelling*. Watch
@@ -192,7 +192,8 @@ the next investor call.
 - **Taking "exceptional" at face value.** Count how many years in the last
   five had one. Recurring exceptionals are operating costs.
 - **Valuing other income at the business's multiple.** Interest on cash
-  is worth face value, not 38 times.
+  is worth face value, not the {{ c2.capital_allocation.pe_at_ipo_price_fy26 }} times FY26 earnings implied by the
+  ₹{{ site.data.case_study.listing.ipo_price }} IPO price ({{ c2.drhp.valuation_at_issue.pe_diluted }} times on the FY25 earnings the IPO was priced off).
 - **Missing the base change.** Reported growth after an acquisition is
   partly bought. Organic and acquired growth are different facts.
 - **Judging the deal on the announcement.** Year-one returns on

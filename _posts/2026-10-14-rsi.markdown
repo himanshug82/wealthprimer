@@ -10,6 +10,9 @@ term: "RSI (relative strength index)"
 
 {% assign ta = site.data.ta %}
 {% assign r = ta.rsi %}
+{% assign up1 = r.overbought_but_kept_rising.change_pct %}
+{% assign fell1 = r.overbought_then_fell.change_pct | abs %}
+{% assign fell2 = r.oversold_but_kept_falling.change_pct | abs %}
 
 ## From price to momentum
 
@@ -38,7 +41,7 @@ RSI = 100 − ───────           RS = Average Gain / Average Loss
 
 The averaging is Wilder's smoothing — a running average that weights recent
 periods more heavily, equivalent to an exponential average with
-α = 1/N.
+α = 1/N, started from a plain average of the first N periods.
 
 Work through what the formula does:
 
@@ -90,27 +93,30 @@ Britannia (NSE: BRITANNIA), daily, {{ ta.dataset.as_of }}. Source:
 
 Across this period RSI spent {{ r.days_above_70 }} days above 70 and {{ r.days_below_30 }} days below 30. Three
 of those episodes are worth putting side by side, because they point in
-different directions and they are all real:
+different directions and they are all real. Each outcome is measured over the
+same fixed window — {{ r.horizon_sessions }} sessions, about three months —
+rather than to whatever peak or trough came later, which you could only pick
+with hindsight:
 
-| Signal | Date | RSI | What happened next |
+| Signal | Date | RSI | {{ r.horizon_sessions }} sessions later |
 |---|---|---:|---|
-| Overbought | {{ r.overbought_but_kept_rising.date }} | {{ r.overbought_but_kept_rising.rsi }} | Rose a further **{{ r.overbought_but_kept_rising.change_pct }}%** by {{ r.overbought_but_kept_rising.later_date }} |
-| Overbought | {{ r.overbought_then_fell.date }} | {{ r.overbought_then_fell.rsi }} | Fell **{{ r.overbought_then_fell.change_pct }}%** by {{ r.overbought_then_fell.later_date }} |
-| Oversold | {{ r.oversold_but_kept_falling.date }} | {{ r.oversold_but_kept_falling.rsi }} | Fell a further **{{ r.oversold_but_kept_falling.change_pct }}%** by {{ r.oversold_but_kept_falling.later_date }} |
+| Overbought | {{ r.overbought_but_kept_rising.date }} | {{ r.overbought_but_kept_rising.rsi }} | Up a further **{{ up1 }}%** ({{ r.overbought_but_kept_rising.later_date }}) |
+| Overbought | {{ r.overbought_then_fell.date }} | {{ r.overbought_then_fell.rsi }} | Down **{{ fell1 }}%** ({{ r.overbought_then_fell.later_date }}) |
+| Oversold | {{ r.oversold_but_kept_falling.date }} | {{ r.oversold_but_kept_falling.rsi }} | Down a further **{{ fell2 }}%** ({{ r.oversold_but_kept_falling.later_date }}) |
 
 Read those three rows carefully, because they are the honest summary of what
 this indicator is.
 
-In July 2024 RSI crossed 70 and the stock climbed another 12% over the next
+In July 2024 RSI crossed 70 and the stock climbed another {{ up1 }}% over the next
 three months. Anyone acting on "overbought" then would have exited near the
 start of the best stretch in the dataset.
 
 In September 2024 RSI crossed 70 again — at a nearly identical reading — and
-this time the stock fell 26% over the following five months. Same signal,
+this time the stock fell {{ fell1 }}% over the following three months. Same signal,
 opposite outcome.
 
-And in November 2024 RSI dropped to {{ r.oversold_but_kept_falling.rsi }}, deeply "oversold," and the price
-fell another 9% before it finally turned.
+And in November 2024 RSI dropped to {{ r.oversold_but_kept_falling.rsi }}, deeply "oversold," and three
+months later the price was still {{ fell2 }}% lower — no bounce to speak of.
 
 There is no way to tell these apart *at the time*. That isn't a failure of
 this particular dataset — it's the well-known central weakness of oscillators:
@@ -136,7 +142,8 @@ after the fact than during.
 ## Doing it in Python
 
 Getting the smoothing right matters — a plain rolling mean is *not* Wilder's
-method and will give you different numbers:
+method and will give you different numbers. Wilder starts with a simple
+average of the first 14 gains and losses, then smooths from there:
 
 ```python
 import pandas as pd
@@ -149,18 +156,26 @@ gain = delta.clip(lower=0)
 loss = -delta.clip(upper=0)
 
 n = 14
-avg_gain = gain.ewm(alpha=1/n, adjust=False).mean()   # Wilder's smoothing
-avg_loss = loss.ewm(alpha=1/n, adjust=False).mean()
+avg_gain = gain.rolling(n).mean()     # seed: plain average of the first 14 changes
+avg_loss = loss.rolling(n).mean()
+for i in range(n + 1, len(df)):       # then Wilder's smoothing, one bar at a time
+    avg_gain.iloc[i] = (avg_gain.iloc[i-1] * (n-1) + gain.iloc[i]) / n
+    avg_loss.iloc[i] = (avg_loss.iloc[i-1] * (n-1) + loss.iloc[i]) / n
 
 df["rsi"] = 100 - 100 / (1 + avg_gain / avg_loss)
-print(df.rsi.iloc[14:].describe().round(1))     # note: skip the warmup
+print(df.rsi.dropna().describe().round(1))    # first value: bar 14
 ```
 
-That `.iloc[14:]` is not cosmetic. The very first RSI value in this dataset
-computes as exactly **100.0**, purely because no down-day had occurred yet in
-the window. It's an artefact of having no history, not a reading. Every
-indicator has a warmup period and quoting values from inside it is a real
-mistake, not a technicality.
+You'll often see a one-line shortcut instead:
+`gain.ewm(alpha=1/n, adjust=False).mean()`. It uses the same smoothing but
+starts from the very first bar with no seed — so its first RSI value in this
+dataset is exactly **100.0**, purely because no down-day had happened yet.
+That's an artefact of having no history, not a reading, and the shortcut stays
+off from Wilder's version by up to 12 points for the first few weeks here. The
+two only agree after roughly 50–100 bars. The same applies to your broker's
+chart: two RSI readings on the same stock only match once both have enough
+history behind them. Every indicator has a warmup period, and quoting values
+from inside it is a real mistake, not a technicality.
 
 ## Common mistakes
 
@@ -169,8 +184,8 @@ mistake, not a technicality.
 - **Acting on threshold crossings in a strong trend.** This is the failure
   mode the table above documents three times over. In trends, oscillators
   pin.
-- **Using values from the warmup window.** The first RSI reading here is
-  100.0 and means nothing at all.
+- **Using values from the warmup window.** The shortcut's first RSI reading
+  here is 100.0 and means nothing at all.
 - **Assuming a rolling mean is Wilder's smoothing.** They give different
   numbers, and much published RSI code gets this wrong.
 - **Tuning the period until the signals look good.** RSI(14) is Wilder's
@@ -182,6 +197,6 @@ mistake, not a technicality.
 **Takeaway:** RSI measures how one-sided the last fourteen sessions have
 been, on a 0–100 scale, and that's genuinely useful information about pace.
 But "overbought" is a statement about speed, not value — and in this dataset
-the same reading above 70 preceded a further 12% rise once and a 26% fall
-another time, which is roughly all you need to know about using the threshold
+the same reading above 70 preceded a further {{ up1 }}% rise once and a {{ fell1 }}% fall
+another time, three months on each, which is roughly all you need to know about using the threshold
 on its own.

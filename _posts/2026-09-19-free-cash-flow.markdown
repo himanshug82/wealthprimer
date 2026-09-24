@@ -16,10 +16,11 @@ term: "Free cash flow (FCF)"
 ## What free cash flow means
 
 We closed the Leverage module by seeing that no single ratio told the whole
-story on its own — it took several together. **Free Cash Flow (FCF)** opens
+story on its own — it took several together. **Free cash flow (FCF)** opens
 this module with a single number that does try to answer one very direct
 question by itself: after running the business and paying for the capex
-needed to keep it running (or growing), how much actual cash is left over —
+(capital expenditure — cash spent on plant, machinery and other long-lived
+assets) needed to keep it running (or growing), how much actual cash is left over —
 free to pay dividends, pay down debt, buy back shares, or reinvest further?
 
 It starts from [Cash from Operations (CFO)]({% post_url 2026-08-24-reading-a-cash-flow-statement %}), the cash the core
@@ -56,7 +57,7 @@ For context, FY24's FCF (same filing) was ₹{% include inr.html n=bi_fcf24 %} c
 *rose* year on year, even though operating cash flow itself fell slightly
 (₹{% include inr.html n=bi_cf24.cfo %} crore in FY24 versus ₹{% include inr.html n=bi_cf25.cfo %} crore in FY25). The reason is on the other
 side of the formula — capex — which is exactly what the last post in this
-module, Capex Intensity, digs into.
+module, capex intensity, digs into.
 
 ## Common mistakes
 

@@ -56,6 +56,14 @@ Desi Bites' {{ site.data.case_study.ratios.FY25.payable_days }}. Paired with wha
 from customers in under 10 days but pays suppliers in 60 — that gap is the
 whole story the next post, Cash Conversion Cycle, is built to measure.
 
+Treat Britannia's {{ site.data.real_company.ratios.FY25.payable_days }} days as an upper estimate, though. As the
+[gross margin post]({% post_url 2026-08-26-gross-margin %}) explains, our Britannia COGS is
+materials-only. But trade payables can include *all* suppliers — freight,
+advertising, services — not just the ones selling it raw materials. A bigger
+numerator over a smaller denominator overstates creditor days. The direction
+of the comparison with Desi Bites is still worth noticing; the exact number
+is softer than it looks.
+
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
 

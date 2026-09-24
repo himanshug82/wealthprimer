@@ -26,7 +26,7 @@ sensibly do it, showing how the pieces build on each other. The company is
 Britannia Industries, the anchor used throughout this blog, and every figure
 comes from its
 [audited consolidated FY25 results](https://media.britannia.co.in/Audited_Consolidated_Financial_Results_31_03_2025_74a7c03628.pdf)
-(year ended 31 March 2025, filed with NSE/BSE on 8 May 2025), with the share
+(year ended 31 March 2025, filed with the NSE (National Stock Exchange) and BSE on 8 May 2025), with the share
 price being the NSE close on {{ mk.price_date }}. All of it historical, and used here purely
 to illustrate the method.
 
@@ -167,17 +167,18 @@ At the {{ mk.price_date }} closing price of ₹{% include inr.html n=mk.price %}
 | [Dividend yield]({% post_url 2026-09-28-dividend-yield %}) | {{ m.dividend_yield }}% |
 | [PEG]({% post_url 2026-09-29-peg-ratio %}) | ~35.9 (on 1.8% FY25 PAT growth) |
 
-Every one of these needs the context the earlier posts supplied. The P/B of
-{{ m.pb }}x is extreme in the abstract, and less so once you know the business earns
-{{ r.roe }}% on that book value — most of what makes Britannia valuable (brands,
-distribution relationships, shelf position) was built through the P&L over
-decades and appears nowhere on the balance sheet. Book value simply isn't
-measuring the asset that matters.
+Every one of these needs the context the earlier posts supplied. Take the
+P/B of {{ m.pb }}x. P/B = P/E × ROE, so a business earning {{ r.roe }}% on its book
+value mechanically produces a high P/B at any given P/E. Part of the reason
+ROE is that high is that the assets doing the work (brands, distribution
+relationships, shelf position) were built through the P&L over decades and
+appear nowhere on the balance sheet. That explains *why* the number is large;
+whether {{ m.pb }}x is justified is exactly the question this post doesn't answer.
 
 The PEG of ~35.9 is the one to be most careful with, and the
 [PEG post]({% post_url 2026-09-29-peg-ratio %}) covered why: it divides a high P/E by a single weak
-year's growth. It's a statement about FY25 being a soft year, not about the
-business's long-run trajectory.
+year's growth. That makes it unstable — a different base year would give a
+wildly different figure — so it tells you little either way here.
 
 ## Step 8: what this exercise cannot tell you
 

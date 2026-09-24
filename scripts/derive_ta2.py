@@ -19,7 +19,10 @@ Both end 30 March 2026. The first Module 2 post publishes 18 December 2026,
 eight and a half months later — well past the 3-month lag rule in CLAUDE.md.
 
 CONVENTIONS (match _data/ta.yml): SMA = simple rolling mean; RSI = 14-period
-Wilder smoothing (EWM alpha = 1/14); ATR = 14-period Wilder smoothing of true
+Wilder smoothing (EWM alpha = 1/14; unseeded here, whereas _data/ta.yml seeds
+with a 14-bar SMA as Wilder did — the two agree to <0.6 points after bar 50
+and to 0.01 after bar 100, and every RSI figure scored below is well past
+that); ATR = 14-period Wilder smoothing of true
 range; Bollinger = 20-day SMA ± 2 population standard deviations (ddof=0, as
 Bollinger specified). Indicator values are never quoted from inside their
 warmup window.
@@ -217,7 +220,7 @@ out["relative_strength"] = {
     "stock_total_return_pct": r(stock_ret * 100, 1), "index_total_return_pct": r(index_ret * 100, 1),
     "stock_minus_index_pp": r((stock_ret - index_ret) * 100, 1),
     "ma_period": 50,
-    "pct_bars_rs_above_ma": r(rs_above.mean() * 100, 0),
+    "pct_bars_rs_above_ma": r(rs_above.mean() * 100, 1),
     "longest_stretch_below_ma_bars": int(longest_below), "longest_stretch_above_ma_bars": int(longest_above),
     "decline_window": {
         "start": d(w0), "end": d(w1),
@@ -235,13 +238,21 @@ wk_trend_up = (wk.close > wk_ma)
 wk_rsi = rsi_wilder(wk.close)
 daily_rsi = rsi_wilder(px.close)
 # map each daily bar to the trend of the PREVIOUS completed week (no look-ahead)
-prev_week_trend = wk_trend_up.shift(1).reindex(px.index, method="ffill")
+# (NaN, not "down", for weeks before the 20-week average exists)
+prev_week_trend = wk_trend_up.where(wk_ma.notna()).shift(1).reindex(px.index, method="ffill")
 oversold = (daily_rsi < 30) & (daily_rsi.shift() >= 30)  # first day of an oversold episode
-oversold = oversold[px.index[14:]]
+# Scan every bar so the raw count is complete; readings before the weekly
+# average exists (which includes the 14-bar RSI warmup) are dropped below
+# and listed, not silently skipped.
 ev = []
-for t in px.index[14:][oversold]:
+dropped_no_weekly_trend, dropped_no_forward_data = [], []
+for t in px.index[oversold]:
     i = px.index.get_loc(t)
-    if i + 20 >= len(px) or pd.isna(prev_week_trend.loc[t]):
+    if pd.isna(prev_week_trend.loc[t]):
+        dropped_no_weekly_trend.append(d(t))
+        continue
+    if i + 20 >= len(px):
+        dropped_no_forward_data.append(d(t))
         continue
     ev.append({"date": d(t), "rsi": r(daily_rsi.iloc[i], 1), "close": r(px.close.iloc[i], 1),
                "weekly_trend": "up" if prev_week_trend.loc[t] else "down",
@@ -256,6 +267,10 @@ out["multi_timeframe"] = {
     "weekly_rsi_min": r(wk_rsi.iloc[14:].min(), 1), "weekly_rsi_min_date": d(wk_rsi.iloc[14:].idxmin()),
     "weekly_rsi_max": r(wk_rsi.iloc[14:].max(), 1), "weekly_rsi_max_date": d(wk_rsi.iloc[14:].idxmax()),
     "daily_oversold_events": len(ev),
+    # every fresh oversold reading, before dropping the ones that can't be scored
+    "daily_oversold_events_all": len(ev) + len(dropped_no_weekly_trend) + len(dropped_no_forward_data),
+    "dropped_no_weekly_trend": dropped_no_weekly_trend,
+    "dropped_no_forward_data": dropped_no_forward_data,
     "in_weekly_uptrend": {"count": len(ev_up), "avg_fwd_20_bars_pct": r(np.mean([e["fwd_20_bars_pct"] for e in ev_up]) if ev_up else None, 1),
                           "share_positive_pct": r(np.mean([e["fwd_20_bars_pct"] > 0 for e in ev_up]) * 100 if ev_up else None, 0)},
     "in_weekly_downtrend": {"count": len(ev_dn), "avg_fwd_20_bars_pct": r(np.mean([e["fwd_20_bars_pct"] for e in ev_dn]) if ev_dn else None, 1),
@@ -276,7 +291,10 @@ bt_start, bt_end = bt_px.index[0], bt_px.index[-1]
 def run(signal: pd.Series, exec_lag: int, cost: float):
     """Long-only. signal[t]=1 means 'want to be long' decided on bar t's close.
     exec_lag=0 trades at bar t's close (look-ahead: the decision uses a price
-    you could not have traded at); exec_lag=1 trades at bar t+1's close."""
+    you could not have traded at); exec_lag=1 trades at bar t+1's close.
+    If the signal is already 1 on the first bar of the window, the strategy
+    starts the window holding the stock and that counts as its first trade
+    ('trades' counts entries)."""
     pos = signal.shift(exec_lag).fillna(0).astype(int).loc[bt_start:bt_end]
     close = px.close.loc[bt_start:bt_end]
     ret = close.pct_change().fillna(0)
@@ -293,11 +311,17 @@ def sma_signal(fast, slow):
     return (px.close.rolling(fast).mean() > px.close.rolling(slow).mean()).astype(int)
 
 
-def rsi_signal(lo=30, hi=70):
+def rsi_signal(lo=30, hi=70, flat_start=False):
+    """flat_start=True ignores any signal from before the backtest window, so
+    the rule starts in cash and waits for its first oversold reading inside
+    the window (the default carries in a position opened before it)."""
     rsi = daily_rsi
     sig = pd.Series(np.nan, index=px.index)
     sig[rsi < lo] = 1
     sig[rsi > hi] = 0
+    if flat_start:
+        sig.loc[:bt_start] = np.nan
+        sig.loc[bt_start] = 0 if pd.isna(sig.loc[bt_start]) else sig.loc[bt_start]
     return sig.ffill().fillna(0).astype(int)
 
 
@@ -313,6 +337,15 @@ for name, sig in strategies.items():
         "next_day_no_cost": run(sig, 1, 0.0)[0],
         "next_day_with_cost": run(sig, 1, COST_PER_SIDE)[0],
     }
+
+# in position on the first bar of the window? (next-day execution)
+for name, sig in strategies.items():
+    results[name]["in_position_at_window_start"] = bool(sig.shift(1).fillna(0).loc[bt_start] == 1)
+# the RSI rule carries in a position from a pre-window oversold reading; show
+# the same rule started flat, so the reader can see how much that is worth
+results["rsi_30_70"]["next_day_with_cost_flat_start"] = run(rsi_signal(flat_start=True), 1, COST_PER_SIDE)[0]
+_rsi_raw = daily_rsi.loc[:bt_start]
+results["rsi_30_70"]["carried_in_from_oversold_date"] = d(_rsi_raw[_rsi_raw < 30].index[-1])
 
 # parameter grid on next-day execution with costs
 grid = []

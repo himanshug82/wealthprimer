@@ -55,7 +55,7 @@ purely because one earns a 16% return on its equity and the other 8%.
 ## Worked example: HDFC Bank at 30 June 2025
 
 Financials from HDFC Bank's [results for the year ended 31 March 2025]({{ b.company.source_url }})
-(standalone). Price: NSE close on {{ mk.price_date }}, from
+(standalone). Price: NSE (National Stock Exchange) close on {{ mk.price_date }}, from
 [Yahoo Finance]({{ mk.source_url }}). Historical, for illustration only.
 
 One wrinkle first. HDFC Bank issued 1:1 bonus shares (record date
@@ -106,9 +106,13 @@ If a bank earns exactly its cost of equity (ROE = Ke), the fraction is 1 —
 it deserves to trade at book. Every point of ROE above Ke pushes the
 justified multiple up; every point of Ke above ROE pushes it below 1.
 
-Here is the formula applied to HDFC Bank's FY25 ROE of {{ d.roe_pct }}% (on
-average equity), with three *illustrative* pairs of the two inputs nobody can
-observe:
+Here is the formula applied to a generic bank earning a {{ v.justified_pb_illustrative_roe_pct }}% ROE — a round
+number in the neighbourhood of large Indian private banks, not HDFC Bank's —
+with *illustrative* pairs of the two inputs nobody can observe. Growth is
+kept at or below the roughly 10% long-run nominal growth ceiling from the
+[terminal value post]({% post_url 2026-10-05-terminal-value-and-the-full-dcf %}),
+and the last row is the aggressive case, with g creeping up to within two
+points of Ke:
 
 | Scenario | Cost of equity | Growth | Justified P/B |
 |---|---:|---:|---:|{% for s in v.justified_pb_scenarios %}
@@ -117,9 +121,10 @@ observe:
 Read that table for what it actually demonstrates. One percentage point on
 each of two unobservable inputs (A to B) moves the "justified" multiple from
 about {{ v.justified_pb_scenarios[0].pb }}x to {{ v.justified_pb_scenarios[1].pb }}x. Two points on each (A to C) takes it
-to {{ v.justified_pb_scenarios[2].pb }}x —
-a range that comfortably brackets the actual {{ v.pb }}x and would bracket
-most large banks on most days. The formula is a way to *think* about why
+to {{ v.justified_pb_scenarios[2].pb }}x, and pushing g close to Ke (D) gets you
+{{ v.justified_pb_scenarios[3].pb }}x — the same g-too-close-to-r blow-up the terminal value post
+warned about. Same bank, same ROE, more than double the answer from inputs
+nobody can observe. The formula is a way to *think* about why
 multiples differ. It is not a way to decide whether one is right, and this
 post doesn't try. (The [margin of safety post]({% post_url 2026-10-06-margin-of-safety-and-sensitivity %})
 made the same point about DCF inputs; banks just make it faster.)
@@ -204,7 +209,7 @@ cheap.
 carried near what it's worth, and P/B = P/E × ROE ties the multiple to how
 hard that book works. HDFC Bank at 30 June 2025 sat at about {{ v.pb }}x
 book and {{ v.pe }}x earnings on a {{ d.roe_pct }}% ROE built from
-{{ d.roa_pct }}% ROA and {{ d.avg_leverage }}x leverage — and the
-"justified P/B" formula, fed three reasonable input pairs, returned anything
-from {{ v.justified_pb_scenarios[0].pb }}x to {{ v.justified_pb_scenarios[2].pb }}x,
-which is all you need to know about using it to decide anything.
+{{ d.roa_pct }}% ROA and {{ d.avg_leverage }}x leverage. The "justified P/B"
+formula, fed a generic {{ v.justified_pb_illustrative_roe_pct }}% ROE and a few plausible input pairs, returned
+anything from {{ v.justified_pb_scenarios[0].pb }}x to {{ v.justified_pb_scenarios[3].pb }}x, which is all you need to know
+about using it to decide anything.

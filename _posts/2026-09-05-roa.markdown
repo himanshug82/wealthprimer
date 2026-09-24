@@ -34,6 +34,9 @@ fund part of what a company owns.
 ROA (%) = PAT / Average Total Assets × 100
 ```
 
+**PAT** is [profit after tax]({% post_url 2026-08-22-reading-an-income-statement %}), the
+bottom line of the income statement.
+
 ## Worked example: Desi Bites Foods, FY25
 
 | | ₹ Lakh |

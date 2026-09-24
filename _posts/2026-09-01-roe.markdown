@@ -33,7 +33,8 @@ margin.
 ROE (%) = PAT / Average Equity × 100
 ```
 
-We use the **average** of opening and closing equity (not just the closing
+**PAT** is [profit after tax]({% post_url 2026-08-22-reading-an-income-statement %}), the
+bottom line of the income statement. We use the **average** of opening and closing equity (not just the closing
 balance) because equity changes over the year — profit gets added, dividends
 get paid out — and averaging gives a fairer sense of what capital was
 actually at work across the year.
@@ -63,9 +64,13 @@ matched against PAT attributable to owners. For illustration only.
 | Average equity | {{ bi_bs24.total_equity_owners | plus: bi_bs25.total_equity_owners | divided_by: 2.0 }} |
 | **ROE** | **{{ site.data.real_company.ratios.FY25.roe }}%** |
 
-A {{ site.data.real_company.ratios.FY25.roe }}% ROE is high, even for a well-run FMCG business — a large part
-of the reason is that Britannia doesn't need much shareholder capital
-relative to its profit (a strong, asset-light, brand-led business). That's
+A {{ site.data.real_company.ratios.FY25.roe }}% ROE is high, even for a well-run FMCG business. It isn't
+because Britannia gets more sales out of its assets: its asset turnover
+(revenue ÷ average total assets) is {{ site.data.real_company.dupont.FY25.asset_turnover }}x, about the same as Desi Bites'
+{{ site.data.case_study.ratios.FY25.asset_turnover }}x. The drivers are a {{ site.data.real_company.ratios.FY25.net_margin }}% net margin, a small equity
+base relative to that profit, and average total assets about
+{{ site.data.real_company.dupont.FY25.equity_multiplier_avg }}× average equity — so much of what Britannia owns is funded by
+money that isn't shareholders' (suppliers' credit as well as loans). That's
 worth remembering for the next post: a high ROE alone doesn't tell you *why*
 it's high, and one common reason — leverage — deserves real scrutiny.
 

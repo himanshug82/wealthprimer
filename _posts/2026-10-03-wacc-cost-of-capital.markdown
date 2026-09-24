@@ -29,7 +29,10 @@ company actually uses.
 Think of it as the hurdle rate. If a business can't earn more than its WACC
 on the money it deploys, it's destroying value no matter how healthy the
 profit line looks. (This is also the honest answer to why [ROCE]({% post_url 2026-09-03-roce %})
-matters: ROCE above WACC is value creation, ROCE below it isn't.)
+matters — with one adjustment. ROCE is a *pre*-tax return and WACC is an
+*after*-tax cost, so compare WACC with ROCE × (1 − tax rate), roughly what
+analysts call ROIC, return on invested capital. Above WACC is value creation;
+below it isn't.)
 
 ## The formula
 
@@ -70,7 +73,7 @@ Ke = Risk-Free Rate + Beta × Equity Risk Premium
 | Input | What it is | Where to get it |
 |---|---|---|
 | Risk-free rate | Return on a genuinely safe asset | 10-year Government of India bond yield |
-| Equity risk premium | Extra return investors demand for holding stocks over bonds | Estimated from long-run market data; 6–8% is the usual range quoted for India |
+| Equity risk premium | Extra return investors demand for holding stocks over bonds | Estimated, not observed. Aswath Damodaran's widely used [country risk table](https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/ctryprem.html) put India's total ERP at about 7.1% in its January 2026 update; other estimates sit a point or so either side |
 | Beta | How much this stock moves relative to the overall market | Regression against an index, or a sector average |
 
 Beta is the piece worth pausing on. A beta of 1.0 means the stock tends to
@@ -103,8 +106,8 @@ equity:
 
 | Input | Value | Source |
 |---|---:|---|
-| Risk-free rate | {{ w.risk_free_rate }}% | Roughly the 10-year G-Sec (Government Security) yield, mid-2025 |
-| Equity risk premium | {{ w.equity_risk_premium }}% | Illustrative India ERP |
+| Risk-free rate | {{ w.risk_free_rate }}% | Illustrative round figure. The 10-year G-Sec (Government Security) yield spent 2025 in the low-to-mid 6s; for a real valuation, take the yield on your valuation date from [CCIL](https://www.ccilindia.com/) or [FBIL](https://www.fbil.org.in/) |
+| Equity risk premium | {{ w.equity_risk_premium }}% | Illustrative India ERP, in line with the estimates above |
 | Beta | {{ w.beta }} | Illustrative, small-cap packaged foods |
 | **Cost of equity** | **{{ w.cost_of_equity }}%** | {{ w.risk_free_rate }} + {{ w.beta }} × {{ w.equity_risk_premium }} |
 

@@ -76,15 +76,17 @@ paise to me now."
 The DCF later in this series discounts Desi Bites' cash flows at
 {{ site.data.case_study.dcf.wacc.wacc }}% — where that rate comes from is the
 next post's job. For
-now, take it as given and look at what it does to money over time:
+now, take it as given and look at what it does to money over time. (The
+tables carry one more digit, {{ site.data.case_study.dcf.wacc.wacc_unrounded }}%, so the factors reproduce if you
+check them on a calculator.)
 
 | Year | n | Calculation | Discount factor | ₹100 in that year is worth |
 |---|---:|---|---:|---:|
-| FY26 | 1 | 1 / 1.1391¹ | 0.8779 | ₹87.79 |
-| FY27 | 2 | 1 / 1.1391² | 0.7706 | ₹77.06 |
-| FY28 | 3 | 1 / 1.1391³ | 0.6765 | ₹67.65 |
-| FY29 | 4 | 1 / 1.1391⁴ | 0.5939 | ₹59.39 |
-| FY30 | 5 | 1 / 1.1391⁵ | 0.5213 | ₹52.13 |
+| FY26 | 1 | 1 / 1.13914¹ | 0.8779 | ₹87.79 |
+| FY27 | 2 | 1 / 1.13914² | 0.7706 | ₹77.06 |
+| FY28 | 3 | 1 / 1.13914³ | 0.6765 | ₹67.65 |
+| FY29 | 4 | 1 / 1.13914⁴ | 0.5939 | ₹59.39 |
+| FY30 | 5 | 1 / 1.13914⁵ | 0.5213 | ₹52.13 |
 
 Read the last row again, because it's the row that trips people up. At a
 {{ site.data.case_study.dcf.wacc.wacc }}% discount rate, money arriving five years out is worth barely half
@@ -106,7 +108,7 @@ Same ₹100 arriving in FY30:
 |---:|---:|---:|
 | 8% | 0.6806 | ₹68.06 |
 | 11% | 0.5935 | ₹59.35 |
-| {{ site.data.case_study.dcf.wacc.wacc }}% | 0.5213 | ₹52.13 |
+| {{ site.data.case_study.dcf.wacc.wacc_unrounded }}% | 0.5213 | ₹52.13 |
 | 17% | 0.4561 | ₹45.61 |
 | 20% | 0.4019 | ₹40.19 |
 
@@ -123,7 +125,7 @@ Real valuations don't discount one payment, they discount a series of them.
 The rule is unglamorous: discount each year separately, then add.
 
 Suppose a business hands you ₹200 Lakh a year for three years, and you
-discount at 13.91%:
+discount at {{ site.data.case_study.dcf.wacc.wacc_unrounded }}%:
 
 | Year | Cash flow (₹ Lakh) | × Discount factor | Present value (₹ Lakh) |
 |---|---:|---:|---:|
@@ -146,7 +148,7 @@ def present_value(cash_flows, rate):
     return sum(cf / (1 + rate) ** n for n, cf in enumerate(cash_flows, start=1))
 
 flows = [200, 200, 200]
-print(round(present_value(flows, 0.1391), 1))   # 465.0
+print(round(present_value(flows, 0.13914), 1))   # 465.0
 ```
 
 Five lines, and it's the engine inside every DCF model in this series. The

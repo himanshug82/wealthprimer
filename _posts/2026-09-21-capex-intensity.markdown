@@ -17,8 +17,8 @@ term: "Capex intensity"
 
 ## What capex intensity means
 
-The last post noted that Britannia's [Free Cash Flow]({% post_url 2026-09-19-free-cash-flow %}) rose year on year
-partly because capex fell. **Capex Intensity** turns that observation into
+The last post noted that Britannia's [free cash flow]({% post_url 2026-09-19-free-cash-flow %}) rose year on year
+partly because capex fell. **Capex intensity** turns that observation into
 its own ratio: what share of revenue does a company have to plough back
 into fixed assets — plant, equipment, capacity — just to sustain or grow
 the business?
@@ -42,8 +42,8 @@ Capex Intensity (%) = Capex / Revenue × 100
 | Revenue | {{ db_is25.revenue }} |
 | **Capex Intensity** | **{{ site.data.case_study.ratios.FY25.capex_intensity }}%** |
 
-Desi Bites' capex intensity has actually been falling — 5.6% in FY23, 6.9%
-in FY24, down to {{ site.data.case_study.ratios.FY25.capex_intensity }}% in FY25 — consistent with a company that
+Desi Bites' capex intensity was {{ site.data.case_study.ratios.FY23.capex_intensity }}% in FY23, peaked at
+{{ site.data.case_study.ratios.FY24.capex_intensity }}% in FY24, then dropped to {{ site.data.case_study.ratios.FY25.capex_intensity }}% in FY25 — consistent with a company that
 front-loaded plant capacity in its earlier years and is now growing revenue
 without needing to spend as heavily to support it.
 
@@ -84,9 +84,6 @@ over the next couple of years rather than settling from one data point.
   a single large plant project can distort one or two years' numbers
   without signalling anything permanent about the business.
 
-**Takeaway:** capex intensity measures how much of every rupee of revenue a
-company has to reinvest just to keep running or growing — a falling number
-can mean real efficiency or a temporary pause between investment cycles,
-and this closes the Cash Flow Quality module by showing why free cash flow
-and earnings quality can never be read without also checking what's
-happening to capex underneath them.
+**Takeaway:** capex intensity is how much of each rupee of revenue gets
+ploughed back into plant. A falling number can mean efficiency — or just a
+pause between investment cycles.

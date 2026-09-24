@@ -14,6 +14,7 @@ term: "Backtesting (look-ahead bias, overfitting)"
 {% assign s1 = bt.strategies.sma_50_200 %}
 {% assign s2 = bt.strategies.sma_20_50 %}
 {% assign s3 = bt.strategies.rsi_30_70 %}
+{% assign s3flat = s3.next_day_with_cost_flat_start %}
 {% assign gb = bt.grid_best %}
 {% assign gw = bt.grid_worst %}
 
@@ -107,12 +108,15 @@ Next-day execution, costs included, the same window for everyone:
 Britannia (NSE: BRITANNIA), daily, {{ bt.start }} to {{ bt.end }}. Source:
 [Yahoo Finance]({{ ta2.dataset.source_url }}). Historical data, for illustration only.
 
-| | Final value | Return a year | Worst drawdown | Trades | Time invested |
+| | Final value | [Return a year]({% post_url 2026-10-19-point-to-point-returns %}) | [Worst drawdown]({% post_url 2026-10-22-drawdown %}) | Trades | Time invested |
 |---|---:|---:|---:|---:|---:|
 | **Buy and hold** | ₹{% include inr.html n=bh.final_value %} | **{{ bh.cagr_pct }}%** | {{ bh.max_drawdown_pct }}% | {{ bh.trades }} | {{ bh.pct_time_invested }}% |
 | SMA 50/200 | ₹{% include inr.html n=s1.next_day_with_cost.final_value %} | {{ s1.next_day_with_cost.cagr_pct }}% | {{ s1.next_day_with_cost.max_drawdown_pct }}% | {{ s1.next_day_with_cost.trades }} | {{ s1.next_day_with_cost.pct_time_invested }}% |
 | SMA 20/50 | ₹{% include inr.html n=s2.next_day_with_cost.final_value %} | {{ s2.next_day_with_cost.cagr_pct }}% | {{ s2.next_day_with_cost.max_drawdown_pct }}% | {{ s2.next_day_with_cost.trades }} | {{ s2.next_day_with_cost.pct_time_invested }}% |
 | RSI 30/70 | ₹{% include inr.html n=s3.next_day_with_cost.final_value %} | **{{ s3.next_day_with_cost.cagr_pct }}%** | {{ s3.next_day_with_cost.max_drawdown_pct }}% | {{ s3.next_day_with_cost.trades }} | {{ s3.next_day_with_cost.pct_time_invested }}% |
+
+*Trades counts entries into the stock. A rule that's already holding the
+stock when the window opens counts that as its first trade.*
 
 Three things to take from this table, in order of how tempting they are to
 misread.
@@ -133,6 +137,15 @@ The rule sat in cash for seven-eighths of the period and happened to be in the
 stock during a few good weeks. Three trades is not a strategy; it's three coin
 flips that landed well. The drawdown is small because there was almost no time
 for one to happen.
+
+And one of those three trades wasn't even taken inside the test. RSI went
+oversold on {{ s3.carried_in_from_oversold_date }}, a month before the window
+opens, so the rule starts the window already holding the stock. Start it in
+cash like everything else and it returns {{ s3flat.cagr_pct }}% a year on
+{{ s3flat.trades }} trades, invested {{ s3flat.pct_time_invested }}% of the
+time — still ahead of buy-and-hold on paper, and still far too few trades to
+mean anything. A backtest's start date is one more choice that can move the
+answer.
 
 **Buy-and-hold is the row to beat, and it's harder than it looks.** It paid
 one commission, was never out of the market, and took the full
@@ -211,10 +224,14 @@ Being clear about why is the point of the exercise:
   fills are worse in exactly the fast markets where these rules trigger.
 
 None of these are fixable in a blog post. They are fixable in a serious
-research process, and when people have done that work at scale, the honest
-summary is: simple trend rules have shown modest, uneven, cost-sensitive
-edges in some markets and periods, and nothing like the reliability the
-tutorials imply. Which is roughly what the
+research process, and when people have done that work at scale, the results
+have been modest. Park and Irwin's 2007 survey (*Journal of Economic
+Surveys*) found that many studies reporting profitable technical rules were
+weakened by data snooping, rules picked after the fact, or understated costs.
+Sullivan, Timmermann and White (1999) found that the best moving-average rules
+from a century of Dow Jones data stopped working in the decade that followed.
+In our reading, simple trend rules have shown uneven, cost-sensitive edges in
+some markets and periods — nothing like the reliability the tutorials imply. Which is roughly what the
 [limitations post]({% post_url 2026-10-17-what-technical-analysis-cannot-do %})
 said before running a single test.
 

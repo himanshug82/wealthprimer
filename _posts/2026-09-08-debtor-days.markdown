@@ -68,10 +68,11 @@ ratio is built to surface.
   selling mostly to other businesses on 30-90 day credit terms will show
   very different debtor days for reasons that have nothing to do with
   quality of management.
-- **Not checking for bad debt provisions.** Reported receivables are
-  sometimes shown net of amounts the company already expects not to
-  collect — worth knowing whether a number is gross or net before comparing
-  it across companies.
+- **Not checking for bad debt provisions.** Under Indian accounting rules
+  (Ind AS), reported receivables are shown after deducting an allowance for
+  amounts the company already expects not to collect. So check the note for
+  the size of that allowance and its trend — a fast-growing allowance can
+  flatter debtor days while signalling collection trouble.
 - **Watching debtor days in isolation from revenue growth.** A company that
   grows revenue partly by loosening credit terms to customers who might not
   pay is buying growth with future collection risk — debtor days rising

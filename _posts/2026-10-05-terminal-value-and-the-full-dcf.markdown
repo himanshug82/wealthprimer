@@ -79,7 +79,8 @@ big thing to assert in a spreadsheet cell.
 ## Worked example: assembling the whole discounted cash flow model
 
 Everything from the last four posts, in one place. All figures ₹ Lakh, as of
-{{ dcf.valuation_date }}, discounted at {{ dcf.wacc.wacc }}%.
+{{ dcf.valuation_date }}, discounted at {{ dcf.wacc.wacc }}% (carried as {{ dcf.wacc.wacc_unrounded }}% in the
+arithmetic, so the figures below reproduce on a calculator).
 
 **Step 1 — discount the forecast cash flows.**
 
@@ -91,11 +92,12 @@ Everything from the last four posts, in one place. All figures ₹ Lakh, as of
 **Step 2 — compute and discount the terminal value.**
 
 ```
-TV = {{ dcf.forecast[4].fcff }} × (1 + 0.05) / (0.1391 − 0.05)
-   = {{ dcf.forecast[4].fcff }} × 1.05 / 0.0891
+TV = {{ dcf.forecast[4].fcff }} × (1 + 0.05) / (0.13914 − 0.05)
+   = {{ dcf.forecast[4].fcff }} × 1.05 / 0.08914
    = {{ r.terminal_value }}
 
-PV of TV = {{ r.terminal_value }} × {{ dcf.forecast[4].discount_factor }} = {{ r.pv_terminal_value }}
+PV of TV = {{ r.terminal_value }} / 1.13914⁵      (factor {{ dcf.forecast[4].discount_factor }}, unrounded 0.52133)
+         = {{ r.pv_terminal_value }}
 ```
 
 **Step 3 — add them for enterprise value.**
@@ -180,7 +182,7 @@ everything downstream re-computes:
 
 ```python
 FY25_REVENUE, TAX, DEP_PCT, NWC_PCT = 2592.0, 0.25, 0.045, 0.0868
-WACC, TERMINAL_G = 0.1391, 0.05
+WACC, TERMINAL_G = 0.13914, 0.05
 NET_DEBT, SHARES = -1480.0, 12.5
 
 growth    = [0.18, 0.16, 0.14, 0.12, 0.10]

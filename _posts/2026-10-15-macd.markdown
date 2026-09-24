@@ -88,7 +88,10 @@ Britannia (NSE: BRITANNIA), daily, January 2025 to March 2026. Source:
 [Yahoo Finance]({{ ta.dataset.source_url }}). Historical data, for illustration only.
 Each vertical line marks a signal-line crossover.
 
-Count the vertical lines. Across the full two-year dataset:
+Count the vertical lines and you'll find {{ m.chart_window_crossovers }} crossovers. (The line on the
+very left edge is an artefact of where the chart window starts, not a
+crossover.) The chart only shows January 2025 onward, though. Across the full
+two-year dataset there are more:
 
 | | |
 |---|---:|

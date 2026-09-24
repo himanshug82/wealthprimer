@@ -61,9 +61,14 @@ listed ones:
 
 Two further wrinkles. Gains are computed in **rupees**, so a move in the
 exchange rate is part of your gain (or loss) even if the dollar price never
-changed. And the rupee conversion uses a prescribed rate — the **SBI TT
-buying rate on the last day of the month before** the month of purchase, and
-likewise for the sale — not the rate your broker happened to give you.
+changed. And the rupee conversion uses a prescribed rate, not the rate your
+broker happened to give you. The common approach converts each leg at the
+**SBI TT buying rate** — the State Bank of India's telegraphic-transfer
+buying rate — **on the last day of the month before** the month of purchase,
+and likewise for the sale. Practice differs, though: some advisers read the
+rule as applying to the gain itself, computed in dollars and converted once.
+The difference can be material, so it's a point to settle with whoever
+prepares your return.
 
 ### Worked example
 
@@ -106,8 +111,12 @@ paid in the US is credited against your Indian tax.
 | **Further tax payable in India** | **₹{{ x.dividend_india_payable_after_credit }}** |
 
 The credit isn't automatic. It requires **Form 67** (being renumbered under
-the new Act), filed on the portal *before* you submit the return, and the
-income and credit reported consistently in **Schedule FSI** (foreign-source
+the new Act). Filing it with or before your return is the safe route; since
+a 2022 amendment (Central Board of Direct Taxes Notification 100/2022), it
+can also be filed later, up to the end of the assessment year, as long as the
+return itself was filed in time. That's the old rules' wording; check how the
+renumbered form's deadline reads under the new Act before relying on the
+later date. The income and credit must also be reported consistently in **Schedule FSI** (foreign-source
 income) and **Schedule TR** (tax relief). Miss the form and you pay Indian tax
 on the full ₹{% include inr.html n=x.dividend_inr_gross %} with no credit — a genuine double tax, entirely
 self-inflicted. Someone below the 25% effective rate in India gets no refund
@@ -171,7 +180,9 @@ schedule is blank.
   STT-paid Indian equity.
 - **Selling at 13 months and calling it long-term.** Foreign shares need 24.
 - **Using your broker's conversion rate.** The rules prescribe the SBI TT
-  buying rate on the last day of the preceding month — for both legs.
+  buying rate on the last day of the preceding month. The common approach
+  applies it to both legs; some apply it to the gain instead — confirm
+  which with a professional.
 - **Skipping Form 67.** No form, no credit for the 25% already paid in the
   US.
 - **Leaving Schedule FA blank because "it's tiny".** No minimum. The ₹20 lakh

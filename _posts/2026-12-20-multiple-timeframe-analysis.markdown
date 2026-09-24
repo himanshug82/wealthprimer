@@ -87,7 +87,11 @@ first dropped below 30 — a fresh "oversold" reading — and record what the
 weekly trend said *as of the previous completed week* (so no peeking at a
 week that hadn't finished). Then look 20 sessions ahead.
 
-There were **{{ mt.daily_oversold_events }}** such events in two years:
+There were {{ mt.daily_oversold_events_all }} fresh oversold readings in two years, but not all of
+them can be scored. The one on {{ mt.dropped_no_weekly_trend | join: ", " }} came before any weekly
+trend existed (and inside the RSI's own warmup). The one on
+{{ mt.dropped_no_forward_data | join: ", " }} is too close to the end of the data to have 20
+sessions after it. That leaves **{{ mt.daily_oversold_events }}**:
 
 | Date | Daily RSI | Close | Weekly trend | 20 sessions later | Lowest low in between |
 |---|---:|---:|---|---:|---:|{% for e in mt.events %}
@@ -176,7 +180,8 @@ df = pd.read_csv("britannia-ohlcv-2024-04-to-2026-03.csv",
 wk = df.resample("W-FRI").agg({"open": "first", "high": "max",
                                "low": "min", "close": "last",
                                "volume": "sum"}).dropna()
-wk["trend_up"] = wk.close > wk.close.rolling(20).mean()
+ma = wk.close.rolling(20).mean()
+wk["trend_up"] = (wk.close > ma).where(ma.notna())   # no trend until the average exists
 
 # weekly trend as known on each DAILY bar: use the PREVIOUS completed week
 trend_on_day = wk.trend_up.shift(1).reindex(df.index, method="ffill")
@@ -187,6 +192,7 @@ rsi = 100 - 100 / (1 + delta.clip(lower=0).ewm(alpha=1/14, adjust=False).mean()
 oversold = (rsi < 30) & (rsi.shift() >= 30)          # first day of each episode
 fwd = df.close.shift(-20) / df.close - 1
 
+# events with no weekly trend yet, or no 20 sessions after, drop out here
 print(pd.DataFrame({"weekly_up": trend_on_day, "fwd20": fwd})[oversold]
         .groupby("weekly_up").fwd20.agg(["count", "mean"]).round(3))
 ```

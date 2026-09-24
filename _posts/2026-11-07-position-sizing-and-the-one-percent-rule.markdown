@@ -30,7 +30,11 @@ matters more than the rule itself: letting the market's own volatility set
 the number.
 
 Everything here is method, worked on historical prices. It isn't a suggestion
-to buy anything.
+to buy anything. The specific numbers — 1% risk, a stop at 2× ATR — are
+conventions from the trading literature, not a recommended setting. And
+stop-based sizing is a trading tool: it doesn't map neatly onto long-term
+investing in funds, where there's no stop price and the plan is to sit through
+drawdowns rather than exit on them.
 
 ## The formula
 
@@ -181,6 +185,13 @@ during which its values mean nothing.
   that's a random risk budget wearing a consistent-looking costume.
 - **Placing the stop inside the ATR.** A stop closer than one day's normal
   range is a coin-flip on noise, not a test of the idea.
+- **Reading 1% risk as 1% exposure.** They're different numbers. On
+  Britannia's calmest day the 1% rule put {{ calm.position_pct_of_capital }}% of
+  capital into one stock. If that stock gaps down 20% overnight, straight
+  through the stop, the loss is about
+  {{ calm.position_pct_of_capital | times: 0.2 | round: 1 }}% of capital, not 1%.
+  That's why many practitioners also cap any single position as a percentage
+  of capital, whatever the formula says.
 - **Treating the stop as a guarantee.** Stops are orders, not promises. Gaps
   at the open and illiquid stocks can take you out well past the stop price —
   which is a reason to size *smaller* than the formula, never larger.

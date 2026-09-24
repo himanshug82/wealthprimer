@@ -34,7 +34,8 @@ three-month lag this blog keeps on every real price series.
 
 ## Bollinger Bands: the formula
 
-Take a moving average, then draw a line two standard deviations above it and
+Take a moving average, then draw a line two
+[standard deviations]({% post_url 2026-10-23-volatility-and-sharpe %}) above it and
 two below:
 
 ```
@@ -53,11 +54,15 @@ The standard deviation is the whole idea. When price has been jumping around,
 bands pinch together. The bands are a **volatility ruler drawn around a
 [moving average]({% post_url 2026-10-12-moving-averages %})**.
 
-If daily closes were normally distributed, about 95% of them would fall inside
-two standard deviations. Prices aren't normal — they have fatter tails — and in
-this dataset **{{ bb.pct_bars_inside_bands }}%** of closes sat inside the
-bands. Close enough to the textbook to be useful, far enough to remind you the
-textbook is an approximation.
+You'll often read that about 95% of closes should fall inside the bands,
+because 95% of random draws from a normal distribution land within two
+standard deviations. That rule is for independent draws around a fixed
+average. Bollinger's σ is measured on the last 20 closing *prices* — levels,
+not daily returns — and prices trend. Each close sits near the one before, so
+in a steady move the whole window drifts and the newest close keeps landing
+near the edge, or past it. In this dataset **{{ bb.pct_bars_inside_bands }}%**
+of closes sat inside the bands. Treat the 95% as a loose analogy, not a
+probability.
 
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
@@ -106,8 +111,9 @@ average slightly *higher* ten days later, not lower. After a close *below* the
 lower band, it was on average slightly *lower*, and it finished higher only
 {{ bb.share_positive_10d_after_lower_pct }}% of the time — a coin flip, not a bounce. The "reversal" reading points
 the wrong way in this sample — the same pinned-in-a-trend problem the
-[RSI post]({% post_url 2026-10-14-rsi %}) documented. This is 66 events on one
-stock, so treat it as an illustration, not a law. But it is not evidence for
+[RSI post]({% post_url 2026-10-14-rsi %}) documented. That's
+{{ bb.n_with_10d_forward_after_upper | plus: bb.n_with_10d_forward_after_lower }}
+scored events on one stock, so treat it as an illustration, not a law. But it is not evidence for
 the reversal reading.
 
 **2. "The bands are pinching — a big move is coming."** This is the
@@ -184,7 +190,9 @@ moving-averages post, chosen for continuity, not as a signal:
 The chain is: the stock's volatility sets the stop distance, the stop distance
 plus a fixed rupee risk sets the position size. Volatile stock → wider stop →
 fewer shares. That is the entire logic of ATR-based position sizing, and the
-risk series on this blog builds a whole post on it. Here, the point is only
+risk series on this blog builds
+[a whole post]({% post_url 2026-11-07-position-sizing-and-the-one-percent-rule %})
+on it. Here, the point is only
 that ATR turns "how far away should my stop be?" from a guess into a
 measurement.
 

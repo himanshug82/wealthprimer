@@ -13,7 +13,7 @@ term: "EPS (earnings per share)"
 
 ## What EPS means
 
-**EPS — Earnings Per Share** — takes PAT, the number we've used throughout
+**EPS — earnings per share** — takes PAT (profit after tax), the number we've used throughout
 the Profitability module, and slices it into one share's worth: how much
 profit does the company earn for each individual share outstanding? It's
 the building block the next post, P/E, is built directly on top of.

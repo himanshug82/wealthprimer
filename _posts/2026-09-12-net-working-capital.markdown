@@ -65,11 +65,11 @@ Quick Ratio) will unpack properly.
   a lot until you see it next to ₹3,618 crore of current liabilities. NWC
   only means something relative to the size of the business — which is
   exactly why the next post normalizes it into the Current Ratio.
-- **Assuming a bigger company needs a bigger NWC number.** It needs a bigger
-  NWC in absolute terms just to stand still as it scales, but *how much*
-  bigger depends entirely on its operating cycle — a company with fast
-  collections and slow payments (like the one we're about to see) can run
-  safely on far less.
+- **Assuming NWC should grow in line with revenue.** As a company scales,
+  its NWC usually grows in rupees too — but not necessarily in step with
+  sales. How much it needs depends on its operating cycle: a company with
+  fast collections and slow payments (like the one we're about to see) can
+  run safely on far less NWC per rupee of revenue than a smaller rival.
 - **Treating negative NWC as automatically alarming.** Some very
   well-run businesses — especially ones with a negative cash conversion
   cycle — operate comfortably with low or even negative NWC, because cash

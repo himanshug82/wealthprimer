@@ -142,9 +142,16 @@ Q2 FY26:
 | EBITDA | {{ q.ttm_after_q2_fy26.ebitda }} |
 | Revenue vs full-year FY25 | +{{ q.ttm_after_q2_fy26.revenue_growth_vs_fy25 }}% |
 
-That +{{ q.ttm_after_q2_fy26.revenue_growth_vs_fy25 }}% is a more honest description of where the business *is*
-than either quarter's YoY figure — it has two new quarters in it and two old
-ones, so it moves slowly, which is the point. When you see a [P/E]({% post_url 2026-09-24-price-to-earnings %}) quoted
+Careful with that +{{ q.ttm_after_q2_fy26.revenue_growth_vs_fy25 }}%, though — it isn't a growth rate. The TTM and
+FY25 share two quarters (Q3 and Q4 FY25), so only half of each total has
+changed, and the comparison mechanically shows about half the real growth:
+the two new quarters grew {{ q.FY26.Q1.yoy_revenue_growth }}% YoY, the two shared ones by definition
+0%. TTM growth means something only against the *previous* TTM, the twelve
+months to 30 September 2024.
+
+Where TTM earns its place is as a *level*. It has two new quarters in it and
+two old ones, so it moves slowly and is never seasonal, which makes it the
+right figure for ratios like P/E. When you see a [P/E]({% post_url 2026-09-24-price-to-earnings %}) quoted
 mid-year, ask whether the E is last financial year's, this year's
 annualised quarter, or TTM. They can differ by a lot, and only the last is
 both current and complete.

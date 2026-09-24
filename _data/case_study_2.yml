@@ -224,8 +224,9 @@ shareholding:
   loan_against_pledge: 600
   ltv_at_ipo_price: 62.5
   price_fall_to_breach_ltv_75_pct: 16.7
-  promoter_lockin: Minimum promoter contribution locked in for three years from listing; the rest for
-    one year
+  promoter_lockin: The minimum promoter contribution (20% of post-issue capital) is locked in for 18 months
+    from allotment; the promoters' holding above that, for six months. Both periods stretch to three years
+    and one year when most of the issue proceeds are for capital expenditure, which Desi Bites' were not
 contingent_liabilities:
   gst_demand: 120
   gst_description: GST demand for FY23-FY24 on classification of a product line at 18% instead of 12%;
@@ -257,31 +258,38 @@ capital_allocation:
     management_case_roic: 9.3
   options:
   - option: Hold as cash / fixed deposits
-    amount: null
+    done_fy26: 1031
+    available: null
     expected_return_pct: 4.9
     basis: FD rate 6.5% pre-tax, ~4.9% post-tax
   - option: Repay the term loan
-    amount: 340
+    done_fy26: 60
+    available: 340
     expected_return_pct: 8.2
-    basis: saves after-tax interest
+    basis: saves after-tax interest; only the scheduled repayment was made
   - option: Organic capex (new line)
-    amount: 245
-    expected_return_pct: 31.2
-    basis: if it earns the existing business's ROCE
+    done_fy26: 245
+    available: 455
+    expected_return_pct: 23.4
+    basis: if it earns the existing business's ROCE (31.2% pre-tax), after tax
   - option: Acquisition (Chatpata Foods)
-    amount: 600
+    done_fy26: 600
+    available: null
     expected_return_pct: 2.1
     basis: year-one, on H2 numbers annualised
   - option: Dividend
-    amount: 112
+    done_fy26: 112
+    available: null
     expected_return_pct: null
     basis: returns capital; the shareholder decides
   - option: Buyback
-    amount: null
+    done_fy26: null
+    available: null
     expected_return_pct: null
     basis: returns capital; earnings yield at the price paid
 drhp:
-  filed: Draft red herring prospectus filed with the exchange in March 2025 (fictional)
+  filed: Draft red herring prospectus filed with SEBI in December 2024; FY25 restated accounts added in
+    the RHP, June 2025 (fictional)
   issue_type: 100% fresh issue; no offer for sale
   fresh_issue_shares_lakh: 2.5
   ofs_shares_lakh: 0
@@ -291,22 +299,25 @@ drhp:
   - object: 'Capital expenditure: second production line'
     amount: 700
     pct: 43.8
-  - object: Inorganic growth / acquisitions
-    amount: 500
-    pct: 31.2
+  - object: Inorganic growth / acquisitions (target not yet identified)
+    amount: 400
+    pct: 25.0
   - object: Working capital
-    amount: 250
-    pct: 15.6
+    amount: 350
+    pct: 21.9
   - object: General corporate purposes
     amount: 150
     pct: 9.4
-  gcp_cap_note: SEBI's ICDR regulations cap 'general corporate purposes' at 25% of the amount raised
+  gcp_cap_note: SEBI's ICDR (Issue of Capital and Disclosure Requirements) Regulations cap general corporate
+    purposes at 25% of the amount raised, and since January 2022 cap general corporate purposes plus acquisitions
+    whose target isn't yet identified at 35% combined, with the unidentified acquisitions alone at no
+    more than 25%
   actual_use_by_fy26_end:
     capex: 245
     acquisitions: 600
     working_capital: 0
     unspent: 755
-  deviation_note: Acquisitions ran Rs 100 Lakh over the stated object; capex ran Rs 455 Lakh under. Listed
+  deviation_note: Acquisitions ran Rs 200 Lakh over the stated object; capex ran Rs 455 Lakh under. Listed
     companies must report such deviations to the exchange every quarter until the money is spent.
   valuation_at_issue:
     pe_diluted: 38.3
@@ -324,8 +335,9 @@ drhp:
   - Edible oil and flour make up roughly 55% of raw material cost; no hedging
   - Nine per cent of revenue flows through a promoter-group distributor
   - The brand is registered but a similar mark is under dispute in one state
-  - No prior experience as a listed company; the CFO joined eight months before filing
-  - GST classification dispute for FY23-FY24 (see contingent liabilities)
+  - No prior experience as a listed company; the CFO (chief financial officer) joined eight months before
+    filing
+  - GST (goods and services tax) classification dispute for FY23-FY24 (see contingent liabilities)
   promoter:
     holding_pre_ipo_pct: 100
     holding_post_ipo_pct: 80.0
@@ -351,8 +363,9 @@ annual_report:
     pages: '18'
     who_writes: Board
     read_order: 6
-    what_it_is: 'Statutory disclosures: dividend recommended, directors'' changes, CSR, energy. Mostly
-      boilerplate; the related-party (AOC-2) annexure is the exception.'
+    what_it_is: 'Statutory disclosures: dividend recommended, directors'' changes, CSR (corporate social
+      responsibility) spending, energy. Mostly boilerplate; the related-party annexure (Form AOC-2, the
+      list of related-party contracts) is the exception.'
   - name: Corporate governance report
     pages: '15'
     who_writes: Board

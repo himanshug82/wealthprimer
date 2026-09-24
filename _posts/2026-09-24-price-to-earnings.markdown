@@ -63,12 +63,11 @@ signal to act on.
 | **P/E** | **{{ bi_pe }}x** |
 
 A P/E of {{ bi_pe }}x means the market was pricing Britannia at roughly {{ bi_pe }} years of
-its FY25 earnings. That's a rich multiple — but not an irrational one for a
-company that, across this whole series, has shown [ROE above 50%]({% post_url 2026-09-01-roe %}),
-[negative net debt]({% post_url 2026-09-18-net-debt-ebitda %}), and [a negative cash conversion cycle]({% post_url 2026-09-10-cash-conversion-cycle %}). A high
-P/E is what a market paying up for genuine, demonstrated quality looks
-like — whether {{ bi_pe }}x specifically is a *good price* to pay for that quality is
-a separate question this series deliberately doesn't answer.
+its FY25 earnings. Across this series, the same company has shown [ROE above 50%]({% post_url 2026-09-01-roe %}),
+[negative net debt]({% post_url 2026-09-18-net-debt-ebitda %}), and [a negative cash conversion cycle]({% post_url 2026-09-10-cash-conversion-cycle %}). Mechanically,
+a high multiple means the market is paying for expected quality or growth —
+whether {{ bi_pe }}x is justified isn't assessed here, and this series
+deliberately doesn't answer that question.
 
 ## Common mistakes
 

@@ -78,8 +78,11 @@ only thing keeping the voucher alive.
 
 ## Worked example: a real loss
 
-The fund NAV history used throughout this blog contains an actual loss. A
-₹{% include inr.html n=l.monthly_amount %} monthly SIP started {{ l.start }} and redeemed on {{ l.redemption_date }} — {{ l.instalments }}
+The fund NAV (net asset value, the per-unit price) history used throughout
+this blog — UTI Nifty 50 Index Fund (regular plan, growth), NAVs from AMFI
+(the Association of Mutual Funds in India), as of 31 March 2026, used for
+illustration only — contains an actual loss. A ₹{% include inr.html n=l.monthly_amount %} monthly
+[SIP]({% post_url 2026-10-24-sips-xirr-and-timing-myths %}) (systematic investment plan) started {{ l.start }} and redeemed on {{ l.redemption_date }} — {{ l.instalments }}
 instalments through the Q1 2026 decline:
 
 | | |
@@ -136,6 +139,10 @@ on the sums involved, and on many portfolios it simply isn't.
 
 - **Not filing on time when you have a loss.** The most expensive avoidable
   error here. Late filing destroys the carry-forward entirely.
+- **Trying to save a loss for a better year.** Same-year set-off isn't
+  optional. If you have gains this year, a loss is set against them first,
+  before the ₹{% include inr.html n=r.ltcg_annual_exemption %} exemption is applied, even where the exemption
+  would have covered those gains anyway. Only what's left carries forward.
 - **Expecting a long-term loss to offset a short-term gain.** It can't. The
   restriction runs one way only.
 - **Trying to offset salary income with capital losses.** Not permitted.

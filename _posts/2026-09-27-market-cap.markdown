@@ -15,10 +15,27 @@ term: "Market cap (market capitalisation)"
 
 ## What market cap means
 
-**Market Capitalisation ("market cap")** is the number behind every
+**Market capitalisation ("market cap")** is the number behind every
 "large-cap," "mid-cap," and "small-cap" label you'll see attached to a
 stock: the total value the market places on all of a company's shares put
 together.
+
+In India those labels have an official, rank-based meaning. SEBI (the
+Securities and Exchange Board of India, the markets regulator) set them in its
+[categorisation circular of 6 October 2017](https://www.sebi.gov.in/legal/circulars/oct-2017/categorization-and-rationalization-of-mutual-fund-schemes_36199.html)
+(SEBI/HO/IMD/DF3/CIR/P/2017/114), which ranks listed companies by full market cap:
+
+| Bucket | Rank by full market cap |
+|---|---|
+| Large cap | 1st to 100th |
+| Mid cap | 101st to 250th |
+| Small cap | 251st onwards |
+
+It's a ranking, not a rupee cut-off. AMFI (the Association of Mutual Funds
+in India) publishes the ranked list every six months on its
+[stock categorisation page](https://www.amfiindia.com/otherdata/categorisation-of-stocks),
+based on average market cap over the previous six months, and mutual funds
+use it to decide what counts as "large-cap" in their portfolios.
 
 ## The formula
 
@@ -34,9 +51,10 @@ Market Cap = Price per Share × Shares Outstanding
 | × Shares Outstanding (Lakh) | {{ listing.post_ipo_shares_lakh }} |
 | **Market Cap** | **₹{% include inr.html n=listing.market_cap %} Lakh (₹80 Crore)** |
 
-At ₹80 crore, Desi Bites Foods Ltd is a genuinely tiny listing —
-small/micro-cap territory, exactly what you'd expect for a company that
-just listed on an SME platform.
+At ₹80 crore, Desi Bites Foods Ltd is a genuinely tiny listing. Ranked
+against thousands of listed companies, it would land far down the small-cap
+bucket — often informally called "micro-cap" at this size (that word has no
+official SEBI definition).
 
 ## Worked example: Britannia Industries
 
@@ -49,8 +67,10 @@ For illustration only.
 | × Shares Outstanding (Crore) | {{ bi_market.shares_outstanding_cr }} |
 | **Market Cap** | **₹{% assign _mc = bi_market.market_cap_cr | round: 0 %}{% include inr.html n=_mc %} Crore** |
 
-At roughly ₹1.4 lakh crore, Britannia sits firmly in large-cap territory —
-about {{ cap_ratio }} times Desi Bites' market cap. The gap between the two
+At roughly ₹1.4 lakh crore, Britannia is about {{ cap_ratio }} times Desi Bites'
+market cap. Its official bucket isn't set by that rupee figure, though —
+it comes from where it ranks on AMFI's half-yearly list for the period in
+question. The gap between the two
 companies' *size* (revenue, assets, market cap) is enormous, even where —
 as several earlier posts showed — some of their underlying ratios landed
 surprisingly close together.

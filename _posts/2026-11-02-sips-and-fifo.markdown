@@ -17,8 +17,9 @@ advice.*
 
 ## A SIP is not one investment
 
-It feels like one. One instruction, one fund, one folio, one line on your
-statement. For tax, it is nothing of the sort.
+A [SIP]({% post_url 2026-10-24-sips-xirr-and-timing-myths %}) — systematic investment plan, a fixed sum
+invested every month — feels like one. One instruction, one fund, one folio,
+one line on your statement. For tax, it is nothing of the sort.
 
 **Every instalment is a separate acquisition**, with its own date, its own
 cost, and its own holding-period clock. A five-year monthly SIP isn't one
@@ -33,8 +34,13 @@ When you redeem part of a holding, which units did you sell? You didn't
 specify, and it matters enormously, because different lots have different
 costs and different holding periods.
 
-Indian tax law answers with **FIFO — First In, First Out**. The units you
-bought earliest are treated as the units sold first.
+The answer in practice is **FIFO — First In, First Out**. The units you
+bought earliest are treated as the units sold first. For shares and units held
+in demat (electronic) form, that's written into the law — the 1961 Act's
+section 45(2A), explained in Central Board of Direct Taxes (CBDT) Circular 768
+of 24 June 1998, which applies FIFO separately to each demat account. For mutual fund units held in a folio statement
+rather than demat, the registrars apply FIFO as standard practice — and it's
+what your capital gains statement will use.
 
 ```
 Redeem  ->  oldest units go first
@@ -68,7 +74,10 @@ decides what it costs you to spend it.
 
 ## Worked example: sixty instalments, one redemption
 
-A ₹{% include inr.html n=s.monthly_amount %} monthly SIP into the fund used throughout this blog, running from
+A ₹{% include inr.html n=s.monthly_amount %} monthly SIP into the fund used throughout this blog — UTI
+Nifty 50 Index Fund (regular plan, growth), NAVs (net asset values, the
+per-unit prices) from AMFI (the Association of Mutual Funds in India), as of
+31 March 2026, used for illustration only — running from
 {{ s.start }} to {{ s.last_instalment }}, redeemed in full on {{ s.redemption_date }}:
 
 | | |

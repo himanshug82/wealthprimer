@@ -18,8 +18,9 @@ advice.*
 
 For two decades, "how do I save tax?" had a standard answer in India: put
 ₹1.5 lakh into something that qualifies for the deduction long known as 80C —
-ELSS funds, PPF, life insurance premiums, EPF contributions, home loan
-principal.
+ELSS (equity-linked savings scheme) funds, the PPF (Public Provident Fund),
+life insurance premiums, EPF (Employees' Provident Fund) contributions, home
+loan principal.
 
 That answer is now conditional, and for a growing number of people it's
 simply no longer available.
@@ -113,7 +114,8 @@ This is a personal calculation and it genuinely varies. The shape of it:
   want.
 
 That second point is the one worth internalising. A deduction is worth your
-marginal rate — at 30%, ₹1.5 lakh deducted saves ₹45,000. That's real. But it
+marginal rate — at 30%, ₹1.5 lakh deducted saves ₹45,000, or ₹46,800 with
+the {{ r.cess_pct }}% cess. That's real. But it
 is *not* a reason to buy a product with poor returns or a fifteen-year
 lock-in you didn't want. A bad investment with a tax break attached is
 usually still a bad investment; the break is a one-off saving against a

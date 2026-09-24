@@ -79,8 +79,8 @@ its {{ rs.ma_period }}-day moving average.
 
 | | |
 |---|---:|
-| Britannia, total return over the window | **{{ rs.stock_total_return_pct }}%** |
-| Nifty 50 (price index), total return | **{{ rs.index_total_return_pct }}%** |
+| Britannia, price return over the window (no dividends) | **{{ rs.stock_total_return_pct }}%** |
+| Nifty 50 price index, price return (no dividends) | **{{ rs.index_total_return_pct }}%** |
 | Difference | **{{ rs.stock_minus_index_pp }} percentage points** |
 | Relative strength at the start | {{ rs.rs_start }} |
 | Relative strength at the end | **{{ rs.rs_end }}** |
@@ -97,11 +97,14 @@ Someone who looked only in December 2024 would have called it a laggard.
 Someone who looked in September 2025 would have called it a leader again. All
 three would have been describing the same two years.
 
-Note that the Nifty figure is the **price** index, which excludes dividends.
-The [benchmarks post]({% post_url 2026-10-25-benchmarks-and-comparing-like-with-like %})
-explained why that flatters anything compared against it by roughly the
-dividend yield; the same caveat applies here, though it's small over two years
-and doesn't change the shape of the ratio.
+Note that both sides are **price-only**: the Britannia figure leaves out its
+dividends, and the Nifty figure is the price index, which leaves out the
+index's. The [benchmarks post]({% post_url 2026-10-25-benchmarks-and-comparing-like-with-like %})
+explained how comparing a total return against a price index flatters the
+total return by roughly the dividend yield. That problem doesn't arise here,
+because like is compared with like. What the ratio does miss is any gap
+between Britannia's dividend yield and the index's — small over two years,
+and it doesn't change the shape of the ratio.
 
 ## The part the ratio hides
 
@@ -150,9 +153,10 @@ Relative strength is one of the few technical ideas with a direct line to the
 fundamental side of this blog. If a company's relative strength has been
 falling for a year while its [ROCE]({% post_url 2026-09-03-roce %}) and
 [free cash flow]({% post_url 2026-09-19-free-cash-flow %}) are unchanged,
-either the market has re-rated it — its [P/E]({% post_url 2026-09-24-price-to-earnings %})
-has compressed — or the rest of the market has been re-rated upwards. Both are
-worth knowing. Neither is visible on a price chart alone.
+the market may have re-rated it — its [P/E]({% post_url 2026-09-24-price-to-earnings %})
+has compressed — or the rest of the market may have been re-rated upwards, or
+the index's earnings may simply have grown faster than the company's. All three
+are worth knowing. None is visible on a price chart alone.
 
 ## Doing it in Python
 
@@ -171,7 +175,8 @@ rs_ma = rs.rolling(50).mean()
 
 print(f"RS end {rs.iloc[-1]:.1f}  low {rs.min():.1f} on {rs.idxmin().date()}  "
       f"high {rs.max():.1f} on {rs.idxmax().date()}")
-print(f"above its 50-day MA {(rs > rs_ma).mean()*100:.0f}% of the time")
+above = (rs > rs_ma)[rs_ma.notna()]        # skip the 50-day warmup
+print(f"above its 50-day MA {above.mean()*100:.1f}% of the time")
 ```
 
 The `.dropna()` after the concat matters: the two series have slightly

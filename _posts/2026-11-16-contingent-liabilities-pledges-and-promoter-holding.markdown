@@ -40,7 +40,7 @@ goes on the balance sheet. It goes in a note instead:
 
 | Contingent liabilities, 31 March 2026 | ₹ lakh |
 |---|---:|
-| GST demand under appeal | {{ cl.gst_demand }} |
+| GST (goods and services tax) demand under appeal | {{ cl.gst_demand }} |
 | Bank guarantees issued | {{ cl.bank_guarantees }} |
 | **Total** | **{{ cl.total }}** |
 
@@ -148,11 +148,16 @@ since it may be about control rather than value.
 
 **Who else is on the register?** Institutional holders (mutual funds,
 insurers, foreign investors) bring scrutiny and liquidity. Their arrival
-or exit over several quarters is worth noting. For an SME-platform listing
-like Desi Bites, the public {{ sh.public_pct }}% is mostly individual investors — no
+or exit over several quarters is worth noting. For a small, newly listed
+company like Desi Bites, the public {{ sh.public_pct }}% is mostly individual investors — no
 institutional check on management yet.
 
-**Is the promoter's stake locked in?** Post-IPO, {{ sh.promoter_lockin | downcase }}. A
+**Is the promoter's stake locked in?** For a main-board IPO the rules are in
+SEBI's (Securities and Exchange Board of India) Issue of Capital and
+Disclosure Requirements (ICDR) Regulations, as amended in August 2021.
+{{ sh.promoter_lockin }}. So on Desi Bites' {{ sh.promoter_pct }}%, most of
+the promoter stake was free of lock-in about six months after listing — which
+is roughly when the pledge above appeared. A
 lock-in expiry date is a date on which supply can appear. It's in the
 prospectus; the [last post in this module]({{ '/series/fundamental-analysis/' | relative_url }}) covers
 where.
@@ -163,12 +168,10 @@ For a real company, all three are public and free. Contingent liabilities:
 the notes to the annual accounts, usually titled "Contingent liabilities
 and commitments." Pledges and holdings: the shareholding pattern every
 listed company files with the exchange within 21 days of each quarter-end
-— on the NSE or BSE site under the company's corporate filings, and on the
-company's own investor page. The annual report also carries the
-shareholding tables. Britannia's, for instance, is in the same
-[FY25 filings]({{ site.data.real_company.company.source_url }}) this blog has used
-throughout; none of the figures here are Britannia's, and this post makes
-no claim about its disclosures beyond where to find them.
+— on the NSE (National Stock Exchange) or BSE site under the company's
+corporate filings, and on the company's own investor page. The annual
+report also carries the shareholding tables. None of the figures in this
+post come from a real company's filing.
 
 ## Common mistakes
 

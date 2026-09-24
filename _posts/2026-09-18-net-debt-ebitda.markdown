@@ -23,7 +23,7 @@ rating agencies reach for first: **Net Debt/EBITDA** — roughly, how many
 years of the company's current operating profit would it take to pay off
 all its debt, if every rupee of [EBITDA]({% post_url 2026-08-28-ebitda-margin %}) went straight to debt repayment?
 
-**Net Debt** nets a company's borrowings against the cash and liquid
+**Net debt** nets a company's borrowings against the cash and liquid
 investments it's sitting on — because cash on hand could, in principle, be
 used to pay debt down immediately.
 

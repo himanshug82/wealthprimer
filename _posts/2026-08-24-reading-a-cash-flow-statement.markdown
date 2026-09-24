@@ -10,6 +10,14 @@ term: "Cash flow statement"
 
 {% assign cf = site.data.case_study.cash_flow.FY25 %}
 {% assign is = site.data.case_study.income_statement.FY25 %}
+{% assign b0 = site.data.case_study.balance_sheet.FY24 %}
+{% assign b1 = site.data.case_study.balance_sheet.FY25 %}
+{% assign d_inv = b0.inventory | minus: b1.inventory %}
+{% assign d_rec = b0.receivables | minus: b1.receivables %}
+{% assign d_pay = b1.payables | minus: b0.payables %}
+{% assign d_ocl = b1.other_current_liabilities | minus: b0.other_current_liabilities %}
+{% assign d_wc = d_inv | plus: d_rec | plus: d_pay | plus: d_ocl %}
+{% assign d_loan = b1.term_loan | minus: b0.term_loan %}
 
 ## What a cash flow statement is
 
@@ -55,7 +63,9 @@ same figures used in the tables below. Illustration only.
 
 ## Worked example: Desi Bites Foods, FY25
 
-Desi Bites builds its cash flow statement starting from PAT and adjusting for
+Desi Bites builds its cash flow statement starting from
+[PAT]({% post_url 2026-08-22-reading-an-income-statement %}) (profit after
+tax, the bottom line of the income statement) and adjusting for
 non-cash items and working capital changes — a simplified version of the
 standard "indirect method":
 
@@ -63,11 +73,16 @@ standard "indirect method":
 |---|---:|
 | PAT | {{ is.pat }} |
 | + Depreciation (non-cash) | {{ is.depreciation }} |
-| ± Working capital changes | *(inventory, receivables, payables — see below)* |
+| ± Working capital changes | {% if d_wc >= 0 %}+{% endif %}{{ d_wc }} |
+| &nbsp;&nbsp;&nbsp;Inventory went up (cash tied up) | {{ d_inv }} |
+| &nbsp;&nbsp;&nbsp;Receivables went up (cash not yet collected) | {{ d_rec }} |
+| &nbsp;&nbsp;&nbsp;Payables went up (suppliers not yet paid) | +{{ d_pay }} |
+| &nbsp;&nbsp;&nbsp;Other current liabilities went up | +{{ d_ocl }} |
 | = **Cash from Operations** | **{{ cf.cfo }}** |
 | Capex (plant spend) | {{ cf.cfi }} |
 | = **Cash from Investing** | **{{ cf.cfi }}** |
-| Loan draw/repayment, dividend paid | |
+| Term loan repaid | {{ d_loan }} |
+| Dividend paid | {{ is.dividend | times: -1 }} |
 | = **Cash from Financing** | **{{ cf.cff }}** |
 | **Net change in cash** | **{{ cf.net_change }}** |
 | Opening cash | {{ cf.opening_cash }} |
@@ -77,10 +92,13 @@ PAT for FY25 was ₹{% include inr.html n=is.pat %}L. Add back depreciation (a r
 a cash one), adjust for the fact that inventory and receivables grew (cash
 tied up in stock and in what distributors owe, but haven't paid) while
 payables also grew (cash the company is temporarily holding onto before
-paying its own suppliers) — and operating cash comes out to ₹{% include inr.html n=cf.cfo %}L,
+paying its own suppliers). In FY25 those moves almost cancel out: a net
+{% if d_wc >= 0 %}+{% endif %}₹{{ d_wc }}L. So operating cash comes out to
+₹{% include inr.html n=is.pat %}L + ₹{{ is.depreciation }}L + ₹{{ d_wc }}L = ₹{% include inr.html n=cf.cfo %}L,
 higher than PAT. From there, Desi Bites spent ₹{{ cf.cfi | abs }}L expanding
-the plant and used ₹{{ cf.cff | abs }}L net on loan repayment and dividends,
-landing at a closing cash balance of ₹{% include inr.html n=cf.closing_cash %}L — which is
+the plant and used ₹{{ cf.cff | abs }}L on financing — ₹{{ d_loan | abs }}L
+repaying the term loan and ₹{{ is.dividend }}L in dividends. That leaves
+a closing cash balance of ₹{% include inr.html n=cf.closing_cash %}L — which is
 exactly what shows up on the [balance
 sheet]({{ '/case-study/' | relative_url }}) for the same year.
 
@@ -102,7 +120,7 @@ page]({{ '/case-study/' | relative_url }}).
   outflow that's expanding capacity is a very different signal from outflow
   that's just replacing worn-out equipment to stand still. The cash flow
   statement alone doesn't always tell you which — that's a judgment call,
-  covered later in the [Cash Flow Quality module]({{ '/' | relative_url }}).
+  covered later in the [Cash Flow Quality module]({{ '/2026/09/19/free-cash-flow/' | relative_url }}).
 - **Treating one year's loan draw as "strong cash flow."** Financing inflows
   (new debt, new equity) aren't the company generating cash — they're the
   company borrowing or raising it. Operating cash flow is the number that

@@ -68,9 +68,9 @@ little, and the remaining two-thirds is priced at term-deposit rates.
 
 ## The ratio moved, and why that matters
 
-A year earlier the CASA ratio was about {{ f24.casa_ratio_pct_reported_external }}%
-(this FY24 figure is not in the FY25 release itself; it is the widely reported
-prior-year number — treat it as context). Over the same year:
+A year earlier the CASA ratio was {{ f24.casa_ratio_pct_reported_external }}% (as of 31 March 2024, from HDFC Bank's
+[Q4 FY24 results](https://www.hdfcbank.com/content/bbp/repositories/723fb80a-2dde-42a3-9793-7ae1be57c87f/?path=/Footer/About+Us/Investor+Relation/Detail+PAges/financial+results/PDFs/2024/20April/Q4FY24-Earnings-Presentation.pdf),
+released 20 April 2024; it isn't in the FY25 release itself). Over the same year:
 
 | | FY24 | FY25 | Change |
 |---|---:|---:|---:|

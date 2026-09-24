@@ -22,8 +22,10 @@ and asked you to accept as "illustrative". This post shows where it comes from
 and why "illustrative" was the honest word.
 
 Two things beta is *not*. It isn't a measure of how risky a business is in
-the sense of whether it might go bust — a stable company with a jumpy share
-price has a high beta. And it isn't stable: it's estimated from past prices,
+the sense of whether it might go bust — a high beta just means a company
+whose price swings *with the market*, whatever the business underneath looks
+like. (A share can be jumpy and still have a low beta, if its jumps don't
+line up with the index's.) And it isn't stable: it's estimated from past prices,
 and past prices change their minds.
 
 ## The formula
@@ -71,7 +73,7 @@ way a steel mill's do, so its shares tend not to swing with the index either.
 one year and {{ b.fy26.beta }} in the next — the second is nearly double the first. Nothing
 about the business changed that much. The estimate did. Measured on weekly
 returns instead of daily, the full-window beta comes out at {{ b.weekly_full.beta }}. Same
-stock, same two years, three defensible numbers between {{ b.fy25.beta }} and {{ b.weekly_full.beta }}.
+stock, same two years, four defensible numbers ranging from {{ b.fy25.beta }} to {{ b.fy26.beta }}.
 
 **The index explains very little.** An R² of {{ f.r_squared }} means the Nifty's daily
 move accounts for about {{ f.r_squared | times: 100 | round }}% of Britannia's daily move. The other

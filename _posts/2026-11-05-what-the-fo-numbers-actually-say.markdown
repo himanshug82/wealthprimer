@@ -27,7 +27,8 @@ Here is what five years of counting found:
 | Period | Individual traders who lost money |
 |---|---:|
 | FY22 ([{{ s.fy22_study.date }} study]({{ s.fy22_study.url }})) | {{ f.fy22.loss_pct }}% |
-| FY22–FY24 ([{{ s.fy22_fy24_study.date }} study]({{ s.fy22_fy24_study.url }})) | {{ f.fy22_fy24.loss_pct }}% |
+| FY22–FY24, lost money over the three years combined ([{{ s.fy22_fy24_study.date }} study]({{ s.fy22_fy24_study.url }})) | {{ f.fy22_fy24.loss_pct }}% |
+| FY25 ([{{ s.fy25_fy26_study.date }} study]({{ s.fy25_fy26_study.url }})) | {{ f.fy25.loss_pct }}% |
 | FY26 ([{{ s.fy25_fy26_study.date }} study]({{ s.fy25_fy26_study.url }})) | {{ f.fy26.loss_pct }}% |
 
 Over FY22–FY24, aggregate losses for individual traders exceeded
@@ -36,10 +37,13 @@ alone the figure was **₹{% include inr.html n=f.fy26.aggregate_loss_cr %}
 crore**, of which about {{ f.fy26.options_share_of_losses_pct }}% came from
 options rather than futures.
 
-Read the first column again. This is not a bad year being reported. It is
-every year that has been measured, through a bull market and a correction,
+Read the second column again. This is not a bad year being reported. It is
+every period that has been measured, through a bull market and a correction,
 before and after a round of regulatory tightening designed to cool the
-segment down. The number moves by a few points. It does not move by twenty.
+segment down. SEBI's own August 2026 study puts the single-year share at
+around 90% for four years running (FY22–FY25) before FY26's dip to
+{{ f.fy26.loss_pct }}%. The number moves by a few points. It does not move by
+twenty.
 
 ## Why this post exists
 
@@ -51,7 +55,8 @@ produces.
 F&O is a different activity wearing similar clothes. Most of the money
 individuals lose in the Indian market is lost here, and it is lost by people
 who arrived through the same apps, the same feeds, and often the same
-vocabulary as everyone else. A blog that taught RSI and never mentioned this
+vocabulary as everyone else. A blog that taught
+[RSI (the relative strength index)]({% post_url 2026-10-14-rsi %}) and never mentioned this
 would have been withholding the single most useful number in Indian retail
 finance.
 
@@ -76,10 +81,10 @@ Sum of all gains  +  Sum of all losses  = −(costs)  (after costs)
 
 So the segment as a whole cannot make money. It can only move money between
 participants, minus what leaks out in brokerage, exchange fees, STT (Securities
-Transaction Tax), stamp duty and GST. SEBI puts the individual segment's
+Transaction Tax), stamp duty and GST (Goods and Services Tax). SEBI puts the individual segment's
 transaction costs at roughly
-₹{% include inr.html n=u.transaction_costs_cr_fy22_fy26 %} crore over FY22–FY26
-{% comment %}Two independent secondary sources agree on this figure; the primary SEBI PDF is still unread — see _data/fno.yml{% endcomment %}. That is
+₹{% include inr.html n=u.transaction_costs_cr_fy22_fy26 %} crore over FY22–FY26,
+nearly half of it brokerage. That is
 the house's cut, and it is paid whether you win or lose.
 
 **2. The people on the other side are not like you.**
@@ -173,7 +178,8 @@ mostly not individuals.
 
 - **Reading a losing year as a bad patch you wait out.** Roughly nine in ten
   of those who lost in two consecutive years lost
-  again.{% comment %}Two independent secondary sources agree; primary PDF still unread — see _data/fno.yml{% endcomment %} That's only a
+  again, per SEBI's August 2026
+  [behaviour study]({{ s.fy25_fy26_behaviour_study.url }}). That's only a
   little above the {{ f.fy26.loss_pct }}% of all traders who lost in FY26, so on its own it
   can't separate skill from luck. What it does say is that losing doesn't
   fix itself: the costs and the counterparty are still there next year.
@@ -197,7 +203,8 @@ mostly not individuals.
   and the
   [₹1.25 lakh exemption]({% post_url 2026-10-29-equity-and-equity-funds %})
   that this blog's tax series covers do not apply to them. Different return
-  form, different rules, often an audit requirement. Worth its own post.
+  form, different rules, sometimes an audit requirement (above the
+  section 44AB turnover limits). That's covered later in the tax series.
 
 ## If you're going to do it anyway
 

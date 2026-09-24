@@ -8,16 +8,21 @@ series: technical-analysis
 ---
 
 {% assign ta = site.data.ta %}
+{% assign r = ta.rsi %}
+{% assign up1 = r.overbought_but_kept_rising.change_pct %}
+{% assign fell1 = r.overbought_then_fell.change_pct | abs %}
 
-## The post this series was built toward
+## The reckoning
 
-Nine posts of candlesticks, levels, trend lines, averages, volume and
-oscillators. Now the reckoning — not as a disclaimer bolted on at the end,
-but because a series that taught you eight indicators and skipped this would
-have been selling something.
+The first nine posts covered candlesticks, levels, trend lines, averages,
+volume and oscillators. Now the reckoning — not as a disclaimer bolted on at
+the end, but because a series that taught you those tools and skipped this
+would have been selling something.
 
 Everything below is drawn from the same Britannia dataset the rest of the
-series used. None of it is hypothetical.
+series used. None of it is hypothetical. A second module follows this post —
+volatility, relative strength, multiple timeframes and backtesting — and it
+keeps the same rule: every signal gets checked against what actually happened.
 
 ## 1. It cannot see anything that isn't in the price
 
@@ -41,7 +46,7 @@ rates. From this dataset:
 
 | Indicator | What two years actually contained |
 |---|---|
-| 50/200 crossover | **{{ ta.sma_crossover.golden_cross_count }}** golden cross, **{{ ta.sma_crossover.death_cross_count }}** death crosses |
+| 50/200 crossover | **{{ ta.sma_crossover.golden_cross_count }}** golden cross, **{{ ta.sma_crossover.death_cross_count }}** death crosses observed (the 50-day was already below the 200-day when the 200-day first existed) |
 | MACD signal crossover | **{{ ta.macd.total_crossovers }}** signals — one every ~{{ ta.macd.avg_trading_days_between_signals }} trading days |
 | RSI above 70 | **{{ ta.rsi.days_above_70 }}** days |
 
@@ -60,14 +65,17 @@ indicators — it's the general shape of the problem.
 The RSI table from [that post]({% post_url 2026-10-14-rsi %}) is worth repeating, because
 it is the single most honest thing in this series:
 
-| Signal | Date | RSI | What followed |
+| Signal | Date | RSI | Change over the next {{ r.horizon_sessions }} sessions |
 |---|---|---:|---|
-| Overbought | {{ ta.rsi.overbought_but_kept_rising.date }} | {{ ta.rsi.overbought_but_kept_rising.rsi }} | **{{ ta.rsi.overbought_but_kept_rising.change_pct }}%** |
-| Overbought | {{ ta.rsi.overbought_then_fell.date }} | {{ ta.rsi.overbought_then_fell.rsi }} | **{{ ta.rsi.overbought_then_fell.change_pct }}%** |
-| Oversold | {{ ta.rsi.oversold_but_kept_falling.date }} | {{ ta.rsi.oversold_but_kept_falling.rsi }} | **{{ ta.rsi.oversold_but_kept_falling.change_pct }}%** |
+| Overbought | {{ r.overbought_but_kept_rising.date }} | {{ r.overbought_but_kept_rising.rsi }} | **+{{ up1 }}%** |
+| Overbought | {{ r.overbought_then_fell.date }} | {{ r.overbought_then_fell.rsi }} | **{{ r.overbought_then_fell.change_pct }}%** |
+| Oversold | {{ r.oversold_but_kept_falling.date }} | {{ r.oversold_but_kept_falling.rsi }} | **{{ r.oversold_but_kept_falling.change_pct }}%** |
 
-Two nearly identical overbought readings, three months apart, on the same
-stock. One preceded a 12% rise. The other preceded a 26% fall. Nothing
+Every outcome is measured over the same fixed window — about three months —
+not to whichever peak or trough came later.
+
+Two nearly identical overbought readings, ten weeks apart, on the same
+stock. One preceded a {{ up1 }}% rise. The other preceded a {{ fell1 }}% fall. Nothing
 available *at the time* distinguished them.
 
 ## 4. It is trivially easy to fool yourself
@@ -76,7 +84,7 @@ The [chart patterns post]({% post_url 2026-10-16-chart-patterns %}) demonstrated
 rather than asserting it. A textbook double top — two peaks {{ ta.apparent_double_top.cherry_picked_peak_gap_pct }}% apart —
 dissolved once every swing high in the window was listed: six of them, in a
 {{ ta.apparent_double_top.band_width_pct }}% band, with the tallest occurring *before* both chosen peaks and
-another arriving *after* the supposed breakdown.
+another arriving *after* them, before the pattern had even confirmed.
 
 Nobody set out to deceive anyone there. That's what makes it worth dwelling
 on. Selecting the points that fit is what pattern recognition *does*, and the
@@ -115,10 +123,32 @@ of it works.
 
 Real evidence would need thousands of instances across many stocks, sectors,
 market conditions and decades, with trading costs included and the rules
-fixed in advance. Where that work exists, results for most simple indicators
-are, at best, modest — and often disappear once costs are counted.
+fixed in advance. Where that work exists, the results are modest. Park and
+Irwin's 2007 survey of the research (*Journal of Economic Surveys*) found
+that many studies reporting profitable technical rules were weakened by data
+snooping, rules picked after the fact, or understated costs. And Sullivan,
+Timmermann and White (1999) found that the best moving-average rules from an
+earlier century-long study stopped working in the decade after it.
 
 Be suspicious of anyone who shows you one chart. Including this one.
+
+## 7. If a simple rule worked, it would stop working
+
+The [first post]({% post_url 2026-10-08-what-technical-analysis-is %}) left
+a tension open. Technical analysis assumes the price already reflects
+everything — and then studies past prices to guess the next one. Economists
+have a name for the relevant idea: **weak-form efficiency** (Fama, 1970). It
+says past prices are already reflected in today's price, so no rule built only
+on past prices should beat the market after costs, except by luck.
+
+You don't have to believe markets are perfectly efficient to feel the force
+of the argument. If a simple chart rule reliably made money, traders would
+pile into it — buying a little earlier, selling a little earlier — and in
+doing so trade the edge away. So the rule printed in every textbook is the
+one least likely to still work. That doesn't settle the debate; some effects,
+like momentum (Jegadeesh and Titman, 1993), have been studied for decades and
+are still argued over. But it explains why the edges researchers do find tend
+to be small, short-lived and eaten by costs.
 
 ## So is any of it worth knowing?
 

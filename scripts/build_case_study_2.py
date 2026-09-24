@@ -315,7 +315,7 @@ sh = dict(
     loan_against_pledge=600,   # Rs Lakh, ~62% loan-to-value at the IPO price
     ltv_at_ipo_price=pct(600, pledged * listing["ipo_price"]),
     price_fall_to_breach_ltv_75_pct=round(100 * (1 - 600 / (0.75 * pledged * listing["ipo_price"])), 1),
-    promoter_lockin="Minimum promoter contribution locked in for three years from listing; the rest for one year",
+    promoter_lockin="The minimum promoter contribution (20% of post-issue capital) is locked in for 18 months from allotment; the promoters' holding above that, for six months. Both periods stretch to three years and one year when most of the issue proceeds are for capital expenditure, which Desi Bites' were not",
 )
 contingent = dict(
     gst_demand=120,          # Rs Lakh, classification dispute FY23-FY24, under appeal, not provided
@@ -332,18 +332,24 @@ contingent = dict(
 )
 
 # ------------------------------------------------------- capital allocation
+CAPEX_OBJECT = 700   # Rs Lakh the DRHP earmarked for the second line (see `drhp` below)
 uses = [
-    dict(option="Hold as cash / fixed deposits", amount=None,
+    # done_fy26 = rupees actually put to this use in FY26; available = rupees
+    # that could still have gone to it (e.g. the loan still outstanding), so the
+    # post can keep "did" and "could" in separate columns.
+    dict(option="Hold as cash / fixed deposits", done_fy26=r(cash - fy25_bs["cash"]), available=None,
          expected_return_pct=round(6.5 * (1 - TAX), 1), basis="FD rate 6.5% pre-tax, ~4.9% post-tax"),
-    dict(option="Repay the term loan", amount=term_loan,
-         expected_return_pct=round(cs["dcf"]["wacc"]["cost_of_debt_after_tax"], 1), basis="saves after-tax interest"),
-    dict(option="Organic capex (new line)", amount=org_capex,
-         expected_return_pct=cs["ratios"]["FY25"]["roce"], basis="if it earns the existing business's ROCE"),
-    dict(option="Acquisition (Chatpata Foods)", amount=acq["price"],
+    dict(option="Repay the term loan", done_fy26=loan_repaid, available=term_loan,
+         expected_return_pct=round(cs["dcf"]["wacc"]["cost_of_debt_after_tax"], 1),
+         basis="saves after-tax interest; only the scheduled repayment was made"),
+    dict(option="Organic capex (new line)", done_fy26=org_capex, available=CAPEX_OBJECT - org_capex,
+         expected_return_pct=round(cs["ratios"]["FY25"]["roce"] * (1 - TAX), 1),
+         basis="if it earns the existing business's ROCE (%s%% pre-tax), after tax" % cs["ratios"]["FY25"]["roce"]),
+    dict(option="Acquisition (Chatpata Foods)", done_fy26=acq["price"], available=None,
          expected_return_pct=acq["year1_roic_pct"], basis="year-one, on H2 numbers annualised"),
-    dict(option="Dividend", amount=dividend,
+    dict(option="Dividend", done_fy26=dividend, available=None,
          expected_return_pct=None, basis="returns capital; the shareholder decides"),
-    dict(option="Buyback", amount=None,
+    dict(option="Buyback", done_fy26=None, available=None,
          expected_return_pct=None, basis="returns capital; earnings yield at the price paid"),
 ]
 capital_allocation = dict(
@@ -368,22 +374,22 @@ capital_allocation = dict(
 # ------------------------------------------------------------------ DRHP
 issue = listing["ipo_proceeds"]
 drhp = dict(
-    filed="Draft red herring prospectus filed with the exchange in March 2025 (fictional)",
+    filed="Draft red herring prospectus filed with SEBI in December 2024; FY25 restated accounts added in the RHP, June 2025 (fictional)",
     issue_type="100% fresh issue; no offer for sale",
     fresh_issue_shares_lakh=listing["fresh_issue_shares_lakh"],
     ofs_shares_lakh=0,
     price=listing["ipo_price"],
     issue_size=issue,
     objects=[
-        dict(object="Capital expenditure: second production line", amount=700, pct=pct(700, issue)),
-        dict(object="Inorganic growth / acquisitions", amount=500, pct=pct(500, issue)),
-        dict(object="Working capital", amount=250, pct=pct(250, issue)),
+        dict(object="Capital expenditure: second production line", amount=CAPEX_OBJECT, pct=pct(CAPEX_OBJECT, issue)),
+        dict(object="Inorganic growth / acquisitions (target not yet identified)", amount=400, pct=pct(400, issue)),
+        dict(object="Working capital", amount=350, pct=pct(350, issue)),
         dict(object="General corporate purposes", amount=150, pct=pct(150, issue)),
     ],
-    gcp_cap_note="SEBI's ICDR regulations cap 'general corporate purposes' at 25% of the amount raised",
+    gcp_cap_note="SEBI's ICDR (Issue of Capital and Disclosure Requirements) Regulations cap general corporate purposes at 25% of the amount raised, and since January 2022 cap general corporate purposes plus acquisitions whose target isn't yet identified at 35% combined, with the unidentified acquisitions alone at no more than 25%",
     actual_use_by_fy26_end=dict(capex=org_capex, acquisitions=acq["price"], working_capital=0,
                                 unspent=r(ipo_cash - org_capex - acq["price"])),
-    deviation_note="Acquisitions ran Rs 100 Lakh over the stated object; capex ran Rs 455 Lakh under. Listed companies must report such deviations to the exchange every quarter until the money is spent.",
+    deviation_note="Acquisitions ran Rs 200 Lakh over the stated object; capex ran Rs 455 Lakh under. Listed companies must report such deviations to the exchange every quarter until the money is spent.",
     valuation_at_issue=dict(
         pe_diluted=round(listing["ipo_price"] / listing["eps_diluted"], 1),
         pe_undiluted=round(listing["ipo_price"] / listing["eps_undiluted"], 1),
@@ -402,8 +408,8 @@ drhp = dict(
         "Edible oil and flour make up roughly 55% of raw material cost; no hedging",
         "Nine per cent of revenue flows through a promoter-group distributor",
         "The brand is registered but a similar mark is under dispute in one state",
-        "No prior experience as a listed company; the CFO joined eight months before filing",
-        "GST classification dispute for FY23-FY24 (see contingent liabilities)",
+        "No prior experience as a listed company; the CFO (chief financial officer) joined eight months before filing",
+        "GST (goods and services tax) classification dispute for FY23-FY24 (see contingent liabilities)",
     ],
     promoter=dict(holding_pre_ipo_pct=100, holding_post_ipo_pct=pct(promoter_shares, shares),
                   background="Founder and spouse; founder ran the family's wholesale namkeen trade before setting up the plant in 2015"),
@@ -419,7 +425,7 @@ annual_report = dict(
         dict(name="Management discussion & analysis (MD&A)", pages="12", who_writes="Management", read_order=3,
              what_it_is="Management's own explanation of the year: volumes, prices, costs, segments. The only place the 'why' is written down."),
         dict(name="Directors' report", pages="18", who_writes="Board", read_order=6,
-             what_it_is="Statutory disclosures: dividend recommended, directors' changes, CSR, energy. Mostly boilerplate; the related-party (AOC-2) annexure is the exception."),
+             what_it_is="Statutory disclosures: dividend recommended, directors' changes, CSR (corporate social responsibility) spending, energy. Mostly boilerplate; the related-party annexure (Form AOC-2, the list of related-party contracts) is the exception."),
         dict(name="Corporate governance report", pages="15", who_writes="Board", read_order=7,
              what_it_is="Board composition, committee meetings, remuneration. Skim for independent-director resignations and attendance."),
         dict(name="Independent auditor's report", pages="6", who_writes="Auditor", read_order=1,

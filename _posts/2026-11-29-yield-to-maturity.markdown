@@ -55,9 +55,11 @@ Now solve for the rate that discounts every cash flow back to ₹{{ bd.buy_price
 | Year | Cash flow | Present value at {{ bd.ytm_pct }}% |
 |---|---:|---:|{% for s in bd.schedule_at_ytm %}
 | {{ s.year }} | ₹{% include inr.html n=s.cash_flow %} | ₹{{ s.pv_at_ytm }} |{% endfor %}
-| **Total** | | **≈ ₹{{ bd.buy_price }}** |
+| **Total** | | **₹{{ bd.price_at_ytm }} ≈ ₹{{ bd.buy_price | round }}** |
 
-**YTM = {{ bd.ytm_pct }}%.** The extra {{ bd.ytm_pct | minus: bd.current_yield_pct | round: 2 }} points over the current
+**YTM = {{ bd.ytm_pct }}%.** (Strictly, the rate that lands on ₹{{ bd.buy_price | round }} to the paisa is
+{{ bd.ytm_exact_pct }}% — a hair above. Every figure here, and in the next post, uses the
+rounded {{ bd.ytm_pct | round }}%, which is why the total comes to ₹{{ bd.price_at_ytm }}.) The extra {{ bd.ytm_pct | minus: bd.current_yield_pct | round: 2 }} points over the current
 yield is the ₹{{ bd.face | minus: bd.buy_price | round }} gain to face value, spread over five years.
 
 The same bond at different prices, or equivalently different market yields:

@@ -220,6 +220,8 @@ bond:
   annual_coupon: 70.0
   current_yield_pct: 7.29
   ytm_pct: 8.0
+  ytm_exact_pct: 8.002
+  price_at_ytm: 960.07
   price_ladder:
   - ytm_pct: 5.0
     price: 1086.59
@@ -246,11 +248,11 @@ bond:
     pv_at_ytm: 51.45
   - year: 5
     cash_flow: 1070.0
-    pv_at_ytm: 728.16
+    pv_at_ytm: 728.22
   macaulay_duration: 4.37
   modified_duration: 4.05
-  price_if_ytm_plus_1pct: 922.14
-  price_if_ytm_minus_1pct: 999.92
+  price_if_ytm_plus_1pct: 922.21
+  price_if_ytm_minus_1pct: 1000.0
   pct_change_plus_1: -3.94
   pct_change_minus_1: 4.16
   duration_estimate_pct: -4.05

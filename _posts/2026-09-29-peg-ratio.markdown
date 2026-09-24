@@ -69,7 +69,9 @@ wildly unstable number. This is exactly the failure mode PEG is known for:
 it leans entirely on one growth figure, and a single unusually slow (or
 unusually fast) year can make an otherwise reasonable P/E look absurd, or an
 otherwise expensive one look cheap. Professional use of PEG typically
-substitutes a multi-year CAGR or a forward growth estimate instead of one
+substitutes a multi-year CAGR (compound annual growth rate — the steady
+yearly rate that would take you from the starting figure to the ending one)
+or a forward growth estimate instead of one
 year's number — this series used a single year deliberately, to make that
 weakness visible rather than hide it.
 
@@ -93,7 +95,7 @@ weakness visible rather than hide it.
 **Takeaway:** PEG asks whether a P/E is justified by growth — useful when
 growth is measured sensibly, but as Britannia's single weak year here shows,
 it can produce a wildly misleading number if the growth figure behind it
-isn't examined first. That's a fitting closing note for this whole
-series: every ratio in it is a starting question, not a final verdict, and
+isn't examined first. That's a fitting closing note for this
+module: every ratio in it is a starting question, not a final verdict, and
 the moment any one of them is trusted blindly is the moment it stops being
 useful.

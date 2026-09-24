@@ -33,7 +33,7 @@ The difference is entirely in how you get in and out:
 | Account needed | Folio with the fund house | Demat + trading account |
 | Costs | Expense ratio only | Expense ratio (usually lower) **plus** brokerage, bid-ask spread, demat charges |
 | SIP | Native | Only if your broker builds one for you |
-| Dividends | Growth plan reinvests automatically | Many ETFs **pay out**; you receive cash |
+| Dividends | Growth plan reinvests automatically | Some ETFs **pay out** occasionally (this one did once, in February 2021); you get cash, with no growth-plan option to reinvest |
 
 The [first post in this series]({% post_url 2026-10-18-what-a-mutual-fund-is %})
 explained that NAV is what one unit's share of the portfolio is worth. For an

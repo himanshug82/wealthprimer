@@ -58,8 +58,8 @@ Two things follow immediately.
 
 **Capital gains are the complicated one.** Dividends and interest simply join
 your income. Capital gains have their own rates, their own holding-period
-rules, their own exemption, and their own loss rules — which is why seven of
-the nine posts in this series are about them.
+rules, their own exemption, and their own loss rules — which is why most of
+the posts in this series are about them.
 
 **Nothing is taxed until you sell.** A holding that has quadrupled owes
 nothing while you hold it. Tax on capital gains is triggered by the
@@ -113,6 +113,13 @@ itself — not on the gain. It's small, it's easy to forget, and it makes a
 12.5% headline rate an effective 13%. Most published examples omit it; the
 worked examples in this series include it.
 
+Above ₹50 lakh of total income a **surcharge** is added to the tax too, before
+the cess. On equity capital gains (short- and long-term), other long-term
+gains and dividends it's capped at 15%; on other income it runs higher — up to 25% in the new regime
+(the cap the Finance Act 2023 set) and 37% in the old one. That's the position
+for {{ r.financial_year }}. The worked examples in this series assume income
+below ₹50 lakh, so no surcharge.
+
 The next post is entirely about that
 holding-period line, because a day either side of it changes the rate by
 7.5 percentage points.
@@ -122,7 +129,8 @@ holding-period line, because a day either side of it changes the rate by
 Debt mutual funds no longer work the way most older articles describe. Units
 of specified debt funds bought **on or after 1 April 2023** are taxed at your
 slab rate regardless of how long you hold them — no long-term rate, no
-indexation benefit, no reward for patience.
+indexation benefit, no reward for patience. And indexation is gone for older
+units too, on any sale from 23 July 2024.
 
 If you're reading an article that mentions indexation on debt funds, check
 its date. That's post four in this series.
@@ -134,15 +142,22 @@ its date. That's post four in this series.
 | Short-term vs long-term | The holding-period line, and why the date matters |
 | Equity and equity funds | The {{ r.equity_stcg_pct }}%/{{ r.equity_ltcg_pct }}% rates, the exemption, grandfathering |
 | Debt, gold and the rest | Where the slab rate applies instead |
-| Dividends and interest | Slab rate, and TDS arriving before you file |
+| Dividends and interest | Slab rate, and TDS (tax deducted at source) arriving before you file |
 | Losses | Set-off, carry-forward, and harvesting |
-| SIPs and FIFO | Why one redemption is many separate tax lots |
-| ELSS and deductions | What survived the move to the new regime |
-| Before you file | Reading a capital gains statement against your AIS |
+| SIPs and FIFO | Why one SIP (systematic investment plan) redemption is many separate tax lots, taken first in, first out (FIFO) |
+| ELSS and deductions | Tax-saving equity funds (equity-linked savings schemes), and what survived the move to the new regime |
+| Before you file | Reading a capital gains statement against your AIS (Annual Information Statement) |
+| ESOPs and RSUs | Why employee stock options and restricted stock units are taxed as salary first, then as a gain |
+| Buybacks | Three regimes in three years, and which one your buyback falls under |
+| F&O | Why futures and options (derivatives) trading is business income, not capital gains |
+| Foreign stocks | US shares, dividends withheld abroad, and Schedule FA disclosure |
 
-Every worked example runs on the real fund NAV history used in the
-[Mutual Funds series]({% post_url 2026-10-18-what-a-mutual-fund-is %}), so the tax arithmetic sits on
-actual prices rather than round invented numbers.
+Every worked example in the first nine posts runs on the real NAV (net asset
+value, a fund's per-unit price) history used in the
+[Mutual Funds series]({% post_url 2026-10-18-what-a-mutual-fund-is %}) — UTI Nifty 50 Index
+Fund (regular plan, growth), NAVs from AMFI (the Association of Mutual Funds in
+India), as of 31 March 2026, used for illustration only — so the tax
+arithmetic sits on actual prices rather than round invented numbers.
 
 ## Common mistakes
 
@@ -151,8 +166,9 @@ actual prices rather than round invented numbers.
 - **Using one holding-period rule for everything.** Twelve months for listed
   equity, twenty-four for most other assets. Applying the equity rule to gold
   or property gets it wrong.
-- **Reading pre-2023 articles on debt funds.** Indexation on debt funds
-  bought from April 2023 no longer exists.
+- **Reading pre-2023 articles on debt funds.** Indexation on debt funds is
+  gone for any sale on or after 23 July 2024, whenever you bought; units
+  bought from April 2023 have no long-term rate at all.
 - **Forgetting the cess.** It's {{ r.cess_pct }}% on the tax, not on the gain — small, but it
   makes 12.5% into 13%.
 - **Assuming the fund deducts tax for you.** For resident investors, mutual

@@ -51,7 +51,7 @@ From the [case study](/case-study/): IPO price ₹{{ d.price }}, FY25 post-issue
 | P/E (post-issue) | {{ d.pe }}x |
 | **Earnings yield** = {{ d.eps_diluted }} / {{ d.price }} | **{{ d.earnings_yield_pct }}%** |
 | **FCF yield** = {{ d.fcf_lakh }} / {% include inr.html n=d.market_cap_lakh %} | **{{ d.fcf_yield_pct }}%** |
-| 10-year G-Sec yield (illustrative, from the WACC post) | {{ y.gsec_yield_pct }}% |
+| 10-year G-Sec (Government of India bond) yield (illustrative, from the WACC post) | {{ y.gsec_yield_pct }}% |
 
 ## Worked example: Britannia Industries
 

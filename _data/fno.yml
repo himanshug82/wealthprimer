@@ -1,34 +1,26 @@
 # SEBI's own studies on how individual traders actually do in the equity
 # derivatives (F&O) segment. Used by the F&O reality-check post.
 #
-# ── VERIFY BEFORE PUBLISHING ────────────────────────────────────────────────
-# These figures were taken from SEBI's press release and from secondary
-# reporting of the August 2026 study, NOT from the primary PDF — sebi.gov.in
-# serves the study PDFs behind a landing page that automated fetches could not
-# get through. Same situation as the tax series and incometaxindia.gov.in.
+# ── VERIFIED AGAINST SEBI'S PRIMARY PDFs (24 Sep 2026) ───────────────────────
+# Every figure below was checked against the two August 2026 SEBI study PDFs
+# (fetched directly from sebi.gov.in/sebi_data/attachdocs/aug-2026/):
+#   Profitability study:  https://www.sebi.gov.in/sebi_data/attachdocs/aug-2026/1787233506209.pdf
+#   Behaviour study:      https://www.sebi.gov.in/sebi_data/attachdocs/aug-2026/1787233601328.pdf
+# All existing values matched; none were changed. Page refs are to those PDFs.
 #
-# Before this post goes out, open the two Aug 2026 studies and check every
-# number marked `corroborated: false` below against the actual PDF:
-#   https://www.sebi.gov.in/reports-and-statistics/research/aug-2026/study-profitability-of-individual-traders-in-the-equity-derivatives-segment-fy25-fy26-_103835.html
-#   https://www.sebi.gov.in/reports-and-statistics/research/aug-2026/study-trading-behaviour-of-individual-traders-in-the-equity-derivatives-segment-fy25-fy26-_103836.html
-#
-# KNOWN CONFLICT: sources disagree on how many individual traders participated
-# in FY26 — Business Standard's headline says ~87.5 lakh (8.75 million), while
-# the corplawupdates.in summary of SEBI press release 50/2026 says 98.1 lakh
-# (FY25) falling to 78.6 lakh (FY26). Probably two different definitions (all
-# participants vs. active). The post deliberately does NOT quote a participant
-# count until the PDF settles it.
-#
-# CORROBORATION UPDATE (24 Sep 2026): a second, independent secondary source —
-# corplawupdates.in's itemised summary of SEBI press release 50/2026 (20 Aug
-# 2026) — agrees with every figure in `fy26_unverified` below (avg loss/trader
-# ~Rs 1.17 lakh, FY25 aggregate loss ~Rs 1.12 lakh crore, FY26 transaction
-# costs Rs 25,000 crore and ~Rs 1 lakh crore over FY22-FY26, ~90% repeat losers,
-# ~97% options buyers / ~2% sellers, the portfolio-size split). So these are no
-# longer single-source; they are "two independent secondary sources agree,
-# primary PDF still unread". The same source adds: 99% of FPI/proprietary
-# profits came from algo entities; 0DTE contracts were 59% of index-options
-# turnover; sub-Rs 1 lakh portfolios were ~78% of traders and ~70% of losses.
+# TRADER-COUNT CONFLICT, SETTLED: both numbers are SEBI's, on different bases.
+#   - 106.2 lakh (FY25) -> 87.5 lakh (FY26): ALL active individual traders in
+#     the segment (profitability study, Executive Summary p.5; 87.71 lakh in
+#     the Table 2 population column).
+#   - 98.1 lakh (FY25) -> 78.6 lakh (FY26): the top-15-broker SAMPLE (~90% of
+#     individual traders) on which every P&L figure is computed (Table 2, p.14;
+#     s.6.22, p.45). ₹91,685 cr and the ₹1.17 lakh average loss are sample
+#     figures (91,685 cr / 78.6 lakh ≈ ₹1.17 lakh). SEBI notes full-population
+#     losses would be ~1.11x the sample figure (Chart 24 note, p.47).
+# If a post quotes a trader count next to a loss figure, use the sample count.
+# FY25 aggregate loss: SEBI says "a revised ₹1.12 lakh crore" (p.5; the table
+# on p.47 shows ₹1,11,788 cr) — revised up from the ~₹1,05,603 cr in the July
+# 2025 study because the broker sample grew from 13 to 15.
 # ────────────────────────────────────────────────────────────────────────────
 
 sources:
@@ -44,6 +36,12 @@ sources:
     label: "SEBI, Profitability of Individual Traders in the Equity Derivatives Segment (FY25–FY26)"
     date: "20 August 2026"
     url: "https://www.sebi.gov.in/reports-and-statistics/research/aug-2026/study-profitability-of-individual-traders-in-the-equity-derivatives-segment-fy25-fy26-_103835.html"
+    pdf: "https://www.sebi.gov.in/sebi_data/attachdocs/aug-2026/1787233506209.pdf"
+  fy25_fy26_behaviour_study:
+    label: "SEBI, Trading Behaviour of Individual Traders in the Equity Derivatives Segment (FY25–FY26)"
+    date: "20 August 2026"
+    url: "https://www.sebi.gov.in/reports-and-statistics/research/aug-2026/study-trading-behaviour-of-individual-traders-in-the-equity-derivatives-segment-fy25-fy26-_103836.html"
+    pdf: "https://www.sebi.gov.in/sebi_data/attachdocs/aug-2026/1787233601328.pdf"
 
 # Headline figures, confirmed against SEBI's own press release page.
 fy22:
@@ -54,31 +52,42 @@ fy22_fy24:
   loss_pct: 93
   aggregate_loss_cr: 180000   # "exceed Rs 1.8 lakh crore" — press release headline
   corroborated: true          # verified on sebi.gov.in press release 37/2024
+  # NB: 93% is the share who lost over the three years COMBINED (cumulative),
+  # not a single-year rate.
+
+# Single-year loss shares from the Aug 2026 profitability study, s.6.23 (p.47).
+fy24:
+  loss_pct: 91.1
+  corroborated: true          # primary PDF
+fy25:
+  loss_pct: 90.9
+  corroborated: true          # primary PDF (Exec Summary p.5; s.6.23 p.47)
 
 fy26:
   loss_pct: 87.7
   aggregate_loss_cr: 91685
   options_share_of_losses_pct: 92
-  corroborated: true          # two independent secondary sources agree
+  corroborated: true          # primary PDF (Exec Summary p.5-6)
 
-# Figures NOT yet checked against the primary PDF, but now agreed by two
-# independent secondary sources (see CORROBORATION UPDATE above). Still verify
-# against the PDF when it becomes fetchable. The post leans on the corroborated
-# block above for anything load-bearing.
+# Block name kept for backward compatibility (posts read `fy26_unverified.*`).
+# As of 24 Sep 2026 EVERY value here has been checked against the primary PDFs
+# (P = profitability study, B = behaviour study; page numbers of the PDF).
 fy26_unverified:
-  avg_loss_per_trader: 117000      # two secondary sources agree
-  aggregate_loss_cr_fy25: 112000
-  transaction_costs_cr_fy26: 25000
-  transaction_costs_cr_fy22_fy26: 100000
-  repeat_loser_pct: 90            # of those who lost two years running
-  options_buyers_pct: 97
-  options_sellers_pct: 2
-  loss_pct_zero_equity_holdings: 93
-  loss_pct_over_10cr_holdings: 58
-  sub_1lakh_portfolio_share_of_traders_pct: 78   # two secondary sources agree
-  sub_1lakh_portfolio_share_of_losses_pct: 70
-  algo_share_of_fpi_prop_profits_pct: 99
-  traders_avg_loss_exceeds_avg_gain_pct: 79   # share of traders whose average losing trade exceeded their average winning one (behaviour study)
-  zero_dte_share_of_index_options_turnover_pct: 59
-  active_traders_lakh_fy25: 98.1     # DEFINITION CONFLICT with the 87.5 lakh figure — do not quote in posts
-  active_traders_lakh_fy26: 78.6
+  avg_loss_per_trader: 117000      # P p.5 (sample basis: ₹1,16,654 in s.6 tables)
+  aggregate_loss_cr_fy25: 112000   # P p.5 "revised ₹1.12 lakh crore" (₹1,11,788 cr, p.47)
+  transaction_costs_cr_fy26: 25000 # P p.7 (about ₹25,000 cr in each of FY25 and FY26)
+  transaction_costs_cr_fy22_fy26: 100000  # P p.7 ("about ₹1 lakh crore")
+  repeat_loser_pct: 90            # B p.7: "90–92%" of those who lost in each of the preceding two years lost again
+  options_buyers_pct: 97          # B p.17: 93% only-buyers + 4% majorly-buyers (FY26)
+  options_sellers_pct: 2          # B p.17: ~2% majorly options sellers
+  loss_pct_zero_equity_holdings: 93   # P s.6.47: no holdings or portfolio < ₹50,000
+  loss_pct_over_10cr_holdings: 58     # P s.6.47
+  sub_1lakh_portfolio_share_of_traders_pct: 78   # P p.8 (FY25–FY26)
+  sub_1lakh_portfolio_share_of_losses_pct: 70    # P p.8
+  algo_share_of_fpi_prop_profits_pct: 99         # P p.6
+  traders_avg_loss_exceeds_avg_gain_pct: 79   # B p.7: 78.7% of traders with both profitable and losing QUARTERS had a higher average loss per losing quarter than average gain per profitable quarter (quarters, not trades)
+  zero_dte_share_of_index_options_turnover_pct: 59   # P p.7 (FY26; 70% in FY25)
+  active_traders_lakh_fy25: 98.1     # P Table 2 / s.6.22: top-15-broker SAMPLE (basis of all P&L figures)
+  active_traders_lakh_fy26: 78.6     # same sample basis
+  all_active_traders_lakh_fy25: 106.2   # P p.5: all active individual traders in the segment
+  all_active_traders_lakh_fy26: 87.5    # P p.5

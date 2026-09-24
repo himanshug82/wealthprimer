@@ -23,8 +23,9 @@ instead: what would it actually cost to buy every share **and** take on
 every rupee of debt, netting off the cash already sitting on the balance
 sheet?
 
-That total price tag is **Enterprise Value (EV)**. Comparing it to
-[EBITDA]({% post_url 2026-08-28-ebitda-margin %}) — rather than EPS or PAT — makes EV/EBITDA useful for
+That total price tag is **enterprise value (EV)**. Comparing it to
+[EBITDA]({% post_url 2026-08-28-ebitda-margin %}) (earnings before interest, tax, depreciation and
+amortisation) — rather than EPS or PAT — makes EV/EBITDA useful for
 comparing companies with very different debt levels: unlike P/E, it isn't
 distorted by how much of the company is funded by equity versus borrowing.
 
@@ -46,6 +47,12 @@ EV/EBITDA = EV / EBITDA
 | EBITDA (FY25) | 441 |
 | **EV/EBITDA** | **{{ db_ev_ebitda }}x** |
 
+Where does the ₹{% include inr.html n=listing.post_ipo_cash %} lakh of cash come from? It's the
+₹{% include inr.html n=site.data.case_study.balance_sheet.FY25.cash %} lakh Desi Bites held at the end of FY25, plus the
+₹{% include inr.html n=listing.ipo_proceeds %} lakh it raised in the IPO, assumed to still be sitting in the
+bank. The ₹{{ listing.post_ipo_debt }} lakh of debt is the same FY25 term loan — the IPO money
+wasn't used to pay it down.
+
 ## Worked example: Britannia Industries
 
 From Britannia Industries' [audited consolidated FY25 results](https://media.britannia.co.in/Audited_Consolidated_Financial_Results_31_03_2025_74a7c03628.pdf)
@@ -61,10 +68,10 @@ illustration only.
 | EBITDA (FY25) | {{ bi_is25.ebitda }} |
 | **EV/EBITDA** | **{{ bi_ev_ebitda }}x** |
 
-Both multiples are rich — Britannia's very much so — consistent with
-everything the [Leverage module]({% post_url 2026-09-18-net-debt-ebitda %}) already showed: a company genuinely being
-priced for quality, low risk, and negative net debt, not one being valued
-cheaply relative to peers.
+Britannia's multiple is far higher than Desi Bites'. Mechanically, a high
+EV/EBITDA means the market is paying for expected quality or growth — and
+the [Leverage module]({% post_url 2026-09-18-net-debt-ebitda %}) already showed Britannia carries negative net debt.
+Whether this particular multiple is justified isn't assessed here.
 
 ## Common mistakes
 

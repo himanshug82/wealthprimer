@@ -16,9 +16,10 @@ term: "Book value per share"
 
 Every post so far has used Desi Bites Foods Pvt Ltd — a *private* company,
 with no share price at all. That changes here. Shortly after FY25 closed,
-Desi Bites converted to a public limited company and listed on {{ listing.exchange }}
-on {{ listing.listing_date }}, as **{{ listing.company_name_post_listing }}** — raising fresh growth
-capital by issuing {{ listing.fresh_issue_shares_lakh }} lakh new shares at an IPO price of
+Desi Bites converted to a public limited company and listed on the main board
+of the NSE and BSE on {{ listing.listing_date }}, as **{{ listing.company_name_post_listing }}**. It raised fresh growth
+capital through an IPO (initial public offering — the first time a company
+sells shares to the public), issuing {{ listing.fresh_issue_shares_lakh }} lakh new shares at an IPO price of
 ₹{% include inr.html n=listing.ipo_price %}, on top of the {{ listing.pre_ipo_shares_lakh }} lakh shares that already existed. That's a
 fictional event, invented for this series — but it's what makes the next
 eight posts (Valuation & Market) possible, since valuation ratios need a
@@ -26,7 +27,7 @@ share price to work with.
 
 ## What book value per share means
 
-**Book Value per Share (BVPS)** is the simplest of the valuation-adjacent
+**Book value per share (BVPS)** is the simplest of the valuation-adjacent
 ratios, because it doesn't need a share price at all — just the [balance
 sheet]({% post_url 2026-08-20-reading-a-balance-sheet %}) and the share count. It answers: if the company sold every
 asset at its accounting value and paid off every liability, how much would

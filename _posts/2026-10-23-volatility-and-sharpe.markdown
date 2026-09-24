@@ -84,7 +84,15 @@ Sharpe =    ──────────────────────�
 
 The risk-free rate belongs there because you could have earned it without any
 volatility at all. Only the *excess* over that is compensation for taking
-risk. In India, the 10-year government bond yield is the usual proxy.
+risk. Which rate counts as "risk-free" is a choice. Indian fund factsheets
+mostly use a short rate — typically the FBIL Overnight MIBOR (the overnight
+interbank lending rate, published by Financial Benchmarks India), as on the
+factsheet date; Tata, Nippon India and PPFAS factsheets from 2025–26 all state
+it this way. Others use the 10-year government bond yield. The {{ v.risk_free_pct }}% here
+is a round, illustrative figure: roughly the 10-year G-Sec (Government
+Security) yield in mid-2025, the same number the
+[WACC post]({% post_url 2026-10-03-wacc-cost-of-capital %}) used. Because the
+choice moves the answer, the code further down tries a few.
 
 For this fund:
 

@@ -41,18 +41,24 @@ The [WACC post]({% post_url 2026-10-03-wacc-cost-of-capital %}) worked out that
 Desi Bites' capital costs about {{ ca.hurdle_wacc }}% a year. Any use of cash that earns
 less than that destroys value — even if it makes profit go up, even if it
 makes the company bigger. The [ROCE post]({% post_url 2026-09-03-roce %}) made the
-same point from the other side: ROCE above WACC is value creation, ROCE
-below it isn't. Capital allocation is that comparison, applied one decision
-at a time.
+same point from the other side, with one adjustment: WACC is an after-tax
+cost, so compare it with an after-tax return, ROCE × (1 − tax rate). Every
+return in the table below is after tax for that reason. Capital allocation
+is that comparison, applied one decision at a time.
 
 ## Desi Bites' ₹1,600 lakh
 
 In June 2025 Desi Bites raised ₹{% include inr.html n=ca.ipo_proceeds %} lakh in its IPO. Twelve months
 later, here is where it went and what each use is earning:
 
-| Use of cash | ₹ lakh | Expected return | Clears {{ ca.hurdle_wacc }}%? |
-|---|---:|---:|---|{% for o in ca.options %}
-| **{{ o.option }}** | {% if o.amount %}{{ o.amount }}{% else %}—{% endif %} | {% if o.expected_return_pct %}{{ o.expected_return_pct }}%{% else %}n/a{% endif %} — {{ o.basis }} | {% if o.expected_return_pct == nil %}—{% elsif o.expected_return_pct > ca.hurdle_wacc %}**Yes**{% else %}No{% endif %} |{% endfor %}
+| Use of cash | Done in FY26 (₹ lakh) | Still open (₹ lakh) | Expected return, after tax | Clears {{ ca.hurdle_wacc }}%? |
+|---|---:|---:|---:|---|{% for o in ca.options %}
+| **{{ o.option }}** | {% if o.done_fy26 %}{% include inr.html n=o.done_fy26 %}{% else %}—{% endif %} | {% if o.available %}{{ o.available }}{% else %}—{% endif %} | {% if o.expected_return_pct %}{{ o.expected_return_pct }}%{% else %}n/a{% endif %} — {{ o.basis }} | {% if o.expected_return_pct == nil %}—{% elsif o.expected_return_pct > ca.hurdle_wacc %}**Yes**{% else %}No{% endif %} |{% endfor %}
+
+"Done" is money actually put to that use in FY26 (for cash, the rise in the
+bank balance). "Still open" is how much more could have gone there: the
+term loan still outstanding, and the part of the prospectus's capex budget
+not yet spent.
 
 Actually deployed in FY26: ₹{% include inr.html n=ca.deployed_fy26.acquisition %} lakh on the acquisition and ₹{% include inr.html n=ca.deployed_fy26.capex_from_proceeds %} lakh on
 capex; ₹{% include inr.html n=ca.deployed_fy26.still_in_cash %} lakh more sits in the bank than a year ago. Each row is worth
@@ -76,11 +82,11 @@ arithmetic.
 
 **Organic capex.** The strongest case on paper: if a new production line
 earns what the existing business earns — a [ROCE]({% post_url 2026-09-03-roce %}) of
-{{ cs.ratios.FY25.roce }}% — it clears the hurdle by a mile. The catch is the *if*. The first
+{{ cs.ratios.FY25.roce }}%, or {{ ca.options[2].expected_return_pct }}% after tax — it clears the hurdle by a mile. The catch is the *if*. The first
 line was built into demand the founders knew personally. The second line
 needs demand that doesn't yet exist, in states the brand hasn't reached.
 Incremental returns are usually lower than average returns, and the
-prospectus promised ₹700 lakh of this; ₹{{ ca.deployed_fy26.capex_from_proceeds }} lakh was spent.
+prospectus promised ₹{{ c2.drhp.objects[0].amount }} lakh of this; ₹{{ ca.deployed_fy26.capex_from_proceeds }} lakh was spent.
 
 **The acquisition.** Judged on year one, {{ ca.acquisition_case.year1_roic }}%. Judged on management's
 case — Chatpata's revenue growing 15% with margins converging toward Desi
@@ -88,10 +94,11 @@ Bites' own — about {{ ca.acquisition_case.management_case_roic }}%. Still belo
 [goodwill post]({% post_url 2026-11-17-goodwill-exceptional-items-and-other-income %})
 explained why acquisitions look like this: the seller knows the business
 better than the buyer and sets the price accordingly, and the buyer
-justifies the premium with synergies that are real about half the time.
-The empirical record of acquisitions destroying acquirer value is one of
-the most robust findings in corporate finance. It doesn't mean never; it
-means the burden of proof sits with the deal.
+justifies the premium with synergies that often fail to arrive in full.
+Studies of acquirer share-price returns generally find an average around
+zero or negative, with wide dispersion: some deals work very well, many
+don't. It doesn't mean never; it means the burden of proof sits with the
+deal.
 
 **Dividends.** A dividend earns the shareholder whatever *they* do with
 it, so it can't be scored on the company's hurdle. Its logic is the

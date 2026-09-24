@@ -70,10 +70,13 @@ customers and sells through inventory faster than it pays its own
 suppliers — meaning, on average, the company is holding onto its
 suppliers' money even *after* it has already turned that stock into cash
 from a customer. It is effectively financed by its supply chain rather than
-the other way around. This isn't an accounting trick; it's what genuine
-scale and brand bargaining power in FMCG looks like in the numbers, and it's
-a pattern you'll see repeated at other large, well-established consumer
-companies.
+the other way around. That's consistent with the bargaining power that
+scale brings in FMCG (fast-moving consumer goods), and it's a pattern you'll
+often see at large, well-established consumer companies — but check the
+notes before taking it at face value (mistake #3 below). One more caveat: the
+inventory and creditor days above use a materials-only COGS for Britannia
+(see the [gross margin post]({% post_url 2026-08-26-gross-margin %})), which makes creditor days in
+particular look longer than they are, so treat the exact figure as rough.
 
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>

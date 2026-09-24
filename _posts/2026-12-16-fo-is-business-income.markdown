@@ -12,6 +12,7 @@ term: "Business income (F&O turnover)"
 {% assign v = t2.verification %}
 {% assign f = t2.fno %}
 {% assign r = site.data.tax.rates %}
+{% assign sebi = site.data.fno.sources.fy25_fy26_study %}
 
 *Rules described here apply to **{{ v.financial_year }}**, verified against public
 sources in {{ v.verified_on }}. Educational content, not tax advice.*
@@ -58,7 +59,8 @@ you earned — but not from your pocket money (salary).
 ## Turnover is not what you traded
 
 For a business, "turnover" usually means sales. For F&O the tax rules — via
-the accountants' body's guidance note — define it as:
+the guidance note on tax audits from ICAI (the Institute of Chartered
+Accountants of India) — define it as:
 
 ```
 F&O turnover = sum of the ABSOLUTE profit or loss on each closed trade
@@ -76,8 +78,10 @@ your income and it is not taxed.
 ## Worked example: a trader with the average loss
 
 Take a trader whose net result for the year equals the average individual
-loss SEBI reported for FY26 — **₹{% include inr.html n=f.avg_loss %}** — made up of five
-trades:
+loss SEBI (the Securities and Exchange Board of India) reported for FY 2025-26 —
+**₹{% include inr.html n=f.avg_loss %}**, from its
+[study of individual traders' profitability]({{ sebi.url }}) published
+{{ sebi.date }} — made up of five trades:
 
 | Trade | Result | Adds to turnover |
 |---|---:|---:|{% for t in f.trades %}
@@ -114,8 +118,9 @@ not against interest or capital gains.
 
 Two conditions, both absolute:
 
-1. **File ITR-3.** Business income needs the business return form, not the
-   ITR-2 you'd use for capital gains alone. Salary plus F&O means ITR-3.
+1. **File ITR-3.** Business income needs the business return form (ITR
+   stands for income tax return), not the ITR-2 you'd use for capital gains
+   alone. Salary plus F&O means ITR-3.
 2. **File it by the due date.** A loss reported in a late return cannot be
    carried forward. The set-off in the same year survives; the
    ₹{% include inr.html n=f.carried_forward %} for future years is lost.
@@ -155,9 +160,9 @@ trading, and fees to a SEBI-registered adviser. Keep invoices. None of this is
 available against capital gains, which is one of the few respects in which
 the business classification helps.
 
-Worth knowing: STT on futures and options sales rose from 1 April 2026 (one
-source reports futures from 0.02% to 0.05% of traded price and options
-premium from 0.10% to 0.15%). It's a deductible cost, and it's also the
+Worth knowing: STT on futures and options sales rose from 1 April 2026, a
+Budget 2026 change — futures from 0.02% to 0.05% of the traded price, and
+options premium from 0.1% to 0.15%. It's a deductible cost, and it's also the
 "house's cut" the [F&O post]({% post_url 2026-11-05-what-the-fo-numbers-actually-say %}) described —
 paid on every trade, win or lose.
 

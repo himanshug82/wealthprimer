@@ -203,7 +203,7 @@ share_data:
 # invented IPO terms — not derived from any real listing.
 listing:
   company_name_post_listing: "Desi Bites Foods Ltd"
-  exchange: "NSE Emerge (SME platform, illustrative)"
+  exchange: "NSE and BSE (main board, illustrative)"
   listing_date: "15 June 2025"
   ipo_price: 640                       # Rs per share
   fresh_issue_shares_lakh: 2.5         # new shares issued, raising growth capital
@@ -272,7 +272,7 @@ dcf:
     nwc_pct_revenue: 8.68         # FY25 NWC (211 + 199 - 185 = 225) / revenue 2592
     terminal_growth: 5.0          # perpetual nominal growth, below nominal GDP
   wacc:
-    risk_free_rate: 6.5           # ~10-year G-Sec yield, mid-2025, illustrative
+    risk_free_rate: 6.5           # illustrative round figure; 10-year G-Sec was in the low-to-mid 6s through 2025
     equity_risk_premium: 7.0      # illustrative India ERP
     beta: 1.10                    # illustrative small-cap packaged-foods beta
     cost_of_equity: 14.20         # 6.5 + 1.10 x 7.0 (CAPM)
@@ -283,6 +283,7 @@ dcf:
     weight_equity: 95.2
     weight_debt: 4.8
     wacc: 13.91
+    wacc_unrounded: 13.914       # 95.24% x 14.20 + 4.76% x 8.1975 = 13.9142; carried in formulas/code so displayed discount factors reproduce
   # Per-year forecast, Rs Lakh. fcff = ebit x (1 - tax) + depreciation
   # - capex - change in net working capital.
   forecast:
@@ -358,8 +359,8 @@ dcf:
       pv: 219.8
   result:
     pv_forecast_fcff: 902.5       # sum of the five pv figures above
-    terminal_value: 4966.1        # FY30 FCFF 421.6 x 1.05 / (0.1391 - 0.05)
-    pv_terminal_value: 2589.0     # 4966.1 x 0.5213
+    terminal_value: 4966.1        # FY30 FCFF 421.6 x 1.05 / (0.13914 - 0.05)
+    pv_terminal_value: 2589.0     # 4966.1 / 1.13914^5 (factor 0.52133 unrounded)
     terminal_pct_of_ev: 74.2      # pv_terminal_value / enterprise_value
     enterprise_value: 3491.5      # 902.5 + 2589.0
     net_debt: -1480               # post_ipo_debt 400 - post_ipo_cash 1880 (net CASH)

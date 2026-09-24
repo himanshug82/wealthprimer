@@ -42,6 +42,10 @@ Volatility drag (approximation):
 where σ is the standard deviation of the periodic returns.
 ```
 
+σ (sigma) is the
+[standard deviation]({% post_url 2026-10-23-volatility-and-sharpe %}) — a
+measure of how widely returns swing around their own average.
+
 ## Part one: the recovery table
 
 ![Gain needed to break even against loss from peak]({{ '/assets/charts/risk-recovery.svg' | relative_url }})
@@ -58,8 +62,8 @@ This is why the [drawdown post]({% post_url 2026-10-22-drawdown %}) made such a
 point of recovery *time*. When {{ d.fund_name }} fell {{ a.gfc_fall_pct }}% from
 its January 2008 peak, getting back did not require a {{ a.gfc_fall_pct | abs }}% rise.
 It required **+{{ a.gfc_gain_needed_pct }}%** — which is why the wait was nearly
-six years, even though the two financial years right after the crash were,
-by any standard, spectacular.
+six years, even though the year right after the crash was spectacular
+(+{{ a.fy10_pct }}% in FY10).
 
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>

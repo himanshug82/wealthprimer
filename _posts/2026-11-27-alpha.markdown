@@ -9,6 +9,7 @@ term: "Alpha"
 ---
 
 {% assign a = site.data.jargon_m6.alpha %}
+{% assign bb = site.data.jargon_m6.beta %}
 
 ## What alpha means
 
@@ -22,7 +23,8 @@ There are two very different things people mean by it:
 
 1. **Raw excess return** — the investment's return minus the benchmark's.
    Simple, and usually what a factsheet or a headline means.
-2. **Jensen's alpha** — the return minus what CAPM says the investment
+2. **Jensen's alpha** — the return minus what CAPM (the Capital Asset
+   Pricing Model) says the investment
    *should* have earned, given its [beta]({% post_url 2026-11-26-beta %}).
    This is the one that deserves the name.
 
@@ -47,7 +49,8 @@ what a beta of 2 is supposed to do.
 ## Worked example: Britannia, two years
 
 Daily data, {{ a.window }}, from the same series as the [beta post]({% post_url 2026-11-26-beta %}).
-Risk-free rate {{ a.risk_free_pct }}%, the illustrative G-Sec yield used throughout the
+Risk-free rate {{ a.risk_free_pct }}%, the illustrative G-Sec (Government of India
+bond) yield used throughout the
 [WACC post]({% post_url 2026-10-03-wacc-cost-of-capital %}). Historical data, for
 illustration only.
 
@@ -68,9 +71,19 @@ of the "outperformance" is just low beta doing what low beta does in a weak
 market. Reverse the market and the same low beta would have made Britannia
 look like a laggard.
 
+One honest caveat on the inputs. Both returns here are *price-only*:
+Britannia's share price and the Nifty 50 price index, with dividends left
+out, because a total return index series isn't in this post's data. That's
+the very mistake the next section warns about. In the raw comparison the two
+missing dividend streams partly cancel. In the CAPM line they don't: the
+risk-free rate is a full yield, but the market return it's compared with is
+missing its dividends, so the market's excess return is understated. Treat
+the alpha figure as rough — it illustrates the method, not a precise
+measurement.
+
 Neither figure says anything about Britannia's prospects. It's two years of
 price history, and the [beta post]({% post_url 2026-11-26-beta %}) already
-showed that the beta itself moved from 0.29 to 0.55 across those two years —
+showed that the beta itself moved from {{ bb.fy25.beta }} to {{ bb.fy26.beta }} across those two years —
 so the alpha number inherits every bit of that instability.
 
 ## The fake alpha in every index fund factsheet
@@ -129,7 +142,11 @@ the benchmark forgot to count are another.
   the standard error is usually larger than the estimate.
 - **Assuming past alpha persists.** The consistency of the index fund's
   "alpha" above is the exception — it's a structural artefact. Genuine
-  manager alpha has been very hard to show persisting in any market's data.
+  manager alpha is hard to find at all: S&P's
+  [SPIVA India Year-End 2025 scorecard](https://www.spglobal.com/spdji/en/documents/spiva/spiva-india-scorecard-year-end-2025.pdf)
+  found about 76% of Indian active large-cap funds trailed their benchmark
+  over the ten years to December 2025. Finding it *and* expecting it to
+  continue is harder still.
 
 **Takeaway:** Alpha is what's left of a return after the benchmark *and* the
 beta are accounted for. Britannia's {{ a.raw_excess_pp }}-point lead over a weak Nifty shrinks

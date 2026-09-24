@@ -27,9 +27,11 @@ arrive later, in lumps, and the bank has to *estimate* them in advance. The
 estimate is called a **provision**, and the loans it is estimating about are
 **non-performing assets (NPAs)**.
 
-## From a missed EMI to a loss
+## From a missed EMI (equated monthly instalment) to a loss
 
-In India the classification is rule-based (RBI's income recognition and asset
+When a borrower misses an EMI — the fixed monthly loan repayment — the
+clock starts. In India the classification is rule-based (the Reserve Bank of
+India's, or RBI's, income recognition and asset
 classification norms), which is what makes it comparable across banks:
 
 ![NPA lifecycle]({{ '/assets/charts/bank-npa-lifecycle.svg' | relative_url }})

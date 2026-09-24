@@ -267,6 +267,11 @@ correlation:
   n_asset_rho: 0.7
   n_asset_sigma: 20
   rho_floor_vol_pct: 16.7
+  eight_asset_vol_pct: 17.2
+  two_funds_daily_rho: 0.77
+  two_funds_monthly_rho: 0.84
+  two_funds_window_start: '2013-05-28'
+  two_funds_window_end: '2026-03-31'
 sequence_of_returns:
   years: 20
   first_fy: FY07

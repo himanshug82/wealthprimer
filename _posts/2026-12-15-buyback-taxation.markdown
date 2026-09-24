@@ -96,18 +96,21 @@ of shares for nothing.
 | Deemed dividend (the full consideration) | ₹{% include inr.html n=rb.deemed_dividend %} |
 | **Tax at 30% + cess** | **₹{% include inr.html n=rb.tax_with_cess %}** |
 | of which TDS deducted by the company at 10% | ₹{% include inr.html n=rb.tds %} |
-| Capital loss created (cost, sold for "nil") | ₹{% include inr.html n=rb.capital_loss %} |
-| Worth of that loss if set off against short-term gains at {{ r.equity_stcg_pct }}% | ₹{% include inr.html n=rb.loss_worth_against_stcg %} |
-| Worth if set off against long-term gains at {{ r.equity_ltcg_pct }}% | ₹{% include inr.html n=rb.loss_worth_against_ltcg %} |
+| Capital loss created (cost, sold for "nil") — short-term, since the shares were held under 12 months | ₹{% include inr.html n=rb.capital_loss %} |
+| Worth of that loss if set off against short-term gains at {{ r.equity_stcg_pct }}% + cess | ₹{% include inr.html n=rb.loss_worth_against_stcg %} |
+| Worth if set off against long-term gains at {{ r.equity_ltcg_pct }}% + cess | ₹{% include inr.html n=rb.loss_worth_against_ltcg %} |
 | **Net cost, if the loss could be fully used against STCG** | **₹{% include inr.html n=rb.net_cost_if_loss_used_against_stcg %}** |
 
 Read that again: a ₹{% include inr.html n=b.gain %} gain, and a ₹{% include inr.html n=rb.tax_with_cess %} tax bill
 up front. The capital loss softens it only if you *have* capital gains to set
 it against (or will within the [eight-year carry-forward]({% post_url 2026-11-01-losses-set-off-and-harvesting %})).
 A retiree with no other gains simply paid slab-rate tax on their own capital
-coming back. This is the regime that made tendering shares in a buyback a
-bad idea for almost every individual, and it is why buyback announcements
-went quiet in 2025.
+coming back. The loss's holding period matters too: our shareholder bought
+in June 2025, so any Regime B buyback came within twelve months and the loss
+is short-term, usable against any capital gain. Shares held longer would have
+produced a long-term loss, usable only against long-term gains. For most
+individuals in higher slabs, this regime made tendering in a buyback far
+less attractive than before.
 
 ### Regime C — {{ rc.period }}: a sale, taxed on the gain
 
@@ -151,9 +154,11 @@ same ₹{% include inr.html n=b.gain %} gain a non-corporate promoter would pay 
 ## Why the date matters for your return
 
 A buyback is taxed by the regime in force **on the date the shares were
-bought back**, which is the date the company pays you — not the date of the
-announcement, and not the date you tendered. A buyback announced in March
-2026 and settled in April 2026 is a Regime C event.
+bought back**, which on the current reading is the date the company pays you
+— not the date of the announcement, and not the date you tendered. On that
+reading, a buyback announced in March 2026 and settled in April 2026 is a
+Regime C event. For a buyback straddling the change, confirm the date with a
+professional.
 
 If you tendered shares in a Regime B buyback, your return for that year needs
 two entries that don't feel like they belong together: a dividend (the whole
@@ -169,7 +174,7 @@ company's payment and the department will expect to see it somewhere.
   forward eight years, and it is easy to miss because the "sale" had nil
   consideration.
 - **Using the announcement date to pick the regime.** The payout date
-  decides.
+  decides, on the current reading.
 - **Assuming the ₹{% include inr.html n=r.ltcg_annual_exemption %} exemption always applies under Regime C.** It
   applies to long-term gains on listed shares, once per year, across all your
   equity gains — and the sources describe buyback gains as taxed "under the

@@ -48,8 +48,10 @@ subtract non-operating investments. For most listed Indian companies the
 three-term version gets you almost all the way.
 
 Because EV represents the claims of *both* lenders and shareholders, it should
-be compared with profit measures that belong to both — EBIT, EBITDA, revenue —
-and never with PAT, which belongs to shareholders alone. That is the logic
+be compared with profit measures that belong to both — EBIT (earnings before
+interest and tax), EBITDA (the same, before depreciation and amortisation too),
+revenue — and never with PAT (profit after tax), which belongs to shareholders
+alone. That is the logic
 behind pairing EV with EBITDA and market cap with earnings.
 
 ## Worked example: Desi Bites Foods Ltd, at listing

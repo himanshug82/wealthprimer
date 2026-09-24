@@ -40,7 +40,7 @@ Indian mutual funds hand us a perfect controlled experiment. Since January
 | Plan | What it is |
 |---|---|
 | **Regular** | Bought through a distributor, whose trail commission is built into the expense ratio |
-| **Direct** | Bought straight from the AMC — same fund, no commission |
+| **Direct** | Bought straight from the AMC (asset management company, the firm that runs the fund) — same fund, no commission |
 
 Same portfolio. Same fund manager. Same securities, bought and sold on the
 same days, in the same proportions. The **only** difference is the commission
@@ -174,8 +174,9 @@ for plan in ["nav_regular_growth", "nav_direct_growth"]:
 - **Holding regular plans by inertia.** Many people bought regular plans
   before direct existed, or without knowing the choice existed. Switching
   has tax consequences worth checking, but the ongoing cost is worth knowing.
-- **Assuming direct is automatically right.** Direct means no advice. If
-  advice is what stops you selling at the bottom of a 60% drawdown, it may
+- **Assuming direct is automatically right.** Direct means no bundled
+  advice — if you want advice you pay for it separately (e.g. a fee-only
+  SEBI-registered Investment Adviser). If advice is what stops you selling at the bottom of a 60% drawdown, it may
   be the best money you spend — just pay for it knowingly.
 - **Comparing expense ratios across categories.** Index funds, active equity
   and debt funds have structurally different cost bases and different caps.

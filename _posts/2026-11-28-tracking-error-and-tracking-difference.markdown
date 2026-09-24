@@ -28,8 +28,14 @@ error (it lags the index by exactly its expense ratio, like clockwork), or a
 small difference with large error (it wobbles around the index and happens to
 end up close).
 
-Factsheets tend to quote tracking error, because it is almost always a small,
-reassuring number. Tracking difference is the one to look at first.
+Both numbers are now published. SEBI's
+[passive funds circular of 23 May 2022](https://www.sebi.gov.in/legal/circulars/may-2022/circular-on-development-of-passive-funds_59098.html)
+(SEBI/HO/IMD/DOF2/P/CIR/2022/69) caps tracking error for equity index funds
+and ETFs (exchange-traded funds) at 2% (measured on one year of daily data), requires it to be
+disclosed daily, and requires tracking difference to be disclosed monthly
+over 1, 3, 5 and 10 years. Tracking error is still the one that tends to get
+quoted, because it's almost always a small, reassuring number. Tracking
+difference is the one to look at first.
 
 ## The formula
 
@@ -76,12 +82,19 @@ index.
 {{ t.pri_caveat }}
 
 The [alpha post]({% post_url 2026-11-27-alpha %}) made the same point from the other direction.
-Against the **total return index** — which is what SEBI has required funds to
+Against the **total return index (TRI)** — which is what SEBI has required funds to
 benchmark against since February 2018 — both columns would flip to small
 *negative* numbers: roughly minus the expense ratio, minus a little friction
 from cash held for redemptions and the timing of dividend reinvestment. That
 negative number is the true cost of indexing, and it's what you should be
 comparing across index funds.
+
+To be clear about this post's own numbers: tracking difference should be
+measured against the TRI, and every figure above is against the price index,
+because a TRI series isn't in this post's data. The table shows the method
+and the size of the dividend distortion — not the fund's true cost of
+indexing. For that, use the TRI-based tracking difference the fund house
+publishes each month.
 
 One thing the table does show correctly, because the benchmark error is the
 same for both plans: the **direct plan's difference is {{ t.direct_minus_regular_pp }} pp a year
@@ -109,8 +122,9 @@ straight your line was.
   cost. Two funds with identical tracking error can differ by half a point a
   year in tracking difference, and that half point compounds.
 - **Reading a positive tracking difference as skill.** For an index fund
-  against a price index, it's dividends. Check whether the benchmark is PRI or
-  TRI before reading any sign.
+  against a price index, it's dividends. Check whether the benchmark is the
+  PRI (price return index, no dividends) or the TRI (total return index,
+  dividends reinvested) before reading any sign.
 - **Comparing tracking errors computed on different frequencies.** Daily and
   monthly figures differ ({{ t.tracking_error_daily_annualised_pct }}% vs {{ t.tracking_error_monthly_annualised_pct }}% here) and
   neither is "wrong" — but they aren't interchangeable.

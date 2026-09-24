@@ -51,8 +51,8 @@ strongly, weakly, or not at all, and they can hold in one market and fail in
 another. Assumption 1 in particular is a strong form of market efficiency
 that sits oddly beside the whole enterprise: if the price already reflects
 everything, it's not obvious why studying its past shape should help. That
-tension is real, it's unresolved, and the final post in this
-series returns to it properly.
+tension is real, it's unresolved, and the limitations post near the
+end of this series returns to it properly.
 
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
@@ -86,9 +86,10 @@ analysing:
 Britannia (NSE: BRITANNIA), daily closing price, {{ ds.as_of }}. Source:
 [Yahoo Finance]({{ ds.source_url }}). Historical data, for illustration only.
 
-Two years, {{ ds.bars }} trading days. The stock peaked at ₹{% include inr.html n=ta.price_summary.period_high %} on
-{{ ta.major_decline.peak_date }}, fell {{ ta.major_decline.decline_pct }}% to ₹{% include inr.html n=ta.price_summary.period_low %} by {{ ta.major_decline.trough_date }},
-then spent a year recovering.
+{% assign fall = ta.major_decline.decline_close_pct | abs %}Two years, {{ ds.bars }} trading days. The stock closed at a peak of ₹{% include inr.html n=ta.major_decline.peak_close %} on
+{{ ta.major_decline.peak_close_date }}, then fell {{ fall }}% to a closing low of ₹{% include inr.html n=ta.major_decline.trough_close %} on {{ ta.major_decline.trough_close_date }},
+then spent a year recovering. (Measured from the intraday high to the intraday
+low, the fall was a little bigger — the next few posts use those extremes.)
 
 A fundamental analyst looks at that and asks what changed about the business.
 (Something did — the [gross margin post]({% post_url 2026-08-26-gross-margin %}) covered the input-cost
@@ -138,7 +139,7 @@ print(f"{len(df)} bars, {df.index[0].date()} to {df.index[-1].date()}")
 ```
 
 Five columns — open, high, low, close, volume — and every indicator in the
-next nine posts is built from those five numbers and nothing else. That's
+rest of this series is built from those five numbers and nothing else. That's
 worth sitting with. The entire apparatus of technical analysis, all the
 indicators with impressive names, comes out of five columns of arithmetic.
 
@@ -151,16 +152,21 @@ indicators with impressive names, comes out of five columns of arithmetic.
 | Trend lines | Drawing, and breaking, a trend |
 | Moving averages | Smoothing noise to see direction |
 | Volume | The conviction behind a move |
-| RSI | Measuring momentum, and its limits |
-| MACD | Two averages, and the whipsaw problem |
+| RSI (relative strength index) | Measuring momentum, and its limits |
+| MACD (moving average convergence divergence) | Two averages, and the whipsaw problem |
 | Chart patterns | Formations, and the pattern that wasn't |
 | Limitations | The honest reckoning |
+| Bollinger Bands and ATR (average true range) | Measuring volatility, not direction |
+| Relative strength | The stock against its index |
+| Multiple timeframes | Weekly trend, daily signal |
+| Backtesting | Testing a rule honestly |
 
-That last post isn't a disclaimer bolted on at the end. Technical analysis
+The last four are a second module, added after the first ten. The limitations
+post isn't a disclaimer bolted on at the end. Technical analysis
 has real, well-documented weaknesses — hindsight bias, ambiguity about what
 counts as a signal, and the awkward fact that most published tests of most
 indicators are unimpressive. A series that showed you eight indicators and
-skipped the ninth post would be selling something.
+skipped the reckoning would be selling something.
 
 ## Common mistakes
 

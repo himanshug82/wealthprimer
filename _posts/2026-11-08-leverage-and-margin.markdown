@@ -120,10 +120,12 @@ not 20%. At this rate and holding period, a fall of about
 
 ## Futures: the same thing with a smaller deposit
 
-A futures contract on an index or a stock typically asks for a margin of
-somewhere around {{ lv.futures_margin_pct }}% of the contract's value — the
-figure varies by contract and by day, set by the exchange from the underlying's
-volatility. That's roughly {{ 100 | divided_by: lv.futures_margin_pct | round: 1 }}× leverage
+Futures margins are set by the exchange from the underlying's volatility, so
+they vary by contract and by day. Index futures have typically asked for
+somewhere in the low-to-mid teens as a percentage of the contract's value;
+single-stock futures usually ask for more — check NSE's published margin
+files for current figures. Take {{ lv.futures_margin_pct }}% as an illustrative
+index-futures number. That's roughly {{ 100 | divided_by: lv.futures_margin_pct | round: 1 }}× leverage
 on the margin you put down.
 
 Which means the wipeout line from the formula sits at about

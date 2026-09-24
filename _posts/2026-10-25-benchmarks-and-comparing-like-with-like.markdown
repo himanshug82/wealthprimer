@@ -59,7 +59,8 @@ The answer is dividends.
 
 A fund holding those fifty companies actually *receives* the dividends. They
 land in the fund and raise its NAV. So a fund measured against a price index
-gets credited with the entire dividend yield of the market as apparent
+gets credited with the entire
+[dividend yield]({% post_url 2026-09-28-dividend-yield %}) of the market as apparent
 outperformance — for doing nothing at all.
 
 Roughly:
@@ -68,7 +69,7 @@ Roughly:
 Fund return ≈ Index price return
             + dividend yield          ← the fund receives these
             − expense ratio           ← the fund pays this
-            − tracking error          ← imperfect replication
+            − other costs & cash drag ← part of the tracking difference
 ```
 
 The {{ b.fund_minus_pri_pp }} pp gap above is the Nifty's dividend yield, net of this fund's

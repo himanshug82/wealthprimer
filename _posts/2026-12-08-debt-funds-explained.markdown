@@ -43,7 +43,9 @@ reprice; a fund holding 15-year government bonds has a great deal.
 Daily NAV change  ≈  Accrual (YTM ÷ 365)  −  Modified duration × Change in yield
 ```
 
-The first term is steady and positive. The second is noisy and can be large
+YTM is the [yield to maturity]({% post_url 2026-11-29-yield-to-maturity %}) —
+the annual return the fund's bonds lock in if held to maturity. The first term
+is steady and positive. The second is noisy and can be large
 in either direction. Every debt fund is a mix of the two, and the SEBI
 category tells you roughly what mix.
 
@@ -96,7 +98,8 @@ data, for illustration only.
 
 Read the columns left to right. The overnight fund had **no** down days at all
 in nearly eight years — pure accrual, nothing to reprice. The money market
-fund had a handful, the worst being a {{ mm.worst_day_pct }}% day in the March 2020 panic, and it
+fund had a few dozen ({{ mm.negative_days }} of {% include inr.html n=mm.days %} days — about one day in
+{{ mm.days | times: 1.0 | divided_by: mm.negative_days | round }}), the worst being a {{ mm.worst_day_pct }}% day in the March 2020 panic, and it
 was back at its high within {{ mm.max_drawdown.days_to_recover }} days. The gilt fund fell on
 {{ g.negative_days_pct }}% of days — roughly two in five — because it is mostly a mark-to-market
 instrument wearing a debt fund's label.
@@ -112,8 +115,9 @@ below.
 
 The same three funds through five interest-rate episodes. A blank cell means
 the fund did not yet carry its present mandate for that window (the
-overnight scheme took its current form in May 2018 under SEBI's
-recategorisation, and its earlier history reflects a different portfolio).
+overnight scheme became an overnight fund around May 2018, during SEBI's
+recategorisation — that's where its NAV series changes character — and its
+earlier history reflects a different portfolio).
 
 | Episode | Window | Overnight | Money market | Gilt |
 |---|---|---:|---:|---:|{% for e in dbt.episodes %}
@@ -206,5 +210,5 @@ the series used here were spliced.
 **Takeaway:** A debt fund earns two ways — interest accruing daily, and bonds
 repricing as rates move — and duration decides which one you feel. Across
 eight years the overnight fund never had a down day, while the gilt fund fell
-on two days in five and once lost 16% peak to trough. Same fund house, same
+on two days in five — and over its full history once lost 16% peak to trough. Same fund house, same
 word on the label, completely different instruments.

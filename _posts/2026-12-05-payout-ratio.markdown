@@ -11,6 +11,8 @@ term: "Payout ratio"
 {% assign p = site.data.jargon_m6.payout %}
 {% assign b = p.britannia %}
 {% assign d = p.desi_bites %}
+{% assign bi_dps_decl = site.data.real_company.market.dividend_per_share_fy25_declared %}
+{% assign bi_payout_decl = bi_dps_decl | times: 100.0 | divided_by: b.eps | round: 1 %}
 
 ## What the payout ratio means
 
@@ -29,6 +31,8 @@ questions. Yield is about you. Payout is about the company's strategy.
 
 ```
 Payout ratio     =  Dividends / PAT   =  DPS / EPS
+
+  PAT = profit after tax; DPS = dividend per share; EPS = earnings per share
 Retention ratio  =  1 − Payout ratio
 
 Sustainable growth rate  ≈  ROE × Retention ratio
@@ -66,40 +70,49 @@ company *could* have grown without the IPO, and why the
 
 ## Worked example: Britannia Industries, FY25
 
-DPS from the [dividend yield post]({% post_url 2026-09-28-dividend-yield %})
-(₹{{ b.dps }}, paid during FY25); EPS and ROE from the
+DPS from the [dividend yield post]({% post_url 2026-09-28-dividend-yield %}):
+₹{{ b.dps }}, the dividend actually *paid* during FY25 (in August 2024). Strictly,
+that was the final dividend for FY24, so this is a trailing ratio — the
+dividend paid in FY25 divided by FY25 EPS. EPS and ROE from the
 [audited FY25 results](https://media.britannia.co.in/Audited_Consolidated_Financial_Results_31_03_2025_74a7c03628.pdf)
 (year ended 31 March 2025). For illustration only.
 
 | | |
 |---|---:|
-| DPS | ₹{{ b.dps }} |
-| EPS | ₹{{ b.eps }} |
+| DPS paid in FY25 (trailing) | ₹{{ b.dps }} |
+| FY25 EPS | ₹{{ b.eps }} |
 | **Payout ratio** = {{ b.dps }} / {{ b.eps }} | **{{ b.payout_pct }}%** |
 | Retention ratio | {{ b.retention_pct }}% |
 | FY25 ROE | {{ b.roe_pct }}% |
 | **Sustainable growth** = {{ b.roe_pct }}% × {{ b.retention_pct }}% | **≈ {{ b.sustainable_growth_pct }}%** |
 
-Britannia pays out four-fifths of what it earns. That is a mature-company
-pattern: the business generates far more cash than it can reinvest at its
-(very high) ROE, so most of it goes back to shareholders. Its sustainable
-growth rate is about {{ b.sustainable_growth_pct }}% — not because it *can't* grow faster, but because
-it has chosen to return capital rather than retain it. A company with a 52%
-ROE that retained everything could in theory grow equity at 52% a year; the
-fact that Britannia doesn't tells you management sees no way to deploy that
-much capital at that return. Which is honest of them.
+The dividend declared *for* FY25 — ₹{{ bi_dps_decl | round }} a share, paid in August 2025 (per
+[stockanalysis.com's dividend history](https://stockanalysis.com/quote/nse/BRITANNIA/dividend/)) —
+gives a payout of {{ bi_payout_decl }}% on the same EPS. Matching the dividend to the
+year it was declared for is the tidier method; the two land close here.
+
+Britannia pays out about four-fifths of what it earns. That pattern is
+common in mature companies, where the business often throws off more cash
+than it can reinvest at a similar return. Its sustainable growth rate is
+about {{ b.sustainable_growth_pct }}% — a consequence of returning most of the profit rather than
+retaining it. A company with a 52% ROE that retained everything could in
+theory grow equity at 52% a year. Why a particular board picks a particular
+payout isn't something these numbers can tell you.
 
 This is also the arithmetic behind a point the
 [PEG post]({% post_url 2026-09-29-peg-ratio %}) stumbled on: Britannia's FY25
-profit growth was 1.8%. With an 81% payout, single-digit growth is the
-structural expectation, not an anomaly.
+profit growth was 1.8%. With an 81% payout, retained profit alone funds
+growth of roughly {{ b.sustainable_growth_pct }}% a year — so modest growth is what the arithmetic
+points to, even if 1.8% sits well below that. The rest of that year's gap
+was the cost squeeze covered in the
+[operating leverage post]({% post_url 2026-12-03-operating-leverage %}), not the payout.
 
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
 
-You earn ₹100 from your lemonade stand. You give ₹80 to your parents (who
-lent you the money to start) and keep ₹20 to buy more lemons. Your payout is
-80%.
+You and your parents own your lemonade stand half each. It earns ₹100. You
+pay out ₹80 — ₹40 to your parents, who own half the stand, and ₹40 to you —
+and keep ₹20 in the stand to buy more lemons. The stand's payout is 80%.
 
 Next summer, the extra lemons you bought with ₹20 earn you a bit more. If you
 had kept all ₹100, you'd have five times as many extra lemons — and grow a

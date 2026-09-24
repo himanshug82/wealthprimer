@@ -59,11 +59,19 @@ Used here only to illustrate the calculation, not as a signal to act on.
 | **Gross Profit** | **{{ bi25.gross_profit }}** |
 | **Gross Margin** | **{{ site.data.real_company.ratios.FY25.gross_margin }}%** |
 
+One caveat: Britannia's filing doesn't report a "COGS" line. We built it from
+materials consumed, plus goods bought for resale, adjusted for the change in
+inventory. That's a materials-only COGS. The wages and power it takes to turn
+flour into biscuits sit lower down, in employee and other expenses. So this
+gross margin runs higher than one that included those conversion costs —
+fine for tracking Britannia against itself, but check the definition before
+comparing it with another company's number.
+
 For context, the same math on FY24 (year ended 31 March 2024, same filing)
 gives a gross margin of {{ bi24.gross_profit | times: 100.0 | divided_by: bi24.revenue | round: 1 }}%
 — a noticeably richer margin than FY25's {{ site.data.real_company.ratios.FY25.gross_margin }}%. That
-compression in a single year is a real, reportable event (rising input costs,
-in Britannia's case) — exactly the kind of thing gross margin is good at
+compression in a single year is a real, reportable event (it can come, for
+example, from rising input costs) — exactly the kind of thing gross margin is good at
 surfacing early, well before it necessarily shows up in the bottom line.
 
 <details markdown="1">

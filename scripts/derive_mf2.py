@@ -212,6 +212,8 @@ for key, s, label in [("overnight", overnight, "UTI Overnight Fund"),
         "cagr_pct": round(c * 100, 2),
         "volatility_pct": round(ann_vol(s, DEBT_START, END) * 100, 2),
         "negative_days_pct": round(float((daily < 0).mean() * 100), 1),
+        "negative_days": int((daily < 0).sum()),
+        "days": int(len(daily)),
         "worst_day_pct": round(float(daily.min() * 100), 2),
         "best_day_pct": round(float(daily.max() * 100), 2),
         "max_drawdown": max_drawdown(s, DEBT_START, END),
@@ -302,6 +304,13 @@ for key, s in [("etf", etf), ("index_fund_direct", idx_dir), ("index_fund_regula
 # 11 Sep 2020). These are REGULATORY DEFINITIONS, typed here so the post
 # renders them from one place; they are not derived from the CSVs. Market-cap
 # ranks are by AMFI's half-yearly list of average full market capitalisation.
+# Consolidated in SEBI's Master Circular for Mutual Funds (27 June 2024, clause
+# 2.6), which SEBI's circular HO/24/13/15(2)2026-IMD-RAC4/I/5764/2026 of
+# 26 Feb 2026 superseded: value, contra, dividend yield and focused funds now
+# need at least 80% in equity (was 65%); a fund house may run both a value and
+# a contra fund if their portfolios overlap by no more than 50%; solution-
+# oriented schemes were discontinued. Checked against press summaries of the
+# Feb 2026 circular (Upstox, ICICI Direct, Taxmann) in Sept 2026, not the PDF.
 # VERIFY against the current circular before relying on any threshold.
 categories_equity = [
     {"category": "Large cap", "rule": "At least 80% of assets in large-cap stocks", "universe": "Stocks ranked 1st to 100th by market cap"},
@@ -310,8 +319,13 @@ categories_equity = [
     {"category": "Small cap", "rule": "At least 65% in small-cap stocks", "universe": "Rank 251st onwards"},
     {"category": "Multi cap", "rule": "At least 75% in equity, with at least 25% EACH in large, mid and small caps", "universe": "All three bands, forced"},
     {"category": "Flexi cap", "rule": "At least 65% in equity; no minimum in any band", "universe": "Anywhere the manager likes"},
-    {"category": "Index fund / ETF", "rule": "At least 95% in the securities of the index it tracks", "universe": "Whatever the index holds"},
-    {"category": "ELSS", "rule": "At least 80% in equity, 3-year lock-in, tax deduction under the old regime", "universe": "Any"},
+    {"category": "Focused", "rule": "At most 30 stocks; at least 80% in equity", "universe": "Any band"},
+    {"category": "Value", "rule": "At least 80% in equity, following a value strategy", "universe": "Any band"},
+    {"category": "Contra", "rule": "At least 80% in equity, following a contrarian strategy; a fund house running both value and contra must keep their overlap at or below 50%", "universe": "Any band"},
+    {"category": "Dividend yield", "rule": "At least 80% in equity, mostly dividend-paying stocks", "universe": "Any band"},
+    {"category": "Sectoral / thematic", "rule": "At least 80% in one sector or one theme", "universe": "That sector or theme only"},
+    {"category": "ELSS (equity-linked savings scheme)", "rule": "At least 80% in equity, 3-year lock-in, tax deduction under the old regime", "universe": "Any"},
+    {"category": "Index fund / ETF (exchange-traded fund), filed under \"Other schemes\"", "rule": "At least 95% in the securities of the index it tracks", "universe": "Whatever the index holds"},
 ]
 categories_debt = [
     {"category": "Overnight", "rule": "Securities maturing in 1 day", "risk": "Rate: ~none. Credit: ~none."},
@@ -326,9 +340,9 @@ categories_debt = [
     {"category": "Dynamic bond", "rule": "Any duration; manager decides", "risk": "Rate: whatever the manager is betting on."},
     {"category": "Corporate bond", "rule": "At least 80% in AA+ and above rated corporate bonds", "risk": "Credit: low to moderate."},
     {"category": "Credit risk", "rule": "At least 65% in AA and below rated corporate bonds", "risk": "Credit: HIGH by design."},
-    {"category": "Banking & PSU", "rule": "At least 80% in debt of banks, PSUs, public financial institutions", "risk": "Credit: low."},
+    {"category": "Banking & PSU", "rule": "At least 80% in debt of banks, PSUs (public sector undertakings) and public financial institutions", "risk": "Credit: low."},
     {"category": "Gilt", "rule": "At least 80% in government securities, any maturity", "risk": "Rate: usually high. Credit: sovereign."},
-    {"category": "Gilt with 10-year constant duration", "rule": "At least 80% in G-secs, Macaulay duration held at 10 years", "risk": "Rate: high and constant."},
+    {"category": "Gilt with 10-year constant duration", "rule": "At least 80% in G-secs (government securities), Macaulay duration held at 10 years", "risk": "Rate: high and constant."},
     {"category": "Floater", "rule": "At least 65% in floating-rate instruments", "risk": "Rate: low by construction."},
 ]
 
@@ -507,6 +521,8 @@ out = {
     },
     "categories": {
         "circular": "SEBI/HO/IMD/DF3/CIR/P/2017/114, 6 October 2017 (categorisation and rationalisation of mutual fund schemes), as amended",
+        "master_circular": "Master Circular for Mutual Funds, 27 June 2024 (clause 2.6)",
+        "revision_2026": "HO/24/13/15(2)2026-IMD-RAC4/I/5764/2026, 26 February 2026",
         "equity": categories_equity,
         "debt": categories_debt,
         "note": "Regulatory definitions typed from the circular, not derived from data. Verify thresholds against the current text before relying on them.",

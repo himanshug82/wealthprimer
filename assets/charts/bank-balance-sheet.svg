@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" width="720" height="420" role="img" aria-labelledby="t d">
+<title id="t">A bank's balance sheet</title>
+<desc id="d">Stacked funding and asset columns for HDFC Bank at 31 March 2025.</desc>
+<rect width="720" height="420" fill="#ffffff"/>
+<text x="30.0" y="24.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#0b0b0b" font-weight="600" text-anchor="start">HDFC Bank, 31 March 2025: where the money comes from, and where it sits (₹ crore)</text>
+<text x="60.0" y="40.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#52514e" font-weight="600" text-anchor="start">Liabilities: funding</text>
+<rect x="60.0" y="50.0" width="250.0" height="208.3" rx="2" fill="#184f95" stroke="#ffffff" stroke-width="1.2"/>
+<text x="68.0" y="158.1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#ffffff" font-weight="normal" text-anchor="start">Deposits  27,14,715</text>
+<rect x="60.0" y="258.3" width="250.0" height="42.0" rx="2" fill="#cde2fb" stroke="#ffffff" stroke-width="1.2"/>
+<text x="68.0" y="283.3" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#0b0b0b" font-weight="normal" text-anchor="start">Borrowings  5,47,931</text>
+<rect x="60.0" y="300.3" width="250.0" height="11.2" rx="2" fill="#e8f1fc" stroke="#ffffff" stroke-width="1.2"/>
+<text x="318.0" y="309.9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10" fill="#52514e" font-weight="normal" text-anchor="start">Other liabilities  1,46,129</text>
+<rect x="60.0" y="311.5" width="250.0" height="38.2" rx="2" fill="#2e7d5b" stroke="#ffffff" stroke-width="1.2"/>
+<text x="68.0" y="334.6" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#ffffff" font-weight="normal" text-anchor="start">Shareholders' equity  4,97,619</text>
+<text x="400.0" y="40.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#52514e" font-weight="600" text-anchor="start">Assets: what it's lent out as</text>
+<rect x="400.0" y="50.0" width="250.0" height="201.0" rx="2" fill="#184f95" stroke="#ffffff" stroke-width="1.2"/>
+<text x="408.0" y="154.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#ffffff" font-weight="normal" text-anchor="start">Advances (loans)  26,19,609</text>
+<rect x="400.0" y="251.0" width="250.0" height="64.2" rx="2" fill="#cde2fb" stroke="#ffffff" stroke-width="1.2"/>
+<text x="408.0" y="287.1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#0b0b0b" font-weight="normal" text-anchor="start">Investments  8,36,360</text>
+<rect x="400.0" y="315.2" width="250.0" height="11.1" rx="2" fill="#e8f1fc" stroke="#ffffff" stroke-width="1.2"/>
+<text x="658.0" y="324.7" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10" fill="#52514e" font-weight="normal" text-anchor="start">Cash &amp; RBI balances  1,44,355</text>
+<rect x="400.0" y="326.2" width="250.0" height="23.8" rx="2" fill="#f1f1f1" stroke="#ffffff" stroke-width="1.2"/>
+<text x="408.0" y="342.1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#0b0b0b" font-weight="normal" text-anchor="start">Other assets  3,09,876</text>
+<text x="30.0" y="380.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#52514e" font-weight="normal" text-anchor="start">Equity is 12.7% of the balance sheet; deposits are 83.2% of funding. A 'debt-to-equity' of 7 would be alarming for a</text>
+<text x="30.0" y="394.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#52514e" font-weight="normal" text-anchor="start">factory and is simply what a bank is. Source: results for the year ended 31 Mar 2025 (Form 6-K exhibit, 21 Apr 2025).</text>
+</svg>

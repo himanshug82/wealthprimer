@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 330" width="760" height="330" role="img" aria-labelledby="t d">
+<title id="t">NPA lifecycle</title>
+<desc id="d">Stages from standard asset to loss asset, and gross NPA less provisions equals net NPA for HDFC Bank FY25.</desc>
+<rect width="760" height="330" fill="#ffffff"/>
+<text x="30.0" y="24.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#0b0b0b" font-weight="600" text-anchor="start">From a missed EMI to net NPA (HDFC Bank, 31 March 2025, ₹ crore)</text>
+<rect x="30.0" y="50.0" width="130.0" height="54.0" rx="6" fill="#e8f1fc"/>
+<text x="95.0" y="72.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#0b0b0b" font-weight="600" text-anchor="middle">Standard</text>
+<text x="95.0" y="90.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10" fill="#52514e" font-weight="normal" text-anchor="middle">paying on time</text>
+<path d="M 162.0 77 L 174.0 77" stroke="#52514e" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="176.0" y="50.0" width="130.0" height="54.0" rx="6" fill="#cde2fb"/>
+<text x="241.0" y="72.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#0b0b0b" font-weight="600" text-anchor="middle">SMA-0/1/2</text>
+<text x="241.0" y="90.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10" fill="#52514e" font-weight="normal" text-anchor="middle">1–90 days overdue</text>
+<path d="M 308.0 77 L 320.0 77" stroke="#52514e" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="322.0" y="50.0" width="130.0" height="54.0" rx="6" fill="#e0b0ad"/>
+<text x="387.0" y="72.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#0b0b0b" font-weight="600" text-anchor="middle">Sub-standard</text>
+<text x="387.0" y="90.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10" fill="#52514e" font-weight="normal" text-anchor="middle">NPA ≤ 12 months</text>
+<path d="M 454.0 77 L 466.0 77" stroke="#52514e" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="468.0" y="50.0" width="130.0" height="54.0" rx="6" fill="#e0b0ad"/>
+<text x="533.0" y="72.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#0b0b0b" font-weight="600" text-anchor="middle">Doubtful</text>
+<text x="533.0" y="90.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10" fill="#52514e" font-weight="normal" text-anchor="middle">NPA &gt; 12 months</text>
+<path d="M 600.0 77 L 612.0 77" stroke="#52514e" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="614.0" y="50.0" width="130.0" height="54.0" rx="6" fill="#b3403a"/>
+<text x="679.0" y="72.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#ffffff" font-weight="600" text-anchor="middle">Loss</text>
+<text x="679.0" y="90.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10" fill="#ffffff" font-weight="normal" text-anchor="middle">unrecoverable</text>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#52514e"/></marker></defs>
+<line x1="30" y1="122" x2="730" y2="122" stroke="#d8d8d8"/>
+<rect x="60.0" y="150.0" width="120.0" height="110.0" rx="3" fill="#e0b0ad"/>
+<text x="120.0" y="144.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#0b0b0b" font-weight="normal" text-anchor="middle">35,223</text>
+<text x="120.0" y="276.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#52514e" font-weight="normal" text-anchor="middle">Gross NPA</text>
+<rect x="220.0" y="185.4" width="120.0" height="74.6" rx="3" fill="#9ec9b5"/>
+<text x="280.0" y="179.4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#0b0b0b" font-weight="normal" text-anchor="middle">23,902</text>
+<text x="280.0" y="276.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#52514e" font-weight="normal" text-anchor="middle">− Provisions held</text>
+<rect x="380.0" y="224.6" width="120.0" height="35.4" rx="3" fill="#b3403a"/>
+<text x="440.0" y="218.6" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#0b0b0b" font-weight="normal" text-anchor="middle">11,320</text>
+<text x="440.0" y="276.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#52514e" font-weight="normal" text-anchor="middle">= Net NPA</text>
+<text x="560.0" y="180.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#0b0b0b" font-weight="600" text-anchor="start">Gross NPA  1.33% of advances</text>
+<text x="560.0" y="202.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#0b0b0b" font-weight="600" text-anchor="start">Net NPA    0.43% of net advances</text>
+<text x="560.0" y="224.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#0b0b0b" font-weight="600" text-anchor="start">Provision coverage  67.9%</text>
+<text x="560.0" y="246.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#52514e" font-weight="normal" text-anchor="start">= provisions held ÷ gross NPA</text>
+<text x="30.0" y="304.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#52514e" font-weight="normal" text-anchor="start">Net NPA is what is left after the bank's own provisioning judgement — which is why two banks with the same gross NPA can report different net NPA.</text>
+</svg>

@@ -108,7 +108,7 @@ This is what "eight funds" usually buys: a portfolio close to the floor
 ## Worked example: Britannia and the Nifty 50
 
 Daily returns of Britannia (NSE: BRITANNIA) against the Nifty 50 price index,
-{{ c.window_start }} to {{ c.window_end }}, {{ c.days }} trading days.
+{{ c.window_start | date: "%-d %B %Y" }} to {{ c.window_end | date: "%-d %B %Y" }}, {{ c.days }} trading days.
 Sources: [Yahoo Finance, BRITANNIA.NS]({{ d.britannia_source_url }}) and
 [Yahoo Finance, ^NSEI]({{ d.nifty_source_url }}). Historical data, for
 illustration only.
@@ -119,8 +119,8 @@ illustration only.
 |---|---:|
 | Correlation, Britannia vs Nifty 50 | **{{ c.britannia_nifty_rho }}** |
 | Beta of Britannia to the Nifty 50 (see below) | {{ c.britannia_beta }} |
-| 60-day rolling correlation, lowest | {{ c.rolling_60d_min }} ({{ c.rolling_60d_min_date }}) |
-| 60-day rolling correlation, highest | {{ c.rolling_60d_max }} ({{ c.rolling_60d_max_date }}) |
+| 60-day rolling correlation, lowest | {{ c.rolling_60d_min | replace: "-", "−" }} ({{ c.rolling_60d_min_date | date: "%-d %B %Y" }}) |
+| 60-day rolling correlation, highest | {{ c.rolling_60d_max | replace: "-", "−" }} ({{ c.rolling_60d_max_date | date: "%-d %B %Y" }}) |
 | Britannia annualised volatility | {{ c.britannia_vol_pct }}% |
 | Nifty 50 annualised volatility | {{ c.nifty_vol_pct }}% |
 | Naive average of the two | {{ c.naive_average_vol_pct }}% |
@@ -138,7 +138,7 @@ First, a single FMCG (fast-moving consumer goods) stock and the broad index had 
 would guess for a Nifty 50 constituent. It moved on its own news (the FY25 margin
 compression the [gross margin post]({% post_url 2026-08-26-gross-margin %})
 discussed, for one) as much as on the market's. And the relationship wasn't stable: over 60-day
-windows it ranged from {{ c.rolling_60d_min }} to {{ c.rolling_60d_max }}.
+windows it ranged from {{ c.rolling_60d_min | replace: "-", "−" }} to {{ c.rolling_60d_max }}.
 Correlation is a description of a period, not a property of a stock.
 
 Second, look at what that did to a 50/50 mix. Averaging the two volatilities
@@ -161,14 +161,14 @@ Diversification is a question about *what moves together*, so the useful
 audit isn't "how many do I hold?" but:
 
 - Do my equity funds hold the same companies? (Overlap between large-cap
-  funds routinely exceeds half the portfolio.)
+  funds can exceed half the portfolio.)
 - Is everything I own priced off the same thing — Indian equity, Indian
   rates, the rupee?
 - What did all of it do in March 2020, together?
 
 The [drawdown post]({% post_url 2026-10-22-drawdown %}) showed a fifty-stock
 index falling 60%. Fifty holdings didn't prevent that, because fifty Indian
-large-caps in a crash have a correlation close to one. The things that would
+large-caps in a crash have a correlation much closer to one. The things that would
 have helped weren't more stocks. They were things that weren't stocks.
 
 ## Doing it in Python
@@ -203,7 +203,7 @@ your diversification is actually worth.
   ten, the count stops mattering. What you add matters.
 - **Assuming two funds with different names are different bets.** Check the
   holdings. Two large-cap funds are usually one position.
-- **Treating correlation as fixed.** Britannia's ran from {{ c.rolling_60d_min }}
+- **Treating correlation as fixed.** Britannia's ran from {{ c.rolling_60d_min | replace: "-", "−" }}
   to {{ c.rolling_60d_max }} within two years. And in a crash, correlations
   between risky assets rise toward one — precisely when you need them not to.
 - **Diversifying within one asset class and calling it done.** Fifty Indian
@@ -219,5 +219,5 @@ own fall at different times, and correlation is the number that measures
 {% assign ten = c.n_asset_table | where: "n", 10 | first %}that. Ten equity funds correlated at {{ c.n_asset_rho }} get you a portfolio only about
 15% less volatile than one ({{ ten.portfolio_vol_pct }}% vs {{ c.n_asset_sigma }}%), and no number of them gets
 below {{ c.rho_floor_vol_pct }}% — while a single stock correlated at
-0.28 with the index cut a 50/50 portfolio's bounce almost to the index's
+{{ c.britannia_nifty_rho }} with the index cut a 50/50 portfolio's bounce almost to the index's
 own. Count less; check what moves together.

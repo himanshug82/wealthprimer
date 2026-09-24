@@ -18,7 +18,7 @@ term: "Net interest income (NII)"
 
 ## The toolkit you've built doesn't fit
 
-Thirty-three ratio posts, a DuPont tree, a DCF — and if you open the results
+Dozens of ratio posts, a DuPont tree, a DCF — and if you open the results
 of a bank and try to use any of it, almost everything either returns a
 meaningless number or can't be computed at all.
 
@@ -38,12 +38,12 @@ out and there is nothing left to analyse.
 [Current ratio]({% post_url 2026-09-13-current-ratio %})? Almost all of a
 bank's liabilities are deposits its customers can withdraw at short notice,
 and most of its assets
-are loans due over years. Every bank on earth has a "current ratio" that
-would fail the test, by design.
+are loans due over years. Banks don't even split their balance sheet into
+current and non-current, so there's no current ratio to compute.
 [Inventory days]({% post_url 2026-09-07-inventory-days %})? There is no
 inventory.
 
-This module — six posts — is about the toolkit that replaces those. It uses
+This module is about the toolkit that replaces those. It uses
 HDFC Bank's FY25 standalone results the way the earlier posts used Britannia's:
 a real filing to compute from, not a company to form a view on.
 
@@ -56,7 +56,7 @@ difference. A bank does the same thing with money.
   and borrowings. It pays for that money — interest expended.
 - Its **product** is credit: loans and advances, plus a book of investments
   (largely government bonds). It is paid for that — interest earned.
-- The **gross profit** is the gap between the two: **Net Interest Income
+- The **gross profit** is the gap between the two: **net interest income
   (NII)**.
 
 ```
@@ -105,13 +105,18 @@ A bank is a thin-margin business operating on an enormous base, which is why
 a shift of half a percentage point in any one line matters so much.
 
 Second, look at the provisions row. It **halved** between FY24 and FY25
-({{ b.derived_fy25.provisions_change_pct }}%), while pre-provision profit grew
+(down {{ b.derived_fy25.provisions_change_pct | abs }}%), while pre-provision profit grew
 only {{ b.derived_fy25.ppop_growth_pct }}%. Profit after tax grew
 {{ b.derived_fy25.pat_growth_pct }}% — and a good part of that growth came
 from the provisions line, not the lending line. FY24's figure included a
 one-off ₹{% include inr.html n=f24.floating_provision %} crore "floating"
-provision the bank chose to make; FY25's didn't. The fourth post in this
-module is about exactly this: a bank's profit is partly a *decision*.
+provision the bank chose to make; FY25's didn't. Two other lines moved too.
+{% assign _t24 = f24.tax | round %}{% assign _t25 = f25.tax | round %}Tax roughly doubled, from ₹{% include inr.html n=_t24 %} crore to ₹{% include inr.html n=_t25 %} crore, because FY24's
+was held down by tax provisions written back. And FY24's other income
+included a one-off gain of about ₹7,340 crore from selling most of the
+bank's stake in HDFC Credila ([Business Standard, April 2024](https://www.business-standard.com/amp/companies/results/hdfc-bank-q4-results-profit-jumps-37-to-rs-16-512-crore-nii-up-24-5-124042000440_1.html)).
+The NPA post later in this module is about the provisions part: a bank's
+profit is partly a *decision*.
 
 ## The balance sheet is the business
 
@@ -134,7 +139,7 @@ Equity is {{ f25.equity_to_assets_pct }}% of the balance sheet. Put
 differently, every ₹1 of shareholders' money supports about
 ₹{{ f25.leverage_assets_to_equity }} of assets. That leverage is not a
 warning sign; it is the engine. The whole of banking regulation — the
-subject of the fifth post — exists to decide how thin that slice of equity is
+subject of the capital adequacy post later in this module — exists to decide how thin that slice of equity is
 allowed to get.
 
 And this is why the ordinary ratios fail. They were built for a company whose
@@ -180,20 +185,20 @@ lending businesses internally. Read it for proportions, not absolute size.)
 Here is the map for the rest of this module: for each ratio that breaks, the
 one that does the same job for a bank.
 
-| Manufacturer ratio | What it asked | Bank equivalent | Post |
+| Manufacturer ratio | What it asked | Bank equivalent | Covered in |
 |---|---|---|---|
-| [Gross margin]({% post_url 2026-08-26-gross-margin %}) | What survives the cost of inputs? | Net interest margin (NIM) | 2 |
-| Cost of raw material | How cheap are the inputs? | Cost of funds; CASA (current and savings account) ratio | 2, 3 |
-| [Debtor days]({% post_url 2026-09-08-debtor-days %}) | Are customers paying? | Gross and net NPA (non-performing assets), provision coverage, credit cost | 4 |
-| [Debt-to-equity]({% post_url 2026-09-15-debt-to-equity %}), [interest coverage]({% post_url 2026-09-17-interest-coverage %}) | Can it survive a shock? | Capital adequacy ratio (CAR), CET1 (common equity tier 1) | 5 |
-| [P/E]({% post_url 2026-09-24-price-to-earnings %}), EV/EBITDA | What is the market paying? | Price-to-book, anchored on ROE | 6 |
+| [Gross margin]({% post_url 2026-08-26-gross-margin %}) | What survives the cost of inputs? | Net interest margin (NIM) | The NIM post |
+| Cost of raw material | How cheap are the inputs? | Cost of funds; CASA (current and savings account) ratio | The NIM and CASA posts |
+| [Debtor days]({% post_url 2026-09-08-debtor-days %}) | Are customers paying? | Gross and net NPA (non-performing assets), provision coverage, credit cost | The NPA post |
+| [Debt-to-equity]({% post_url 2026-09-15-debt-to-equity %}), [interest coverage]({% post_url 2026-09-17-interest-coverage %}) | Can it survive a shock? | Capital adequacy ratio (CAR), CET1 (common equity tier 1) | The capital adequacy post |
+| [P/E]({% post_url 2026-09-24-price-to-earnings %}), EV/EBITDA | What is the market paying? | Price-to-book, anchored on ROE | The price-to-book post |
 
 Two old ratios survive nearly intact, because they were about the whole
 balance sheet to begin with: [ROA]({% post_url 2026-09-05-roa %}) and
 [ROE]({% post_url 2026-09-01-roe %}). For a bank, ROA is the honest measure
 of how well it lends and ROE is what leverage does to that — the
 [DuPont]({% post_url 2026-09-30-dupont-roe-decomposition %}) logic with the
-asset-turnover term collapsed to almost nothing. The sixth post leans on both.
+asset-turnover term collapsed to almost nothing. The price-to-book post leans on both.
 
 ## Common mistakes
 
@@ -211,7 +216,7 @@ asset-turnover term collapsed to almost nothing. The sixth post leans on both.
 - **Applying a DCF.** Free cash flow to a bank is close to meaningless —
   deposit growth shows up as "cash inflow" and lending as "outflow." Bank
   valuation runs through book value and return on equity, which is where this
-  module ends.
+  module is heading.
 
 **Takeaway:** A bank's liabilities are its raw material and its loans are its
 sales, so debt-to-equity, EBITDA and the current ratio describe nothing when

@@ -79,7 +79,7 @@ halve every multiple below.
 | ROE on closing equity (PAT / equity) | {{ v.roe_on_closing_equity_pct }}% |
 | P/E × ROE (identity check) | {{ v.pe_x_roe_check }}x |
 | Market capitalisation | ≈ ₹{{ mcap_lakh_cr }} lakh crore |
-| Dividend yield (₹{{ mk.dividend_per_share_fy25 }} FY25 dividend) | {{ v.dividend_yield_pct }}% |
+| Dividend yield (₹{% include inr.html n=mk.dividend_per_share_fy25 %} FY25 dividend) | {{ v.dividend_yield_pct }}% |
 
 The identity holds to rounding: {{ v.pe }} × {{ v.roe_on_closing_equity_pct }}%
 ≈ {{ v.pe_x_roe_check }}x. (Using ROE on *average* equity —
@@ -106,7 +106,7 @@ If a bank earns exactly its cost of equity (ROE = Ke), the fraction is 1 —
 it deserves to trade at book. Every point of ROE above Ke pushes the
 justified multiple up; every point of Ke above ROE pushes it below 1.
 
-Here is the formula applied to a generic bank earning a {{ v.justified_pb_illustrative_roe_pct }}% ROE — a round
+Here is the formula applied to a generic bank earning a {% include inr.html n=v.justified_pb_illustrative_roe_pct %}% ROE — a round
 number in the neighbourhood of large Indian private banks, not HDFC Bank's —
 with *illustrative* pairs of the two inputs nobody can observe. Growth is
 kept at or below the roughly 10% long-run nominal growth ceiling from the
@@ -149,7 +149,7 @@ ROE  =  ROA  ×  (Average assets / Average equity)
 This is the most useful two-line summary of any bank. ROA says how well it
 lends: HDFC Bank earned about ₹{{ d.roa_pct }} on every ₹100 of assets. Leverage says
 how many times that thin return is multiplied for shareholders: about
-{{ d.avg_leverage }} times. The [capital adequacy post]({% post_url 2026-11-24-capital-adequacy %})
+{% include inr.html n=d.avg_leverage %} times. The [capital adequacy post]({% post_url 2026-11-24-capital-adequacy %})
 is what caps the second number; the [NIM]({% post_url 2026-11-21-nim-and-the-spread %}),
 [CASA]({% post_url 2026-11-22-casa-and-the-deposit-franchise %}) and
 [provisions]({% post_url 2026-11-23-gnpa-nnpa-and-provisions %}) posts are what
@@ -188,6 +188,16 @@ provision coverage. A bank with thin coverage and a rising NPA book has a
 book value that is partly fiction, and a low P/B on a fictional book is not
 cheap.
 
+## What the filings can't show you
+
+Everything in this module comes from what a bank publishes, and some of the
+biggest risks barely show up there. The mismatch between long-dated loans
+and short-term deposits (asset-liability management) is disclosed only in
+coarse maturity buckets, and stress the bank hasn't yet recognised — loans
+still "standard" but quietly deteriorating — is invisible until it's
+classified, which is why bank crises so often start with a clean-looking
+balance sheet.
+
 ## Common mistakes
 
 - **Comparing P/B across banks with different ROE.** P/B = P/E × ROE. A
@@ -207,9 +217,6 @@ cheap.
 
 **Takeaway:** Banks are valued on book because their assets are mostly money
 carried near what it's worth, and P/B = P/E × ROE ties the multiple to how
-hard that book works. HDFC Bank at 30 June 2025 sat at about {{ v.pb }}x
-book and {{ v.pe }}x earnings on a {{ d.roe_pct }}% ROE built from
-{{ d.roa_pct }}% ROA and {{ d.avg_leverage }}x leverage. The "justified P/B"
-formula, fed a generic {{ v.justified_pb_illustrative_roe_pct }}% ROE and a few plausible input pairs, returned
-anything from {{ v.justified_pb_scenarios[0].pb }}x to {{ v.justified_pb_scenarios[3].pb }}x, which is all you need to know
-about using it to decide anything.
+hard that book works. Split ROE into ROA and leverage every time, and treat
+any "justified P/B" formula as a way to see why multiples differ, not to
+decide whether one is right.

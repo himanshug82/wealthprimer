@@ -11,7 +11,8 @@ term: "Market cap (market capitalisation)"
 {% assign listing = site.data.case_study.listing %}
 {% assign bi_market = site.data.real_company.market %}
 {% assign db_market_cap_cr = listing.market_cap | divided_by: 100.0 %}
-{% assign cap_ratio = bi_market.market_cap_cr | divided_by: db_market_cap_cr | round: 0 %}
+{% assign cap_ratio = bi_market.market_cap_cr | divided_by: db_market_cap_cr | divided_by: 10 | round: 0 | times: 10 %}
+{% assign bi_mc_lakh_cr = bi_market.market_cap_cr | divided_by: 100000.0 | round: 1 %}
 
 ## What market cap means
 
@@ -49,9 +50,9 @@ Market Cap = Price per Share × Shares Outstanding
 |---|---:|
 | IPO Price | ₹{% include inr.html n=listing.ipo_price %} |
 | × Shares Outstanding (Lakh) | {{ listing.post_ipo_shares_lakh }} |
-| **Market Cap** | **₹{% include inr.html n=listing.market_cap %} Lakh (₹80 Crore)** |
+| **Market Cap** | **₹{% include inr.html n=listing.market_cap %} Lakh (₹{% include inr.html n=db_market_cap_cr %} Crore)** |
 
-At ₹80 crore, Desi Bites Foods Ltd is a genuinely tiny listing. Ranked
+At ₹{% include inr.html n=db_market_cap_cr %} crore, Desi Bites Foods Ltd is a genuinely tiny listing. Ranked
 against thousands of listed companies, it would land far down the small-cap
 bucket — often informally called "micro-cap" at this size (that word has no
 official SEBI definition).
@@ -67,7 +68,7 @@ For illustration only.
 | × Shares Outstanding (Crore) | {{ bi_market.shares_outstanding_cr }} |
 | **Market Cap** | **₹{% assign _mc = bi_market.market_cap_cr | round: 0 %}{% include inr.html n=_mc %} Crore** |
 
-At roughly ₹1.4 lakh crore, Britannia is about {{ cap_ratio }} times Desi Bites'
+At roughly ₹{{ bi_mc_lakh_cr }} lakh crore, Britannia is about {% include inr.html n=cap_ratio %} times Desi Bites'
 market cap. Its official bucket isn't set by that rupee figure, though —
 it comes from where it ranks on AMFI's half-yearly list for the period in
 question. The gap between the two
@@ -92,8 +93,12 @@ surprisingly close together.
   the share price moves, without anything about the underlying business
   necessarily changing — it's a live market opinion, not a stable
   characteristic of the company.
+- **Mixing up full and free-float market cap.** Index providers such as NSE
+  weight stocks by free-float market cap, which leaves out shares that
+  rarely trade (like promoter holdings). SEBI's size buckets use full market
+  cap, so the two can differ a lot for a closely held company.
 
 **Takeaway:** market cap is simply price times shares outstanding — the
-market's running verdict on what a company's equity is worth as a whole,
-useful for gauging size but silent on debt, cash, or whether that price is
-actually a good one to pay.
+market's running verdict on what a company's equity is worth. It's useful
+for gauging size, but silent on debt, cash, or whether that price makes
+sense.

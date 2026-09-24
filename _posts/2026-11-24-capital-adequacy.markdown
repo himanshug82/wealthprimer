@@ -26,7 +26,7 @@ lenders lose too?
 
 For a bank the question is identical and far more serious, because the
 "lenders" are depositors — millions of them, holding money they believe is
-safe. The [first post]({% post_url 2026-11-20-why-ratios-break-on-a-bank %})
+safe. The [bank ratios post]({% post_url 2026-11-20-why-ratios-break-on-a-bank %})
 showed that HDFC Bank's equity is about {{ f25.equity_to_assets_pct }}% of its
 balance sheet. If loans worth more than that went bad and stayed bad,
 depositors would be the ones absorbing the loss.
@@ -57,7 +57,9 @@ asset is multiplied by a weight that reflects how likely it is to lose money:
 So ₹100 of government bonds adds ₹0 to RWA; ₹100 of credit-card balances adds
 ₹150. (Those two unsecured rows were raised by RBI, November 2023: personal
 loans from 100% to 125%, and bank credit-card receivables from 125% to 150%.) A bank with a large, safe book has RWA well below its total assets; a
-bank lending aggressively can have RWA near or above them.
+bank lending aggressively can have RWA near or above them. (Those weights
+cover credit risk; total RWA also adds charges for market risk and
+operational risk.)
 
 **Regulatory capital** comes in layers, in order of how cleanly each can
 absorb a loss:
@@ -91,7 +93,7 @@ From HDFC Bank's [results for the year ended 31 March 2025]({{ b.company.source_
 The filing's own sentence: the CAR "was at 19.6% as on March 31, 2025 …
 as against a regulatory requirement of {{ m.total }}%."
 
-Two things to read off this. First, RWA is about {{ c.rwa_to_total_assets_pct }}%
+Two things to read off this. First, RWA is about {% include inr.html n=c.rwa_to_total_assets_pct %}%
 of the balance sheet — roughly ₹{{ rwa_lakh_cr }} lakh crore of "risk" on
 ₹{{ assets_lakh_cr }} lakh crore of assets, because a large slice of the assets
 is government securities and cash that carry no weight. Second, almost all of
@@ -107,11 +109,11 @@ is the sum for this particular bank:
 |---|---:|---|
 | Minimum total capital (CRAR) | {{ m.crar }}% | RBI's base requirement — one point above the international Basel III minimum of 8% |
 | Capital conservation buffer | {{ m.ccb }}% | Must be met from CET1; a bank that dips into it faces restrictions on dividends and bonuses |
-| D-SIB surcharge | {{ m.dsib_surcharge }}% | Extra CET1 for banks RBI designates as **Domestic Systemically Important** — too big to be allowed to fail quietly |
+| D-SIB surcharge | {{ m.dsib_surcharge }}% | Extra CET1 for banks RBI designates as **domestic systemically important** — too big to be allowed to fail quietly |
 | **Requirement** | **{{ m.total }}%** | |
 
-Within the base 9%, RBI requires at least {{ m.cet1_min }}% as CET1 and
-{{ m.tier1_min }}% as Tier 1. The D-SIB surcharge depends on the bucket RBI
+Within the base 9%, RBI requires at least {% include inr.html n=m.cet1_min %}% as CET1 and
+{% include inr.html n=m.tier1_min %}% as Tier 1. The D-SIB surcharge depends on the bucket RBI
 places a bank in, and it moves. The {{ m.dsib_surcharge }}% above is what applied to HDFC
 Bank on 31 March 2025. RBI's D-SIB list (reaffirmed in its press release of
 13 November 2024) placed HDFC Bank in a higher bucket from 1 April 2025, with
@@ -162,7 +164,7 @@ you're at ₹11, the teacher stops you lending more until you top it up.
 ## Why capital is expensive, and why that matters
 
 Every rupee of equity a bank holds is a rupee it isn't leveraging. The
-[first post]({% post_url 2026-11-20-why-ratios-break-on-a-bank %}) showed
+[bank ratios post]({% post_url 2026-11-20-why-ratios-break-on-a-bank %}) showed
 ₹1 of equity supporting about ₹{{ f25.leverage_assets_to_equity }} of assets.
 More capital means a lower multiple, which — for the same return on assets —
 means a lower return on equity. That trade-off is the whole tension of bank
@@ -179,7 +181,7 @@ grow before that choice arrives.
 
 - **Dividing capital by total assets.** That is a *leverage ratio*, which
   RBI also tracks, but it isn't CAR. CAR's denominator is risk-weighted, which
-  is why RWA is about {{ c.rwa_to_total_assets_pct }}% of assets here.
+  is why RWA is about {% include inr.html n=c.rwa_to_total_assets_pct %}% of assets here.
 - **Reading a high CAR as a target.** Capital above the floor is a buffer,
   and it's also an unleveraged asset. Banks manage *toward* a comfortable
   level, not toward the maximum.
@@ -196,8 +198,6 @@ grow before that choice arrives.
 
 **Takeaway:** Capital adequacy asks how much of a bank's own money stands
 between its risks and its depositors, measured against risk-weighted assets,
-not the balance sheet. HDFC Bank's FY25 filing shows {{ f25.car_pct }}% total
-capital and {{ f25.cet1_pct }}% CET1 against a {{ m.total }}% floor built
-from a 9% base, a 2.5% conservation buffer and a D-SIB surcharge — about
-₹{{ headroom_lakh_cr }} lakh crore of headroom. It is the ratio that replaces
+not the balance sheet. HDFC Bank's FY25 filing shows {{ f25.car_pct }}% against an
+{{ m.total }}% floor, most of it in CET1. It is the ratio that replaces
 debt-to-equity for a bank, and the one that decides how fast it can grow.

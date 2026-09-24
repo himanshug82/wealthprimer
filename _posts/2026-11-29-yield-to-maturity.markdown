@@ -43,24 +43,25 @@ move in opposite directions**. Pay less, earn more.
 
 ## Worked example: a ₹{% include inr.html n=bd.face %} bond
 
-Fictional bond, {{ bd.coupon_pct }}% annual coupon, {{ bd.years }} years to maturity, bought at
-₹{{ bd.buy_price }}.
+Fictional bond, {{ bd.coupon_pct | round }}% annual coupon, {{ bd.years }} years to maturity, bought at
+₹{% include inr.html n=bd.buy_price %}. (Indian government bonds usually pay their coupon in two
+half-yearly instalments; one annual coupon keeps the arithmetic simple.)
 
 First, the wrong-but-tempting number. **Current yield** is just coupon over
-price: ₹{{ bd.annual_coupon }} / ₹{{ bd.buy_price }} = {{ bd.current_yield_pct }}%. It ignores that you'll also be
-repaid ₹{% include inr.html n=bd.face %} for a bond you paid ₹{{ bd.buy_price }} for.
+price: ₹{% include inr.html n=bd.annual_coupon %} / ₹{% include inr.html n=bd.buy_price %} = {{ bd.current_yield_pct }}%. It ignores that you'll also be
+repaid ₹{% include inr.html n=bd.face %} for a bond you paid ₹{% include inr.html n=bd.buy_price %} for.
 
-Now solve for the rate that discounts every cash flow back to ₹{{ bd.buy_price }}:
+Now solve for the rate that discounts every cash flow back to ₹{% include inr.html n=bd.buy_price %}:
 
 | Year | Cash flow | Present value at {{ bd.ytm_pct }}% |
 |---|---:|---:|{% for s in bd.schedule_at_ytm %}
 | {{ s.year }} | ₹{% include inr.html n=s.cash_flow %} | ₹{{ s.pv_at_ytm }} |{% endfor %}
 | **Total** | | **₹{{ bd.price_at_ytm }} ≈ ₹{{ bd.buy_price | round }}** |
 
-**YTM = {{ bd.ytm_pct }}%.** (Strictly, the rate that lands on ₹{{ bd.buy_price | round }} to the paisa is
+**YTM = {{ bd.ytm_pct | round }}%.** (Strictly, the rate that lands on ₹{{ bd.buy_price | round }} to the paisa is
 {{ bd.ytm_exact_pct }}% — a hair above. Every figure here, and in the next post, uses the
 rounded {{ bd.ytm_pct | round }}%, which is why the total comes to ₹{{ bd.price_at_ytm }}.) The extra {{ bd.ytm_pct | minus: bd.current_yield_pct | round: 2 }} points over the current
-yield is the ₹{{ bd.face | minus: bd.buy_price | round }} gain to face value, spread over five years.
+yield is, roughly, the ₹{{ bd.face | minus: bd.buy_price | round }} gain to face value, spread over five years.
 
 The same bond at different prices, or equivalently different market yields:
 
@@ -89,9 +90,7 @@ YTM of the bonds it holds. Three reasons it isn't the return you'll get:
 So portfolio YTM is a good description of what the fund currently owns and a
 poor forecast of what you'll earn. The
 [debt funds post]({% post_url 2026-10-30-debt-funds-gold-and-the-rest %})
-covered how the gains are taxed; the mutual fund series' second module will
-show, on twenty years of real gilt-fund data, how far NAV returns can stray
-from quoted yields.
+covered how the gains are taxed.
 
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
@@ -111,7 +110,7 @@ about 8%, not 7%.
 - **Confusing coupon rate with yield.** The coupon is fixed at issue. The
   yield depends on what you paid. A "7% bond" yields 7% only if bought at par.
 - **Using current yield as the return.** It skips the pull to par — {{ bd.current_yield_pct }}%
-  versus {{ bd.ytm_pct }}% here.
+  versus {{ bd.ytm_pct | round }}% here.
 - **Treating a fund's portfolio YTM as a promised return.** It's gross of
   expenses, assumes holding to maturity, and assumes yields don't move. Three
   assumptions, all routinely false.
@@ -119,6 +118,6 @@ about 8%, not 7%.
   buy, your bond's price rises — the mirror image of the risk.
 
 **Takeaway:** YTM is the single rate that makes a bond's future coupons and
-repayment worth exactly what you paid for it — {{ bd.ytm_pct }}% for a {{ bd.coupon_pct }}% bond bought at
-₹{{ bd.buy_price }}. Price and yield move in opposite directions, and a debt fund's quoted
+repayment worth exactly what you paid for it — {{ bd.ytm_pct | round }}% for a {{ bd.coupon_pct | round }}% bond bought at
+₹{% include inr.html n=bd.buy_price %}. Price and yield move in opposite directions, and a debt fund's quoted
 YTM is a description of its holdings, not a forecast of your return.

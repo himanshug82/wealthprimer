@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "F&O is business income, not capital gains"
-description: "Derivatives profits and losses are business income: a different return form, different set-off rules, and a turnover figure that isn't what you think. Worked on SEBI's average loss."
+description: "F&O profits and losses are business income: a different return form, different set-off rules, and a turnover that isn't what you think. Worked on SEBI's data."
 image: /assets/og/fo-is-business-income.png
 date: 2026-12-16 09:00:00 +0530
 series: tax
@@ -23,7 +23,7 @@ Everything in the tax series so far — holding periods, the {{ r.equity_ltcg_pc
 ₹{% include inr.html n=r.ltcg_annual_exemption %} exemption, FIFO — belongs to **capital gains**. None of it applies
 to futures and options.
 
-Trading in **F&O — Futures and Options** — is treated as a **business**. Your
+Trading in **F&O — futures and options** — is treated as a **business**. Your
 net result for the year is business income (or a business loss), taxed at
 your slab rate along with your salary and everything else. That single
 classification changes the return form you file, what you can deduct, what a
@@ -125,6 +125,11 @@ Two conditions, both absolute:
    carried forward. The set-off in the same year survives; the
    ₹{% include inr.html n=f.carried_forward %} for future years is lost.
 
+One more consequence of having business income: the choice of tax regime
+gets stickier. A salaried filer can pick the old or new regime each year;
+someone with business income can leave the new regime and return to it only
+once (the [ELSS post]({% post_url 2026-11-03-elss-and-the-deduction-that-moved %}) covers the two regimes).
+
 ## The presumptive trap
 
 There is a simplified scheme for small businesses: declare **{{ f.presumptive_rate_pct }}% of your
@@ -153,10 +158,11 @@ and ledger are the core of them.
 ## What you can deduct
 
 Because it's a business, the costs of running it reduce the income (or
-deepen the loss): brokerage, exchange and clearing charges, **STT (Securities
-Transaction Tax)**, stamp duty, GST on brokerage, charting and analytics
+deepen the loss): brokerage, exchange and clearing charges, **STT (securities
+transaction tax)**, stamp duty, GST on brokerage, charting and analytics
 subscriptions, data feeds, internet, depreciation on a laptop used for
-trading, and fees to a SEBI-registered adviser. Keep invoices. None of this is
+trading. Fees to a SEBI-registered adviser may also be claimable, but that's
+arguable — confirm with a professional. Keep invoices. None of this is
 available against capital gains, which is one of the few respects in which
 the business classification helps.
 

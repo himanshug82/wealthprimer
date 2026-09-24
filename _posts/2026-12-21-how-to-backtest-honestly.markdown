@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to backtest an indicator honestly"
-description: "Three rules, one stock, one window: how look-ahead bias, costs and parameter-picking each change a backtest — and why none of fifteen SMA pairs beat buy-and-hold."
+description: "Three rules, one stock, one window: how look-ahead bias, costs and parameter-picking change a backtest — and why none of fifteen SMA pairs beat buy-and-hold."
 image: /assets/og/how-to-backtest-honestly.png
 date: 2026-12-21 09:00:00 +0530
 series: technical-analysis
@@ -31,10 +31,10 @@ look like mistakes. They look like a strategy that works. This post runs three
 rules from earlier posts through a backtest, makes the classic errors on
 purpose, and shows what each one does to the answer.
 
-The dataset is the same: Britannia (NSE: BRITANNIA), daily,
+The dataset is the same: Britannia (NSE: BRITANNIA),
 {{ ta2.dataset.as_of }}. The backtest window is shorter — it starts on
-{{ bt.start }}, the first day a 200-day average exists — and runs
-{{ bt.bars }} sessions to {{ bt.end }}, about {{ bt.years }} years. Every
+{{ bt.start | date: "%-d %B %Y" }}, the first day a 200-day average exists — and runs
+{{ bt.bars }} sessions to {{ bt.end | date: "%-d %B %Y" }}, about {{ bt.years }} years. Every
 strategy and the benchmark are measured over that identical window with
 ₹{% include inr.html n=bt.start_capital %} to start.
 
@@ -62,11 +62,11 @@ This is **look-ahead bias**: using information in the decision that wasn't
 available when the decision had to be made. It's the most common backtest
 error and, in more elaborate systems, the hardest to spot.
 
-| Rule | Same-day close (look-ahead) | Next-day close (honest) |
+| Rule | Same-day close (look-ahead), a year | Next-day close (honest), a year |
 |---|---:|---:|
-| SMA 50/200 | {{ s1.lookahead_no_cost.cagr_pct }}% a year | {{ s1.next_day_no_cost.cagr_pct }}% a year |
-| SMA 20/50 | {{ s2.lookahead_no_cost.cagr_pct }}% a year | {{ s2.next_day_no_cost.cagr_pct }}% a year |
-| RSI 30/70 | {{ s3.lookahead_no_cost.cagr_pct }}% a year | {{ s3.next_day_no_cost.cagr_pct }}% a year |
+| SMA 50/200 | {{ s1.lookahead_no_cost.cagr_pct }}% | {{ s1.next_day_no_cost.cagr_pct }}% |
+| SMA 20/50 | {{ s2.lookahead_no_cost.cagr_pct }}% | {{ s2.next_day_no_cost.cagr_pct }}% |
+| RSI 30/70 | {{ s3.lookahead_no_cost.cagr_pct }}% | {{ s3.next_day_no_cost.cagr_pct }}% |
 
 *Annualised returns, no costs.*
 
@@ -74,8 +74,8 @@ Here the gap is small — under a percentage point either way, and for the RSI
 rule the honest version actually did marginally better, which is just noise.
 That's because these rules trade rarely and a one-day slip on a large-cap
 doesn't move much. Don't be reassured. For a rule that trades often, or on
-volatile stocks, the same one-day error routinely turns a losing strategy into
-a "winning" one, and even in this dataset it's worth
+volatile stocks, the same one-day error can be big enough to turn a losing
+strategy into a "winning" one, and even in this dataset it's worth
 {{ s1.lookahead_no_cost.cagr_pct | minus: s1.next_day_no_cost.cagr_pct | round: 1 }} of a
 percentage point a year on the slow 50/200 rule. The fix is one line of code — shift the signal by a day — and
 there is no excuse for skipping it.
@@ -105,7 +105,7 @@ Next-day execution, costs included, the same window for everyone:
 
 ![Equity curves: buy and hold vs the three rules]({{ '/assets/charts/ta2-backtest.svg' | relative_url }})
 
-Britannia (NSE: BRITANNIA), daily, {{ bt.start }} to {{ bt.end }}. Source:
+Britannia (NSE: BRITANNIA), daily bars, {{ bt.start | date: "%-d %B %Y" }} to {{ bt.end | date: "%-d %B %Y" }}. Source:
 [Yahoo Finance]({{ ta2.dataset.source_url }}). Historical data, for illustration only.
 
 | | Final value | [Return a year]({% post_url 2026-10-19-point-to-point-returns %}) | [Worst drawdown]({% post_url 2026-10-22-drawdown %}) | Trades | Time invested |
@@ -130,7 +130,7 @@ finished up.
 
 **The RSI rule "won."** {{ s3.next_day_with_cost.cagr_pct }}% a year against
 {{ bh.cagr_pct }}% for doing nothing, with a worst drawdown of only
-{{ s3.next_day_with_cost.max_drawdown_pct }}%. This is the row that gets
+{{ s3.next_day_with_cost.max_drawdown_pct | abs }}%. This is the row that gets
 screenshotted. Now look at the last two columns: **{{ s3.next_day_with_cost.trades }}
 trades, invested {{ s3.next_day_with_cost.pct_time_invested }}% of the time.**
 The rule sat in cash for seven-eighths of the period and happened to be in the
@@ -139,7 +139,7 @@ flips that landed well. The drawdown is small because there was almost no time
 for one to happen.
 
 And one of those three trades wasn't even taken inside the test. RSI went
-oversold on {{ s3.carried_in_from_oversold_date }}, a month before the window
+oversold on {{ s3.carried_in_from_oversold_date | date: "%-d %B %Y" }}, a month before the window
 opens, so the rule starts the window already holding the stock. Start it in
 cash like everything else and it returns {{ s3flat.cagr_pct }}% a year on
 {{ s3flat.trades }} trades, invested {{ s3flat.pct_time_invested }}% of the
@@ -149,7 +149,7 @@ answer.
 
 **Buy-and-hold is the row to beat, and it's harder than it looks.** It paid
 one commission, was never out of the market, and took the full
-{{ bh.max_drawdown_pct }}% drawdown. Every rule that "avoids" that drawdown has
+{{ bh.max_drawdown_pct | abs }}% drawdown. Every rule that "avoids" that drawdown has
 to avoid it *and* be back in for the recovery, and on this evidence, none of
 the moving-average rules managed it.
 
@@ -186,7 +186,7 @@ one from {50, 100, 150, 200}, honestly executed, costs included, same window:
 *Annualised return. Buy-and-hold over the same window: {{ bh.cagr_pct }}%.*
 
 The spread between the best pair ({{ gb.fast }}/{{ gb.slow }}, {{ gb.cagr_pct }}%)
-and the worst ({{ gw.fast }}/{{ gw.slow }}, {{ gw.cagr_pct }}%) is
+and the worst ({{ gw.fast }}/{{ gw.slow }}, {% if gw.cagr_pct < 0 %}−{% endif %}{{ gw.cagr_pct | abs }}%) is
 **{{ bt.grid_spread_pp }} percentage points a year** — on the same stock,
 over the same fourteen months, from the same idea. The only thing that changed
 was two numbers chosen by the person running the test.
@@ -263,7 +263,7 @@ for name, eq in [("rule", equity), ("buy & hold", bench)]:
     print(f"{name:11s} final ₹{eq.iloc[-1]:,.0f}  worst drawdown {dd:.1f}%")
 ```
 
-Delete line (1) and you have a look-ahead backtest. Delete line (2) and you
+Replace line (1) with `pos = signal` and you have a look-ahead backtest. Delete line (2) and you
 have a free-trading one. Both will look better than this. Neither is real.
 
 ## Common mistakes
@@ -278,7 +278,7 @@ have a free-trading one. Both will look better than this. Neither is real.
 - **Comparing against nothing.** Every rule here has to beat doing nothing,
   and doing nothing is a surprisingly strong opponent.
 - **Trusting a small drawdown from a rule that's rarely invested.** Sitting in
-  cash 88% of the time is why the RSI rule's drawdown is small. That's not
+  cash {{ 100 | minus: s3.next_day_with_cost.pct_time_invested }}% of the time is why the RSI rule's drawdown is small. That's not
   risk control; it's absence.
 - **Concluding anything from one stock and fourteen months.** Including the
   conclusion that these rules don't work. This test can't show that either.
@@ -287,7 +287,7 @@ have a free-trading one. Both will look better than this. Neither is real.
 to fool yourself. On one stock and fourteen months, look-ahead bias and costs
 each moved the answer by under a point, but choosing the moving-average
 lengths after the fact moved it by {{ bt.grid_spread_pp }} points a year — and
-none of the fifteen pairs beat simply holding. The rule that "won" traded
-three times. Shift your signal by a day, pay your costs, fix your parameters
+none of the fifteen pairs beat simply holding, while the rule that "won"
+traded three times. Shift your signal by a day, pay your costs, fix your parameters
 before you look, and then remember that even a clean test on one chart proves
 almost nothing.

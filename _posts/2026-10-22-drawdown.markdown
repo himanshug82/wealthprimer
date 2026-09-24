@@ -64,12 +64,12 @@ Every fall of more than 15% from a peak, with how long it took to get back:
 |---|---|---:|---|---:|{% for e in dd.episodes %}
 {% if e.recovered_date %}| {{ e.peak_date }} | {{ e.trough_date }} | **{{ e.fall_pct }}%** | {{ e.recovered_date }} | {% include inr.html n=e.days_peak_to_peak %} days |{% else %}| {{ e.peak_date }} | {{ e.trough_date }}* | **{{ e.fall_pct }}%** | Not yet recovered as of {{ f.regular_end }} | — |{% endif %}{% endfor %}
 
-\* The January 2026 row is still open. The data ends on {{ f.regular_end }}, with the
+\* The January 2026 row is still open. The data ends on {{ f.regular_end | date: "%-d %B %Y" }}, with the
 fund still more than 15% below its January 2026 high, so the "trough" there is
 just the last NAV we have. It could fall further or recover; this table can't
 tell you which.
 
-The worst was **{{ dd.worst_pct }}%**, on {{ dd.worst_date }}.
+The worst was a fall of **{{ dd.worst_pct | abs }}%**, on {{ dd.worst_date | date: "%-d %B %Y" }}.
 
 ## The column that matters most
 
@@ -110,7 +110,8 @@ during a recovery that hasn't finished.
 Worth being blunt: the largest cost of a drawdown is usually not the
 drawdown. It's selling during one.
 
-An investor who held through October 2008 was whole by December 2013 and far
+An investor who bought at the January 2008 peak and held through October 2008
+was whole by December 2013 and far
 ahead by 2026. An investor who sold at the bottom converted a temporary
 decline into a permanent loss, and typically returned to equities only after
 the recovery was well advanced.

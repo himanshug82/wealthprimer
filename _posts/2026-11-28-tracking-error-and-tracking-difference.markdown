@@ -53,7 +53,7 @@ Fund NAV from AMFI via mfapi.in (regular and direct plans); index from Yahoo
 Finance, price index. Data to 31 March 2026, so the most recent full calendar
 year is 2025. Historical data, for illustration only.
 
-**Tracking error, {{ t.window_3y }}:**
+**Tracking error, regular plan, {{ t.window_3y }}:**
 
 | Measured on | Tracking error (annualised) |
 |---|---:|
@@ -63,7 +63,7 @@ year is 2025. Historical data, for illustration only.
 Small, as it should be for a fifty-stock index fund — a fraction of one
 percent. The fund hugs the index closely.
 
-**Tracking difference, same three years:** fund {{ t.fund_cagr_3y_pct }}% a year, index
+**Tracking difference, regular plan, same three years:** fund {{ t.fund_cagr_3y_pct }}% a year, index
 {{ t.index_pri_cagr_3y_pct }}% a year, difference **+{{ t.tracking_difference_3y_pp }} pp a year**.
 
 And by calendar year, both plans:
@@ -133,7 +133,7 @@ straight your line was.
   index books them. A small, steady negative difference against the TRI is
   what good looks like.
 
-**Takeaway:** Tracking error is how much an index fund wobbles around its
+**Takeaway:** tracking error is how much an index fund wobbles around its
 index; tracking difference is how far it ends up from it — and only the second
 one costs you money. When the difference is *positive* year after year, as it
 is here against the price index, the fund isn't winning; the benchmark is

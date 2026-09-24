@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "What the F&O numbers actually say"
-description: "SEBI has counted, five years running: most individual derivatives traders lose money. What the data shows, and the arithmetic behind why it keeps happening."
+description: "SEBI has measured every year from FY22 to FY26: most individual derivatives traders lose money. What the data shows, and the arithmetic behind it."
 image: /assets/og/what-the-fo-numbers-actually-say.png
 date: 2026-11-05 09:00:00 +0530
 series: risk
@@ -47,13 +47,13 @@ twenty.
 
 ## Why this post exists
 
-This blog has spent sixty-odd posts on how to value a business, read a chart,
+This blog has spent dozens of posts on how to value a business, read a chart,
 compare a fund, and calculate a tax. All of it assumes the thing you're doing
 is *investing*: putting money into an asset and being paid by what that asset
 produces.
 
-F&O is a different activity wearing similar clothes. Most of the money
-individuals lose in the Indian market is lost here, and it is lost by people
+F&O is a different activity wearing similar clothes. A large share of the
+money individuals lose in the Indian market is lost here, and it is lost by people
 who arrived through the same apps, the same feeds, and often the same
 vocabulary as everyone else. A blog that taught
 [RSI (the relative strength index)]({% post_url 2026-10-14-rsi %}) and never mentioned this
@@ -171,8 +171,9 @@ Being fair to the numbers matters more than being dramatic with them.
 
 What the data does say is that the honest prior, before any personal
 confidence enters the picture, is that this is an activity in which the large
-majority of participants lose, repeatedly, and that the minority who don't are
-mostly not individuals.
+majority of participants lose, repeatedly, and that the segment's profits go
+mostly to FPIs (foreign portfolio investors) and proprietary trading desks,
+not to individuals.
 
 ## Common mistakes
 
@@ -219,9 +220,9 @@ before, rather than after:
    their own performance is a great deal kinder than their contract notes.
 4. **Set a review date** at which you compare the two honestly.
 
-**Takeaway:** SEBI has counted, five years running, and the answer barely
-moves — around nine in ten individual F&O traders lose money, and the losses
-run to tens of thousands of crores a year. That isn't a run of bad luck; it's
-what a zero-sum market minus costs does to the participants who are slowest,
-smallest and paying the most to be there. You can still choose to trade. You
-just can't claim nobody told you the base rate.
+**Takeaway:** SEBI has measured every year from FY22 to FY26, and the answer
+barely moves: around nine in ten individual F&O traders lose money, around a
+lakh crore rupees a year lately. That isn't bad luck; it's what a zero-sum
+market minus costs does to the slowest, smallest, highest-cost participants.
+You can still choose to trade, but you can't claim nobody told you the base
+rate.

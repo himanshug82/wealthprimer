@@ -14,7 +14,7 @@ term: "Debt-to-equity"
 ## What debt-to-equity means
 
 The last three posts looked at short-term coverage — can the company pay
-its bills over the next year? **Debt-to-Equity (D/E)** shifts to the bigger,
+its bills over the next year? **Debt-to-equity (D/E)** shifts to the bigger,
 longer-term question: how is the business funded at all — by shareholders'
 own money, or by borrowed money?
 
@@ -22,7 +22,10 @@ This series defines "debt" as interest-bearing borrowings only (term loans,
 bonds, working capital debt) — not every liability on the balance sheet.
 Trade payables, for instance, aren't counted here, even though they're
 technically a liability too; they showed up in their own right back in
-[Creditor Days]({% post_url 2026-09-09-creditor-days %}). Worth checking which definition any given source uses,
+[creditor days]({% post_url 2026-09-09-creditor-days %}). Lease liabilities — which Indian accounting rules
+(Ind AS 116) put on the balance sheet for things like rented warehouses — are
+left out too; they sit on their own line, and some analysts add them back.
+Worth checking which definition any given source uses,
 since "debt" isn't always defined the same way everywhere.
 
 ## The formula
@@ -50,12 +53,12 @@ From Britannia Industries' [audited consolidated FY25 results](https://media.bri
 | Total Equity | {{ bi_bs25.total_equity }} |
 | **Debt-to-Equity** | **{{ site.data.real_company.ratios.FY25.debt_equity }}** |
 
-Britannia's D/E of {{ site.data.real_company.ratios.FY25.debt_equity }} is genuinely low leverage — far less reliant on
+Britannia's D/E of {{ site.data.real_company.ratios.FY25.debt_equity }} is low leverage — far less reliant on
 borrowed money than Desi Bites' {{ site.data.case_study.ratios.FY25.debt_equity }}. That matters for one specific reason
 worth remembering from the [ROE post]({% post_url 2026-09-01-roe %}): debt is exactly the lever that can
 inflate ROE without the underlying business actually improving. Britannia's
-[ROE was a strong {{ site.data.real_company.ratios.FY25.roe }}%]({% post_url 2026-09-01-roe %}) — and now we know that number wasn't manufactured
-by borrowings. That's not the whole leverage story, though: Britannia's
+[ROE of {{ site.data.real_company.ratios.FY25.roe }}%]({% post_url 2026-09-01-roe %}) is high — and now we know borrowings aren't what's
+driving it. That's not the whole leverage story, though: Britannia's
 total assets are still about twice its equity, and the next post shows
 what's funding the rest.
 
@@ -65,7 +68,7 @@ what's funding the rest.
 If you buy a ₹10,000 bicycle using ₹8,000 of your own savings and a ₹2,000
 loan from a friend, your debt-to-equity is ₹2,000 / ₹8,000 = 0.25 — mostly
 your own money, a little borrowed. If instead you put in only ₹2,000 and
-borrowed ₹8,000, your D/E flips to 4.0 — mostly borrowed. Same bicycle,
+borrowed ₹8,000, your D/E flips to 4 — mostly borrowed. Same bicycle,
 very different amount of risk if something goes wrong and you can't repay
 the loan.
 

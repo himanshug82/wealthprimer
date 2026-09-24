@@ -44,9 +44,9 @@ each purchase has its own date, so each has its own 365-day clock.
 Suppose you run a [SIP]({% post_url 2026-10-24-sips-xirr-and-timing-myths %}) (systematic investment plan — a fixed amount invested
 every month) of ₹{% include inr.html n=x.sip_amount %} a month into an index fund from
 January 2025, fourteen instalments, then everything redeemed on
-{{ x.redeem_date }} at a NAV (net asset value, the per-unit price a fund
-publishes each day) of ₹{{ x.redeem_nav }}. Assume a load of {{ x.load_pct }}% within
-{{ x.load_window_days }} days, so anything bought after **{{ x.cutoff_date }}** is loaded.
+{{ x.redeem_date | date: "%-d %B %Y" }} at a NAV (net asset value, the per-unit price a fund
+publishes each day) of ₹{{ x.redeem_nav }}. Assume a load of {{ x.load_pct | round }}% within
+{{ x.load_window_days }} days, so anything bought after **{{ x.cutoff_date | date: "%-d %B %Y" }}** is loaded.
 
 NAVs are the real published NAVs of the {{ x.fund }} (source: AMFI, the Association of Mutual Funds in India, via mfapi.in,
 data to 31 March 2026), used purely for the arithmetic. The load structure is
@@ -95,8 +95,8 @@ so it reduces the capital gain slightly. Small consolation.
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
 
-A library lets you borrow books free — but if you return one within a week,
-you pay ₹1 for the hassle of re-shelving it so fast.
+A library lets you borrow books free — but if you return one before you've
+had it a whole year, you pay ₹1 for the hassle of re-shelving it so soon.
 
 Now imagine you borrowed one book every month for fourteen months, then
 returned the whole pile at once. The library checks each book's date stamp.
@@ -120,7 +120,7 @@ The three you've had for over a year are free. The eleven newer ones each cost
   [expense ratio post]({% post_url 2026-10-21-expense-ratios-direct-vs-regular %})
   covers the first.
 
-**Takeaway:** An exit load is a percentage — typically 1% within a year —
+**Takeaway:** an exit load is a percentage — typically 1% within a year —
 deducted from the redemption value of units sold early, assessed purchase by
 purchase. That lot-by-lot rule is why a fourteen-month SIP redeemed at once
 still pays load on eleven of its fourteen instalments.

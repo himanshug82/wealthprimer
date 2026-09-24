@@ -62,6 +62,8 @@ point_to_point:
 # moves — that is the whole argument for holding equity longer.
 rolling_returns:
   note: "Regular plan. Every daily start date with a full window inside the data."
+  # One-year windows, same method: 4,670 daily start dates, 81.1% ended higher.
+  years_1: { windows: 4670, pct_positive: 81.1 }
   years_3:
     windows: 4180
     min: -4.82
@@ -126,6 +128,9 @@ drawdowns:
 volatility_and_sharpe:
   annualised_return_pct: 10.20
   annualised_volatility_pct: 20.99
+  # Same series, month-end NAVs, std x sqrt(12). Shown only to make the point
+  # that sampling frequency changes the number.
+  annualised_volatility_monthly_pct: 20.51
   risk_free_pct: 6.5
   sharpe: 0.176
   period: "2006-04-03 to 2026-03-31"
@@ -187,6 +192,11 @@ sip:
   # 2010-11 highs. Averaging changes entry prices; it doesn't guarantee
   # better ones.
   lumpsum_2007_2012: { start: "2007-01-01", end: "2012-01-01", invested: 610000, value: 692146, cagr: 2.56 }
+  # Lump sum vs SIP across every monthly start date (1 May 2006 to 1 Mar 2021):
+  # the same total invested either on day one or in 60 equal monthly
+  # instalments, both valued five years after the start (asof convention).
+  # The lump sum ended ahead in 170 of 179 windows.
+  lumpsum_vs_sip_5y: { windows: 179, lumpsum_wins: 170, lumpsum_win_pct: 95 }
   # The first scheduled instalment (1 Apr 2006) falls before the fund's first
   # published NAV (3 Apr 2006), so it is skipped — 239 instalments, not 240.
   underwater:

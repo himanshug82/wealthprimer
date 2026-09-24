@@ -25,7 +25,7 @@ the interest earned on the IPO cash — it made **other income** a line big
 enough to matter.
 
 All three are places where a reader who knows only the ratios from the
-first thirty posts will be misled. This post is about reading them.
+first module will be misled. This post is about reading them.
 (Fictional company, fictional deal; the accounting is real.)
 
 ## Where the ₹600 lakh went: purchase price allocation
@@ -95,13 +95,12 @@ admit it. That admission is called an impairment.
 
 ## Was it a good deal? The first-year arithmetic
 
-The [capital allocation post]({{ '/series/fundamental-analysis/' | relative_url }}) tomorrow
-does this properly. The short version, on the numbers so far:
+The next post, on capital allocation, does this properly. The short version, on the numbers so far:
 
 | Chatpata Foods, H2 FY26 (six months) | ₹ lakh |
 |---|---:|
 | Revenue | {{ a.h2_revenue }} |
-| EBITDA | {{ a.h2_ebitda }} ({{ a.ebitda_margin_h2 }}% margin, vs Desi Bites' {{ r.organic_ebitda_margin }}%) |
+| EBITDA | {{ a.h2_ebitda }} ({% include inr.html n=a.ebitda_margin_h2 %}% margin, vs Desi Bites' {{ r.organic_ebitda_margin }}%) |
 | EBIT after depreciation and brand amortisation | {{ a.h2_ebit }} |
 | Price ÷ annualised revenue | {{ a.price_to_h2_revenue_annualised }}x |
 | **Year-one return on the ₹{{ a.price }} lakh** | **{{ a.year1_roic_pct }}%** |
@@ -116,7 +115,7 @@ judged on Chatpata's margin in FY27 and FY28, not on the press release.
 Note also the blended effect. Desi Bites' own EBITDA margin was
 {{ r.organic_ebitda_margin }}%; reported FY26 margin is {{ r.ebitda_margin }}%. The acquisition *diluted* the group
 margin while *adding* to revenue growth ({{ r.revenue_growth }}% reported versus
-{{ r.organic_revenue_growth }}% organic). A reader who saw "revenue up 27%, margin down" without
+{{ r.organic_revenue_growth }}% organic). A reader who saw "revenue up {{ r.revenue_growth | round }}%, margin down" without
 knowing about the deal would draw exactly the wrong conclusion about the
 core business. Acquisitions change the base; always separate organic from
 acquired.
@@ -142,9 +141,9 @@ for companies whose "exceptional" items are exceptional every single
 year: restructuring charges four years running, "one-time" inventory
 write-downs each Q4, impairments of last decade's acquisitions. If it
 recurs, it's operating, whatever the line says. A useful discipline is
-to compute a five-year PAT *including* everything the company called
-exceptional; if the total is a large share of profit, the business is
-worse than its headline numbers.
+to sum five years of "exceptional" charges and compare the total with
+five-year PAT; if it's a large share of profit, the business is worse
+than its headline numbers.
 
 The opposite abuse also exists: a genuine one-off *gain* (selling a
 building, an insurance receipt) reported inside operating revenue or
@@ -156,7 +155,7 @@ other income, where it lifts the margin quietly. The
 **Other income** is everything the company earned that isn't its business:
 interest on deposits, dividends on investments, gains on selling assets,
 rent, foreign exchange gains. Desi Bites' was zero until the IPO and
-₹{{ f.other_income }} lakh in FY26, almost all interest on the ₹1,600 lakh raised and not yet
+₹{{ f.other_income }} lakh in FY26, almost all interest on the ₹{% include inr.html n=site.data.case_study.listing.ipo_proceeds %} lakh raised and not yet
 spent.
 
 | FY26 | ₹ lakh |
@@ -191,8 +190,9 @@ the next investor call.
   tangible book value is the like-for-like figure.
 - **Taking "exceptional" at face value.** Count how many years in the last
   five had one. Recurring exceptionals are operating costs.
-- **Valuing other income at the business's multiple.** Interest on cash
-  is worth face value, not the {{ c2.capital_allocation.pe_at_ipo_price_fy26 }} times FY26 earnings implied by the
+- **Valuing other income at the business's multiple.** The cash is worth
+  face value; its interest shouldn't be capitalised at a P/E multiple, such
+  as the {{ c2.capital_allocation.pe_at_ipo_price_fy26 }} times FY26 earnings implied by the
   ₹{{ site.data.case_study.listing.ipo_price }} IPO price ({{ c2.drhp.valuation_at_issue.pe_diluted }} times on the FY25 earnings the IPO was priced off).
 - **Missing the base change.** Reported growth after an acquisition is
   partly bought. Organic and acquired growth are different facts.
@@ -201,10 +201,9 @@ the next investor call.
   business's margin two and three years later — and whether goodwill is
   still on the books at full value.
 
-**Takeaway:** An acquisition brings three new lines a ratio reader can
-misread: goodwill (the {{ a.goodwill_pct_of_price }}% of the price nobody could point to, which
-pads equity until it's impaired), an exceptional item (honest if it's
-truly one-off, an operating cost if it recurs), and other income (a fifth
-of Desi Bites' profit came from a fixed deposit, and it deserves a fixed
-deposit's valuation, not a brand's). Separate organic from acquired,
-operating from other, and judge the deal in year three, not year one.
+**Takeaway:** An acquisition brings three lines a ratio reader can
+misread: goodwill, exceptional items and other income. Goodwill pads equity
+until it's impaired, a recurring "exceptional" is an operating cost, and
+interest on idle cash deserves a fixed deposit's valuation, not a brand's.
+Separate organic from acquired, operating from other, and judge the deal in
+year three, not year one.

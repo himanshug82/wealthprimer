@@ -38,6 +38,8 @@ Leverage (x)  =  Position value  /  Your own capital
 
 Return on your capital  =  Leverage × Price move  −  Cost of borrowing
 
+Cost of borrowing  =  (Leverage − 1) × Interest rate × Time   (as a % of your capital)
+
 Move that wipes out your capital  =  −(1 / Leverage)     (before costs)
 ```
 
@@ -57,7 +59,7 @@ fees:
 Read down the 10× column. Nothing exotic happens to the price — a 10% move
 is well inside the normal range for a stock over a few weeks, and the
 [position sizing post]({% post_url 2026-11-07-position-sizing-and-the-one-percent-rule %})
-showed Britannia alone moving 2–3% on an ordinary day. What's exotic is what
+showed Britannia alone moving about {{ rk.position_sizing.atr_pct_median | round }}% on an ordinary day. What's exotic is what
 the multiplier does to it.
 
 The −100% entries are capped in the table. In practice a broker doesn't wait
@@ -87,7 +89,7 @@ The toy moved 10% either way. Your money moved 100%. That's leverage.
 Borrowed money isn't free, and the cost is the part that turns a symmetric
 multiplier into a tilted one. Take an MTF position: ₹{% include inr.html n=m.own %}
 of your own money, ₹{% include inr.html n=m.borrowed %} borrowed at an
-illustrative {{ m.rate_pct }}% a year, held for {{ m.months }} months.
+illustrative {% include inr.html n=m.rate_pct %}% a year, held for {{ m.months }} months.
 
 | | |
 |---|---:|
@@ -98,25 +100,25 @@ illustrative {{ m.rate_pct }}% a year, held for {{ m.months }} months.
 
 Now run the scenarios:
 
-| Price move over {{ m.months }} months | Unlevered return | P&L on the MTF position | Return on your ₹{% include inr.html n=m.own %} |
+| Price move over {{ m.months }} months | Unlevered return | Profit or loss on the MTF position | Return on your ₹{% include inr.html n=m.own %} |
 |---:|---:|---:|---:|{% for s in m.scenarios %}
 | {{ s.move_pct }}% | {{ s.unlevered_return_pct }}% | {% if s.pnl < 0 %}{% assign pnl_abs = s.pnl | abs %}−₹{% include inr.html n=pnl_abs %}{% else %}₹{% include inr.html n=s.pnl %}{% endif %} | **{{ s.return_on_own_pct }}%** |{% endfor %}
 
 Three things in that table are worth sitting with.
 
-**A flat market loses you {{ m.scenarios[2].return_on_own_pct | abs }}%.** The stock does
+**A flat market loses you {{ m.scenarios[2].return_on_own_pct | abs | round }}%.** The stock does
 nothing, and you're down the interest.
 
-**A 5% rise earns you *less* than owning the stock outright.** {{ m.scenarios[1].return_on_own_pct }}%
-levered against {{ m.scenarios[1].unlevered_return_pct }}% unlevered — the multiplier
+**A 5% rise earns you *less* than owning the stock outright.** {{ m.scenarios[1].return_on_own_pct | round }}%
+levered against {{ m.scenarios[1].unlevered_return_pct | round }}% unlevered — the multiplier
 doubled the gain and the interest ate more than the doubling added. Leverage
 only helps if the move is bigger than the borrowing cost, in the time you
 have.
 
 **The losses aren't doubled — they're doubled *and then* the interest is
-added.** A 10% fall costs {{ m.scenarios[4].return_on_own_pct }}% of your capital,
+added.** A 10% fall costs {{ m.scenarios[4].return_on_own_pct | abs | round }}% of your capital,
 not 20%. At this rate and holding period, a fall of about
-{{ m.wipeout_move_pct | abs }}% would take the entire ₹{% include inr.html n=m.own %}.
+{% assign wipe = m.wipeout_move_pct | abs %}{% include inr.html n=wipe %}% would take the entire ₹{% include inr.html n=m.own %}.
 
 ## Futures: the same thing with a smaller deposit
 
@@ -137,8 +139,8 @@ for more (a **mark-to-market** call, settled daily) along the way.
 
 There's no interest bill on a future in the MTF sense, but there is an
 equivalent: the futures price normally sits above the spot price by roughly
-the cost of carry, and that premium decays toward zero at expiry. You pay for
-the leverage either way; it's just less visible.
+the cost of carry, and that premium decays toward zero at expiry. If you're
+long, you pay for the leverage either way; it's just less visible.
 
 ## What leverage is actually for
 
@@ -159,8 +161,8 @@ steeper, at the same time.
 
 - **Thinking of leverage as "a bigger position."** It's a bigger position
   *and* a loan. The loan has a cost and a lender who can call it.
-- **Ignoring the interest because it's quoted per year.** {{ m.rate_pct }}% a year
-  on a position held six months is {{ m.breakeven_move_pct }}% of the position
+- **Ignoring the interest because it's quoted per year.** {% include inr.html n=m.rate_pct %}% a year
+  on a position held six months is {{ m.breakeven_move_pct | round }}% of the position
   you have to earn before you've made anything.
 - **Comparing the levered return to zero instead of to the unlevered one.**
   The honest question is whether borrowing beat simply owning. In the 5%
@@ -168,8 +170,9 @@ steeper, at the same time.
 - **Assuming you'll get out before the margin call.** The call is triggered
   by the price, not by your plan, and it forces a sale at the low.
 - **Sizing the position by the margin instead of by the notional.** A
-  ₹2 lakh margin controlling a ₹18 lakh contract is an ₹18 lakh risk. The
-  1% rule from the last post applies to the notional exposure, which usually
+  ₹2 lakh margin controlling a ₹18 lakh contract is an ₹18 lakh risk. Apply
+  the 1% rule from the last post to the full notional: the loss to your stop
+  is lot size × stop distance, not a slice of the margin. That usually
   means the position you can "afford" on margin is far larger than the one
   you can afford to lose on.
 - **Adding leverage to recover a loss.** This is the recovery table's worst

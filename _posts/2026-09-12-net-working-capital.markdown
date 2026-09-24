@@ -15,14 +15,15 @@ term: "Net working capital"
 
 ## What net working capital means
 
-The last module looked at the individual pieces of a company's operating
-cycle — [inventory]({% post_url 2026-09-07-inventory-days %}), [receivables]({% post_url 2026-09-08-debtor-days %}), and [payables]({% post_url 2026-09-09-creditor-days %}). This module
+The last few posts looked at the individual pieces of a company's operating
+cycle — [inventory]({% post_url 2026-09-07-inventory-days %}), [receivables]({% post_url 2026-09-08-debtor-days %}), and [payables]({% post_url 2026-09-09-creditor-days %}). This post
 asks a different question about the same balance sheet: does the company
 have enough short-term resources to comfortably cover its short-term
-obligations? **Net Working Capital (NWC)** is the starting point.
+obligations? **Net working capital (NWC)** is the starting point.
 
 **Current assets** are everything expected to turn into cash within a year —
-cash itself, receivables, inventory. **Current liabilities** are everything
+cash itself, current investments (short-term holdings such as liquid funds),
+receivables, inventory. **Current liabilities** are everything
 due within a year — payables, short-term borrowings, other near-term dues.
 NWC is simply the gap between the two: the cushion left over after every
 near-term bill is accounted for.
@@ -52,23 +53,27 @@ From Britannia Industries' [audited consolidated FY25 results](https://media.bri
 | Total Current Liabilities | {{ bi_bs25.total_current_liabilities }} |
 | **Net Working Capital** | **{{ site.data.real_company.ratios.FY25.net_working_capital }}** |
 
+Britannia's current assets include ₹{% include inr.html n=bi_bs25.current_investments %} crore of current investments —
+a big slice of the ₹{% include inr.html n=bi_bs25.total_current_assets %} crore total, and one Desi Bites doesn't have.
+
 Look at those two numbers next to each other: Britannia is a vastly bigger
 company than Desi Bites, yet its net working capital cushion
 (₹{% include inr.html n=site.data.real_company.ratios.FY25.net_working_capital %} crore) is proportionally much thinner relative to
 its current liabilities than Desi Bites' is. That's not a red flag on its
-own — it's the first clue in a story the next two posts (Current Ratio,
-Quick Ratio) will unpack properly.
+own — it's the first clue in a story the next two posts (on the current
+ratio and the quick ratio) will unpack properly.
 
 ## Common mistakes
 
-- **Judging NWC by its absolute rupee value alone.** ₹295 crore sounds like
-  a lot until you see it next to ₹3,618 crore of current liabilities. NWC
-  only means something relative to the size of the business — which is
-  exactly why the next post normalizes it into the Current Ratio.
+- **Judging NWC by its absolute rupee value alone.** ₹{% include inr.html n=site.data.real_company.ratios.FY25.net_working_capital %} crore sounds
+  like a lot until you see it next to ₹{% include inr.html n=bi_bs25.total_current_liabilities %} crore of current
+  liabilities. NWC only means something relative to the size of the
+  business — which is exactly why the next post turns it into the current
+  ratio.
 - **Assuming NWC should grow in line with revenue.** As a company scales,
   its NWC usually grows in rupees too — but not necessarily in step with
   sales. How much it needs depends on its operating cycle: a company with
-  fast collections and slow payments (like the one we're about to see) can
+  fast collections and slow payments (like Britannia above) can
   run safely on far less NWC per rupee of revenue than a smaller rival.
 - **Treating negative NWC as automatically alarming.** Some very
   well-run businesses — especially ones with a negative cash conversion
@@ -81,4 +86,4 @@ Quick Ratio) will unpack properly.
 **Takeaway:** net working capital is the raw rupee cushion between what a
 company can turn into cash soon and what it owes soon — useful as a
 starting point, but it only becomes a meaningful signal once it's sized
-relative to the business, which is what the Current Ratio does next.
+relative to the business, which is what the current ratio does next.

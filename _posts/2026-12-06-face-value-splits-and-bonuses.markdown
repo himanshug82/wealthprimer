@@ -16,15 +16,16 @@ term: "Face value, splits and bonuses"
 ## What face value is
 
 Every share has a **face value** (also called par or nominal value): the
-amount printed on it, fixed when the company was formed — ₹10 is common in
+amount printed on it, set when the shares are issued (a split changes it
+later) — ₹10 is common in
 India, ₹1 and ₹2 also. It is an accounting quantity: share capital on the
 balance sheet is face value × number of shares, and dividends are often
 declared as a percentage of it ("150% dividend" on a ₹10 face value means
 ₹15 a share).
 
 It has *nothing* to do with what a share is worth. Desi Bites' shares have a
-₹{{ bo.face_value }} face value and listed at ₹{{ b.price }}. Britannia's have a face value of
-₹{{ bo.britannia_face_value }} and traded at ₹{% include inr.html n=bo.britannia_price %} on 30 June 2025. The
+₹{{ bo.face_value }} face value and listed at ₹{% include inr.html n=b.price %}. Britannia's have a face value of
+₹{{ bo.britannia_face_value }} and traded at ₹{% include inr.html n=bo.britannia_price %} on {{ site.data.real_company.market.price_date }}. The
 gap between face value and price is the entire history of the business.
 
 Face value matters here because two corporate actions change it, or change
@@ -64,10 +65,10 @@ starting point:
 
 | | Before | After 1:1 bonus | After 1:2 split |
 |---|---:|---:|---:|
-| Shares (lakh) | {{ b.shares_lakh }} | {{ a1.shares_lakh }} | {{ a2.shares_lakh }} |
-| Face value | ₹{{ bo.face_value }} | ₹{{ a1.face_value }} | ₹{{ a2.face_value }} |
-| Share capital (₹ lakh) | {{ b.share_capital_lakh }} | {{ a1.share_capital_lakh }} | {{ a2.share_capital_lakh }} |
-| Price per share | ₹{{ b.price }} | ₹{{ a1.price }} | ₹{{ a2.price }} |
+| Shares (lakh) | {% include inr.html n=b.shares_lakh %} | {% include inr.html n=a1.shares_lakh %} | {% include inr.html n=a2.shares_lakh %} |
+| Face value | ₹{{ bo.face_value }} | ₹{{ a1.face_value }} | ₹{% include inr.html n=a2.face_value %} |
+| Share capital (₹ lakh) | {% include inr.html n=b.share_capital_lakh %} | {% include inr.html n=a1.share_capital_lakh %} | {% include inr.html n=a2.share_capital_lakh %} |
+| Price per share | ₹{% include inr.html n=b.price %} | ₹{% include inr.html n=a1.price %} | ₹{% include inr.html n=a2.price %} |
 | **Market cap (₹ lakh)** | **{% include inr.html n=b.market_cap_lakh %}** | **{% include inr.html n=a1.market_cap_lakh %}** | **{% include inr.html n=a2.market_cap_lakh %}** |
 | EPS (post-issue) | ₹{{ b.eps_diluted }} | ₹{{ a1.eps_diluted }} | ₹{{ a2.eps_diluted }} |
 | Book value per share | ₹{{ b.bvps }} | ₹{{ a1.bvps }} | ₹{{ a2.bvps }} |
@@ -76,7 +77,7 @@ starting point:
 Read the two bold rows. Market cap is unchanged; P/E is unchanged. Everything
 per share halved because there are twice as many shares. The only difference
 between the bonus and the split columns is the accounting: the bonus
-capitalised ₹{{ a1.reserves_capitalised_lakh }} lakh of reserves into share capital (face value held at
+capitalised ₹{% include inr.html n=a1.reserves_capitalised_lakh %} lakh of reserves into share capital (face value held at
 ₹{{ bo.face_value }}); the split left share capital alone and halved the face value.
 
 For a real-world instance: HDFC Bank issued 1:1 bonus shares in August 2025.
@@ -90,8 +91,8 @@ splits and bonuses, and why data providers publish "adjusted" series.
 
 Officially: to improve liquidity. A ₹5,000 share is awkward for a small
 retail buyer; ₹500 is not. Bonus issues also signal that reserves are healthy
-enough to capitalise. Unofficially: retail investors reliably treat a lower
-price as "cheaper", and companies know it. The
+enough to capitalise. Unofficially: a lower price can *feel* "cheaper" to many
+retail investors, and companies know it. The
 [market cap post]({% post_url 2026-09-27-market-cap %}) made the point that
 price per share on its own tells you nothing; a split is the cleanest possible
 demonstration.
@@ -110,19 +111,19 @@ smaller piece of the same pizza.
 ## Common mistakes
 
 - **Thinking a post-split share is cheap.** Same company, smaller slice.
-  Compare P/E or market cap, never price.
+  Compare P/E, P/B or EV (enterprise value) multiples, never price.
 - **Comparing unadjusted per-share figures across a bonus or split.** EPS
   "falling" 50% on the ex-date is arithmetic, not performance.
 - **Treating a bonus as free money.** You own the same fraction of the same
   company. The "gift" is a re-labelling of reserves you already owned.
-- **Confusing face value with book value or price.** Face value is a fixed
-  nominal amount. Book value per share is
+- **Confusing face value with book value or price.** Face value is a nominal
+  amount that only a split (or consolidation) changes. Book value per share is
   [equity divided by shares]({% post_url 2026-09-22-book-value-per-share %}).
   Price is what the market pays. Three different numbers.
 - **Missing that dividends declared "per cent" are on face value.** A "300%
   dividend" on a ₹1 face value is ₹3 a share, not 300% of anything you paid.
 
-**Takeaway:** Face value is the nominal amount on a share, unrelated to price;
+**Takeaway:** face value is the nominal amount on a share, unrelated to price;
 splits and bonuses multiply the share count and divide everything per share
 by the same factor. Desi Bites at ₹320 after a 1:1 bonus is exactly as
 expensive as it was at ₹640 — same market cap, same P/E, twice the slices.

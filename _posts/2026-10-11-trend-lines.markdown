@@ -79,7 +79,7 @@ two swing points and extending. No adjusting, no curves.
 Britannia (NSE: BRITANNIA), daily, September 2024 to March 2026. Source:
 [Yahoo Finance]({{ ta.dataset.source_url }}). Historical data, for illustration only.
 
-**The downtrend line.** Connect the {{ ta.major_decline.peak_date }} high of ₹{% include inr.html n=ta.major_decline.peak_high %} to the
+**The downtrend line.** Connect the {{ ta.major_decline.peak_date | date: "%-d %B %Y" }} high of ₹{% include inr.html n=ta.major_decline.peak_high %} to the
 11 November 2024 high of ₹5,902.1 and extend. That line describes a fall of
 about ₹14.6 a day.
 
@@ -88,11 +88,12 @@ line sitting at ₹4,883.0. A margin of ₹2.4 — which tells you something
 important about how unclean these signals are in practice. On the day, that
 break would have looked like nothing at all.
 
-**The uptrend line.** Connect the {{ ta.major_decline.trough_date }} low of ₹{% include inr.html n=ta.major_decline.trough_low %} to the
+**The uptrend line.** Connect the {{ ta.major_decline.trough_date | date: "%-d %B %Y" }} low of ₹{% include inr.html n=ta.major_decline.trough_low %} to the
 7 April 2025 low of ₹4,605.1 and extend. That line rises about ₹2.9 a day.
 
-It then held for **384 days** — every dip through the rest of 2025 found
-support at or above it — before finally breaking on 23 March 2026, right at
+It then held — every dip through the rest of 2025 found support at or above
+it — for **384 days** counted from the first anchor, or 350 from the second,
+the day the line could first be drawn, before finally breaking on 23 March 2026, right at
 the end of this dataset.
 
 ## What the two lines actually teach
@@ -105,8 +106,8 @@ consecutive closes," or "a close 1% beyond," you didn't — not that day. Same
 chart, same line, different answer, entirely because of a threshold you chose
 before you started. Or worse, after.
 
-The uptrend line is the opposite story: it did real work for over a year, and
-a line that survives 384 days and multiple tests is describing something
+The uptrend line is the opposite story: it did real work for nearly a year, and
+a line that survives 350 days and multiple tests is describing something
 genuine about who was buying the dips.
 
 Both are true at once. Trend lines are neither useless nor precise. They're

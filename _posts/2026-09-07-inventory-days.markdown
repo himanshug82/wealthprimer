@@ -16,16 +16,16 @@ term: "Inventory days"
 ## What inventory days means
 
 We've spent the last few posts on profitability — how much of every rupee of
-sales a company keeps. **Inventory Days** (also called Days Inventory
+sales a company keeps. **Inventory days** (also called Days Inventory
 Outstanding, or DIO) is the first of a different family of ratios:
 efficiency, or how well a company manages the cash tied up in running the
 business day to day.
 
-Inventory Days answers a simple operational question: on average, how many
+Inventory days answers a simple operational question: on average, how many
 days does stock sit around — as raw material, work in progress, or finished
 goods — before it's sold? A snacks company holding 60 days of inventory is
 carrying two months of unsold stock at any given time; one holding 20 days
-turns its shelves much faster.
+turns its stock over much faster.
 
 ## The formula
 
@@ -35,6 +35,10 @@ Inventory Days = Inventory / COGS × 365
 
 We divide by [COGS]({% post_url 2026-08-26-gross-margin %}) rather than revenue, because inventory is carried
 at its cost to the company, not at what it'll eventually sell for.
+
+We use the closing (year-end) inventory here, as is common for the days and
+liquidity ratios; the return ratios (ROE, ROCE, ROA) average the opening and
+closing balances instead. Either works, as long as you compare like with like.
 
 ## Worked example: Desi Bites Foods, FY25
 
@@ -57,9 +61,9 @@ signal to act on.
 | **Inventory Days** | **{{ site.data.real_company.ratios.FY25.inventory_days }} days** |
 
 Britannia turns its inventory faster than Desi Bites —
-{{ site.data.real_company.ratios.FY25.inventory_days }} days versus {{ site.data.case_study.ratios.FY25.inventory_days }}. That's a real, structural advantage of scale and distribution reach
-in packaged foods: a bigger, more efficient distribution network moves stock
-off shelves faster than a smaller manufacturer can manage.
+{{ site.data.real_company.ratios.FY25.inventory_days }} days versus {{ site.data.case_study.ratios.FY25.inventory_days }}. That's consistent with the advantages of scale and distribution reach in
+packaged foods — a bigger network can move stock out of factories and depots
+faster — though the ratio alone can't tell you the cause.
 
 One caveat, flagged in the [gross margin post]({% post_url 2026-08-26-gross-margin %}): Britannia's
 COGS here is materials-only, since the filing has no single COGS line.

@@ -59,11 +59,12 @@ close enough to symmetric that you'd never notice. A 50% loss needs 100%. A
 90% loss needs a tenfold rise.
 
 This is why the [drawdown post]({% post_url 2026-10-22-drawdown %}) made such a
-point of recovery *time*. When {{ d.fund_name }} fell {{ a.gfc_fall_pct }}% from
+point of recovery *time*. When {{ d.fund_name }} fell {{ a.gfc_fall_pct | abs }}% from
 its January 2008 peak, getting back did not require a {{ a.gfc_fall_pct | abs }}% rise.
 It required **+{{ a.gfc_gain_needed_pct }}%** — which is why the wait was nearly
-six years, even though the year right after the crash was spectacular
-(+{{ a.fy10_pct }}% in FY10).
+six years for this fund's regular-plan NAV, even though the year right after
+the crash was spectacular (+{{ a.fy10_pct }}% in FY10). The Nifty itself
+briefly touched its January 2008 close in November 2010, then fell away again.
 
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
@@ -121,7 +122,7 @@ what happened and the other describes something that never did.
 ## Why the bouncing costs money
 
 Look at {{ a.worst_fy }} and FY10 in the table. {{ a.worst_fy }} was
-{{ a.fy09_pct }}%; the next year was **+{{ a.fy10_pct }}%**, the second-best year in
+−{{ a.fy09_pct | abs }}%; the next year was **+{{ a.fy10_pct }}%**, the second-best year in
 twenty. The arithmetic average of those two years is a healthy
 +{{ a.fy09_pct | plus: a.fy10_pct | divided_by: 2.0 | round: 1 }}% a year.
 
@@ -182,7 +183,7 @@ for loss in (0.1, 0.2, 0.5, 0.6, 0.9):
 - **Treating volatility as merely emotional.** It has a rupee cost: the same
   average return with a higher standard deviation compounds to less.
 - **Assuming a big up-year has "repaired" a big down-year.** +{{ a.fy10_pct }}%
-  after {{ a.fy09_pct }}% left the investor up {{ a.fy09_fy10_compound_pct }}% over two
+  after −{{ a.fy09_pct | abs }}% left the investor up {{ a.fy09_fy10_compound_pct }}% over two
   years. Look at the level, not the headline.
 - **Forgetting this applies to your own trading.** Every leveraged position,
   every stop-loss hit and re-entry, every drawdown in a trading account is a

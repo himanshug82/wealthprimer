@@ -80,14 +80,14 @@ Now here is where the conventional readings meet reality.
 
 ![Britannia price with volume]({{ '/assets/charts/ta-volume.svg' | relative_url }})
 
-Britannia (NSE: BRITANNIA), daily, {{ ta.dataset.as_of }}. Source:
+Britannia (NSE: BRITANNIA), {{ ta.dataset.as_of }}. Source:
 [Yahoo Finance]({{ ta.dataset.source_url }}). Historical data, for illustration only.
 
 Every volume spike above three times the 50-day average, across two years:
 
 | Date | Volume | vs 50-day avg | Close | Day's move |
 |---|---:|---:|---:|---:|{% for v in ta.volume_spikes %}
-| {{ v.date }} | {{ v.volume }} | {{ v.x_avg }}x | ₹{% include inr.html n=v.close %} | {{ v.change_pct }}% |{% endfor %}
+| {{ v.date }} | {{ v.volume }} | {{ v.x_avg }}x | ₹{% include inr.html n=v.close %} | {% if v.change_pct > 0 %}+{% endif %}{{ v.change_pct }}% |{% endfor %}
 
 Look at **27 March 2025**. It is by a wide margin the largest volume day in
 the dataset — {{ ta.volume_spikes[2].x_avg }} times the average — over 67 lakh shares against a
@@ -96,13 +96,16 @@ dramatic should have happened.
 
 The close moved **−0.2%**.
 
-Enormous participation, no price change. Something moved a very large number
-of shares between holders that day — an index rebalancing, a block deal, a
-large fund repositioning — and the price barely noticed, because the buying
-and selling were matched by design.
+Enormous participation, no price change. The likely reason: it was the last
+session before Britannia's exit from the Nifty 50 took effect on 28 March
+2025 (NSE announced the change in February 2025), so index funds tracking
+the Nifty had to sell at that day's close — and the price barely noticed,
+because that selling had been known for weeks and buyers were lined up to
+match it.
 
-Contrast it with **12 November 2024**: 6.7 times average volume and a −7.5%
-day. Same category of signal on a volume screen; completely different event.
+Contrast it with **12 November 2024**, the session after Britannia reported
+a fall in its Q2 FY25 (July–September 2024 quarter) profit: 6.7 times average
+volume and a −7.5% day. Same category of signal on a volume screen; completely different event.
 
 Volume tells you *how many*. It does not tell you *which way*. You need the
 price to tell you that, and you need the news to tell you why.

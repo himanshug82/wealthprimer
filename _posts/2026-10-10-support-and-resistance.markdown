@@ -58,7 +58,7 @@ don't cooperate.
 
 ![Britannia support and resistance zones]({{ '/assets/charts/ta-support-resistance.svg' | relative_url }})
 
-Britannia (NSE: BRITANNIA), daily, {{ ta.dataset.as_of }}. Source:
+Britannia (NSE: BRITANNIA), {{ ta.dataset.as_of }}. Source:
 [Yahoo Finance]({{ ta.dataset.source_url }}). Historical data, for illustration only.
 
 Two areas stand out across these two years.
@@ -108,11 +108,14 @@ and vice versa. The logic follows from the memory story — everyone who sold
 at the old ceiling now watches it become the floor, and some of them buy it
 back.
 
-Does it hold up here? Partly. The ₹4,500–4,750 support zone held five times.
-But look at the {{ ta.major_decline.trough_date }} low of ₹{% include inr.html n=ta.major_decline.trough_low %} — it broke *below* the
+This dataset can't test role reversal cleanly — neither zone was ever
+decisively broken and then retested from the other side. What it does show
+is how loosely a level holds. The ₹4,500–4,750 support zone held five times.
+But look at the {{ ta.major_decline.trough_date | date: "%-d %B %Y" }} low of ₹{% include inr.html n=ta.major_decline.trough_low %} — it broke *below* the
 prior lows of ₹4,641 and ₹4,663.8 before recovering. If you had treated
-₹4,640 as a hard floor, you'd have been wrong by about 3%, for about three
-weeks, before being right again.
+₹4,640 as a hard floor, you'd have seen three closes below it (28 February
+to 4 March 2025) and an intraday low about 3% under it, plus two more brief
+intraday dips below it on 17 March and 7 April — before it held again.
 
 That is what these levels are actually like. Approximately reliable,
 occasionally violated, and never precise.

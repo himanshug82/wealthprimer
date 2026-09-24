@@ -17,15 +17,15 @@ term: "Asset turnover"
 
 ## What asset turnover means
 
-We closed the Profitability module with [ROA]({% post_url 2026-09-05-roa %}), which asks how much
-*profit* a company earns on everything it owns. **Asset Turnover** asks a
+We closed the profitability posts with [ROA]({% post_url 2026-09-05-roa %}), which asks how much
+*profit* a company earns on everything it owns. **Asset turnover** asks a
 related but different question, using the same total-assets denominator:
 how much *revenue* does a company generate per rupee of assets?
 
 It's a pure efficiency measure — it says nothing about margins at all. A
 company can post a strong asset turnover while barely making any profit per
 sale, or a modest asset turnover while keeping a huge chunk of every rupee
-sold. Put together with the margins from the Profitability module, it starts
+sold. Put together with the margins from the profitability posts, it starts
 to explain *how* a company arrives at its ROA — two very different paths can
 lead to the same destination.
 
@@ -35,7 +35,7 @@ lead to the same destination.
 Asset Turnover = Revenue / Average Total Assets
 ```
 
-Expressed as a multiple (times), not a percentage — "2.0x" means the
+Expressed as a multiple (times), not a percentage — "2x" means the
 company generates ₹2 of revenue for every ₹1 of assets it holds, on
 average, over the year.
 
@@ -59,16 +59,16 @@ From Britannia Industries' [audited consolidated FY25 results](https://media.bri
 | Revenue (FY25) | {{ bi_is25.revenue }} |
 | Total assets, start of year (FY24) | {{ bi_bs24.total_assets }} |
 | Total assets, end of year (FY25) | {{ bi_bs25.total_assets }} |
-| Average total assets | {{ bi_bs24.total_assets | plus: bi_bs25.total_assets | divided_by: 2.0 }} |
-| **Asset Turnover** | **{{ site.data.real_company.ratios.FY25.asset_turnover }}x** |
+| Average total assets | {{ bi_bs24.total_assets | plus: bi_bs25.total_assets | divided_by: 2.0 | round: 2 }} |
+| **Asset Turnover** | **{{ site.data.real_company.dupont.FY25.asset_turnover }}x** |
 
 Here's the interesting part: Desi Bites ({{ site.data.case_study.ratios.FY25.asset_turnover }}x) and Britannia
-({{ site.data.real_company.ratios.FY25.asset_turnover }}x) turn over their assets at almost the *same* rate — despite Britannia's
-[net margin]({% post_url 2026-08-30-net-margin %}) being roughly half again as high as Desi Bites'. Two
-businesses can reach a similar ROA through very different combinations of
-margin and turnover — a thin-margin, high-turnover retailer and a
-high-margin, low-turnover luxury brand can land on the same ROA for
-completely different reasons. That margin-times-turnover relationship has a
+({{ site.data.real_company.dupont.FY25.asset_turnover }}x) turn over their assets at almost the *same* rate — despite Britannia's
+[net margin]({% post_url 2026-08-30-net-margin %}) being roughly half again as high as Desi Bites'. Same
+turnover, different margin, so a different ROA: {{ site.data.case_study.ratios.FY25.roa }}% for Desi Bites
+versus {{ site.data.real_company.ratios.FY25.roa }}% for Britannia. It works the other way round too — a
+thin-margin, high-turnover retailer and a high-margin, low-turnover luxury
+brand can land on the same ROA for completely different reasons. That margin-times-turnover relationship has a
 name — the DuPont decomposition — which we'll come back to once the
 remaining pieces are in place.
 

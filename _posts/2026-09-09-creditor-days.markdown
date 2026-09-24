@@ -15,15 +15,16 @@ term: "Creditor days (payable days)"
 
 ## What creditor days means
 
-We've covered how long stock sits before it sells ([Inventory Days]({% post_url 2026-09-07-inventory-days %})) and
-how long customers take to pay ([Debtor Days]({% post_url 2026-09-08-debtor-days %})). **Creditor Days** — also called
+We've covered how long stock sits before it sells ([inventory days]({% post_url 2026-09-07-inventory-days %})) and
+how long customers take to pay ([debtor days]({% post_url 2026-09-08-debtor-days %})). **Creditor days** — also called
 Days Payable Outstanding (DPO), or payable days — flips the debtor-days
 question around: how many days does the company itself take to pay *its*
 suppliers?
 
 Trade payables — money the company owes suppliers but hasn't paid yet — is a
-liability on the [balance sheet]({% post_url 2026-08-20-reading-a-balance-sheet %}). It's effectively free, short-term
-financing: the longer a company can hold onto that cash before paying
+liability on the [balance sheet]({% post_url 2026-08-20-reading-a-balance-sheet %}). It's nearly free, short-term
+financing (nearly, because suppliers tend to price their credit terms in,
+and paying late can mean giving up early-payment discounts): the longer a company can hold onto that cash before paying
 suppliers, the less of its own working capital it needs.
 
 ## The formula
@@ -53,8 +54,9 @@ From Britannia Industries' [audited consolidated FY25 results](https://media.bri
 
 Britannia holds onto supplier cash for {{ site.data.real_company.ratios.FY25.payable_days }} days, versus
 Desi Bites' {{ site.data.case_study.ratios.FY25.payable_days }}. Paired with what we just saw on debtor days — Britannia collects
-from customers in under 10 days but pays suppliers in 60 — that gap is the
-whole story the next post, Cash Conversion Cycle, is built to measure.
+from customers in under 10 days but pays suppliers in about
+{{ site.data.real_company.ratios.FY25.payable_days | round }} — that gap is the whole story the next post, on the cash
+conversion cycle, is built to measure.
 
 Treat Britannia's {{ site.data.real_company.ratios.FY25.payable_days }} days as an upper estimate, though. As the
 [gross margin post]({% post_url 2026-08-26-gross-margin %}) explains, our Britannia COGS is
@@ -96,6 +98,6 @@ bigger scale.
   this ratio at all.
 
 **Takeaway:** creditor days measures how long a company effectively borrows
-from its own suppliers for free — a high number for an established company
-with real bargaining power is a genuine strength, but the same number for a
+from its own suppliers, almost for free — a high number for an established
+company with bargaining power is often a strength, but the same number for a
 cash-strapped company can be a warning sign instead.

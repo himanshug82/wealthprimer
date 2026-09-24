@@ -104,8 +104,8 @@ Credit-deposit (CD) ratio  =  Advances  /  Deposits
 | CD ratio | {{ f24.credit_deposit_ratio_pct }}% | {{ f25.credit_deposit_ratio_pct }}% |
 
 A CD ratio near 100% means nearly every rupee of deposits is lent out; the
-rest of the loan book is funded by borrowings and equity. Indian banks have
-historically sat in the mid-70s to low-80s, because a chunk of deposits must
+rest of the loan book is funded by borrowings and equity. For the banking
+system as a whole the ratio usually sits well below 100%, because a chunk of deposits must
 be parked with the RBI (the **cash reserve ratio**, CRR) or in government
 securities (the **statutory liquidity ratio**, SLR) rather than lent. A ratio
 well above the pack says the bank is leaning on non-deposit funding — which
@@ -120,14 +120,14 @@ you whether there are enough of them.
 
 Imagine you run a lemonade stand and you need lemons.
 
-Some neighbours just leave lemons on your doorstep every week for free,
+Some neighbours leave lemons on your doorstep every week for almost nothing,
 because they like you and it's convenient (that's current and savings
 accounts). Others will sell you lemons, but only at the market price, and
 they'll go to the stand across the road if it pays a rupee more (that's fixed
 deposits and borrowings).
 
 The more of your lemons come from the doorstep, the cheaper your lemonade is
-to make. CASA ratio is simply: what share of my lemons arrive free?
+to make. CASA ratio is simply: what share of my lemons arrive almost free?
 
 </details>
 

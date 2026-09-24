@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Buybacks: the tax that moved three times"
-description: "How a buyback is taxed depends on its date: the company-pays regime, the deemed-dividend regime, and the capital-gains regime from April 2026 — worked on the same 100 shares."
+description: "How a buyback is taxed depends on its date: company-paid tax, then a deemed dividend, then capital gains from April 2026 — worked on the same 100 shares."
 image: /assets/og/buyback-taxation.png
 date: 2026-12-15 09:00:00 +0530
 series: tax
@@ -32,9 +32,9 @@ Economically a buyback is a way of returning cash to shareholders, like a
 dividend. Unlike a dividend, it's optional — you tender your shares or you
 don't — and the money comes back as a sale rather than as income. That
 difference is exactly why the tax treatment has been argued over for a
-decade: **is buyback money a dividend or a sale?** The law has answered three
-different ways since 2024, and the answer depends on the date the buyback
-happened.
+decade: **is buyback money a dividend or a sale?** The law has given three
+different answers over the years, and the answer depends on the date the
+buyback happened.
 
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
@@ -64,6 +64,8 @@ surcharge, no other capital gains in the year unless stated.
 
 ### Regime A — {{ a.period }}: the company paid
 
+Our shareholder bought in June 2025, after this regime ended, so this one is
+hypothetical — as if the same shares had been tendered under the old rule.
 The company paid a **buyback tax of {{ a.company_tax_rate_pct }}%** (20% plus surcharge and
 cess) on the *distributed income* — what it paid out minus what it had
 originally received for those shares — and the shareholder paid nothing.
@@ -109,8 +111,7 @@ coming back. The loss's holding period matters too: our shareholder bought
 in June 2025, so any Regime B buyback came within twelve months and the loss
 is short-term, usable against any capital gain. Shares held longer would have
 produced a long-term loss, usable only against long-term gains. For most
-individuals in higher slabs, this regime made tendering in a buyback far
-less attractive than before.
+individuals in higher slabs, this regime made tendering tax-expensive.
 
 ### Regime C — {{ rc.period }}: a sale, taxed on the gain
 

@@ -17,12 +17,14 @@ term: "Quick ratio"
 
 ## What the quick ratio means
 
-[Current Ratio]({% post_url 2026-09-13-current-ratio %}) treats every current asset as equally able to cover a
+The [current ratio]({% post_url 2026-09-13-current-ratio %}) treats every current asset as equally able to cover a
 bill — but inventory is the least liquid one. It has to actually be sold,
-and sold at the expected price, before it turns into cash. **Quick Ratio**
-(also called the acid-test ratio) strips inventory out entirely, leaving
+and sold at the expected price, before it turns into cash. The **quick
+ratio** (also called the acid-test ratio) strips inventory out entirely, leaving
 only the current assets a company could realistically convert to cash
-quickly: cash itself, receivables, and short-term investments.
+quickly: cash itself, receivables, and short-term investments. In practice,
+this series computes it as current assets minus inventory only, so smaller
+items such as prepaid expenses stay in; some sources strip those out too.
 
 ## The formula
 
@@ -66,11 +68,9 @@ comfortably under 1 is worth investigating, not explaining away.
   fine.** Neither extreme is right. It's a real signal that deserves a look
   at *why* — and Britannia's negative CCC is a legitimate why, but it's not
   the default explanation for every company that shows up this way.
-- **Using inconsistent definitions of "quick" assets.** Some versions of
-  this ratio also strip out prepaid expenses; this series keeps it simple
-  (current assets minus inventory only) for consistency across posts —
-  worth checking which version a given source is using before comparing
-  numbers across sites.
+- **Using inconsistent definitions of "quick" assets.** Because some
+  versions also strip out prepaid expenses (see above), check which version
+  a given source is using before comparing numbers across sites.
 - **Comparing quick ratios across industries with very different inventory
   intensity.** A software company (almost no inventory) will show a quick
   ratio close to its current ratio by default — the gap between the two
@@ -79,7 +79,7 @@ comfortably under 1 is worth investigating, not explaining away.
   years, even if still technically above 1, is worth more attention than a
   single low reading at an otherwise fast-cycling business.
 
-**Takeaway:** quick ratio is the stricter cousin of current ratio, showing
-coverage without leaning on inventory — a low number is usually worth
-investigating, but as Britannia shows, it has to be read alongside the
-company's actual cash conversion cycle before jumping to a conclusion.
+**Takeaway:** the quick ratio is the stricter cousin of the current ratio,
+showing coverage without leaning on inventory. A low number is usually worth
+investigating — but, as Britannia shows, read it alongside the company's cash
+conversion cycle before jumping to a conclusion.

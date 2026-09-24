@@ -58,9 +58,8 @@ From Britannia Industries' [audited consolidated FY25 results](https://media.bri
 | PAT | {{ bi_is25.pat }} |
 | **OCF/PAT** | **{{ site.data.real_company.ratios.FY25.ocf_pat }}x** |
 
-Both companies clear 1.0x comfortably, which is a genuinely reassuring
-sign — reported profit at both is backed by real cash, not just accounting
-entries. Worth noting Britannia's ratio eased slightly from FY24's
+Both companies clear 1x comfortably, which is consistent with profit being
+backed by cash rather than just accounting entries. Worth noting Britannia's ratio eased slightly from FY24's
 {{ bi_cf24.cfo | divided_by: bi_is24.pat | round: 2 }}x — the same filing's [statement of cash
 flows](https://media.britannia.co.in/Audited_Consolidated_Financial_Results_31_03_2025_74a7c03628.pdf)
 shows trade receivables grew during the year, which is
@@ -70,12 +69,10 @@ currently sitting in unpaid customer invoices than last year's was.
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
 
-If you did ₹500 of chores this month but two neighbours still owe you money
-for chores from *last* month that just landed in your pocket, you might
-actually collect more than ₹500 in cash this month — even though this
-month's "profit" was only ₹500. That's an OCF/PAT above 1: more cash came in
-than this month's paper earnings alone would suggest, because old money
-finally showed up.
+Say you earned ₹500 doing chores this month. If the neighbours paid you all
+₹500, your cash matches your earnings: OCF/PAT of 1. If they paid only ₹300
+and "owe you" the rest, you have less cash than you earned: below 1. If they
+also paid ₹100 they owed from last month, you collected ₹600: above 1.
 
 </details>
 
@@ -95,11 +92,10 @@ finally showed up.
   build-up of inventory ahead of a launch. The line items behind the ratio
   matter.
 - **Comparing across industries with very different working capital
-  cycles.** A business with naturally high receivables (long B2B credit
-  terms) will structurally run a lower OCF/PAT than a cash-heavy retail
+  cycles.** A business with naturally high receivables (long business-to-business
+  credit terms) will structurally run a lower OCF/PAT than a cash-heavy retail
   business, without either being poorly managed.
 
 **Takeaway:** OCF/PAT checks whether reported profit is actually backed by
-cash — comfortably above 1, like both companies here, is reassuring, but the
-ratio is only the starting point for asking why it moved, not the final
-answer on its own.
+cash. Comfortably above 1, like both companies here, is a good sign, but the
+ratio is where you start asking why it moved, not the final answer.

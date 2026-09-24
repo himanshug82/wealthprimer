@@ -97,7 +97,7 @@ out: dict = {
         "bars": int(len(px)),
         "start": d(px.index[0]),
         "end": d(px.index[-1]),
-        "as_of": "Daily bars, 1 April 2024 to 30 March 2026",
+        "as_of": "daily bars, 1 April 2024 to 30 March 2026",
         "csv_path": "/assets/data/britannia-ohlcv-2024-04-to-2026-03.csv",
         "source_url": "https://finance.yahoo.com/quote/BRITANNIA.NS/history/",
         "index_csv_path": "/assets/data/nifty50-price-index.csv",
@@ -127,8 +127,11 @@ fwd10 = px.close.shift(-10) / px.close - 1
 after_upper = fwd10.loc[valid][above].dropna()
 after_lower = fwd10.loc[valid][below].dropna()
 
-# Squeezes: bandwidth at a 120-bar low. Take the first bar of each squeeze
-# episode (bars where bandwidth == rolling 120 min), then the 20-bar forward move.
+# Squeezes: bandwidth at a 120-bar low (bars where bandwidth == rolling 120 min).
+# Each episode is dated by its LAST such bar -- the tightest reading, which is
+# only identifiable in hindsight -- and the move from its FIRST bar (the day a
+# trader could first have seen the squeeze) is recorded alongside, so the post
+# can show both.
 roll_min = bandwidth.rolling(120).min()
 is_sq = (bandwidth <= roll_min + 1e-9) & roll_min.notna()
 sq_dates = [t for t in px.index[is_sq] if t >= px.index[140]]
@@ -141,15 +144,19 @@ for t in sq_dates:
         episodes[-1].append(t)
 sq_rows = []
 for ep in episodes:
-    t = ep[-1]  # tightest/last day of the episode
+    t = ep[-1]  # tightest/last day of the episode (hindsight)
     i = px.index.get_loc(t)
     if i + 20 >= len(px):
         continue
     later = px.index[i + 20]
     move = px.close.iloc[i + 20] / px.close.iloc[i] - 1
+    i0 = px.index.get_loc(ep[0])  # first day of the episode (knowable at the time)
+    move0 = px.close.iloc[i0 + 20] / px.close.iloc[i0] - 1
     sq_rows.append({"date": d(t), "bandwidth_pct": r(bandwidth.iloc[i], 1), "close": r(px.close.iloc[i], 1),
                     "close_20_bars_later": r(px.close.iloc[i + 20], 1), "later_date": d(later),
-                    "move_20_bars_pct": r(move * 100, 1)})
+                    "move_20_bars_pct": r(move * 100, 1),
+                    "first_date": d(ep[0]), "first_bandwidth_pct": r(bandwidth.iloc[i0], 1),
+                    "move_20_bars_from_first_pct": r(move0 * 100, 1)})
 sq_sorted = sorted(sq_rows, key=lambda x: abs(x["move_20_bars_pct"]))
 squeeze_big = sq_sorted[-1]
 squeeze_nothing = sq_sorted[0]
@@ -272,9 +279,9 @@ out["multi_timeframe"] = {
     "dropped_no_weekly_trend": dropped_no_weekly_trend,
     "dropped_no_forward_data": dropped_no_forward_data,
     "in_weekly_uptrend": {"count": len(ev_up), "avg_fwd_20_bars_pct": r(np.mean([e["fwd_20_bars_pct"] for e in ev_up]) if ev_up else None, 1),
-                          "share_positive_pct": r(np.mean([e["fwd_20_bars_pct"] > 0 for e in ev_up]) * 100 if ev_up else None, 0)},
+                          "share_positive_pct": int(round(np.mean([e["fwd_20_bars_pct"] > 0 for e in ev_up]) * 100)) if ev_up else None},
     "in_weekly_downtrend": {"count": len(ev_dn), "avg_fwd_20_bars_pct": r(np.mean([e["fwd_20_bars_pct"] for e in ev_dn]) if ev_dn else None, 1),
-                            "share_positive_pct": r(np.mean([e["fwd_20_bars_pct"] > 0 for e in ev_dn]) * 100 if ev_dn else None, 0)},
+                            "share_positive_pct": int(round(np.mean([e["fwd_20_bars_pct"] > 0 for e in ev_dn]) * 100)) if ev_dn else None},
     "events": ev,
     "example_downtrend_kept_falling": min(ev_dn, key=lambda e: e["fwd_20_bars_pct"]) if ev_dn else None,
     "example_uptrend_bounced": max(ev_up, key=lambda e: e["fwd_20_bars_pct"]) if ev_up else None,
@@ -303,8 +310,8 @@ def run(signal: pd.Series, exec_lag: int, cost: float):
     strat = strat - turns * cost
     eq = START_CAPITAL * (1 + strat).cumprod()
     trades = int((pos.diff() == 1).sum() + (pos.iloc[0] == 1))
-    return {"final_value": r(eq.iloc[-1], 0), "cagr_pct": r(cagr(eq), 1), "max_drawdown_pct": r(max_drawdown(eq), 1),
-            "trades": trades, "pct_time_invested": r(pos.mean() * 100, 0)}, eq
+    return {"final_value": int(round(eq.iloc[-1])), "cagr_pct": r(cagr(eq), 1), "max_drawdown_pct": r(max_drawdown(eq), 1),
+            "trades": trades, "pct_time_invested": r(pos.mean() * 100, 1)}, eq
 
 
 def sma_signal(fast, slow):
@@ -326,7 +333,7 @@ def rsi_signal(lo=30, hi=70, flat_start=False):
 
 
 bh_eq = START_CAPITAL * bt_px.close / bt_px.close.iloc[0]
-buy_hold = {"final_value": r(bh_eq.iloc[-1], 0), "cagr_pct": r(cagr(bh_eq), 1), "max_drawdown_pct": r(max_drawdown(bh_eq), 1),
+buy_hold = {"final_value": int(round(bh_eq.iloc[-1])), "cagr_pct": r(cagr(bh_eq), 1), "max_drawdown_pct": r(max_drawdown(bh_eq), 1),
             "trades": 1, "pct_time_invested": 100}
 
 strategies = {"sma_50_200": sma_signal(50, 200), "sma_20_50": sma_signal(20, 50), "rsi_30_70": rsi_signal()}

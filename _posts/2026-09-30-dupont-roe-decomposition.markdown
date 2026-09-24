@@ -13,7 +13,7 @@ term: "DuPont decomposition"
 
 ## Why a good ROE isn't self-explanatory
 
-[ROE]({% post_url 2026-09-01-roe %}) — Return on Equity — tells you how much profit a company
+[ROE]({% post_url 2026-09-01-roe %}) — return on equity — tells you how much profit a company
 earns on shareholders' money. It's the headline number a lot of investors
 check first, and for good reason. But on its own it's a verdict without any
 reasoning attached. A 34% ROE could mean the company keeps a fat slice of
@@ -61,7 +61,7 @@ ROE = Net Margin  ×  Asset Turnover  ×  Equity Multiplier
 
 Revenue cancels against revenue, average assets against average assets, and
 you're left with PAT — Profit After Tax, the bottom line of the
-[income statement]({% post_url 2026-08-22-reading-an-income-statement %}) — over Average Equity, which is just ROE. That's the point:
+[income statement]({% post_url 2026-08-22-reading-an-income-statement %}) — over average equity, which is just ROE. That's the point:
 DuPont doesn't add any new information, it *re-expresses* information you
 already have so the drivers become visible.
 
@@ -96,7 +96,7 @@ same figures used in the tables below. Illustration only.
 
 ## Worked example: Desi Bites Foods, FY25
 
-Using the FY25 figures from the [case study](/case-study/):
+Using the FY25 figures from the [case study](/case-study/) (amounts in ₹ lakh):
 
 | Component | Calculation | Value |
 |---|---|---:|
@@ -127,7 +127,7 @@ rising is a much less comfortable story.
 ## Worked example: Britannia Industries, FY25
 
 From Britannia's [audited consolidated FY25 results](https://media.britannia.co.in/Audited_Consolidated_Financial_Results_31_03_2025_74a7c03628.pdf)
-(year ended 31 March 2025, filed 8 May 2025). For illustration only.
+(year ended 31 March 2025, filed 8 May 2025; amounts in ₹ crore). For illustration only.
 
 | Component | Calculation | Value |
 |---|---|---:|
@@ -155,7 +155,7 @@ every rupee of sales where Desi Bites keeps {{ db.net_margin }}.
 That's a genuinely useful conclusion, and it's one the raw ROE numbers
 couldn't have given you. It says the gap between these two businesses isn't
 about how hard they sweat their factories or how aggressively they borrow —
-it's about brand strength and pricing power showing up in the margin line.
+it's in the margin line, which is consistent with brand strength and scale.
 It also tells you where to look next: if you want to understand the
 difference, go read the [gross margin]({% post_url 2026-08-26-gross-margin %}) and
 [EBITDA margin]({% post_url 2026-08-28-ebitda-margin %}) posts again, not the leverage ones.
@@ -187,8 +187,6 @@ difference, go read the [gross margin]({% post_url 2026-08-26-gross-margin %}) a
   business itself.
 
 **Takeaway:** ROE tells you *how much* a company earns on shareholders'
-money; DuPont tells you *why*. Split it into margin, turnover, and leverage,
-check that the three multiply back to the ROE you started with, and the
-number stops being a scoreboard and becomes a diagnosis — which is the
-difference between knowing a company earns 52% and knowing it earns 52%
-because people will pay up for its brand.
+money; DuPont tells you *why*. Split it into margin, turnover and leverage,
+and check the three multiply back to the ROE you started with. Then the
+number stops being a scoreboard and becomes a diagnosis.

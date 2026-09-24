@@ -17,10 +17,12 @@ term: "P/E (price-to-earnings)"
 
 ## What P/E means
 
-**P/E — Price-to-Earnings** — is the most quoted valuation ratio there is:
+**P/E — price-to-earnings** — is the most quoted valuation ratio there is:
 how many rupees is the market charging for every rupee of a company's
 annual earnings? Framed differently, it's roughly how many years of current
-profit an investor is paying for at today's price.
+profit an investor is paying for at today's price — a rough framing, since
+it ignores both growth and the time value of money (a rupee earned in year
+ten is worth less than one earned today).
 
 ## The formula
 
@@ -63,7 +65,7 @@ signal to act on.
 | **P/E** | **{{ bi_pe }}x** |
 
 A P/E of {{ bi_pe }}x means the market was pricing Britannia at roughly {{ bi_pe }} years of
-its FY25 earnings. Across this series, the same company has shown [ROE above 50%]({% post_url 2026-09-01-roe %}),
+its FY25 earnings. Across this series, the same company has shown [ROE (return on equity) above 50%]({% post_url 2026-09-01-roe %}),
 [negative net debt]({% post_url 2026-09-18-net-debt-ebitda %}), and [a negative cash conversion cycle]({% post_url 2026-09-10-cash-conversion-cycle %}). Mechanically,
 a high multiple means the market is paying for expected quality or growth —
 whether {{ bi_pe }}x is justified isn't assessed here, and this series
@@ -81,13 +83,12 @@ deliberately doesn't answer that question.
   some sources quote forward (analyst-estimated) EPS instead, which
   produces a different P/E for the same price.
 - **Comparing P/E across industries or growth profiles without context.** A
-  slow-growing utility and a fast-growing FMCG brand can both have
+  slow-growing utility and a fast-growing FMCG (fast-moving consumer goods) brand can both have
   "reasonable" P/Es that mean completely different things.
 - **Ignoring earnings quality behind the E.** A great P/E on paper means
   little if the earnings themselves aren't backed by real cash — worth
   checking [OCF/PAT]({% post_url 2026-09-20-ocf-pat %}) before trusting a P/E at face value.
 
-**Takeaway:** P/E measures how many years of current earnings the market is
-charging for a share — useful as a starting comparison, but it only means
-something once it's read alongside the quality and growth of the earnings
-underneath it, not as a number that's simply "high" or "low" in isolation.
+**Takeaway:** P/E measures roughly how many years of current earnings the
+market is charging for a share. It only means something next to the quality
+and growth of the earnings underneath it — never as simply "high" or "low".

@@ -25,7 +25,7 @@ useless for judging anything, and this post is about why.
 ## The formula
 
 For periods under a year, the plain change is used. Beyond a year, returns
-are annualised as **CAGR — Compound Annual Growth Rate**:
+are annualised as **CAGR — compound annual growth rate**:
 
 ```
               ⎛ Ending NAV ⎞^(1/years)
@@ -109,7 +109,7 @@ somewhere very different.
 
 ## What the fund actually did
 
-Worth stating plainly, since we've been slicing: across the whole {{ f.years_of_history }} years of
+Worth stating plainly, since we've been slicing: across the whole {% include inr.html n=f.years_of_history %} years of
 available history, the fund returned **{{ mf.volatility_and_sharpe.annualised_return_pct }}% a year**.
 
 That's also a point-to-point number, with all the same problems. It starts in

@@ -60,12 +60,12 @@ recorded as margins expanding from 14% to 15.5% to 17% — operating leverage is
 the *mechanism* behind margin expansion on a growing top line.
 
 Now the forward-looking version. Treat Desi Bites' FY25 cost of goods sold
-({{ ol.desi_fy25_cogs_pct_revenue }}% of revenue) as variable and its opex plus depreciation
+({% include inr.html n=ol.desi_fy25_cogs_pct_revenue %}% of revenue) as variable and its operating expenses plus depreciation
 (₹{% include inr.html n=ol.desi_fy25_fixed_costs %} lakh) as fixed:
 
 | | FY25 actual | Revenue +10%, fixed costs flat |
 |---|---:|---:|
-| Revenue (₹ lakh) | 2,592 | {% include inr.html n=ol.whatif_revenue %} |
+| Revenue (₹ lakh) | {% include inr.html n=site.data.case_study.income_statement.FY25.revenue %} | {% include inr.html n=ol.whatif_revenue %} |
 | Contribution margin | {{ ol.desi_fy25_contribution_margin_pct }}% | {{ ol.desi_fy25_contribution_margin_pct }}% |
 | Fixed costs (₹ lakh) | {% include inr.html n=ol.desi_fy25_fixed_costs %} | {% include inr.html n=ol.desi_fy25_fixed_costs %} |
 | EBIT (₹ lakh) | {{ ol.desi_fy25_ebit }} | {{ ol.whatif_ebit }} |
@@ -77,7 +77,7 @@ Desi Bites' "fixed" costs actually grew each year — real companies hire people
 and add capacity. The point-formula assumes they're truly frozen.)
 
 Run it the other way. Revenue −10% with the same fixed costs would take EBIT
-down by about the same {{ ol.whatif_ebit_growth_pct }}%. Three years of 20% growth flatter a
+down by about the same {{ ol.whatif_ebit_growth_pct }}%. A run of 20% growth years flatters a
 high-fixed-cost business; the first flat year does the opposite.
 
 ## Worked example: Britannia, FY24 → FY25
@@ -93,7 +93,8 @@ From Britannia's [audited FY25 results](https://media.britannia.co.in/Audited_Co
 | **DOL (on EBIT)** | **{{ br.dol_ebit }}** |
 
 Revenue up {{ br.revenue_growth_pct }}%, operating profit essentially flat. A DOL of {{ br.dol_ebit }} —
-almost no leverage at all. That isn't because Britannia has no fixed costs; it's
+almost no leverage at all. (DOL is computed from the unrounded growth rates,
+so it differs a touch from dividing the rounded figures shown.) That isn't because Britannia has no fixed costs; it's
 because the *variable* cost line jumped. Cost of goods sold (materials,
 mostly) grew {% assign bi24 = site.data.real_company.income_statement.FY24 %}{% assign bi25 = site.data.real_company.income_statement.FY25 %}{{ bi25.cogs | divided_by: bi24.cogs | minus: 1 | times: 100 | round: 1 }}% against revenue's {{ br.revenue_growth_pct }}%, and that swallowed the
 operating leverage the fixed-cost base would otherwise have delivered. The
@@ -136,8 +137,7 @@ didn't shrink either.
   [interest coverage]({% post_url 2026-09-17-interest-coverage %}) posts. A
   company with both is doubly amplified in both directions.
 
-**Takeaway:** Operating leverage is fixed costs turning revenue growth into
-faster profit growth — Desi Bites' 20% sales growth became 39% EBIT growth —
-and it runs in reverse just as hard. Britannia's near-zero DOL in FY25 is the
-other lesson: measured over one year, it's a description of that year, not of
-the business.
+**Takeaway:** operating leverage is fixed costs turning revenue growth into
+faster profit growth — and it runs in reverse just as hard. Measured over a
+single year, as Britannia's near-zero FY25 figure shows, it describes that
+year, not the business.

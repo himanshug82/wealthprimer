@@ -69,7 +69,7 @@ from whether your own score went up or down.
 ![Britannia vs Nifty 50, and the relative strength ratio]({{ '/assets/charts/ta2-relative-strength.svg' | relative_url }})
 
 Britannia (NSE: BRITANNIA) and the Nifty 50 price index, daily,
-{{ rs.common_start }} to {{ rs.common_end }} ({{ rs.common_bars }} common
+{{ rs.common_start | date: "%-d %B %Y" }} to {{ rs.common_end | date: "%-d %B %Y" }} ({{ rs.common_bars }} common
 sessions). Sources: [Yahoo Finance, BRITANNIA.NS]({{ ta2.dataset.source_url }})
 and [Yahoo Finance, ^NSEI]({{ ta2.dataset.index_source_url }}). Historical
 data, for illustration only.
@@ -112,10 +112,10 @@ Here is where relative strength earns its keep, and also where it misleads if
 you stop reading too early.
 
 The [trend lines post]({% post_url 2026-10-11-trend-lines %}) built its
-examples on Britannia's five-month slide from its {{ dw.start }} peak to the
-{{ dw.end }} trough. Over that same window:
+examples on Britannia's five-month slide from its {{ dw.start | date: "%-d %B %Y" }} peak to the
+{{ dw.end | date: "%-d %B %Y" }} trough. Over that same window:
 
-| {{ dw.start }} → {{ dw.end }} | Change |
+| {{ dw.start | date: "%-d %B %Y" }} → {{ dw.end | date: "%-d %B %Y" }} | Change |
 |---|---:|
 | Britannia | **{{ dw.stock_pct }}%** |
 | Nifty 50 | **{{ dw.index_pct }}%** |
@@ -141,9 +141,9 @@ sessions (about eleven weeks); the longest above was
 {{ rs.longest_stretch_above_ma_bars }}.
 
 The best 60-session stretch of relative performance was
-**+{{ rs.best_60d_relative.pct }}%** ending {{ rs.best_60d_relative.date }};
-the worst was **{{ rs.worst_60d_relative.pct }}%** ending
-{{ rs.worst_60d_relative.date }}. Those are big swings for a large, stable
+**+{{ rs.best_60d_relative.pct }}%** ending {{ rs.best_60d_relative.date | date: "%-d %B %Y" }};
+{% assign worst60 = rs.worst_60d_relative.pct | abs %}the worst was **−{{ worst60 }}%** ending
+{{ rs.worst_60d_relative.date | date: "%-d %B %Y" }}. Those are big swings for a large, stable
 consumer company against its own index — a reminder that "relative strength"
 is not a stable property of a stock but a description of a particular window.
 
@@ -156,7 +156,9 @@ falling for a year while its [ROCE]({% post_url 2026-09-03-roce %}) and
 the market may have re-rated it — its [P/E]({% post_url 2026-09-24-price-to-earnings %})
 has compressed — or the rest of the market may have been re-rated upwards, or
 the index's earnings may simply have grown faster than the company's. All three
-are worth knowing. None is visible on a price chart alone.
+are worth knowing. None is visible on a price chart alone. (For the
+portfolio version of the same question — how much of a return was simply the
+market's — see [beta]({% post_url 2026-11-26-beta %}) and [alpha]({% post_url 2026-11-27-alpha %}).)
 
 ## Doing it in Python
 
@@ -205,4 +207,4 @@ what a company did from what the market did, which is the one question a
 price chart can't answer on its own. Over two years Britannia beat the Nifty
 by about eleven points, but the ratio rose for six months, collapsed over two,
 then climbed for nine, and half of the stock's worst decline turned out to
-be the market's. Read it as a description. It has never been a forecast.
+be the market's. Read it as a description, never a forecast.

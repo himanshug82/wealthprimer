@@ -60,13 +60,13 @@ From the [case study](/case-study/), the year before the IPO:
 | FY25 ROE | {{ d.roe_pct }}% |
 | **Sustainable growth** = {{ d.roe_pct }}% × {{ d.retention_pct }}% | **≈ {{ d.sustainable_growth_pct }}%** |
 
-Desi Bites kept sixty paise of every rupee and earned 34% on its equity, so it
-could fund roughly 20% growth a year from retained profit alone. That's a
+Desi Bites kept about sixty paise of every rupee and earned {{ d.roe_pct | round }}% on its equity, so it
+could fund roughly {{ d.sustainable_growth_pct | round }}% growth a year from retained profit alone. That's a
 useful sanity check on the [DCF]({% post_url 2026-10-05-terminal-value-and-the-full-dcf %}),
 which assumed 18% revenue growth in FY26 — in range. It also explains why the
 company *could* have grown without the IPO, and why the
-[capital allocation question](/series/fundamental-analysis/) of what to do with
-₹1,600 lakh of fresh cash is a real one.
+[capital allocation question]({% post_url 2026-11-18-capital-allocation %}) of what to do with
+₹{% include inr.html n=site.data.case_study.listing.ipo_proceeds %} lakh of fresh cash is a real one.
 
 ## Worked example: Britannia Industries, FY25
 
@@ -95,15 +95,15 @@ Britannia pays out about four-fifths of what it earns. That pattern is
 common in mature companies, where the business often throws off more cash
 than it can reinvest at a similar return. Its sustainable growth rate is
 about {{ b.sustainable_growth_pct }}% — a consequence of returning most of the profit rather than
-retaining it. A company with a 52% ROE that retained everything could in
-theory grow equity at 52% a year. Why a particular board picks a particular
+retaining it. A company with a {{ b.roe_pct }}% ROE that retained everything could in
+theory grow equity at {{ b.roe_pct }}% a year. Why a particular board picks a particular
 payout isn't something these numbers can tell you.
 
 This is also the arithmetic behind a point the
 [PEG post]({% post_url 2026-09-29-peg-ratio %}) stumbled on: Britannia's FY25
-profit growth was 1.8%. With an 81% payout, retained profit alone funds
+profit growth was {{ site.data.real_company.market.pat_growth_fy24_fy25_pct }}%. With an {{ b.payout_pct | round }}% payout, retained profit alone funds
 growth of roughly {{ b.sustainable_growth_pct }}% a year — so modest growth is what the arithmetic
-points to, even if 1.8% sits well below that. The rest of that year's gap
+points to, even if {{ site.data.real_company.market.pat_growth_fy24_fy25_pct }}% sits well below that. The rest of that year's gap
 was the cost squeeze covered in the
 [operating leverage post]({% post_url 2026-12-03-operating-leverage %}), not the payout.
 
@@ -124,7 +124,7 @@ Neither is wrong; it depends on whether more lemons would actually sell.
 ## Common mistakes
 
 - **Confusing payout ratio with dividend yield.** Payout is dividend ÷ profit;
-  yield is dividend ÷ price. Britannia's payout is 81%; its yield is 1.26%.
+  yield is dividend ÷ price. Britannia's payout is {{ b.payout_pct | round }}%; its yield is {{ site.data.jargon_m6.yields.britannia.dividend_yield_pct }}%.
 - **Reading a high payout as generosity.** Often it means the company has run
   out of high-return places to reinvest. That can be the right call — or a
   sign growth has stalled.
@@ -138,8 +138,7 @@ Neither is wrong; it depends on whether more lemons would actually sell.
   one-off gain shrinks the ratio; a one-off charge inflates it. Use a normal
   year, or several.
 
-**Takeaway:** Payout ratio is the share of profit paid out as dividends, and
-retention is what's kept — and ROE times retention says how fast a company can
-grow on its own money. Britannia's 81% payout and 52% ROE imply about 10%;
-Desi Bites' 40% and 34% imply about 20%. Neither is better; they're different
-answers to "can we reinvest this well?"
+**Takeaway:** payout ratio is the share of profit paid out as dividends;
+retention is what's kept, and ROE times retention says how fast a company can
+grow on its own money. A high or low payout isn't better or worse — each is an
+answer to "can we reinvest this well?"

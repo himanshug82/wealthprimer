@@ -26,7 +26,8 @@ you about its cash position — not through fraud, just through how accrual
 accounting works. A company books revenue the moment it *sells* something,
 even if the customer hasn't paid yet. It books depreciation as a cost even
 though no cash actually leaves the building that day. Profit is an
-accounting opinion; cash is a fact.
+accounting opinion; cash is a fact — though even cash can be nudged for a
+quarter, by paying suppliers late or selling receivables early (factoring).
 
 The cash flow statement strips all of that away and answers one plain
 question: **how much actual cash came in and went out, and where from?** It
@@ -120,7 +121,7 @@ page]({{ '/case-study/' | relative_url }}).
   outflow that's expanding capacity is a very different signal from outflow
   that's just replacing worn-out equipment to stand still. The cash flow
   statement alone doesn't always tell you which — that's a judgment call,
-  covered later in the [Cash Flow Quality module]({{ '/2026/09/19/free-cash-flow/' | relative_url }}).
+  covered later in the [cash-flow quality posts]({{ '/2026/09/19/free-cash-flow/' | relative_url }}).
 - **Treating one year's loan draw as "strong cash flow."** Financing inflows
   (new debt, new equity) aren't the company generating cash — they're the
   company borrowing or raising it. Operating cash flow is the number that

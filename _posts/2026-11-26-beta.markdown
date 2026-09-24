@@ -10,6 +10,7 @@ term: "Beta"
 
 {% assign b = site.data.jargon_m6.beta %}
 {% assign f = b.full %}
+{% assign c25 = b.fy25.correlation | append: '' %}{% if c25.size == 3 %}{% assign c25 = c25 | append: '0' %}{% endif %}
 
 ## What beta means
 
@@ -47,14 +48,15 @@ the index's returns; beta is the slope of that line.
 
 ## Worked example: Britannia against the Nifty 50
 
-Daily closes for Britannia (NSE: BRITANNIA) and the Nifty 50 price index,
-{{ f.start }} to {{ f.end }}. Sources: [Yahoo Finance]({{ b.source_stock }}) for
-both series. Historical data, for illustration only.
+Daily returns for Britannia (NSE: BRITANNIA) and the Nifty 50 price index,
+{{ f.start | date: "%-d %B %Y" }} to {{ f.end | date: "%-d %B %Y" }} (the first return uses the 1 April 2024
+close). Source: NSE closing prices via Yahoo Finance ([stock]({{ b.source_stock }}),
+[index]({{ b.source_index }})). Historical data, for illustration only.
 
 | | Full two years | {{ b.fy25.window }} | {{ b.fy26.window }} |
 |---|---:|---:|---:|
 | Trading days | {{ f.days }} | {{ b.fy25.days }} | {{ b.fy26.days }} |
-| Correlation with Nifty | {{ f.correlation }} | {{ b.fy25.correlation }} | {{ b.fy26.correlation }} |
+| Correlation with Nifty | {{ f.correlation }} | {{ c25 }} | {{ b.fy26.correlation }} |
 | Stock volatility (annualised) | {{ f.stock_vol_pct }}% | {{ b.fy25.stock_vol_pct }}% | {{ b.fy26.stock_vol_pct }}% |
 | Index volatility (annualised) | {{ f.index_vol_pct }}% | {{ b.fy25.index_vol_pct }}% | {{ b.fy26.index_vol_pct }}% |
 | **Beta** | **{{ f.beta }}** | **{{ b.fy25.beta }}** | **{{ b.fy26.beta }}** |
@@ -76,7 +78,7 @@ returns instead of daily, the full-window beta comes out at {{ b.weekly_full.bet
 stock, same two years, four defensible numbers ranging from {{ b.fy25.beta }} to {{ b.fy26.beta }}.
 
 **The index explains very little.** An R² of {{ f.r_squared }} means the Nifty's daily
-move accounts for about {{ f.r_squared | times: 100 | round }}% of Britannia's daily move. The other
+moves explain only about {{ f.r_squared | times: 100 | round }}% of the variation in Britannia's daily returns. The other
 {{ 1 | minus: f.r_squared | times: 100 | round }}%-odd is the stock doing its own thing — results,
 input costs, a competitor's price cut. For a large, liquid stock that is
 normal, and it is why beta is a statement about *tendency*, not a prediction
@@ -119,7 +121,7 @@ in the table.
 - **Comparing betas measured against different indices.** A beta against the
   Nifty 50 and one against a small-cap index aren't the same quantity.
 
-**Takeaway:** Beta is correlation times relative volatility — how much a stock
+**Takeaway:** beta is correlation times relative volatility — how much a stock
 has tended to move for a 1% move in the index. Britannia's is {{ f.beta }} over two
 years, but {{ b.fy25.beta }} in one of those years and {{ b.fy26.beta }} in the other, which is roughly
 all you need to know about treating any beta as a precise number.

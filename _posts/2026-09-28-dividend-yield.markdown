@@ -32,7 +32,7 @@ Dividend Yield (%) = Dividend per Share / Price × 100
 
 ## Worked example: Desi Bites Foods Ltd
 
-Desi Bites' FY25 dividend (₹84 Lakh) was paid before the IPO, to the
+Desi Bites' FY25 dividend (₹{{ db_div25 }} lakh) was paid before the IPO, to the
 {{ listing.pre_ipo_shares_lakh }} lakh pre-IPO shares that existed at the time.
 
 | | |
@@ -65,7 +65,7 @@ only.
 | **Dividend yield** | **{{ bi_yield }}%** |
 
 Another coincidence worth flagging rather than reading too much into: on
-the pre-issue figure, both companies land close to {{ db_yield }}%. That's not a pattern this series is claiming
+the pre-issue figure, both companies land around {{ db_yield | round: 1 }}%. That's not a pattern this series is claiming
 means anything — dividend yield depends heavily on each company's own
 payout choices and where its price happens to sit, not on some underlying
 law that similar businesses converge here.
@@ -83,12 +83,13 @@ law that similar businesses converge here.
 - **Ignoring the payout ratio.** A company paying out more in dividends than
   it earns in profit is spending down its own reserves, which isn't
   sustainable — dividend yield alone doesn't reveal this, but comparing the
-  dividend to PAT does.
+  dividend to PAT (profit after tax) does.
 - **Treating dividend yield as the whole return story.** It's cash income
   only — price appreciation (or decline) is a separate, often larger,
-  component of total return that yield alone says nothing about.
+  component of total return that yield alone says nothing about. It's also
+  pre-tax: since 1 April 2020, Indian dividends are taxed in your hands at
+  your income-tax slab rate.
 
-**Takeaway:** dividend yield measures the cash income a share pays back
-relative to its price — informative on its own, but only one part of total
-return, and a high yield deserves a check on sustainability before it's
-read as a straightforward positive.
+**Takeaway:** dividend yield measures the cash a share pays back each year
+relative to its price. It's only one part of total return, and a high yield
+deserves a sustainability check before it's read as good news.

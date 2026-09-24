@@ -23,7 +23,7 @@ term: "Comparables (relative valuation)"
 
 There are broadly two families of valuation. The first works out what a
 business is worth from its own future cash flows, in isolation — that's
-**discounted cash flow (DCF)**, and it takes the next four posts to build
+**discounted cash flow (DCF)**, and it takes the next few posts to build
 properly.
 The second is quicker and much more widely used in practice: figure out what
 the market is paying for *similar* businesses, and apply that to this one.
@@ -83,12 +83,12 @@ multiple set at that price, using the FY25 figures from the
 |---|---|---:|
 | P/E | ₹{% include inr.html n=listing.ipo_price %} / diluted EPS ₹{% include inr.html n=listing.eps_diluted %} | {{ db_pe }}x |
 | P/B | ₹{% include inr.html n=listing.ipo_price %} / BVPS ₹{% include inr.html n=listing.book_value_per_share %} | {{ db_pb }}x |
-| EV/EBITDA | EV ₹{% include inr.html n=listing.ev %} Lakh / EBITDA ₹441 Lakh | {{ db_evebitda }}x |
+| EV/EBITDA | EV ₹{% include inr.html n=listing.ev %} lakh / EBITDA ₹441 lakh | {{ db_evebitda }}x |
 
 Notice how differently the same company looks depending on which lens you
 pick. The P/E of {{ db_pe }}x reads as a fairly demanding growth valuation. The
 EV/EBITDA of {{ db_evebitda }}x looks far more modest — because enterprise value
-subtracts the ₹{% include inr.html n=listing.post_ipo_cash %} Lakh of cash sitting on the post-IPO balance sheet, most
+subtracts the ₹{% include inr.html n=listing.post_ipo_cash %} lakh of cash sitting on the post-IPO balance sheet, most
 of it the IPO proceeds themselves. Same company, same day, same price;
 two defensible-looking answers.
 
@@ -127,8 +127,8 @@ India. That is roughly where the similarity ends, and the gaps explain
 almost the entire spread:
 
 - **IPO cash sitting in the book.** Most of the P/B gap starts here.
-  Desi Bites' post-IPO book of ₹{% include inr.html n=listing.post_ipo_equity %} Lakh
-  includes the ₹{% include inr.html n=listing.ipo_proceeds %} Lakh the IPO just
+  Desi Bites' post-IPO book of ₹{% include inr.html n=listing.post_ipo_equity %} lakh
+  includes the ₹{% include inr.html n=listing.ipo_proceeds %} lakh the IPO just
   raised — about {{ db_ipo_share }}% of the book is fresh cash that hasn't
   earned anything yet. Cash is worth roughly its book value, so a book
   stuffed with it drags P/B towards 1x.
@@ -145,7 +145,7 @@ almost the entire spread:
 - **Scale and track record.** Britannia has a century of history, national
   distribution, and brands people ask for by name. Desi Bites is a
   fictional mid-sized manufacturer with three years of audited accounts.
-- **Size and liquidity.** Desi Bites is a ₹{% include inr.html n=listing.market_cap %} Lakh company on the main
+- **Size and liquidity.** Desi Bites is a ₹{% include inr.html n=listing.market_cap %} lakh company on the main
   board, with most of its shares still held by the promoters, so its free
   float is tiny and the shares trade thinly. Illiquidity means a buyer can't
   easily get out, and the market prices that in with a discount.

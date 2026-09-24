@@ -17,7 +17,7 @@ dataset:
   bars: 495
   start: '2024-04-01'
   end: '2026-03-30'
-  as_of: Daily bars, 1 April 2024 to 30 March 2026
+  as_of: daily bars, 1 April 2024 to 30 March 2026
   csv_path: /assets/data/britannia-ohlcv-2024-04-to-2026-03.csv
   source_url: https://finance.yahoo.com/quote/BRITANNIA.NS/history/
   index_csv_path: /assets/data/nifty50-price-index.csv
@@ -52,6 +52,9 @@ bollinger:
     close_20_bars_later: 5201.4
     later_date: '2025-02-01'
     move_20_bars_pct: 8.6
+    first_date: '2025-01-03'
+    first_bandwidth_pct: 4.0
+    move_20_bars_from_first_pct: 6.1
   squeeze_then_nothing:
     date: '2025-12-11'
     bandwidth_pct: 2.5
@@ -59,6 +62,9 @@ bollinger:
     close_20_bars_later: 5977.5
     later_date: '2026-01-09'
     move_20_bars_pct: 2.2
+    first_date: '2025-12-08'
+    first_bandwidth_pct: 2.8
+    move_20_bars_from_first_pct: 4.8
   all_squeezes:
   - date: '2025-01-06'
     bandwidth_pct: 3.8
@@ -66,12 +72,18 @@ bollinger:
     close_20_bars_later: 5201.4
     later_date: '2025-02-01'
     move_20_bars_pct: 8.6
+    first_date: '2025-01-03'
+    first_bandwidth_pct: 4.0
+    move_20_bars_from_first_pct: 6.1
   - date: '2025-12-11'
     bandwidth_pct: 2.5
     close: 5847.0
     close_20_bars_later: 5977.5
     later_date: '2026-01-09'
     move_20_bars_pct: 2.2
+    first_date: '2025-12-08'
+    first_bandwidth_pct: 2.8
+    move_20_bars_from_first_pct: 4.8
 atr:
   period: 14
   atr_end: 145.1
@@ -138,11 +150,11 @@ multi_timeframe:
   in_weekly_uptrend:
     count: 1
     avg_fwd_20_bars_pct: -12.6
-    share_positive_pct: 0.0
+    share_positive_pct: 0
   in_weekly_downtrend:
     count: 5
     avg_fwd_20_bars_pct: 1.2
-    share_positive_pct: 60.0
+    share_positive_pct: 60
   events:
   - date: '2024-10-24'
     rsi: 29.4
@@ -218,7 +230,7 @@ backtest:
   why_start_at_bar_200: every strategy and the benchmark begin on the first bar where
     the 200-day SMA exists, so they are compared over the same window
   buy_and_hold:
-    final_value: 110587.0
+    final_value: 110587
     cagr_pct: 8.9
     max_drawdown_pct: -13.9
     trades: 1
@@ -226,193 +238,193 @@ backtest:
   strategies:
     sma_50_200:
       lookahead_no_cost:
-        final_value: 97853.0
+        final_value: 97853
         cagr_pct: -1.8
         max_drawdown_pct: -13.9
         trades: 1
-        pct_time_invested: 69.0
+        pct_time_invested: 69.5
       next_day_no_cost:
-        final_value: 96839.0
+        final_value: 96839
         cagr_pct: -2.7
         max_drawdown_pct: -13.9
         trades: 1
-        pct_time_invested: 69.0
+        pct_time_invested: 69.2
       next_day_with_cost:
-        final_value: 96742.0
+        final_value: 96742
         cagr_pct: -2.8
         max_drawdown_pct: -13.9
         trades: 1
-        pct_time_invested: 69.0
+        pct_time_invested: 69.2
       in_position_at_window_start: false
     sma_20_50:
       lookahead_no_cost:
-        final_value: 72071.0
+        final_value: 72071
         cagr_pct: -24.1
         max_drawdown_pct: -29.3
         trades: 5
-        pct_time_invested: 63.0
+        pct_time_invested: 63.1
       next_day_no_cost:
-        final_value: 71543.0
+        final_value: 71543
         cagr_pct: -24.6
         max_drawdown_pct: -29.1
         trades: 5
-        pct_time_invested: 63.0
+        pct_time_invested: 63.1
       next_day_with_cost:
-        final_value: 70832.0
+        final_value: 70832
         cagr_pct: -25.2
         max_drawdown_pct: -29.7
         trades: 5
-        pct_time_invested: 63.0
+        pct_time_invested: 63.1
       in_position_at_window_start: false
     rsi_30_70:
       lookahead_no_cost:
-        final_value: 117515.0
+        final_value: 117515
         cagr_pct: 14.6
         max_drawdown_pct: -4.0
         trades: 3
-        pct_time_invested: 12.0
+        pct_time_invested: 11.5
       next_day_no_cost:
-        final_value: 117910.0
+        final_value: 117910
         cagr_pct: 14.9
         max_drawdown_pct: -4.0
         trades: 3
-        pct_time_invested: 12.0
+        pct_time_invested: 11.5
       next_day_with_cost:
-        final_value: 117322.0
+        final_value: 117322
         cagr_pct: 14.5
         max_drawdown_pct: -4.0
         trades: 3
-        pct_time_invested: 12.0
+        pct_time_invested: 11.5
       in_position_at_window_start: true
       next_day_with_cost_flat_start:
-        final_value: 113915.0
+        final_value: 113915
         cagr_pct: 11.6
         max_drawdown_pct: -4.0
         trades: 2
-        pct_time_invested: 10.0
+        pct_time_invested: 9.8
       carried_in_from_oversold_date: '2024-12-23'
   grid:
   - fast: 10
     slow: 50
-    final_value: 96046.0
+    final_value: 96046
     cagr_pct: -3.3
     max_drawdown_pct: -15.9
     trades: 5
-    pct_time_invested: 65.0
+    pct_time_invested: 64.7
   - fast: 10
     slow: 100
-    final_value: 101326.0
+    final_value: 101326
     cagr_pct: 1.1
     max_drawdown_pct: -13.6
     trades: 4
-    pct_time_invested: 67.0
+    pct_time_invested: 67.1
   - fast: 10
     slow: 150
-    final_value: 105727.0
+    final_value: 105727
     cagr_pct: 4.8
     max_drawdown_pct: -10.2
     trades: 2
-    pct_time_invested: 73.0
+    pct_time_invested: 73.2
   - fast: 10
     slow: 200
-    final_value: 102660.0
+    final_value: 102660
     cagr_pct: 2.2
     max_drawdown_pct: -10.9
     trades: 1
-    pct_time_invested: 77.0
+    pct_time_invested: 76.9
   - fast: 20
     slow: 50
-    final_value: 70832.0
+    final_value: 70832
     cagr_pct: -25.2
     max_drawdown_pct: -29.7
     trades: 5
-    pct_time_invested: 63.0
+    pct_time_invested: 63.1
   - fast: 20
     slow: 100
-    final_value: 89054.0
+    final_value: 89054
     cagr_pct: -9.3
     max_drawdown_pct: -21.2
     trades: 4
-    pct_time_invested: 72.0
+    pct_time_invested: 71.5
   - fast: 20
     slow: 150
-    final_value: 99346.0
+    final_value: 99346
     cagr_pct: -0.6
     max_drawdown_pct: -14.6
     trades: 2
-    pct_time_invested: 76.0
+    pct_time_invested: 75.9
   - fast: 20
     slow: 200
-    final_value: 102576.0
+    final_value: 102576
     cagr_pct: 2.2
     max_drawdown_pct: -12.9
     trades: 1
-    pct_time_invested: 76.0
+    pct_time_invested: 75.6
   - fast: 30
     slow: 50
-    final_value: 80176.0
+    final_value: 80176
     cagr_pct: -17.0
     max_drawdown_pct: -20.8
     trades: 5
     pct_time_invested: 61.0
   - fast: 30
     slow: 100
-    final_value: 94536.0
+    final_value: 94536
     cagr_pct: -4.6
     max_drawdown_pct: -18.1
     trades: 2
-    pct_time_invested: 75.0
+    pct_time_invested: 74.9
   - fast: 30
     slow: 150
-    final_value: 101142.0
+    final_value: 101142
     cagr_pct: 1.0
     max_drawdown_pct: -14.0
     trades: 1
-    pct_time_invested: 76.0
+    pct_time_invested: 75.9
   - fast: 30
     slow: 200
-    final_value: 98475.0
+    final_value: 98475
     cagr_pct: -1.3
     max_drawdown_pct: -13.9
     trades: 1
-    pct_time_invested: 74.0
+    pct_time_invested: 73.9
   - fast: 50
     slow: 100
-    final_value: 108758.0
+    final_value: 108758
     cagr_pct: 7.3
     max_drawdown_pct: -12.6
     trades: 2
-    pct_time_invested: 75.0
+    pct_time_invested: 74.6
   - fast: 50
     slow: 150
-    final_value: 101373.0
+    final_value: 101373
     cagr_pct: 1.2
     max_drawdown_pct: -12.9
     trades: 1
-    pct_time_invested: 72.0
+    pct_time_invested: 71.9
   - fast: 50
     slow: 200
-    final_value: 96742.0
+    final_value: 96742
     cagr_pct: -2.8
     max_drawdown_pct: -13.9
     trades: 1
-    pct_time_invested: 69.0
+    pct_time_invested: 69.2
   grid_best:
     fast: 50
     slow: 100
-    final_value: 108758.0
+    final_value: 108758
     cagr_pct: 7.3
     max_drawdown_pct: -12.6
     trades: 2
-    pct_time_invested: 75.0
+    pct_time_invested: 74.6
   grid_worst:
     fast: 20
     slow: 50
-    final_value: 70832.0
+    final_value: 70832
     cagr_pct: -25.2
     max_drawdown_pct: -29.7
     trades: 5
-    pct_time_invested: 63.0
+    pct_time_invested: 63.1
   grid_table:
     slows:
     - 50

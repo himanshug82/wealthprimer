@@ -16,12 +16,12 @@ series: fundamental-analysis
 
 ## Putting it together
 
-Forty-odd posts in, this blog has covered how to read three financial
+By now this blog has covered how to read three financial
 statements, roughly twenty ratios, and the machinery of valuation. Each one
 arrived in isolation. That's the wrong way to actually use them — nobody
 computes a debtor-days figure and stops.
 
-So this post does one pass over one real company, in the order you'd
+So this post, the capstone to the first module of this series, does one pass over one real company, in the order you'd
 sensibly do it, showing how the pieces build on each other. The company is
 Britannia Industries, the anchor used throughout this blog, and every figure
 comes from its
@@ -84,8 +84,8 @@ ROE from a score into an explanation:
 | Equity multiplier (avg basis) | {{ d.equity_multiplier_avg }}x | {{ site.data.case_study.dupont.FY25.equity_multiplier_avg }}x |
 | **ROE** | **{{ d.roe_reconciled }}%** | **{{ site.data.case_study.dupont.FY25.roe_reconciled }}%** |
 
-Turnover and leverage are near-identical across the two companies. The entire
-ROE gap is margin — which is to say, brand. That's a specific, checkable
+Turnover and leverage are near-identical across the two companies. Nearly
+all of the ROE gap is margin, which is consistent with brand and scale. That's a specific, checkable
 claim about where the value in this business sits, and it points you at the
 right things to monitor: pricing power and input costs, not asset
 utilisation.
@@ -106,7 +106,7 @@ taking around {{ r.payable_days }} days to pay its own suppliers. Its suppliers 
 effect, financing its working capital.
 
 That's not an accounting trick — it's what distribution power looks like in
-the accounts. Retailers pay quickly because they need the stock; suppliers
+the accounts. Distributors pay quickly because they need the stock; suppliers
 accept long terms because the volume is worth having. Growth funds itself
 rather than consuming cash, which is why this business can grow without
 constantly raising money.
@@ -189,7 +189,7 @@ purpose, and it's worth being straight about why.
 
 **The compliance reason.** Wealth Primer is educational. Publishing an
 intrinsic value for a specific listed stock is functionally a price target,
-and price targets are the work of SEBI-registered Research Analysts. That
+and price targets are the work of SEBI-registered research analysts. That
 registration exists for good reasons and this blog doesn't hold it. So the
 DCF machinery in this series was built on a fictional company, where the
 method can be shown in full without the output being mistaken for a call.
@@ -235,7 +235,6 @@ Condensed to a checklist:
 **Takeaway:** No single ratio tells you anything; the toolkit works because
 each number explains the last one, and a figure that looks alarming alone
 usually has its answer two ratios away. Used well, financial statement
-analysis tells you precisely what kind of business you're looking at and
-which questions to ask next — and it stops well short of telling you whether
-the price is right, which is a limit worth respecting rather than papering
-over.
+analysis tells you what kind of business you're looking at and which
+questions to ask next. It stops well short of telling you whether the price
+is right, and that limit is worth respecting.

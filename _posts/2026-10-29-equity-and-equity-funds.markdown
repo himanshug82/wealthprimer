@@ -57,9 +57,9 @@ comfortably past the long-term line:
 
 | | |
 |---|---:|
-| Bought {{ a.buy_date }} at NAV | ₹{% include inr.html n=a.buy_nav %} |
+| Bought {{ a.buy_date | date: "%-d %B %Y" }} at NAV | ₹{% include inr.html n=a.buy_nav %} |
 | Units | {{ a.units }} |
-| Sold {{ a.sell_date }} at NAV | ₹{% include inr.html n=a.sell_nav %} |
+| Sold {{ a.sell_date | date: "%-d %B %Y" }} at NAV | ₹{% include inr.html n=a.sell_nav %} |
 | Sale value | ₹{% include inr.html n=a.value %} |
 | Cost | ₹{% include inr.html n=a.invested %} |
 | **Gain** | **₹{% include inr.html n=a.gain %}** |
@@ -116,10 +116,10 @@ Worked through, on the same fund:
 
 | | |
 |---|---:|
-| Bought {{ g.buy_date }}, invested | ₹{% include inr.html n=g.invested %} |
+| Bought {{ g.buy_date | date: "%-d %B %Y" }}, invested | ₹{% include inr.html n=g.invested %} |
 | Units | {{ g.units }} |
-| Value on {{ g.fmv_date }} | ₹{% include inr.html n=g.fmv_value %} |
-| Sold {{ g.sell_date }} for | ₹{% include inr.html n=g.sale_value %} |
+| Value on {{ g.fmv_date | date: "%-d %B %Y" }} | ₹{% include inr.html n=g.fmv_value %} |
+| Sold {{ g.sell_date | date: "%-d %B %Y" }} for | ₹{% include inr.html n=g.sale_value %} |
 | Higher of cost and 31-Jan-2018 value | ₹{% include inr.html n=g.grandfathered_cost %} |
 | **Gain, with grandfathering** | **₹{% include inr.html n=g.gain_with_grandfathering %}** |
 | Gain, without it | ₹{% include inr.html n=g.gain_without %} |

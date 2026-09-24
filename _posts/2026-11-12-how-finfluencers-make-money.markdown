@@ -19,7 +19,7 @@ because the answer predicts what the content will push you toward. A
 **finfluencer** (financial influencer: someone producing investment content
 for an audience, usually on social media, usually without a SEBI
 registration) is running a business. The product is rarely the advice. The
-advice is the funnel. This closing post of the risk series walks through the
+advice is the funnel. This post walks through the
 funnel's plumbing, the rules SEBI has put around it, and — since the same
 question applies here — how this blog is and isn't paid.
 
@@ -27,7 +27,7 @@ No individuals are named. The structures are the point; the people change.
 
 ## The five revenue models
 
-**1. Referral commissions.** The largest one, historically. A broker,
+**1. Referral commissions.** One of the largest, historically. A broker,
 trading app or investment platform pays a fee for every account opened
 through a link — often a flat amount per account, sometimes a share of the
 brokerage the referred client goes on to generate. Notice what that second
@@ -111,8 +111,8 @@ the level I'm confident of; a compliance professional would add detail.
   prohibited its regulated intermediaries — brokers, fund houses, registered
   advisers — from having any association, including paying referral fees,
   with persons who give unregistered advice or make performance claims. This
-  is the rule aimed at revenue model one. It cut off the largest funding
-  source for tip-based content at the intermediary end rather than trying to
+  is the rule aimed at revenue model one. It cut off one of the largest
+  funding sources for tip-based content at the intermediary end rather than trying to
   police every creator.
 - **Education is carved out — with conditions.** The same framework left
   room for regulated entities to associate with persons engaged purely in

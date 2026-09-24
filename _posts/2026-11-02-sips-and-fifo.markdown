@@ -34,7 +34,7 @@ When you redeem part of a holding, which units did you sell? You didn't
 specify, and it matters enormously, because different lots have different
 costs and different holding periods.
 
-The answer in practice is **FIFO — First In, First Out**. The units you
+The answer in practice is **FIFO — first in, first out**. The units you
 bought earliest are treated as the units sold first. For shares and units held
 in demat (electronic) form, that's written into the law — the 1961 Act's
 section 45(2A), explained in Central Board of Direct Taxes (CBDT) Circular 768
@@ -78,7 +78,7 @@ A ₹{% include inr.html n=s.monthly_amount %} monthly SIP into the fund used th
 Nifty 50 Index Fund (regular plan, growth), NAVs (net asset values, the
 per-unit prices) from AMFI (the Association of Mutual Funds in India), as of
 31 March 2026, used for illustration only — running from
-{{ s.start }} to {{ s.last_instalment }}, redeemed in full on {{ s.redemption_date }}:
+{{ s.start | date: "%-d %B %Y" }} to {{ s.last_instalment | date: "%-d %B %Y" }}, redeemed in full on {{ s.redemption_date | date: "%-d %B %Y" }}:
 
 | | |
 |---|---:|

@@ -17,8 +17,8 @@ term: "P/B (price-to-book)"
 
 ## What P/B means
 
-[Book Value per Share]({% post_url 2026-09-22-book-value-per-share %}) told us what a share is worth on the accounting
-books. **P/B — Price-to-Book** — closes that gap: how many rupees is the
+[Book value per share]({% post_url 2026-09-22-book-value-per-share %}) told us what a share is worth on the accounting
+books. **P/B — price-to-book** — closes that gap: how many rupees is the
 market paying for each rupee of that accounting net worth?
 
 ## The formula
@@ -50,7 +50,7 @@ module. For illustration only.
 Britannia's accounting net worth per share. Whether that's justified isn't
 something this post judges — but the mechanics behind a number that high
 follow directly from something this series already established. Back in
-the [ROE post]({% post_url 2026-09-01-roe %}), Britannia's return on equity was {{ site.data.real_company.ratios.FY25.roe }}% — the
+the [ROE post]({% post_url 2026-09-01-roe %}), Britannia's ROE (return on equity) was {{ site.data.real_company.ratios.FY25.roe }}% — the
 company earns roughly ₹{{ site.data.real_company.ratios.FY25.roe | divided_by: 100.0 | round: 2 }} of profit a year on each rupee of book
 equity. A business that can keep doing that is worth much
 more than its accounting net worth, and a high P/B is simply the market's way of pricing
@@ -63,7 +63,7 @@ why.
   alongside it.** As above, a high P/B paired with a high ROE is a
   coherent, expected combination — not a red flag on its own.
 - **Comparing P/B across asset-light and asset-heavy businesses.** A
-  brand-driven FMCG company or a services business carries most of its real
+  brand-driven FMCG (fast-moving consumer goods) company or a services business carries most of its real
   value off the balance sheet (brand, customer relationships, know-how) —
   book value mechanically understates it, inflating P/B for reasons that
   have nothing to do with overvaluation.
@@ -77,7 +77,6 @@ why.
   as the brand-value issue above, so the two can stack.
 
 **Takeaway:** P/B measures how much the market pays over a company's
-accounting net worth — a high number, like Britannia's here, usually just
-reflects a high return on that equity, so P/B is best read together with
-ROE rather than as a standalone verdict on whether a stock is cheap or
+accounting net worth. A high number often just reflects a high return on
+that equity, so read P/B together with ROE, not as a verdict on cheap or
 expensive.

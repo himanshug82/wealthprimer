@@ -69,7 +69,7 @@ receipts achieves nothing at all.
 
 ## What ELSS actually is
 
-**ELSS — Equity Linked Savings Scheme** — is an equity mutual fund with two
+**ELSS — equity-linked savings scheme** — is an equity mutual fund with two
 distinguishing features:
 
 - Contributions qualify for the ₹1.5 lakh deduction **in the old regime**
@@ -111,7 +111,8 @@ This is a personal calculation and it genuinely varies. The shape of it:
   premiums, house rent allowance.
 - The new regime tends to win where deductions would be **manufactured** —
   investments made only for the deduction, in products you wouldn't otherwise
-  want.
+  want. From FY 2025-26 its rebate also means no tax on total income up to
+  ₹12 lakh (special-rate gains like equity capital gains aside).
 
 That second point is the one worth internalising. A deduction is worth your
 marginal rate — at 30%, ₹1.5 lakh deducted saves ₹45,000, or ₹46,800 with
@@ -123,7 +124,9 @@ commitment that runs for years.
 
 The genuinely useful move is to check both regimes against your actual
 numbers each year, rather than assuming the answer carries over. The tax
-department publishes a calculator for exactly this.
+department publishes a calculator for exactly this. Salaried filers can
+switch every year; anyone with business income can leave the new regime and
+come back to it only once.
 
 ## Common mistakes
 

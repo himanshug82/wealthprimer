@@ -197,8 +197,8 @@ Applied honestly, that habit will disqualify most of what gets published
 about charts — including, quite often, the chart in front of you.
 
 **Takeaway:** Technical analysis describes what price has done, compactly and
-sometimes usefully, but it cannot see anything that isn't in the price, its
-signals are either too rare to test or too noisy to trust, and the same
-reading routinely precedes opposite outcomes. Treat it as a vocabulary for
-describing markets rather than a method for predicting them — and be most
-sceptical of the chart that fits your existing view best.
+sometimes usefully, but it can't see anything outside the price, and the same
+reading routinely precedes opposite outcomes. Any simple rule that did work
+reliably would tend to get traded away once enough people used it. Treat it as
+a vocabulary for describing markets rather than a method for predicting them —
+and be most sceptical of the chart that fits your existing view best.

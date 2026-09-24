@@ -45,8 +45,8 @@ series follows the same shape:
 2. **The formula.**
 3. **Calculated on Desi Bites** — using the numbers from the case study, so
    you can follow along and check the arithmetic yourself.
-4. **Calculated on a real, listed company** — so you see it done on an actual
-   filing, not just a tidy textbook example.
+4. **Calculated on a real, listed company** (from the ratio posts onward) — so
+   you see it done on an actual filing, not just a tidy textbook example.
 5. **Common mistakes** — the ways people misread or misapply the number.
 6. **A one-line takeaway.**
 

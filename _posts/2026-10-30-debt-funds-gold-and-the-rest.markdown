@@ -96,10 +96,10 @@ rule before relying on the exemption.
 ## Property
 
 Long-term after {{ r.other_holding_months }} months. The 2024 changes removed indexation for most
-assets and moved property to a flat rate — with a transitional option for
-property acquired before 23 July 2024, where a resident individual may choose
-between the new flat rate without indexation and the older rate with it,
-whichever is lower.
+assets and moved property to a flat 12.5% — with a transitional option for
+land or buildings acquired before 23 July 2024, where a resident individual or
+HUF (Hindu undivided family) may pay the lower of 12.5% without indexation and
+20% with it.
 
 Property also carries reinvestment reliefs — rolling gains into another
 residential property, or into specified bonds within a window — that have no

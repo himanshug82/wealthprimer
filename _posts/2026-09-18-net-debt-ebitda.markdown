@@ -18,10 +18,14 @@ term: "Net debt/EBITDA"
 
 ## What net debt/EBITDA means
 
-This closes out the Leverage module with the ratio lenders and credit
-rating agencies reach for first: **Net Debt/EBITDA** — roughly, how many
-years of the company's current operating profit would it take to pay off
-all its debt, if every rupee of [EBITDA]({% post_url 2026-08-28-ebitda-margin %}) went straight to debt repayment?
+This rounds off the leverage posts with a ratio lenders and credit rating
+agencies commonly use: **net debt/EBITDA** — roughly, how many years of the
+company's current operating profit would it take to pay off all its debt,
+if every rupee of [EBITDA]({% post_url 2026-08-28-ebitda-margin %}) went straight to debt repayment?
+
+Treat that "years" reading as a floor, not an estimate. EBITDA comes before
+interest, tax and capital spending, so the cash genuinely free to repay debt
+is smaller — the real payback would take longer.
 
 **Net debt** nets a company's borrowings against the cash and liquid
 investments it's sitting on — because cash on hand could, in principle, be
@@ -55,19 +59,20 @@ For illustration only.
 | | ₹ Crore |
 |---|---:|
 | Total Borrowings | {{ bi_bs25.total_borrowings }} |
-| − Cash & Bank + Current Investments | {{ bi_cash_total }} |
+| − (Cash & Bank + Current Investments) | {{ bi_cash_total }} |
 | **Net Debt** | **{{ bi_net_debt }}** |
 | EBITDA | {{ bi_is25.ebitda }} |
-| **Net Debt / EBITDA** | **{{ site.data.real_company.ratios.FY25.net_debt_ebitda }}x** |
+| **Net Debt / EBITDA** | **{% include inr.html n=site.data.real_company.ratios.FY25.net_debt_ebitda %}x** |
 
 Britannia's net debt is *negative* — it holds more cash and liquid
-investments than it owes in borrowings. It's in a genuine net cash
-position, not a net debt one. That closes the loop on everything this
-module has shown: a current ratio and quick ratio that looked tight in
+investments than it owes in borrowings. It's in a net cash position, not a
+net debt one — so read the negative ratio as "no net debt", not as a
+negative number of years. That rounds off what the last few posts have shown
+for Britannia: a current ratio and quick ratio that looked tight in
 isolation, a low debt-to-equity, an equity multiplier explained by supplier
 financing rather than borrowing, comfortable interest coverage — and now,
 a balance sheet with more cash than debt on it. None of these ratios told
-the whole story alone; together, they do.
+the whole story alone; read together, they tell a much fuller one.
 
 ## Common mistakes
 
@@ -81,15 +86,15 @@ the whole story alone; together, they do.
   always check which definition a given number is using before comparing
   across sources.
 - **Using a single year's EBITDA in a cyclical downturn.** EBITDA can swing
-  faster than debt levels — a company's Net Debt/EBITDA can look
+  faster than debt levels — a company's net debt/EBITDA can look
   artificially high or low in an unusual year, even if its debt itself
   hasn't changed much.
-- **Ignoring debt maturity.** A low Net Debt/EBITDA doesn't tell you when
+- **Ignoring debt maturity.** A low net debt/EBITDA doesn't tell you when
   the debt is actually due — a company could have a small, low ratio but a
   large single repayment due next year, which is still a real liquidity
   question this ratio doesn't answer.
 
-**Takeaway:** Net Debt/EBITDA measures how many years of operating profit it
-would take to clear a company's debt after netting off its cash — and, as
-this whole module's walk through Britannia shows, no single leverage ratio
-tells the full story on its own; it's the combination that does.
+**Takeaway:** net debt/EBITDA roughly measures how many years of operating
+profit it would take to clear a company's debt after netting off its cash.
+Like every leverage ratio, it's most useful read alongside the others, not
+on its own.

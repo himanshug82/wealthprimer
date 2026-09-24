@@ -47,7 +47,7 @@ Whatever you can't use this year carries forward for **{{ r.carry_forward_years 
 its character — a long-term loss stays a long-term loss and remains
 restricted to long-term gains.
 
-There is one condition, and it is absolute:
+There is one condition, and it is near-absolute:
 
 > **You must file your return by the due date.** File late, and the
 > carry-forward is lost permanently.
@@ -57,6 +57,8 @@ this series. Someone with a large loss and no gains this year might reasonably
 think there's nothing to report. But filing on time is precisely what
 preserves the loss for the eight years in which it might be worth a great
 deal. A return filed late doesn't just delay the benefit — it destroys it.
+(The CBDT, the Central Board of Direct Taxes, can condone a delay in genuine
+hardship, but that's a rare, discretionary exception, not a plan.)
 
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
@@ -82,7 +84,7 @@ The fund NAV (net asset value, the per-unit price) history used throughout
 this blog — UTI Nifty 50 Index Fund (regular plan, growth), NAVs from AMFI
 (the Association of Mutual Funds in India), as of 31 March 2026, used for
 illustration only — contains an actual loss. A ₹{% include inr.html n=l.monthly_amount %} monthly
-[SIP]({% post_url 2026-10-24-sips-xirr-and-timing-myths %}) (systematic investment plan) started {{ l.start }} and redeemed on {{ l.redemption_date }} — {{ l.instalments }}
+[SIP]({% post_url 2026-10-24-sips-xirr-and-timing-myths %}) (systematic investment plan) started {{ l.start | date: "%-d %B %Y" }} and redeemed on {{ l.redemption_date | date: "%-d %B %Y" }} — {{ l.instalments }}
 instalments through the Q1 2026 decline:
 
 | | |
@@ -99,14 +101,14 @@ That's the FIFO point arriving early.
 
 Now what can be done with each:
 
-- The **short-term loss of ₹12,529** can be set against any capital gain —
+- The **short-term loss of ₹{% include inr.html n=l.short_term_loss_abs %}** can be set against any capital gain —
   short-term or long-term — in this year or the next {{ r.carry_forward_years }}.
-- The **long-term loss of ₹5,763** can only be set against long-term gains.
+- The **long-term loss of ₹{% include inr.html n=l.long_term_loss_abs %}** can only be set against long-term gains.
 
 If this investor had, say, a ₹2,00,000 long-term gain elsewhere in the same
 year, both losses could be applied against it, reducing the taxable long-term
-gain to ₹1,81,708 before the ₹{% include inr.html n=r.ltcg_annual_exemption %} exemption — which would then take it
-down to ₹56,708.
+gain to ₹{% assign lt_left = 200000 | minus: l.total_loss_abs %}{% include inr.html n=lt_left %} before the ₹{% include inr.html n=r.ltcg_annual_exemption %} exemption — which would then take it
+down to ₹{% assign lt_tax = lt_left | minus: r.ltcg_annual_exemption %}{% include inr.html n=lt_tax %}.
 
 ## Tax-loss harvesting, and its more useful sibling
 
@@ -117,7 +119,10 @@ becomes usable; the exposure continues.
 Two cautions. There's no benefit unless you have gains for it to offset,
 either now or plausibly within eight years. And selling and immediately
 rebuying incurs real transaction costs, plus a day or two out of the market —
-so the tax saving needs to exceed the friction.
+so the tax saving needs to exceed the friction. India has no explicit
+wash-sale rule, but an arrangement whose main purpose is a tax benefit can in
+principle be challenged under the general anti-avoidance rules (GAAR), so keep
+the trades genuine.
 
 **Harvesting gains is the more interesting idea**, and it's specific to
 Indian equity taxation. Recall from the

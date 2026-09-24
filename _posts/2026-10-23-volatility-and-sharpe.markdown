@@ -39,14 +39,14 @@ The √ comes from variance scaling with time while standard deviation scales
 with its square root — which assumes returns are independent day to day.
 That's an approximation, and it's worth knowing it's an approximation.
 
-For this fund, over {{ f.years_of_history }} years:
+For this fund, over {% include inr.html n=f.years_of_history %} years:
 
 | | |
 |---|---:|
 | Annualised return | {{ v.annualised_return_pct }}% |
 | Annualised volatility | **{{ v.annualised_volatility_pct }}%** |
 
-{{ f.name }}, {{ f.plan_regular }}, {{ v.period }}. Source:
+{{ f.name }}, {{ f.plan_regular }}, {{ f.regular_start | date: "%-d %B %Y" }} to {{ f.regular_end | date: "%-d %B %Y" }}. Source:
 [AMFI via mfapi.in]({{ f.source_url }}). Historical data, for illustration only.
 
 A volatility of {{ v.annualised_volatility_pct }}% means that in a typical year, returns landed roughly
@@ -89,8 +89,8 @@ mostly use a short rate — typically the FBIL Overnight MIBOR (the overnight
 interbank lending rate, published by Financial Benchmarks India), as on the
 factsheet date; Tata, Nippon India and PPFAS factsheets from 2025–26 all state
 it this way. Others use the 10-year government bond yield. The {{ v.risk_free_pct }}% here
-is a round, illustrative figure: roughly the 10-year G-Sec (Government
-Security) yield in mid-2025, the same number the
+is a round, illustrative figure: roughly the 10-year G-Sec (government
+security) yield in mid-2025, the same number the
 [WACC post]({% post_url 2026-10-03-wacc-cost-of-capital %}) used. Because the
 choice moves the answer, the code further down tries a few.
 
@@ -140,8 +140,8 @@ distribution predicts. The 2008 crash covered in the
 [drawdown post]({% post_url 2026-10-22-drawdown %}) was a many-standard-deviation event
 that a normal distribution says should essentially never occur.
 
-**It says nothing about how long you suffered.** A fund can post a decent
-Sharpe while spending six years below its previous peak — as this one did.
+**It says nothing about how long you suffered.** This fund spent six years
+below its 2008 peak, and its Sharpe carries no trace of that.
 Sharpe and drawdown recovery measure genuinely different things, and neither
 substitutes for the other.
 
@@ -190,7 +190,9 @@ assumptions.
 - **Forgetting the normality assumption.** Fat tails mean the worst cases are
   worse than the maths implies.
 - **Using monthly data and comparing to daily-data figures.** Monthly
-  sampling smooths away volatility and inflates Sharpe.
+  and daily sampling give different numbers (here, {{ v.annualised_volatility_monthly_pct }}% annualised
+  volatility from monthly data against {{ v.annualised_volatility_pct }}% from daily) — don't
+  compare across them.
 - **Assuming a higher Sharpe means a better fund for you.** It measures
   efficiency, not suitability — and says nothing about how long you'd have
   spent underwater.

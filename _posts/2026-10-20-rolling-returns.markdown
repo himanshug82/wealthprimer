@@ -63,7 +63,7 @@ stretch of road.
 
 ## The distribution
 
-Every possible start date in {{ f.years_of_history }} years of this fund's history:
+Every possible start date in {% include inr.html n=f.years_of_history %} years of this fund's history:
 
 | Holding period | Windows | Worst | Median | Best | % negative | % below 8% |
 |---|---:|---:|---:|---:|---:|---:|
@@ -84,7 +84,7 @@ it.
 number at every holding period. Holding longer did not raise the typical
 return.
 
-**The range collapses.** Three-year windows ran from {{ rr.years_3.min }}% to {{ rr.years_3.max }}% — a spread
+**The range collapses.** Three-year windows ran from {% include inr.html n=rr.years_3.min %}% to {{ rr.years_3.max }}% — a spread
 of nearly 37 percentage points. Ten-year windows ran from {{ rr.years_10.min }}% to {{ rr.years_10.max }}%, a
 spread of under 12. The dispersion of outcomes shrank dramatically.
 
@@ -98,9 +98,9 @@ more likely to do well; you were less likely to do badly.
 
 ## The uncomfortable column
 
-Look again at "% below 8%". Even at ten years, **{{ rr.years_10.pct_below_8 }}%** of windows returned less
-than 8% a year — which over much of this period was roughly what a fixed
-deposit paid, with none of the volatility.
+Look again at "% below 8%". Even at ten years, **{% include inr.html n=rr.years_10.pct_below_8 %}%** of windows returned less
+than 8% a year — roughly what a 1–3 year bank fixed deposit paid (pre-tax) for
+much of this period, with none of the volatility.
 
 That column doesn't appear in fund marketing, and it should. The rolling data
 supports "equity was rarely a loss over long periods." It does not support

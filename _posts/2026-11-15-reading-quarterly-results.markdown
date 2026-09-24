@@ -104,7 +104,7 @@ dip. QoQ is only readable against the seasonal template.
 
 Here's the comparison a headline writer in a hurry makes:
 
-> Desi Bites' Q1 FY26 revenue of ₹{{ q26.Q1.revenue }} lakh is **{{ q.q1fy26_vs_q3fy25_pct }}%** below its Q3 FY25 figure of ₹{{ q25.Q3.revenue }} lakh.
+> Desi Bites' Q1 FY26 revenue of ₹{% include inr.html n=q26.Q1.revenue %} lakh is **{{ q.q1fy26_vs_q3fy25_pct | abs }}%** below its Q3 FY25 figure of ₹{{ q25.Q3.revenue }} lakh.
 
 Every word of that is accurate. It's also meaningless: it compares the
 leanest quarter of the year with the festive one. A business growing 18% a
@@ -145,7 +145,7 @@ Q2 FY26:
 Careful with that +{{ q.ttm_after_q2_fy26.revenue_growth_vs_fy25 }}%, though — it isn't a growth rate. The TTM and
 FY25 share two quarters (Q3 and Q4 FY25), so only half of each total has
 changed, and the comparison mechanically shows about half the real growth:
-the two new quarters grew {{ q.FY26.Q1.yoy_revenue_growth }}% YoY, the two shared ones by definition
+the two new quarters grew {% include inr.html n=q.FY26.Q1.yoy_revenue_growth %}% YoY, the two shared ones by definition
 0%. TTM growth means something only against the *previous* TTM, the twelve
 months to 30 September 2024.
 
@@ -173,9 +173,10 @@ Not nothing. A quarter is where you first see:
 - **Acquisitions changing the base.** Desi Bites bought a regional brand
   on 1 October 2025. From Q3 FY26 onwards, its reported revenue includes
   the acquired sales (₹{{ q.acquired_revenue_by_quarter.Q3 }} lakh in Q3, ₹{{ q.acquired_revenue_by_quarter.Q4 }} lakh in Q4). YoY growth
-  from Q3 will look spectacular and will be partly bought. Companies that
-  do this are supposed to disclose *organic* growth separately; when they
-  don't, compute it.
+  from Q3 will look spectacular and will be partly bought. No Indian rule
+  requires a separate *organic* growth line, though many companies offer
+  one. Ind AS 103 does require the annual accounts to disclose the acquired
+  business's revenue and profit since the deal; use that to compute it.
 
 What a quarter can't tell you is whether any of the above is a trend. Three
 quarters can start to. Twelve can.
@@ -201,6 +202,6 @@ quarters can start to. Twelve can.
 **Takeaway:** A quarter is a short, seasonal, noisy slice of a year. Compare
 it with the same quarter last year (YoY), read quarter-on-quarter only
 against the seasonal pattern, and use the trailing twelve months for
-anything that needs a full year. Desi Bites' Q1 FY26 was {{ q.q1fy26_vs_q3fy25_pct }}% below its
+anything that needs a full year. Desi Bites' Q1 FY26 was {{ q.q1fy26_vs_q3fy25_pct | abs }}% below its
 festive Q3 and 18% above last year's Q1 — and only one of those numbers
 means anything.

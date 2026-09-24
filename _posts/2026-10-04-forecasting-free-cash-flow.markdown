@@ -5,6 +5,7 @@ description: "The half of a DCF that actually decides the answer. Building an FC
 image: /assets/og/forecasting-free-cash-flow.png
 date: 2026-10-04 09:00:00 +0530
 series: fundamental-analysis
+term: "Free cash flow to the firm (FCFF)"
 ---
 
 {% assign dcf = site.data.case_study.dcf %}
@@ -45,8 +46,8 @@ FCFF = EBIT × (1 − tax rate)          ← operating profit, after notional ta
 
 Line by line:
 
-- **EBIT × (1 − t)**, sometimes called NOPAT — Net Operating Profit After
-  Tax. Start from [operating profit]({% post_url 2026-08-22-reading-an-income-statement %}),
+- **EBIT × (1 − t)**, sometimes called NOPAT — net operating profit after
+  tax. Start from [operating profit]({% post_url 2026-08-22-reading-an-income-statement %}),
   before interest, and tax it as if the company had no debt at all. The tax
   benefit of the debt has already been handled inside WACC.
 - **Add back depreciation.** It was subtracted to get to EBIT, but no money
@@ -85,13 +86,13 @@ large bases are harder to grow, and the fade is the norm. Assume otherwise
 and you should be able to say why.
 
 Also note what the capex assumption is doing. Desi Bites raised
-₹{% include inr.html n=site.data.case_study.listing.ipo_proceeds %} Lakh in its IPO explicitly to expand. Modelling flat capex
+₹{% include inr.html n=site.data.case_study.listing.ipo_proceeds %} lakh in its IPO explicitly to expand. Modelling flat capex
 while that cash sits on the balance sheet would give you the cash *and* the
 growth for free. If the money is being spent, the model has to spend it.
 
 ## Worked example: Desi Bites Foods Ltd, FY26–FY30
 
-All figures ₹ Lakh, built off the FY25 actuals in the
+All figures ₹ lakh, built off the FY25 actuals in the
 [case study](/case-study/).
 
 | | {% for y in dcf.forecast %}{{ y.year }} | {% endfor %}
@@ -110,11 +111,12 @@ All figures ₹ Lakh, built off the FY25 actuals in the
 
 Now read the FCFF row, because it tells a story the revenue row hides.
 Revenue climbs smoothly every single year. Free cash flow does not — it sits
-at ₹{% assign _f0 = dcf.forecast[0].fcff %}{% include inr.html n=_f0 %} Lakh in FY26 and ₹{% assign _f1 = dcf.forecast[1].fcff %}{% include inr.html n=_f1 %} Lakh in FY27, then jumps to ₹{% assign _f2 = dcf.forecast[2].fcff %}{% include inr.html n=_f2 %} Lakh in
+at ₹{% assign _f0 = dcf.forecast[0].fcff %}{% include inr.html n=_f0 %} lakh in FY26 and ₹{% assign _f1 = dcf.forecast[1].fcff %}{% include inr.html n=_f1 %} lakh in FY27, then jumps to ₹{% assign _f2 = dcf.forecast[2].fcff %}{% include inr.html n=_f2 %} lakh in
 FY28 and keeps climbing.
 
-Nothing improved operationally in FY28. Capex intensity simply dropped from
-8% to 6% as the expansion programme wound down. The business was generating
+{% assign _f2c = dcf.forecast[2] %}{% assign _cx_gap = _f2c.revenue | times: dcf.forecast[1].capex_pct_revenue | divided_by: 100.0 | minus: _f2c.capex | round %}Operating profit kept growing in FY28, but most of the jump is capex.
+Intensity dropped from 8% to 6% as the expansion programme wound down; at
+FY27's 8%, FY28 capex would have been ₹{{ _cx_gap }} lakh higher. The business was generating
 plenty of operating cash in FY26 and FY27; it was spending it on factories.
 
 This is worth dwelling on, because the same effect appears in real accounts.
@@ -149,7 +151,7 @@ for year, (g, m, cx) in enumerate(zip(growth, margin, capex_pct), start=2026):
 
 Run it and you get the FCFF row above. Change `growth` to a flat 25% and
 watch what happens to the answer — that's the exercise the sensitivity post
-two posts from now is built on.
+later in this series is built on.
 
 ## Common mistakes
 

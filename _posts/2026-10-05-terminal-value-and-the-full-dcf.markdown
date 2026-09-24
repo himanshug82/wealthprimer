@@ -32,7 +32,7 @@ model, not less.
 
 ## The formula
 
-The standard approach is the **Gordon Growth model**, which values a cash
+The standard approach is the **Gordon growth model**, which values a cash
 flow stream growing at a constant rate forever:
 
 ```
@@ -66,7 +66,7 @@ forever, would eventually be worth more than everything else in existence.
 
 In practice `g` should sit at or below the long-run nominal growth rate of
 the economy the company operates in — roughly 10–11% nominal for India, being
-real growth plus inflation. This series uses {{ dcf.assumptions.terminal_growth }}%. A common alternative
+real growth plus inflation. This series uses {% include inr.html n=dcf.assumptions.terminal_growth %}%. A common alternative
 is to use the expected long-run inflation rate, on the reasoning that a
 mature company grows with prices and no faster.
 
@@ -78,7 +78,7 @@ big thing to assert in a spreadsheet cell.
 
 ## Worked example: assembling the whole discounted cash flow model
 
-Everything from the last four posts, in one place. All figures ₹ Lakh, as of
+Everything from the earlier DCF posts, in one place. All figures ₹ lakh, as of
 {{ dcf.valuation_date }}, discounted at {{ dcf.wacc.wacc }}% (carried as {{ dcf.wacc.wacc_unrounded }}% in the
 arithmetic, so the figures below reproduce on a calculator).
 
@@ -102,7 +102,7 @@ PV of TV = {{ r.terminal_value }} / 1.13914⁵      (factor {{ dcf.forecast[4].d
 
 **Step 3 — add them for enterprise value.**
 
-| | ₹ Lakh |
+| | ₹ lakh |
 |---|---:|
 | PV of forecast FCFF (FY26–FY30) | {{ r.pv_forecast_fcff }} |
 | PV of terminal value | {{ r.pv_terminal_value }} |
@@ -114,7 +114,7 @@ This is the step people skip. Enterprise value is what the whole *business*
 is worth, to lenders and shareholders together. Shareholders own what's left
 after the lenders are paid, so subtract net debt:
 
-| | ₹ Lakh |
+| | ₹ lakh |
 |---|---:|
 | Enterprise value | {{ r.enterprise_value }} |
 | Less: Debt | {{ listing.post_ipo_debt }} |
@@ -122,7 +122,7 @@ after the lenders are paid, so subtract net debt:
 | **Equity value** | **{{ r.equity_value }}** |
 
 Desi Bites holds far more cash than debt after its IPO — net debt of
-₹{% include inr.html n=r.net_debt %} Lakh, i.e. net *cash* of ₹1,480 Lakh — so this step adds value rather
+{% assign _net_cash = r.net_debt | abs %}−₹{% include inr.html n=_net_cash %} lakh, i.e. net *cash* of ₹{% include inr.html n=_net_cash %} lakh — so this step adds value rather
 than subtracting it. Subtracting a negative is a reliable place to fumble a
 sign; the sanity check is that a company with spare cash must be worth more
 than the same company without it.
@@ -131,7 +131,7 @@ than the same company without it.
 
 | | |
 |---|---:|
-| Equity value | ₹{% include inr.html n=r.equity_value %} Lakh |
+| Equity value | ₹{% include inr.html n=r.equity_value %} lakh |
 | Shares outstanding | {{ r.shares_lakh }} lakh |
 | **Value per share** | **₹{% include inr.html n=r.value_per_share %}** |
 
@@ -155,13 +155,13 @@ price implies a perpetual growth rate of **{{ dcf.reverse.implied_terminal_growt
 Bites keeps pace with the entire Indian economy, forever. That's right up
 against the ceiling from the previous section.
 
-Or, keeping terminal growth at {{ dcf.assumptions.terminal_growth }}% and pushing on the operating
+Or, keeping terminal growth at {% include inr.html n=dcf.assumptions.terminal_growth %}% and pushing on the operating
 assumptions instead:
 
 | Scenario | Assumptions | Value per share |
 |---|---|---:|
 | Base case | Growth fading 18% → 10%, [EBITDA]({% post_url 2026-08-28-ebitda-margin %}) margin to 17.5% | ₹{% include inr.html n=r.value_per_share %} |
-| Market case | Growth 25% for five years, EBITDA margin to 20% | ₹{% include inr.html n=dcf.reverse.scenario_market_case %} |
+| Market case | Growth 25% for five years, EBITDA margin 20%, base-case capex path (8% of revenue easing to 5%) | ₹{% include inr.html n=dcf.reverse.scenario_market_case %} |
 | Aggressive | Growth 30% for five years, EBITDA margin to 22% | ₹{% include inr.html n=dcf.reverse.scenario_aggressive %} |
 
 Now the ₹{% include inr.html n=r.ipo_price %} price says something specific and testable: it's priced for
@@ -208,11 +208,6 @@ print(f"Enterprise value {ev:8.1f}")
 print(f"Value per share  {equity / SHARES:8.2f}")
 ```
 
-<!-- GOOGLE-SHEET-TODO: a view-only Google Sheet version of this model still
-     needs to be built and linked here ("make a copy to use"), per the
-     calculators section of CLAUDE.md. The Python above stands on its own
-     until then. -->
-
 ## Common mistakes
 
 - **Not checking what share of the value is terminal.** If terminal value is
@@ -224,8 +219,8 @@ print(f"Value per share  {equity / SHARES:8.2f}")
   Narrow it and the terminal value explodes on arithmetic alone, not on
   anything you learned about the business.
 - **Discounting the terminal value by the wrong number of years.** It's
-  n years for an n-year forecast, not n + 1. Off by one here and the whole
-  valuation shifts by roughly the WACC.
+  n years for an n-year forecast, not n + 1. Off by one here and you cut the
+  terminal value's contribution by roughly the WACC.
 - **Getting the net debt sign wrong.** Subtract net debt from enterprise
   value. When the company holds net cash, net debt is negative and you're
   subtracting a negative — which adds. Sanity-check the direction every time.

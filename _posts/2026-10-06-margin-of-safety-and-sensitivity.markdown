@@ -28,7 +28,7 @@ It isn't. It's the output of a chain of estimates — a growth rate that fades
 on a schedule someone chose, a
 [margin path]({% post_url 2026-10-04-forecasting-free-cash-flow %}) someone assumed, a beta borrowed
 from a sector, an equity risk premium that reasonable people put anywhere in
-a two-point range, and a perpetual growth rate for a company that will
+a range several percentage points wide, and a perpetual growth rate for a company that will
 outlive everyone reading this. Every one of those is arguable. The
 spreadsheet reports ₹{% include inr.html n=r.value_per_share %} because spreadsheets always report something.
 
@@ -74,7 +74,7 @@ Bites valuation, in order:
 | Terminal growth rate | Very high | Sits in the denominator of {{ r.terminal_pct_of_ev }}% of the value |
 | WACC | Very high | Compounds through every year, and hits terminal value twice |
 | Revenue growth path | High | Drives every downstream line in the forecast |
-| [EBITDA]({% post_url 2026-08-28-ebitda-margin %}) margin path | High | A point of margin on ₹5,000 Lakh of revenue is real money |
+| [EBITDA]({% post_url 2026-08-28-ebitda-margin %}) margin path | High | A point of margin on ₹5,000 lakh of revenue is real money |
 | Capex intensity | Medium | Large in the forecast years, fades in importance by the terminal year |
 | Working capital % | Low | Only the *change* matters, and it's small relative to everything else |
 | Tax rate | Low | Fairly well known, doesn't move much |

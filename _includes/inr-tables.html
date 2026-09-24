@@ -7,6 +7,7 @@ Usage (in a layout):  {% include inr-tables.html html=content %}
 A cell is reformatted only if, after an optional <strong> wrapper, it is:
   optional ₹ / - / − prefix, digits with at most one ".", optional % suffix,
   and at least 4 digits before the decimal point.
+Numeric cells written with a hyphen-minus (-2.5%) get a true minus (−2.5%).
 Anything else — dates (2024-03-28), labels, links, "31 March 2025", numbers
 that already have commas — passes through untouched.
 
@@ -56,7 +57,11 @@ Relies on kramdown emitting bare <tr> tags.
   {%- if _yy == '19' or _yy == '20' -%}{%- assign _fmt = false -%}{%- endif -%}
 {%- endif -%}
 <td{{ _attr }}>
-{%- if _fmt -%}{{ _open }}{{ _pre }}{% include inr.html n=_t %}{{ _suf }}{{ _close }}{%- else -%}{{ _cell }}{%- endif -%}
+{%- comment -%} Any purely numeric cell with a hyphen-minus gets a true minus, whatever its size. {%- endcomment -%}
+{%- assign _isnum = false -%}
+{%- if _t != '' -%}{%- if _left == '' or _left == '.' -%}{%- assign _isnum = true -%}{%- endif -%}{%- endif -%}
+{%- if _pre == '-' and _isnum -%}{%- assign _pre = '−' -%}{%- endif -%}
+{%- if _fmt -%}{{ _open }}{{ _pre }}{% include inr.html n=_t %}{{ _suf }}{{ _close }}{%- elsif _isnum and _pre == '−' -%}{{ _open }}{{ _pre }}{{ _t }}{{ _suf }}{{ _close }}{%- else -%}{{ _cell }}{%- endif -%}
 {{ _after }}
 {%- endfor -%}
 {%- endfor -%}

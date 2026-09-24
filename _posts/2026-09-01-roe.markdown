@@ -96,6 +96,5 @@ it's high, and one common reason — leverage — deserves real scrutiny.
   several years, not one data point, before drawing conclusions.
 
 **Takeaway:** ROE tells you how hard shareholders' own money is working, but
-it doesn't tell you *how* that return was achieved — a business earning a
-high ROE mostly through debt looks very different, and carries different
-risk, from one earning it through genuinely efficient operations.
+not *how* that return was achieved. A high ROE built mostly on debt carries
+very different risk from one earned through efficient operations.

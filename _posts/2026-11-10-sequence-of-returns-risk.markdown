@@ -50,9 +50,9 @@ Now run them in three orders:
 
 | Order | First three years | Last three years |
 |---|---|---|
-| **Actual** ({{ s.first_fy }} → {{ s.last_fy }}) | {{ act.first_three_fy_pct | join: "%, " }}% | {{ act.last_three_fy_pct | join: "%, " }}% |
-| **Best years first** | {{ best.first_three_fy_pct | join: "%, " }}% | {{ best.last_three_fy_pct | join: "%, " }}% |
-| **Worst years first** | {{ worst.first_three_fy_pct | join: "%, " }}% | {{ worst.last_three_fy_pct | join: "%, " }}% |
+| **Actual** ({{ s.first_fy }} → {{ s.last_fy }}) | {{ act.first_three_fy_pct | join: "%, " | replace: "-", "−" }}% | {{ act.last_three_fy_pct | join: "%, " | replace: "-", "−" }}% |
+| **Best years first** | {{ best.first_three_fy_pct | join: "%, " | replace: "-", "−" }}% | {{ best.last_three_fy_pct | join: "%, " | replace: "-", "−" }}% |
+| **Worst years first** | {{ worst.first_three_fy_pct | join: "%, " | replace: "-", "−" }}% | {{ worst.last_three_fy_pct | join: "%, " | replace: "-", "−" }}% |
 
 Same twenty returns in every row. Same average, same CAGR, same volatility.
 
@@ -79,13 +79,19 @@ applied evenly across its twelve months:
 | Best years first | **₹{% include inr.html n=best.sip_final %}** |
 | Worst years first | **₹{% include inr.html n=worst.sip_final %}** |
 
+{% assign sip20 = site.data.mf.sip.scenarios | where: "label", "Full 20 years" | first %}The actual-order figure differs a little from the
+[SIP post's]({% post_url 2026-10-24-sips-xirr-and-timing-myths %})
+₹{{ sip20.value | divided_by: 100000.0 | round: 1 }} lakh on ₹{{ sip20.invested | divided_by: 100000.0 | round: 1 }} lakh of real
+instalments, because this model spreads each year's return evenly across its
+months instead of using real daily NAVs.
+
 Ten times. Not 10% — a factor of ten between the best and worst ordering of
 *exactly the same returns*.
 
 The reason is mechanical. With a SIP, most of your money is in the fund
 during the *later* years — the last year's returns act on twenty years of
 accumulated contributions, the first year's on a few months' worth. So the
-late returns dominate. Worst-years-first puts {{ worst.first_three_fy_pct | first }}%
+late returns dominate. Worst-years-first puts {{ worst.first_three_fy_pct | first | replace: "-", "−" }}%
 on almost nothing and +{{ worst.last_three_fy_pct | last }}% on the full pile.
 Best-years-first does the reverse, and turns ₹24 lakh of contributions into
 barely ₹27 lakh.
@@ -119,7 +125,7 @@ rich or annoyed.
 ## Case three: a retiree cares in the opposite direction
 
 Flip the cash flows. Start with ₹{% include inr.html n=s.swp_start %} and
-withdraw ₹{% include inr.html n=s.swp_monthly %} a month — a **SWP**, a
+withdraw ₹{% include inr.html n=s.swp_monthly %} a month — an **SWP**, a
 Systematic Withdrawal Plan — for twenty years, against the same three
 orderings:
 
@@ -148,12 +154,13 @@ You can't choose your sequence. You can change how exposed you are to it:
 - **When accumulating, sequence risk is mostly on your side** — early crashes
   help. The exposure is in the last few years before you need the money,
   when the pile is largest. That's the honest case for gradually reducing
-  equity as a goal approaches: not because returns will be worse, but because
-  a bad *sequence* at that point can't be waited out.
+  equity as a goal approaches (how much depends on your circumstances): not
+  because returns will be worse, but because a bad *sequence* at that point
+  can't be waited out.
 - **When withdrawing, the first few years are everything.** A cash buffer
   covering a couple of years of withdrawals, so that a crash early in
   retirement is met by spending cash rather than selling units at the low, is
-  the standard defence. It costs return in good sequences and saves the
+  the standard defence; the right size depends on your circumstances. It costs return in good sequences and saves the
   portfolio in bad ones.
 - **Judge SIP outcomes with this in mind.** Two people, same fund, same
   monthly amount, same discipline, five years apart — very different XIRRs.

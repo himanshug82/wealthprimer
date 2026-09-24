@@ -14,7 +14,7 @@ term: "EPS (earnings per share)"
 ## What EPS means
 
 **EPS — earnings per share** — takes PAT (profit after tax), the number we've used throughout
-the Profitability module, and slices it into one share's worth: how much
+the profitability posts, and slices it into one share's worth: how much
 profit does the company earn for each individual share outstanding? It's
 the building block the next post, P/E, is built directly on top of.
 
@@ -51,13 +51,13 @@ EPS = PAT / Shares Outstanding
 
 | | |
 |---|---:|
-| FY25 PAT (₹ Lakh) | 209 |
+| FY25 PAT (₹ Lakh) | {{ site.data.case_study.income_statement.FY25.pat }} |
 | ÷ Pre-IPO shares (Lakh) | {{ listing.pre_ipo_shares_lakh }} |
 | **Pre-issue EPS** | **₹{% include inr.html n=listing.eps_undiluted %}** |
 | ÷ Post-IPO shares (Lakh) | {{ listing.post_ipo_shares_lakh }} |
 | **Post-issue EPS** | **₹{% include inr.html n=listing.eps_diluted %}** |
 
-Same ₹209 Lakh of profit, two different EPS figures depending on which
+Same ₹{{ site.data.case_study.income_statement.FY25.pat }} lakh of profit, two different EPS figures depending on which
 share count you divide by. An investor who bought shares at the IPO owns a
 claim on the post-issue figure — the {{ listing.fresh_issue_shares_lakh }} lakh new shares are real,
 outstanding shares from day one of trading, even though the FY25 profit was
@@ -81,11 +81,11 @@ Desi Bites' IPO creates either.
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
 
-Imagine 10 friends split a ₹200 pizza bill evenly — ₹20 each. Now imagine 2
-more friends show up right as the bill arrives and everyone agrees to split
-it 12 ways instead — ₹16.67 each. The pizza (profit) didn't get bigger; it
-just got sliced into more pieces. Post-issue EPS is what each slice is worth
-*after* the new friends joined the table.
+Imagine 10 friends win a pizza with 20 slices — 2 slices each. Now 2 more
+friends join the team just as the pizza arrives, and everyone agrees to share
+it 12 ways — about 1.7 slices each. The pizza (profit) didn't get bigger; it
+just got cut into more shares. Post-issue EPS is what each person's share is
+worth *after* the new friends joined.
 
 </details>
 
@@ -107,8 +107,8 @@ just got sliced into more pieces. Post-issue EPS is what each slice is worth
   meaningful relative to price, which is exactly what P/E does next.
 - **Ignoring one-off items baked into PAT.** A one-time gain or exceptional
   charge flows straight through into EPS for that year — the same caveat
-  already flagged back in the [Net Margin post]({% post_url 2026-08-30-net-margin %}).
+  already flagged back in the [net margin post]({% post_url 2026-08-30-net-margin %}).
 
-**Takeaway:** EPS slices profit into one share's worth, and — as Desi
-Bites' IPO shows — it matters a great deal *which* share count is used to do
-the slicing; on its own it's a building block, not a valuation verdict.
+**Takeaway:** EPS slices profit into one share's worth, and which share
+count you slice by matters a lot. On its own it's a building block, not a
+valuation verdict.

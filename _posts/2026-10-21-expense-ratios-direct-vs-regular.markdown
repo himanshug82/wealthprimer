@@ -69,7 +69,7 @@ both piggy banks.
 ## The formula
 
 ```
-Value after N years = Initial × (1 + r − fee)^N
+Value after N years ≈ Initial × (1 + r − fee)^N
 
 where r   = the portfolio's gross return
       fee = the expense ratio
@@ -84,7 +84,7 @@ lose the fee, and also all the growth that fee would have produced.
 
 Source: [AMFI via mfapi.in]({{ f.source_url }}). Historical data, for illustration only.
 
-**The index fund**, from {{ ei.start }} to {{ ei.end }} ({{ ei.years }} years):
+**The index fund**, from {{ ei.start | date: "%-d %B %Y" }} to {{ ei.end | date: "%-d %B %Y" }} ({{ ei.years }} years):
 
 | | Regular | Direct |
 |---|---:|---:|
@@ -98,22 +98,23 @@ That's a modest number, and it's modest for a good reason: index funds are
 already cheap, so there isn't much commission to remove. Which makes the
 second comparison the instructive one.
 
-**An actively managed fund** with a more typical expense ratio, from
-{{ ea.start }} to {{ ea.end }} ({{ ea.years }} years):
+**An actively managed fund**, {{ ea.name }} (AMFI scheme codes 122640
+regular, 122639 direct), with a more typical expense ratio, from
+{{ ea.start | date: "%-d %B %Y" }} to {{ ea.end | date: "%-d %B %Y" }} ({{ ea.years }} years):
 
 | | Regular | Direct |
 |---|---:|---:|
 | CAGR | {{ ea.regular_cagr }}% | {{ ea.direct_cagr }}% |
 | ₹1,00,000 grew to | ₹{% include inr.html n=ea.lumpsum_1lakh_regular %} | ₹{% include inr.html n=ea.lumpsum_1lakh_direct %} |
 
-Here the gap is **{{ ea.gap_pp }} percentage points a year** — and on ₹1,00,000 over thirteen
-years that comes to **₹{% include inr.html n=ea.lumpsum_difference %}**, or {{ ea.difference_pct }}% more money.
+Here the gap is **{{ ea.gap_pp }} percentage points a year** — and on ₹1,00,000 over nearly
+thirteen years that comes to **₹{% include inr.html n=ea.lumpsum_difference %}**, or {{ ea.difference_pct }}% more money.
 
 To be explicit about what this comparison is and isn't: the fund on both
 sides of that table is the *same fund*. This post takes no view on whether it
 is a good fund, and nothing here should be read as suggesting anyone buy or
 avoid it. It appears because it has a normal actively-managed expense ratio
-and thirteen years of both plans, which is what the arithmetic needed.
+and nearly thirteen years of both plans, which is what the arithmetic needed.
 
 ## Why 0.83% becomes 9.5%
 
@@ -121,7 +122,7 @@ The leap from "under one percent a year" to "₹74,000" is the part worth
 sitting with, and it's just compounding running against you.
 
 Each year you keep {{ ea.gap_pp }}% less. The following year, that missing amount isn't
-there to grow either. Over thirteen years the shortfall compounds into
+there to grow either. Over nearly thirteen years the shortfall compounds into
 roughly a tenth of the final corpus — and over a thirty-year investing life
 it would be far larger still.
 
@@ -133,7 +134,9 @@ number worth carrying around.
 
 None of this makes fees illegitimate. Running a fund costs money, and active
 management costs more than tracking an index. SEBI caps total expense ratios
-on a sliding scale by fund size and type, and the caps are meaningful.
+on a sliding scale by fund size and type — since 1 April 2026 under the
+[SEBI (Mutual Funds) Regulations, 2026](https://www.sebi.gov.in/legal/regulations/jan-2026/securities-and-exchange-board-of-india-mutual-funds-regulations-2026_99173.html)
+— and the caps are meaningful.
 
 The honest questions are narrower:
 
@@ -176,7 +179,7 @@ for plan in ["nav_regular_growth", "nav_direct_growth"]:
   has tax consequences worth checking, but the ongoing cost is worth knowing.
 - **Assuming direct is automatically right.** Direct means no bundled
   advice — if you want advice you pay for it separately (e.g. a fee-only
-  SEBI-registered Investment Adviser). If advice is what stops you selling at the bottom of a 60% drawdown, it may
+  SEBI-registered investment adviser). If advice is what stops you selling at the bottom of a 60% drawdown, it may
   be the best money you spend — just pay for it knowingly.
 - **Comparing expense ratios across categories.** Index funds, active equity
   and debt funds have structurally different cost bases and different caps.
@@ -186,5 +189,5 @@ for plan in ["nav_regular_growth", "nav_direct_growth"]:
 **Takeaway:** The expense ratio is deducted from NAV daily, so you never see
 it — but comparing a fund's direct and regular plans isolates it exactly,
 since everything else about them is identical. On an actively managed fund
-that gap was {{ ea.gap_pp }}% a year, which over thirteen years came to {{ ea.difference_pct }}% of the
+that gap was {{ ea.gap_pp }}% a year, which over nearly thirteen years came to {{ ea.difference_pct }}% of the
 final corpus. Small annual percentages are not small.

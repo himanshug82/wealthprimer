@@ -92,8 +92,8 @@ The ₹100 you're willing to lose stays the same. The number of tries changes.
 
 ## Worked example: Britannia, three days, three sizes
 
-Britannia (NSE: BRITANNIA), daily data {{ d.britannia_start }} to
-{{ d.britannia_end }}. Source: [Yahoo Finance]({{ d.britannia_source_url }}).
+Britannia (NSE: BRITANNIA), daily data {{ d.britannia_start | date: "%-d %B %Y" }} to
+{{ d.britannia_end | date: "%-d %B %Y" }}. Source: [Yahoo Finance]({{ d.britannia_source_url }}).
 Historical data, for illustration only — these dates were chosen after the
 fact to show the range, which is exactly what you can't do in real time.
 
@@ -101,25 +101,28 @@ fact to show the range, which is exactly what you can't do in real time.
 
 Over these two years the 14-day ATR ranged from ₹{{ p.atr_min }} to
 ₹{{ p.atr_max }} a share — {{ p.atr_pct_min }}% to {{ p.atr_pct_max }}% of the
-price. Fix the rules (₹{% include inr.html n=p.capital %} capital, {{ p.risk_pct }}% risk,
-stop at {{ p.atr_multiple }}× ATR) and see what they produce on the calmest
-day, a middling one, and the wildest:
+price. Fix the rules (₹{% include inr.html n=p.capital %} capital, {% include inr.html n=p.risk_pct %}% risk,
+stop at {% include inr.html n=p.atr_multiple %}× ATR) and see what they produce on the calmest
+day, a middling one, and the wildest (days picked by ATR as a % of price):
 
 | | Calmest day | Middling day | Wildest day |
 |---|---:|---:|---:|
 | Date | {{ calm.date }} | {{ mid.date }} | {{ wild.date }} |
 | Close | ₹{% include inr.html n=calm.close %} | ₹{% include inr.html n=mid.close %} | ₹{% include inr.html n=wild.close %} |
 | 14-day ATR | ₹{{ calm.atr }} ({{ calm.atr_pct }}%) | ₹{{ mid.atr }} ({{ mid.atr_pct }}%) | ₹{{ wild.atr }} ({{ wild.atr_pct }}%) |
-| Stop distance ({{ p.atr_multiple }} × ATR) | ₹{{ calm.stop_distance }} | ₹{{ mid.stop_distance }} | ₹{{ wild.stop_distance }} |
+| Stop distance ({% include inr.html n=p.atr_multiple %} × ATR) | ₹{{ calm.stop_distance }} | ₹{{ mid.stop_distance }} | ₹{{ wild.stop_distance }} |
 | Stop price | ₹{% include inr.html n=calm.stop_price %} | ₹{% include inr.html n=mid.stop_price %} | ₹{% include inr.html n=wild.stop_price %} |
-| Risk budget ({{ p.risk_pct }}%) | ₹{% include inr.html n=calm.risk_rupees %} | ₹{% include inr.html n=mid.risk_rupees %} | ₹{% include inr.html n=wild.risk_rupees %} |
+| Risk budget ({% include inr.html n=p.risk_pct %}%) | ₹{% include inr.html n=calm.risk_rupees %} | ₹{% include inr.html n=mid.risk_rupees %} | ₹{% include inr.html n=wild.risk_rupees %} |
 | **Shares** | **{{ calm.shares }}** | **{{ mid.shares }}** | **{{ wild.shares }}** |
 | Position value | ₹{% include inr.html n=calm.position_value %} | ₹{% include inr.html n=mid.position_value %} | ₹{% include inr.html n=wild.position_value %} |
 | As % of capital | {{ calm.position_pct_of_capital }}% | {{ mid.position_pct_of_capital }}% | {{ wild.position_pct_of_capital }}% |
 
-Same stock, same rules, and the position is nearly twice as large on the calm
-day as on the wild one. That is the method working as designed. On
-{{ wild.date }} — in the middle of the 26% decline the
+Rows are computed from unrounded prices and ATRs, so the rounded figures shown
+can be a rupee off when you redo the sums by hand.
+
+Same stock, same rules, and the position is more than twice as large by value
+on the calm day as on the wild one. That is the method working as designed. On
+{{ wild.date | date: "%-d %B %Y" }} — in the middle of the 26% decline the
 [RSI post]({% post_url 2026-10-14-rsi %}) documented — the stock was moving
 {{ wild.atr_pct }}% a day. A stop had to sit further away to survive the
 noise, so fewer shares could be held for the same ₹{% include inr.html n=wild.risk_rupees %}
@@ -128,7 +131,7 @@ of risk.
 Now compare the habit most people actually have — buying a fixed number of
 shares, say {{ p.fixed_shares }}, regardless:
 
-| {{ p.fixed_shares }} shares, {{ p.atr_multiple }}× ATR stop | Calmest day | Middling day | Wildest day |
+| {{ p.fixed_shares }} shares, {% include inr.html n=p.atr_multiple %}× ATR stop | Calmest day | Middling day | Wildest day |
 |---|---:|---:|---:|
 | Rupees at risk | ₹{% include inr.html n=calm.fixed_50_risk_rupees %} | ₹{% include inr.html n=mid.fixed_50_risk_rupees %} | ₹{% include inr.html n=wild.fixed_50_risk_rupees %} |
 | As % of capital | {{ calm.fixed_50_risk_pct }}% | {{ mid.fixed_50_risk_pct }}% | **{{ wild.fixed_50_risk_pct }}%** |
@@ -194,12 +197,12 @@ during which its values mean nothing.
   of capital, whatever the formula says.
 - **Treating the stop as a guarantee.** Stops are orders, not promises. Gaps
   at the open and illiquid stocks can take you out well past the stop price —
-  which is a reason to size *smaller* than the formula, never larger.
+  which is a reason to size *smaller* than the formula, not larger.
 - **Applying the rule per position but not per portfolio.** Ten positions at
   1% each in ten highly correlated stocks is closer to one position at 10%.
-  That's the next post.
+  That's coming up in the diversification post.
 - **Forgetting the rule exists once a position is winning.** Position sizing
-  governs entries. It says nothing about when to sell, and it isn't a trading
+  governs entries. It says nothing about when to take profits, and it isn't a trading
   system. It just keeps you in the game long enough for one to matter.
 
 **Takeaway:** Decide the rupees you'll lose before you decide what to buy,

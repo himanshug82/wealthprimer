@@ -21,9 +21,9 @@ of the NSE and BSE on {{ listing.listing_date }}, as **{{ listing.company_name_p
 capital through an IPO (initial public offering — the first time a company
 sells shares to the public), issuing {{ listing.fresh_issue_shares_lakh }} lakh new shares at an IPO price of
 ₹{% include inr.html n=listing.ipo_price %}, on top of the {{ listing.pre_ipo_shares_lakh }} lakh shares that already existed. That's a
-fictional event, invented for this series — but it's what makes the next
-eight posts (Valuation & Market) possible, since valuation ratios need a
-share price to work with.
+fictional event, invented for this series — but it's what makes the
+valuation posts that follow possible, since valuation ratios need a share
+price to work with.
 
 ## What book value per share means
 
@@ -47,14 +47,14 @@ Book Value per Share = Total Equity / Shares Outstanding
 | Post-IPO Shares Outstanding (Lakh) | {{ listing.post_ipo_shares_lakh }} |
 | **Book Value per Share** | **₹{% include inr.html n=listing.book_value_per_share %}** |
 
-Post-IPO equity is the FY25 closing equity (₹678 Lakh) plus the
-₹{% include inr.html n=listing.ipo_proceeds %} Lakh raised in the fresh issue — the company's own accounting net
+Post-IPO equity is the FY25 closing equity (₹{% include inr.html n=site.data.case_study.balance_sheet.FY25.equity %} lakh) plus the
+₹{% include inr.html n=listing.ipo_proceeds %} lakh raised in the fresh issue (ignoring issue expenses) — the company's own accounting net
 worth grew the moment it took in fresh shareholder capital.
 
 ## Worked example: Britannia Industries, FY25
 
 From Britannia Industries' [audited consolidated FY25 results](https://media.britannia.co.in/Audited_Consolidated_Financial_Results_31_03_2025_74a7c03628.pdf)
-(year ended 31 March 2025, filed 8 May 2025). Shares outstanding here (24.09
+(year ended 31 March 2025, filed 8 May 2025). Shares outstanding here ({{ bi_market.shares_outstanding_cr }}
 crore) is derived from reported EPS and PAT, and matches the reported
 equity share capital at a face value of ₹1 — a consistency check, not a
 separate estimate. For illustration only.
@@ -91,6 +91,6 @@ actually is — a reminder for the very first common mistake below.
   well is a completely separate question BVPS can't answer on its own.
 
 **Takeaway:** book value per share is what each share is worth on the
-accounting books alone — a useful starting reference point, but on its own
-it says nothing about what the market is actually willing to pay, which is
-where the rest of this module goes next.
+accounting books alone. It's a useful reference point, but on its own it
+says nothing about what the market is willing to pay — that's where the
+valuation posts go next.

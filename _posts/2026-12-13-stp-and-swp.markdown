@@ -26,11 +26,11 @@ and have their own plumbing:
 
 - You have a **lump sum** now — a bonus, a maturity, a property sale — and
   the idea of putting all of it into equity on one day makes you nervous. An
-  **STP — Systematic Transfer Plan** — parks the money in a low-volatility
+  **STP — systematic transfer plan** — parks the money in a low-volatility
   fund (usually a liquid or overnight fund) and moves a fixed amount into an
   equity fund every month, automatically.
 - You have a **corpus** and need **income** from it — retirement, a
-  sabbatical, school fees. An **SWP — Systematic Withdrawal Plan** — redeems a
+  sabbatical, school fees. An **SWP — systematic withdrawal plan** — redeems a
   fixed rupee amount from a fund every month and pays it to your bank account.
 
 Both are just standing instructions to the fund house. Neither is a strategy
@@ -75,9 +75,9 @@ in the parking fund won none of them. The pattern is not subtle.
 
 **Starting at the January 2008 top**, the lump sum was still *below* ₹12 lakh
 three years later. The STP, which bought most of its units during the 2008
-collapse at far lower NAVs, was worth ₹{% include inr.html n=s08.stp_12m_3y %} — nearly
-₹{{ s08.stp_12m_3y | minus: s08.lump_sum_3y | divided_by: 100000.0 | round: 1 }} lakh more. By March 2026 the gap had compounded to
-₹{% include inr.html n=s08.lump_sum_to_2026 %} versus ₹{% include inr.html n=s08.stp_12m_to_2026 %}.
+collapse at far lower NAVs, was worth ₹{% include inr.html n=s08.stp_12m_3y %} — about
+₹{{ s08.stp_12m_3y | minus: s08.lump_sum_3y | divided_by: 100000.0 | round: 2 }} lakh more. By March 2026 the gap had compounded: the lump sum
+was worth ₹{% include inr.html n=s08.lump_sum_to_2026 %}, the STP ₹{% include inr.html n=s08.stp_12m_to_2026 %}.
 
 **Starting at the April 2020 low**, the opposite. The market rose almost
 every month the STP was running, so each transfer bought at a higher NAV than
@@ -89,8 +89,9 @@ few percent of each other.
 
 So: an STP is **insurance against investing everything just before a fall**.
 Like all insurance it has a premium, and the premium is the return you give up
-when the market rises while you're still half in cash. Over most twelve-month
-windows the market rises — that is the whole reason to own equity — so the
+when the market rises while you're still half in cash. Most twelve-month
+windows go up — {{ site.data.mf.rolling_returns.years_1.pct_positive | round }}% of all one-year windows in this index fund's
+history ended higher, which is the whole reason to own equity — so the
 premium is paid more often than the insurance pays out. When it does pay out,
 as in 2008, it pays out a great deal.
 
@@ -114,7 +115,7 @@ wrong either way rather than very wrong one way.
 Now the other direction. ₹{% include inr.html n=swp.corpus %} in the index fund, withdrawing
 ₹{% include inr.html n=swp.monthly %} on the first of every month — ₹6 lakh a year, a 6% initial
 withdrawal rate — starting on three different dates, and running to
-{{ swp.end }}.
+{{ swp.end | date: "%-d %B %Y" }}.
 
 ![Corpus remaining after each monthly withdrawal, for SWPs starting January 2008, January 2010 and April 2020, and a parking-fund SWP from 2008]({{ '/assets/charts/mf2-swp.svg' | relative_url }})
 
@@ -129,7 +130,7 @@ withdraw ₹{{ w10.withdrawn_total | divided_by: 100000 }} lakh over sixteen yea
 
 Start **two years earlier**, in January 2008, with the identical fund and the
 identical withdrawal, and the corpus falls to
-**₹{% include inr.html n=swp.jan2008_low.value %}** by {{ swp.jan2008_low.date }} — you've taken out
+**₹{% include inr.html n=swp.jan2008_low.value %}** by {{ swp.jan2008_low.date | date: "%-d %B %Y" }} — you've taken out
 ₹7 lakh and lost another ₹55 lakh to the crash. It never gets back above the
 original ₹1 crore. Eighteen years on it stands at ₹{% include inr.html n=w08.corpus_at_end_equity %},
 having paid out ₹{{ w08.withdrawn_total | divided_by: 100000 }} lakh — not a disaster, but a completely different
@@ -224,10 +225,10 @@ is an STP.
   bought less than a year ago can each lose the exit load (often 1%), on top of
   tax.
 
-**Takeaway:** An STP paces a lump sum into equity; an SWP paces a corpus out.
-Neither changes what the market does — it changes *how many months of it you're
+**Takeaway:** An STP paces a lump sum into equity and an SWP paces a corpus
+out; neither changes what the market does, only *how many months of it you're
 exposed to*. On real data, a 12-month STP from the January 2008 top beat the
 lump sum by ₹5.7 lakh in three years and lost to it by ₹6.8 lakh from the 2020
-low; an SWP begun in 2010 doubled its corpus while the identical plan begun in
-2008 never recovered its starting value. The tool is neutral. The start date
-isn't.
+low, while an SWP begun in 2010 doubled its corpus and the identical plan begun
+in 2008 never recovered its starting value. The tool is neutral; the start
+date isn't.

@@ -63,7 +63,7 @@ then has one month to rebalance to the updated list.
 
 ## Equity categories
 
-| Category | The hard rule | Where it can invest |
+| Category | The hard rule | Core band |
 |---|---|---|{% for k in c.equity %}
 | **{{ k.category }}** | {{ k.rule }} | {{ k.universe }} |{% endfor %}
 
@@ -75,7 +75,7 @@ rest are out of scope here.
 Read the rules for what they *don't* say.
 
 **Large cap** must keep 80% in the top 100 — but the other 20% is free, and a
-"large cap" fund's excess return over the Nifty often comes from that 20%,
+"large cap" fund's excess return over the Nifty can come from that 20%,
 which is not large-cap exposure at all.
 
 **Flexi cap** has no band minimums whatsoever. Two flexi-cap funds can be

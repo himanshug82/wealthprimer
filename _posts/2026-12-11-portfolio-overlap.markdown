@@ -20,7 +20,7 @@ Open the four factsheets side by side and the same ten company names appear
 in every one, near the top, at similar weights. Because every large-cap fund
 must hold [at least 80% of its assets in the top 100 companies]({% post_url 2026-12-10-sebi-fund-categories-decoded %}),
 and the top 100 is dominated by the same handful of banks, IT firms and
-conglomerates, there is only so many ways to build one.
+conglomerates, there are only so many ways to build one.
 
 **Portfolio overlap** puts a number on how much of two funds is the same
 fund.
@@ -50,10 +50,10 @@ real fund's holdings are used. Each shows its top ten positions.
 
 | Stock | Fund A weight | Fund B weight | Held by both? | Counts toward overlap |
 |---|---:|---:|:---:|---:|{% for k in o.portfolio_a %}{% assign name = k[0] %}{% assign wa = k[1] %}{% assign wb = o.portfolio_b[name] %}
-| {{ name }} | {{ wa }}% | {% if wb %}{{ wb }}%{% else %}— {% endif %} | {% if wb %}Yes{% else %}No{% endif %} | {% if wb %}{% if wa < wb %}{{ wa }}{% else %}{{ wb }}{% endif %}%{% else %}0%{% endif %} |{% endfor %}
+| {{ name }} | {{ wa }}% | {% if wb %}{{ wb }}%{% else %}— {% endif %} | {% if wb %}Yes{% else %}No{% endif %} | {% if wb %}{% if wa < wb %}{{ wa }}{% else %}{{ wb }}{% endif %}%{% else %}0%{% endif %} |{% endfor %}{% for k in o.portfolio_b %}{% assign name = k[0] %}{% unless o.portfolio_a[name] %}
+| {{ name }} | — | {{ k[1] }}% | No | 0% |{% endunless %}{% endfor %}
 
-Fund B also holds Stocks K, L, M and N, which Fund A doesn't. Summing the last
-column:
+The last four rows are stocks only Fund B holds. Summing the last column:
 
 | Common holding | min(A, B) |
 |---|---:|{% for r in o.common_holdings %}
@@ -62,7 +62,7 @@ column:
 
 So a little over a third of these two "different" funds is the same
 portfolio — from their top tens alone. Extend the comparison to all forty or
-fifty holdings and the figure for two real large-cap funds is often well above
+fifty holdings and the figure for two real large-cap funds can easily exceed
 half.
 
 Notice also the top-ten concentration: {{ o.top10_weight_a }}% of Fund A and {{ o.top10_weight_b }}% of
@@ -86,8 +86,9 @@ the two boxes is the same food.
 
 ## Why overlap matters — and when it doesn't
 
-**What high overlap costs you.** Two funds that are 60% the same portfolio
-give you 60% of one fund's exposure at *both* funds' expense ratios. And when
+**What high overlap costs you.** If two funds are 60% the same portfolio, the
+second fund adds only 40% new exposure, but you pay its full expense ratio on
+all of it. And when
 the shared holdings fall, both funds fall together — the second fund adds
 paperwork, not protection. The
 [expense ratio post]({% post_url 2026-10-21-expense-ratios-direct-vs-regular %})
@@ -122,8 +123,8 @@ overlap = sum(min(fund_a[s], fund_b[s]) for s in common)
 print(f"{len(common)} common holdings, overlap {overlap:.1f}%")
 ```
 
-Factsheets publish full holdings monthly (as a PDF or spreadsheet on the fund
-house's site), so the same twelve lines work on real funds — type the weights
+AMCs publish full monthly portfolio disclosures (as a PDF or spreadsheet on the
+fund house's site; factsheets usually show only the top holdings), so the same twelve lines work on real funds — type the weights
 in, or paste them from the disclosure file.
 
 ## Common mistakes
@@ -141,7 +142,7 @@ in, or paste them from the disclosure file.
   65% two years later. Re-run it when factsheets refresh.
 
 **Takeaway:** Portfolio overlap is the sum, over every shared holding, of the
-smaller of the two funds' weights — and for two large-cap funds it is often
-above half, because the mandate leaves few ways to build one. Two funds with
+smaller of the two funds' weights — and for two large-cap funds it can easily
+exceed half, because the mandate leaves few ways to build one. Two funds with
 60% overlap aren't diversification; they're one portfolio with two expense
 ratios.

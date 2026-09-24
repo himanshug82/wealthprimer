@@ -13,7 +13,7 @@ term: "Interest coverage"
 
 ## What interest coverage means
 
-[Debt-to-Equity]({% post_url 2026-09-15-debt-to-equity %}) and the [Equity Multiplier]({% post_url 2026-09-16-equity-multiplier %}) both look at how much debt
+[Debt-to-equity]({% post_url 2026-09-15-debt-to-equity %}) and the [equity multiplier]({% post_url 2026-09-16-equity-multiplier %}) both look at how much debt
 and leverage sit on the balance sheet. **Interest coverage** asks a more
 immediate question: whatever the debt load, can the company comfortably
 afford the interest payments on it out of its regular operating profit?
@@ -53,13 +53,15 @@ From Britannia Industries' [audited consolidated FY25 results](https://media.bri
 
 At {{ site.data.real_company.ratios.FY25.interest_coverage }}x, Britannia's operating profit covers its interest bill roughly
 three times as comfortably as Desi Bites' does — consistent with everything
-the last two posts already showed: a company carrying genuinely light debt.
+the last two posts already showed: a company carrying light debt.
 
 ## Common mistakes
 
-- **Using EBITDA instead of EBIT in the numerator.** EBITDA hasn't yet
-  accounted for the plant ageing — using it inflates the ratio and can
-  overstate how comfortably a company can actually service its debt.
+- **Not knowing which version you're looking at.** Many lenders compute
+  coverage as EBITDA ÷ interest — a standard variant, but it comes out
+  higher, because EBITDA hasn't yet accounted for the plant ageing. This
+  series uses EBIT, the stricter version; check which one a source uses
+  before comparing numbers.
 - **Reading one year's coverage without checking the trend.** A single
   strong year's EBIT can flatter interest coverage even if the underlying
   business is inconsistent — several years tell a more honest story than
@@ -71,11 +73,9 @@ the last two posts already showed: a company carrying genuinely light debt.
 - **Treating comfortable coverage as proof the debt itself is small.**
   Coverage measures serviceability, not size — a company can have very
   comfortable interest coverage and still carry a large absolute debt
-  load. That's what [Debt-to-Equity]({% post_url 2026-09-15-debt-to-equity %}) and Net Debt/EBITDA,
+  load. That's what [debt-to-equity]({% post_url 2026-09-15-debt-to-equity %}) and net debt/EBITDA,
   covered in the next post, are for.
 
-**Takeaway:** interest coverage measures whether a company's operating
-profit can comfortably afford its interest bill — a high number is
-reassuring, but it answers "can it pay?", not "how much does it owe?",
-which is a separate question the leverage ratios earlier in this module
-already covered.
+**Takeaway:** interest coverage tells you whether a company's operating
+profit can comfortably pay its interest bill. It answers "can it pay?", not
+"how much does it owe?" — so read it alongside the leverage ratios.

@@ -15,7 +15,7 @@ term: "Debtor days (receivable days)"
 
 ## What debtor days means
 
-**Debtor Days** — also called Days Sales Outstanding (DSO), or receivable
+**Debtor days** — also called Days Sales Outstanding (DSO), or receivable
 days — is the [inventory-days]({% post_url 2026-09-07-inventory-days %})-shaped question, applied to the other end of a
 sale: once a company sells something on credit, how many days does it take,
 on average, to actually collect the cash from the customer?
@@ -30,6 +30,10 @@ usually lasts.
 ```
 Debtor Days = Trade Receivables / Revenue × 365
 ```
+
+One small wrinkle: receivables include the GST (goods and services tax)
+billed to customers, while revenue excludes it — so debtor days computed
+this way run slightly high.
 
 ## Worked example: Desi Bites Foods, FY25
 
@@ -52,10 +56,10 @@ From Britannia Industries' [audited consolidated FY25 results](https://media.bri
 
 That's a striking number: Britannia collects from its customers in under 10
 days, versus Desi Bites' {{ site.data.case_study.ratios.FY25.receivable_days }} days. A large, established FMCG
-company selling mostly through a wide distributor network with tight credit
-terms — and real bargaining power over that network — collects cash fast.
-That's not a coincidence; it's exactly the kind of structural strength this
-ratio is built to surface.
+company selling mostly through a wide distributor network on tight credit
+terms can collect cash fast, and a number this low is consistent with real
+bargaining power over that network — though the ratio alone can't prove it.
+Surfacing that kind of gap is exactly what this ratio is for.
 
 ## Common mistakes
 
@@ -65,7 +69,7 @@ ratio is built to surface.
   terms to win a large new customer. Context matters.
 - **Comparing across business models.** A company selling mostly to
   consumers (near-zero receivables, cash or instant digital payment) and one
-  selling mostly to other businesses on 30-90 day credit terms will show
+  selling mostly to other businesses on 30–90 day credit terms will show
   very different debtor days for reasons that have nothing to do with
   quality of management.
 - **Not checking for bad debt provisions.** Under Indian accounting rules
@@ -80,5 +84,5 @@ ratio is built to surface.
 
 **Takeaway:** debtor days measures how long a company's cash stays tied up
 in unpaid customer invoices — a very low number, like Britannia's here, is
-often a sign of real bargaining power over the sales channel, not just good
+often consistent with bargaining power over the sales channel, not just good
 bookkeeping.

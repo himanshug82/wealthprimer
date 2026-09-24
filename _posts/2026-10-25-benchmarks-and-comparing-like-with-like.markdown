@@ -36,7 +36,7 @@ Nifty 50 price index over the {{ b.years }} years both exist:
 | {{ f.name }}, regular plan | **{{ b.fund_regular_cagr }}%** |
 | **Fund minus index** | **{{ b.fund_minus_pri_pp }} pp a year** |
 
-Period {{ b.common_start }} to {{ b.common_end }}. Fund NAV: [AMFI via mfapi.in]({{ f.source_url }}).
+Period {{ b.common_start | date: "%-d %B %Y" }} to {{ b.common_end | date: "%-d %B %Y" }}. Fund NAV: [AMFI via mfapi.in]({{ f.source_url }}).
 Index: [{{ b.source_label }}]({{ b.source_url }}). Historical data, for illustration only.
 
 The fund beat its own benchmark by {{ b.fund_minus_pri_pp }} percentage points a year, while charging
@@ -103,7 +103,8 @@ dividends the benchmark structurally ignored, the manager's actual
 contribution was a fraction of the claim.
 
 SEBI required benchmarking against **total return indices from
-{{ b.tri_mandated_from }}**. It's an unglamorous rule change and one of the more consequential
+{{ b.tri_mandated_from }}** ([circular SEBI/HO/IMD/DF3/CIR/P/2018/04](https://www.sebi.gov.in/legal/circulars/jan-2018/benchmarking-of-scheme-s-performance-to-total-return-index_37273.html),
+4 January 2018). It's an unglamorous rule change and one of the more consequential
 ones for retail investors, because it removed a systematic bias from every
 performance claim in the industry.
 
@@ -185,7 +186,7 @@ later of the two start dates. Comparing a fund's 20-year record to an index's
   marketing implies.
 
 **Takeaway:** A benchmark decides what a return means, and the choice does
-more work than it appears to — a purely passive index fund out-returned the
+more work than it appears to. A purely passive index fund out-returned the
 Nifty 50 price index by {{ b.fund_minus_pri_pp }} percentage points a year for {{ b.years }} years purely
 because the price index ignores dividends the fund actually collects. Check
 that any benchmark is total-return, matches the mandate, and was fixed in

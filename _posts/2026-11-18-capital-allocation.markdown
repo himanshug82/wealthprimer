@@ -65,10 +65,10 @@ capex; ₹{% include inr.html n=ca.deployed_fy26.still_in_cash %} lakh more sits
 a paragraph.
 
 **Cash.** The safest choice and, judged by the test, the worst. Fixed
-deposits earn about 6.5% before tax, roughly {{ ca.options[0].expected_return_pct }}% after — some {{ ca.idle_cash_drag_pct_points }}
+deposits earn about 6.5% before tax, roughly {{ ca.options[0].expected_return_pct }}% after — some {% include inr.html n=ca.idle_cash_drag_pct_points %}
 percentage points below the hurdle, every year the money sits there.
 Desi Bites ended FY26 with ₹{% include inr.html n=ca.cash_pile_fy26 %} lakh of cash, {{ ca.cash_pct_of_total_assets }}% of total assets.
-The visible cost is in the ROE: FY25's {{ r.roe_fy25_closing }}% became {{ r.roe_on_closing_equity }}% on closing
+The visible cost is in the ROE: FY25's {{ r.roe_fy25_closing }}% ({% include inr.html n=cs.ratios.FY25.roe %}% on average equity) became {{ r.roe_on_closing_equity }}% on closing
 equity, not because the business got worse but because the denominator
 filled up with idle money. Cash has a real option value — the ability to
 act when a competitor stumbles — but "we're keeping our powder dry" is
@@ -90,7 +90,8 @@ prospectus promised ₹{{ c2.drhp.objects[0].amount }} lakh of this; ₹{{ ca.de
 
 **The acquisition.** Judged on year one, {{ ca.acquisition_case.year1_roic }}%. Judged on management's
 case — Chatpata's revenue growing 15% with margins converging toward Desi
-Bites' own — about {{ ca.acquisition_case.management_case_roic }}%. Still below the hurdle. The
+Bites' own — about {{ ca.acquisition_case.management_case_roic }}% (₹{{ ca.acquisition_case.management_case_revenue | round }} lakh of revenue × {{ ca.acquisition_case.management_case_ebit_margin }}% EBIT margin ×
+(1 − 25% tax) ÷ ₹{{ a.price }} lakh). Still below the hurdle. The
 [goodwill post]({% post_url 2026-11-17-goodwill-exceptional-items-and-other-income %})
 explained why acquisitions look like this: the seller knows the business
 better than the buyer and sets the price accordingly, and the buyer
@@ -185,8 +186,7 @@ chairman's letter about transformation.
 
 **Takeaway:** Every rupee a company keeps goes to one of six uses —
 reinvest, acquire, repay, pay out, buy back, or hold — and one test ranks
-them: does the expected return beat the cost of capital? On that test Desi
-Bites' idle ₹{% include inr.html n=ca.cash_pile_fy26 %} lakh earns {{ ca.options[0].expected_return_pct }}% inside a {{ ca.hurdle_wacc }}% company, its acquisition
-earned {{ ca.acquisition_case.year1_roic }}% in year one, and its ROE fell from {{ r.roe_fy25_closing }}% to {{ r.roe_on_closing_equity }}% without the
-business getting worse. Capital allocation is the decision the ratios can't see
+them: does the expected return beat the cost of capital? Idle cash and a
+pricey acquisition can both fail it quietly while profit still goes up.
+Capital allocation is the decision the ratios can't see
 happening, and the one they'll be reporting on for the next decade.

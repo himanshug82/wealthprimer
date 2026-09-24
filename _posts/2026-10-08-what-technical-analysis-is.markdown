@@ -16,7 +16,7 @@ Everything on this blog so far has asked one question: *what is this business
 worth?* Read the statements, compute the ratios, forecast the cash flows,
 discount them back. The [capstone]({% post_url 2026-10-07-capstone-britannia-end-to-end %}) closed that arc.
 
-**Technical analysis** asks something else: *what is this price doing?* It
+**Technical analysis** (TA) asks something else: *what is this price doing?* It
 studies the record of what buyers and sellers actually did — price and
 volume — and largely ignores what the company sells, what it earns, and who
 runs it. To a technical analyst, all of that information has already been
@@ -83,11 +83,11 @@ analysing:
 
 ![Britannia daily closing price, April 2024 to March 2026]({{ '/assets/charts/ta-overview.svg' | relative_url }})
 
-Britannia (NSE: BRITANNIA), daily closing price, {{ ds.as_of }}. Source:
+Britannia (NSE: BRITANNIA), closing prices, {{ ds.as_of }}. Source:
 [Yahoo Finance]({{ ds.source_url }}). Historical data, for illustration only.
 
 {% assign fall = ta.major_decline.decline_close_pct | abs %}Two years, {{ ds.bars }} trading days. The stock closed at a peak of ₹{% include inr.html n=ta.major_decline.peak_close %} on
-{{ ta.major_decline.peak_close_date }}, then fell {{ fall }}% to a closing low of ₹{% include inr.html n=ta.major_decline.trough_close %} on {{ ta.major_decline.trough_close_date }},
+{{ ta.major_decline.peak_close_date | date: "%-d %B %Y" }}, then fell {{ fall }}% to a closing low of ₹{% include inr.html n=ta.major_decline.trough_close %} on {{ ta.major_decline.trough_close_date | date: "%-d %B %Y" }},
 then spent a year recovering. (Measured from the intraday high to the intraday
 low, the fall was a little bigger — the next few posts use those extremes.)
 
@@ -106,14 +106,14 @@ Every chart in this series is built from one file, and you can download it:
 | | |
 |---|---|
 | Company | {{ ds.symbol }} ({{ ds.exchange }}) |
-| Period | {{ ds.as_of }} |
+| Period | {{ ds.start | date: "%-d %B %Y" }} to {{ ds.end | date: "%-d %B %Y" }} |
 | Bars | {{ ds.bars }} daily, no gaps |
 | Source | [{{ ds.source_label }}]({{ ds.source_url }}) |
 | Download | [`britannia-ohlcv-2024-04-to-2026-03.csv`]({{ ds.csv_path | relative_url }}) |
 
 Two deliberate choices worth explaining.
 
-**It's real data, and it's old.** The series ends {{ ds.end }}, more than seven
+**It's real data, and it's old.** The series ends {{ ds.end | date: "%-d %B %Y" }}, more than six
 months before this post publishes. That lag is a rule this blog follows for
 anything used as a worked example, and it has a useful side effect: nothing
 here can be read as a comment on where the price is going now.
@@ -164,8 +164,10 @@ indicators with impressive names, comes out of five columns of arithmetic.
 The last four are a second module, added after the first ten. The limitations
 post isn't a disclaimer bolted on at the end. Technical analysis
 has real, well-documented weaknesses — hindsight bias, ambiguity about what
-counts as a signal, and the awkward fact that most published tests of most
-indicators are unimpressive. A series that showed you eight indicators and
+counts as a signal, and the awkward fact that many published tests of
+indicators look much weaker once data snooping and trading costs are
+accounted for (Park and Irwin's 2007 survey in the *Journal of Economic
+Surveys* is the standard reference). A series that showed you eight indicators and
 skipped the reckoning would be selling something.
 
 ## Common mistakes

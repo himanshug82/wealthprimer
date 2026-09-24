@@ -61,14 +61,14 @@ Two things worth noting.
 
 **"Equity fund" has a definition.** A fund qualifies for equity treatment
 only if it holds at least 65% in Indian equity. Some funds you'd assume are
-equity funds — certain international funds, some hybrids, funds of funds —
-don't clear that bar and are taxed under the other rules entirely. The
+equity funds — certain international funds, some hybrids, most funds of
+funds — don't clear that bar and are taxed under the other rules entirely. The
 factsheet tells you; [the post on reading one]({% post_url 2026-10-26-reading-a-factsheet %}) covers where
 to look.
 
 **That last row is not an oversight.** Debt funds bought from April 2023
 have no long-term category. Holding them for a decade earns no rate benefit.
-That's post four in this series.
+The debt funds post later in this series covers why.
 
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
@@ -107,11 +107,9 @@ redemption can produce both long-term and short-term gains at once.
 
 ## Worked example: one day either side
 
-Take the real fund used throughout this blog — UTI Nifty 50 Index Fund
-(regular plan, growth), NAVs from AMFI (the Association of Mutual Funds in
-India), as of 31 March 2026, used for illustration only. Suppose a ₹5,00,000
-investment in it gained ₹5,00,000 — a clean doubling, rounded for the example
-— and compare selling just before and just after the twelve-month mark:
+The numbers here are round and illustrative, not taken from a real fund's
+history. Suppose a ₹5,00,000 investment in an equity fund gained ₹5,00,000 —
+a clean doubling — and compare selling just before and just after the twelve-month mark:
 
 | | Sold at 12 months | Sold at 12 months + 1 day |
 |---|---:|---:|

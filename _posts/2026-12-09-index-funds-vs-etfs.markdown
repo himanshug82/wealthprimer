@@ -18,7 +18,7 @@ term: "ETF (exchange-traded fund)"
 
 ## The portfolio is identical. The wrapper isn't.
 
-An **ETF — Exchange-Traded Fund** — is a mutual fund whose units are listed on
+An **ETF — exchange-traded fund** — is a mutual fund whose units are listed on
 a stock exchange. An index fund and an ETF tracking the Nifty 50 both hold the
 same fifty companies in the same proportions. If you looked only at what's
 inside, you couldn't tell them apart.
@@ -61,8 +61,9 @@ token did.
 ## iNAV: the number that keeps the price honest
 
 Because an ETF trades all day while NAV is computed once at the close, the
-exchange publishes an **iNAV — indicative NAV** — every few seconds, computed
-from the live prices of the fifty underlying stocks. It's what a unit is worth
+exchange publishes an **iNAV — indicative NAV** — through the trading day
+(for equity ETFs, SEBI's May 2022 circular on passive funds requires it to lag
+the market by no more than 15 seconds), computed from the live prices of the fifty underlying stocks. It's what a unit is worth
 *right now*.
 
 ```
@@ -84,7 +85,7 @@ index fund, because there is no price other than NAV.
 ## The data: same index, three wrappers
 
 UTI runs both a Nifty 50 index fund and a Nifty 50 ETF. Here is ₹100 in each
-from {{ e.window_start }} (the ETF's first NAV) to {{ e.window_end }}, {{ e.years }} years, alongside
+from {{ e.window_start | date: "%-d %B %Y" }} (the ETF's first NAV) to {{ e.window_end | date: "%-d %B %Y" }}, {{ e.years }} years, alongside
 the Nifty 50 price index. Source: {{ m.sources.label }}, codes
 {{ m.sources.etf.code }}, {{ m.sources.index_fund.regular_code }} and {{ m.sources.index_fund.direct_code }}; index from
 Yahoo Finance. Historical data, for illustration only — this is about how the
@@ -115,9 +116,11 @@ Second, the ordering: ETF, then direct plan, then regular plan. Year by year:
 | {{ y.year }} | {{ y.etf_minus_pri_pp }} pp | {{ y.direct_minus_pri_pp }} pp | {{ y.regular_minus_pri_pp }} pp |{% endfor %}
 | **Average** | **{{ td.etf_minus_pri_pp }} pp** | **{{ td.direct_minus_pri_pp }} pp** | **{{ td.regular_minus_pri_pp }} pp** |
 
-The gap between the columns is the cost difference between the wrappers — the
-[tracking difference]({% post_url 2026-11-28-tracking-error-and-tracking-difference %}),
-which is what an index product's expense ratio actually costs you. The ETF's
+Each column is that product's
+[tracking difference]({% post_url 2026-11-28-tracking-error-and-tracking-difference %})
+against the price index — what its costs actually take from you — so the
+difference in their tracking differences is the cost difference between the
+wrappers. The ETF's
 lower expense ratio shows up as a consistently larger dividend-plus-cost gap
 over the index.
 
@@ -133,7 +136,7 @@ so this comparison flatters the ETF by exactly the amount of those frictions.
 The raw NAV series for this ETF contains two jumps that are not market moves,
 and both are lessons in reading an ETF's history.
 
-**A 1:10 unit split, {{ split.date }}.** The NAV went from ₹{% include inr.html n=split.nav_before %} to
+**A 1:10 unit split, {{ split.date | date: "%-d %B %Y" }}.** The NAV went from ₹{% include inr.html n=split.nav_before %} to
 ₹{{ split.nav_after }} overnight. Nobody lost anything: each unit became ten, and each
 was worth a tenth. Fund houses do this to make one unit affordable — a ₹2,000
 unit is awkward for someone investing ₹500 a month. The
@@ -141,7 +144,7 @@ unit is awkward for someone investing ₹500 a month. The
 covers the same idea for shares. If you download NAV history and don't correct
 for it, every return you compute across that date is wrong by a factor of ten.
 
-**A payout, {{ pay.ex_date }}.** The Nifty rose that day; the ETF's NAV fell by
+**A payout, {{ pay.ex_date | date: "%-d %B %Y" }}.** The Nifty rose that day; the ETF's NAV fell by
 {{ pay.nav_gap_vs_index_pct | abs }}% relative to it — from ₹{% include inr.html n=pay.nav_before %} to ₹{% include inr.html n=pay.nav_after %} per
 unit — because the fund distributed roughly ₹{{ pay.estimated_payout_per_unit }} a unit to holders.
 That cash landed in investors' bank accounts, not in the NAV. An index fund's
@@ -178,8 +181,10 @@ Not a recommendation — a checklist of which *frictions* apply to you:
   is taxed as dividend income in the year received — see the
   [dividends and interest post]({% post_url 2026-10-31-dividends-and-interest %}).
   A growth-plan index fund defers all of that until you sell.
-- **Assuming "ETF" means "index".** Most Indian ETFs are passive, but the
-  wrapper and the strategy are separate choices. Read the scheme document.
+- **Assuming "ETF" means "Nifty 50".** SEBI's category rules make an index
+  ETF hold at least 95% in its index's securities, so the wrapper is passive —
+  but the index can be anything from the Nifty 50 to a narrow sector or theme.
+  Read the scheme document.
 
 **Takeaway:** An index fund and an ETF on the same index own the same stocks;
 the difference is that one sells you units at NAV and the other lets you trade

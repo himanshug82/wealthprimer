@@ -166,7 +166,7 @@ tracking = {
     "regular_mean_td_pp": r2(float(np.mean([r["tracking_difference_pp"] for r in reg_years]))),
     "direct_mean_td_pp": r2(float(np.mean([r["tracking_difference_pp"] for r in dir_years]))),
     "direct_minus_regular_pp": r2(float(np.mean([r["tracking_difference_pp"] for r in dir_years])) - float(np.mean([r["tracking_difference_pp"] for r in reg_years]))),
-    "pri_caveat": "The benchmark here is the PRICE index, which excludes dividends. A positive tracking difference against it is mostly the ~1-1.5% dividend yield of the fifty stocks, minus the expense ratio — not out-performance.",
+    "pri_caveat": "The benchmark here is the *price* index, which excludes dividends. A positive tracking difference against it is mostly the roughly 1–1.5% dividend yield of the fifty stocks, minus the expense ratio — not outperformance.",
 }
 
 # ---------------------------------------------------------------- 4/5. bond: YTM and duration

@@ -17,8 +17,8 @@ prices fall when yields rise. **Modified duration** says *by how much*: it is
 the approximate percentage change in a bond's price for a one-percentage-point
 change in its yield.
 
-A duration of 4 means a 1% rise in yields knocks roughly 4% off the price; a
-1% fall adds roughly 4%. Longer-dated bonds have higher durations, which is
+A duration of 4 means a 1 percentage point rise in yields knocks roughly 4%
+off the price; a 1 percentage point fall adds roughly 4%. Longer-dated bonds have higher durations, which is
 why a gilt fund holding ten-year government bonds swings far more than a
 liquid fund holding paper that matures in weeks — even though the government
 bonds carry no credit risk at all.
@@ -48,8 +48,8 @@ further down.
 
 ## Worked example: the same ₹{% include inr.html n=bd.face %} bond
 
-Same fictional bond as last time: {{ bd.coupon_pct }}% coupon, {{ bd.years }} years, priced at
-₹{{ bd.buy_price }} for a YTM of {{ bd.ytm_pct }}% (₹{{ bd.price_at_ytm }} at exactly {{ bd.ytm_pct | round }}%, the base the
+Same fictional bond as last time: {{ bd.coupon_pct | round }}% coupon, {{ bd.years }} years, priced at
+₹{% include inr.html n=bd.buy_price %} for a YTM (yield to maturity) of {{ bd.ytm_pct | round }}% (₹{{ bd.price_at_ytm }} at exactly {{ bd.ytm_pct | round }}%, the base the
 percentage changes below are measured from).
 
 Reusing the present-value table from the YTM post and weighting each year by
@@ -70,13 +70,17 @@ about {{ bd.modified_duration }}%. Check it against the actual repricing:
 
 Close, and not identical: the actual fall is a little smaller than the
 estimate and the actual rise a little larger. That asymmetry is **convexity**
-— the price-yield curve bends — and it always works in the bondholder's
-favour. Duration is a straight-line approximation of a curve; it's excellent
+— the price-yield curve bends — and for ordinary bonds without embedded
+options (such as a call the issuer can exercise), it works in the
+bondholder's favour. Duration is a straight-line approximation of a curve; it's excellent
 for small moves and drifts for large ones.
 
 ## Why maturity matters so much
 
-Same coupon, same yield, different maturities:
+Same {{ bd.coupon_pct | round }}% coupon, all starting at a {{ bd.coupon_pct | round }}% yield (so each is priced at
+par), different maturities. The last column is the actual price change when
+the yield rises one point, to {{ bd.coupon_pct | plus: 1 | round }}%. (That's why the five-year row
+differs slightly from the worked example above, which starts at {{ bd.ytm_pct | round }}%.)
 
 | Bond | Macaulay | Modified duration | Price change for +1 pt |
 |---|---:|---:|---:|{% for c in bd.comparison %}
@@ -124,7 +128,7 @@ small push (a change in interest rates) swings the whole thing.
   yields fall. Investors who bought long-duration funds before a rate-cutting
   cycle earned exactly this.
 
-**Takeaway:** Modified duration is roughly the percentage a bond's price moves
+**Takeaway:** modified duration is roughly the percentage a bond's price moves
 for a one-point move in yields — {{ bd.modified_duration }} for our five-year bond, about 7 for a
 ten-year one. It's why two funds that are both "debt" can behave nothing
 alike, and it's the first number to read on a debt fund's factsheet.

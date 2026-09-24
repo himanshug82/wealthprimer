@@ -24,9 +24,9 @@ generate on *everything it owns* — its total assets from the [balance
 sheet]({% post_url 2026-08-20-reading-a-balance-sheet %}) — regardless of whether that asset base was funded by
 shareholders, lenders, or suppliers?
 
-It's the broadest of the three, because total assets include things ROCE
-doesn't directly capture, like short-term liabilities (payables) that also
-fund part of what a company owns.
+It's the broadest of the three, because total assets are the whole asset
+base — funded not only by equity and borrowings (ROCE's capital) but also by
+short-term liabilities like money owed to suppliers (payables).
 
 ## The formula
 
@@ -57,7 +57,7 @@ From Britannia Industries' [audited consolidated FY25 results](https://media.bri
 | PAT (FY25) | {{ bi_is25.pat }} |
 | Total assets, start of year (FY24) | {{ bi_bs24.total_assets }} |
 | Total assets, end of year (FY25) | {{ bi_bs25.total_assets }} |
-| Average total assets | {{ bi_bs24.total_assets | plus: bi_bs25.total_assets | divided_by: 2.0 }} |
+| Average total assets | {{ bi_bs24.total_assets | plus: bi_bs25.total_assets | divided_by: 2.0 | round: 2 }} |
 | **ROA** | **{{ site.data.real_company.ratios.FY25.roa }}%** |
 
 ## ROE vs ROCE vs ROA, side by side

@@ -44,9 +44,12 @@ to whoever produced it.
 Two numbers, direct and regular. From [the expense post]({% post_url 2026-10-21-expense-ratios-direct-vs-regular %}):
 the gap between them is pure distribution commission, and on an actively
 managed fund it was {{ mf.expense_ratio.active_fund.gap_pp }} percentage points a year — about {{ mf.expense_ratio.active_fund.difference_pct }}% of the final
-corpus over thirteen years.
+corpus over nearly thirteen years.
 
 Check which plan you actually hold. Many people assume direct and own regular.
+The same section usually shows the **exit load** — the charge for redeeming
+within a set period (often 1% within a year for equity funds) — which matters
+if you might need the money early.
 
 ### Portfolio
 
@@ -55,32 +58,32 @@ Check which plan you actually hold. Many people assume direct and own regular.
   20%.
 - **Sector allocation.** Two funds in the same category can hold entirely
   different sectors.
-- **Number of holdings.** Fifty-plus stocks starts to resemble an index at a
-  considerably higher fee.
+- **Number of holdings.** In our view, a fund with fifty-plus stocks starts
+  to resemble an index, at a considerably higher fee.
 - **Portfolio turnover.** How much was traded. High turnover means trading
   costs that sit *outside* the expense ratio and are never itemised anywhere.
 
 **The overlap check** is worth doing once: if you own four large-cap funds,
 compare their top-10 lists. Owning the same twelve companies four times over
-is not diversification, and it's the most common portfolio error among
-Indian retail investors who own many funds.
+is not diversification, and in our view it's one of the most common portfolio
+errors among investors who own many funds.
 
 ### Performance
 
 Point-to-point returns for 1, 3, 5 years and since inception, alongside the
-benchmark. As [MF-2]({% post_url 2026-10-19-point-to-point-returns %}) showed, these all
+benchmark. As [the point-to-point returns post]({% post_url 2026-10-19-point-to-point-returns %}) showed, these all
 end on the same date — so they share the same endpoint bias. The same fund
 showed 2.56% and 23.92% over five-year windows depending on the start month.
 
 If the AMC publishes rolling returns or a SIP-return table, that's more
 informative. If it doesn't, you can compute them yourself — that's what the
-Python in [MF-3]({% post_url 2026-10-20-rolling-returns %}) is for.
+Python in [the rolling returns post]({% post_url 2026-10-20-rolling-returns %}) is for.
 
 ### Risk measures
 
 Usually standard deviation, beta (how much the fund tends to move when its
 benchmark moves 1%), Sharpe, sometimes maximum drawdown. From
-[MF-6]({% post_url 2026-10-23-volatility-and-sharpe %}): always check the period and the
+[the volatility and Sharpe post]({% post_url 2026-10-23-volatility-and-sharpe %}): always check the period and the
 risk-free rate, and never compare a Sharpe across categories.
 
 And note what's usually missing: **drawdown recovery time**. A factsheet may
@@ -103,7 +106,7 @@ The fund used throughout this series, read as if off a factsheet:
 | Maximum drawdown | {{ mf.drawdowns.worst_pct }}% ({{ mf.drawdowns.worst_date }}) |
 
 All figures computed from [AMFI NAV history via mfapi.in]({{ f.source_url }}),
-{{ f.regular_start }} to {{ f.regular_end }}. Historical data, for illustration only.
+{{ f.regular_start | date: "%-d %B %Y" }} to {{ f.regular_end | date: "%-d %B %Y" }}. Historical data, for illustration only.
 The free AMFI history starts in April 2006, so the return row covers that
 window — a real factsheet's "since inception" figure runs from the fund's
 launch date and can differ.
@@ -183,8 +186,7 @@ Condensed from the whole series:
 
 **Takeaway:** A factsheet tells you what a fund holds, what it costs, and how
 it has done over windows ending today — genuinely useful, and roughly half of
-what you need. The rest you compute yourself: the distribution of rolling
+what you need. The rest you compute yourself — the distribution of rolling
 returns, how deep the falls went and how long they lasted, and what the fee
-compounds to. What no factsheet can supply is whether any of it will happen
-again, or whether the fund suits you — and those are the two questions that
-actually decide the outcome.
+compounds to — and no factsheet can tell you whether any of it will happen
+again, or whether the fund suits you.

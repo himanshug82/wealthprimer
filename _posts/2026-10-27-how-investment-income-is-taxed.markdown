@@ -17,7 +17,7 @@ talk to someone who files professionally.*
 
 ## Why this series exists
 
-Fifty-nine posts on this blog have been about what an investment is worth.
+The posts on this blog so far have been about what an investment is worth.
 None of them mentioned that you don't keep all of it.
 
 Tax is the largest, most predictable drag on long-term returns after fees —
@@ -33,7 +33,7 @@ This series covers the mechanics. It won't tell you what to do.
 Indian tax law was rewritten recently. The **Income-tax Act, 2025** replaced
 the 1961 Act with effect from 1 April 2026, and while the rates and slabs
 carried over unchanged, almost every section was renumbered — the old section
-80C became 123 — and the twin concepts of "Previous Year" and "Assessment
+80C became section 123 — and the twin concepts of "Previous Year" and "Assessment
 Year" were collapsed into a single **Tax Year**.
 
 So this series teaches *mechanics* rather than citations. Holding periods,
@@ -133,7 +133,7 @@ indexation benefit, no reward for patience. And indexation is gone for older
 units too, on any sale from 23 July 2024.
 
 If you're reading an article that mentions indexation on debt funds, check
-its date. That's post four in this series.
+its date. The debt funds post later in this series covers it.
 
 ## What this series covers
 
@@ -152,7 +152,7 @@ its date. That's post four in this series.
 | F&O | Why futures and options (derivatives) trading is business income, not capital gains |
 | Foreign stocks | US shares, dividends withheld abroad, and Schedule FA disclosure |
 
-Every worked example in the first nine posts runs on the real NAV (net asset
+The worked examples in the core posts of this series run on the real NAV (net asset
 value, a fund's per-unit price) history used in the
 [Mutual Funds series]({% post_url 2026-10-18-what-a-mutual-fund-is %}) — UTI Nifty 50 Index
 Fund (regular plan, growth), NAVs from AMFI (the Association of Mutual Funds in

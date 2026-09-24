@@ -22,8 +22,8 @@ valuation. Time to earn it.
 
 The rate you discount at should reflect what the money you're valuing
 *costs*. A company is funded from two pockets — shareholders and lenders —
-and each pocket demands a different return. **WACC — the Weighted Average
-Cost of Capital** — blends the two in proportion to how much of each the
+and each pocket demands a different return. **WACC — the weighted average
+cost of capital** — blends the two in proportion to how much of each the
 company actually uses.
 
 Think of it as the hurdle rate. If a business can't earn more than its WACC
@@ -63,8 +63,8 @@ demand more. Equity is the expensive money.
 ## Step 1: the cost of equity
 
 There's no invoice for what shareholders expect — nobody sends the company a
-bill. It has to be estimated, and the standard tool is the **Capital Asset
-Pricing Model (CAPM)**:
+bill. It has to be estimated, and the standard tool is the **capital asset
+pricing model (CAPM)**:
 
 ```
 Ke = Risk-Free Rate + Beta × Equity Risk Premium
@@ -116,18 +116,18 @@ Then the cost of debt, which for once comes straight out of the
 
 | Input | Value | Source |
 |---|---:|---|
-| FY25 interest expense | ₹47 Lakh | Income statement |
-| Average term loan | ₹430 Lakh | (FY24 ₹460 + FY25 ₹400) / 2 |
+| FY25 interest expense | ₹47 lakh | Income statement |
+| Average term loan | ₹430 lakh | (FY24 ₹460 + FY25 ₹400) / 2 |
 | Cost of debt, pre-tax | {{ w.cost_of_debt }}% | 47 / 430 |
-| Tax rate | {{ site.data.case_study.dcf.assumptions.tax_rate }}% | Indian domestic corporate rate |
+| Tax rate | {{ site.data.case_study.dcf.assumptions.tax_rate | round }}% | Rounded from the Section 115BAA domestic rate: 22% + 10% surcharge + 4% cess = 25.17% |
 | **Cost of debt, after tax** | **{{ w.cost_of_debt_after_tax }}%** | {{ w.cost_of_debt }} × (1 − 0.25) |
 
 Now the weights. These use **market** values, not book values — the whole
 point is what capital costs today, and Desi Bites' equity is worth its
-₹{% include inr.html n=site.data.case_study.listing.market_cap %} Lakh market capitalisation at the IPO price, not the
-₹{% include inr.html n=site.data.case_study.listing.post_ipo_equity %} Lakh of book equity:
+₹{% include inr.html n=site.data.case_study.listing.market_cap %} lakh market capitalisation at the IPO price, not the
+₹{% include inr.html n=site.data.case_study.listing.post_ipo_equity %} lakh of book equity:
 
-| | ₹ Lakh | Weight |
+| | ₹ lakh | Weight |
 |---|---:|---:|
 | Equity (market cap) | {{ w.market_value_equity }} | {{ w.weight_equity }}% |
 | Debt | {{ w.market_value_debt }} | {{ w.weight_debt }}% |
@@ -158,7 +158,7 @@ For illustration only.
 {% assign bi_kd = bi_is25.interest | times: 100.0 | divided_by: bi_avg_debt | round: 2 %}
 {% assign bi_tax_rate = bi_is25.tax | times: 100.0 | divided_by: bi_is25.pbt | round: 1 %}
 
-| | ₹ Crore |
+| | ₹ crore |
 |---|---:|
 | FY25 finance costs | {{ bi_is25.interest }} |
 | Total borrowings, FY24 | {{ bi_bs24.total_borrowings }} |
@@ -166,9 +166,11 @@ For illustration only.
 | Average borrowings | {{ bi_avg_debt }} |
 | **Cost of debt, pre-tax** | **{{ bi_kd }}%** |
 
-Its effective tax rate is also observable — ₹{% include inr.html n=bi_is25.tax %} Cr of tax on ₹{% include inr.html n=bi_is25.pbt %} Cr of
+Its effective tax rate is also observable — ₹{% include inr.html n=bi_is25.tax %} crore of tax on ₹{% include inr.html n=bi_is25.pbt %} crore of
 pre-tax profit, or {{ bi_tax_rate }}%. So Britannia's after-tax cost of debt is roughly
-{{ bi_kd }} × (1 − {{ bi_tax_rate }}%), a little over 6%.
+{{ bi_kd }} × (1 − {{ bi_tax_rate }}%), a little over 6%. One caveat: reported
+finance costs also include interest on lease liabilities and other items that
+aren't in "borrowings", so this ratio, if anything, overstates the true borrowing rate.
 
 Note how much cheaper that is than Desi Bites' {{ w.cost_of_debt }}%. Large, established,
 low-leverage borrowers get better terms than small ones — which is itself a

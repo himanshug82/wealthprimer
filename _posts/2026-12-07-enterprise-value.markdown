@@ -57,12 +57,12 @@ behind pairing EV with EBITDA and market cap with earnings.
 ## Worked example: Desi Bites Foods Ltd, at listing
 
 From the [case study](/case-study/)'s listing block. The IPO raised
-₹1,600 lakh of fresh cash that sits on the balance sheet, which is what makes
+₹{% include inr.html n=site.data.case_study.listing.ipo_proceeds %} lakh of fresh cash that sits on the balance sheet, which is what makes
 this example instructive:
 
 | ₹ lakh | |
 |---|---:|
-| Market cap ({{ site.data.case_study.listing.post_ipo_shares_lakh }} lakh shares × ₹640) | {% include inr.html n=d.market_cap_lakh %} |
+| Market cap ({{ site.data.case_study.listing.post_ipo_shares_lakh }} lakh shares × ₹{% include inr.html n=site.data.case_study.listing.ipo_price %}) | {% include inr.html n=d.market_cap_lakh %} |
 | + Term loan | {{ d.debt_lakh }} |
 | − Cash (post-IPO) | {% include inr.html n=d.cash_lakh %} |
 | **= Enterprise value** | **{% include inr.html n=d.ev_lakh %}** |
@@ -78,10 +78,13 @@ company, and a multiple that's a fifth lower once you count the cash.
 
 ## Worked example: Britannia Industries
 
-Price ₹5,851 (NSE close, 30 June 2025; source: Yahoo Finance) against the
+Price ₹{% include inr.html n=site.data.real_company.market.price %} (NSE close, {{ site.data.real_company.market.price_date }}; source: Yahoo Finance) against the
 FY25 balance sheet from the
 [audited results](https://media.britannia.co.in/Audited_Consolidated_Financial_Results_31_03_2025_74a7c03628.pdf)
-(year ended 31 March 2025). For illustration only.
+(year ended 31 March 2025). For illustration only. Only *current* (liquid)
+investments are subtracted; Britannia's non-current investments are
+deliberately left in, as longer-term holdings rather than spare cash. The
+stricter version above would subtract them too, pulling EV a little lower.
 
 | ₹ crore | |
 |---|---:|
@@ -139,10 +142,11 @@ shop was worth.
   simple version subtracts all of it. Know which you're using.
 - **Ignoring debt-like items.** Lease liabilities, preference capital, and
   pension deficits behave like debt. For leasing-heavy businesses (retail,
-  airlines) leaving them out understates EV materially.
+  airlines) leaving them out understates EV materially. If you do add
+  lease liabilities, pair EV with EBITDA as reported under Ind AS 116 (which
+  already excludes the lease rent), so both sides match.
 
-**Takeaway:** Enterprise value is market cap plus debt minus cash — the cost
-of the whole business rather than of its shares. Desi Bites' ₹8,000 lakh of
-shares is a ₹6,520 lakh business once its IPO cash is netted off, which is why
-EV, not market cap, is the right numerator whenever the denominator belongs to
-lenders as well as shareholders.
+**Takeaway:** enterprise value is market cap plus debt minus cash — the cost
+of the whole business rather than of its shares. That's why EV, not market
+cap, is the right numerator whenever the denominator belongs to lenders as
+well as shareholders.

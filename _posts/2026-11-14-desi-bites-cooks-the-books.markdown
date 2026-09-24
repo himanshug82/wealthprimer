@@ -25,7 +25,7 @@ listed company to look better than it was. No real company is being
 described, and the point is not that companies routinely do this. The point
 is that each trick can be made to *look* defensible, each one makes the statements
 look better, and each one leaves a fingerprint that a reader with the ratios
-from this blog's first thirty posts can find.
+from this blog's first module can find.
 
 The honest FY26 is the one the [previous post]({% post_url 2026-11-13-reading-an-annual-report %})
 introduced. Here is what management could have done instead.
@@ -43,7 +43,7 @@ None of these involves a missing rupee, and each comes with a ready
 explanation. Don't mistake that for legality. Booking stock nobody ordered
 as a sale fails Ind AS 115 — with no customer who agreed to buy, there's no
 revenue to recognise — and that's exactly why *revenue cut-off* is a
-standard Key Audit Matter. Capitalising advertising is barred outright by
+standard key audit matter. Capitalising advertising is barred outright by
 Ind AS 38, and routine repairs are an expense under Ind AS 16. As described,
 Tricks 1 and 2 are misstatements, not judgement calls. Trick 3 is a real
 transaction at a generous price, and Trick 4 is an estimate being revised;
@@ -62,7 +62,7 @@ for longer.
 | **EBITDA** | **{{ h.ebitda }}** | **{{ d.ebitda }}** | +{{ d.ebitda | minus: h.ebitda }} |
 | EBITDA margin | {{ hr.ebitda_margin }}% | {{ dr.ebitda_margin }}% | |
 | Other income | {{ h.other_income }} | {{ d.other_income }} | +{{ d.related_party_gain }} |
-| **PAT** | **{{ h.pat }}** | **{{ d.pat }}** | **+{{ dr.pat_uplift_vs_honest }}%** |
+| **PAT** | **{{ h.pat }}** | **{{ d.pat }}** | **+{{ d.pat | minus: h.pat | round }}** |
 | EPS (₹) | {{ h.eps }} | {{ d.eps }} | |
 | PAT growth on FY25 | {{ hr.pat_growth }}% | {{ dr.pat_growth }}% | |
 
@@ -109,6 +109,10 @@ cash the statement that's hardest to fake; here is what that means in practice.
 | Other income ÷ PBT | {{ hr.other_income_pct_pbt }}% | {{ dr.other_income_pct_pbt }}% | Trick 3 hides here — same share, different *nature*. The notes reveal a gain on sale to a related party |
 | Gross margin | {{ hr.gross_margin }}% | {{ dr.gross_margin }}% | Unchanged — stuffing adds revenue *and* cost. Not every ratio catches every trick |
 
+The honest inventory days sit above FY25's {{ site.data.case_study.ratios.FY25.inventory_days }} for an innocent reason: the company
+bought on {{ c2.acquisition.date }} brings its full stock into the year-end balance but only
+six months of cost of goods sold into FY26.
+
 Read the first row twice. **OCF/PAT is the single most useful forensic
 ratio** because almost every way of flattering profit fails to flatter cash.
 Channel stuffing books revenue nobody has paid for. A gain on selling an
@@ -131,8 +135,8 @@ PBT" in both versions, because the honest year also has a big other-income
 line (interest on the IPO cash). The ratio doesn't catch it. **The note
 does.** Ind AS 24 requires every transaction with a related party to be
 listed: counterparty, relationship, amount. A line reading *sale of plant
-and equipment to an entity controlled by the promoter, ₹55 lakh, carrying
-value ₹20 lakh* is the whole story in one row.
+and equipment to an entity controlled by the promoter, ₹{{ t.rp_asset_sale_price }} lakh, carrying
+value ₹{{ t.rp_asset_book_value }} lakh* is the whole story in one row.
 
 That's the general lesson of this module. Ratios are the smoke detector.
 The notes are where you find the fire. A related-party note that is long,
@@ -153,9 +157,8 @@ generated roughly the same cash as it would have on a normal year.
 There is also a tell in the timing. Trick 1 happens in the last week of the
 year; trick 4 happens at year-end when estimates are revisited. A quarterly
 pattern where Q4 is always the strongest quarter, and Q1 is always weak
-because the channel is full, is worth a look — the
-[next post]({{ '/series/fundamental-analysis/' | relative_url }}) is about reading
-quarters.
+because the channel is full, is worth a look — the next post is about
+reading quarters.
 
 ## Common mistakes
 
@@ -180,9 +183,7 @@ quarters.
 - **Thinking this only happens at small companies.** Size changes the
   zeroes, not the techniques.
 
-**Takeaway:** Four legal-looking tricks turned a good year into a
-spectacular one on paper — revenue up, margins up, PAT more than doubled —
-while operating cash flow barely moved. That gap is the tell. OCF/PAT
-collapsing from {{ hr.ocf_pat }}x to {{ dr.ocf_pat }}x, debtor days jumping from {{ hr.receivable_days }} to {{ dr.receivable_days }}, and
-a related-party line in the notes catch what the P&L was built to hide.
-Profit is an opinion; cash is closer to a fact.
+**Takeaway:** A few defensible-looking tricks can turn a good year into a
+spectacular one on paper while operating cash barely moves — and that gap is
+the tell. OCF/PAT, debtor days and the related-party note catch what the P&L
+was built to hide. Profit is an opinion; cash is closer to a fact.

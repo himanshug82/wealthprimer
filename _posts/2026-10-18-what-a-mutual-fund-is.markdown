@@ -25,7 +25,7 @@ expenses, risk measures, SIPs — is bookkeeping laid on top of it.
 
 ## NAV: what it is, and the thing everyone gets wrong
 
-**NAV — Net Asset Value** — is the per-unit value of the fund:
+**NAV — net asset value** — is the per-unit value of the fund:
 
 ```
         Total value of the fund's assets − liabilities
@@ -96,7 +96,7 @@ contains both the 2008 crash and the 2020 one. Most fund marketing shows you
 a period chosen to exclude events like those. This series includes them
 because they're the interesting part.
 
-**It's old data.** The series ends {{ f.regular_end }}, more than six months before this
+**It's old data.** The series ends {{ f.regular_end | date: "%-d %B %Y" }}, more than six months before this
 post publishes. That's a rule this blog follows for worked examples, and it
 means nothing here can be read as a view on current markets.
 
@@ -118,10 +118,10 @@ would dominate. It was a 60% fall, and the chart should show it as one.
 
 | Term | What it means |
 |---|---|
-| **AUM** | Assets Under Management — total money in the fund |
+| **AUM** | Assets under management — total money in the fund |
 | **Units** | Your proportional share of the pool |
 | **Growth option** | Gains stay in the fund; NAV rises |
-| **IDCW option** | Income Distribution cum Capital Withdrawal — payouts, and NAV drops by the amount paid |
+| **IDCW option** | Income distribution cum capital withdrawal — payouts, and NAV drops by the amount paid |
 | **Direct plan** | Bought straight from the AMC; no distributor commission |
 | **Regular plan** | Bought via a distributor, whose commission is inside the expense ratio |
 | **Expense ratio** | Annual fee, deducted daily from NAV |
@@ -134,7 +134,9 @@ and the rename was an improvement, because the money isn't a return *on top
 of* your investment — it's paid out of your own NAV, which falls by the same
 amount. It's taxable in your hands at your slab rate. Many people choose
 IDCW believing it produces extra income; it produces the same money, sooner,
-taxed less favourably.
+taxed less favourably — each payout is taxed at your slab rate in the year it's
+paid, while growth-option gains are taxed only when you redeem, and then at
+capital-gains rates.
 
 **The expense ratio is already inside the NAV.** You'll never see it charged.
 Every NAV in that chart is *after* fees. The post on expense ratios later in this series shows exactly what

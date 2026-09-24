@@ -18,7 +18,7 @@ series: risk
 
 ## The variable no formula includes
 
-Six posts into this series, every risk so far has been about the market or
+So far in this series, every risk has been about the market or
 the instrument — leverage, correlation, sequence, the arithmetic of losses.
 This one is about the other party to every transaction you'll ever make:
 you.
@@ -37,18 +37,18 @@ name the situation it lives in.
 
 **What it is.** Losses hurt roughly twice as much as equivalent gains feel
 good — the finding behind Kahneman and Tversky's prospect theory (1979);
-their 1992 follow-up put the ratio at about 2.25. A ₹10,000 loss and a ₹10,000 gain are not emotional opposites; the loss
-is heavier.
+their 1992 follow-up put the ratio at about 2.25. A ₹10,000 loss and a
+₹10,000 gain are not emotional opposites; the loss is heavier.
 
 **Where it lives.** In the underwater chart. Over twenty years and
-{{ b.days }} trading days, {{ rk.dataset.fund_name }} spent only **{{ b.pct_days_at_high }}% of trading days**
+{% include inr.html n=b.days %} trading days, {{ rk.dataset.fund_name }} spent only **{% include inr.html n=b.pct_days_at_high %}% of trading days**
 at or near an all-time high. It sat more than 10% below a previous peak on
 **{{ b.pct_days_below_10 }}%** of days, and more than 20% below on
-{{ b.pct_days_below_20 }}%. The median day was {{ b.median_drawdown_pct }}%
-from the high.
+{{ b.pct_days_below_20 }}%. The median day was {{ b.median_drawdown_pct | abs }}%
+below the high.
 
 Read that again: a good, boring, diversified index fund spends most of its
-life *below* a number it once reached. Owning it means looking at a paper loss
+life *below* a number it once reached. Owning it means looking at a shortfall
 against the peak far more often than not. If each of those glances weighs
 twice what the gains do, holding through twenty years is emotionally
 punishing even when it's financially fine — and the
@@ -66,7 +66,7 @@ feel like history.
 
 **Where it lives.** In the
 [rolling returns]({% post_url 2026-10-20-rolling-returns %}). Three-year
-returns on the same fund ranged from {{ rr.years_3.min }}% to
+returns on the same fund ranged from {{ rr.years_3.min | replace: "-", "−" }}% to
 {{ rr.years_3.max }}% a year depending on start date; the median barely moved
 around {{ rr.years_3.median }}%. Someone who started in March 2020 saw three
 years near the top of that range and quite reasonably concluded equities
@@ -185,7 +185,7 @@ less than the amount invested in only **{{ uw.months_below_invested }} of
 {{ uw.months_total }} months**, and never for longer than
 {{ uw.longest_stretch_months }} months at a stretch. And of the fund's
 {{ b.up_fys | plus: b.down_fys }} financial years, {{ b.up_fys }} were up and
-{{ b.down_fys }} were down; the worst ({{ b.worst_fy }}, {{ b.worst_fy_pct }}%)
+{{ b.down_fys }} were down; the worst ({{ b.worst_fy }}, {{ b.worst_fy_pct | replace: "-", "−" }}%)
 was followed immediately by +{{ b.next_fy_pct }}%.
 
 So the biases above don't need to be *defeated*. They need to be made
@@ -213,9 +213,8 @@ wasn't looking at a red number.
   a bias does little to reduce it. Changing the process — the
   automation, the rules, the checking frequency — is what moves the outcome.
 
-**Takeaway:** A diversified index fund spent {{ b.pct_days_below_10 }}% of
-twenty years more than 10% below its previous high, three-year returns on it
-ranged from {{ rr.years_3.min }}% to {{ rr.years_3.max }}%, and nine in ten
-F&O traders who lost two years running lost a third time — loss aversion, recency and the disposition
-effect each have a number, and each number is a moment you'll recognise. You
-don't beat these biases in the moment. You write the rule before it.
+**Takeaway:** Loss aversion, recency, anchoring, the disposition effect and
+herding each have a number on this blog, and each number marks a moment
+you'll recognise. A diversified index fund spent {{ b.pct_days_below_10 }}% of
+twenty years more than 10% below its previous high, which is when the biases
+bite. You don't beat them in the moment; you write the rule before it.

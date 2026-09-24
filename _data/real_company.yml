@@ -207,7 +207,7 @@ market:
 dupont:
   FY25:
     net_margin: 12.14              # PAT 2178.73 / revenue 17942.67
-    asset_turnover: 2.00           # revenue 17942.67 / avg total assets 8956.06
+    asset_turnover: "2.00"         # string so it renders 2.00x, not 2.0x; revenue 17942.67 / avg total assets 8956.06
     equity_multiplier_avg: 2.16    # avg total assets 8956.06 / avg equity 4148.62
     avg_total_assets: 8956.06      # (FY24 9073.56 + FY25 8838.55) / 2
     avg_equity_owners: 4148.62     # (FY24 3941.52 + FY25 4355.72) / 2

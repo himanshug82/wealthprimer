@@ -52,7 +52,7 @@ informative. That isn't an accident.
 
 Second, **the notes to accounts are half the report.** Seventy pages of
 small type that most readers never open, sitting behind five pages of
-statements that this blog spent thirty posts on. Every number in those five
+statements that this blog spent a whole module on. Every number in those five
 pages has its explanation in the seventy.
 
 <details markdown="1">
@@ -85,16 +85,17 @@ materially wrong. *Disclaimer* means the auditor couldn't get enough
 evidence to form a view at all. The last two are rare and are the loudest
 sound a document can make.
 
-**Key Audit Matters (KAMs).** For listed companies, from audits of FY2018-19
+**Key audit matters (KAMs).** For listed companies, from audits of FY2018-19
 onward (auditing standard SA 701), auditors must list the areas that took the
 most judgement. These are, by definition, where the numbers are
 softest. For Desi Bites the KAM is *{{ ar.kam_example }}* — which is
-exactly the area the [next post]({{ '/series/fundamental-analysis/' | relative_url }})
-shows being abused.
+exactly the area the next post shows being abused.
 
 **Emphasis-of-matter paragraphs.** The auditor agrees with the statements
-but wants you to look at something — often a going-concern uncertainty, a
-pending dispute, or a change in accounting policy. It's the auditor pointing.
+but wants you to look at something — often a pending dispute, a significant
+uncertainty, or a change in accounting policy. It's the auditor pointing. (A
+*material* doubt about going concern is louder still: under the revised SA 570
+it gets its own separately headed section in the report.)
 
 ## Step 2: the statements (five pages)
 
@@ -124,7 +125,7 @@ question, and none of them is answered on these five pages.
 
 ## Step 3: the MD&A (management's version of why)
 
-The **Management Discussion & Analysis** is the one section where
+The **management discussion and analysis (MD&A)** is the one section where
 management is obliged to explain the year in words: volumes versus prices,
 input costs, new capacity, competition, what the risks are. It's the only
 place the *why* is written down, which makes it indispensable — and it's
@@ -159,7 +160,7 @@ real and pulled forward. A profit can be genuine and come from selling a
 building. A balance sheet can balance and omit a ₹120 lakh tax demand
 because it's "contingent." The notes are where the statements confess.
 
-The next four posts in this module each take one of those notes and work
+The next few posts in this module each take one of those notes and work
 through it on Desi Bites: the forensic checks, the quarterly rhythm,
 contingent liabilities and pledges, and goodwill.
 
@@ -186,7 +187,7 @@ directors who resigned during the year**, with their stated reasons.
 - **Treating "unmodified opinion" as a clean bill of health.** It means the
   statements fairly present what happened under the accounting rules. It
   does not mean the business is good, the profit is high quality, or the
-  accounting choices were conservative. The Key Audit Matters tell you where
+  accounting choices were conservative. The key audit matters tell you where
   the auditor sweated.
 - **Skipping the notes because they're long.** Seven of them do most of the
   work. Start there.

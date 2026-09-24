@@ -16,7 +16,7 @@ advice.*
 
 ## The simple bucket, with one sharp edge
 
-After four posts on capital gains, dividends and interest come as a relief:
+After the capital gains posts, dividends and interest come as a relief:
 both are simply **added to your total income and taxed at whatever slab rate
 you fall into**. No holding periods, no special rates, no annual exemption.
 
@@ -25,13 +25,13 @@ people believe about dividends dates from before it changed.
 
 ## Dividends are no longer tax-free in your hands
 
-Until 2020, companies paid a Dividend Distribution Tax and dividends arrived
+Until 2020, companies paid a dividend distribution tax and dividends arrived
 tax-free for the investor. That system was abolished: **dividends are now
 taxed in the recipient's hands at their slab rate.**
 
 The practical effect depends entirely on your slab, and it's large:
 
-| Your slab | Tax on ₹1,00,000 of dividend | With {{ r.cess_pct }}% cess |
+| Your slab (illustrative) | Tax on ₹1,00,000 of dividend | With {{ r.cess_pct }}% cess |
 |---|---:|---:|
 | 5% | ₹5,000 | ₹5,200 |
 | 20% | ₹20,000 | ₹20,800 |
@@ -71,7 +71,7 @@ gives you less say about when.
 ## TDS: tax deducted before it reaches you
 
 Unlike capital gains, dividends and interest usually arrive with tax already
-withheld. **TDS — Tax Deducted at Source** — means the payer deducts a slice
+withheld. **TDS — tax deducted at source** — means the payer deducts a slice
 and deposits it against your PAN (permanent account number) before paying you the rest.
 
 | Income | Typically deducted at |
@@ -80,8 +80,11 @@ and deposits it against your PAN (permanent account number) before paying you th
 | Bank fixed deposit interest | 10%, above a threshold |
 | Interest on most bonds | 10% |
 
-Two things matter more than the exact thresholds, which move with each
-Budget.
+For reference, Budget 2025 set the thresholds from 1 April 2025 at ₹10,000 of
+dividends per company a year, and ₹50,000 of bank, co-operative bank or
+post-office interest (₹1,00,000 for senior citizens), per the Memorandum to
+the Finance Bill 2025. Two things matter more than the exact thresholds,
+which move with Budgets.
 
 **TDS is not your final tax.** It's an advance. If you're in the 30% slab,
 10% withheld leaves you owing the balance when you file. If you're below the
@@ -102,7 +105,7 @@ knowing:
   only**: up to ₹10,000 a year for most individuals, or up to ₹50,000 on bank
   and post-office interest (deposits included) for senior citizens. The new
   regime, which is the default, doesn't allow it.
-- **Fixed deposit interest is taxable as it accrues each year**, not when the
+- **Fixed deposit interest is generally taxable as it accrues each year**, not when the
   deposit matures. People with multi-year cumulative deposits routinely miss
   this and then face several years' tax at once.
 - **Public Provident Fund interest is exempt.** So is interest on some other
@@ -124,7 +127,8 @@ transactions.
 Checking these before filing is the single most useful habit in this entire
 series, for a blunt reason: the tax department already has this data. A
 mismatch between what you report and what's in your AIS is what generates
-notices. Part 9, *Before you file*, covers reading them properly.
+notices. The *Before you file* post later in this series covers reading them
+properly.
 
 ## Common mistakes
 

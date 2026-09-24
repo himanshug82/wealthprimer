@@ -12,18 +12,21 @@ term: "Free cash flow (FCF)"
 {% assign bi_cf25 = site.data.real_company.cash_flow.FY25 %}
 {% assign bi_cf24 = site.data.real_company.cash_flow.FY24 %}
 {% assign bi_fcf24 = bi_cf24.cfo | minus: bi_cf24.capex %}
+{% assign bi_fcf25 = site.data.real_company.ratios.FY25.fcf | round: 2 | append: '' %}
+{% assign bi_fcf25_parts = bi_fcf25 | split: '.' %}
+{% if bi_fcf25_parts[1].size == 1 %}{% assign bi_fcf25 = bi_fcf25 | append: '0' %}{% endif %}
 
 ## What free cash flow means
 
-We closed the Leverage module by seeing that no single ratio told the whole
+The leverage posts ended by seeing that no single ratio told the whole
 story on its own — it took several together. **Free cash flow (FCF)** opens
-this module with a single number that does try to answer one very direct
+the cash-flow posts with a single number that does try to answer one very direct
 question by itself: after running the business and paying for the capex
 (capital expenditure — cash spent on plant, machinery and other long-lived
 assets) needed to keep it running (or growing), how much actual cash is left over —
 free to pay dividends, pay down debt, buy back shares, or reinvest further?
 
-It starts from [Cash from Operations (CFO)]({% post_url 2026-08-24-reading-a-cash-flow-statement %}), the cash the core
+It starts from [cash from operations (CFO)]({% post_url 2026-08-24-reading-a-cash-flow-statement %}), the cash the core
 business actually generated, and subtracts capex — the cash spent
 maintaining or expanding the company's plant and equipment.
 
@@ -51,13 +54,18 @@ flows. For illustration only.
 |---|---:|
 | Cash from Operations | {{ bi_cf25.cfo }} |
 | − Capex | {{ bi_cf25.capex }} |
-| **Free Cash Flow** | **{{ site.data.real_company.ratios.FY25.fcf }}** |
+| **Free Cash Flow** | **{{ bi_fcf25 }}** |
 
 For context, FY24's FCF (same filing) was ₹{% include inr.html n=bi_fcf24 %} crore — so FCF actually
 *rose* year on year, even though operating cash flow itself fell slightly
 (₹{% include inr.html n=bi_cf24.cfo %} crore in FY24 versus ₹{% include inr.html n=bi_cf25.cfo %} crore in FY25). The reason is on the other
-side of the formula — capex — which is exactly what the last post in this
-module, capex intensity, digs into.
+side of the formula — capex — which is exactly what the capex intensity post
+later in this series digs into.
+
+One basis difference to keep in mind: Britannia's cash from operations is
+before interest (its filing shows interest paid under financing
+activities), while Desi Bites' starts from PAT, which is already after
+interest. So the two FCF figures aren't on quite the same footing.
 
 ## Common mistakes
 
@@ -82,6 +90,5 @@ module, capex intensity, digs into.
 
 **Takeaway:** free cash flow is the cash genuinely left over after running
 and maintaining the business — the closest thing to "money the company
-could actually hand out" — but it needs at least one more year of context
-to tell whether a swing came from the business improving or from capex
-simply timing differently.
+could actually hand out." Give it at least one more year of context before
+deciding whether a swing came from the business or just from capex timing.

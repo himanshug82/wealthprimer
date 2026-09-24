@@ -12,8 +12,8 @@
 # financials already covered in _data/real_company.yml.
 #
 # LAG CHECK (CLAUDE.md compliance guardrail 2): the series ENDS
-# 2026-03-30. The earliest TA post publishes 2026-11-08, i.e. over
-# seven months later — comfortably past the 3-month rule. Do NOT extend this
+# 2026-03-30. The earliest TA post publishes 2026-10-08, i.e. over
+# six months later — comfortably past the 3-month rule. Do NOT extend this
 # dataset toward the present without re-checking that gap.
 #
 # SOURCE CROSS-CHECK: this feed's close for 30 June 2025 is Rs 5851.00,
@@ -39,7 +39,7 @@ dataset:
   csv_path: "/assets/data/britannia-ohlcv-2024-04-to-2026-03.csv"
   source_url: "https://finance.yahoo.com/quote/BRITANNIA.NS/history/"
   source_label: "Yahoo Finance daily historical OHLCV, BRITANNIA.NS"
-  as_of: "Daily bars, 1 April 2024 to 30 March 2026"
+  as_of: "daily bars, 1 April 2024 to 30 March 2026"
   warmup_note: >-
     An indicator needs history before it means anything. RSI over the first
     ~14 bars and MACD over the first ~35 bars of any series are warmup
@@ -165,14 +165,14 @@ macd:
 # largest volume day in the dataset moved the close by -0.2%. Volume alone
 # says almost nothing about direction.
 volume_spikes:
-  - { date: "2024-08-05", volume: 1114298, x_avg: 3.3, close: 5698.0, change_pct: -0.4 }
-  - { date: "2024-11-12", volume: 2441209, x_avg: 6.7, close: 5028.0, change_pct: -7.5 }
-  - { date: "2025-03-27", volume: 6750074, x_avg: 13.2, close: 4841.0, change_pct: -0.2 }
-  - { date: "2025-08-06", volume: 1123534, x_avg: 4.0, close: 5402.0, change_pct: -4.1 }
-  - { date: "2025-08-26", volume: 1307463, x_avg: 4.0, close: 5766.0, change_pct: 3.9 }
-  - { date: "2025-09-04", volume: 1385580, x_avg: 3.8, close: 6083.0, change_pct: 3.0 }
-  - { date: "2025-11-11", volume: 2154927, x_avg: 5.7, close: 5950.0, change_pct: -3.0 }
-  - { date: "2026-01-27", volume: 1044402, x_avg: 3.6, close: 5886.0, change_pct: 0.9 }
+  - { date: "2024-08-05", volume: 1114298, x_avg: 3.3, close: "5697.90", change_pct: -0.4 }
+  - { date: "2024-11-12", volume: 2441209, x_avg: 6.7, close: "5027.55", change_pct: -7.5 }
+  - { date: "2025-03-27", volume: 6750074, x_avg: 13.2, close: "4841.20", change_pct: -0.2 }
+  - { date: "2025-08-06", volume: 1123534, x_avg: 4.0, close: "5402.50", change_pct: -4.1 }
+  - { date: "2025-08-26", volume: 1307463, x_avg: 4.0, close: "5765.50", change_pct: 3.9 }
+  - { date: "2025-09-04", volume: 1385580, x_avg: 3.8, close: "6083.00", change_pct: 3.0 }
+  - { date: "2025-11-11", volume: 2154927, x_avg: 5.7, close: "5950.50", change_pct: -3.0 }
+  - { date: "2026-01-27", volume: 1044402, x_avg: 3.6, close: "5886.00", change_pct: 0.9 }
 
 # NOT a clean double top — and that is precisely why it is in the series.
 #

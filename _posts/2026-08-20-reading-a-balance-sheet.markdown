@@ -78,7 +78,7 @@ Full three-year version, with FY22–FY24 for comparison, is on the
 | Other current liabilities | {{ bs.other_current_liabilities }} |
 | **Total Liabilities + Equity** | **{{ bs.total_liab_eq }}** |
 
-Read it left to right: Desi Bites owns ₹{% include inr.html n=bs.total_assets %}L worth of stuff.
+Read it top to bottom: Desi Bites owns ₹{% include inr.html n=bs.total_assets %}L worth of stuff.
 ₹{% include inr.html n=bs.equity %}L of that belongs to its own shareholders; the rest —
 ₹{% include inr.html n=bs.term_loan %}L in a term loan plus ₹{{ bs.payables | plus: bs.other_current_liabilities }}L
 owed to suppliers and other short-term obligations — belongs to outsiders. Add
@@ -91,7 +91,7 @@ completely normal way for a manufacturer to finance a factory. Compare that
 to inventory and receivables, which are funded partly by supplier credit
 (payables cover ₹{% include inr.html n=bs.payables %}L of the
 ₹{{ bs.inventory | plus: bs.receivables }}L) — also normal, and the kind of relationship the
-[Efficiency module]({{ '/2026/09/07/inventory-days/' | relative_url }}) digs into later.
+[efficiency posts]({{ '/2026/09/07/inventory-days/' | relative_url }}) dig into later.
 
 ## Common mistakes
 

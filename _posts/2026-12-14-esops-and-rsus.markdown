@@ -18,9 +18,9 @@ sources in {{ v.verified_on }}. Educational content, not tax advice.*
 
 ## Two events, two heads of income
 
-An **ESOP — Employee Stock Option Plan** — gives you the right to buy your
+An **ESOP — employee stock option plan** — gives you the right to buy your
 employer's shares at a fixed price (the *exercise price*) after a waiting
-period (*vesting*). An **RSU — Restricted Stock Unit** — is a promise of the
+period (*vesting*). An **RSU — restricted stock unit** — is a promise of the
 shares themselves, delivered when they vest, for nothing.
 
 Both are pay. The tax system treats them exactly that way, and then treats
@@ -84,12 +84,13 @@ Illustrative 30% slab plus {{ r.cess_pct }}% cess, no surcharge.
 | **Tax with {{ r.cess_pct }}% cess (deducted by employer)** | **₹{% include inr.html n=e.perquisite_tax_with_cess %}** |
 
 Now the cash-flow problem, which is the real subject of this post. To
-exercise, she pays the company ₹{% include inr.html n=e.cash_to_exercise %}. Her employer must deduct
-₹{% include inr.html n=e.perquisite_tax_with_cess %} of TDS (tax deducted at source) from her salary in the
-month of exercise. Total
+exercise, she pays the company ₹{% include inr.html n=e.cash_to_exercise %}. Her employer will deduct
+₹{% include inr.html n=e.perquisite_tax_with_cess %} of TDS (tax deducted at source) from her salary —
+usually in the month of exercise, though some employers spread it over the
+rest of the year. Total
 cash out: **₹{% include inr.html n=e.cash_out_total %}**. Cash in from the shares: **zero**, because she
 hasn't sold anything. She owns {% include inr.html n=e.shares %} shares worth ₹{% include inr.html n=paper_value %} on paper, and
-a smaller salary credit that month.
+smaller salary credits to show for it.
 
 **Event 2 — sale, {{ e.months_held_long }} months later at ₹{{ e.sale_price }}:**
 
@@ -152,7 +153,7 @@ ones:
 
 Foreign shares also bring **Schedule FA** — the foreign-asset disclosure in
 the return — and a foreign brokerage account to report. That is the subject
-of the last post in this module.
+of the foreign-stocks post later in this module.
 
 ## The startup deferral
 
@@ -192,8 +193,8 @@ about cash, not just about the company.
 - **Forgetting the sell-to-cover sale.** Those shares were sold and belong in
   the capital-gains schedule, even at a near-zero gain.
 - **Exercising without the cash for the TDS.** The tax is deducted from
-  salary in the month of exercise. A large exercise can take most of that
-  month's pay.
+  salary, usually in the month of exercise. A large exercise can take most of
+  that month's pay.
 - **Assuming "startup" means deferral.** Only IMB-certified startups qualify,
   and the deferral ends the day you resign.
 

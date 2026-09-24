@@ -44,14 +44,19 @@ What's left at each stage is a genuinely different question — "is the product
 itself profitable?" (gross profit) is not the same question as "is the whole
 company profitable after everything?" (PAT).
 
+Real companies usually have one more line: *other income* (interest earned on
+cash, for example), added in before PBT — so a real company's PBT can be
+bigger than EBIT minus interest. Desi Bites has none, which keeps the
+arithmetic clean.
+
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
 
-Say you sell lemonade for ₹20 a glass. The lemons and sugar cost ₹8 — that's
-your gross profit, ₹12. But you also paid your little brother ₹3/glass to
-help sell it, so real profit is ₹9. If you borrowed money for the lemonade
-stand and pay interest on it, subtract that too. What's left after every cost
-is the only number that tells you what you actually get to keep.
+Say you sell lemonade for ₹20 a glass. The lemons and sugar for each glass
+cost ₹8, so you keep ₹12 — that's your gross profit. You also pay your little
+brother ₹3 a glass to help sell it, which leaves ₹9. If you borrowed money to
+build the stand, the interest comes out of that ₹9 too. What's left after
+every cost is the only number that tells you what you actually get to keep.
 
 </details>
 

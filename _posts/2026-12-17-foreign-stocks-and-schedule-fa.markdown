@@ -96,7 +96,8 @@ penalty is steeper.
 ## Dividends: withheld at 25%, then credited
 
 US companies pay dividends to Indian residents after withholding **25%** under
-the India–US tax treaty. In India the *gross* dividend is added to your income
+the India–US tax treaty — assuming your broker has a W-8BEN form on file for
+you; without one, 30% is withheld. In India the *gross* dividend is added to your income
 at slab, exactly as in the
 [dividends post]({% post_url 2026-10-31-dividends-and-interest %}) — and the tax already
 paid in the US is credited against your Indian tax.
@@ -126,7 +127,7 @@ on that income.
 ## TCS on the way out
 
 Money sent abroad under the **LRS — Liberalised Remittance Scheme** — attracts
-**TCS (Tax Collected at Source)** of **{{ x.lrs_tcs_rate_pct }}%** on the amount above
+**TCS (tax collected at source)** of **{{ x.lrs_tcs_rate_pct }}%** on the amount above
 ₹{% include inr.html n=x.lrs_tcs_threshold %} per financial year for investment purposes (education and
 medical remittances have lower rates). Remit ₹{% include inr.html n=x.lrs_remit_example %} to a foreign
 broker in a year and ₹{% include inr.html n=x.lrs_tcs_example %} is collected up front.
@@ -144,9 +145,8 @@ of ITR-2 or ITR-3. Four things about this catch people out:
 
 **It runs on the calendar year, not the financial year.** For the return
 covering FY 2025-26 you report assets held between 1 January and
-31 December 2025. This is the only schedule in the return on that basis, and it's because
-the data India receives from other countries under automatic exchange arrives
-by calendar year.
+31 December 2025, not the April–March year the rest of the return uses.
+Check the period the current form asks for before you fill it in.
 
 **There is no minimum.** One share, held for a week, then sold — reportable.
 A foreign brokerage account with a dormant $3 balance — reportable.
@@ -155,7 +155,7 @@ reportable.
 
 **It covers more than shares.** Foreign brokerage accounts, foreign bank
 accounts, RSUs and ESOPs of a foreign employer (from the
-[previous post]({% post_url 2026-12-14-esops-and-rsus %})), foreign retirement
+[ESOPs and RSUs post]({% post_url 2026-12-14-esops-and-rsus %})), foreign retirement
 accounts, foreign insurance with a cash value.
 
 **It asks for values you have to reconstruct.** For each asset: the initial

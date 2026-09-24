@@ -27,8 +27,8 @@ measuring it — Bollinger Bands and the Average True Range — are useful
 precisely because they don't pretend to know direction. They tell you how
 wide the road is, not which way the car is going.
 
-Same dataset as the rest of the series: Britannia (NSE: BRITANNIA), daily,
-{{ ta2.dataset.as_of }}. The data ends {{ ta2.dataset.end }}, about
+Same dataset as the rest of the series: Britannia (NSE: BRITANNIA),
+{{ ta2.dataset.as_of }}. The data ends {{ ta2.dataset.end | date: "%-d %B %Y" }}, about
 {{ ta2.dataset.lag_months }} months before this post — well past the
 three-month lag this blog keeps on every real price series.
 
@@ -45,7 +45,6 @@ Lower band   = SMA(20) − 2 × σ(20)
 
 σ(20) = population standard deviation of the last 20 closes
 
-%B         = (Close − Lower) / (Upper − Lower)      where is price inside the bands (0 to 1)?
 Bandwidth  = (Upper − Lower) / Middle               how wide are they?
 ```
 
@@ -81,14 +80,14 @@ the dog will run next — only how far it's *been* running lately.
 
 ![Britannia with 20-day Bollinger Bands, bandwidth and ATR]({{ '/assets/charts/ta2-bollinger-atr.svg' | relative_url }})
 
-Britannia (NSE: BRITANNIA), daily, {{ ta2.dataset.as_of }}. Source:
+Britannia (NSE: BRITANNIA), {{ ta2.dataset.as_of }}. Source:
 [Yahoo Finance]({{ ta2.dataset.source_url }}). Historical data, for illustration only.
 
 Three panels: price with the bands, the bandwidth underneath, and the ATR at
 the bottom. Notice how the bands bulge during the late-2024 decline and pinch
 in the quiet stretches. Bandwidth ranged from **{{ bb.bandwidth_min_pct }}%**
-({{ bb.bandwidth_min_date }}) to **{{ bb.bandwidth_max_pct }}%**
-({{ bb.bandwidth_max_date }}) — an elevenfold difference in how much the same
+({{ bb.bandwidth_min_date | date: "%-d %B %Y" }}) to **{{ bb.bandwidth_max_pct }}%**
+({{ bb.bandwidth_max_date | date: "%-d %B %Y" }}) — an elevenfold difference in how much the same
 stock was moving, over 24 months.
 
 ## The two readings people take from the bands
@@ -132,11 +131,18 @@ Two squeezes in this dataset, defined as bandwidth hitting a
 | {{ sq1.date }} | {{ sq1.bandwidth_pct }}% | ₹{% include inr.html n=sq1.close %} | ₹{% include inr.html n=sq1.close_20_bars_later %} ({{ sq1.later_date }}) | **+{{ sq1.move_20_bars_pct }}%** |
 | {{ sq2.date }} | {{ sq2.bandwidth_pct }}% | ₹{% include inr.html n=sq2.close %} | ₹{% include inr.html n=sq2.close_20_bars_later %} ({{ sq2.later_date }}) | **+{{ sq2.move_20_bars_pct }}%** |
 
-The January 2025 squeeze was followed by an 8.6% move in four weeks — the
+The January 2025 squeeze was followed by a {{ sq1.move_20_bars_pct }}% move in four weeks — the
 kind of chart that ends up in a tutorial. The December 2025 squeeze was
 *tighter* — the narrowest bands in the whole two years — and resolved into
-2.2%, which is an ordinary month. Same setup, tighter reading, nothing much
+{{ sq2.move_20_bars_pct }}%, which is an ordinary month. Same setup, tighter reading, nothing much
 happened.
+
+One honesty note: each row is dated to the *last* session of its squeeze, the
+day the bands were tightest — which you could only know afterwards. Measured
+from the first session of each squeeze ({{ sq1.first_date | date: "%-d %B %Y" }} and
+{{ sq2.first_date | date: "%-d %B %Y" }}), the 20-session moves were +{{ sq1.move_20_bars_from_first_pct }}% and
++{{ sq2.move_20_bars_from_first_pct }}% — much closer together, which makes the same point less
+dramatically.
 
 That is the honest shape of the squeeze: it raises the odds of a large move
 without promising one, and it says nothing at all about direction.
@@ -161,8 +167,8 @@ might be tiny while the *actual* move from yesterday was 150. True range
 counts that gap.
 
 For Britannia, ATR ranged from ₹{% include inr.html n=atr.atr_min %}
-({{ atr.atr_min_date }}) to ₹{% include inr.html n=atr.atr_max %}
-({{ atr.atr_max_date }}), and the median was about
+({{ atr.atr_min_date | date: "%-d %B %Y" }}) to ₹{% include inr.html n=atr.atr_max %}
+({{ atr.atr_max_date | date: "%-d %B %Y" }}), and the median was about
 **{{ atr.atr_pct_median }}%** of the price. So on an ordinary day this stock
 travelled roughly 2% of its value — a number worth knowing before deciding how
 far away a stop-loss belongs.
@@ -174,7 +180,7 @@ than prediction. A stop-loss placed "5% below" is arbitrary — 5% is nothing
 for a volatile small-cap and a lot for a staid large-cap. A stop placed
 **two ATRs below** adapts to the stock's own behaviour.
 
-Worked on a historical date — {{ st.date }}, the golden-cross day from the
+Worked on a historical date — {{ st.date | date: "%-d %B %Y" }}, the golden-cross day from the
 moving-averages post, chosen for continuity, not as a signal:
 
 | | |
@@ -183,7 +189,7 @@ moving-averages post, chosen for continuity, not as a signal:
 | ATR(14) | ₹{% include inr.html n=st.atr %} |
 | Stop at 2 × ATR below | ₹{% include inr.html n=st.stop_2atr %} ({{ st.stop_distance_pct }}% away) |
 | Risk budget (illustrative: 2% of a ₹1,00,000 account) | ₹{% include inr.html n=st.risk_budget %} |
-| Shares such that a stop-out loses the budget | ₹{{ st.risk_budget }} ÷ (2 × ₹{{ st.atr }}) = **{{ st.shares_for_budget }}** |
+| Shares such that a stop-out loses the budget | ₹{% include inr.html n=st.risk_budget %} ÷ (2 × ₹{{ st.atr }}) = **{{ st.shares_for_budget }}** |
 | Lowest low over the next 20 sessions | ₹{% include inr.html n=st.lowest_low_next_20_bars %} |
 | Stop hit? | {% if st.stop_hit_within_20_bars %}Yes{% else %}No{% endif %} |
 

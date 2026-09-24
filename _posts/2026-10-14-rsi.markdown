@@ -79,7 +79,7 @@ runner stopping immediately, you'd lose a lot of bets.
 The words *overbought* and *oversold* do a lot of damage, because they sound
 like statements about value. They aren't. "Overbought" does not mean too
 expensive — it means the price has risen persistently for a couple of weeks.
-A great business in a strong uptrend will be "overbought" for months at a
+A great business in a strong uptrend can stay "overbought" for weeks at a
 stretch, and it isn't wrong; it's just rising.
 
 ## The chart, and three signals that disagreed
@@ -88,7 +88,7 @@ Two years of Britannia, with RSI underneath:
 
 ![Britannia price with 14-day RSI]({{ '/assets/charts/ta-rsi.svg' | relative_url }})
 
-Britannia (NSE: BRITANNIA), daily, {{ ta.dataset.as_of }}. Source:
+Britannia (NSE: BRITANNIA), {{ ta.dataset.as_of }}. Source:
 [Yahoo Finance]({{ ta.dataset.source_url }}). Historical data, for illustration only.
 
 Across this period RSI spent {{ r.days_above_70 }} days above 70 and {{ r.days_below_30 }} days below 30. Three

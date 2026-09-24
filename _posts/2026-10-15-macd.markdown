@@ -151,8 +151,9 @@ x = (df.macd > df.signal).astype(int).diff().iloc[35:]
 print(f"bullish {int((x == 1).sum())}, bearish {int((x == -1).sum())}")
 ```
 
-`adjust=False` matters — it's what makes pandas' EMA match the standard
-recursive definition every charting package uses. With the default
+`adjust=False` matters — it's what makes pandas' EMA follow the standard
+recursive definition every charting package uses, so the values match once
+the warmup is behind you (packages seed the first value differently). With the default
 `adjust=True` you'll get subtly different values and wonder why your numbers
 don't match your broker's terminal.
 

@@ -40,16 +40,16 @@ happens.
 
 Britannia in late 2025 offers what looks like a beautiful example:
 
-- A peak on **{{ dt.cherry_picked_peak1_date }}** at **₹{% include inr.html n=dt.cherry_picked_peak1_high %}**
+- A peak on **{{ dt.cherry_picked_peak1_date | date: "%-d %B %Y" }}** at **₹{% include inr.html n=dt.cherry_picked_peak1_high %}**
 - A trough between them at **₹{% include inr.html n=dt.trough_between_low %}**
-- A second peak on **{{ dt.cherry_picked_peak2_date }}** at **₹{% include inr.html n=dt.cherry_picked_peak2_high %}**
+- A second peak on **{{ dt.cherry_picked_peak2_date | date: "%-d %B %Y" }}** at **₹{% include inr.html n=dt.cherry_picked_peak2_high %}**
 
 The two peaks are **{{ dt.cherry_picked_peak_gap_pct }}%** apart — ₹9.50 on a ₹6,270 stock — separated by
 about two months. If you were looking for a double top, you could hardly ask
 for a cleaner one. The measured move projects to ₹{% include inr.html n=dt.measured_target %}.
 
-And the direction was right. The stock fell from ₹{% include inr.html n=dt.cherry_picked_peak2_high %} to ₹{% include inr.html n=dt.close_at_series_end %} by
-{{ dt.lowest_low_date }} — a decline of {{ dt.decline_from_peak2_pct }}%.
+{% assign dt_fall = dt.decline_from_peak2_pct | abs %}And the direction was right. From the second peak's high of ₹{% include inr.html n=dt.cherry_picked_peak2_high %}, the stock
+fell to a close of ₹{% include inr.html n=dt.close_at_series_end %} on {{ dt.lowest_low_date | date: "%-d %B %Y" }} — a decline of {{ dt_fall }}%.
 
 A post that stopped here would be a good advertisement for chart patterns.
 So let's not stop here.

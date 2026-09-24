@@ -23,7 +23,8 @@ variations — this is the common shape, not any one firm's method):
    adjusted for some measure of risk (volatility, downside deviation, or a
    utility function that penalises losses).
 3. **Rank** the funds. Top 10% get five stars, next 22.5% four, middle 35%
-   three, and so on down a fixed distribution.
+   three, and so on down a fixed distribution (that split is Morningstar's;
+   other agencies use similar bell-shaped ones).
 4. Repeat monthly.
 
 Notice three things built into that. It is *relative* — a five-star fund in a
@@ -42,7 +43,7 @@ The single biggest driver of a rating is the trailing return. Here is that
 number for one fund — the Nifty 50 index fund this series has used throughout
 — read off on 31 March each year. A passive fund: no manager, no strategy
 change, the same fifty stocks the whole time. Source: AMFI via mfapi.in,
-regular plan, {{ mf.index_fund.regular_start }} to {{ mf.index_fund.regular_end }}. Historical data, for illustration only.
+regular plan, {{ mf.index_fund.regular_start | date: "%-d %B %Y" }} to {{ mf.index_fund.regular_end | date: "%-d %B %Y" }}. Historical data, for illustration only.
 
 ![Trailing three-year CAGR of the index fund at every date, with the 31 March readings marked]({{ '/assets/charts/mf2-trailing-3y.svg' | relative_url }})
 
@@ -51,7 +52,7 @@ regular plan, {{ mf.index_fund.regular_start }} to {{ mf.index_fund.regular_end 
 | {{ s.as_of }} | {{ s.trailing_3y_cagr_pct }}% | {{ s.percentile_within_own_history | round }} |{% endfor %}
 
 The same fund's "three-year return" — the headline input to a rating — ranged
-from **{{ r.trailing_3y_min_pct }}%** to **{{ r.trailing_3y_max_pct }}%** a year across all the dates it could have been
+from **{% include inr.html n=r.trailing_3y_min_pct %}%** to **{{ r.trailing_3y_max_pct }}%** a year across all the dates it could have been
 read. On 31 March 2020 it was negative. Three years later it was 27%.
 
 Nothing about the fund changed. The *window* changed. That's the first
@@ -132,8 +133,8 @@ credit-risk fund is still 65% in bonds rated AA and below.
 Not nothing. Used as intended:
 
 - **Screening out the persistently bad.** A fund with one or two stars for
-  several consecutive years has usually earned it — persistent *under*
-  performance is more predictable than persistent outperformance, and it is
+  several consecutive years has usually earned it — persistent
+  *underperformance* is more predictable than persistent outperformance, and it is
   usually costs.
 - **A quick risk-adjustment.** Most ratings penalise volatility or downside,
   so a five-star fund at least didn't get its return by taking wild risks *in
@@ -160,8 +161,7 @@ Not nothing. Used as intended:
   advertisement as marketing.
 
 **Takeaway:** A star rating ranks a fund's trailing risk-adjusted return
-within its category — a summary of the window that just closed. On a passive
-Nifty index fund that trailing figure swung from −1% to 27% a year depending
-on the day you read it, and the best past three-year stretches were followed
-by the same returns as the worst. Stars describe the weather that was. They
-don't forecast.
+within its category — it describes the weather that was, not the weather to
+come. On a passive Nifty index fund that trailing figure swung from −1% to 27%
+a year depending on which year you read it, and the best past three-year
+stretches were followed by the same returns as the worst.

@@ -12,6 +12,7 @@ term: "EV/EBITDA"
 {% assign db_is25 = site.data.case_study.income_statement.FY25 %}
 {% assign bi_market = site.data.real_company.market %}
 {% assign bi_is25 = site.data.real_company.income_statement.FY25 %}
+{% assign bi_bs25 = site.data.real_company.balance_sheet.FY25 %}
 {% assign db_ev_ebitda = listing.ev | times: 1.0 | divided_by: db_is25.ebitda | round: 1 %}
 {% assign bi_ev_ebitda = bi_market.ev_cr | divided_by: bi_is25.ebitda | round: 1 %}
 
@@ -25,7 +26,7 @@ sheet?
 
 That total price tag is **enterprise value (EV)**. Comparing it to
 [EBITDA]({% post_url 2026-08-28-ebitda-margin %}) (earnings before interest, tax, depreciation and
-amortisation) — rather than EPS or PAT — makes EV/EBITDA useful for
+amortisation) — rather than EPS (earnings per share) or PAT (profit after tax) — makes EV/EBITDA useful for
 comparing companies with very different debt levels: unlike P/E, it isn't
 distorted by how much of the company is funded by equity versus borrowing.
 
@@ -44,7 +45,7 @@ EV/EBITDA = EV / EBITDA
 | + Debt | {{ listing.post_ipo_debt }} |
 | − Cash | {{ listing.post_ipo_cash }} |
 | **Enterprise Value** | **{{ listing.ev }}** |
-| EBITDA (FY25) | 441 |
+| EBITDA (FY25) | {{ db_is25.ebitda }} |
 | **EV/EBITDA** | **{{ db_ev_ebitda }}x** |
 
 Where does the ₹{% include inr.html n=listing.post_ipo_cash %} lakh of cash come from? It's the
@@ -62,23 +63,23 @@ illustration only.
 | | ₹ Crore |
 |---|---:|
 | Market Cap | {{ bi_market.market_cap_cr | round: 2 }} |
-| + Debt | 1224.77 |
-| − Cash & Investments | 1424.12 |
+| + Debt | {{ bi_bs25.total_borrowings }} |
+| − Cash & Investments | {{ bi_bs25.cash_and_bank | plus: bi_bs25.current_investments | round: 2 }} |
 | **Enterprise Value** | **{{ bi_market.ev_cr }}** |
 | EBITDA (FY25) | {{ bi_is25.ebitda }} |
 | **EV/EBITDA** | **{{ bi_ev_ebitda }}x** |
 
 Britannia's multiple is far higher than Desi Bites'. Mechanically, a high
 EV/EBITDA means the market is paying for expected quality or growth — and
-the [Leverage module]({% post_url 2026-09-18-net-debt-ebitda %}) already showed Britannia carries negative net debt.
+the [leverage posts]({% post_url 2026-09-18-net-debt-ebitda %}) already showed Britannia carries negative net debt.
 Whether this particular multiple is justified isn't assessed here.
 
 ## Common mistakes
 
 - **Comparing EV/EBITDA across companies without checking capex needs.**
   Two companies can share an identical EV/EBITDA while one needs to
-  reinvest far more of that EBITDA into capex just to sustain itself — see
-  [Capex Intensity]({% post_url 2026-09-21-capex-intensity %}). The "cheaper" multiple on paper isn't always
+  reinvest far more of that EBITDA into capex (capital expenditure) just to sustain itself — see
+  [capex intensity]({% post_url 2026-09-21-capex-intensity %}). The "cheaper" multiple on paper isn't always
   the cheaper business in practice.
 - **Using EBITDA without checking its quality.** EBITDA can be flattered by
   aggressive accounting choices — pairing it with [EBITDA margin
@@ -92,8 +93,7 @@ Whether this particular multiple is justified isn't assessed here.
   across companies — a lower multiple can simply reflect lower quality or
   slower growth, not a bargain.
 
-**Takeaway:** EV/EBITDA prices the whole business — equity and debt
-together — making it a fairer comparison across companies with different
-capital structures than P/E alone, but like every multiple in this module,
-it only means something once it's read alongside growth, quality, and
+**Takeaway:** EV/EBITDA prices the whole business, equity and debt
+together, so it compares differently-funded companies more fairly than P/E.
+Like every multiple, it only means something next to growth, quality and
 capex needs.

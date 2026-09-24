@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Multiple timeframes: the weekly chart is not a second opinion"
-description: "Weekly trend, daily signal — the classic recipe. Six real oversold readings on one chart, sorted by weekly trend, and why the one in the 'uptrend' fell the most."
+description: "Weekly trend, daily signal: the classic recipe. Six real oversold readings on one chart, sorted by weekly trend, and why the 'uptrend' one fell the most."
 image: /assets/og/multiple-timeframe-analysis.png
 date: 2026-12-20 09:00:00 +0530
 series: technical-analysis
@@ -26,20 +26,20 @@ It's sensible-sounding advice, and it contains a real idea — a signal means
 different things in different contexts. It also has a problem that the
 tutorials never show you, because they never run the numbers. This post does.
 
-Same data as the whole series: Britannia (NSE: BRITANNIA), daily,
+Same data as the whole series: Britannia (NSE: BRITANNIA),
 {{ ta2.dataset.as_of }}, resampled to weekly bars — {{ mt.weekly_bars }} of
 them.
 
 ## What "resampling" means
 
-A weekly bar is built from five daily bars:
+A weekly bar is built from that week's daily bars (usually five):
 
 ```
-Weekly open   = Monday's open
+Weekly open   = open of the week's first session
 Weekly high   = highest high of the week
 Weekly low    = lowest low of the week
-Weekly close  = Friday's close
-Weekly volume = sum of the five days
+Weekly close  = close of the week's last session
+Weekly volume = sum of the week's sessions
 ```
 
 Nothing new is added. The weekly chart contains strictly *less* information
@@ -67,14 +67,14 @@ chart. That's not a flaw you can fix — it's what smoothing *is*.
 
 ![Weekly trend on top, daily RSI underneath]({{ '/assets/charts/ta2-multi-timeframe.svg' | relative_url }})
 
-Britannia (NSE: BRITANNIA), daily and weekly, {{ ta2.dataset.as_of }}. Source:
+Britannia (NSE: BRITANNIA), {{ ta2.dataset.as_of }}, with weekly bars built from them. Source:
 [Yahoo Finance]({{ ta2.dataset.source_url }}). Historical data, for illustration only.
 
 Top: weekly closes with a {{ mt.weekly_ma_period }}-week simple moving average
 (roughly 100 trading days) as the "weekly trend" — up when the weekly close is
 above it, down when below. Bottom: the daily 14-period
 [RSI]({% post_url 2026-10-14-rsi %}). The weekly average needs 20 weeks of
-history, so the trend reading begins on {{ mt.weekly_ma_first_date }}; before
+history, so the trend reading begins on {{ mt.weekly_ma_first_date | date: "%-d %B %Y" }}; before
 that there is no weekly trend to speak of.
 
 Over the period where it exists, the weekly trend read "up" for
@@ -88,9 +88,9 @@ weekly trend said *as of the previous completed week* (so no peeking at a
 week that hadn't finished). Then look 20 sessions ahead.
 
 There were {{ mt.daily_oversold_events_all }} fresh oversold readings in two years, but not all of
-them can be scored. The one on {{ mt.dropped_no_weekly_trend | join: ", " }} came before any weekly
+them can be scored. The one on {% for x in mt.dropped_no_weekly_trend %}{{ x | date: "%-d %B %Y" }}{% unless forloop.last %}, {% endunless %}{% endfor %} came before any weekly
 trend existed (and inside the RSI's own warmup). The one on
-{{ mt.dropped_no_forward_data | join: ", " }} is too close to the end of the data to have 20
+{% for x in mt.dropped_no_forward_data %}{{ x | date: "%-d %B %Y" }}{% unless forloop.last %}, {% endunless %}{% endfor %} is too close to the end of the data to have 20
 sessions after it. That leaves **{{ mt.daily_oversold_events }}**:
 
 | Date | Daily RSI | Close | Weekly trend | 20 sessions later | Lowest low in between |
@@ -109,12 +109,12 @@ The recipe says the top row should be the good one. In this dataset it is the
 
 ## Why the "uptrend" dip was the worst one
 
-The single oversold reading inside a weekly uptrend came on {{ bad_up.date }},
+The single oversold reading inside a weekly uptrend came on {{ bad_up.date | date: "%-d %B %Y" }},
 with RSI at {{ bad_up.rsi }} and the stock at ₹{% include inr.html n=bad_up.close %}.
-Twenty sessions later it was **{{ bad_up.fwd_20_bars_pct }}%** lower, and the
+{% assign bad_up_fall = bad_up.fwd_20_bars_pct | abs %}Twenty sessions later it was **{{ bad_up_fall }}%** lower, and the
 lowest low along the way was ₹{% include inr.html n=bad_up.lowest_low_next_20_bars %}.
 
-Look at where that date sits: three weeks after the {{ site.data.ta.major_decline.peak_date }}
+Look at where that date sits: three weeks after the {{ site.data.ta.major_decline.peak_date | date: "%-d %B %Y" }}
 peak that the [trend lines post]({% post_url 2026-10-11-trend-lines %})
 built its examples on. The stock had already turned. The daily chart knew it —
 that's why RSI was under 30. The *weekly* chart did not know it yet, because a
@@ -133,13 +133,13 @@ The mirror image is in the bottom row. Of the five oversold readings inside a
 weekly downtrend — the ones the recipe says to ignore — three were followed by
 gains.
 
-{{ kept_falling.date }} is the one that behaved as advertised: RSI
+On {{ kept_falling.date | date: "%-d %B %Y" }}, the reading behaved as advertised: RSI
 {{ kept_falling.rsi }}, weekly trend down, and the stock fell another
-**{{ kept_falling.fwd_20_bars_pct }}%** over the next 20 sessions. The RSI
+{% assign kf_fall = kept_falling.fwd_20_bars_pct | abs %}**{{ kf_fall }}%** over the next 20 sessions. The RSI
 post used this exact date as its "oversold but kept falling" example.
 
-{{ bounced.date }} is the opposite: RSI {{ bounced.rsi }}, weekly trend firmly
-down, four sessions before the {{ site.data.ta.major_decline.trough_date }}
+On {{ bounced.date | date: "%-d %B %Y" }}, the opposite: RSI {{ bounced.rsi }}, weekly trend firmly
+down, four sessions before the {{ site.data.ta.major_decline.trough_date | date: "%-d %B %Y" }}
 low that ended the whole decline — and the stock rose
 **+{{ bounced.fwd_20_bars_pct }}%** over the next 20 sessions. The weekly
 trend was still "down" for weeks afterwards, for the same lag reason: it took
@@ -215,12 +215,12 @@ entirely about that kind of mistake.
   search, not a signal.
 - **Quoting a weekly average before it exists.** Twenty weeks of history means
   twenty weeks of nothing. The first trend reading here is
-  {{ mt.weekly_ma_first_date }}, four and a half months into the data.
+  {{ mt.weekly_ma_first_date | date: "%-d %B %Y" }}, four and a half months into the data.
 
 **Takeaway:** A weekly chart is the daily chart with the detail thrown away —
 smoother, and therefore slower — not an independent second opinion. On two
 years of Britannia, the only daily oversold reading that arrived inside a
-weekly "uptrend" was followed by a 12.6% fall, because the weekly trend hadn't
+weekly "uptrend" was followed by a {{ bad_up_fall }}% fall, because the weekly trend hadn't
 yet noticed the top, while three of the five readings in a weekly "downtrend"
-were followed by gains. Use the higher timeframe to set scale and kill noise.
-Don't use it to launder a daily signal.
+were followed by gains. Use the higher timeframe to set scale and kill noise,
+not to launder a daily signal.

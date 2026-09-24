@@ -28,7 +28,7 @@ what?*
 
 For a manufacturer the denominator is revenue. For a bank, the natural base
 is the pile of assets that earn the interest — the loans and the investment
-book. NII as a percentage of that pile is the **Net Interest Margin (NIM)**.
+book. NII as a percentage of that pile is the **net interest margin (NIM)**.
 
 ```
 NIM  =  Net interest income  /  Average interest-earning assets
@@ -99,12 +99,14 @@ apply to *every* bank you'll ever read:
 
 1. **Averaging basis.** The bank uses average *daily* balances; we used two
    year-end snapshots. When a balance sheet grows through the year, the
-   two-point average overstates the base and understates the margin.
+   two-point average can overstate the base and understate the margin.
 2. **Period.** The bank's figure is for one quarter, annualised; ours is the
    whole year. Margins move within a year as rates change.
 3. **Definition of the base.** Our "interest-earning assets" is advances plus
    investments; the bank's includes some balances with RBI and other banks
-   that also earn interest, and excludes items that don't.
+   that also earn interest, and excludes items that don't. Note too that
+   "interest earned" includes interest on bank balances and on tax
+   refunds, which our narrower base leaves out.
 
 The lesson isn't that one number is right. It's that **NIM is only comparable
 on a stated basis** — and a filing will usually tell you the basis if you read
@@ -152,20 +154,21 @@ That's a bank. Tiny margin, unimaginable volume, and every paisa matters.
 NIM is not a fixed property of a bank; it moves with the interest-rate cycle,
 and the two sides of the spread move at different speeds.
 
-- **Loans reprice faster than deposits when rates rise.** Most Indian
-  floating-rate loans are linked to external benchmarks (the repo rate, for
-  example) and reset within months. Fixed deposits stay at the old rate until
+- **Loans reprice faster than deposits when rates rise.** Since October
+  2019 the RBI has required new floating-rate retail and MSME loans to be
+  linked to an external benchmark (the repo rate, for example), and those
+  reset within months. Fixed deposits stay at the old rate until
   they mature. So when rates go up, yield rises before cost of funds does and
   NIM widens — temporarily.
 - **The reverse when rates fall.** Yields drop quickly; the bank is still
   paying last year's deposit rates. NIM compresses, again temporarily.
 - **Funding mix.** A bank funded mostly by low-cost current and savings
   accounts has a structurally lower cost of funds than one funded by
-  wholesale borrowings. That is the next post.
+  wholesale borrowings. That is the next post, on CASA.
 - **Asset mix.** Unsecured retail loans yield more than home loans, which
   yield more than government bonds. A bank can raise its NIM by lending
-  riskier — which is not the same as being a better bank, and the post after
-  next is about the bill for that.
+  riskier — which is not the same as being a better bank, and the NPA post
+  later in this module is about the bill for that.
 
 None of this says where HDFC Bank's margin is going. It says what to watch
 when it moves.
@@ -183,13 +186,10 @@ when it moves.
   from the same company and the same year. State the basis.
 - **Ignoring the base.** A bank with a lower NIM on a much larger, safer
   balance sheet can earn more, more reliably, than a bank with a higher NIM.
-  Margin is one term of a product; the sixth post in this module puts the
-  terms together.
+  Margin is one term of a product; the price-to-book post later in this
+  module puts the terms together.
 
 **Takeaway:** NIM is a bank's gross margin — what it earns on what it lends
-minus what it pays for the money, on a base of lakhs of crores. HDFC Bank's
-FY25 filing gives about {{ d.yield_on_interest_earning_assets_pct }}% yield,
-{{ d.cost_of_funds_pct }}% cost of funds and a spread near
-{{ d.spread_pct }} points; the same NII comes out as {{ d.nim_on_avg_total_assets_pct }}%
-or {{ q.on_total_assets }}% depending on the base and period, which is why
-the first question about any NIM is "measured on what?"
+minus what it pays for the money, on a base of lakhs of crores. The same
+NII can come out as {{ d.nim_on_avg_total_assets_pct }}% or {{ q.on_total_assets }}% depending on the base and period,
+so the first question about any NIM is "measured on what?"

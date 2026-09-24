@@ -21,7 +21,7 @@ sold — before touching salaries, rent, marketing, interest, or tax?
 That direct cost is called **COGS** (Cost of Goods Sold) — raw materials for a
 manufacturer, or the wholesale cost of goods bought for resale, for a
 retailer. Gross margin is the first checkpoint in the income-statement
-waterfall we walked through in [Reading an Income Statement]({% post_url 2026-08-22-reading-an-income-statement %}) — it's the very first
+waterfall we walked through in [Reading an income statement]({% post_url 2026-08-22-reading-an-income-statement %}) — it's the very first
 subtraction, before any of the rest of the business's costs show up.
 
 ## The formula
@@ -55,7 +55,7 @@ Used here only to illustrate the calculation, not as a signal to act on.
 | | ₹ Crore |
 |---|---:|
 | Revenue from operations | {{ bi25.revenue }} |
-| COGS (materials + traded goods − inventory change) | {{ bi25.cogs }} |
+| COGS (materials + traded goods ± change in inventories) | {{ bi25.cogs }} |
 | **Gross Profit** | **{{ bi25.gross_profit }}** |
 | **Gross Margin** | **{{ site.data.real_company.ratios.FY25.gross_margin }}%** |
 

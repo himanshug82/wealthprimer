@@ -16,13 +16,13 @@ are meaningful.*
 
 ## The documents, and why reconciliation matters
 
-Eight posts of rules so far. This one is about the practical end: the papers you
+The earlier posts in this series covered the rules. This one is about the practical end: the papers you
 work from, and the checks worth doing before anything is submitted.
 
 The premise is simple and worth stating bluntly. **The tax department already
 has most of this data.** Mutual funds, brokers, banks and registrars report
 transactions against your PAN (permanent account number). Filing isn't
-telling them what happened; it's agreeing with a record they already hold. Notices overwhelmingly arise from
+telling them what happened; it's agreeing with a record they already hold. Notices most commonly arise from
 mismatches, not from honest arithmetic errors.
 
 ## The three documents
@@ -122,7 +122,7 @@ Being clear about the edges, in the spirit of the honest closing posts in the
 [technical analysis]({% post_url 2026-10-17-what-technical-analysis-cannot-do %}) and
 [mutual funds]({% post_url 2026-10-26-reading-a-factsheet %}) series.
 
-Parts 10–13 of this series pick up four topics this post leaves out: ESOPs
+Later posts in this series pick up four topics this post leaves out: ESOPs
 and RSUs (employee stock options and restricted stock units), buybacks, F&O
 (futures and options) as business income, and foreign stocks with their
 disclosure rules. Beyond those, some edges stay uncovered:

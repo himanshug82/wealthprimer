@@ -57,9 +57,9 @@ equity schemes:
 
 | AUM slab | Maximum TER |
 |---|---:|{% for s in au.ter_slabs_equity %}
-| {{ s.aum_slab }} | {% if s.max_ter_note %}{{ s.max_ter_note }}{% else %}{{ s.max_ter_pct }}%{% endif %} |{% endfor %}
+| {{ s.aum_slab }} | {% if s.max_ter_note %}{{ s.max_ter_note }}{% else %}{% assign tp = s.max_ter_pct | append: '' | split: '.' %}{{ tp[0] }}.{{ tp[1] | append: '00' | slice: 0, 2 }}%{% endif %} |{% endfor %}
 
-Index funds and ETFs (exchange-traded funds) are capped at {{ au.ter_cap_index_funds_pct }}% regardless of size.
+Index funds and ETFs (exchange-traded funds) are capped at {% include inr.html n=au.ter_cap_index_funds_pct %}% regardless of size.
 These are the slabs of SEBI's 2018/19 TER framework. From 1 April 2026, the
 [SEBI (Mutual Funds) Regulations, 2026](https://www.sebi.gov.in/legal/regulations/jan-2026/securities-and-exchange-board-of-india-mutual-funds-regulations-2026_99173.html)
 restructured the cap as a "base expense ratio" that leaves out statutory
@@ -73,7 +73,7 @@ is where to check what you're really paying.
 
 **Liquidity.** A large fund can't buy meaningful positions in small companies
 without moving their prices. A ₹50,000 crore small-cap fund putting 2% into a
-₹1,000 crore company would own the whole company. This is why very large
+company with a ₹1,000 crore market cap would own the whole company. This is why very large
 small- and mid-cap funds sometimes stop accepting lump sums, and why "biggest
 fund in the category" is not a compliment in every category.
 
@@ -85,13 +85,12 @@ and that's not an oversight.
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
 
-AUM is the total weight of everything in a shopkeeper's storeroom.
+AUM is what everything in a shop's storeroom is worth.
 
-The storeroom gets heavier when customers bring more stuff in (inflows). But
-it also gets "heavier" if the price of everything already inside goes up —
-without a single new item arriving. When the shop says "our storeroom grew
-6% this year!", ask: did more stuff arrive, or did the old stuff just get
-pricier?
+That number goes up when new stock arrives (inflows). It also goes up when
+the price of what's already there rises, with nothing new arriving. So when
+the shop says "our storeroom is worth 6% more!", ask: new stuff, or just
+higher prices?
 
 </details>
 

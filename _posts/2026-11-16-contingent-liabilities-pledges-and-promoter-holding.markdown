@@ -28,8 +28,9 @@ shareholder needs to know and won't find in the statements:
 
 All three live in disclosures around the statements: a note, a quarterly
 filing to the exchange, a table at the back of the annual report. This post
-walks through each on Desi Bites Foods (fictional, as always), as of
-{{ sh.as_of }}.
+walks through each on Desi Bites Foods (fictional, as always): the
+contingent-liability note from the 31 March 2026 accounts, and the
+shareholding pattern filed with the exchange as of {{ sh.as_of | split: " (" | first }}.
 
 ## 1. Contingent liabilities: the claim that isn't a liability yet
 
@@ -90,11 +91,13 @@ one. And anyone lending you money would want to know about it.
 ## 2. Promoter pledges: borrowing against the company
 
 The **promoter** is the person or group that controls the company — in
-Desi Bites' case the founder and spouse, who held {{ c2.drhp.promoter.holding_pre_ipo_pct }}% before the IPO
-and hold {{ sh.promoter_pct }}% after it. Their shares are an asset, and like any asset they
+Desi Bites' case the founder and spouse, who held {% include inr.html n=c2.drhp.promoter.holding_pre_ipo_pct %}% before the IPO
+and hold {% include inr.html n=sh.promoter_pct %}% after it. Their shares are an asset, and like any asset they
 can be used as collateral. When a promoter borrows against shares, the
 lender takes a **pledge** over them, and the company must disclose it in
-the quarterly shareholding pattern.
+the quarterly shareholding pattern. The promoter must also report each
+pledge, and its invocation or release, to the stock exchanges within seven
+working days, under Regulation 31 of SEBI's takeover (SAST) regulations.
 
 From Desi Bites' filing:
 
@@ -105,7 +108,7 @@ From Desi Bites' filing:
 | **Total** | **{{ sh.total_shares_lakh }}** | 100% |
 | *of which pledged (promoter)* | *{{ sh.pledged_shares_lakh }}* | *{{ sh.pledged_pct_of_total }}%* |
 
-So {{ sh.pledged_pct_of_promoter_holding }}% of the promoter's holding — {{ sh.pledged_pct_of_total }}% of the company — was pledged
+So {% include inr.html n=sh.pledged_pct_of_promoter_holding %}% of the promoter's holding — {% include inr.html n=sh.pledged_pct_of_total %}% of the company — was pledged
 on {{ sh.pledge_date }}. The stated purpose: *{{ sh.pledge_purpose }}*.
 
 Why this matters to a shareholder who didn't borrow anything:
@@ -149,18 +152,17 @@ since it may be about control rather than value.
 **Who else is on the register?** Institutional holders (mutual funds,
 insurers, foreign investors) bring scrutiny and liquidity. Their arrival
 or exit over several quarters is worth noting. For a small, newly listed
-company like Desi Bites, the public {{ sh.public_pct }}% is mostly individual investors — no
+company like Desi Bites, the public {% include inr.html n=sh.public_pct %}% is mostly individual investors — no
 institutional check on management yet.
 
 **Is the promoter's stake locked in?** For a main-board IPO the rules are in
 SEBI's (Securities and Exchange Board of India) Issue of Capital and
 Disclosure Requirements (ICDR) Regulations, as amended in August 2021.
-{{ sh.promoter_lockin }}. So on Desi Bites' {{ sh.promoter_pct }}%, most of
+{{ sh.promoter_lockin }}. So on Desi Bites' {% include inr.html n=sh.promoter_pct %}%, most of
 the promoter stake was free of lock-in about six months after listing — which
 is roughly when the pledge above appeared. A
 lock-in expiry date is a date on which supply can appear. It's in the
-prospectus; the [last post in this module]({{ '/series/fundamental-analysis/' | relative_url }}) covers
-where.
+prospectus, and the DRHP post later in this module covers where.
 
 ## Where these live in a real filing
 
@@ -179,12 +181,12 @@ post come from a real company's filing.
   Management decides the probability, and management is not neutral.
   Scale the amount against PAT and cash yourself.
 - **Reading pledge % of total shares instead of % of promoter holding.**
-  {{ sh.pledged_pct_of_total }}% of the company sounds small; {{ sh.pledged_pct_of_promoter_holding }}% of the promoter's stake is the
+  {% include inr.html n=sh.pledged_pct_of_total %}% of the company sounds small; {% include inr.html n=sh.pledged_pct_of_promoter_holding %}% of the promoter's stake is the
   number that governs a forced sale.
 - **Ignoring the stated purpose.** A pledge to fund the company's own
   plant and a pledge to fund a promoter's unrelated venture carry
   different messages, and the disclosure says which.
-- **Assuming a high promoter stake is always good.** {{ sh.promoter_pct }}% means aligned
+- **Assuming a high promoter stake is always good.** {% include inr.html n=sh.promoter_pct %}% means aligned
   incentives *and* the ability to do anything at a shareholder meeting.
   Related-party transactions matter more, not less, when one family holds
   the votes.
@@ -196,7 +198,7 @@ post come from a real company's filing.
 
 **Takeaway:** The statements stop at the edge of what the rules let them
 record. Three disclosures just past that edge — a ₹{{ cl.gst_demand }} lakh tax demand not
-yet booked, {{ sh.pledged_pct_of_promoter_holding }}% of the promoter's shares pledged for an unrelated loan, and a
+yet booked, {% include inr.html n=sh.pledged_pct_of_promoter_holding %}% of the promoter's shares pledged for an unrelated loan, and a
 register showing who's buying and selling — can matter more to a minority
 shareholder than anything in the five audited pages. Read them every
 quarter; read the trend, not the snapshot.

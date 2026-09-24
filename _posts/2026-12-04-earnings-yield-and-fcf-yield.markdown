@@ -27,10 +27,15 @@ this pay me per rupee" numbers.
 
 **FCF yield** does the same thing with
 [free cash flow]({% post_url 2026-09-19-free-cash-flow %}) instead of
-accounting profit: cash the business actually generated after capex, divided
+accounting profit: cash the business actually generated after capex (capital
+expenditure), divided
 by market capitalisation. It is the stricter of the two, for the reasons the
 [OCF/PAT post]({% post_url 2026-09-20-ocf-pat %}) laid out — profit is an
-opinion, cash is a fact.
+opinion, cash is a fact. Strictly, free cash flow before interest belongs to
+lenders as well as shareholders, so it pairs more consistently with
+[enterprise value]({% post_url 2026-09-26-ev-ebitda %}) than with market cap; the market-cap version is the
+common shortcut, and for companies with little net debt, like both here, the
+two barely differ.
 
 ## The formula
 
@@ -92,6 +97,11 @@ unusually low (or working capital was released), and the FCF yield may be the
 one that's flattering — the [capex intensity post]({% post_url 2026-09-21-capex-intensity %})
 showed Britannia's FY25 FCF rose mainly because capex fell.
 
+Desi Bites shows the other direction: its FCF yield ({{ d.fcf_yield_pct }}%) is above its earnings
+yield ({{ d.earnings_yield_pct }}%) because FY25 free cash flow (₹{{ d.fcf_lakh }} lakh) was larger than PAT
+(₹{{ site.data.case_study.income_statement.FY25.pat }} lakh) — operating cash flow came in at {{ site.data.case_study.ratios.FY25.ocf_pat }}x profit, more than
+covering that year's capex.
+
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
 
@@ -119,7 +129,7 @@ can see how much growing it has to do.
   earnings yield means something different where bonds pay 1% than where they
   pay 7%.
 
-**Takeaway:** Earnings yield is the P/E flipped into a percentage — Britannia's
-{{ b.pe }}x is a {{ b.earnings_yield_pct }}% yield beside a {{ y.gsec_yield_pct }}% bond — and FCF yield is the same idea
-on cash instead of profit. The gap to the bond isn't a verdict; it's the
-growth the price is assuming, stated in a unit you can actually think about.
+**Takeaway:** earnings yield is the P/E flipped into a percentage you can hold
+beside a bond, and FCF yield is the same idea on cash instead of profit. The
+gap to the bond isn't a verdict; it's the growth the price is assuming, stated
+in a unit you can actually think about.

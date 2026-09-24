@@ -17,11 +17,11 @@ term: "DRHP (draft red herring prospectus)"
 
 ## The longest document most investors never open
 
-This module has spent six posts on what a listed company publishes. The
-seventh goes back to the document that made it a listed company in the
+This module has so far been about what a listed company publishes. This
+post goes back to the document that made it a listed company in the
 first place.
 
-A **DRHP — Draft Red Herring Prospectus** — is what a company files with
+A **DRHP — draft red herring prospectus** — is what a company files with
 SEBI (the Securities and Exchange Board of India) when it wants to sell
 shares to the public and list on the main board of the NSE (National Stock
 Exchange) and BSE. "Draft" because it's filed for review; "red herring"
@@ -83,7 +83,7 @@ acquisitions come to {{ gcp_acq_pct }}% of the issue.
 Now the reckoning. By 31 March 2026, Desi Bites had spent
 ₹{% include inr.html n=d.actual_use_by_fy26_end.acquisitions %} lakh on an acquisition (against ₹{{ d.objects[1].amount }} lakh stated) and
 ₹{% include inr.html n=d.actual_use_by_fy26_end.capex %} lakh on capex (against ₹{{ d.objects[0].amount }} lakh), with ₹{% include inr.html n=d.actual_use_by_fy26_end.unspent %} lakh unspent.
-{{ d.deviation_note }} Neither deviation is scandalous; both are exactly
+{{ d.deviation_note | split: ". " | first | replace: "Rs ", "₹" | replace: "Lakh", "lakh" }}. Neither deviation is scandalous; both are exactly
 the kind of thing the [capital allocation post]({% post_url 2026-11-18-capital-allocation %})
 said to watch, and the prospectus is the yardstick that makes watching
 possible.
@@ -116,23 +116,23 @@ buried among the boilerplate. Desi Bites' first six:
 Ignore the ones that could apply to any company on earth (competition,
 economic conditions, regulation). Read the ones that could only apply to
 this one. Items 1, 3, 4 and 6 above are that kind: one plant, a
-promoter-family distributor handling {{ d.related_party.share_of_fy25_revenue_pct }}% of revenue, a trademark
-dispute, and a tax demand. Each of those turned up later in this module —
-in the [contingent liabilities post]({% post_url 2026-11-16-contingent-liabilities-pledges-and-promoter-holding %})
-and the [forensic post]({% post_url 2026-11-14-desi-bites-cooks-the-books %}). The
+promoter-family distributor handling {% include inr.html n=d.related_party.share_of_fy25_revenue_pct %}% of revenue, a trademark
+dispute, and a tax demand. The tax demand came back in the
+[contingent liabilities post]({% post_url 2026-11-16-contingent-liabilities-pledges-and-promoter-holding %}),
+and promoter-group dealings in the [forensic post]({% post_url 2026-11-14-desi-bites-cooks-the-books %}). The
 prospectus told you first.
 
 ## 4. Promoters and related parties
 
 Two sections, read together. **Our Promoters** tells you who controls the
 company and what else they do: {{ d.promoter.background }}. Holding
-{{ d.promoter.holding_pre_ipo_pct }}% before the issue and {{ d.promoter.holding_post_ipo_pct }}% after. Look here for other companies the
+{% include inr.html n=d.promoter.holding_pre_ipo_pct %}% before the issue and {% include inr.html n=d.promoter.holding_post_ipo_pct %}% after. Look here for other companies the
 promoter runs (competing? supplying?), for litigation against them
 personally, and for how long they've actually run *this* business.
 
 **Related party transactions** lists every dealing between the company and
 the promoter's circle — usually three to five years of them. Desi Bites':
-*{{ d.related_party.entity }}* bought ₹{% include inr.html n=d.related_party.fy25_revenue_via_rp %} lakh of product in FY25 — {{ d.related_party.share_of_fy25_revenue_pct }}% of
+*{{ d.related_party.entity }}* bought ₹{% include inr.html n=d.related_party.fy25_revenue_via_rp %} lakh of product in FY25 — {% include inr.html n=d.related_party.share_of_fy25_revenue_pct %}% of
 revenue — on {{ d.related_party.credit_terms }}. That's not necessarily wrong; family
 distributors are how many Indian consumer businesses started. It is a
 channel through which revenue can be pulled forward or margins shifted,
@@ -152,7 +152,7 @@ Three things to do with them that the summary page won't:
   year. FY25 was Desi Bites' best by every measure. That's not a
   coincidence; it's when bankers advise listing.
 - **Run the cash conversion.** [OCF/PAT]({% post_url 2026-09-20-ocf-pat %}) over three
-  years. Desi Bites' was {{ site.data.case_study.ratios.FY23.ocf_pat }}, {{ site.data.case_study.ratios.FY24.ocf_pat }}, {{ site.data.case_study.ratios.FY25.ocf_pat }} — profit turning into cash every
+  years. {% assign _o23 = site.data.case_study.ratios.FY23.ocf_pat | times: 100 | round | append: "" %}Desi Bites' was {{ _o23 | slice: 0 }}.{{ _o23 | slice: 1, 2 }}, {{ site.data.case_study.ratios.FY24.ocf_pat }}, {{ site.data.case_study.ratios.FY25.ocf_pat }} — profit turning into cash every
   year. A company listing on rising profit and falling cash conversion is
   the pattern the forensic post described.
 - **Look at the pre-IPO round.** If investors bought shares six months
@@ -182,9 +182,9 @@ cheap. The [comparables post]({% post_url 2026-10-01-relative-valuation-comparab
 is about choosing that table yourself.
 
 One thing the section will *not* say is whether ₹{{ l.ipo_price }} is a good price.
-Nor will this blog. The [margin of safety post]({% post_url 2026-10-06-margin-of-safety-and-sensitivity %})
+Nor will this blog. The [terminal value post]({% post_url 2026-10-05-terminal-value-and-the-full-dcf %})
 showed a DCF of the same numbers landing well below the issue price, and
-the reverse DCF showed what growth ₹{{ l.ipo_price }} implied. The prospectus gives you
+its reverse DCF showed what growth ₹{{ l.ipo_price }} implied. The prospectus gives you
 every input for that exercise. It leaves the conclusion to you, which is
 the correct division of labour.
 

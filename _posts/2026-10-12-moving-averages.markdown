@@ -85,7 +85,7 @@ Britannia with the two most-watched averages, the 50-day and the 200-day:
 
 ![Britannia with 50-day and 200-day moving averages]({{ '/assets/charts/ta-moving-averages.svg' | relative_url }})
 
-Britannia (NSE: BRITANNIA), daily, {{ ta.dataset.as_of }}. Source:
+Britannia (NSE: BRITANNIA), {{ ta.dataset.as_of }}. Source:
 [Yahoo Finance]({{ ta.dataset.source_url }}). Historical data, for illustration only.
 
 Notice the 200-day line doesn't start until January 2025. It can't — it needs
@@ -107,11 +107,11 @@ Here is what two full years of Britannia data contains:
 | Death crosses (50 below 200) | **{{ x.death_cross_count }}** observed |
 
 One. In two years. And the zero needs an asterisk: when the 200-day first
-existed, on {{ x.sma200_first_date }}, the 50-day was already below it. So if
+existed, on {{ x.sma200_first_date | date: "%-d %B %Y" }}, the 50-day was already below it. So if
 there was a death cross, it happened during the warmup, where this data can't
 see it.
 
-That single golden cross, on {{ x.golden_cross.date }}:
+That single golden cross, on {{ x.golden_cross.date | date: "%-d %B %Y" }}:
 
 | | |
 |---|---:|
@@ -125,7 +125,7 @@ Read that sequence honestly. Price rose about 10% over the following three
 months, which looks like a success. Then it gave all of it back and more,
 finishing the dataset below where the cross occurred.
 
-So: did the golden cross work? Over three months, yes. Over nine months, no.
+So: did the golden cross work? Over three months, yes. Over the ten months to the end of the dataset, no.
 The answer depends entirely on a holding period nobody specified in advance.
 
 And more importantly — **this is one instance**. You cannot learn anything

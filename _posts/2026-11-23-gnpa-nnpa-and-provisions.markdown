@@ -39,7 +39,7 @@ classification norms), which is what makes it comparable across banks:
 | Stage | Definition (simplified) | What the bank does |
 |---|---|---|
 | Standard | Paying on time | Small general provision |
-| SMA-0 / 1 / 2 | Special Mention Account: 1–30, 31–60, 61–90 days overdue | Watch list; reported to the credit bureau infrastructure |
+| SMA-0 / 1 / 2 | Special Mention Account: 1–30, 31–60, 61–90 days overdue | Watch list; for exposures of ₹5 crore and above, reported to the RBI's CRILC (Central Repository of Information on Large Credits) |
 | **Sub-standard** | **Over 90 days overdue** — the loan is now an NPA | Stop recognising interest income; provide a percentage of the balance |
 | Doubtful | NPA for more than 12 months | Higher provision, rising with age and depending on security |
 | Loss | Identified as unrecoverable | Provide 100% |
@@ -112,8 +112,8 @@ Set this against the [spread]({% post_url 2026-11-21-nim-and-the-spread %})
 of about {{ d.spread_pct }} percentage points and the arithmetic of lending
 becomes visible: the bank earns roughly three-and-a-half rupees per hundred
 lent, and loses about half a rupee of it to loans that fail. In a bad year for
-credit, credit cost of 2–3% is not unusual across the industry — and at that
-level it consumes most of the spread. That is what a "credit cycle" means in
+credit, credit cost can run several times higher — and at a few percent it
+consumes most of the spread. That is what a "credit cycle" means in
 rupees.
 
 ## Why net NPA is partly a choice
@@ -196,9 +196,6 @@ A GNPA of 1.3% means little on its own. What tells you something:
 **Takeaway:** Gross NPA is the loans that have stopped paying; net NPA is the
 part the bank hasn't yet set money aside for; the provision coverage ratio is
 the bridge between them and credit cost is the year's bill for all of it.
-HDFC Bank's FY25 filing shows about {{ f25.gross_npa_pct_reported }}% gross,
-{{ f25.net_npa_pct_reported }}% net, {{ f25.provision_coverage_pct }}%
-coverage and roughly {{ d.credit_cost_pct }}% credit cost — and a
-₹{% include inr.html n=f24.floating_provision %} crore floating provision
-made in one year and not the next, which is the cleanest illustration you'll
-find that a bank's reported profit is partly a decision.
+HDFC Bank's ₹{% include inr.html n=f24.floating_provision %} crore floating provision, made in FY24 and not in
+FY25, is the cleanest illustration you'll find that a bank's reported profit
+is partly a decision.

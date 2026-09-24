@@ -143,6 +143,7 @@ lower = df[["open", "close"]].min(axis=1) - df.low
 # a doji: body is tiny relative to the day's whole range
 doji = body < 0.1 * rng
 # a hammer: small body up top, lower wick at least twice the body
+# (counts the shape only; textbook hammers also need a prior decline)
 hammer = (lower > 2 * body) & (upper < body) & (rng > 0)
 
 print(f"doji days: {doji.sum()}   hammer days: {hammer.sum()}")

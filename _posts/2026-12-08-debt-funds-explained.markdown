@@ -80,7 +80,7 @@ different jobs.
 | {{ mm.name }} | Money-market instruments up to a year | A few months |
 | {{ g.name }} | Government securities, often long-dated | Several years |
 
-Regular plans, {{ dbt.window_start }} to {{ dbt.window_end }} ({{ dbt.years }} years). Source:
+Regular plans, {{ dbt.window_start | date: "%-d %B %Y" }} to {{ dbt.window_end | date: "%-d %B %Y" }} ({{ dbt.years }} years). Source:
 {{ src.label }}, scheme codes {{ src.overnight.code }}, {{ src.money_market.code }} and {{ src.gilt.code }}. Historical NAV
 data, for illustration only.
 
@@ -99,7 +99,7 @@ data, for illustration only.
 Read the columns left to right. The overnight fund had **no** down days at all
 in nearly eight years — pure accrual, nothing to reprice. The money market
 fund had a few dozen ({{ mm.negative_days }} of {% include inr.html n=mm.days %} days — about one day in
-{{ mm.days | times: 1.0 | divided_by: mm.negative_days | round }}), the worst being a {{ mm.worst_day_pct }}% day in the March 2020 panic, and it
+{{ mm.days | times: 1.0 | divided_by: mm.negative_days | round }}), the worst being a {{ mm.worst_day_pct | abs }}% drop in the March 2020 panic, and it
 was back at its high within {{ mm.max_drawdown.days_to_recover }} days. The gilt fund fell on
 {{ g.negative_days_pct }}% of days — roughly two in five — because it is mostly a mark-to-market
 instrument wearing a debt fund's label.
@@ -127,21 +127,21 @@ Two of those rows are the whole lesson.
 
 **2013.** When the RBI squeezed liquidity in July 2013 to defend the rupee,
 short-term yields spiked and long-bond prices fell. The gilt fund lost
-{{ dbt.episodes[1].gilt_pct }}% between mid-May and late August, while the money market fund
+{{ dbt.episodes[1].gilt_pct | abs }}% between mid-May and late August, while the money market fund
 quietly earned {{ dbt.episodes[1].money_market_pct }}% over the same fourteen weeks. Same rate
 shock, opposite sign — because one fund had almost nothing to reprice and the
 other had years of it.
 
 **2008–09.** The other direction. As the RBI slashed rates after the Lehman
 collapse, the gilt fund gained {{ dbt.gilt_2008_rally.rally_pct }}% between 1 October 2008 and its
-peak on {{ dbt.gilt_2008_rally.peak_date }} — an equity-sized return from a government-bond fund —
+peak on {{ dbt.gilt_2008_rally.peak_date | date: "%-d %B %Y" }} — an equity-sized return from a government-bond fund —
 and then gave back {{ dbt.gilt_2008_rally.fall_from_peak_to_31jan_pct | abs }}% within the month, including a
-{{ dbt.gilt_worst_day.pct }}% single day on {{ dbt.gilt_worst_day.date }}.
+{{ dbt.gilt_worst_day.pct | abs }}% fall in a single day, on {{ dbt.gilt_worst_day.date | date: "%-d %B %Y" }}.
 
-Over its full {{ gl.years }}-year history the gilt fund's worst fall from a peak was
-**{{ gl.max_drawdown.worst_pct }}%** (peak {{ gl.max_drawdown.peak_date }}, trough {{ gl.max_drawdown.trough_date }}), and it took
+Over its full {% include inr.html n=gl.years %}-year history the gilt fund's worst fall from a peak was
+**{{ gl.max_drawdown.worst_pct | abs }}%** (peak {{ gl.max_drawdown.peak_date | date: "%-d %B %Y" }}, trough {{ gl.max_drawdown.trough_date | date: "%-d %B %Y" }}), and it took
 **{{ gl.max_drawdown.days_to_recover }} days** — over three years — to get back to that high. Its
-worst one-year return was {{ gl.rolling_1y_min_pct }}%; its best was {{ gl.rolling_1y_max_pct }}%. Those are not
+worst one-year return was {% include inr.html n=gl.rolling_1y_min_pct %}%; its best was {{ gl.rolling_1y_max_pct }}%. Those are not
 numbers most people associate with "debt".
 
 ## Credit risk: the third thing, which this data doesn't show
@@ -184,7 +184,7 @@ for name, path in funds.items():
 
 One warning: two of these CSVs carry a face-value change (the NAV jumps ×100
 on a single day when the unit face value moved from ₹10 to ₹1,000). A
-`pct_change()` across that day reads as a 10,000% return. Check for
+`pct_change()` across that day reads as a return of roughly 9,900%. Check for
 impossible one-day moves before computing anything — the
 [data & methodology page]({{ '/methodology/' | relative_url }}) describes how
 the series used here were spliced.
@@ -192,7 +192,7 @@ the series used here were spliced.
 ## Common mistakes
 
 - **Reading "debt" as "safe".** The gilt fund holds the safest borrower in
-  India and still fell {{ gl.max_drawdown.worst_pct }}% and needed three years to recover. Safe
+  India and still fell {{ gl.max_drawdown.worst_pct | abs }}% and needed three years to recover. Safe
   from default is not the same as safe from repricing.
 - **Choosing a debt fund by last year's return.** A gilt fund's best years are
   the ones just after rates fell. The category that topped a one-year table
@@ -203,8 +203,8 @@ the series used here were spliced.
 - **Ignoring credit risk because the NAV looks smooth.** Accrual funds
   holding lower-rated paper look like the overnight fund's line above — right
   up to the day a borrower defaults.
-- **Forgetting tax.** Debt-fund gains bought after 1 April 2023 are taxed at
-  your slab rate regardless of holding period — see the
+- **Forgetting tax.** Gains on debt-fund units bought on or after 1 April
+  2023 are taxed at your slab rate regardless of holding period — see the
   [tax series post on debt funds]({% post_url 2026-10-30-debt-funds-gold-and-the-rest %}).
 
 **Takeaway:** A debt fund earns two ways — interest accruing daily, and bonds

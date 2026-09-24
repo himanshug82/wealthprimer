@@ -100,7 +100,7 @@ the original ₹500 — everyone else's cut has already been paid.
 - **Assuming a high net margin means low risk.** Net margin describes
   profitability, not financial risk. A company can have a healthy net margin
   and still carry a debt load that makes it fragile — that's a separate
-  question, covered later in the [Leverage module]({{ '/2026/09/15/debt-to-equity/' | relative_url }}).
+  question, covered later in the [leverage posts]({{ '/2026/09/15/debt-to-equity/' | relative_url }}).
 
 **Takeaway:** net margin is what's actually left for shareholders after
 every cost — the last word on a given year's profitability, but not the

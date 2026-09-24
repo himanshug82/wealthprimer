@@ -22,7 +22,7 @@ behind it are the whole of this post:
 
 So a future rupee is worth less than a rupee today. **Discounting** is
 simply the arithmetic that says *how much* less. Everything in the next
-three posts — free cash flow forecasts, terminal value, and the full
+few posts — free cash flow forecasts, terminal value, and the full
 **discounted cash flow (DCF)** model that the
 [last post]({% post_url 2026-10-01-relative-valuation-comparables %}) promised — is this
 single idea applied repeatedly.
@@ -94,7 +94,7 @@ its face value today. Not because anything went wrong — that's just what a
 14%-ish rate does over five years.
 
 This is also why long-dated cash flows get so little respect in a DCF, and
-why the terminal value (covered two posts from now) needs handling with care:
+why the terminal value (covered later in this series) needs handling with care:
 it sits *past* the final forecast year, gets discounted hardest, and still
 usually ends up being most of the answer.
 
@@ -106,14 +106,14 @@ Same ₹100 arriving in FY30:
 
 | Discount rate | Factor | Present value of ₹100 |
 |---:|---:|---:|
-| 8% | 0.6806 | ₹68.06 |
+| 10% | 0.6209 | ₹62.09 |
 | 11% | 0.5935 | ₹59.35 |
 | {{ site.data.case_study.dcf.wacc.wacc_unrounded }}% | 0.5213 | ₹52.13 |
 | 17% | 0.4561 | ₹45.61 |
 | 20% | 0.4019 | ₹40.19 |
 
-Between 8% and 20% — both perfectly arguable rates for an Indian small-cap —
-the same future rupee is worth anywhere from 40 to 68 paise. That's a 70%
+Between 10% and 20% — both perfectly arguable rates for an Indian small-cap —
+the same future rupee is worth anywhere from 40 to 62 paise. That's a 54%
 spread on an identical cash flow, decided entirely by an assumption.
 
 Hold onto that. When a DCF spits out a precise-looking value per share, this
@@ -124,17 +124,17 @@ is the joint where most of the imprecision entered.
 Real valuations don't discount one payment, they discount a series of them.
 The rule is unglamorous: discount each year separately, then add.
 
-Suppose a business hands you ₹200 Lakh a year for three years, and you
+Suppose a business hands you ₹200 lakh a year for three years, and you
 discount at {{ site.data.case_study.dcf.wacc.wacc_unrounded }}%:
 
-| Year | Cash flow (₹ Lakh) | × Discount factor | Present value (₹ Lakh) |
+| Year | Cash flow (₹ lakh) | × Discount factor | Present value (₹ lakh) |
 |---|---:|---:|---:|
 | 1 | 200 | 0.8779 | 175.6 |
 | 2 | 200 | 0.7706 | 154.1 |
 | 3 | 200 | 0.6765 | 135.3 |
 | | **600** | | **465.0** |
 
-₹600 Lakh of promised money is worth ₹465 Lakh today. The ₹135 Lakh
+₹600 lakh of promised money is worth ₹465 lakh today. The ₹135 lakh
 difference is the price of waiting.
 
 ## Doing it in Python
@@ -173,6 +173,7 @@ hard part was never the code.
   contestable, and as the table above showed, it moves the answer more than
   almost anything else in the model. Anyone who quotes a discount rate to
   two decimal places without flinching hasn't thought about it hard enough.
+  (Yes, the next post lands on {{ site.data.case_study.dcf.wacc.wacc }}%. Consider us flinching.)
 - **Assuming a higher discount rate is the "safe" or conservative choice.**
   It's conservative for the *valuation*, but it isn't automatically more
   accurate. Padding the rate to feel prudent is just a different way of

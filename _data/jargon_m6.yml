@@ -210,8 +210,8 @@ tracking:
   regular_mean_td_pp: 0.98
   direct_mean_td_pp: 1.08
   direct_minus_regular_pp: 0.1
-  pri_caveat: The benchmark here is the PRICE index, which excludes dividends. A positive tracking difference against it is
-    mostly the ~1-1.5% dividend yield of the fifty stocks, minus the expense ratio — not out-performance.
+  pri_caveat: The benchmark here is the *price* index, which excludes dividends. A positive tracking difference against it
+    is mostly the roughly 1–1.5% dividend yield of the fifty stocks, minus the expense ratio — not outperformance.
 bond:
   face: 1000.0
   coupon_pct: 7.0

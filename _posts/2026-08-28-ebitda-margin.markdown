@@ -26,13 +26,14 @@ minus the direct cost of what was sold ([COGS]({% post_url 2026-08-22-reading-an
 of running the business (salaries, distribution, admin), but before the
 company's financing decisions (interest), tax, or the accounting effect of
 its assets ageing (depreciation) enter the picture. We defined the full
-waterfall in [Reading an Income Statement]({% post_url 2026-08-22-reading-an-income-statement %}) — EBITDA margin is just
+waterfall in [Reading an income statement]({% post_url 2026-08-22-reading-an-income-statement %}) — EBITDA margin is just
 that EBITDA line expressed as a percentage of revenue.
 
 The point of stopping *here* specifically: it's the cleanest read on how the
-core operating business is doing, stripped of two things that have nothing
-to do with how good the business itself is — how it's financed (debt vs
-equity) and how its accountants choose to depreciate its assets.
+core operating business is doing, stripped of two things that say less
+about day-to-day operations — how it's financed (debt vs equity) and how its
+assets are depreciated. (Depreciation is still a real cost, especially for
+capital-heavy businesses — more on that in the mistakes below.)
 
 ## The formula
 
@@ -62,7 +63,7 @@ signal to act on.
 | **EBITDA Margin** | **{{ site.data.real_company.ratios.FY25.ebitda_margin }}%** |
 
 FY24's EBITDA margin, from the same filing, was {{ bi24.ebitda | times: 100.0 | divided_by: bi24.revenue | round: 1 }}% —
-again a touch richer than FY25. The squeeze starts where [Gross Margin]({% post_url 2026-08-26-gross-margin %})
+again a touch richer than FY25. The squeeze starts where [gross margin]({% post_url 2026-08-26-gross-margin %})
 found it, at the raw-material line: gross margin fell from {{ bi_gm24 }}% to
 {{ bi_gm25 }}%, about {{ bi_gm24 | minus: bi_gm25 | round: 1 }} points. But operating expenses (the other thing
 between gross profit and EBITDA) shrank as a share of revenue, from

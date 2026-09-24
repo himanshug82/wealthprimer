@@ -33,8 +33,10 @@ on Capital Employed** — asks the bigger question: how much profit did the
 business generate on *all* the capital invested in it, whether that capital
 came from shareholders or lenders?
 
-**Capital Employed** = Equity + Borrowings — everyone who's put long-term
-money into the business, not just its owners. And because that capital
+**Capital employed** = equity + borrowings — everyone who's put money into
+the business expecting a return on it (lenders, long-term and short-term,
+as well as owners). You'll also see it defined as total assets minus current
+liabilities; the two versions land close to each other but aren't identical. And because that capital
 belongs to lenders too (who get paid via interest, before shareholders see
 anything), ROCE uses **EBIT** — [earnings before interest and
 tax]({% post_url 2026-08-22-reading-an-income-statement %}) — instead of
@@ -75,6 +77,10 @@ measure, not an owners-only one. For illustration only.
 | Capital employed, end of year (FY25) | {{ bi_ce25 }} |
 | Average capital employed | {{ bi_ce24 | plus: bi_ce25 | divided_by: 2.0 }} |
 | **ROCE** | **{{ site.data.real_company.ratios.FY25.roce }}%** |
+
+One quirk: EBIT here leaves out Britannia's other income (such as interest
+on its cash and investments), but that cash still sits inside capital
+employed — so for a cash-rich company, ROCE on this basis runs slightly low.
 
 Notice Britannia's ROCE ({{ site.data.real_company.ratios.FY25.roce }}%) is close to, but a little below, its
 [ROE]({% post_url 2026-09-01-roe %}) ({{ site.data.real_company.ratios.FY25.roe }}%) from the previous post. It's tempting to read
@@ -124,16 +130,17 @@ itself, not who financed it.
   higher than post-tax ROCE — as it is for both companies above — funding
   beyond equity (debt, supplier credit) is doing some of the work. Worth
   understanding before assuming the business itself is that efficient.
-- **Using EBITDA instead of EBIT in the numerator.** EBITDA still includes
-  the benefit of assets that are ageing and losing value — EBIT accounts for
-  that, which is why ROCE specifically uses EBIT.
+- **Using EBITDA instead of EBIT in the numerator.** EBITDA leaves out
+  depreciation — the cost of plant and machinery wearing out — and that's a
+  real cost of the very capital ROCE is measuring. EBIT includes it, which is
+  why ROCE uses EBIT.
 - **Using closing capital employed instead of average**, especially in a
   year with a large mid-year capital raise or debt repayment — this can
   distort the ratio significantly in either direction.
 - **Treating a high ROCE as a reason to buy at any price.** ROCE measures
   business quality, not value for money — a genuinely excellent business can
   still be a poor investment if bought at too high a price. That's a
-  separate question, covered in the [Valuation module]({{ '/2026/09/24/price-to-earnings/' | relative_url }}).
+  separate question, covered in the [valuation posts]({{ '/2026/09/24/price-to-earnings/' | relative_url }}).
 
 **Takeaway:** ROCE measures the return a business generates on *all* the
 capital invested in it — equity and debt alike — making it a fairer way to

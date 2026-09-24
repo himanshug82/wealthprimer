@@ -22,7 +22,7 @@ term: "PEG ratio"
 charging for. It never asked how *fast* those earnings are growing — and a
 30x P/E on a company doubling profit every couple of years is a very
 different proposition from a 30x P/E on one barely growing at all. **PEG —
-Price/Earnings to Growth** — divides P/E by the earnings growth rate to put
+price/earnings-to-growth** — divides P/E by the earnings growth rate to put
 that question front and centre.
 
 ## The formula
@@ -31,17 +31,20 @@ that question front and centre.
 PEG = P/E / Earnings Growth Rate (%)
 ```
 
-A PEG below 1 is the classic "growth at a reasonable price" signal — the
+A PEG below 1 is the classic "growth at a reasonable price" heuristic — the
 P/E looks justified, or even cheap, relative to how fast earnings are
 growing. This series uses each company's single most recent year of PAT
 growth (FY24 to FY25) as the growth figure — a simplification worth
-watching closely in the second example below.
+watching closely in the second example below. Strictly, PEG usually uses
+EPS (earnings per share) growth. That equals PAT (profit after tax) growth
+only when the share count is stable, as at Britannia; Desi Bites' IPO added
+shares, so its per-share growth is lower than the PAT growth used here.
 
 ## Worked example: Desi Bites Foods Ltd
 
 | | |
 |---|---:|
-| P/E (from the last post) | {{ db_pe }}x |
+| P/E (from the P/E post) | {{ db_pe }}x |
 | ÷ PAT Growth, FY24→FY25 | {{ listing.pat_growth_fy24_fy25_pct }}% |
 | **PEG** | **{{ db_peg }}** |
 
@@ -57,7 +60,7 @@ For illustration only.
 
 | | |
 |---|---:|
-| P/E (from the last post) | {{ bi_pe }}x |
+| P/E (from the P/E post) | {{ bi_pe }}x |
 | ÷ PAT Growth, FY24→FY25 | {{ bi_market.pat_growth_fy24_fy25_pct }}% |
 | **PEG** | **{{ bi_peg }}** |
 
@@ -92,10 +95,7 @@ weakness visible rather than hide it.
   valuation norms.** A "normal" PEG for a fast-growing small-cap and a
   mature large-cap aren't the same number.
 
-**Takeaway:** PEG asks whether a P/E is justified by growth — useful when
-growth is measured sensibly, but as Britannia's single weak year here shows,
-it can produce a wildly misleading number if the growth figure behind it
-isn't examined first. That's a fitting closing note for this
-module: every ratio in it is a starting question, not a final verdict, and
-the moment any one of them is trusted blindly is the moment it stops being
-useful.
+**Takeaway:** PEG asks whether a P/E is justified by growth, but it's only as
+good as the growth figure behind it. One weak year, like Britannia's here, can
+make the number meaningless — so treat it as a starting question, not a
+verdict.

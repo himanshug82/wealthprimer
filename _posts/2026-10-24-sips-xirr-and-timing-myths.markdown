@@ -16,7 +16,7 @@ term: "XIRR and SIP returns"
 
 ## The most marketed product in Indian finance
 
-A **SIP — Systematic Investment Plan** — invests a fixed amount at fixed
+A **SIP — systematic investment plan** — invests a fixed amount at fixed
 intervals, usually monthly. It's the default recommendation for Indian retail
 investors, and the reasoning behind it is genuinely sound: it automates the
 habit, it removes the need to decide when to invest, and buying a fixed rupee
@@ -38,7 +38,7 @@ A SIP breaks that completely. Each instalment has been invested for a
 different length of time. The first has compounded for twenty years; last
 month's has compounded for a month. There is no single "holding period."
 
-The measure that handles this is **XIRR — Extended Internal Rate of Return**:
+The measure that handles this is **XIRR — extended internal rate of return**:
 the single annual rate that makes the present value of all your cash flows
 equal zero.
 
@@ -52,7 +52,8 @@ where CFₜ = each instalment (negative, money out)
 ```
 
 There's no closed-form solution — it's found numerically. Spreadsheets have
-`XIRR()`; Python needs a root-finder.
+`XIRR()`; Python needs a root-finder. (Excel's `XIRR()` divides by 365, not
+365.25, so its answer can differ from the code below in the second decimal.)
 
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
@@ -118,7 +119,7 @@ Being fair to SIPs, because the honest picture cuts both ways.
 
 Across the full twenty-year run, the portfolio's value sat below the total
 amount invested in only **{{ uw.months_below_invested }} of {{ uw.months_total }} months**. The longest continuous stretch
-was **{{ uw.longest_stretch_months }} months**, from {{ uw.longest_stretch_start }} to {{ uw.longest_stretch_end }}, and the worst it ever looked was a
+was **{{ uw.longest_stretch_months }} months**, from {{ uw.longest_stretch_start | date: "%B %Y" }} to {{ uw.longest_stretch_end | date: "%B %Y" }}, and the worst it ever looked was a
 deficit of about ₹1.09 lakh.
 
 So: through a 60% crash, a disciplined SIP was underwater roughly 5% of the
@@ -134,8 +135,10 @@ giving you only one of those is selling something.
 
 **"SIPs beat lump sum investing."** Not reliably. In a rising market, lump sum
 wins, because money invested earlier compounds longer. SIPs win when markets
-fall early in the period. Since markets rise more often than they fall, lump
-sum wins more often historically — SIPs are chosen mainly because most people
+fall early in the period. On this fund, a lump sum beat a five-year SIP of the
+same total in {{ s.lumpsum_vs_sip_5y.lumpsum_wins }} of the {{ s.lumpsum_vs_sip_5y.windows }} monthly start dates we could test — markets rose
+more often than they fell, so money invested earlier usually had longer to
+compound. SIPs are chosen mainly because most people
 receive money monthly, and because they remove the decision entirely. Even
 the Jan 2007 row, where the crash came early, went to the lump sum.
 
@@ -150,7 +153,7 @@ as "high" is only obvious afterwards.
 **"SIP averaging means you can't lose."** Averaging lowers your average
 purchase price. It cannot make a five-year decline profitable.
 
-**"Longer SIPs always work."** The {{ f.years_of_history }}-year record here is good. It is one
+**"Longer SIPs always work."** The {% include inr.html n=f.years_of_history %}-year record here is good. It is one
 market, one period. The [rolling returns post]({% post_url 2026-10-20-rolling-returns %})
 made the same caution about any historical distribution.
 

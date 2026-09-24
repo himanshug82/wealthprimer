@@ -14,9 +14,9 @@ term: "Cash conversion cycle"
 ## What the cash conversion cycle means
 
 The last three posts each measured one leg of the same journey: how long
-stock sits before it sells ([Inventory Days]({% post_url 2026-09-07-inventory-days %})), how long customers take to
-pay ([Debtor Days]({% post_url 2026-09-08-debtor-days %})), and how long the company itself takes to pay its
-suppliers ([Creditor Days]({% post_url 2026-09-09-creditor-days %})). The **Cash Conversion Cycle (CCC)** stitches all
+stock sits before it sells ([inventory days]({% post_url 2026-09-07-inventory-days %})), how long customers take to
+pay ([debtor days]({% post_url 2026-09-08-debtor-days %})), and how long the company itself takes to pay its
+suppliers ([creditor days]({% post_url 2026-09-09-creditor-days %})). The **cash conversion cycle (CCC)** stitches all
 three together into one number: how many days does cash stay tied up in the
 operating cycle — from paying for raw material, to holding inventory, to
 collecting from customers — before it's back in the company's hands?
@@ -63,7 +63,7 @@ posts. For illustration only.
 | Inventory Days | {{ bi_r.inventory_days }} |
 | + Debtor Days | {{ bi_r.receivable_days }} |
 | − Creditor Days | {{ bi_r.payable_days }} |
-| **Cash Conversion Cycle** | **{{ bi_r.ccc }} days** |
+| **Cash Conversion Cycle** | **{% include inr.html n=bi_r.ccc %} days** |
 
 That's a **negative** cash conversion cycle. Britannia collects from
 customers and sells through inventory faster than it pays its own
@@ -71,9 +71,8 @@ suppliers — meaning, on average, the company is holding onto its
 suppliers' money even *after* it has already turned that stock into cash
 from a customer. It is effectively financed by its supply chain rather than
 the other way around. That's consistent with the bargaining power that
-scale brings in FMCG (fast-moving consumer goods), and it's a pattern you'll
-often see at large, well-established consumer companies — but check the
-notes before taking it at face value (mistake #3 below). One more caveat: the
+scale can bring in FMCG (fast-moving consumer goods) — but check the notes
+before taking it at face value (mistake #3 below). One more caveat: the
 inventory and creditor days above use a materials-only COGS for Britannia
 (see the [gross margin post]({% post_url 2026-08-26-gross-margin %})), which makes creditor days in
 particular look longer than they are, so treat the exact figure as rough.
@@ -81,14 +80,13 @@ particular look longer than they are, so treat the exact figure as rough.
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
 
-Imagine a relay race where the baton is cash. Leg one: cash turns into
-stock. Leg two: stock turns into a sale (but the customer hasn't paid yet).
-Leg three: the customer finally pays, and cash is back. Meanwhile, a
-separate runner — your supplier — is chasing you the whole time, waiting to
-be paid. The cash conversion cycle measures how big a head start you have
-on that supplier-runner. Most of the time you're a little ahead of them.
-Britannia's number means it's so far ahead that the supplier-runner
-actually finishes *after* you've already completed the whole lap.
+Say you run a lemonade stand. The shop lets you take lemons today and pay
+for them in 10 days. You turn them into lemonade and sell it for cash within
+3 days. So for the next 7 days, you're holding money that's really the
+shop's. The cash conversion cycle counts how many days your *own* money is
+stuck in the business. Usually it's a positive number. When customers pay
+you before you have to pay your supplier — like here, or like Britannia —
+it drops below zero.
 
 </details>
 
@@ -113,8 +111,7 @@ actually finishes *after* you've already completed the whole lap.
   over several years — cash getting more, not less, tied up — is a more
   useful signal than one year's number in isolation.
 
-**Takeaway:** the cash conversion cycle measures how many days a company's
-cash is tied up in its own operating cycle before coming back — a negative
-number, like Britannia's here, means the company is effectively financed by
-its own supply chain, a real structural advantage rather than an accounting
-curiosity.
+**Takeaway:** the cash conversion cycle counts how many days a company's own
+cash is stuck in its operating cycle before it comes back. A negative number,
+like Britannia's, means suppliers are effectively funding the business —
+worth checking the notes before calling it an advantage.

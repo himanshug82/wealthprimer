@@ -569,6 +569,62 @@ DONE (code) / PENDING (your accounts) — Google Analytics 4 + giscus comments
      _config.yml. Full notes in _includes/comments.html.
 - Removed minima's disqus hook from _layouts/post.html (never configured).
 
+DONE — structural fixes from the 24 Sep 2026 review (navigation, glossary, methodology)
+
+- GA4 is LIVE: `google_analytics: "G-LYRDRDQSE8"` set by the user. /privacy/
+  now discloses GA4 + `_ga` cookies automatically. giscus still needs
+  repo_id/category_id (see the section above).
+- SERIES NAVIGATION on every post (_includes/series-nav.html, used twice by
+  _layouts/post.html: once with header=true to compute, once to render):
+  - Header line "Jargon, Decoded · Part 13 of 33" linking to the series page.
+    M comes from a new `planned:` field in _data/series.yml (33/8/10/9/9),
+    because site.posts only sees PUBLISHED posts and would say "Part 3 of 3"
+    on day three. Falls back to the published count if `planned` is missing
+    or lower. BUMP `planned` when a module is added to a series.
+  - Prev/next links after the body. Built from site.posts, never post_url,
+    so a not-yet-published next post cannot break the build (see the build
+    rule above). When there is no next post yet: "You're up to date — part
+    N+1 of M publishes soon"; on the last planned post: "Pick the next
+    series". Verified on first, middle and latest post.
+- TABLE OF CONTENTS (_includes/toc.html): pure Liquid (safe mode — no
+  plugin), parses the rendered <h2 id=…> tags. Auto-shows at >= 6 H2s, which
+  is the 36 longer FA/TA/MF/tax posts and NOT the 29 five-section Jargon
+  posts. Override per post with `toc: true|false`.
+- "Updated <date>" in the post header when `last_modified_at:` is set in
+  front matter (none set yet). jekyll-seo-tag and jekyll-sitemap read the
+  same key, so setting it also updates dateModified / <lastmod>. Use it when
+  a tax post's rates are re-verified.
+- GLOSSARY at /glossary/ (glossary.markdown, in the top nav). Built from
+  every published post with a `term:` front-matter key, across ALL series,
+  A–Z with letter jump links; each entry shows the post's `description:` and
+  series tag. 60 posts now carry `term:` (added by script; the 9 without one
+  are openers/closers like "Meet Desi Bites", "What TA cannot do", "Before
+  you file", plus the capstone and the FCF-forecasting post). Grows on each
+  publish date with no edits. This is the page CLAUDE.md's "link at first
+  use" rule points at — give every new concept post a `term:`.
+- DATA & METHODOLOGY page at /methodology/ (methodology.markdown, in the top
+  nav, linked from About): the rules (educational only, >= 3-month lag,
+  one cited source per dataset, derived-not-typed), fictional-vs-real
+  explained, a table of every dataset with source URL, range and the CSV
+  link, known limits, and a corrections route (email + issues on the site
+  repo). UPDATE THE TABLE when a dataset is added (e.g. the bank filing for
+  R3, a debt-fund NAV series for R5).
+- 404.html rewritten: explains that a link to an unpublished post lands
+  here until its date, and points to /series/, /glossary/, /case-study/.
+  `sitemap: false` so it stays out of sitemap.xml.
+- Top nav is now Series · Glossary · Case study · Data & methodology · About
+  · Privacy (header_pages in _config.yml).
+- NOT done, needs your account: the newsletter is still unconfigured
+  (`newsletter.action` empty), so the signup box on every post renders
+  nothing. Mailchimp or Buttondown — three config keys, notes in
+  _includes/newsletter.html.
+- Local build note: this machine has no usable Ruby (system 2.6, no
+  bundler). Builds were verified in a ruby:3.3 container via OrbStack:
+    docker run --rm -v "$PWD":/srv -w /srv -e JEKYLL_ENV=production ruby:3.3 \
+      sh -c 'bundle config set --local path vendor/bundle && bundle install && \
+             bundle exec jekyll build'
+  vendor/bundle is gitignored.
+
 DRAFT WRITTEN — "What the F&O numbers actually say" (_drafts/)
 
 - The gap flagged in review: the blog teaches RSI and MACD but never mentions

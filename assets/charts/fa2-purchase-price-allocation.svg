@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" width="100%" role="img" aria-labelledby="t d">
+<title id="t">Purchase price allocation</title>
+<desc id="d">Rs 600 Lakh paid; identifiable net assets 355; goodwill 245 (41% of the price).</desc>
+<rect width="720" height="420" fill="#ffffff"/>
+<text x="360.0" y="30.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" fill="#0b0b0b" font-weight="600" text-anchor="middle">Purchase price allocation: where the Rs 600 Lakh went</text>
+<text x="360.0" y="50.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#52514e" font-weight="normal" text-anchor="middle">Desi Bites buys Chatpata Foods, 1 October 2025 (fictional) — Rs Lakh</text>
+<text x="190.0" y="72.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#52514e" font-weight="600" text-anchor="middle">WHAT WAS PAID</text>
+<rect x="70.0" y="80.0" width="240.0" height="300.0" rx="4" fill="#cde2fb" stroke="#d8d8d8" stroke-width="1"/>
+<text x="190.0" y="224.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#0b0b0b" font-weight="normal" text-anchor="middle">Cash consideration</text>
+<text x="190.0" y="244.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#0b0b0b" font-weight="600" text-anchor="middle">600</text>
+<text x="530.0" y="72.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#52514e" font-weight="600" text-anchor="middle">WHAT WAS BOUGHT</text>
+<rect x="410.0" y="80.0" width="240.0" height="111.1" rx="4" fill="#e0b0ad" stroke="#d8d8d8" stroke-width="1"/>
+<text x="420.0" y="139.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#0b0b0b" font-weight="normal" text-anchor="start">Goodwill (the unexplained premium)</text>
+<text x="642.0" y="139.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#0b0b0b" font-weight="600" text-anchor="end">245</text>
+<rect x="410.0" y="193.1" width="240.0" height="30.3" rx="4" fill="#e8f1fc" stroke="#d8d8d8" stroke-width="1"/>
+<text x="420.0" y="212.2" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#0b0b0b" font-weight="normal" text-anchor="start">Brand (intangible, 10-yr life)</text>
+<text x="642.0" y="212.2" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#0b0b0b" font-weight="600" text-anchor="end">70</text>
+<rect x="410.0" y="225.4" width="240.0" height="30.3" rx="4" fill="#e8f1fc" stroke="#d8d8d8" stroke-width="1"/>
+<text x="420.0" y="244.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#0b0b0b" font-weight="normal" text-anchor="start">Trade receivables</text>
+<text x="642.0" y="244.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#0b0b0b" font-weight="600" text-anchor="end">70</text>
+<rect x="410.0" y="257.7" width="240.0" height="28.0" rx="4" fill="#e8f1fc" stroke="#d8d8d8" stroke-width="1"/>
+<text x="420.0" y="275.7" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#0b0b0b" font-weight="normal" text-anchor="start">Inventory</text>
+<text x="642.0" y="275.7" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#0b0b0b" font-weight="600" text-anchor="end">65</text>
+<rect x="410.0" y="287.7" width="240.0" height="90.3" rx="4" fill="#e8f1fc" stroke="#d8d8d8" stroke-width="1"/>
+<text x="420.0" y="336.8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#0b0b0b" font-weight="normal" text-anchor="start">Plant &amp; equipment (fair value)</text>
+<text x="642.0" y="336.8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#0b0b0b" font-weight="600" text-anchor="end">200</text>
+<text x="530.0" y="396.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.5" fill="#52514e" font-weight="normal" text-anchor="middle">less trade payables taken over: -50  -&gt;  identifiable net assets 355</text>
+<text x="660.0" y="134.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#b3403a" font-weight="600" text-anchor="start">41% of the price</text>
+<text x="660.0" y="149.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10" fill="#52514e" font-weight="normal" text-anchor="start">not amortised; tested</text>
+<text x="660.0" y="162.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10" fill="#52514e" font-weight="normal" text-anchor="start">for impairment yearly</text>
+<text x="360.0" y="236.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="26" fill="#52514e" font-weight="600" text-anchor="middle">=</text>
+</svg>

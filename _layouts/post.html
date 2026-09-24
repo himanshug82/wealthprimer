@@ -1,37 +1,55 @@
 ---
 layout: default
 ---
+{%- comment -%}
+Computes series_meta / series_index / series_total (see series-nav.html) for
+the header line; the same include renders the prev/next block after the body.
+{%- endcomment -%}
+{%- include series-nav.html header=true -%}
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
+    {%- if series_meta -%}
+    <p class="post-series-line">
+      <a href="{{ '/series/' | append: page.series | append: '/' | relative_url }}">{{ series_meta.title }}</a>
+      {%- if series_index > 0 %} &middot; Part {{ series_index }} of {{ series_total }}{% endif -%}
+    </p>
+    {%- endif -%}
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
     <p class="post-meta">
+      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         {{ page.date | date: date_format }}
       </time>
+      {%- if page.last_modified_at %}
+        &middot; Updated <time class="dt-updated" datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">{{ page.last_modified_at | date: date_format }}</time>
+      {%- endif -%}
       {%- if page.author -%}
-        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
+        &middot; <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
       {%- endif -%}</p>
   </header>
+
+  {%- include toc.html -%}
 
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
   </div>
 
   {%- comment -%}
-    Newsletter sits ABOVE the disclaimer on purpose: a signup buried under a
-    block of legal text is a signup nobody sees. It self-hides unless
-    `newsletter.action` is configured.
+    Order below is deliberate:
+      1. prev/next in series — the reader's next step, while they still have
+         momentum;
+      2. newsletter — ABOVE the disclaimer, because a signup buried under legal
+         text is a signup nobody sees (self-hides until configured);
+      3. disclaimer — always the last thing the post itself says;
+      4. comments — after the disclaimer, self-hides until giscus is configured.
   {%- endcomment -%}
+  {%- include series-nav.html -%}
+
   {%- include newsletter.html -%}
 
   {%- include disclaimer.html -%}
 
-  {%- comment -%}
-    Comments come AFTER the disclaimer so the disclaimer is always the last
-    thing the post itself says. Self-hides until giscus is configured.
-  {%- endcomment -%}
   {%- include comments.html -%}
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>

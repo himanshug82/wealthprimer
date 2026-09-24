@@ -1,0 +1,56 @@
+{%- comment -%}
+Previous / next post within the same series, in reading (date) order.
+
+`site.posts` only contains PUBLISHED posts (future: false), so "next" is
+naturally absent until the next post's date arrives — which is also why this
+must never use {% raw %}{% post_url %}{% endraw %} (a forward reference fails the whole build; see
+the build rule in TODO.md). When there is no next post but the series plans
+more, say so rather than leaving the reader at a dead end.
+
+Sets `series_meta`, `series_index` (1-based), `series_total` for post.html's
+header line too, so the two never disagree; include this ONCE before the header
+with `header=true` to compute, then again in the body to render.
+{%- endcomment -%}
+{%- assign series_meta = site.data.series | where: "slug", page.series | first -%}
+{%- assign in_series = site.posts | where: "series", page.series | sort: "date" -%}
+{%- assign series_index = 0 -%}
+{%- for p in in_series -%}
+  {%- if p.url == page.url -%}{%- assign series_index = forloop.index -%}{%- endif -%}
+{%- endfor -%}
+{%- assign series_total = in_series.size -%}
+{%- if series_meta.planned and series_meta.planned > series_total -%}
+  {%- assign series_total = series_meta.planned -%}
+{%- endif -%}
+{%- assign prev_i = series_index | minus: 2 -%}
+{%- assign next_i = series_index -%}
+{%- assign prev_post = nil -%}{%- assign next_post = nil -%}
+{%- if series_index > 1 -%}{%- assign prev_post = in_series[prev_i] -%}{%- endif -%}
+{%- if series_index < in_series.size -%}{%- assign next_post = in_series[next_i] -%}{%- endif -%}
+
+{%- unless include.header -%}
+{%- if series_meta and series_index > 0 -%}
+<nav class="series-nav" aria-label="Series navigation">
+  <div class="series-nav-prev">
+    {%- if prev_post -%}
+    <span class="series-nav-label">&larr; Previous in {{ series_meta.title }}</span>
+    <a href="{{ prev_post.url | relative_url }}">{{ prev_post.title | split: ":" | first | escape }}</a>
+    {%- else -%}
+    <span class="series-nav-label">This is the first post in {{ series_meta.title }}</span>
+    <a href="{{ '/series/' | append: page.series | append: '/' | relative_url }}">See the full series &rarr;</a>
+    {%- endif -%}
+  </div>
+  <div class="series-nav-next">
+    {%- if next_post -%}
+    <span class="series-nav-label">Next in {{ series_meta.title }} &rarr;</span>
+    <a href="{{ next_post.url | relative_url }}">{{ next_post.title | split: ":" | first | escape }}</a>
+    {%- elsif series_index < series_total -%}
+    <span class="series-nav-label">Next in {{ series_meta.title }}</span>
+    <span class="series-nav-soon">You're up to date — part {{ series_index | plus: 1 }} of {{ series_total }} publishes soon. <a href="{{ '/series/' | append: page.series | append: '/' | relative_url }}">Series page &rarr;</a></span>
+    {%- else -%}
+    <span class="series-nav-label">You've finished {{ series_meta.title }}</span>
+    <a href="{{ '/series/' | relative_url }}">Pick the next series &rarr;</a>
+    {%- endif -%}
+  </div>
+</nav>
+{%- endif -%}
+{%- endunless -%}

@@ -1,0 +1,35 @@
+{%- comment -%}
+Table of contents, built in pure Liquid from the rendered `content` (this runs
+in the layout, after kramdown has turned "## Heading" into <h2 id="heading">).
+Pure Liquid on purpose: the deploy runs Jekyll in SAFE MODE, so a _plugins/
+solution would work locally and be silently ignored in production (see the
+inr.html note in TODO.md).
+
+Shows only when the post has at least `toc_min` H2s (default 6). The 29
+five-section Jargon posts (definition, formula, two worked examples, mistakes)
+are short enough not to need one; the 36 longer FA/TA/MF/tax posts do. A post
+can force it either way with `toc: true` / `toc: false` in its front matter.
+{%- endcomment -%}
+{%- assign toc_min = include.min | default: 6 -%}
+{%- assign toc_parts = content | split: '<h2 ' -%}
+{%- assign toc_count = toc_parts.size | minus: 1 -%}
+{%- assign show_toc = false -%}
+{%- if page.toc == true -%}{%- assign show_toc = true -%}
+{%- elsif page.toc == false -%}{%- assign show_toc = false -%}
+{%- elsif toc_count >= toc_min -%}{%- assign show_toc = true -%}
+{%- endif -%}
+{%- if show_toc and toc_count > 0 -%}
+<nav class="post-toc" aria-label="On this page">
+  <p class="post-toc-title">On this page</p>
+  <ol>
+  {%- for part in toc_parts offset: 1 -%}
+    {%- assign head = part | split: '</h2>' | first -%}
+    {%- assign head_id = head | split: 'id="' | last | split: '"' | first -%}
+    {%- assign head_text = head | split: '>' | slice: 1, 99 | join: '>' | strip_html | strip -%}
+    {%- if head_id != '' and head_text != '' -%}
+    <li><a href="#{{ head_id }}">{{ head_text }}</a></li>
+    {%- endif -%}
+  {%- endfor -%}
+  </ol>
+</nav>
+{%- endif -%}

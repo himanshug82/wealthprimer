@@ -122,18 +122,17 @@ Being clear about the edges, in the spirit of the honest closing posts in the
 [technical analysis]({% post_url 2026-10-11-what-technical-analysis-cannot-do %}) and
 [mutual funds]({% post_url 2026-10-11-reading-a-factsheet %}) series.
 
-Later posts in this series pick up four topics this post leaves out: ESOPs
-and RSUs (employee stock options and restricted stock units), buybacks, F&O
-(futures and options) as business income, and foreign stocks with their
-disclosure rules. Beyond those, some edges stay uncovered:
+Later posts in this series pick up topics this post leaves out: ESOPs and
+RSUs (employee stock options and restricted stock units), buybacks, F&O
+(futures and options) as business income, foreign stocks and their
+disclosure rules, REITs and InvITs, bonds and SGBs, advance tax, gifts and
+clubbing, and the basics of investment income for NRIs (non-resident
+Indians). Beyond those, some edges stay uncovered:
 
-- **Non-resident taxation.** NRIs (non-resident Indians) face different
-  rules, TDS on redemptions, and potentially a double-taxation treaty.
-  Genuinely different subject.
 - **Property in detail.** Reinvestment reliefs, the transitional rate option,
   and strict deadlines. Large amounts and real complexity.
-- **Estate and gift matters.** Inheritance, gifting between relatives, and
-  how holding periods and costs carry across.
+- **Inheritance and estates.** How holding periods and costs carry across
+  when assets pass on death, and estate planning generally.
 - **Anything contested.** Notices, appeals, and disputes are not
   self-service.
 

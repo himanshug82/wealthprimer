@@ -1,0 +1,170 @@
+---
+layout: post
+title: "NFOs: why a new fund at ₹10 isn't a bargain"
+description: "What happens in a new fund offer, the SEBI rules on timing, costs and deploying the money, and a ₹10 index fund against a ₹106 one tracking the same index."
+image: /assets/og/nfos.png
+date: 2026-10-21 09:00:00 +0530
+series: mutual-funds
+term: "NFO (new fund offer)"
+---
+
+{% assign m = site.data.mf3 %}
+{% assign n = m.nfo %}
+{% assign nf = m.reg.nfo %}
+{% assign r = m.reg %}
+{% assign src = m.sources %}
+{% assign nr = n.rows[0] %}
+{% assign ur = n.rows[1] %}
+{% assign nd = n.rows[2] %}
+{% assign ud = n.rows[3] %}
+
+## What an NFO is
+
+An **NFO — new fund offer** — is the first time a mutual fund scheme sells
+units. For a short window the fund collects money at a fixed price per unit,
+usually ₹10 ([the investor page]({{ nf.sebi_investor_url }}) of SEBI, the
+Securities and Exchange Board of India, says units
+are sold "at a fixed price, usually ₹10 per unit during the NFO period").
+After the window closes, units are allotted, the fund invests the money, and
+from then on it's an ordinary fund with a daily
+[NAV]({% post_url 2026-09-25-what-a-mutual-fund-is %}) (net asset value, the
+per-unit value of the fund).
+
+The rules, from SEBI's [Master Circular for Mutual Funds]({{ r.mc26.url }})
+({{ r.mc26.date | date: "%-d %B %Y" }}) and the
+[{{ r.regs26.name }}]({{ r.regs26.url }}), in force from
+{{ r.regs26.in_force | date: "%-d %B %Y" }}:
+
+| Rule | What it says | Where |
+|---|---|---|
+| How long an NFO stays open | At least {{ nf.min_working_days }} working days, at most {{ nf.max_days }} calendar days (ELSS — equity-linked savings schemes — follow government guidelines) | Master Circular, paragraph {{ nf.mc_para }} |
+| Allotment | Units allotted, or money refunded, within {{ nf.allot_working_days }} working days of the NFO closing | Master Circular, paragraph 1.7.4 |
+| Putting the money to work | Within {{ nf.deploy_business_days }} business days of allotment, extendable by another {{ nf.deploy_extension_days }}; after that, investors must be told they can exit without an exit load | Master Circular, paragraph {{ nf.deploy_para }} (from circular {{ nf.deploy_circular }}) |
+| Who pays for the launch | "All the expenditures pertaining to launch of new fund offer till the date of allotment" are borne by the AMC (asset management company), trustees or sponsor | {{ nf.expenses_reg }} of the 2026 Regulations |
+
+That last row matters: launch costs — advertising, distribution, the offer
+documents — aren't charged to your units. An NFO isn't *more expensive* to buy
+into than an existing fund. The problem with the ₹10 isn't cost. It's the
+story told about it.
+
+## The formula
+
+The whole question comes down to the arithmetic from the
+[what a mutual fund is post]({% post_url 2026-09-25-what-a-mutual-fund-is %}):
+
+```
+Units you get       =  Amount invested ÷ NAV at purchase
+Value later         =  Units × NAV later
+
+So:  Value later    =  Amount invested × (NAV later ÷ NAV at purchase)
+```
+
+The NAV *level* cancels out. Only the percentage change in NAV matters, and
+that depends on what the portfolio does — not on whether the NAV started at
+₹10 or ₹1,000.
+
+## Worked example: a ₹10 index fund and a ₹106 one, same index
+
+In July 2021 a new Nifty 50 index fund — the Navi Nifty 50 Index Fund — came
+to market at the usual ₹10 a unit. The UTI Nifty 50 Index Fund used throughout this
+series had been tracking the same index for years, and its NAV that day was
+about {{ n.nav_ratio }} times higher. Two funds, same index, very different
+unit prices. **This post takes no view on either fund**, and the comparison
+below isn't a ranking — the point is how *little* separates them.
+
+Source: {{ src.label }} (AMFI is the Association of Mutual Funds in India), scheme codes {{ src.navi_index.regular_code }} / {{ src.navi_index.direct_code }}
+(the new fund) and {{ src.index_fund.regular_code }} / {{ src.index_fund.direct_code }} (the older one), from the new
+fund's first published NAV on {{ n.first_nav_date | date: "%-d %B %Y" }} to
+{{ src.end | date: "%-d %B %Y" }}. Historical data, for illustration only.
+
+₹1,00,000 invested in each, growth option:
+
+| Fund and plan | NAV on {{ n.first_nav_date }} | Units for ₹1,00,000 | NAV on {{ src.end }} | Value | Return |
+|---|---:|---:|---:|---:|---:|{% for x in n.rows %}
+| {{ x.label }} | ₹{{ x.nav_start }} | {% include inr.html n=x.units %} | ₹{{ x.nav_end }} | ₹{% include inr.html n=x.value %} | {{ x.return_pct }}% |{% endfor %}
+
+1. **Units differ by a factor of about {{ n.nav_ratio }}.** ₹1,00,000 bought roughly
+   {% include inr.html n=nr.units %} units of the new fund and {% include inr.html n=ur.units %} of the older one.
+2. **Values barely differ.** Regular plans ended at ₹{% include inr.html n=nr.value %} and
+   ₹{% include inr.html n=ur.value %}; direct plans at ₹{% include inr.html n=nd.value %} and
+   ₹{% include inr.html n=ud.value %}. The gaps are a few hundred rupees on a lakh, in
+   different directions for the two plans — the kind of difference that comes
+   from costs and
+   [tracking difference]({% post_url 2026-10-04-tracking-error-and-tracking-difference %}),
+   not from the unit price.
+3. **The "cheap" fund didn't grow faster.** Owning ten times as many units
+   didn't give ten times the gain. Both portfolios held the same fifty stocks,
+   so both moved with the same index.
+
+Notice also the new fund's first few NAVs: ₹{{ n.first_navs[0].nav }},
+₹{{ n.first_navs[1].nav }}, ₹{{ n.first_navs[2].nav }}. The ₹10 lasted exactly as long as the
+NFO did. The day the money was invested, the NAV started moving with the
+market, just as any other fund's does.
+
+## So what *is* different about a new fund?
+
+Not the price. These things:
+
+- **No track record of its own.** A new index fund at least has the index's
+  history. A new *active* fund has none — only the manager's record on other
+  funds, which is a different portfolio. Everything the
+  [rolling returns]({% post_url 2026-09-27-rolling-returns %}) and
+  [drawdown]({% post_url 2026-09-29-drawdown %}) posts asked you to check
+  simply doesn't exist yet.
+- **Why it's being launched.** SEBI allows only one scheme per category per
+  fund house, except index funds and ETFs (exchange-traded funds) on different indices, funds of funds
+  with different underlying funds, and sectoral or thematic funds on different
+  themes (Master Circular, paragraph 3.10.1). So a new active NFO is usually
+  one of those exceptions — often a theme — or a fund house filling a
+  category it didn't have. In our view it's worth asking why that theme is
+  being offered *now*.
+- **A small fund at first.** Expense-ratio caps fall as a scheme grows. Under
+  {{ nf.ber_reg }} of the 2026 Regulations, an actively managed open-ended
+  equity-oriented scheme may charge a base expense ratio (before statutory
+  levies) of up to {{ nf.ber_first_pct }}% on its first ₹500 crore, stepping
+  down to {{ nf.ber_last_pct }}% on assets above ₹50,000 crore. A new fund
+  starts in the top slab. What it actually charges is in the factsheet —
+  check it after launch, not just the NFO document.
+- **Money waiting to be invested.** For up to {{ nf.deploy_business_days }} business days after
+  allotment (longer with the extension) part of the money may not yet be in
+  the portfolio the fund was sold on.
+
+<details markdown="1">
+<summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
+
+Two bakeries sell the same cake. One cuts it into ten big slices at ₹100
+each. A new bakery opens next door and cuts an identical cake into a hundred
+tiny slices at ₹10 each.
+
+"Only ₹10 a slice — what a bargain!" says someone. But ₹100 buys you one big
+slice at the first shop or ten tiny slices at the second — the same amount of
+cake either way. And if cake prices go up 10% tomorrow, both bakeries' slices
+go up 10%.
+
+The only real difference is that the new bakery hasn't baked anything for
+you before.
+
+</details>
+
+## Common mistakes
+
+- **Thinking ₹10 is a "ground-floor price".** It's a starting unit size, not
+  a valuation. The table above is two funds that ended within a fraction of a
+  percent of each other despite a {{ n.nav_ratio }}× difference in NAV.
+- **Buying an NFO because an existing fund "has already gone up".** The older
+  fund's past rise is already in its NAV; it's neither a head start nor a
+  handicap for anyone buying today. The new fund starts from the *same
+  market*.
+- **Treating the launch campaign as information.** A heavily advertised NFO
+  tells you a fund house wants to raise money for that idea now. It says
+  nothing about how the idea will do.
+- **Skipping the checks because there's nothing to check.** No track record
+  is a reason for *more* caution about an active fund, not less. For a new
+  index fund, look at the index's history and the fund house's tracking
+  record on its other index funds.
+
+**Takeaway:** A new fund's ₹10 NAV is a unit size, not a price tag — the NAV
+level cancels out of every return you'll ever earn. A ₹10 Nifty 50 fund
+launched in {{ n.first_nav_date | date: "%Y" }} and a ₹{{ ur.nav_start | round }} one tracking the same index ended within a few
+hundred rupees of each other on ₹1 lakh; what a new fund really lacks is a
+track record.

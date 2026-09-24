@@ -1,11 +1,11 @@
 # TODO
 
-Current state (24 Sep 2026): **116 posts written and scheduled** across six
-series (Jargon 45 · FA 21 · TA 14 · MF 15 · Tax 13 · Risk 8). 28 are live.
-From 25 Sep the cadence is **one post per series per day**: the remaining
-Jargon, FA, TA, MF and Risk posts run 25 Sep → 17 Oct; **Tax is held** and
-runs 27 Oct → 8 Nov pending its professional read. **The written backlog
-runs out after 17 Oct** (Tax after 8 Nov) — see "Next content" below. All posts were reviewed and every P0/P1/P2 finding
+Current state (25 Sep 2026): **161 posts written and scheduled** across six
+series (Jargon 53 · FA 29 · TA 22 · MF 23 · Tax 18 · Risk 16). The cadence is
+**one post per series per day**. Scheduled through: Jargon 21 Oct · FA 23 Oct
+· TA 23 Oct · Risk 23 Oct · MF 25 Oct · **Tax held** 27 Oct → 13 Nov pending
+its professional read. **The written backlog runs out after 25 Oct** (Tax
+after 13 Nov) — the next module per series needs approving by about 10 Oct. All posts were reviewed and every P0/P1/P2 finding
 fixed — see `_review/REVIEW-2026-09-24.md`. House style and the rules every
 post must follow are in `CLAUDE.md`; this file is for what's still open and
 for how the repo works.
@@ -29,8 +29,13 @@ for how the repo works.
   reviewed, the tax posts can move earlier (rename the files; keep one per day
   and check `scripts/check_posts.py`) — and restore the nine RELINK links below.
 - **Next content (approve a roadmap):** at one post per series per day the
-  backlog runs dry after 17 Oct. A roadmap for the next module of each series
-  is being drafted for your approval before anything new is written.
+  backlog runs dry after 25 Oct (Tax 13 Nov). Pick the next module for each
+  series by ~10 Oct so it can be written and checked in time.
+- **Desi Bites' public float:** the fictional IPO left 20% public, below the
+  real 25% minimum public shareholding. The market-mechanics posts (free float,
+  18 Oct; OFS and delisting, 20 Oct) say so and use it as the teaching example.
+  Alternative: raise the IPO float in the case-study data (ripples through
+  every Desi Bites per-share figure). Decide which.
 - **About page avatar** — photo, illustration, or an SVG monogram?
 - **Decisions, whenever:** R8 personal-finance track ("Money Before Markets":
   emergency fund, EPF/PPF/NPS, term insurance vs ULIP, FDs vs debt funds, real
@@ -64,6 +69,13 @@ wording (or correct it).
 | 29 Aug 2024 intermediaries amendment "left room" for education | how finfluencers make money | 15 Oct | secondary sources |
 | Tax, from memory: property's 12.5%/20% option; business filers' one-time switch back to the new regime; CBDT condoning late filing; GAAR on round-trips; old 80C → section 123 | several tax posts | 27 Oct → 8 Nov | memory / secondary (incometaxindia.gov.in returns 403) |
 | Buyback Regime C: ₹1.25 lakh exemption, promoter definition, timing; foreign shares' exchange-rate convention | buyback taxation, foreign stocks | 6, 8 Nov | recorded as disagreements in `tax2.yml` |
+| Ex-date = record date under T+1 (inferred from NSE corporate-actions data); rights-issue rules "from April 2025" (7 or 8 April); OFS framework's current master circular; T+0 rollout status | T+1, record/ex-date, rights issues, OFS | 16–20 Oct | NSE data / secondary |
+| GSM stage mechanics ("buyer pays in full plus deposit" is inferred); "not an adverse action" confirmed only for ASM/ESM; GSM criteria after May 2026 | ASM and GSM surveillance | 21 Oct | NSE FAQs + inference |
+| Attributions: Lane (stochastic), Granville (OBV); papers cited without fetching (Bouman & Jacobsen 2002; Moskowitz, Ooi & Pedersen 2012; Jegadeesh & Titman 1993); NSE closing auction live from 3 Aug 2026 | TA honest-tests posts | 16–23 Oct | memory / citation not fetched |
+| USFDA NAI/VAI/OAI meanings, Form 483 → warning letter chain (fda.gov blocked); embedded value definition; Airtel net debt incl. leases (inferred); Bajaj Finance ALM gap limits (from its presentation, not RBI) | sector-lens posts | 20–23 Oct | secondary / inference |
+| Overseas-investment halts of Jan 2022 and 1 Apr 2024 (press reports); whether a domestic FoF uses your LRS limit; Franklin Templeton SAT stay and ₹250 cr escrow (FT disclosure only) | international funds, segregated portfolios | 20, 24 Oct | press / company disclosure |
+| SEBI → AMFI stress-test direction dated 27 Feb 2024 (an AMC policy document); "at least one SAT appeal succeeded" (SCC Online); SBI FD rates FY16–FY22 (messy SBI workbook, 4 cross-checked); deposit insurance (DICGC) and IRDAI rules left out | liquidity risk, broker risk, inflation, insurance | 17–23 Oct | secondary |
+| SGB early redemption after year five losing the exemption (no official clarification); clubbing "income on income" and loans to a spouse (case law); TRC form number under the new Rules | bonds and SGBs, gifts and clubbing, NRI basics | 10–13 Nov | case law / unconfirmed |
 
 Also: eyeball the four TA module 2 charts (`assets/charts/ta2-*.svg`) in a
 browser — never rasterised locally.
@@ -74,6 +86,15 @@ browser — never rasterised locally.
   placeholder comment was removed, but the sheet is still owed), rolling
   returns (27 Sep) and SIP/XIRR (1 Oct) — search `_posts/` for
   `GOOGLE-SHEET-TODO`. View-only, "make a copy to use"; link from each post.
+- **Superseded MF citations in existing posts:** SEBI's Master Circular for
+  Mutual Funds (27 Jun 2024) and the 1996 MF Regulations were replaced from
+  1 Apr 2026 (new Master Circular 20 Mar 2026; SEBI (Mutual Funds)
+  Regulations, 2026). The new module-3 posts cite the new ones; older MF posts
+  (notably SEBI fund categories, 14 Oct, and its clause numbers) still cite the
+  old — update before they publish.
+- **Two USD/INR series:** `usd-inr-reference-rate.csv` (RBI/FBIL; currency
+  risk, 19 Oct) and `usd-inr-fred-dexinus.csv` (Fed H.10; international funds,
+  20 Oct) differ slightly. Consider standardising on the RBI/FBIL series.
 - **Privacy page wording:** `privacy.markdown` line 15 says the 3-month lag is
   "per SEBI's guidance". Since the SEBI circular of 8 May 2026 (30 days from
   1 Jul 2026) it is our stricter house rule — reword to match `CLAUDE.md`.
@@ -160,6 +181,12 @@ browser — never rasterised locally.
 | `derive_jargon_m6.py` | `jargon_m6.yml` | Jargon module 6 |
 | `derive_tax2.py` | `tax.yml`, `tax2.yml` (with per-topic `verification` blocks) | Tax |
 | `derive_risk.py` | `risk.yml`, `risk-*.svg` | Risk |
+| `derive_jargon_m7.py` | `jargon_m7.yml` | Jargon module 7 (market mechanics) |
+| `derive_sectors.py` | `sectors.yml` (each figure with its filing URL) | FA module 4 (sector lenses) |
+| `derive_ta3.py` / `make_ta3_charts.py` | `ta3.yml` / `ta3-*.svg` (fixed random seed) | TA module 3 (honest tests) |
+| `derive_mf3.py` | `mf3.yml` | MF module 3 |
+| `derive_risk2.py` | `risk2.yml`, `risk2-*.svg` | Risk module 2 |
+| `derive_tax3.py` | `tax3.yml` (with `verification` blocks) | Tax module 3 |
 | `make_diagrams.py`, `make_fa2_diagrams.py`, `make_bank_diagrams.py`, `make_ta2_charts.py` | schematic/chart SVGs | FA, TA |
 | `make_og_cards.py` | `assets/og/*.png` (re-run when a title changes; CI's advisory `--check` flags stale cards) | every post |
 
@@ -231,4 +258,7 @@ browser — never rasterised locally.
   all 116 posts with every P0/P1/P2 fixed (`_review/REVIEW-2026-09-24.md`);
   `CLAUDE.md` updated with the lessons. Rescheduled the 88 unpublished posts
   to one per series per day (Tax held to 27 Oct).
+- 25 Sep 2026: six new modules, 45 posts — Jargon 7 market mechanics, FA 4
+  sector lenses, TA 3 honest tests, MF 3, Risk 2, Tax 3 add-ons — continuing
+  each series daily to 21–25 Oct (Tax 9–13 Nov).
 - Details of any change: `git log`.

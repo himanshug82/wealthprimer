@@ -11,24 +11,24 @@
 - slug: jargon
   title: "Jargon, Decoded"
   description: "One financial term or ratio at a time — P/E, ROCE, P/B, and the rest, explained with a worked example."
-  planned: 45   # M0-M5 (33) + M6 terms the other series lean on (12)
+  planned: 53   # M0-M5 (33) + M6 terms the other series lean on (12) + M7 market mechanics (8)
 - slug: fundamental-analysis
   title: "Fundamental Analysis — Beginner to Expert"
   description: "Reading financial statements, key ratios, and valuation basics, from first principles to DCF."
-  planned: 21   # FA-1..8 (8) + Reading between the lines (7) + Banks and NBFCs (6)
+  planned: 29   # FA-1..8 (8) + Reading between the lines (7) + Banks and NBFCs (6) + Sector lenses (8)
 - slug: technical-analysis
   title: "Technical Analysis — Zero to Hero"
   description: "Candlesticks to chart patterns — plus an honest look at what technical analysis can't tell you."
-  planned: 14   # TA-1..10 (10) + Module 2 (4)
+  planned: 22   # TA-1..10 (10) + Module 2 (4) + Honest tests (8)
 - slug: mutual-funds
   title: "Mutual Funds, Minus the Marketing"
   description: "Rolling returns, expense ratios, drawdowns, SIP myths, and how to actually read a factsheet."
-  planned: 15   # MF-1..9 (9) + Module 2 (6)
+  planned: 23   # MF-1..9 (9) + Module 2 (6) + Module 3 (8)
 - slug: tax
   title: "The Tax Side of Investing"
   description: "How capital gains, dividends and losses are actually taxed in India — mechanics first, with worked examples on real fund data."
-  planned: 13   # TAX-1..9 (9) + add-ons (4)
+  planned: 18   # TAX-1..9 (9) + add-ons (4) + module 3 (5)
 - slug: risk
   title: "Risk, Leverage and Your Own Brain"
   description: "What the F&O data says, what leverage does to a portfolio, how to size a position, and the biases that turn a temporary loss into a permanent one."
-  planned: 8
+  planned: 16   # Module 1 (8) + Module 2 (8)

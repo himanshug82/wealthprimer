@@ -15,7 +15,7 @@ of mistake only surface then:
      length Google shows, an `image` that exists in assets/og/, a `series`
      slug that exists in _data/series.yml, a valid date.
 
-Also warns (not fails) on: missing `term:` (glossary), two posts on one date,
+Also warns (not fails) on: missing `term:` (glossary), two posts from the same series on one date,
 a `{{ site.data.X }}` reference to a data file that doesn't exist, and any
 Liquid variable of the form `{{ foo.bar }}` whose root `foo` was never
 assigned in the post (catches typos in {% assign %} names).
@@ -88,7 +88,9 @@ def main():
         name = os.path.basename(path)
         text = open(path, encoding="utf-8").read()
         fm, body = front_matter(text)
-        by_date.setdefault(d, []).append(name)
+        # One post per SERIES per day is the publishing cadence, so only a
+        # clash within the same series is worth flagging.
+        by_date.setdefault((d, fm.get("series", "")), []).append(name)
 
         # --- post_url direction -------------------------------------------
         for target in POST_URL_RE.findall(body):
@@ -140,9 +142,9 @@ def main():
                 print(f"ERROR {name}: chart assets/charts/{chart} does not exist")
                 errors += 1
 
-    for d, names in sorted(by_date.items()):
+    for (d, ser), names in sorted(by_date.items()):
         if len(names) > 1:
-            print(f"WARN  {d}: {len(names)} posts share this date: {', '.join(names)}")
+            print(f"WARN  {d}: {len(names)} '{ser}' posts share this date: {', '.join(names)}")
             warnings += 1
 
     print(f"\n{len(posts)} posts checked: {errors} error(s), {warnings} warning(s)")

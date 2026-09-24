@@ -17,7 +17,7 @@ advice.*
 
 ## A SIP is not one investment
 
-A [SIP]({% post_url 2026-10-24-sips-xirr-and-timing-myths %}) — systematic investment plan, a fixed sum
+A [SIP]({% post_url 2026-10-01-sips-xirr-and-timing-myths %}) — systematic investment plan, a fixed sum
 invested every month — feels like one. One instruction, one fund, one folio,
 one line on your statement. For tax, it is nothing of the sort.
 
@@ -141,7 +141,7 @@ instalment's own purchase date, regardless of whether you're still investing.
 fund house — is a sale of one scheme and a purchase of another. It's a
 taxable event. So is moving from regular to direct plans of the same fund,
 which is worth knowing before acting on the
-[expense ratio post]({% post_url 2026-10-21-expense-ratios-direct-vs-regular %}): the ongoing saving is real, but
+[expense ratio post]({% post_url 2026-09-28-expense-ratios-direct-vs-regular %}): the ongoing saving is real, but
 the switch itself may trigger tax now.
 
 **Dividend reinvestment creates new lots.** Each reinvested payout is a fresh

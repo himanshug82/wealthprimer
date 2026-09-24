@@ -119,8 +119,8 @@ ago, through a broker that no longer exists.
 ## What this series doesn't cover
 
 Being clear about the edges, in the spirit of the honest closing posts in the
-[technical analysis]({% post_url 2026-10-17-what-technical-analysis-cannot-do %}) and
-[mutual funds]({% post_url 2026-10-26-reading-a-factsheet %}) series.
+[technical analysis]({% post_url 2026-10-11-what-technical-analysis-cannot-do %}) and
+[mutual funds]({% post_url 2026-10-11-reading-a-factsheet %}) series.
 
 Later posts in this series pick up four topics this post leaves out: ESOPs
 and RSUs (employee stock options and restricted stock units), buybacks, F&O

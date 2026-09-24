@@ -84,7 +84,7 @@ The fund NAV (net asset value, the per-unit price) history used throughout
 this blog — UTI Nifty 50 Index Fund (regular plan, growth), NAVs from AMFI
 (the Association of Mutual Funds in India), as of 31 March 2026, used for
 illustration only — contains an actual loss. A ₹{% include inr.html n=l.monthly_amount %} monthly
-[SIP]({% post_url 2026-10-24-sips-xirr-and-timing-myths %}) (systematic investment plan) started {{ l.start | date: "%-d %B %Y" }} and redeemed on {{ l.redemption_date | date: "%-d %B %Y" }} — {{ l.instalments }}
+[SIP]({% post_url 2026-10-01-sips-xirr-and-timing-myths %}) (systematic investment plan) started {{ l.start | date: "%-d %B %Y" }} and redeemed on {{ l.redemption_date | date: "%-d %B %Y" }} — {{ l.instalments }}
 instalments through the Q1 2026 decline:
 
 | | |

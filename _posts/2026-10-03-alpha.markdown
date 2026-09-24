@@ -1,0 +1,156 @@
+---
+layout: post
+title: "Alpha: the return that's left after the market is accounted for"
+description: "Alpha is return beyond what beta and the benchmark predict. Britannia's 5.6-point lead over the Nifty is 1.6 after beta; an index fund's alpha is dividends."
+image: /assets/og/alpha.png
+date: 2026-10-03 09:00:00 +0530
+series: jargon
+term: "Alpha"
+---
+
+{% assign a = site.data.jargon_m6.alpha %}
+{% assign bb = site.data.jargon_m6.beta %}
+{% assign aw = a.window | split: ' to ' %}
+
+## What alpha means
+
+**Alpha** is the return an investment earned *beyond* what you'd have expected
+given the risk it took. It's the number every active fund manager is
+implicitly claiming to produce, and the number this blog's mutual fund series
+has so far avoided using — because most of what gets called alpha is
+something else wearing the name.
+
+There are two very different things people mean by it:
+
+1. **Raw excess return** — the investment's return minus the benchmark's.
+   Simple, and usually what a factsheet or a headline means.
+2. **Jensen's alpha** — the return minus what CAPM (the Capital Asset
+   Pricing Model) says the investment
+   *should* have earned, given its [beta]({% post_url 2026-10-02-beta %}).
+   This is the one that deserves the name.
+
+The gap between the two is the whole lesson.
+
+## The formula
+
+```
+Raw excess return  =  R_investment − R_benchmark
+
+Jensen's alpha     =  R_investment − [ R_f + β × (R_benchmark − R_f) ]
+
+where  R_f  = risk-free rate
+       β    = the investment's beta against that benchmark
+```
+
+The bracket is CAPM's expected return: the risk-free rate, plus beta times
+the market's excess return. A stock with a beta of 2 that returned 20% in a
+year the market returned 10% has *no* alpha — doubling the market is exactly
+what a beta of 2 is supposed to do.
+
+## Worked example: Britannia, two years
+
+Daily closes from {{ aw[0] | date: "%-d %B %Y" }} to {{ aw[1] | date: "%-d %B %Y" }}, the same series as the [beta post]({% post_url 2026-10-02-beta %})
+(whose first daily return falls on the next trading day).
+Risk-free rate {{ a.risk_free_pct }}%, the illustrative G-Sec (Government of India
+bond) yield used throughout the
+[WACC post]({% post_url 2026-09-28-wacc-cost-of-capital %}). Historical data, for
+illustration only.
+
+| | |
+|---|---:|
+| Britannia, annualised return | {{ a.britannia_cagr_pct }}% |
+| Nifty 50 (price index), annualised | {{ a.nifty_pri_cagr_pct }}% |
+| **Raw excess return** | **{{ a.raw_excess_pp }} pp a year** |
+| Britannia's beta over the window | {{ a.beta_used }} |
+| CAPM expected return: {{ a.risk_free_pct }} + {{ a.beta_used }} × ({% include inr.html n=a.nifty_pri_cagr_pct %} − {{ a.risk_free_pct }}) | {{ a.capm_expected_pct }}% |
+| **Jensen's alpha** | **{{ a.jensen_alpha_pp }} pp a year** |
+
+Same stock, same two years: the headline says Britannia beat the market by
+{{ a.raw_excess_pp }} points a year; the risk-adjusted version says {{ a.jensen_alpha_pp }}. The difference
+is that the Nifty had a poor two years — the price index actually *fell*
+slightly — and a stock with a beta of {{ a.beta_used }} was *expected* to fall less. Most
+of the "outperformance" is just low beta doing what low beta does in a weak
+market. Reverse the market and the same low beta would have made Britannia
+look like a laggard.
+
+One honest caveat on the inputs. Both returns here are *price-only*:
+Britannia's share price and the Nifty 50 price index, with dividends left
+out, because a total return index series isn't in this post's data. That's
+the very mistake the next section warns about. In the raw comparison the two
+missing dividend streams partly cancel. In the CAPM line they don't: the
+risk-free rate is a full yield, but the market return it's compared with is
+missing its dividends, so the market's excess return is understated. Treat
+the alpha figure as rough — it illustrates the method, not a precise
+measurement.
+
+Neither figure says anything about Britannia's prospects. It's two years of
+price history, and the [beta post]({% post_url 2026-10-02-beta %}) already
+showed that the beta itself moved from {{ bb.fy25.beta }} to {{ bb.fy26.beta }} across those two years —
+so the alpha number inherits every bit of that instability.
+
+## The fake alpha in every index fund factsheet
+
+Here is a more instructive example. Take the UTI Nifty 50 Index Fund (regular plan) — a
+passive fund whose entire job is to *match* the index — and compute its
+calendar-year return minus the Nifty 50 price index:
+
+| Year | Fund | Nifty 50 (price) | Difference |
+|---|---:|---:|---:|{% for y in a.index_fund_vs_pri_years %}
+| {{ y.year }} | {{ y.fund_pct }}% | {{ y.index_pri_pct }}% | +{{ y.diff_pp }} pp |{% endfor %}
+
+Ten years, ten positive numbers, averaging **+{{ a.index_fund_vs_pri_mean_pp }} pp a year**.
+Sources: fund NAV from AMFI via mfapi.in; index from Yahoo Finance. Data to
+31 March 2026.
+
+An index fund with a decade of positive "alpha" is obviously nonsense — and it
+is, because the benchmark is wrong. The **price index (PRI)** ignores the
+dividends the fifty companies pay; the fund receives and reinvests them. That
+one-point gap is roughly the Nifty's dividend yield minus the fund's expense
+ratio. Against the **total return index (TRI)**, which includes dividends, the
+same fund would likely show a *small negative* number most years — the expense ratio
+and tracking error, which is what an index fund is supposed to show.
+
+This is exactly why the
+[benchmarks post]({% post_url 2026-10-02-benchmarks-and-comparing-like-with-like %})
+insisted on comparing like with like, and why SEBI has required funds to
+benchmark against TRI since February 2018. Before that, a lot of Indian
+active-fund "alpha" was this dividend gap.
+
+<details markdown="1">
+<summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
+
+Your friend says she's a better runner than you because she finished the race
+30 seconds ahead. But she started 30 seconds before you did. Once you account
+for the head start, she didn't beat you at all.
+
+Alpha is the finishing time *after* subtracting head starts. Beta is one head
+start (some runners just get a tailwind when the whole field does). Dividends
+the benchmark forgot to count are another.
+
+</details>
+
+## Common mistakes
+
+- **Calling excess return "alpha".** Excess return over a benchmark is a
+  fact. Alpha is that fact with the risk taken to earn it subtracted out. A
+  high-beta fund in a bull market has lots of the first and often none of the
+  second.
+- **Benchmarking against a price index.** It manufactures about a point a
+  year of alpha out of dividends. Always check whether a comparison uses PRI
+  or TRI.
+- **Reading alpha over a short window.** Two years of Britannia produced an
+  alpha estimate built on a beta that nearly doubled inside the window. Alpha
+  needs a horizon long enough for the beta to mean something, and even then
+  the standard error is usually larger than the estimate.
+- **Assuming past alpha persists.** The consistency of the index fund's
+  "alpha" above is the exception — it's a structural artefact. Genuine
+  manager alpha is hard to find at all: S&P's
+  [SPIVA India Year-End 2025 scorecard](https://www.spglobal.com/spdji/en/documents/spiva/spiva-india-scorecard-year-end-2025.pdf)
+  found about 76% of Indian active large-cap funds trailed their benchmark
+  over the ten years to December 2025. Finding it *and* expecting it to
+  continue is harder still.
+
+**Takeaway:** alpha is what's left of a return after the benchmark *and* the
+beta are accounted for. Britannia's {{ a.raw_excess_pp }}-point lead over a weak Nifty shrinks
+to {{ a.jensen_alpha_pp }} once its low beta is credited — and an index fund's decade of
+"outperformance" over the price index is dividends, not skill.

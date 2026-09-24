@@ -154,7 +154,7 @@ its date. The debt funds post later in this series covers it.
 
 The worked examples in the core posts of this series run on the real NAV (net asset
 value, a fund's per-unit price) history used in the
-[Mutual Funds series]({% post_url 2026-10-18-what-a-mutual-fund-is %}) — UTI Nifty 50 Index
+[Mutual Funds series]({% post_url 2026-09-25-what-a-mutual-fund-is %}) — UTI Nifty 50 Index
 Fund (regular plan, growth), NAVs from AMFI (the Association of Mutual Funds in
 India), as of 31 March 2026, used for illustration only — so the tax
 arithmetic sits on actual prices rather than round invented numbers.

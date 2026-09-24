@@ -50,7 +50,7 @@ the losses post later in this series.
 ## Worked example: a real gain, and real tax
 
 Using the fund NAV (net asset value, the per-unit price) history from the
-[Mutual Funds series]({% post_url 2026-10-18-what-a-mutual-fund-is %}) — UTI Nifty 50 Index Fund (regular
+[Mutual Funds series]({% post_url 2026-09-25-what-a-mutual-fund-is %}) — UTI Nifty 50 Index Fund (regular
 plan, growth), NAVs from AMFI (the Association of Mutual Funds in India), as
 of 31 March 2026, used for illustration only — a ₹{% include inr.html n=a.invested %} investment held
 comfortably past the long-term line:

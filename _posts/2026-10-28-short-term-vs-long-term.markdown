@@ -63,7 +63,7 @@ Two things worth noting.
 only if it holds at least 65% in Indian equity. Some funds you'd assume are
 equity funds — certain international funds, some hybrids, most funds of
 funds — don't clear that bar and are taxed under the other rules entirely. The
-factsheet tells you; [the post on reading one]({% post_url 2026-10-26-reading-a-factsheet %}) covers where
+factsheet tells you; [the post on reading one]({% post_url 2026-10-11-reading-a-factsheet %}) covers where
 to look.
 
 **That last row is not an oversight.** Debt funds bought from April 2023

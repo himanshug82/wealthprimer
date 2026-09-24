@@ -43,7 +43,7 @@ in the highest slab, **dividend income is taxed more heavily than long-term
 capital gains on the same shares**.
 
 This is the reasoning behind a point made back in the
-[opening mutual funds post]({% post_url 2026-10-18-what-a-mutual-fund-is %}): choosing the IDCW (income
+[opening mutual funds post]({% post_url 2026-09-25-what-a-mutual-fund-is %}): choosing the IDCW (income
 distribution cum capital withdrawal, the payout option) over growth doesn't
 create extra income. It converts what would have been a
 capital gain — taxed at {{ r.equity_ltcg_pct }}% with an exemption, and only when you choose to

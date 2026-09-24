@@ -1,0 +1,123 @@
+---
+layout: post
+title: "Beta: how much a stock moves when the market moves"
+description: "Beta is how much a stock tends to move for a 1% move in the index. Britannia's two-year beta is 0.42, but it nearly doubled between the two years inside it."
+image: /assets/og/beta.png
+date: 2026-11-26 09:00:00 +0530
+series: jargon
+term: "Beta"
+---
+
+{% assign b = site.data.jargon_m6.beta %}
+{% assign f = b.full %}
+
+## What beta means
+
+**Beta** is a stock's sensitivity to the overall market. A beta of 1.0 says the
+stock has tended to move one-for-one with the index; 1.5 says it has swung
+about half again as hard in both directions; 0.5 says it has moved about half
+as much. It is the number the [WACC post]({% post_url 2026-10-03-wacc-cost-of-capital %})
+plugged into CAPM (the Capital Asset Pricing Model) to get a cost of equity,
+and asked you to accept as "illustrative". This post shows where it comes from
+and why "illustrative" was the honest word.
+
+Two things beta is *not*. It isn't a measure of how risky a business is in
+the sense of whether it might go bust — a stable company with a jumpy share
+price has a high beta. And it isn't stable: it's estimated from past prices,
+and past prices change their minds.
+
+## The formula
+
+```
+Beta = Covariance(stock returns, market returns) / Variance(market returns)
+
+     = Correlation(stock, market) × ( σ_stock / σ_market )
+```
+
+The second line is the useful one. Beta is *correlation* (how reliably the
+two move together) multiplied by *relative volatility* (how much bigger the
+stock's swings are). A stock can have a low beta because it doesn't follow the
+market, or because it follows it but barely moves. They're different
+situations with the same number.
+
+In practice you regress the stock's daily (or weekly, or monthly) returns on
+the index's returns; beta is the slope of that line.
+
+## Worked example: Britannia against the Nifty 50
+
+Daily closes for Britannia (NSE: BRITANNIA) and the Nifty 50 price index,
+{{ f.start }} to {{ f.end }}. Sources: [Yahoo Finance]({{ b.source_stock }}) for
+both series. Historical data, for illustration only.
+
+| | Full two years | {{ b.fy25.window }} | {{ b.fy26.window }} |
+|---|---:|---:|---:|
+| Trading days | {{ f.days }} | {{ b.fy25.days }} | {{ b.fy26.days }} |
+| Correlation with Nifty | {{ f.correlation }} | {{ b.fy25.correlation }} | {{ b.fy26.correlation }} |
+| Stock volatility (annualised) | {{ f.stock_vol_pct }}% | {{ b.fy25.stock_vol_pct }}% | {{ b.fy26.stock_vol_pct }}% |
+| Index volatility (annualised) | {{ f.index_vol_pct }}% | {{ b.fy25.index_vol_pct }}% | {{ b.fy26.index_vol_pct }}% |
+| **Beta** | **{{ f.beta }}** | **{{ b.fy25.beta }}** | **{{ b.fy26.beta }}** |
+| R² (how much the index explains) | {{ f.r_squared }} | {{ b.fy25.r_squared }} | {{ b.fy26.r_squared }} |
+
+Check the identity: {{ f.correlation }} × ({{ f.stock_vol_pct }} / {{ f.index_vol_pct }}) = {{ b.identity_check }}. Same
+answer as the regression, which is the point — beta *is* that product.
+
+Three things worth reading off this table.
+
+**Britannia is a low-beta stock**, at {{ f.beta }} over the full window. That fits the
+textbook: a biscuit company's sales don't swing with the economic cycle the
+way a steel mill's do, so its shares tend not to swing with the index either.
+
+**Beta is unstable.** Split the same two years in half and you get {{ b.fy25.beta }} in
+one year and {{ b.fy26.beta }} in the next — the second is nearly double the first. Nothing
+about the business changed that much. The estimate did. Measured on weekly
+returns instead of daily, the full-window beta comes out at {{ b.weekly_full.beta }}. Same
+stock, same two years, three defensible numbers between {{ b.fy25.beta }} and {{ b.weekly_full.beta }}.
+
+**The index explains very little.** An R² of {{ f.r_squared }} means the Nifty's daily
+move accounts for about {{ f.r_squared | times: 100 | round }}% of Britannia's daily move. The other
+{{ 1 | minus: f.r_squared | times: 100 | round }}%-odd is the stock doing its own thing — results,
+input costs, a competitor's price cut. For a large, liquid stock that is
+normal, and it is why beta is a statement about *tendency*, not a prediction
+for any given day.
+
+The [WACC post]({% post_url 2026-10-03-wacc-cost-of-capital %}) used a beta of
+{{ b.wacc_post_illustrative_beta }} for Desi Bites, a fictional small-cap. That's a reasonable
+convention for a small packaged-foods company; it is not something you could
+measure, because Desi Bites has no price history. Even for Britannia, which
+has plenty, the table above shows why any single beta deserves a range around
+it.
+
+<details markdown="1">
+<summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
+
+Imagine everyone in your class jumps when the teacher shouts "jump!". Beta is
+how high *you* jump compared to the class average. If the class jumps 10 cm
+and you jump 15 cm every time, your beta is 1.5. If you jump 4 cm, it's 0.4.
+
+But here's the catch: if you sometimes jump high and sometimes don't bother,
+someone measuring you this week might get a completely different number from
+someone measuring you next month. That's what happened to Britannia's number
+in the table.
+
+</details>
+
+## Common mistakes
+
+- **Treating beta as a fixed property of a company.** It's an estimate from a
+  window of past prices. Change the window or the frequency and it changes —
+  here, from {{ b.fy25.beta }} to {{ b.fy26.beta }} on adjacent years.
+- **Reading low beta as low risk.** Beta only captures the market-wide part
+  of the movement. A stock with a beta of 0.4 and an R² of {{ f.r_squared }} has most of
+  its risk in the part beta *doesn't* measure.
+- **Plugging a two-decimal beta into CAPM and reporting the cost of equity to
+  two decimals.** The input has one significant figure of confidence; the
+  output can't have more. This is why the
+  [sensitivity post]({% post_url 2026-10-06-margin-of-safety-and-sensitivity %})
+  exists.
+- **Comparing betas measured against different indices.** A beta against the
+  Nifty 50 and one against a small-cap index aren't the same quantity.
+
+**Takeaway:** Beta is correlation times relative volatility — how much a stock
+has tended to move for a 1% move in the index. Britannia's is {{ f.beta }} over two
+years, but {{ b.fy25.beta }} in one of those years and {{ b.fy26.beta }} in the other, which is roughly
+all you need to know about treating any beta as a precise number.

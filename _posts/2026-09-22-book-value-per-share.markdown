@@ -5,6 +5,7 @@ description: "What each share is worth on the books. Desi Bites lists on the exc
 image: /assets/og/book-value-per-share.png
 date: 2026-09-22 09:00:00 +0530
 series: jargon
+term: "Book value per share"
 ---
 
 {% assign listing = site.data.case_study.listing %}

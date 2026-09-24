@@ -5,6 +5,7 @@ description: "Inventory, debtor and creditor days combined into one number: how 
 image: /assets/og/cash-conversion-cycle.png
 date: 2026-09-10 09:00:00 +0530
 series: jargon
+term: "Cash conversion cycle"
 ---
 
 {% assign db_r = site.data.case_study.ratios.FY25 %}

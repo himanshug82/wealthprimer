@@ -5,6 +5,7 @@ description: "The expense ratio is deducted from NAV daily, so you never see it 
 image: /assets/og/expense-ratios-direct-vs-regular.png
 date: 2026-10-21 09:00:00 +0530
 series: mutual-funds
+term: "Expense ratio (direct vs regular)"
 ---
 
 {% assign mf = site.data.mf %}

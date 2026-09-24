@@ -5,6 +5,7 @@ description: "The same index fund returned 2.6% and 23.9% a year over five-year 
 image: /assets/og/point-to-point-returns.png
 date: 2026-10-19 09:00:00 +0530
 series: mutual-funds
+term: "Point-to-point returns (CAGR)"
 ---
 
 {% assign mf = site.data.mf %}

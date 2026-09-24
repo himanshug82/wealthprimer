@@ -5,6 +5,7 @@ description: "A DCF gives a number to two decimals and supports a range. Sensiti
 image: /assets/og/margin-of-safety-and-sensitivity.png
 date: 2026-10-06 09:00:00 +0530
 series: fundamental-analysis
+term: "Margin of safety"
 ---
 
 {% assign dcf = site.data.case_study.dcf %}

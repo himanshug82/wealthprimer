@@ -5,6 +5,7 @@ description: "Twelve months for listed equity, twenty-four for most other assets
 image: /assets/og/short-term-vs-long-term.png
 date: 2026-10-28 09:00:00 +0530
 series: tax
+term: "STCG and LTCG (capital gains)"
 ---
 
 {% assign t = site.data.tax %}

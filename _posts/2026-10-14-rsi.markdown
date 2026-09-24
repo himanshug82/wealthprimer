@@ -5,6 +5,7 @@ description: "RSI measures how one-sided the last fourteen sessions were. Wilder
 image: /assets/og/rsi.png
 date: 2026-10-14 09:00:00 +0530
 series: technical-analysis
+term: "RSI (relative strength index)"
 ---
 
 {% assign ta = site.data.ta %}

@@ -5,6 +5,7 @@ description: "Open, high, low and close packed into a single bar. How to read ca
 image: /assets/og/reading-a-candlestick-chart.png
 date: 2026-10-09 09:00:00 +0530
 series: technical-analysis
+term: "Candlestick chart"
 ---
 
 {% assign ta = site.data.ta %}

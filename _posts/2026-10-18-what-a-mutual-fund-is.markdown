@@ -5,6 +5,7 @@ description: "Units, NAV, AMCs, and why a ₹10 NAV is not cheaper than a ₹400
 image: /assets/og/what-a-mutual-fund-is.png
 date: 2026-10-18 09:00:00 +0530
 series: mutual-funds
+term: "NAV (net asset value)"
 ---
 
 {% assign mf = site.data.mf %}

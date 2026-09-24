@@ -5,6 +5,7 @@ description: "Out of every rupee of sales, how much survives the direct cost of 
 image: /assets/og/gross-margin.png
 date: 2026-08-26 09:00:00 +0530
 series: jargon
+term: "Gross margin"
 ---
 
 {% assign db25 = site.data.case_study.income_statement.FY25 %}

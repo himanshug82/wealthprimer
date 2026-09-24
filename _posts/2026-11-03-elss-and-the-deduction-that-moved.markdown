@@ -5,6 +5,7 @@ description: "The ₹1.5 lakh deduction still exists, but only in the old regime
 image: /assets/og/elss-and-the-deduction-that-moved.png
 date: 2026-11-03 09:00:00 +0530
 series: tax
+term: "ELSS"
 ---
 
 {% assign t = site.data.tax %}

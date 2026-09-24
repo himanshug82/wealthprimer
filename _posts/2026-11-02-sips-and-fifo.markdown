@@ -5,6 +5,7 @@ description: "One redemption, sixty tax lots. Why each SIP instalment is a separ
 image: /assets/og/sips-and-fifo.png
 date: 2026-11-02 09:00:00 +0530
 series: tax
+term: "FIFO (tax lots)"
 ---
 
 {% assign t = site.data.tax %}

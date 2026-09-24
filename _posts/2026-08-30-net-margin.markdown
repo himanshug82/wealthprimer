@@ -5,6 +5,7 @@ description: "Net margin is what survives every single cost, including interest 
 image: /assets/og/net-margin.png
 date: 2026-08-30 09:00:00 +0530
 series: jargon
+term: "Net margin"
 ---
 
 {% assign db25 = site.data.case_study.income_statement.FY25 %}

@@ -1,25 +1,27 @@
 ---
 permalink: /404.html
 layout: page
+title: "Page not found"
+sitemap: false
 ---
 
 <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
+  .notfound { max-width: 600px; margin: 10px auto; text-align: center; }
+  .notfound h1 { margin: 30px 0 10px; font-size: 4em; line-height: 1; letter-spacing: -1px; }
+  .notfound-links { text-align: left; display: inline-block; margin-top: 1em; }
 </style>
 
-<div class="container">
+<div class="notfound">
   <h1>404</h1>
-
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+  <p><strong>That page isn't here.</strong></p>
+  <p>
+    Posts publish on a schedule, so a link to a post that hasn't gone live yet
+    lands here until its date arrives. Otherwise the address may have a typo.
+  </p>
+  <ul class="notfound-links">
+    <li><a href="{{ '/series/' | relative_url }}">Browse the learning series</a> — every post, in reading order</li>
+    <li><a href="{{ '/glossary/' | relative_url }}">Look up a term in the glossary</a> — P/E, ROCE, drawdown, XIRR…</li>
+    <li><a href="{{ '/case-study/' | relative_url }}">The Desi Bites case study</a> — the numbers behind the ratio posts</li>
+    <li><a href="{{ '/' | relative_url }}">Home</a></li>
+  </ul>
 </div>

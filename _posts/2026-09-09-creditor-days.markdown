@@ -5,6 +5,7 @@ description: "How long a company takes to pay its own suppliers, and why stretch
 image: /assets/og/creditor-days.png
 date: 2026-09-09 09:00:00 +0530
 series: jargon
+term: "Creditor days (payable days)"
 ---
 
 {% assign db_bs25 = site.data.case_study.balance_sheet.FY25 %}

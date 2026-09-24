@@ -5,6 +5,7 @@ description: "Profit sliced into one share's worth. Why diluted and undiluted EP
 image: /assets/og/eps.png
 date: 2026-09-23 09:00:00 +0530
 series: jargon
+term: "EPS (earnings per share)"
 ---
 
 {% assign listing = site.data.case_study.listing %}

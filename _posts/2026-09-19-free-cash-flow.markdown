@@ -5,6 +5,7 @@ description: "After running the business and paying for capex, how much cash is 
 image: /assets/og/free-cash-flow.png
 date: 2026-09-19 09:00:00 +0530
 series: jargon
+term: "Free cash flow (FCF)"
 ---
 
 {% assign db_cf25 = site.data.case_study.cash_flow.FY25 %}

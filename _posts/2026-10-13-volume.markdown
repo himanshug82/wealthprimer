@@ -5,6 +5,7 @@ description: "Price says where buyers and sellers agreed; volume says how many w
 image: /assets/og/volume.png
 date: 2026-10-13 09:00:00 +0530
 series: technical-analysis
+term: "Volume"
 ---
 
 {% assign ta = site.data.ta %}

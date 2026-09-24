@@ -5,6 +5,7 @@ description: "An uptrend has a definition, not a mood: higher highs and higher l
 image: /assets/og/trend-lines.png
 date: 2026-10-11 09:00:00 +0530
 series: technical-analysis
+term: "Trend lines"
 ---
 
 {% assign ta = site.data.ta %}

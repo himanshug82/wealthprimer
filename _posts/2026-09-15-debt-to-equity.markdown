@@ -5,6 +5,7 @@ description: "How much of a business runs on borrowed money. D/E, why this serie
 image: /assets/og/debt-to-equity.png
 date: 2026-09-15 09:00:00 +0530
 series: jargon
+term: "Debt-to-equity"
 ---
 
 {% assign db_bs25 = site.data.case_study.balance_sheet.FY25 %}

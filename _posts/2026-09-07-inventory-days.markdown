@@ -5,6 +5,7 @@ description: "How many days of stock a company sits on before it sells. Inventor
 image: /assets/og/inventory-days.png
 date: 2026-09-07 09:00:00 +0530
 series: jargon
+term: "Inventory days"
 ---
 
 {% assign db_bs25 = site.data.case_study.balance_sheet.FY25 %}

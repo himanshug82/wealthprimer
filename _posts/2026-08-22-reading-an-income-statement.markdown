@@ -5,6 +5,7 @@ description: "The P&L is a waterfall from revenue down to profit. Every stopping
 image: /assets/og/reading-an-income-statement.png
 date: 2026-08-22 09:00:00 +0530
 series: jargon
+term: "Income statement (P&L)"
 ---
 
 {% assign is = site.data.case_study.income_statement.FY25 %}

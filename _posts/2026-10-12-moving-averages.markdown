@@ -5,6 +5,7 @@ description: "A moving average smooths price into something readable, and the pr
 image: /assets/og/moving-averages.png
 date: 2026-10-12 09:00:00 +0530
 series: technical-analysis
+term: "Moving averages (SMA, EMA)"
 ---
 
 {% assign ta = site.data.ta %}

@@ -5,6 +5,7 @@ description: "The pattern vocabulary is worth knowing and worth being sceptical 
 image: /assets/og/chart-patterns.png
 date: 2026-10-16 09:00:00 +0530
 series: technical-analysis
+term: "Chart patterns"
 ---
 
 {% assign ta = site.data.ta %}

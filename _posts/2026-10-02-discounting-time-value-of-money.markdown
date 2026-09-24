@@ -5,6 +5,7 @@ description: "Why a rupee in five years is worth less than a rupee today. Presen
 image: /assets/og/discounting-time-value-of-money.png
 date: 2026-10-02 09:00:00 +0530
 series: fundamental-analysis
+term: "Discounting (time value of money)"
 ---
 
 ## The one idea the rest of valuation is built on

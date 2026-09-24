@@ -89,7 +89,9 @@ rss: RSS
 # the individual series pages are reached from /series/, not the top nav.
 header_pages:
   - series.markdown
+  - glossary.markdown
   - case-study.markdown
+  - methodology.markdown
   - about.markdown
   - privacy.markdown
 

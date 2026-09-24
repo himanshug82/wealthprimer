@@ -5,6 +5,7 @@ description: "How much revenue a company generates per rupee of assets. Asset tu
 image: /assets/og/asset-turnover.png
 date: 2026-09-11 09:00:00 +0530
 series: jargon
+term: "Asset turnover"
 ---
 
 {% assign db_bs24 = site.data.case_study.balance_sheet.FY24 %}

@@ -5,6 +5,7 @@ description: "How many rupees the market pays for each rupee of accounting net w
 image: /assets/og/price-to-book.png
 date: 2026-09-25 09:00:00 +0530
 series: jargon
+term: "P/B (price-to-book)"
 ---
 
 {% assign listing = site.data.case_study.listing %}

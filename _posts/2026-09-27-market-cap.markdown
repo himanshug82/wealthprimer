@@ -5,6 +5,7 @@ description: "Price times shares outstanding: the number behind every large-cap,
 image: /assets/og/market-cap.png
 date: 2026-09-27 09:00:00 +0530
 series: jargon
+term: "Market cap (market capitalisation)"
 ---
 
 {% assign listing = site.data.case_study.listing %}

@@ -5,6 +5,7 @@ description: "ROE asks what shareholders' own money earned this year. The formul
 image: /assets/og/roe.png
 date: 2026-09-01 09:00:00 +0530
 series: jargon
+term: "ROE (return on equity)"
 ---
 
 {% assign db_bs24 = site.data.case_study.balance_sheet.FY24 %}

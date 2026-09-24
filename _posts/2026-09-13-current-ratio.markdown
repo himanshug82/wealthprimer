@@ -5,6 +5,7 @@ description: "Can short-term assets cover short-term bills? The current ratio, w
 image: /assets/og/current-ratio.png
 date: 2026-09-13 09:00:00 +0530
 series: jargon
+term: "Current ratio"
 ---
 
 {% assign db_bs25 = site.data.case_study.balance_sheet.FY25 %}

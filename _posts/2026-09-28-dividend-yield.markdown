@@ -5,6 +5,7 @@ description: "The cash a share pays back each year as a percentage of its price.
 image: /assets/og/dividend-yield.png
 date: 2026-09-28 09:00:00 +0530
 series: jargon
+term: "Dividend yield"
 ---
 
 {% assign listing = site.data.case_study.listing %}

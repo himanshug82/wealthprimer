@@ -5,6 +5,7 @@ description: "Terminal value is usually most of a DCF's answer. The perpetuity g
 image: /assets/og/terminal-value-and-the-full-dcf.png
 date: 2026-10-05 09:00:00 +0530
 series: fundamental-analysis
+term: "DCF (discounted cash flow) and terminal value"
 ---
 
 {% assign dcf = site.data.case_study.dcf %}

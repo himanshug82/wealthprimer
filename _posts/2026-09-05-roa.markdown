@@ -5,6 +5,7 @@ description: "ROA measures the profit a company squeezes out of everything it ow
 image: /assets/og/roa.png
 date: 2026-09-05 09:00:00 +0530
 series: jargon
+term: "ROA (return on assets)"
 ---
 
 {% assign db_bs24 = site.data.case_study.balance_sheet.FY24 %}

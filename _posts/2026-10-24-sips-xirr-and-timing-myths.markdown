@@ -5,6 +5,7 @@ description: "Why a SIP needs XIRR rather than a simple return, what rupee cost 
 image: /assets/og/sips-xirr-and-timing-myths.png
 date: 2026-10-24 09:00:00 +0530
 series: mutual-funds
+term: "XIRR and SIP returns"
 ---
 
 {% assign mf = site.data.mf %}

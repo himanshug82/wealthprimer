@@ -5,6 +5,7 @@ description: "A balance sheet is a photograph, not a video. What a company owns,
 image: /assets/og/reading-a-balance-sheet.png
 date: 2026-08-20 09:00:00 +0530
 series: jargon
+term: "Balance sheet"
 ---
 
 {% assign bs = site.data.case_study.balance_sheet.FY25 %}

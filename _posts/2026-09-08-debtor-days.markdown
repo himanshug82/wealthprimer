@@ -5,6 +5,7 @@ description: "Once a sale is made on credit, how long until the cash actually ar
 image: /assets/og/debtor-days.png
 date: 2026-09-08 09:00:00 +0530
 series: jargon
+term: "Debtor days (receivable days)"
 ---
 
 {% assign db_bs25 = site.data.case_study.balance_sheet.FY25 %}

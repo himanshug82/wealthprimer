@@ -5,6 +5,7 @@ description: "Current assets minus current liabilities: the rupee cushion betwee
 image: /assets/og/net-working-capital.png
 date: 2026-09-12 09:00:00 +0530
 series: jargon
+term: "Net working capital"
 ---
 
 {% assign db_bs25 = site.data.case_study.balance_sheet.FY25 %}

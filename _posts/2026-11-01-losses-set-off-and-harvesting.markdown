@@ -5,6 +5,7 @@ description: "A capital loss is an asset for tax purposes. Which losses offset w
 image: /assets/og/losses-set-off-and-harvesting.png
 date: 2026-11-01 09:00:00 +0530
 series: tax
+term: "Set-off, carry-forward and tax-loss harvesting"
 ---
 
 {% assign t = site.data.tax %}

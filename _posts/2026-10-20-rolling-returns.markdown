@@ -5,6 +5,7 @@ description: "Rolling returns compute the outcome from every possible start date
 image: /assets/og/rolling-returns.png
 date: 2026-10-20 09:00:00 +0530
 series: mutual-funds
+term: "Rolling returns"
 ---
 
 {% assign mf = site.data.mf %}

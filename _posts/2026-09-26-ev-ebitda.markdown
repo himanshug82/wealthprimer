@@ -5,6 +5,7 @@ description: "Pricing the whole business, equity and debt together and net of ca
 image: /assets/og/ev-ebitda.png
 date: 2026-09-26 09:00:00 +0530
 series: jargon
+term: "EV/EBITDA"
 ---
 
 {% assign listing = site.data.case_study.listing %}

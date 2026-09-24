@@ -5,6 +5,7 @@ description: "Profit is an accounting opinion; cash is a fact. How the three sec
 image: /assets/og/reading-a-cash-flow-statement.png
 date: 2026-08-24 09:00:00 +0530
 series: jargon
+term: "Cash flow statement"
 ---
 
 {% assign cf = site.data.case_study.cash_flow.FY25 %}

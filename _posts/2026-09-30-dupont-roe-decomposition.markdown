@@ -5,6 +5,7 @@ description: "DuPont splits ROE into margin, asset turnover and leverage, turnin
 image: /assets/og/dupont-roe-decomposition.png
 date: 2026-09-30 09:00:00 +0530
 series: fundamental-analysis
+term: "DuPont decomposition"
 ---
 
 {% assign db = site.data.case_study.dupont.FY25 %}

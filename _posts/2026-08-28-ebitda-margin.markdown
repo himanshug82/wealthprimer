@@ -5,6 +5,7 @@ description: "EBITDA margin isolates the core operating business before interest
 image: /assets/og/ebitda-margin.png
 date: 2026-08-28 09:00:00 +0530
 series: jargon
+term: "EBITDA margin"
 ---
 
 {% assign db25 = site.data.case_study.income_statement.FY25 %}

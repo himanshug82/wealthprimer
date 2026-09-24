@@ -5,6 +5,7 @@ description: "Section by section through a real mutual fund factsheet: holdings,
 image: /assets/og/reading-a-factsheet.png
 date: 2026-10-26 09:00:00 +0530
 series: mutual-funds
+term: "Factsheet"
 ---
 
 {% assign mf = site.data.mf %}

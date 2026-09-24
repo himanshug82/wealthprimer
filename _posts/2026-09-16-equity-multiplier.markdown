@@ -5,6 +5,7 @@ description: "Total assets divided by equity: how far an asset base is levered a
 image: /assets/og/equity-multiplier.png
 date: 2026-09-16 09:00:00 +0530
 series: jargon
+term: "Equity multiplier"
 ---
 
 {% assign db_bs25 = site.data.case_study.balance_sheet.FY25 %}

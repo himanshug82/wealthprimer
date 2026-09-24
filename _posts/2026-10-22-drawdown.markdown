@@ -5,6 +5,7 @@ description: "Not just how far a fund fell, but how long you waited to get back.
 image: /assets/og/drawdown.png
 date: 2026-10-22 09:00:00 +0530
 series: mutual-funds
+term: "Drawdown"
 ---
 
 {% assign mf = site.data.mf %}

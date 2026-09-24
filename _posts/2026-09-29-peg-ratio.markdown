@@ -5,6 +5,7 @@ description: "PEG divides P/E by the growth rate to ask whether a multiple is ju
 image: /assets/og/peg-ratio.png
 date: 2026-09-29 09:00:00 +0530
 series: jargon
+term: "PEG ratio"
 ---
 
 {% assign listing = site.data.case_study.listing %}

@@ -5,6 +5,7 @@ description: "The acid test: coverage once inventory is stripped out entirely. W
 image: /assets/og/quick-ratio.png
 date: 2026-09-14 09:00:00 +0530
 series: jargon
+term: "Quick ratio"
 ---
 
 {% assign db_bs25 = site.data.case_study.balance_sheet.FY25 %}

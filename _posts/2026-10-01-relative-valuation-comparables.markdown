@@ -5,6 +5,7 @@ description: "Valuing a company against its peers. How multiples-based valuation
 image: /assets/og/relative-valuation-comparables.png
 date: 2026-10-01 09:00:00 +0530
 series: fundamental-analysis
+term: "Comparables (relative valuation)"
 ---
 
 {% assign listing = site.data.case_study.listing %}

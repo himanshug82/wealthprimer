@@ -5,6 +5,7 @@ description: "Both are simply added to your income and taxed at your slab rate. 
 image: /assets/og/dividends-and-interest.png
 date: 2026-10-31 09:00:00 +0530
 series: tax
+term: "Dividend and interest taxation (TDS)"
 ---
 
 {% assign t = site.data.tax %}

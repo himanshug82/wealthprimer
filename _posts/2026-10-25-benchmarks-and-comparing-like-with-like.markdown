@@ -5,6 +5,7 @@ description: "A benchmark decides what a return means. Price return versus total
 image: /assets/og/benchmarks-and-comparing-like-with-like.png
 date: 2026-10-25 09:00:00 +0530
 series: mutual-funds
+term: "Benchmark (TRI vs PRI)"
 ---
 
 {% assign mf = site.data.mf %}

@@ -5,6 +5,7 @@ description: "Why price stalls at roughly the same levels again and again. Drawi
 image: /assets/og/support-and-resistance.png
 date: 2026-10-10 09:00:00 +0530
 series: technical-analysis
+term: "Support and resistance"
 ---
 
 {% assign ta = site.data.ta %}

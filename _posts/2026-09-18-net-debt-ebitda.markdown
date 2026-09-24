@@ -5,6 +5,7 @@ description: "How many years of operating profit it would take to clear the debt
 image: /assets/og/net-debt-ebitda.png
 date: 2026-09-18 09:00:00 +0530
 series: jargon
+term: "Net debt/EBITDA"
 ---
 
 {% assign db_bs25 = site.data.case_study.balance_sheet.FY25 %}

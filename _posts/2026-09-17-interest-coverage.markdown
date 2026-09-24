@@ -5,6 +5,7 @@ description: "Whatever the debt load, can operating profit comfortably pay the i
 image: /assets/og/interest-coverage.png
 date: 2026-09-17 09:00:00 +0530
 series: jargon
+term: "Interest coverage"
 ---
 
 {% assign db_is25 = site.data.case_study.income_statement.FY25 %}

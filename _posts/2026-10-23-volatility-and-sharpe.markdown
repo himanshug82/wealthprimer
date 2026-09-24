@@ -5,6 +5,7 @@ description: "Two funds return 12% very differently. Standard deviation as a mea
 image: /assets/og/volatility-and-sharpe.png
 date: 2026-10-23 09:00:00 +0530
 series: mutual-funds
+term: "Sharpe ratio and volatility"
 ---
 
 {% assign mf = site.data.mf %}

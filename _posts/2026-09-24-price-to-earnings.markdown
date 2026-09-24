@@ -5,6 +5,7 @@ description: "How many years of current earnings the market is charging for. The
 image: /assets/og/price-to-earnings.png
 date: 2026-09-24 09:00:00 +0530
 series: jargon
+term: "P/E (price-to-earnings)"
 ---
 
 {% assign listing = site.data.case_study.listing %}

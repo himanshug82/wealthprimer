@@ -5,6 +5,7 @@ description: "What share of revenue a company must plough back into plant and eq
 image: /assets/og/capex-intensity.png
 date: 2026-09-21 09:00:00 +0530
 series: jargon
+term: "Capex intensity"
 ---
 
 {% assign db_cf25 = site.data.case_study.cash_flow.FY25 %}

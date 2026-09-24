@@ -21,6 +21,11 @@ here as a fellow learner's notes, not advice. See the
 [privacy & disclaimer policy]({{ '/privacy/' | relative_url }}) for the full
 version.
 
+Every number on this blog is sourced and lagged, and most are derived by
+script from committed data files rather than typed in — the
+[data & methodology page]({{ '/methodology/' | relative_url }}) lists each
+dataset, its source and the rules the posts follow.
+
 ## Elsewhere
 
 - Twitter/X: [@wealthprimer_in](https://twitter.com/wealthprimer_in)

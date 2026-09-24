@@ -5,6 +5,7 @@ description: "Where the discount rate comes from. Cost of equity via CAPM, cost 
 image: /assets/og/wacc-cost-of-capital.png
 date: 2026-10-03 09:00:00 +0530
 series: fundamental-analysis
+term: "WACC (weighted average cost of capital)"
 ---
 
 {% assign w = site.data.case_study.dcf.wacc %}

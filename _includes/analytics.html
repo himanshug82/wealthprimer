@@ -1,18 +1,35 @@
 {%- comment -%}
-GoatCounter. Renders ONLY in production and ONLY when `goatcounter:` is set in
-_config.yml, so local `jekyll serve` and a half-configured site stay clean.
+Analytics. Two independent, optional tools; each renders ONLY in production
+(actions/jekyll-build-pages sets JEKYLL_ENV=production) and ONLY when its key
+in _config.yml is non-empty, so local `jekyll serve` and a half-configured site
+stay clean. /privacy/ reads the SAME keys, so turning a tool on here turns its
+disclosure on there in the same commit.
 
-Chosen over GA4 deliberately: no cookies, no cross-site identifiers, nothing
-that needs a consent banner — which is what lets /privacy/ keep saying this
-site sets no cookies. It is still a third-party request to gc.zgo.at, and the
-privacy page says so (conditionally, on the same config key as this include —
-turn analytics on and the disclosure turns on with it).
+1. Google Analytics 4 — `google_analytics: "G-XXXXXXXXXX"`.
+   Standard gtag.js snippet. GA4 sets first-party cookies (_ga, _ga_*) and
+   anonymises IP addresses by default (there is no anonymize_ip switch in GA4;
+   it is always on). Google Signals / ads personalisation are switched OFF
+   below so the site never contributes to cross-site ad profiles — keep it
+   that way; the privacy page states it as fact.
 
-Setup: create a site at goatcounter.com, then set its subdomain code — the
-"CODE" in https://CODE.goatcounter.com — as `goatcounter:` in _config.yml.
-Do NOT paste the full URL, just the code.
+2. GoatCounter — `goatcounter: "CODE"` (the "CODE" in https://CODE.goatcounter.com).
+   Cookie-free pageview counter, kept as a lightweight cross-check for GA4.
 {%- endcomment -%}
-{%- if jekyll.environment == 'production' and site.goatcounter -%}
+{%- if jekyll.environment == 'production' -%}
+{%- if site.google_analytics and site.google_analytics != '' -%}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ site.google_analytics }}', {
+    allow_google_signals: false,
+    allow_ad_personalization_signals: false
+  });
+</script>
+{%- endif -%}
+{%- if site.goatcounter and site.goatcounter != '' -%}
 <script data-goatcounter="https://{{ site.goatcounter }}.goatcounter.com/count"
         async src="https://gc.zgo.at/count.js"></script>
+{%- endif -%}
 {%- endif -%}

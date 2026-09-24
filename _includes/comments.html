@@ -1,0 +1,55 @@
+{%- comment -%}
+Comments via giscus (https://giscus.app): each post maps to a GitHub
+Discussion on the site repo, matched on the page pathname (stable, because
+permalinks are /:year/:month/:day/:title/ and never change). Readers sign in
+with GitHub to comment; nobody can comment anonymously, which is the point —
+a finance blog's comment box is where "which stock should I buy" arrives,
+and a signed-in, moderatable thread is the compliance-friendly shape for it.
+
+Renders NOTHING until both giscus.repo_id and giscus.category_id are set in
+_config.yml, so a half-configured site ships no comment box and /privacy/
+keeps saying there are no comments (it reads the same keys).
+
+ONE-TIME SETUP (all on GitHub / giscus.app, nothing else in this repo):
+  1. Repo Settings > General > Features > tick "Discussions".
+  2. In the repo's Discussions tab, create a category named "Comments" of
+     type "Announcement" — that type lets only maintainers open new threads,
+     so giscus (acting as you) creates one per post and readers can only
+     reply inside it. Prevents drive-by threads on the repo itself.
+  3. Install the giscus GitHub App on this ONE repo:
+     https://github.com/apps/giscus
+  4. Open https://giscus.app, enter the repo, pick mapping "pathname",
+     category "Comments". It prints data-repo-id and data-category-id —
+     paste those two values into `giscus:` in _config.yml. Done.
+
+Every other attribute below mirrors giscus.app's generated snippet and can be
+changed freely; `data-strict="1"` makes the pathname match exact so two posts
+with similar slugs can never share a thread.
+{%- endcomment -%}
+{%- if site.giscus.repo_id != '' and site.giscus.category_id != '' -%}
+<section class="post-comments" id="comments">
+  <h2>Comments</h2>
+  <p class="post-comments-note">
+    Questions about the concept, corrections, and better examples are all
+    welcome — sign in with GitHub to post. Please don't ask for or offer stock
+    tips, price targets or "should I buy X": this is an educational site, and
+    those comments will be removed.
+  </p>
+  <script src="https://giscus.app/client.js"
+          data-repo="{{ site.giscus.repo }}"
+          data-repo-id="{{ site.giscus.repo_id }}"
+          data-category="{{ site.giscus.category }}"
+          data-category-id="{{ site.giscus.category_id }}"
+          data-mapping="pathname"
+          data-strict="1"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="top"
+          data-theme="light"
+          data-lang="en"
+          data-loading="lazy"
+          crossorigin="anonymous"
+          async>
+  </script>
+</section>
+{%- endif -%}

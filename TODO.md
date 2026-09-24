@@ -543,6 +543,32 @@ DONE — analytics, email capture, homepage, diagrams, social cards
     posts from going live. Red check, successful deploy.
   - The script also covers _drafts, so a draft's card exists before promotion.
 
+DONE (code) / PENDING (your accounts) — Google Analytics 4 + giscus comments
+
+- Decided 24 Sep 2026: GA4 for analytics (GoatCounter kept as an optional
+  cookie-free cross-check), giscus for comments (Disqus rejected: ad-supported
+  and tracker-heavy, contradicts /privacy/).
+- Both are wired and self-hiding: _includes/analytics.html renders GA4 only
+  when `google_analytics:` is set, _includes/comments.html renders giscus only
+  when `giscus.repo_id` AND `giscus.category_id` are set, both only in
+  production. /privacy/ reads the same keys, so each feature's disclosure
+  (including the switch from "no cookies" to a _ga cookie disclosure) turns
+  on in the same commit as the feature. The privacy page's old hardcoded
+  "Comments: none" is now conditional too.
+- GA4 is configured with Google Signals and ads personalisation OFF, and the
+  privacy page asserts that as fact — keep them in sync.
+- Comment box carries a moderation note (no tips, no price targets, no
+  "should I buy X") — compliance, not just etiquette. Enforce it.
+- YOUR TWO STEPS to switch on:
+  1. GA4: create a property + web data stream at analytics.google.com, paste
+     the Measurement ID (G-XXXXXXXXXX) into `google_analytics:` in _config.yml.
+  2. giscus: repo Settings > enable Discussions; create an "Announcement"-type
+     category named "Comments"; install https://github.com/apps/giscus on the
+     repo; open https://giscus.app, pick repo + mapping "pathname" + category
+     "Comments", copy data-repo-id and data-category-id into `giscus:` in
+     _config.yml. Full notes in _includes/comments.html.
+- Removed minima's disqus hook from _layouts/post.html (never configured).
+
 DRAFT WRITTEN — "What the F&O numbers actually say" (_drafts/)
 
 - The gap flagged in review: the blog teaches RSI and MACD but never mentions
@@ -573,6 +599,129 @@ DRAFT WRITTEN — "What the F&O numbers actually say" (_drafts/)
   is taxed as business income, so the tax series' capital-gains rules do not
   apply to it — that is arguably its own post later.
 
+ROADMAP — what comes after the first 69 posts (decided 24 Sep 2026)
+
+- Context: the five series in CLAUDE.md (+ tax) are fully written and
+  scheduled through 2027-01-01. Everything below is NEW scope, chosen from a
+  content review of the 69 posts. Order = priority. Same rules as before: every
+  figure in _data/, script-derived, lag-checked; Desi Bites for the fictional
+  walkthrough, a real anchor company for the real one; nothing that reads as a
+  call.
+- Gaps the review found, which the modules below are built to close:
+  1. Banks/NBFCs are absent — the most-held stocks in India, and none of the
+     33 Jargon ratios apply to them (no inventory, no EBITDA, D/E meaningless).
+  2. FA jumps from ratios straight to DCF — nothing on annual reports, notes to
+     accounts, red flags or quarterly results (what people actually do every
+     quarter).
+  3. MF has no debt-fund mechanics and no index-fund-vs-ETF post, even though
+     the tax series taxes debt funds and the flagship dataset is an index fund.
+  4. No risk/behaviour content; the F&O draft is unscheduled because it has no
+     home.
+  5. No personal-finance layer (EPF/PPF/NPS, insurance vs investment, real
+     returns) — largest new-audience opportunity.
+
+- R1. NEW SERIES: "Risk, Leverage and Your Own Brain" (slug: risk), 8 posts.
+  Resolves the F&O draft's open decision (b): it becomes the opener. Needs a
+  `risk` entry in _data/series.yml + series/risk.markdown + `series: risk` on
+  the draft. Reuses the UTI Nifty 50 NAV series and Britannia OHLCV — no new
+  data sourcing except verifying fno.yml against the SEBI PDFs.
+  - RISK-1 What the F&O numbers actually say (existing draft; verify fno.yml)
+  - RISK-2 The arithmetic of losses (-50% needs +100%; volatility drag on real
+    NAV data)
+  - RISK-3 Position sizing and the 1-2% rule (ATR on Britannia OHLCV; pure
+    method, no trade)
+  - RISK-4 Leverage and margin: how a 10% move wipes out 100% (MTF, futures
+    margin mechanics)
+  - RISK-5 Diversification is a correlation problem (why ten large-cap funds
+    is not diversification)
+  - RISK-6 Sequence-of-returns risk (same SIP, crash in year 1 vs year 19)
+  - RISK-7 Behavioural biases, Indian edition (loss aversion, recency,
+    anchoring to buy price)
+  - RISK-8 How finfluencers make money (incentive structures; a credibility
+    post for a credibility-first blog)
+
+- R2. FUNDAMENTAL ANALYSIS, Module 2: "Reading between the lines", 7 posts.
+  Continues the Desi Bites story past its IPO. Needs new narrative beats in
+  _data/case_study.yml (first quarterly results, an acquisition, a
+  related-party sale, a contingent liability). Britannia remains the real
+  anchor; its Q3 festive quarter is the seasonality example.
+  - FA2-1 Reading an annual report (MD&A, auditor's report, notes; what to skip)
+  - FA2-2 Desi Bites cooks the books (FICTIONAL forensic case: channel
+    stuffing, capitalised expenses, related-party sales — teaches red flags
+    without accusing a real company)
+  - FA2-3 Reading quarterly results (YoY vs QoQ, seasonality)
+  - FA2-4 Contingent liabilities, pledged shares and promoter holding (the
+    shareholding-pattern page)
+  - FA2-5 Goodwill, exceptional items and "other income" (Desi Bites acquires
+    a competitor)
+  - FA2-6 Capital allocation: dividends vs buybacks vs capex vs debt paydown
+  - FA2-7 Reading a DRHP (the Desi Bites IPO retold from the prospectus side)
+
+- R3. FUNDAMENTAL ANALYSIS, Module 3: "When the ratios don't work: banks and
+  NBFCs", 6 posts. HIGHEST-VALUE GAP. Needs a SECOND real anchor company,
+  sourced the same way as Britannia: an audited FY25 bank filing from
+  NSE/BSE, into _data/real_bank.yml with the source URL, plus a lag check on
+  any market data. Pick the bank before drafting. No fictional bank — the
+  Desi Bites model has no banking analogue, so these posts are real-anchor
+  only.
+  - BANK-1 Why P/E and D/E break on a bank (the balance sheet is the business)
+  - BANK-2 NIM and the spread (cost of funds, yield on advances)
+  - BANK-3 CASA and the deposit franchise
+  - BANK-4 GNPA, NNPA, provision coverage and credit cost
+  - BANK-5 Capital adequacy: CAR and Tier-1
+  - BANK-6 Valuing a bank: P/B, ROA, ROE and why P/B is the one that matters
+
+- R4. JARGON, DECODED, Module 6: terms the other series already lean on but
+  never define, 12 short glossary posts (definition -> formula -> one small
+  example -> takeaway; Desi Bites / Britannia / the index fund as fits).
+  Beta - Alpha - Tracking error vs tracking difference - YTM - Modified
+  duration - Exit load - AUM - Operating leverage - Earnings yield and FCF
+  yield - Payout ratio - Face value, splits and bonuses - Enterprise value on
+  its own (currently defined only inside EV/EBITDA).
+
+- R5. MUTUAL FUNDS, Module 2, 6 posts. Same compliance rule as MF-1..9: no
+  ranking, no manager comparison, index fund does the arithmetic. Debt-fund
+  posts need a debt-fund NAV series (a liquid or gilt index fund, AMFI via
+  mfapi.in, lag-checked) added to assets/data/.
+  - MF2-1 Debt funds explained (YTM, duration, credit risk)
+  - MF2-2 Index funds vs ETFs (iNAV, liquidity, tracking difference)
+  - MF2-3 SEBI fund categories decoded (large/mid/small/flexi/multi)
+  - MF2-4 Portfolio overlap (why two funds can be one fund)
+  - MF2-5 Why star ratings mislead
+  - MF2-6 STP and SWP mechanics
+
+- R6. TAX add-ons, 4 posts. Same staleness rules as TAX-1..9 (rates verified
+  against public sources, mechanics-first, professional review before
+  publishing).
+  - TAX-10 ESOPs and RSUs (perquisite at exercise, capital gain at sale; the
+    IT-worker audience)
+  - TAX-11 Buybacks after 1 Oct 2024 (deemed dividend in the shareholder's
+    hands; cost becomes a capital loss)
+  - TAX-12 F&O as business income (audit thresholds, presumptive scheme;
+    links to RISK-1)
+  - TAX-13 Foreign stocks and Schedule FA
+
+- R7. TECHNICAL ANALYSIS, Module 2, 4 posts. Same Britannia OHLCV; extend
+  _data/ta.yml by script.
+  - TA2-1 Bollinger Bands and ATR (volatility, not direction)
+  - TA2-2 Relative strength vs the index (NOT RSI — the naming clash is the
+    opening paragraph)
+  - TA2-3 Multiple-timeframe analysis
+  - TA2-4 How to backtest an indicator honestly (look-ahead bias,
+    overfitting, transaction costs) — the sequel to "what TA cannot do" and
+    the home for the pandas notebook CLAUDE.md promises
+
+- R8. LATER / UNDECIDED: a personal-finance track ("Money Before Markets":
+  emergency fund, EPF/PPF/NPS, term insurance vs ULIP/endowment, FDs vs debt
+  funds, real return after inflation and tax). Out of CLAUDE.md's stated
+  scope; decide whether the blog widens to it before drafting. Also: bonds
+  and G-secs (RBI Retail Direct), REITs/InvITs, SGBs as a "beyond stocks and
+  funds" mini-module.
+
+- Still owed regardless of the above: the three Google Sheet calculators
+  (DCF, rolling returns, SIP/XIRR — search posts for GOOGLE-SHEET-TODO) and a
+  professional read of the tax series before 2026-12-16.
+
 Lower-priority, not done (say the word if you want these next)
 
 - DONE: Series index pages. /series/ lists every track in _data/series.yml
@@ -587,6 +736,5 @@ Lower-priority, not done (say the word if you want these next)
     The four individual series pages are deliberately NOT in the top nav —
     they're reached from /series/. If you add a page and it doesn't appear in
     the nav, that's why.
-- Analytics (GA4/Plausible/GoatCounter) — not added, your call which one.
 - Formula rendering (MathJax/KaTeX) if you want real math notation rather than code-block formulas.
 - Minor: minima's bundled SCSS throws harmless Dart-Sass deprecation warnings during build (lighten() is deprecated) — cosmetic build noise, not a bug, will resolve itself on minima's next release.

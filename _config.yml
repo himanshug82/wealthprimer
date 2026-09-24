@@ -10,13 +10,32 @@ lang: en-IN
 timezone: Asia/Kolkata # keeps scheduled/dated posts publishing on IST, not the CI runner's UTC clock
 
 # --- analytics ---
-# GoatCounter. Set this to the site CODE only — the "CODE" in
-# https://CODE.goatcounter.com — NOT the full URL. Leave blank/unset and no
-# analytics script is emitted at all (see _includes/analytics.html), and
-# /privacy/ automatically keeps saying the site runs no analytics. Setting it
-# flips BOTH the script and the privacy disclosure on together, by design:
-# the two must never disagree.
+# Two independent, optional tools. Each renders ONLY in production and ONLY
+# when its key is non-empty (see _includes/analytics.html), and each flips its
+# own disclosure on /privacy/ in the same act — the script and the privacy
+# page can never disagree.
+#
+# Google Analytics 4. Set to the Measurement ID ("G-XXXXXXXXXX") from
+# Admin > Data streams > Web in analytics.google.com. GA4 sets first-party
+# cookies (_ga, _ga_*), so turning it on also switches /privacy/ from "no
+# cookies" to a cookie disclosure automatically.
+google_analytics: "G-LYRDRDQSE8"
+#
+# GoatCounter (cookie-free alternative / cross-check). Set to the site CODE
+# only — the "CODE" in https://CODE.goatcounter.com — NOT the full URL.
 goatcounter: ""
+
+# --- comments ---
+# giscus: comments stored as GitHub Discussions on the site repo. Renders
+# nothing until BOTH repo_id and category_id are set (they are opaque GraphQL
+# node ids, not names — copy them from https://giscus.app after enabling
+# Discussions on the repo and installing the giscus app). Setup steps and the
+# moderation note live in _includes/comments.html.
+giscus:
+  repo: "himanshug82/wealthprimer"
+  repo_id: ""
+  category: "Comments"
+  category_id: ""
 
 # --- email list ---
 # Renders _includes/newsletter.html on every post and the homepage. Nothing is

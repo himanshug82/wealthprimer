@@ -28,9 +28,11 @@ layout: default
 
   {%- include disclaimer.html -%}
 
-  {%- if site.disqus.shortname -%}
-    {%- include disqus_comments.html -%}
-  {%- endif -%}
+  {%- comment -%}
+    Comments come AFTER the disclaimer so the disclaimer is always the last
+    thing the post itself says. Self-hides until giscus is configured.
+  {%- endcomment -%}
+  {%- include comments.html -%}
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>

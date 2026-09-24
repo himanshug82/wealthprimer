@@ -241,6 +241,29 @@ $wp-rule:        #e8e8e8;
   border: 0;
 }
 
+// --- comments (giscus) ----------------------------------------------------
+// Sits after the disclaimer. The note above the widget doubles as the
+// moderation policy, so keep it readable rather than fine-print sized.
+.post-comments {
+  margin-top: 2.4em;
+  padding-top: 1.4em;
+  border-top: 1px solid #e3e7ee;
+
+  h2 {
+    font-size: 1.2em;
+    margin: 0 0 0.4em;
+    color: $wp-ink;
+  }
+}
+
+.post-comments-note {
+  font-size: 0.93em;
+  line-height: 1.5;
+  color: #3d4a5c;
+  margin: 0 0 1.1em;
+  max-width: 38em;
+}
+
 // --- post diagrams --------------------------------------------------------
 // The hand-authored schematic SVGs (balance sheet, cash cycle, DuPont, DCF)
 // are drawn to a fixed viewBox; cap them so they don't tower on wide screens.

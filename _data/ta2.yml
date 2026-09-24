@@ -34,8 +34,10 @@ bollinger:
   pct_bars_inside_bands: 86.1
   avg_10d_return_after_close_above_upper_pct: 0.92
   avg_10d_return_after_close_below_lower_pct: -0.41
-  share_positive_10d_after_upper_pct: 60.0
-  share_positive_10d_after_lower_pct: 43.0
+  n_with_10d_forward_after_upper: 43
+  n_with_10d_forward_after_lower: 20
+  share_positive_10d_after_upper_pct: 60.5
+  share_positive_10d_after_lower_pct: 50.0
   bandwidth_min_pct: 2.5
   bandwidth_min_date: '2025-12-11'
   bandwidth_max_pct: 28.4

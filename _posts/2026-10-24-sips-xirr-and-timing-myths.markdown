@@ -12,6 +12,7 @@ term: "XIRR and SIP returns"
 {% assign f = mf.index_fund %}
 {% assign s = mf.sip %}
 {% assign uw = s.underwater %}
+{% assign ls = s.lumpsum_2007_2012 %}
 
 ## The most marketed product in Indian finance
 
@@ -98,10 +99,18 @@ Five years of doing everything the marketing tells you to do, and the money
 came back essentially unchanged. Not a disaster. Not a gain either.
 
 This is the fact that "SIPs protect you from market crashes" cannot survive.
-Rupee cost averaging genuinely helped — the same lump sum invested in January
-2007 did considerably worse. But *helping* is not the same as *protecting*.
-A SIP buys more units when prices fall, which improves your average cost. It
-does not make a falling market rise.
+And here's the part that surprises people: rupee cost averaging didn't even
+come out ahead. The same ₹{% include inr.html n=ls.invested %} put in as a
+single lump sum in January 2007 was worth about
+₹{% include inr.html n=ls.value %} by January 2012 — roughly {{ ls.cagr }}% a
+year. The lump sum bought near the top and still did better, because the SIP
+kept buying all the way through the 2010–11 highs too. Averaging changes your
+entry prices. It doesn't guarantee better ones.
+
+That makes the lesson sharper, not weaker. A SIP buys more units when prices
+fall, which lowers your average cost compared with the prices you paid. It
+does not make a falling market rise, and it doesn't promise you'll beat the
+money you could have invested on day one.
 
 ## And the other side of the ledger
 
@@ -127,12 +136,16 @@ giving you only one of those is selling something.
 wins, because money invested earlier compounds longer. SIPs win when markets
 fall early in the period. Since markets rise more often than they fall, lump
 sum wins more often historically — SIPs are chosen mainly because most people
-receive money monthly, and because they remove the decision entirely.
+receive money monthly, and because they remove the decision entirely. Even
+the Jan 2007 row, where the crash came early, went to the lump sum.
 
 **"Stop your SIP when markets are high."** This is timing, wearing a SIP
 costume. It requires knowing what "high" means in advance. The Jan 2007 row
-is what happens when the market really was high — and continuing through it
-is precisely what produced the recovery afterwards.
+cuts both ways here. In hindsight, pausing through the 2010–11 highs would
+have helped this SIP. But you'd have needed to know in 2010 that those were
+highs, and not the start of another leg up — and the same rule would have
+had you pause in 2007 and miss the cheapest units of 2008–09. What counted
+as "high" is only obvious afterwards.
 
 **"SIP averaging means you can't lose."** Averaging lowers your average
 purchase price. It cannot make a five-year decline profitable.

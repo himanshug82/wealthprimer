@@ -48,8 +48,14 @@ The line isn't in the same place for everything:
 | Listed bonds and debentures | {{ r.equity_holding_months }} months |
 | Unlisted shares | {{ r.other_holding_months }} months |
 | Property (land, buildings) | {{ r.other_holding_months }} months |
-| Gold, jewellery, gold funds | {{ r.other_holding_months }} months |
-| Specified debt funds bought on/after 1 Apr 2023 | *No long-term rate at all — slab rate always* |
+| Listed gold ETFs (sold from 1 Apr 2025) | {{ r.equity_holding_months }} months |
+| Physical gold, jewellery; gold funds of funds sold from 1 Apr 2025 | {{ r.other_holding_months }} months |
+| Specified debt funds (more than 65% in debt) bought on/after 1 Apr 2023 | *No long-term rate at all — slab rate always* |
+
+The gold rows reflect a Finance Act 2025 change that applies from FY 2025-26
+onward: gold ETFs and gold funds of funds are no longer lumped in with debt
+funds, so a listed gold ETF goes long-term after {{ r.equity_holding_months }} months and an unlisted
+gold fund of funds after {{ r.other_holding_months }}.
 
 Two things worth noting.
 
@@ -128,8 +134,8 @@ date is close, it's free money to check.
 
 ## Common mistakes
 
-- **Applying the 12-month rule to everything.** Gold and property need
-  {{ r.other_holding_months }} months. Getting this wrong on a property sale is expensive.
+- **Applying the 12-month rule to everything.** Physical gold and property
+  need {{ r.other_holding_months }} months. Getting this wrong on a property sale is expensive.
 - **Assuming any equity-sounding fund gets equity treatment.** The 65%
   Indian-equity test decides it, not the fund's name.
 - **Counting from the wrong date.** Allotment to transfer, not

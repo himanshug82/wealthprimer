@@ -62,7 +62,8 @@ was — you can't sell it, depreciate it, or borrow against it.
 Two consequences follow.
 
 **Goodwill isn't amortised; it's tested.** The brand intangible is written
-off over ten years (₹{{ a.h2_brand_amortisation }} lakh charged in H2 FY26). Goodwill just sits there,
+off over ten years — ₹{{ a.brand_intangible | divided_by: 10 }} lakh a year, so ₹{{ a.h2_brand_amortisation }} lakh for the six
+months of H2 FY26. Goodwill just sits there,
 at ₹{{ a.goodwill }} lakh, until management concludes the acquired business is worth
 less than they paid — at which point it's *impaired*, in one lump, through
 the P&L. Impairments arrive years after the deal, usually in a bad year

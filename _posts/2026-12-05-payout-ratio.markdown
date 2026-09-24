@@ -52,7 +52,7 @@ From the [case study](/case-study/), the year before the IPO:
 | FY25 dividend (₹ lakh) | {{ d.dividend_lakh }} |
 | **Payout ratio** = {{ d.dividend_lakh }} / {{ d.pat_lakh }} | **{{ d.payout_pct }}%** |
 | Retention ratio | {{ d.retention_pct }}% |
-| Per share: DPS ₹{{ d.dps }} / undiluted EPS ₹{{ d.eps_undiluted }} | {{ d.payout_pct }}% |
+| Per share: DPS ₹{{ d.dps }} / pre-issue EPS ₹{{ d.eps_undiluted }} | {{ d.payout_pct }}% |
 | FY25 ROE | {{ d.roe_pct }}% |
 | **Sustainable growth** = {{ d.roe_pct }}% × {{ d.retention_pct }}% | **≈ {{ d.sustainable_growth_pct }}%** |
 

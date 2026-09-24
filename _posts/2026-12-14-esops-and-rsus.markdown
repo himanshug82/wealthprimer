@@ -38,9 +38,9 @@ Event 2  Sale of the shares
 ```
 
 **FMV** is fair market value — for listed shares, the market price on the
-exercise date (the rules use an average of that day's high and low on the
-exchange with the highest volume; for unlisted shares a merchant banker's
-valuation). The single most important line above is the second one in event
+exercise date (the rules use the average of that day's opening and closing
+price on the exchange with the higher trading volume; for unlisted shares a
+merchant banker's valuation). The single most important line above is the second one in event
 2: your cost of acquisition for capital gains is *not* what you paid. It's the
 FMV that was already taxed as salary. That is what stops the same rupee being
 taxed twice — and it is also what people get wrong.

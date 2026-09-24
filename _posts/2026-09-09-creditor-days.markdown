@@ -51,8 +51,8 @@ From Britannia Industries' [audited consolidated FY25 results](https://media.bri
 | COGS (FY25) | {{ bi_is25.cogs }} |
 | **Creditor Days** | **{{ site.data.real_company.ratios.FY25.payable_days }} days** |
 
-Britannia holds onto supplier cash for {{ site.data.real_company.ratios.FY25.payable_days }} days, versus Desi Bites'
-{{ site.data.case_study.ratios.FY25.payable_days }}. Paired with what we just saw on debtor days — Britannia collects
+Britannia holds onto supplier cash for {{ site.data.real_company.ratios.FY25.payable_days }} days, versus
+Desi Bites' {{ site.data.case_study.ratios.FY25.payable_days }}. Paired with what we just saw on debtor days — Britannia collects
 from customers in under 10 days but pays suppliers in 60 — that gap is the
 whole story the next post, Cash Conversion Cycle, is built to measure.
 

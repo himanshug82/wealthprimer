@@ -119,8 +119,10 @@ above = (px.close > upper).loc[valid]
 below = (px.close < lower).loc[valid]
 
 fwd10 = px.close.shift(-10) / px.close - 1
-after_upper = fwd10.loc[valid][above]
-after_lower = fwd10.loc[valid][below]
+# Drop events too close to the end of the data to have a 10-session forward
+# return; otherwise NaN would count as "not positive" in the shares below.
+after_upper = fwd10.loc[valid][above].dropna()
+after_lower = fwd10.loc[valid][below].dropna()
 
 # Squeezes: bandwidth at a 120-bar low. Take the first bar of each squeeze
 # episode (bars where bandwidth == rolling 120 min), then the 20-bar forward move.
@@ -160,8 +162,10 @@ out["bollinger"] = {
     "pct_bars_inside_bands": r(100 - (above.sum() + below.sum()) / len(valid) * 100, 1),
     "avg_10d_return_after_close_above_upper_pct": r(after_upper.mean() * 100, 2),
     "avg_10d_return_after_close_below_lower_pct": r(after_lower.mean() * 100, 2),
-    "share_positive_10d_after_upper_pct": r((after_upper > 0).mean() * 100, 0),
-    "share_positive_10d_after_lower_pct": r((after_lower > 0).mean() * 100, 0),
+    "n_with_10d_forward_after_upper": int(len(after_upper)),
+    "n_with_10d_forward_after_lower": int(len(after_lower)),
+    "share_positive_10d_after_upper_pct": r((after_upper > 0).mean() * 100, 1),
+    "share_positive_10d_after_lower_pct": r((after_lower > 0).mean() * 100, 1),
     "bandwidth_min_pct": r(bandwidth.min(), 1), "bandwidth_min_date": d(bandwidth.idxmin()),
     "bandwidth_max_pct": r(bandwidth.max(), 1), "bandwidth_max_date": d(bandwidth.idxmax()),
     "bandwidth_median_pct": r(bandwidth.median(), 1),

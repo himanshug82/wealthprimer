@@ -102,6 +102,14 @@ rolling_returns:
 # Drawdowns: peak-to-trough falls of more than 15%, and how long the fund
 # took to get back to its previous high. The 2008 recovery took nearly six
 # years, which is the number most SIP marketing leaves out.
+#
+# Complete list: every episode where the regular NAV fell more than 15% below
+# its running peak, sorted by depth. An episode ends on the first day the NAV
+# is back at or above that peak. The 2026 episode had NOT recovered by the end
+# of the data (31 Mar 2026), so its trough is simply the last NAV and its
+# recovery fields are null — the post renders them as "not yet recovered".
+# (Three episodes, 2007, 2024-25 and 2026, were missing from an earlier
+# hand-maintained version of this list; there is no generator script for it.)
 drawdowns:
   worst_pct: -59.7
   worst_date: "2008-10-27"
@@ -111,6 +119,9 @@ drawdowns:
     - { peak_date: "2006-05-10", peak_nav: 23.84, trough_date: "2006-06-14", trough_nav: 16.73, fall_pct: -29.8, recovered_date: "2006-10-30", days_peak_to_peak: 173 }
     - { peak_date: "2015-03-03", peak_nav: 56.35, trough_date: "2016-02-25", trough_nav: 44.06, fall_pct: -21.8, recovered_date: "2016-09-06", days_peak_to_peak: 553 }
     - { peak_date: "2021-10-18", peak_nav: 122.83, trough_date: "2022-06-17", trough_nav: 102.42, fall_pct: -16.6, recovered_date: "2022-11-11", days_peak_to_peak: 389 }
+    - { peak_date: "2024-09-26", peak_nav: 178.65, trough_date: "2025-03-04", trough_nav: 150.90, fall_pct: -15.5, recovered_date: "2025-10-27", days_peak_to_peak: 396 }
+    - { peak_date: "2026-01-02", peak_nav: 181.29, trough_date: "2026-03-31", trough_nav: 153.82, fall_pct: -15.1, recovered_date: null, days_peak_to_peak: null }
+    - { peak_date: "2007-02-07", peak_nav: 26.95, trough_date: "2007-03-05", trough_nav: 22.89, fall_pct: -15.1, recovered_date: "2007-05-17", days_peak_to_peak: 99 }
 
 volatility_and_sharpe:
   annualised_return_pct: 10.20
@@ -169,6 +180,13 @@ sip:
     - { label: "Last 10 years", start: "2016-04-01", end: "2026-03-31", instalments: 120, invested: 1200000, value: 2075891, xirr: 10.57 }
     - { label: "Last 5 years", start: "2021-04-01", end: "2026-03-31", instalments: 60, invested: 600000, value: 688376, xirr: 5.44 }
     - { label: "Jan 2007 to Jan 2012, through the crash", start: "2007-01-01", end: "2012-01-01", instalments: 61, invested: 610000, value: 609712, xirr: -0.02 }
+  # The same Rs 6,10,000 invested ONCE, at the NAV on/before 1 Jan 2007
+  # (29 Dec 2006, 25.3162), valued at the NAV on/before 1 Jan 2012
+  # (30 Dec 2011, 28.7254) — same asof convention as the SIP rows. In this
+  # window the lump sum BEAT the SIP: the SIP kept buying through the
+  # 2010-11 highs. Averaging changes entry prices; it doesn't guarantee
+  # better ones.
+  lumpsum_2007_2012: { start: "2007-01-01", end: "2012-01-01", invested: 610000, value: 692146, cagr: 2.56 }
   # The first scheduled instalment (1 Apr 2006) falls before the fund's first
   # published NAV (3 Apr 2006), so it is skipped — 239 instalments, not 240.
   underwater:

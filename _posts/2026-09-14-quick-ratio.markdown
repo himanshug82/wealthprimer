@@ -52,8 +52,9 @@ From Britannia Industries' [audited consolidated FY25 results](https://media.bri
 Strip out inventory, and Britannia's coverage looks tighter still —
 {{ site.data.real_company.ratios.FY25.quick_ratio }}, below 1. On paper, that's the kind of number that would
 normally deserve real scrutiny at most companies. For Britannia specifically,
-it's a case where the number needs company: paired with its 20-day-faster
-collection cycle than payment cycle ([negative CCC]({% post_url 2026-09-10-cash-conversion-cycle %})), a sub-1 quick
+it's a case where the number needs company: paired with its [cash conversion cycle]({% post_url 2026-09-10-cash-conversion-cycle %})
+of −{{ site.data.real_company.ratios.FY25.ccc | abs }} days (it collects from customers in about
+{{ site.data.real_company.ratios.FY25.receivable_days }} days but pays suppliers in about {{ site.data.real_company.ratios.FY25.payable_days }}), a sub-1 quick
 ratio isn't the same warning sign it would be at a company that actually
 waits on customers to pay before it can pay its own bills. That said — this
 is genuinely the exception, not the rule. For most companies, a quick ratio

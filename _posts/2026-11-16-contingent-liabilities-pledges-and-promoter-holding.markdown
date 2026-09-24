@@ -49,14 +49,15 @@ view is that the appeal will succeed, so no provision has been made. That
 may well be right. But the shareholder's arithmetic is different from
 management's:
 
-| If the demand crystallises… | |
+| If the ₹{{ cl.gst_demand }} lakh GST demand crystallises… | |
 |---|---:|
-| …as a share of FY26 equity | {{ cl.pct_of_equity }}% |
-| …as a share of FY26 PAT | **{{ cl.pct_of_fy26_pat }}%** |
-| …as a share of cash on hand | {{ cl.pct_of_cash }}% |
+| …as a share of FY26 equity | {{ cl.gst_pct_of_equity }}% |
+| …as a share of FY26 PAT | **{{ cl.gst_pct_of_fy26_pat }}%** |
+| …as a share of cash on hand | {{ cl.gst_pct_of_cash }}% |
 
-A ₹{{ cl.gst_demand }} lakh demand is {{ cl.pct_of_equity }}% of equity — survivable — and half a year's
-profit. For a company with Desi Bites' cash pile it's an annoyance. For a
+A ₹{{ cl.gst_demand }} lakh demand is {{ cl.gst_pct_of_equity }}% of equity — survivable — and about
+two-fifths of a year's profit. Add the guarantees and the full ₹{{ cl.total }} lakh
+is {{ cl.pct_of_fy26_pat }}% of PAT: half a year's profit. For a company with Desi Bites' cash pile it's an annoyance. For a
 company with thin margins and a stretched balance sheet, the same
 disclosure would be the most important sentence in the report.
 

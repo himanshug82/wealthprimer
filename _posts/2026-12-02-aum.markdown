@@ -55,7 +55,7 @@ equity schemes:
 
 | AUM slab | Maximum TER |
 |---|---:|{% for s in au.ter_slabs_equity %}
-| {{ s.aum_slab }} | {{ s.max_ter_pct }}% |{% endfor %}
+| {{ s.aum_slab }} | {% if s.max_ter_note %}{{ s.max_ter_note }}{% else %}{{ s.max_ter_pct }}%{% endif %} |{% endfor %}
 
 Index funds and ETFs are capped at {{ au.ter_cap_index_funds_pct }}% regardless of size. (Slab
 structure per SEBI's TER framework in force since April 2019; the exact

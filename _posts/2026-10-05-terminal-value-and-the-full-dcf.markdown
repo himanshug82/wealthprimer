@@ -15,9 +15,9 @@ term: "DCF (discounted cash flow) and terminal value"
 ## The problem with stopping at year five
 
 The [last post]({% post_url 2026-10-04-forecasting-free-cash-flow %}) forecast Desi Bites'
-free cash flow to the firm (FCFF) through FY30. But the company doesn't dissolve on 31 March
-2030. It carries on generating cash for decades, and all of that has value
-too.
+free cash flow to the firm (FCFF) through FY30. But the company doesn't
+dissolve on 31 March 2030. It carries on generating cash for decades, and
+all of that has value too.
 
 Forecasting it year by year isn't the answer — nobody can model FY47 with a
 straight face. Instead, everything past the forecast horizon gets collapsed
@@ -70,9 +70,11 @@ real growth plus inflation. This series uses {{ dcf.assumptions.terminal_growth 
 is to use the expected long-run inflation rate, on the reasoning that a
 mature company grows with prices and no faster.
 
-Anything approaching 8–9% is a claim that the business will outgrow the
-Indian economy in perpetuity. That's a big thing to assert in a spreadsheet
-cell.
+Anything approaching that nominal rate — call it 10% — is a claim that the
+business will keep pace with the entire Indian economy in perpetuity.
+Anything above it is a claim that the business will outgrow the economy
+forever, and eventually become a bigger and bigger slice of it. Either is a
+big thing to assert in a spreadsheet cell.
 
 ## Worked example: assembling the whole discounted cash flow model
 
@@ -148,7 +150,8 @@ you already knew has told you nothing you didn't already know.
 The useful move is to run the logic backwards and ask: *what would have to be
 true* for ₹{% include inr.html n=r.ipo_price %} to be right? Holding the same forecast and the same WACC, that
 price implies a perpetual growth rate of **{{ dcf.reverse.implied_terminal_growth }}%** — a claim that Desi
-Bites grows at roughly the pace of the entire Indian economy, forever.
+Bites keeps pace with the entire Indian economy, forever. That's right up
+against the ceiling from the previous section.
 
 Or, keeping terminal growth at {{ dcf.assumptions.terminal_growth }}% and pushing on the operating
 assumptions instead:

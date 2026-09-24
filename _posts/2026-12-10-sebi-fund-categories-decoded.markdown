@@ -49,7 +49,7 @@ rupee size**, so the 100th company today is a far bigger business than the
 100th company in 2017 — "large cap" has quietly inflated. And because the
 list is republished every six months, a stock can move from mid to large (or
 back) without anything happening to the company. A mid-cap fund holding it
-then has six months to adjust.
+then has one month to rebalance to the updated list.
 
 ## Equity categories
 

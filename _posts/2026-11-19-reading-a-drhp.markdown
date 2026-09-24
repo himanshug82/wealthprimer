@@ -160,7 +160,7 @@ The **Basis for Offer Price** section is where the company justifies
 
 | At ₹{{ l.ipo_price }}, FY25 numbers | |
 |---|---:|
-| [P/E]({% post_url 2026-09-24-price-to-earnings %}), on diluted EPS of ₹{{ l.eps_diluted }} | **{{ v.pe_diluted }}x** |
+| [P/E]({% post_url 2026-09-24-price-to-earnings %}), on post-issue EPS of ₹{{ l.eps_diluted }} | **{{ v.pe_diluted }}x** |
 | P/E, on pre-issue EPS of ₹{{ l.eps_undiluted }} | {{ v.pe_undiluted }}x |
 | [P/B]({% post_url 2026-09-25-price-to-book %}), on post-issue book value | {{ v.pb }}x |
 | [EV/EBITDA]({% post_url 2026-09-26-ev-ebitda %}) | {{ v.ev_ebitda }}x |
@@ -169,7 +169,7 @@ The **Basis for Offer Price** section is where the company justifies
 Two traps here, both covered earlier in this blog. The prospectus will
 often quote P/E on the *pre-issue* share count — {{ v.pe_undiluted }}x looks better than
 {{ v.pe_diluted }}x, and the [EPS post]({% post_url 2026-09-23-eps %}) explained why the
-diluted figure is the honest one for a buyer at listing. And the peer table
+post-issue figure is the honest one for a buyer at listing. And the peer table
 is chosen by the company: large, richly valued peers make the issue look
 cheap. The [comparables post]({% post_url 2026-10-01-relative-valuation-comparables %})
 is about choosing that table yourself.
@@ -188,7 +188,7 @@ the correct division of labour.
 - **Skipping risk factors because they're boilerplate.** Two-thirds are.
   The specific third is the company telling you, under legal duress, what
   it's worried about.
-- **Reading the P/E the company chose.** Recompute it on diluted EPS and
+- **Reading the P/E the company chose.** Recompute it on post-issue EPS and
   on your own peer set.
 - **Anchoring on the last year.** Companies list after a strong year. Read
   three, and read cash conversion.
@@ -203,6 +203,6 @@ accountable description of a business you'll ever be handed, and most
 investors read only the price. Read six things: fresh issue or offer for
 sale, what the money is for, the specific risk factors, who the promoter
 is and what flows to their relatives, three years of restated cash
-conversion, and the multiples on *diluted* earnings. Then keep the
+conversion, and the multiples on *post-issue* earnings. Then keep the
 document — every annual report afterwards is a report on whether its
 promises were kept.

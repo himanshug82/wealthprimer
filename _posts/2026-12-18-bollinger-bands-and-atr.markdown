@@ -93,14 +93,18 @@ common reading and mostly a mistake. A close above the upper band means price
 moved more than two standard deviations from its average — which happens most
 often during strong trends, when it keeps happening. In this dataset:
 
-| Event | Count | Average return over the next 10 sessions | Share positive |
-|---|---:|---:|---:|
-| Close above the upper band | {{ bb.closes_above_upper }} | **{{ bb.avg_10d_return_after_close_above_upper_pct }}%** | {{ bb.share_positive_10d_after_upper_pct }}% |
-| Close below the lower band | {{ bb.closes_below_lower }} | **{{ bb.avg_10d_return_after_close_below_lower_pct }}%** | {{ bb.share_positive_10d_after_lower_pct }}% |
+| Event | Count | With 10 sessions of data after | Average return over the next 10 sessions | Share positive |
+|---|---:|---:|---:|---:|
+| Close above the upper band | {{ bb.closes_above_upper }} | {{ bb.n_with_10d_forward_after_upper }} | **{{ bb.avg_10d_return_after_close_above_upper_pct }}%** | {{ bb.share_positive_10d_after_upper_pct }}% |
+| Close below the lower band | {{ bb.closes_below_lower }} | {{ bb.n_with_10d_forward_after_lower }} | **{{ bb.avg_10d_return_after_close_below_lower_pct }}%** | {{ bb.share_positive_10d_after_lower_pct }}% |
+
+Events too close to the end of the data to have ten sessions after them are
+left out of the averages and shares.
 
 Read that carefully. After a close *above* the upper band, the stock was on
 average slightly *higher* ten days later, not lower. After a close *below* the
-lower band, it was on average slightly *lower*. The "reversal" reading points
+lower band, it was on average slightly *lower*, and it finished higher only
+{{ bb.share_positive_10d_after_lower_pct }}% of the time — a coin flip, not a bounce. The "reversal" reading points
 the wrong way in this sample — the same pinned-in-a-trend problem the
 [RSI post]({% post_url 2026-10-14-rsi %}) documented. This is 66 events on one
 stock, so treat it as an illustration, not a law. But it is not evidence for
@@ -108,8 +112,11 @@ the reversal reading.
 
 **2. "The bands are pinching — a big move is coming."** This is the
 **squeeze**, and it is the more defensible use, because it's a statement about
-volatility rather than direction: volatility clusters, and quiet periods tend
-to be followed by louder ones. Whether *up* or *down* is not part of the claim.
+volatility rather than direction. Volatility clusters — quiet days tend to
+follow quiet days, and loud days follow loud ones — but over longer stretches
+it drifts back toward its usual level. So an unusually quiet spell can't last
+forever, and when it ends, the moves get bigger. Whether *up* or *down* is not
+part of the claim.
 
 Two squeezes in this dataset, defined as bandwidth hitting a
 {{ bb.squeeze_lookback_bars }}-session low:

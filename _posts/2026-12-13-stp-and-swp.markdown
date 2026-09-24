@@ -44,24 +44,34 @@ Take ₹{% include inr.html n=stp.amount %}, and three ways to invest it in the 
 this series has used throughout:
 
 1. **Lump sum**: all of it into the index fund on day one.
-2. **STP**: park it in the overnight fund; move ₹1,00,000 into the index fund
-   on the first of each month for {{ stp.months }} months. The unmoved balance keeps
-   earning overnight-fund returns.
-3. **Do nothing**: leave it in the overnight fund.
+2. **STP**: park it in a low-volatility debt fund; move ₹1,00,000 into the
+   index fund on the first of each month for {{ stp.months }} months. The
+   unmoved balance keeps earning the parking fund's returns.
+3. **Do nothing**: leave it in the parking fund.
 
 Regular plans; source {{ m.sources.label }}. Historical data, for illustration
 only — the funds are the same ones used all series, chosen for their history,
 not their merits.
 
-![Value of ₹12 lakh from January 2008 as a lump sum, as a 12-month STP, and left in the overnight fund]({{ '/assets/charts/mf2-stp.svg' | relative_url }})
+One caveat about that parking fund. It's UTI's scheme that **became** its
+overnight fund on 3 May 2018, under SEBI's recategorisation. Before that date
+it ran a different portfolio that wasn't an overnight fund, which is why the
+[debt funds post]({% post_url 2026-12-08-debt-funds-explained %}) doesn't use
+that older history. So wherever the numbers below start before May 2018 (the
+2008 and 2015 STP rows, and the 2008 and 2010 SWP rows), read the parking
+fund as "a low-volatility debt fund of its day", not as what a modern
+overnight fund would have done.
 
-| Start | Lump sum after 3 years | STP after 3 years | Overnight fund after 3 years |
+![Value of ₹12 lakh from January 2008 as a lump sum, as a 12-month STP, and left in the parking fund]({{ '/assets/charts/mf2-stp.svg' | relative_url }})
+
+| Start | Lump sum after 3 years | STP after 3 years | Parking fund only, after 3 years |
 |---|---:|---:|---:|
 | {{ s08.label }} | ₹{% include inr.html n=s08.lump_sum_3y %} | **₹{% include inr.html n=s08.stp_12m_3y %}** | ₹{% include inr.html n=s08.overnight_only_3y %} |
 | {{ s15.label }} | ₹{% include inr.html n=s15.lump_sum_3y %} | ₹{% include inr.html n=s15.stp_12m_3y %} | ₹{% include inr.html n=s15.overnight_only_3y %} |
 | {{ s20.label }} | **₹{% include inr.html n=s20.lump_sum_3y %}** | ₹{% include inr.html n=s20.stp_12m_3y %} | ₹{% include inr.html n=s20.overnight_only_3y %} |
 
-Three rows, three different winners, and the pattern is not subtle.
+Three rows, two different winners — and the "safe" option of leaving it all
+in the parking fund won none of them. The pattern is not subtle.
 
 **Starting at the January 2008 top**, the lump sum was still *below* ₹12 lakh
 three years later. The STP, which bought most of its units during the 2008
@@ -106,9 +116,9 @@ Now the other direction. ₹{% include inr.html n=swp.corpus %} in the index fun
 withdrawal rate — starting on three different dates, and running to
 {{ swp.end }}.
 
-![Corpus remaining after each monthly withdrawal, for SWPs starting January 2008, January 2010 and April 2020, and an overnight-fund SWP from 2008]({{ '/assets/charts/mf2-swp.svg' | relative_url }})
+![Corpus remaining after each monthly withdrawal, for SWPs starting January 2008, January 2010 and April 2020, and a parking-fund SWP from 2008]({{ '/assets/charts/mf2-swp.svg' | relative_url }})
 
-| Start | Withdrawals made | Total withdrawn | Corpus left, index fund | Corpus left if it had sat in the overnight fund |
+| Start | Withdrawals made | Total withdrawn | Corpus left, index fund | Corpus left if it had sat in the parking fund |
 |---|---:|---:|---:|---:|
 | {{ w08.label }} | {{ w08.withdrawals }} | ₹{% include inr.html n=w08.withdrawn_total %} | ₹{% include inr.html n=w08.corpus_at_end_equity %} | ₹{% include inr.html n=w08.corpus_at_end_overnight %} |
 | {{ w10.label }} | {{ w10.withdrawals }} | ₹{% include inr.html n=w10.withdrawn_total %} | ₹{% include inr.html n=w10.corpus_at_end_equity %} | ₹{% include inr.html n=w10.corpus_at_end_overnight %} |
@@ -133,10 +143,11 @@ gone when the recovery comes. The same crash in year fifteen barely matters.
 The risk series on this blog covers it in its own post; the table above is the
 short version.
 
-One more column to notice: from the 2008 start, the overnight fund — which
-never had a down day — ended with *more* corpus than the equity fund. Across
-the other two starts, equity won by a wide margin. Low volatility during
-withdrawals is worth more than it looks.
+One more column to notice: from the 2008 start, the parking fund ended with
+*more* corpus than the equity fund. (Before May 2018 it wasn't yet an
+overnight fund and did have down days — plenty of them — but its swings were
+tiny next to equity's.) Across the other two starts, equity won by a wide
+margin. Low volatility during withdrawals is worth more than it looks.
 
 ## Tax, briefly
 
@@ -146,10 +157,13 @@ Both tools create taxable events every month:
   gains, taxed at slab rate) and a purchase into the equity fund — so it
   creates a fresh **tax lot** with its own holding period every month.
 - An **SWP** is a monthly redemption; each one is matched to your oldest
-  units first under FIFO. The
-  [FIFO post]({% post_url 2026-11-02-sips-and-fifo %}) shows why an SWP from a
-  fund you've held for years is mostly return of capital in the early
-  withdrawals, and mostly gain later.
+  units first under FIFO (the
+  [FIFO post]({% post_url 2026-11-02-sips-and-fifo %}) walks through it). So
+  in a fund you've held for years, or built up through a SIP, the oldest (and usually
+  cheapest) units go first, so the withdrawals are gain-heavy from the very
+  first month. The opposite pattern — mostly your own capital back early on,
+  more gain later — only applies to a lump sum invested just before the SWP
+  starts, because those units haven't had time to grow.
 
 The [tax series]({% post_url 2026-10-27-how-investment-income-is-taxed %}) has
 the rates; the mechanics are the same as any redemption, just twelve times a

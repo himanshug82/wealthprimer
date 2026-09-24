@@ -202,7 +202,8 @@ your diversification is actually worth.
 
 **Takeaway:** Diversification reduces risk only to the extent the things you
 own fall at different times, and correlation is the number that measures
-that. Ten equity funds correlated at 0.7 get you a portfolio 16% below one
-fund's volatility and never any lower — while a single stock correlated at
+{% assign ten = c.n_asset_table | where: "n", 10 | first %}that. Ten equity funds correlated at {{ c.n_asset_rho }} get you a portfolio only about
+15% less volatile than one ({{ ten.portfolio_vol_pct }}% vs {{ c.n_asset_sigma }}%), and no number of them gets
+below {{ c.rho_floor_vol_pct }}% — while a single stock correlated at
 0.28 with the index cut a 50/50 portfolio's bounce almost to the index's
 own. Count less; check what moves together.

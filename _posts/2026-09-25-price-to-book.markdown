@@ -47,12 +47,13 @@ module. For illustration only.
 | **P/B** | **{{ bi_pb }}x** |
 
 {{ bi_pb }}x is a striking number — the market is paying over thirty times
-Britannia's accounting net worth per share. That's not a mispricing; it
-follows directly from something this series already established. Back in
-the [ROE post]({% post_url 2026-09-01-roe %}), Britannia's return on equity was over 50% — the
-company earns far more on its book equity every year than the book equity
-itself is worth. A business that can do that is worth much more than its
-accounting net worth, and a high P/B is simply the market's way of pricing
+Britannia's accounting net worth per share. Whether that's justified isn't
+something this post judges — but the mechanics behind a number that high
+follow directly from something this series already established. Back in
+the [ROE post]({% post_url 2026-09-01-roe %}), Britannia's return on equity was {{ site.data.real_company.ratios.FY25.roe }}% — the
+company earns roughly ₹{{ site.data.real_company.ratios.FY25.roe | divided_by: 100.0 | round: 2 }} of profit a year on each rupee of book
+equity. A business that can keep doing that is worth much
+more than its accounting net worth, and a high P/B is simply the market's way of pricing
 that in. High ROE and high P/B tend to travel together, and this is exactly
 why.
 
@@ -72,8 +73,8 @@ why.
 - **Forgetting book value can be stale.** Assets carried at decades-old
   historical cost (a factory bought long ago, still on the books at its
   original price) can understate what a company's assets are actually
-  worth today — distorting P/B in the opposite direction from the brand-value
-  issue above.
+  worth today. That pushes book value down and P/B up — the same direction
+  as the brand-value issue above, so the two can stack.
 
 **Takeaway:** P/B measures how much the market pays over a company's
 accounting net worth — a high number, like Britannia's here, usually just

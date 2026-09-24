@@ -11,6 +11,12 @@ term: "EBITDA margin"
 {% assign db25 = site.data.case_study.income_statement.FY25 %}
 {% assign bi25 = site.data.real_company.income_statement.FY25 %}
 {% assign bi24 = site.data.real_company.income_statement.FY24 %}
+{% assign bi_gm25 = bi25.gross_profit | times: 100.0 | divided_by: bi25.revenue | round: 2 %}
+{% assign bi_gm24 = bi24.gross_profit | times: 100.0 | divided_by: bi24.revenue | round: 2 %}
+{% assign bi_opex25 = bi25.opex | times: 100.0 | divided_by: bi25.revenue | round: 1 %}
+{% assign bi_opex24 = bi24.opex | times: 100.0 | divided_by: bi24.revenue | round: 1 %}
+{% assign bi_em25 = bi25.ebitda | times: 100.0 | divided_by: bi25.revenue | round: 2 %}
+{% assign bi_em24 = bi24.ebitda | times: 100.0 | divided_by: bi24.revenue | round: 2 %}
 
 ## What EBITDA margin means
 
@@ -56,10 +62,14 @@ signal to act on.
 | **EBITDA Margin** | **{{ site.data.real_company.ratios.FY25.ebitda_margin }}%** |
 
 FY24's EBITDA margin, from the same filing, was {{ bi24.ebitda | times: 100.0 | divided_by: bi24.revenue | round: 1 }}% —
-again a touch richer than FY25. That tracks the same story as [Gross Margin]({% post_url 2026-08-26-gross-margin %}):
-the compression starts at the raw-material line and mostly carries through,
-since operating expenses (the other thing between gross profit and EBITDA)
-moved by less.
+again a touch richer than FY25. The squeeze starts where [Gross Margin]({% post_url 2026-08-26-gross-margin %})
+found it, at the raw-material line: gross margin fell from {{ bi_gm24 }}% to
+{{ bi_gm25 }}%, about {{ bi_gm24 | minus: bi_gm25 | round: 1 }} points. But operating expenses (the other thing
+between gross profit and EBITDA) shrank as a share of revenue, from
+{{ bi_opex24 }}% to {{ bi_opex25 }}%. That cushioned the blow, so EBITDA margin fell only
+about {{ bi_em24 | minus: bi_em25 | round: 1 }} points — less than half of the gross-margin drop made it
+through. It's a good reminder to check each layer of the waterfall rather
+than assume a squeeze at the top flows straight to the bottom.
 
 ## Common mistakes
 

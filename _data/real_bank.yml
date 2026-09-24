@@ -29,6 +29,8 @@ reported:
     capital: 765.22
     reserves_and_surplus: 496854.21
     net_worth_reported: 488899.89
+    esop_outstanding: 3805.19
+    balances_with_banks_call_money: 95215.65
     deposits: 2714714.9
     borrowings: 547930.9
     other_liabilities: 146128.52
@@ -86,6 +88,8 @@ reported:
     capital: 759.69
     reserves_and_surplus: 436833.39
     net_worth_reported: 427634.18
+    esop_outstanding: 2652.72
+    balances_with_banks_call_money: 40464.19
     deposits: 2379786.28
     borrowings: 662153.07
     other_liabilities: 135437.91

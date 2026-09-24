@@ -134,8 +134,8 @@ foreign asset at *any* time in the year, you must report it in Schedule FA
 of ITR-2 or ITR-3. Four things about this catch people out:
 
 **It runs on the calendar year, not the financial year.** For the return
-covering FY 2025-26 you report assets held between 1 January and 31 December
-2025. This is the only schedule in the return on that basis, and it's because
+covering FY 2025-26 you report assets held between 1 January and
+31 December 2025. This is the only schedule in the return on that basis, and it's because
 the data India receives from other countries under automatic exchange arrives
 by calendar year.
 

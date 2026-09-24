@@ -11,7 +11,7 @@ term: "P/E (price-to-earnings)"
 {% assign listing = site.data.case_study.listing %}
 {% assign bi_market = site.data.real_company.market %}
 {% assign bi_is25 = site.data.real_company.income_statement.FY25 %}
-{% assign db_wrong_pe = listing.ipo_price | divided_by: listing.eps_undiluted | round: 1 %}
+{% assign db_pre_pe = listing.ipo_price | divided_by: listing.eps_undiluted | round: 1 %}
 {% assign db_pe = listing.ipo_price | divided_by: listing.eps_diluted | round: 1 %}
 {% assign bi_pe = bi_market.price | divided_by: bi_is25.eps | round: 1 %}
 
@@ -28,21 +28,24 @@ profit an investor is paying for at today's price.
 P/E = Price per Share / EPS
 ```
 
-This series always uses **diluted** EPS — the [last post]({% post_url 2026-09-23-eps %}) showed exactly why
-that matters.
+For a company that has just issued fresh shares, this series uses
+**post-issue** EPS — profit divided by the share count after the issue. The
+[last post]({% post_url 2026-09-23-eps %}) showed exactly why that matters.
 
 ## Worked example: Desi Bites Foods Ltd
 
 | | |
 |---|---:|
 | IPO Price | ₹{% include inr.html n=listing.ipo_price %} |
-| ÷ Diluted EPS | ₹{% include inr.html n=listing.eps_diluted %} |
+| ÷ Post-issue EPS | ₹{% include inr.html n=listing.eps_diluted %} |
 | **P/E** | **{{ db_pe }}x** |
 
-Worth seeing the mistake explicitly: had we used *undiluted* EPS (₹{% include inr.html n=listing.eps_undiluted %})
-instead, P/E would come out to {{ db_wrong_pe }}x — a materially different, and
-wrong, number for a stock that just diluted its share count via a fresh
-issue.
+Worth seeing the gap explicitly: on *pre-issue* EPS (₹{% include inr.html n=listing.eps_undiluted %}),
+P/E would come out to {{ db_pre_pe }}x. That's not an error as such — Indian IPO
+offer documents often quote P/E on pre-issue EPS — but it's a materially
+lower number. The post-issue P/E better reflects what a listing-day buyer
+is actually paying, because the fresh shares are real and share the same
+profit from day one.
 
 ## Worked example: Britannia Industries
 

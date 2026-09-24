@@ -125,6 +125,7 @@ sales; the deposits are the cost of goods.
 | Deposits | {% include inr.html n=f25.deposits %} | Advances (loans) | {% include inr.html n=f25.advances %} |
 | Borrowings | {% include inr.html n=f25.borrowings %} | Investments | {% include inr.html n=f25.investments %} |
 | Other liabilities | {% include inr.html n=f25.other_liabilities %} | Cash and balances with RBI | {% include inr.html n=f25.cash_with_rbi %} |
+| Employee stock options outstanding | {% include inr.html n=f25.esop_outstanding %} | Balances with banks and call money | {% include inr.html n=f25.balances_with_banks_call_money %} |
 | Shareholders' equity | {% include inr.html n=f25.shareholders_equity %} | Fixed and other assets | {% include inr.html n=fixed_and_other %} |
 | **Total** | **{% include inr.html n=f25.total_assets %}** | **Total** | **{% include inr.html n=f25.total_assets %}** |
 

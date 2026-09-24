@@ -17,10 +17,12 @@ term: "Sequence-of-returns risk"
 
 ## A risk that doesn't show up in any return figure
 
-Every return statistic on this blog — CAGR, rolling returns, XIRR, Sharpe —
-is computed from a sequence of returns. None of them cares about the *order*
-of that sequence. Shuffle twenty years of annual returns and the CAGR is
-identical. So is the volatility.
+Most return statistics on this blog — point-to-point CAGR, volatility,
+Sharpe — are computed from a sequence of returns, and none of them cares
+about the *order* of that sequence. Shuffle twenty years of annual returns
+and the CAGR is identical. So is the volatility. (XIRR is the exception: it's
+built from your own cash flows, so order matters to it — which is exactly why
+two SIP investors in the same fund can end up with very different XIRRs.)
 
 Your money, however, cares enormously — as long as money is moving in or out
 along the way. A crash in year one of a SIP and a crash in year twenty are
@@ -54,8 +56,8 @@ Same twenty returns in every row. Same average, same CAGR, same volatility.
 for {{ s.years }} years ends at **₹{% include inr.html n=s.lump_sum_end_any_order %}** in
 all three orders. Multiplication commutes: (1+a)(1+b) is (1+b)(1+a). If
 nothing goes in or out, the order of returns is irrelevant to where you end
-up — and every return statistic you've ever been shown is silently a
-lump-sum statistic.
+up — and the CAGR on every factsheet you've ever read is silently a lump-sum
+statistic.
 
 ## Case two: a SIP cares a great deal
 

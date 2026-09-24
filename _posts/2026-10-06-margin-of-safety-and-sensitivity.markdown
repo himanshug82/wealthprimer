@@ -11,6 +11,10 @@ term: "Margin of safety"
 {% assign dcf = site.data.case_study.dcf %}
 {% assign r = dcf.result %}
 {% assign s = dcf.sensitivity %}
+{% assign s_low = s.rows.last.values.first %}
+{% assign s_high = s.rows.first.values.last %}
+{% assign s_low1 = s.rows.last.values[1] %}
+{% assign s_high1 = s.rows.first.values[3] %}
 
 ## A false sense of precision
 
@@ -44,10 +48,12 @@ growth rates:
 |---|{% for c in s.terminal_growth_cols %}---:|{% endfor %}{% for row in s.rows %}
 | {{ row.wacc }}% |{% for v in row.values %} {{ v }} |{% endfor %}{% endfor %}
 
-The base case sits in the middle at ₹{% include inr.html n=r.value_per_share %}. But move one percentage point
-in each direction on both inputs — a range no analyst would call
-unreasonable — and the answer runs from about **₹334 to ₹525**. The high end
-is 57% above the low end.
+The base case sits in the middle at ₹{% include inr.html n=r.value_per_share %}. But move WACC one percentage
+point in each direction and terminal growth two points — the edges of the
+grid, and a range no analyst would call unreasonable — and the answer runs
+from about **₹{{ s_low }} to ₹{{ s_high }}**. The high end is 57% above the
+low end. Even at just one point on each input, it's ₹{{ s_low1 }} to
+₹{{ s_high1 }}.
 
 That's the honest output of this model. Not ₹{% include inr.html n=r.value_per_share %}, but "somewhere in the
 high 300s to low 400s if my central assumptions hold, and plausibly ₹330 to
@@ -106,7 +112,7 @@ uncertainty:
 
 Desi Bites hits three of those four. It's a small-cap with three years of
 audited accounts, {{ r.terminal_pct_of_ev }}% of its value sits in the terminal value, and the
-sensitivity range spans ₹334 to ₹525. That combination argues for a wide
+sensitivity range spans ₹{{ s_low }} to ₹{{ s_high }}. That combination argues for a wide
 buffer, whatever number you'd normally use.
 
 ## Where margin of safety gets misused

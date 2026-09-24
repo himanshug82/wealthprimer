@@ -51,6 +51,8 @@ R = {
         provisions_and_contingencies=11649.42, provision_for_npa=12715.31,
         floating_provision=0.0, pat=67347.36,
         capital=765.22, reserves_and_surplus=496854.21, net_worth_reported=488899.89,
+        esop_outstanding=3805.19,              # "Employees stock options outstanding"
+        balances_with_banks_call_money=95215.65,  # "Balances with banks and money at call and short notice"
         deposits=2714714.90, borrowings=547930.90, other_liabilities=146128.52,
         total_assets=3910198.94, cash_with_rbi=144355.03, investments=836359.68,
         advances=2619608.61, fixed_assets=13655.40, other_assets=201004.57,
@@ -64,6 +66,8 @@ R = {
         other_income=49240.99, operating_expenses=63386.01,
         provisions_and_contingencies=23492.14, floating_provision=10900.0, pat=60812.27,
         capital=759.69, reserves_and_surplus=436833.39, net_worth_reported=427634.18,
+        esop_outstanding=2652.72,
+        balances_with_banks_call_money=40464.19,
         deposits=2379786.28, borrowings=662153.07, other_liabilities=135437.91,
         total_assets=3617623.06, cash_with_rbi=178683.22, investments=702414.96,
         advances=2484861.52, fixed_assets=11398.97, other_assets=199800.20,
@@ -99,7 +103,14 @@ def avg(a, b):
 
 def main():
     f25, f24 = R["FY25"], R["FY24"]
-    for fy in R.values():
+    for name, fy in R.items():
+        # both sides of the reported balance sheet must add up to the printed total
+        liab = (fy["capital"] + fy["esop_outstanding"] + fy["reserves_and_surplus"] + fy["deposits"]
+                + fy["borrowings"] + fy["other_liabilities"])
+        assets = (fy["cash_with_rbi"] + fy["balances_with_banks_call_money"] + fy["investments"]
+                  + fy["advances"] + fy["fixed_assets"] + fy["other_assets"])
+        assert abs(liab - fy["total_assets"]) < 0.01, (name, "liabilities", liab, fy["total_assets"])
+        assert abs(assets - fy["total_assets"]) < 0.01, (name, "assets", assets, fy["total_assets"])
         fy["net_interest_income"] = r(fy["interest_earned"] - fy["interest_expended"])
         fy["total_income"] = r(fy["interest_earned"] + fy["other_income"])
         fy["operating_income"] = r(fy["net_interest_income"] + fy["other_income"])   # "net revenue"

@@ -77,9 +77,12 @@ And two details ruin the story completely:
 happened *before* both of them. A genuine double top is a reversal formation
 at the end of an advance. This one has a taller peak sitting behind it.
 
-**Another peak came after the supposed breakdown.** On 25 February 2026,
-after the pattern had supposedly confirmed and the decline was under way,
-price returned to ₹6,208.5 — right back into the band.
+**Another peak came before the pattern ever confirmed.** A double top only
+counts once price {% assign neck = dt.neckline | round %}closes below the neckline (₹{% include inr.html n=neck %}), and that didn't
+happen until 19 March 2026. On 25 February 2026, seven weeks after "peak 2,"
+price went back up to ₹6,208.5 — right back into the band. So for more than two
+months after the second peak, this was still just a range, not a completed
+pattern.
 
 Read without the pattern imposed on it, this isn't a double top at all. It's
 a **range**: a stock oscillating underneath the
@@ -156,7 +159,7 @@ preference.
 - **Ignoring the base rate.** Knowing a pattern "worked" tells you nothing
   without knowing how often the same shape appeared and nothing followed.
   Those cases don't get written up.
-- **Treating the measured move as a forecast.** Here it projected ₹5,289 and
+- **Treating the measured move as a forecast.** {% assign tgt = dt.measured_target | round %}Here it projected ₹{% include inr.html n=tgt %} and
   price never got there.
 - **Forgetting the pattern needs a trend to reverse.** A reversal pattern in
   the middle of a range isn't reversing anything.
@@ -164,6 +167,6 @@ preference.
 **Takeaway:** Chart patterns are a vocabulary for describing shapes in price,
 and the shapes are real enough — but so is our talent for finding them. What
 looked like a textbook double top here was six swing highs in a 3% band, with
-the tallest one *before* both chosen peaks and another one *after* the
-supposed breakdown. Enumerate every point before you name a pattern; if the
+the tallest one *before* both chosen peaks and another one *after* them,
+before the pattern had even confirmed. Enumerate every point before you name a pattern; if the
 name only survives by leaving points out, it was never there.

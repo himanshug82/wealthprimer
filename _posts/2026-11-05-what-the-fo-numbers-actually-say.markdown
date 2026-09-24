@@ -171,13 +171,17 @@ mostly not individuals.
 
 ## Common mistakes
 
-- **Reading the loss rate as "unlucky people."** Roughly nine in ten of those
-  who lost in two consecutive years lost again
-  {% comment %}Two independent secondary sources agree; primary PDF still unread — see _data/fno.yml{% endcomment %}. If the outcome were
-  luck, it would not persist that reliably at the individual level.
-- **Confusing a win rate with a profit.** Options buyers can be right most of
-  the time and still lose overall, because the losses on the wrong days are
-  bigger than the gains on the right ones. Count rupees, not trades.
+- **Reading a losing year as a bad patch you wait out.** Roughly nine in ten
+  of those who lost in two consecutive years lost
+  again.{% comment %}Two independent secondary sources agree; primary PDF still unread — see _data/fno.yml{% endcomment %} That's only a
+  little above the {{ f.fy26.loss_pct }}% of all traders who lost in FY26, so on its own it
+  can't separate skill from luck. What it does say is that losing doesn't
+  fix itself: the costs and the counterparty are still there next year.
+- **Confusing a win rate with a profit.** A trader — option sellers
+  especially — can be right most of the time and still lose overall, because
+  the few losses on the wrong days are bigger than the many small gains on the
+  right ones. Buyers have their own version: right about the direction, but
+  not soon enough to beat time decay. Count rupees, not trades.
 - **Ignoring costs because each one is small.** A ₹20 brokerage on a position
   held for two hours is a rounding error per trade and a very large number per
   year. Costs are the one part of the outcome that is certain in advance.

@@ -56,8 +56,8 @@ signal to act on.
 | COGS (FY25) | {{ bi_is25.cogs }} |
 | **Inventory Days** | **{{ site.data.real_company.ratios.FY25.inventory_days }} days** |
 
-Britannia turns its inventory faster than Desi Bites — {{ site.data.real_company.ratios.FY25.inventory_days }} days versus
-{{ site.data.case_study.ratios.FY25.inventory_days }}. That's a real, structural advantage of scale and distribution reach
+Britannia turns its inventory faster than Desi Bites —
+{{ site.data.real_company.ratios.FY25.inventory_days }} days versus {{ site.data.case_study.ratios.FY25.inventory_days }}. That's a real, structural advantage of scale and distribution reach
 in packaged foods: a bigger, more efficient distribution network moves stock
 off shelves faster than a smaller manufacturer can manage.
 

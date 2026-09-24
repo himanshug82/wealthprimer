@@ -397,7 +397,7 @@ aum:
   - aum_slab: Next ₹5,000 crore
     max_ter_pct: 1.5
   - aum_slab: Next ₹40,000 crore
-    max_ter_pct: 1.50, falling 0.05 for every ₹5,000 crore
+    max_ter_note: 1.50%, falling 0.05% for every ₹5,000 crore
   - aum_slab: Above ₹50,000 crore
     max_ter_pct: 1.05
   ter_cap_index_funds_pct: 1.0

@@ -95,14 +95,23 @@ was in early 2026.
 
 Work it through:
 
-- The long-term gain of ₹{% include inr.html n=s.long_term_gain %} is below the ₹{% include inr.html n=r.ltcg_annual_exemption %} annual exemption, so no tax
+- The short-term result is a loss of ₹{% include inr.html n=s.short_term_loss_abs %}, so there's no short-term tax.
+- That loss can't wait for a better year. Under the
+  [set-off rules]({% post_url 2026-11-01-losses-set-off-and-harvesting %}), a short-term loss is first set
+  off against the same year's gains — short-term, then long-term — and only
+  what's left over carries forward. There are no short-term gains here, so it
+  comes off the long-term gain: ₹{% include inr.html n=s.long_term_gain %} − ₹{% include inr.html n=s.short_term_loss_abs %} = ₹{% include inr.html n=s.total_gain %}.
+- That ₹{% include inr.html n=s.total_gain %} is below the ₹{% include inr.html n=r.ltcg_annual_exemption %} annual exemption, so no tax
   is due on it.
-- The short-term result is a loss, so there's no short-term tax either — and
-  that loss can be [set off or carried forward]({% post_url 2026-11-01-losses-set-off-and-harvesting %}).
 
-**Total tax on a ₹{% include inr.html n=s.total_gain %} gain: zero.**
+**Total tax on a ₹{% include inr.html n=s.total_gain %} gain: zero.** But notice what happened to the
+loss: it's used up, and nothing carries forward. The long-term gain was
+already under the exemption, so absorbing the loss saved no tax at all. Had
+that ₹{% include inr.html n=s.short_term_loss_abs %} loss landed in a year with no gains to absorb it, it would
+have carried forward to offset a future taxable gain. That's a quiet cost of
+redeeming both kinds of lot in the same year.
 
-That outcome is real, and it's worth being careful about what it does and
+The zero is real, and it’s worth being careful about what it does and
 doesn't show. It isn't clever planning — nobody arranged it. It's the
 arithmetic of a moderate gain meeting a generous annual exemption. A larger
 SIP, or a stronger final year, and there would have been tax to pay. The

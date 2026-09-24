@@ -29,15 +29,15 @@ acquisition:
   h2_cogs: 163
   h2_opex: 53
   h2_depreciation: 12
-  h2_brand_amortisation: 7
+  h2_brand_amortisation: 3.5
   integration_costs: 35
   identifiable_net_assets: 355
   goodwill: 245
   h2_ebitda: 24
-  h2_ebit: 5
+  h2_ebit: 8.5
   goodwill_pct_of_price: 40.8
   ebitda_margin_h2: 10.0
-  year1_roic_pct: 1.2
+  year1_roic_pct: 2.1
   price_to_h2_revenue_annualised: 1.25
 fy26:
   revenue: 3299
@@ -48,30 +48,30 @@ fy26:
   opex: 708
   ebitda: 547
   depreciation: 150
-  amortisation: 7
-  ebit: 390
+  amortisation: 3.5
+  ebit: 393.5
   other_income: 85
   exceptional_items: -35
   interest: 42
-  pbt: 398
+  pbt: 401.5
   tax: 100
-  pat: 298
+  pat: 301.5
   dividend: 112
   dividend_per_share: 9.0
-  eps: 23.84
+  eps: 24.12
   balance_sheet:
     net_fixed_assets: 950
-    brand_intangible: 63
+    brand_intangible: 66.5
     goodwill: 245
     inventory: 312
     receivables: 272
     cash: 1311
-    total_assets: 3153
-    equity: 2464
+    total_assets: 3156.5
+    equity: 2467.5
     term_loan: 340
     payables: 254
     other_current_liabilities: 95
-    total_liab_eq: 3153
+    total_liab_eq: 3156.5
   cash_flow:
     cfo: 448
     cfi: -845
@@ -91,19 +91,19 @@ fy26:
     organic_gross_margin: 38.5
     ebitda_margin: 16.6
     organic_ebitda_margin: 17.1
-    net_margin: 9.0
-    pat_growth: 42.6
-    ocf_pat: 1.5
+    net_margin: 9.1
+    pat_growth: 44.3
+    ocf_pat: 1.49
     receivable_days: 30
     inventory_days: 56
     capex_intensity: 7.4
-    other_income_pct_pbt: 21.4
-    other_income_pct_pat: 21.4
+    other_income_pct_pbt: 21.2
+    other_income_pct_pat: 21.1
     goodwill_pct_equity: 9.9
     goodwill_pct_total_assets: 7.8
-    roe_on_closing_equity: 12.1
+    roe_on_closing_equity: 12.2
     roe_fy25_closing: 30.8
-    pat_ex_other_income_and_exceptional: 260
+    pat_ex_other_income_and_exceptional: 264
 fy26_dressed:
   techniques:
     channel_stuffing_revenue: 150
@@ -118,49 +118,49 @@ fy26_dressed:
   opex: 628
   ebitda: 684
   depreciation: 153
-  amortisation: 7
-  ebit: 524
+  amortisation: 3.5
+  ebit: 527.5
   other_income: 120
   related_party_gain: 35
   exceptional_items: -35
   interest: 42
-  pbt: 567
-  tax: 142
-  pat: 425
-  eps: 34.0
+  pbt: 570.5
+  tax: 143
+  pat: 427.5
+  eps: 34.2
   balance_sheet:
     net_fixed_assets: 987
-    brand_intangible: 63
+    brand_intangible: 66.5
     goodwill: 245
     inventory: 219
     receivables: 422
-    cash: 1324
-    total_assets: 3260
-    equity: 2591
+    cash: 1323
+    total_assets: 3262.5
+    equity: 2593.5
     term_loan: 340
     payables: 254
     other_current_liabilities: 75
-    total_liab_eq: 3260
+    total_liab_eq: 3262.5
   cash_flow:
-    cfo: 466
+    cfo: 465
     cfi: -850
     cff: 1428
-    net_change: 1044
-    closing_cash: 1324
+    net_change: 1043
+    closing_cash: 1323
     capex_reported: 305
   ratios:
     revenue_growth: 33.1
     gross_margin: 38.0
     ebitda_margin: 19.8
-    net_margin: 12.3
-    pat_growth: 103.3
-    pat_uplift_vs_honest: 42.6
-    ocf_pat: 1.1
+    net_margin: 12.4
+    pat_growth: 104.5
+    pat_uplift_vs_honest: 41.8
+    ocf_pat: 1.09
     receivable_days: 45
     inventory_days: 37
     capex_intensity: 8.8
-    other_income_pct_pbt: 21.2
-    cfo_uplift_vs_honest: 4.0
+    other_income_pct_pbt: 21.0
+    cfo_uplift_vs_honest: 3.8
 quarterly:
   seasonality_shares_pct:
     Q1: 22
@@ -233,8 +233,11 @@ contingent_liabilities:
   bank_guarantees: 25
   total: 145
   pct_of_equity: 5.9
-  pct_of_fy26_pat: 48.7
+  pct_of_fy26_pat: 48.1
   pct_of_cash: 11.1
+  gst_pct_of_equity: 4.9
+  gst_pct_of_fy26_pat: 39.8
+  gst_pct_of_cash: 9.2
 capital_allocation:
   hurdle_wacc: 13.91
   ipo_proceeds: 1600
@@ -243,11 +246,12 @@ capital_allocation:
     capex_from_proceeds: 245
     still_in_cash: 1031
   cash_pile_fy26: 1311
-  cash_pct_of_total_assets: 41.6
+  cash_pct_of_total_assets: 41.5
   idle_cash_drag_pct_points: 9.0
-  earnings_yield_at_ipo_price: 3.73
+  earnings_yield_at_ipo_price: 3.77
+  pe_at_ipo_price_fy26: 26.5
   acquisition_case:
-    year1_roic: 1.2
+    year1_roic: 2.1
     management_case_revenue: 552.0
     management_case_ebit_margin: 13.5
     management_case_roic: 9.3
@@ -266,7 +270,7 @@ capital_allocation:
     basis: if it earns the existing business's ROCE
   - option: Acquisition (Chatpata Foods)
     amount: 600
-    expected_return_pct: 1.2
+    expected_return_pct: 2.1
     basis: year-one, on H2 numbers annualised
   - option: Dividend
     amount: 112

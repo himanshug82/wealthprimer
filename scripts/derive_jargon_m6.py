@@ -282,7 +282,9 @@ aum = {
         {"aum_slab": "Next ₹1,250 crore", "max_ter_pct": 1.75},
         {"aum_slab": "Next ₹3,000 crore", "max_ter_pct": 1.60},
         {"aum_slab": "Next ₹5,000 crore", "max_ter_pct": 1.50},
-        {"aum_slab": "Next ₹40,000 crore", "max_ter_pct": "1.50, falling 0.05 for every ₹5,000 crore"},
+        # Stepped slab: no single numeric cap, so it carries a text note instead
+        # of max_ter_pct (the post prints the note verbatim, % signs included).
+        {"aum_slab": "Next ₹40,000 crore", "max_ter_note": "1.50%, falling 0.05% for every ₹5,000 crore"},
         {"aum_slab": "Above ₹50,000 crore", "max_ter_pct": 1.05},
     ],
     "ter_cap_index_funds_pct": 1.00,

@@ -23,7 +23,7 @@ business, the same cash, the same customers, with four cosmetic decisions
 layered on by an imaginary management that wanted its first year as a
 listed company to look better than it was. No real company is being
 described, and the point is not that companies routinely do this. The point
-is that each trick is *legal or nearly legal*, each one makes the statements
+is that each trick can be made to *look* defensible, each one makes the statements
 look better, and each one leaves a fingerprint that a reader with the ratios
 from this blog's first thirty posts can find.
 
@@ -39,12 +39,16 @@ introduced. Here is what management could have done instead.
 | **3. Related-party asset sale** | Sold old machinery with a book value of ₹{% include inr.html n=t.rp_asset_book_value %} lakh to a promoter-owned firm for ₹{% include inr.html n=t.rp_asset_sale_price %} lakh; the gain sits in "other income" | Other income, PBT |
 | **4. Provision write-back** | Reversed ₹{% include inr.html n=t.provision_reversal %} lakh of accrued expenses through the P&L | Opex down, EBITDA up |
 
-None of these involves a fake invoice or a missing rupee. Trick 1 is a
-timing decision the auditor may or may not catch (this is exactly why
-*revenue cut-off* is a standard Key Audit Matter). Trick 2 is a
-classification judgement. Trick 3 is a real transaction at a generous
-price. Trick 4 is an estimate being revised. That's what makes them worth
-learning: the frauds that make headlines are usually these, done bigger and
+None of these involves a missing rupee, and each comes with a ready
+explanation. Don't mistake that for legality. Booking stock nobody ordered
+as a sale fails Ind AS 115 — with no customer who agreed to buy, there's no
+revenue to recognise — and that's exactly why *revenue cut-off* is a
+standard Key Audit Matter. Capitalising advertising is barred outright by
+Ind AS 38, and routine repairs are an expense under Ind AS 16. As described,
+Tricks 1 and 2 are misstatements, not judgement calls. Trick 3 is a real
+transaction at a generous price, and Trick 4 is an estimate being revised;
+those two sit closer to the line, and the question is whether the price and
+the estimate were honest. What makes all four worth learning: the frauds that make headlines are usually these, done bigger and
 for longer.
 
 ## Side by side
@@ -98,7 +102,7 @@ cash the statement that's hardest to fake; here is what that means in practice.
 
 | Check | Honest | Dressed | What it catches |
 |---|---:|---:|---|
-| [OCF/PAT]({% post_url 2026-09-20-ocf-pat %}) | {{ hr.ocf_pat }}x | {{ dr.ocf_pat }}x | Profit rose {{ dr.pat_uplift_vs_honest }}%; operating cash rose {{ dr.cfo_uplift_vs_honest }}%. Tricks 1, 2 and 3 all inflate profit without producing cash |
+| [OCF/PAT]({% post_url 2026-09-20-ocf-pat %}) | {{ hr.ocf_pat }}x | {{ dr.ocf_pat }}x | Profit rose {{ dr.pat_uplift_vs_honest }}%; operating cash rose {{ dr.cfo_uplift_vs_honest }}%. Tricks 1, 3 and 4 inflate profit without producing operating cash. Trick 2 actually flatters OCF; it shows up in capex intensity and free cash flow instead |
 | [Debtor days]({% post_url 2026-09-08-debtor-days %}) | {{ hr.receivable_days }} | {{ dr.receivable_days }} | Trick 1. Stuffed channels don't pay; receivables balloon against a 30-day credit policy |
 | [Inventory days]({% post_url 2026-09-07-inventory-days %}) | {{ hr.inventory_days }} | {{ dr.inventory_days }} | Trick 1's mirror image. Stock "sold" in March leaves the warehouse, so inventory looks lean — a *fall* that's too good |
 | [Capex intensity]({% post_url 2026-09-21-capex-intensity %}) | {{ hr.capex_intensity }}% | {{ dr.capex_intensity }}% | Trick 2. Capex jumps while the MD&A mentions no new capacity; the "asset" is last year's advertising |
@@ -107,11 +111,14 @@ cash the statement that's hardest to fake; here is what that means in practice.
 
 Read the first row twice. **OCF/PAT is the single most useful forensic
 ratio** because almost every way of flattering profit fails to flatter cash.
-Channel stuffing books revenue nobody has paid for. Capitalising an expense
-moves the cash outflow from operating to investing — the cash still leaves,
-just under a different heading. A gain on selling an asset is non-cash from
-the operating statement's point of view (the proceeds sit in investing). So
-profit goes up and operating cash barely moves, and the ratio collapses from
+Channel stuffing books revenue nobody has paid for. A gain on selling an
+asset is non-cash from the operating statement's point of view (the proceeds
+sit in investing). A written-back provision is a book entry; no cash comes
+in. The exception is capitalising an expense: it moves the cash outflow from
+operating to investing, so operating cash actually looks *better* — the cash
+still leaves, just under a different heading, which is why capex intensity
+and free cash flow catch it instead. Net of all four, profit goes up and
+operating cash barely moves, and the ratio collapses from
 {{ hr.ocf_pat }}x to {{ dr.ocf_pat }}x.
 
 One year of OCF/PAT near 1 is unremarkable — working capital swings do that.
@@ -158,10 +165,11 @@ quarters.
 - **Treating one soft OCF/PAT year as a red flag.** Working capital is
   lumpy. The signal is a fall in cash conversion *coinciding* with a jump in
   profit, not a single reading.
-- **Assuming the auditor would have caught it.** Each of these four is a
-  judgement call inside the rules. Auditors test cut-off; they don't
-  second-guess a capitalisation policy or the price a promoter's brother
-  paid for a machine.
+- **Assuming the auditor would have caught it.** Each of these four comes
+  with a plausible story, and an audit is a sample, not a re-run of every
+  entry. Auditors test cut-off, but a well-papered March shipment can pass;
+  and they rarely second-guess the price a promoter's brother paid for a
+  machine.
 - **Being reassured by an improving ratio.** Inventory days *fell* in the
   dressed version. Too-good-to-be-true works in both directions.
 - **Ignoring "other income."** For a snacks company, interest and gains on

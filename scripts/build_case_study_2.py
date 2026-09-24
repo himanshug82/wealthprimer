@@ -72,7 +72,7 @@ acq = dict(
     h2_cogs=163,                     # 32% gross margin, weaker than Desi Bites' 38.5%
     h2_opex=53,                      # -> H2 EBITDA 24, a 10% margin
     h2_depreciation=12,
-    h2_brand_amortisation=7,         # 70 / 10 years
+    h2_brand_amortisation=3.5,       # 70 / 10 years = 7 a year; H2 is six months, so half of that
     integration_costs=35,            # one-off: stamp duty, advisers, rebranding -> exceptional item
 )
 acq["identifiable_net_assets"] = (acq["fixed_assets"] + acq["inventory"] + acq["receivables"]
@@ -137,7 +137,8 @@ d_inventory = inventory - fy25_bs["inventory"] - acq["inventory"]
 d_receivables = receivables - fy25_bs["receivables"] - acq["receivables"]
 d_payables = payables - fy25_bs["payables"] - acq["payables"]
 d_ocl = ocl - fy25_bs["other_current_liabilities"]
-cfo = pat + depreciation + amortisation - d_inventory - d_receivables + d_payables + d_ocl
+# pat and amortisation both carry a half-lakh (3.5 amortisation); the sum is whole
+cfo = r(pat + depreciation + amortisation - d_inventory - d_receivables + d_payables + d_ocl)
 cfi = -org_capex - acq["price"]
 cff = ipo_cash - loan_repaid - dividend
 net_change = cfo + cfi + cff
@@ -223,8 +224,8 @@ assert d_total_assets == d_total_liab_eq, (d_total_assets, d_total_liab_eq)
 dd_inventory = d_inventory - fy25_bs["inventory"] - acq["inventory"]
 dd_receivables = d_receivables_bal - fy25_bs["receivables"] - acq["receivables"]
 dd_ocl = d_ocl - fy25_bs["other_current_liabilities"]
-d_cfo = (d_pat + d_dep + amortisation - rp_gain
-         - dd_inventory - dd_receivables + d_payables + dd_ocl)
+d_cfo = r(d_pat + d_dep + amortisation - rp_gain
+          - dd_inventory - dd_receivables + d_payables + dd_ocl)
 d_cfi = -(org_capex + dress["capitalised_opex"]) - acq["price"] + dress["rp_asset_sale_price"]
 d_cff = cff
 d_net_change = d_cfo + d_cfi + d_cff
@@ -324,6 +325,10 @@ contingent = dict(
     pct_of_equity=pct(145, equity),
     pct_of_fy26_pat=pct(145, pat),
     pct_of_cash=pct(145, cash),
+    # the GST demand alone (the line the post scales "if it crystallises")
+    gst_pct_of_equity=pct(120, equity),
+    gst_pct_of_fy26_pat=pct(120, pat),
+    gst_pct_of_cash=pct(120, cash),
 )
 
 # ------------------------------------------------------- capital allocation
@@ -350,6 +355,7 @@ capital_allocation = dict(
     cash_pct_of_total_assets=pct(cash, total_assets),
     idle_cash_drag_pct_points=round(wacc - 6.5 * (1 - TAX), 1),
     earnings_yield_at_ipo_price=pct(honest["eps"], listing["ipo_price"], 2),
+    pe_at_ipo_price_fy26=round(listing["ipo_price"] / honest["eps"], 1),   # the P/E that earnings yield inverts
     acquisition_case=dict(
         year1_roic=acq["year1_roic_pct"],
         management_case_revenue=480 * 1.15,

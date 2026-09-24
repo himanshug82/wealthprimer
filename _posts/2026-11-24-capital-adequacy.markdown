@@ -50,11 +50,13 @@ asset is multiplied by a weight that reflects how likely it is to lose money:
 | Cash, balances with RBI, government securities | 0% |
 | Home loans (well-collateralised) | 35–50% |
 | Corporate loans (depends on rating) | 20–150% |
-| Unsecured personal loans, credit cards | 100–125% |
+| Unsecured personal loans | 125% |
+| Credit-card receivables | 150% |
 | Certain exposures RBI wants to discourage | higher, by regulation |
 
 So ₹100 of government bonds adds ₹0 to RWA; ₹100 of credit-card balances adds
-₹125. A bank with a large, safe book has RWA well below its total assets; a
+₹150. (Those two unsecured rows were raised by RBI, November 2023: personal
+loans from 100% to 125%, and bank credit-card receivables from 125% to 150%.) A bank with a large, safe book has RWA well below its total assets; a
 bank lending aggressively can have RWA near or above them.
 
 **Regulatory capital** comes in layers, in order of how cleanly each can

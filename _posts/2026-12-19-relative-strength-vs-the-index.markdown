@@ -88,12 +88,14 @@ its {{ rs.ma_period }}-day moving average.
 | Highest | {{ rs.rs_high }} on {{ rs.rs_high_date }} |
 
 Over two years the stock beat the index by about eleven points. But the path
-matters more than the endpoint, because the ratio spent the first eight
-months *falling* — to {{ rs.rs_low }} in December 2024 — and then the next
-nine months climbing to {{ rs.rs_high }}. Someone who looked only in December
-2024 would have concluded this was a market laggard. Someone who looked only in
-September 2025 would have concluded the opposite. Both would have been
-describing the same two years.
+matters more than the endpoint. The ratio *rose* for the first six months, to
+about 115 in early October 2024. Then it collapsed in just two, to
+{{ rs.rs_low }} in December 2024. Then it spent the next nine months climbing
+back to {{ rs.rs_high }} — barely above where it had been a year earlier.
+Someone who looked only in October 2024 would have called this a market leader.
+Someone who looked only in December 2024 would have called it a laggard.
+Someone who looked in September 2025 would have called it a leader again. All
+three would have been describing the same two years.
 
 Note that the Nifty figure is the **price** index, which excludes dividends.
 The [benchmarks post]({% post_url 2026-10-25-benchmarks-and-comparing-like-with-like %})
@@ -196,6 +198,6 @@ garbage.
 **Takeaway:** Relative strength — the stock divided by its index — separates
 what a company did from what the market did, which is the one question a
 price chart can't answer on its own. Over two years Britannia beat the Nifty
-by about eleven points, but the ratio spent eight months falling before it
-spent nine months rising, and half of the stock's worst decline turned out to
+by about eleven points, but the ratio rose for six months, collapsed over two,
+then climbed for nine, and half of the stock's worst decline turned out to
 be the market's. Read it as a description. It has never been a forecast.

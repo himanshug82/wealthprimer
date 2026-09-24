@@ -42,13 +42,13 @@ FCF yield       =  Free cash flow / Market cap
 
 ## Worked example: Desi Bites Foods Ltd, at listing
 
-From the [case study](/case-study/): IPO price ₹{{ d.price }}, FY25 diluted EPS
+From the [case study](/case-study/): IPO price ₹{{ d.price }}, FY25 post-issue EPS
 ₹{{ d.eps_diluted }}, FY25 free cash flow ₹{{ d.fcf_lakh }} lakh, market cap
 ₹{% include inr.html n=d.market_cap_lakh %} lakh.
 
 | | |
 |---|---:|
-| P/E (diluted) | {{ d.pe }}x |
+| P/E (post-issue) | {{ d.pe }}x |
 | **Earnings yield** = {{ d.eps_diluted }} / {{ d.price }} | **{{ d.earnings_yield_pct }}%** |
 | **FCF yield** = {{ d.fcf_lakh }} / {% include inr.html n=d.market_cap_lakh %} | **{{ d.fcf_yield_pct }}%** |
 | 10-year G-Sec yield (illustrative, from the WACC post) | {{ y.gsec_yield_pct }}% |
@@ -110,9 +110,9 @@ can see how much growing it has to do.
 - **Treating earnings yield below the bond yield as "overvalued".** It means
   growth is priced in. Whether enough growth arrives is the question, not the
   answer.
-- **Using undiluted EPS after a fresh issue.** Same trap as the
+- **Using pre-issue EPS after a fresh issue.** Same trap as the
   [EPS post]({% post_url 2026-09-23-eps %}) — Desi Bites' figure above uses
-  the diluted count.
+  the post-issue share count.
 - **Reading a high FCF yield as cheap without checking why.** A capex holiday
   inflates one year's FCF. Look at capex intensity over several years.
 - **Comparing yields across countries without adjusting for rates.** A 4%

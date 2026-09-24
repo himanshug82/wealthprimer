@@ -14,6 +14,10 @@ term: "Comparables (relative valuation)"
 {% assign db_pe = listing.ipo_price | divided_by: listing.eps_diluted | round: 1 %}
 {% assign db_pb = listing.ipo_price | divided_by: listing.book_value_per_share | round: 2 %}
 {% assign db_evebitda = listing.ev | divided_by: 441.0 | round: 1 %}
+{% assign db_roe = site.data.case_study.ratios.FY25.roe %}
+{% assign bi_roe = site.data.real_company.ratios.FY25.roe %}
+{% assign db_roe_post = listing.eps_diluted | times: 100.0 | divided_by: listing.book_value_per_share | round: 1 %}
+{% assign db_ipo_share = listing.ipo_proceeds | times: 100.0 | divided_by: listing.post_ipo_equity | round: 0 %}
 
 ## Two ways to answer "what is this worth"
 
@@ -122,10 +126,22 @@ mistake this post exists to prevent. Both companies make packaged food in
 India. That is roughly where the similarity ends, and the gaps explain
 almost the entire spread:
 
+- **IPO cash sitting in the book.** Most of the P/B gap starts here.
+  Desi Bites' post-IPO book of ₹{% include inr.html n=listing.post_ipo_equity %} Lakh
+  includes the ₹{% include inr.html n=listing.ipo_proceeds %} Lakh the IPO just
+  raised — about {{ db_ipo_share }}% of the book is fresh cash that hasn't
+  earned anything yet. Cash is worth roughly its book value, so a book
+  stuffed with it drags P/B towards 1x.
 - **Return on equity.** From the [last post]({% post_url 2026-09-30-dupont-roe-decomposition %}),
-  Britannia earns 52.5% on shareholders' equity against Desi Bites'
-  34.0%. A business that compounds equity faster is *worth* a higher
-  multiple of that equity. Much of the P/B gap is this and nothing more.
+  Britannia earns {{ bi_roe }}% on shareholders' equity against Desi Bites'
+  {{ db_roe }}%. A business that compounds equity faster is *worth* a higher
+  multiple of that equity. But that {{ db_roe }}% was earned on the *pre-IPO*
+  equity. P/B = P/E × ROE only holds when the ROE is measured on the same
+  book as the P/B. On the post-IPO book, Desi Bites' ROE is ₹{% include inr.html n=listing.eps_diluted %}
+  / ₹{% include inr.html n=listing.book_value_per_share %} = about {{ db_roe_post }}%,
+  and {{ db_pe }}x × {{ db_roe_post }}% gets you back to roughly the {{ db_pb }}x above.
+  The ROE gap on its own (roughly 1.5 times) explains only a small slice of
+  a nearly tenfold P/B gap.
 - **Scale and track record.** Britannia has a century of history, national
   distribution, and brands people ask for by name. Desi Bites is a
   fictional mid-sized manufacturer with three years of audited accounts.

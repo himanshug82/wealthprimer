@@ -74,8 +74,9 @@ rule the honest version actually did marginally better, which is just noise.
 That's because these rules trade rarely and a one-day slip on a large-cap
 doesn't move much. Don't be reassured. For a rule that trades often, or on
 volatile stocks, the same one-day error routinely turns a losing strategy into
-a "winning" one, and in this dataset it's still worth almost a point on the
-20/50 rule. The fix is one line of code — shift the signal by a day — and
+a "winning" one, and even in this dataset it's worth
+{{ s1.lookahead_no_cost.cagr_pct | minus: s1.next_day_no_cost.cagr_pct | round: 1 }} of a
+percentage point a year on the slow 50/200 rule. The fix is one line of code — shift the signal by a day — and
 there is no excuse for skipping it.
 
 ## Mistake 2: forgetting that trading costs money

@@ -18,6 +18,12 @@ term: "ROCE (return on capital employed)"
 {% assign db_ce25 = db_bs25.equity | plus: db_bs25.term_loan %}
 {% assign bi_ce24 = bi_bs24.total_equity | plus: bi_bs24.total_borrowings %}
 {% assign bi_ce25 = bi_bs25.total_equity | plus: bi_bs25.total_borrowings %}
+{% assign db_t = db_is25.tax | times: 1.0 | divided_by: db_is25.pbt %}
+{% assign bi_t = bi_is25.tax | times: 1.0 | divided_by: bi_is25.pbt %}
+{% assign db_keep = 1.0 | minus: db_t %}
+{% assign bi_keep = 1.0 | minus: bi_t %}
+{% assign db_roce_pt = site.data.case_study.ratios.FY25.roce | times: db_keep | round: 1 %}
+{% assign bi_roce_pt = site.data.real_company.ratios.FY25.roce | times: bi_keep | round: 1 %}
 
 ## What ROCE means
 
@@ -70,10 +76,29 @@ measure, not an owners-only one. For illustration only.
 | **ROCE** | **{{ site.data.real_company.ratios.FY25.roce }}%** |
 
 Notice Britannia's ROCE ({{ site.data.real_company.ratios.FY25.roce }}%) is close to, but a little below, its
-[ROE]({% post_url 2026-09-01-roe %}) ({{ site.data.real_company.ratios.FY25.roe }}%) from the previous post. That's actually a
-reassuring pattern, not a red flag — it means the strong ROE isn't being
-artificially pumped up by heavy borrowing; the company earns a genuinely
-high return on capital regardless of who supplied it.
+[ROE]({% post_url 2026-09-01-roe %}) ({{ site.data.real_company.ratios.FY25.roe }}%) from the previous post. It's tempting to read
+that as "ROE isn't being pumped up by borrowing" — but that comparison isn't
+fair. ROCE uses EBIT, which is *before* tax; ROE uses PAT, which is *after*
+tax. To compare like with like, take tax off ROCE first.
+
+| | Desi Bites | Britannia |
+|---|---:|---:|
+| ROCE (pre-tax) | {{ site.data.case_study.ratios.FY25.roce }}% | {{ site.data.real_company.ratios.FY25.roce }}% |
+| Effective tax rate (FY25 tax ÷ PBT) | {{ db_t | times: 100 | round: 1 }}% | {{ bi_t | times: 100 | round: 1 }}% |
+| **Post-tax ROCE** = ROCE × (1 − tax rate) | **{{ db_roce_pt }}%** | **{{ bi_roce_pt }}%** |
+| ROE (post-tax) | {{ site.data.case_study.ratios.FY25.roe }}% | {{ site.data.real_company.ratios.FY25.roe }}% |
+
+(Using each company's FY25 effective tax rate is a simplifying assumption —
+it applies the same rate to all of EBIT.)
+
+On a like-for-like basis, ROE sits well above post-tax ROCE for both
+companies. That gap means part of the return to shareholders comes from
+funding beyond their own equity — borrowings, but also things like money
+owed to suppliers, which capital employed doesn't count at all. It isn't a
+red flag by itself, but it does mean ROE alone overstates how efficiently
+the business turns capital into profit — which is exactly why ROCE is worth
+checking. The upcoming posts on debt-to-equity and the equity multiplier
+pick up how much of ROE comes from that extra funding.
 
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
@@ -92,10 +117,12 @@ itself, not who financed it.
 
 ## Common mistakes
 
-- **Comparing ROCE across companies with very different debt levels without
-  also checking ROE.** If ROCE is healthy but ROE is dramatically higher,
-  leverage is doing a lot of the work — worth understanding before assuming
-  the business itself is that efficient.
+- **Comparing pre-tax ROCE with post-tax ROE.** ROCE is built on EBIT
+  (before tax), ROE on PAT (after tax), so "ROCE is close to ROE" proves
+  nothing about leverage. Take tax off ROCE first. If ROE is still clearly
+  higher than post-tax ROCE — as it is for both companies above — funding
+  beyond equity (debt, supplier credit) is doing some of the work. Worth
+  understanding before assuming the business itself is that efficient.
 - **Using EBITDA instead of EBIT in the numerator.** EBITDA still includes
   the benefit of assets that are ageing and losing value — EBIT accounts for
   that, which is why ROCE specifically uses EBIT.

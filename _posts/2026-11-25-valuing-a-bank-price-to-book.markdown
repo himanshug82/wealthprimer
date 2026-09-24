@@ -115,8 +115,9 @@ observe:
 | {{ s.label }} | {{ s.cost_of_equity_pct }}% | {{ s.growth_pct }}% | **{{ s.pb }}x** |{% endfor %}
 
 Read that table for what it actually demonstrates. One percentage point on
-each of two unobservable inputs moves the "justified" multiple from about
-{{ v.justified_pb_scenarios[0].pb }}x to {{ v.justified_pb_scenarios[2].pb }}x —
+each of two unobservable inputs (A to B) moves the "justified" multiple from
+about {{ v.justified_pb_scenarios[0].pb }}x to {{ v.justified_pb_scenarios[1].pb }}x. Two points on each (A to C) takes it
+to {{ v.justified_pb_scenarios[2].pb }}x —
 a range that comfortably brackets the actual {{ v.pb }}x and would bracket
 most large banks on most days. The formula is a way to *think* about why
 multiples differ. It is not a way to decide whether one is right, and this

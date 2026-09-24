@@ -96,7 +96,7 @@ contains both the 2008 crash and the 2020 one. Most fund marketing shows you
 a period chosen to exclude events like those. This series includes them
 because they're the interesting part.
 
-**It's old data.** The series ends {{ f.regular_end }}, nearly eight months before this
+**It's old data.** The series ends {{ f.regular_end }}, more than six months before this
 post publishes. That's a rule this blog follows for worked examples, and it
 means nothing here can be read as a view on current markets.
 

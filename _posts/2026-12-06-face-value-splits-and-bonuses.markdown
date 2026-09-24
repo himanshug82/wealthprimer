@@ -69,7 +69,7 @@ starting point:
 | Share capital (₹ lakh) | {{ b.share_capital_lakh }} | {{ a1.share_capital_lakh }} | {{ a2.share_capital_lakh }} |
 | Price per share | ₹{{ b.price }} | ₹{{ a1.price }} | ₹{{ a2.price }} |
 | **Market cap (₹ lakh)** | **{% include inr.html n=b.market_cap_lakh %}** | **{% include inr.html n=a1.market_cap_lakh %}** | **{% include inr.html n=a2.market_cap_lakh %}** |
-| Diluted EPS | ₹{{ b.eps_diluted }} | ₹{{ a1.eps_diluted }} | ₹{{ a2.eps_diluted }} |
+| EPS (post-issue) | ₹{{ b.eps_diluted }} | ₹{{ a1.eps_diluted }} | ₹{{ a2.eps_diluted }} |
 | Book value per share | ₹{{ b.bvps }} | ₹{{ a1.bvps }} | ₹{{ a2.bvps }} |
 | **P/E** | **{{ bo.pe_before }}x** | **{{ bo.pe_after }}x** | **{{ bo.pe_after }}x** |
 

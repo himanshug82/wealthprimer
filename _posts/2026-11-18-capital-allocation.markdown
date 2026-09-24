@@ -103,8 +103,10 @@ shareholder sees; this is what the board sees.
 
 **Buybacks.** Also a return of capital, with a twist: the company buys
 shares, so the return depends entirely on the price paid. Buying back
-stock at a [P/E]({% post_url 2026-09-24-price-to-earnings %}) of 38 is accepting an
-earnings yield of {{ ca.earnings_yield_at_ipo_price }}% — below the hurdle again. Buying back at a P/E
+stock at the IPO price of ₹{% include inr.html n=cs.listing.ipo_price %} — a
+[P/E]({% post_url 2026-09-24-price-to-earnings %}) of about {{ ca.pe_at_ipo_price_fy26 }} on FY26
+earnings per share of ₹{{ f.eps }} — is accepting an earnings yield of
+{{ ca.earnings_yield_at_ipo_price }}% (1 ÷ {{ ca.pe_at_ipo_price_fy26 }}), below the hurdle again. Buying back at a P/E
 of 10 is a 10% yield on money the company knows better than any other
 investment. Buybacks are excellent or terrible depending on one number,
 and companies tend to do them when the stock is expensive and cash is

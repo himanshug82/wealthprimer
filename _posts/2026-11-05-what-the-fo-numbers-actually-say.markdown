@@ -1,42 +1,11 @@
 ---
 layout: post
 title: "What the F&O numbers actually say"
-description: "SEBI has counted, five years running: the overwhelming majority of individual derivatives traders lose money. What the data shows, and the arithmetic behind why."
+description: "SEBI has counted, five years running: most individual derivatives traders lose money. What the data shows, and the arithmetic behind why it keeps happening."
 image: /assets/og/what-the-fo-numbers-actually-say.png
 date: 2026-11-05 09:00:00 +0530
+series: risk
 ---
-
-{% comment %}
-────────────────────────────────────────────────────────────────────────────
-DRAFT — three decisions for you before this is scheduled:
-
-1. SERIES. Deliberately left with no `series:` key, so it doesn't get filed
-   under a track it doesn't belong to. It isn't technical analysis (it's not
-   about reading charts) and it isn't mutual funds. Two sensible homes:
-     (a) standalone — it works alone and it is the most linkable thing on the
-         blog, so it doesn't need a series to justify it; or
-     (b) the opener of a sixth series on risk, which would also be the natural
-         home for position sizing, leverage, and behavioural posts later.
-   If (b), add the slug to _data/series.yml + series/<slug>.markdown and set
-   `series:` here — everything else is automatic.
-
-2. NUMBERS. Every figure comes from _data/fno.yml. The headline ones are
-   corroborated; several are single-source because SEBI's study PDFs sit
-   behind a landing page automated fetches couldn't get through. Read the
-   VERIFY BEFORE PUBLISHING block at the top of that file and check the
-   flagged figures against the actual PDF first. Sources disagree on the
-   FY26 participant count, so this post deliberately never quotes one.
-
-3. DATE. Set to 2026-11-05 purely to sit after the tax series ends
-   (2026-11-04) and keep the daily cadence. Move it wherever you like.
-
-Compliance note: this post takes a strong position on a market segment, which
-CLAUDE.md explicitly allows ("it's fine to have a point of view... as long as
-it's framed as an opinion/limitation, not a trade call"). It names no security,
-recommends no transaction, and the closing section says plainly that it isn't
-telling anyone what to do. Keep it that way through edits.
-────────────────────────────────────────────────────────────────────────────
-{% endcomment %}
 
 {% assign f = site.data.fno %}
 {% assign s = f.sources %}
@@ -110,7 +79,7 @@ participants, minus what leaks out in brokerage, exchange fees, STT (Securities
 Transaction Tax), stamp duty and GST. SEBI puts the individual segment's
 transaction costs at roughly
 ₹{% include inr.html n=u.transaction_costs_cr_fy22_fy26 %} crore over FY22–FY26
-{% comment %}SINGLE-SOURCE — verify against the PDF{% endcomment %}. That is
+{% comment %}Two independent secondary sources agree on this figure; the primary SEBI PDF is still unread — see _data/fno.yml{% endcomment %}. That is
 the house's cut, and it is paid whether you win or lose.
 
 **2. The people on the other side are not like you.**
@@ -204,7 +173,7 @@ mostly not individuals.
 
 - **Reading the loss rate as "unlucky people."** Roughly nine in ten of those
   who lost in two consecutive years lost again
-  {% comment %}SINGLE-SOURCE — verify{% endcomment %}. If the outcome were
+  {% comment %}Two independent secondary sources agree; primary PDF still unread — see _data/fno.yml{% endcomment %}. If the outcome were
   luck, it would not persist that reliably at the individual level.
 - **Confusing a win rate with a profit.** Options buyers can be right most of
   the time and still lose overall, because the losses on the wrong days are

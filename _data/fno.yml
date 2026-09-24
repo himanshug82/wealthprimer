@@ -13,9 +13,22 @@
 #   https://www.sebi.gov.in/reports-and-statistics/research/aug-2026/study-trading-behaviour-of-individual-traders-in-the-equity-derivatives-segment-fy25-fy26-_103836.html
 #
 # KNOWN CONFLICT: sources disagree on how many individual traders participated
-# in FY26 — one reports ~87.5 lakh, another ~78.6 lakh "active" traders. These
-# are probably two different definitions (all participants vs. active). The post
-# deliberately does NOT quote a participant count until the PDF settles it.
+# in FY26 — Business Standard's headline says ~87.5 lakh (8.75 million), while
+# the corplawupdates.in summary of SEBI press release 50/2026 says 98.1 lakh
+# (FY25) falling to 78.6 lakh (FY26). Probably two different definitions (all
+# participants vs. active). The post deliberately does NOT quote a participant
+# count until the PDF settles it.
+#
+# CORROBORATION UPDATE (24 Sep 2026): a second, independent secondary source —
+# corplawupdates.in's itemised summary of SEBI press release 50/2026 (20 Aug
+# 2026) — agrees with every figure in `fy26_unverified` below (avg loss/trader
+# ~Rs 1.17 lakh, FY25 aggregate loss ~Rs 1.12 lakh crore, FY26 transaction
+# costs Rs 25,000 crore and ~Rs 1 lakh crore over FY22-FY26, ~90% repeat losers,
+# ~97% options buyers / ~2% sellers, the portfolio-size split). So these are no
+# longer single-source; they are "two independent secondary sources agree,
+# primary PDF still unread". The same source adds: 99% of FPI/proprietary
+# profits came from algo entities; 0DTE contracts were 59% of index-options
+# turnover; sub-Rs 1 lakh portfolios were ~78% of traders and ~70% of losses.
 # ────────────────────────────────────────────────────────────────────────────
 
 sources:
@@ -48,11 +61,12 @@ fy26:
   options_share_of_losses_pct: 92
   corroborated: true          # two independent secondary sources agree
 
-# Single-source figures. USEFUL BUT UNVERIFIED — check each against the PDF.
-# The post uses only the ones flagged in-line as needing a check, and leans on
-# the corroborated block above for anything load-bearing.
+# Figures NOT yet checked against the primary PDF, but now agreed by two
+# independent secondary sources (see CORROBORATION UPDATE above). Still verify
+# against the PDF when it becomes fetchable. The post leans on the corroborated
+# block above for anything load-bearing.
 fy26_unverified:
-  avg_loss_per_trader: 117000
+  avg_loss_per_trader: 117000      # two secondary sources agree
   aggregate_loss_cr_fy25: 112000
   transaction_costs_cr_fy26: 25000
   transaction_costs_cr_fy22_fy26: 100000
@@ -61,3 +75,10 @@ fy26_unverified:
   options_sellers_pct: 2
   loss_pct_zero_equity_holdings: 93
   loss_pct_over_10cr_holdings: 58
+  sub_1lakh_portfolio_share_of_traders_pct: 78   # two secondary sources agree
+  sub_1lakh_portfolio_share_of_losses_pct: 70
+  algo_share_of_fpi_prop_profits_pct: 99
+  traders_avg_loss_exceeds_avg_gain_pct: 79   # share of traders whose average losing trade exceeded their average winning one (behaviour study)
+  zero_dte_share_of_index_options_turnover_pct: 59
+  active_traders_lakh_fy25: 98.1     # DEFINITION CONFLICT with the 87.5 lakh figure — do not quote in posts
+  active_traders_lakh_fy26: 78.6

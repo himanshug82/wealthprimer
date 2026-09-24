@@ -81,7 +81,7 @@ reproduce all of it:
 | Fund | {{ f.name }} |
 | Category | {{ f.category }} |
 | Plans used | {{ f.plan_regular }}, {{ f.plan_direct }} |
-| History | {{ f.regular_start }} to {{ f.regular_end }} ({{ f.years_of_history }} years, {{ f.regular_points }} NAV points) |
+| History | {{ f.regular_start }} to {{ f.regular_end }} ({{ f.years_of_history }} years, {% include inr.html n=f.regular_points %} NAV points) |
 | Source | [{{ f.source_label }}]({{ f.source_url }}) |
 | Download | [`uti-nifty50-index-fund-nav.csv`]({{ f.csv_path | relative_url }}) |
 

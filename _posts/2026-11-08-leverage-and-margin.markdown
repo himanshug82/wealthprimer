@@ -100,7 +100,7 @@ Now run the scenarios:
 
 | Price move over {{ m.months }} months | Unlevered return | P&L on the MTF position | Return on your ₹{% include inr.html n=m.own %} |
 |---:|---:|---:|---:|{% for s in m.scenarios %}
-| {{ s.move_pct }}% | {{ s.unlevered_return_pct }}% | ₹{% include inr.html n=s.pnl %} | **{{ s.return_on_own_pct }}%** |{% endfor %}
+| {{ s.move_pct }}% | {{ s.unlevered_return_pct }}% | {% if s.pnl < 0 %}{% assign pnl_abs = s.pnl | abs %}−₹{% include inr.html n=pnl_abs %}{% else %}₹{% include inr.html n=s.pnl %}{% endif %} | **{{ s.return_on_own_pct }}%** |{% endfor %}
 
 Three things in that table are worth sitting with.
 

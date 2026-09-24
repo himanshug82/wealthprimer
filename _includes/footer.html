@@ -1,6 +1,6 @@
 {%- comment -%}
 Overrides minima's footer. Series links render from _data/series.yml, so a new
-series appears here with no template change. Privacy & Disclaimer lives here
+series appears here with no template change — once its first post is live. Privacy & Disclaimer lives here
 rather than in the header nav (see header_pages in _config.yml).
 {%- endcomment -%}
 <footer class="site-footer h-card">
@@ -29,6 +29,8 @@ rather than in the header nav (see header_pages in _config.yml).
         <h2 class="footer-heading">Series</h2>
         <ul>
           {%- for s in site.data.series -%}
+          {%- assign in_series = site.posts | where: "series", s.slug -%}
+          {%- if in_series.size == 0 -%}{%- continue -%}{%- endif -%}
           <li><a href="{{ '/series/' | append: s.slug | append: '/' | relative_url }}">{{ s.title | split: " — " | first }}</a></li>
           {%- endfor -%}
         </ul>

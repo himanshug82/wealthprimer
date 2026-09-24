@@ -1,0 +1,64 @@
+{%- comment -%}
+Applies Indian digit grouping (12,34,567.89) to every table cell whose whole
+content is a number, so posts can print raw data values in tables
+({{ db25.revenue }}) and still follow the style rule in CLAUDE.md.
+Usage (in a layout):  {% include inr-tables.html html=content %}
+
+A cell is reformatted only if, after an optional <strong> wrapper, it is:
+  optional ₹ / - / − prefix, digits with at most one ".", optional % suffix,
+  and at least 4 digits before the decimal point.
+Anything else — dates (2024-03-28), labels, links, "31 March 2025", numbers
+that already have commas — passes through untouched.
+
+Year guard: a bare 4-digit integer from 1900 to 2099 in the FIRST cell of a
+row is a year label (the alpha / tracking-error / index-fund tables), not a
+value, and is left alone.
+
+Pure Liquid for the same reason as inr.html: the Pages deploy runs Jekyll in
+safe mode, so a _plugins/ filter would be silently ignored in production.
+Relies on kramdown emitting bare <tr> tags.
+{%- endcomment -%}
+{%- assign _rows = include.html | split: '<tr>' -%}
+{%- capture _html -%}
+{%- for _row in _rows -%}
+{%- unless forloop.first -%}<tr>{%- endunless -%}
+{%- assign _cells = _row | split: '<td' -%}
+{%- for _part in _cells -%}
+{%- if forloop.first -%}{{ _part }}{%- continue -%}{%- endif -%}
+{%- assign _attr = _part | split: '>' | first -%}
+{%- assign _skip = _attr | size | plus: 1 -%}
+{%- assign _rest = _part | slice: _skip, 1000000 -%}
+{%- assign _cell = _rest | split: '</td>' | first -%}
+{%- assign _after = _rest | slice: _cell.size, 1000000 -%}
+{%- comment -%} unwrap <strong>…</strong> {%- endcomment -%}
+{%- assign _open = '' -%}{%- assign _close = '' -%}{%- assign _t = _cell | strip -%}
+{%- assign _h = _t | slice: 0, 8 -%}{%- assign _e = _t | slice: -9, 9 -%}
+{%- if _h == '<strong>' and _e == '</strong>' -%}
+  {%- assign _open = '<strong>' -%}{%- assign _close = '</strong>' -%}
+  {%- assign _tl = _t | size | minus: 17 -%}
+  {%- assign _t = _t | slice: 8, _tl -%}
+{%- endif -%}
+{%- comment -%} split off prefix / suffix {%- endcomment -%}
+{%- assign _pre = '' -%}{%- assign _suf = '' -%}
+{%- assign _c0 = _t | slice: 0, 1 -%}
+{%- if _c0 == '₹' or _c0 == '-' or _c0 == '−' -%}{%- assign _pre = _c0 -%}{%- assign _t = _t | slice: 1, 1000000 -%}{%- endif -%}
+{%- assign _cz = _t | slice: -1, 1 -%}
+{%- if _cz == '%' -%}{%- assign _suf = '%' -%}{%- assign _tl = _t | size | minus: 1 -%}{%- assign _t = _t | slice: 0, _tl -%}{%- endif -%}
+{%- comment -%} is what's left a plain number? {%- endcomment -%}
+{%- assign _left = _t | remove: '0' | remove: '1' | remove: '2' | remove: '3' | remove: '4' | remove: '5' | remove: '6' | remove: '7' | remove: '8' | remove: '9' -%}
+{%- assign _ip = _t | split: '.' | first -%}
+{%- assign _fmt = false -%}
+{%- if _t != '' and _ip.size >= 4 -%}
+  {%- if _left == '' or _left == '.' -%}{%- assign _fmt = true -%}{%- endif -%}
+{%- endif -%}
+{%- if _fmt and forloop.index == 2 and _t.size == 4 and _pre == '' and _suf == '' -%}
+  {%- assign _yy = _t | slice: 0, 2 -%}
+  {%- if _yy == '19' or _yy == '20' -%}{%- assign _fmt = false -%}{%- endif -%}
+{%- endif -%}
+<td{{ _attr }}>
+{%- if _fmt -%}{{ _open }}{{ _pre }}{% include inr.html n=_t %}{{ _suf }}{{ _close }}{%- else -%}{{ _cell }}{%- endif -%}
+{{ _after }}
+{%- endfor -%}
+{%- endfor -%}
+{%- endcapture -%}
+{{- _html -}}

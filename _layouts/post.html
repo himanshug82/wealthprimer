@@ -38,10 +38,12 @@ the header line; the same include renders the prev/next block after the body.
     Every post closes on a "**Takeaway:**" paragraph (the tweetable line — see
     CLAUDE.md). Tagging it here gives it a card without touching 100+ posts.
     Tables get a scroll wrapper the same way, so 5–7 column tables scroll
-    sideways on phones instead of crushing (no JS, safe-mode friendly).
+    sideways on phones instead of crushing (no JS, safe-mode friendly), and
+    inr-tables.html gives numeric cells Indian comma grouping.
   {%- endcomment -%}
   <div class="post-content e-content" itemprop="articleBody">
-    {{ content | replace: '<p><strong>Takeaway:</strong>', '<p class="takeaway"><strong>Takeaway:</strong>' | replace: '<table', '<div class="table-wrap"><table' | replace: '</table>', '</table></div>' }}
+    {%- capture body -%}{% include inr-tables.html html=content %}{%- endcapture -%}
+    {{ body | replace: '<p><strong>Takeaway:</strong>', '<p class="takeaway"><strong>Takeaway:</strong>' | replace: '<table', '<div class="table-wrap"><table' | replace: '</table>', '</table></div>' }}
   </div>
 
   {%- comment -%}

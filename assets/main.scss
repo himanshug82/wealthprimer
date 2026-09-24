@@ -798,11 +798,13 @@ div.language-python {
   }
 }
 
-// auto-fill rather than a fixed column count, so adding a series needs no CSS
-// change — same reason the counts are rendered from _data/series.yml.
+// auto-fit rather than a fixed column count, so adding a series needs no CSS
+// change — same reason the counts are rendered from _data/series.yml. Only
+// live series render, so early on there may be one or two cards: auto-fit
+// (not auto-fill) lets them stretch across the row instead of leaving a gap.
 .series-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
   gap: 1rem;
   margin-bottom: 3.5rem;
 }

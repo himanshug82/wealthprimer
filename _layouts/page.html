@@ -2,8 +2,8 @@
 layout: default
 ---
 {%- comment -%}
-Overrides minima's page layout only to add the same table scroll wrapper as
-_layouts/post.html (the case study and methodology pages are table-heavy).
+Overrides minima's page layout only to add the same table scroll wrapper and Indian
+comma grouping as _layouts/post.html (the case study and methodology pages are table-heavy).
 {%- endcomment -%}
 <article class="post">
 
@@ -12,7 +12,8 @@ _layouts/post.html (the case study and methodology pages are table-heavy).
   </header>
 
   <div class="post-content">
-    {{ content | replace: '<table', '<div class="table-wrap"><table' | replace: '</table>', '</table></div>' }}
+    {%- capture body -%}{% include inr-tables.html html=content %}{%- endcapture -%}
+    {{ body | replace: '<table', '<div class="table-wrap"><table' | replace: '</table>', '</table></div>' }}
   </div>
 
 </article>

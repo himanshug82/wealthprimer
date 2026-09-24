@@ -101,8 +101,8 @@ Using the FY25 figures from the [case study](/case-study/):
 | Component | Calculation | Value |
 |---|---|---:|
 | Net margin | PAT 209 / Revenue 2,592 | {{ db.net_margin }}% |
-| Asset turnover | Revenue 2,592 / Avg assets {{ db.avg_total_assets }} | {{ db.asset_turnover }}x |
-| Equity multiplier | Avg assets {{ db.avg_total_assets }} / Avg equity {{ db.avg_equity }} | {{ db.equity_multiplier_avg }}x |
+| Asset turnover | Revenue 2,592 / Avg assets {% include inr.html n=db.avg_total_assets %} | {{ db.asset_turnover }}x |
+| Equity multiplier | Avg assets {% include inr.html n=db.avg_total_assets %} / Avg equity {% include inr.html n=db.avg_equity %} | {{ db.equity_multiplier_avg }}x |
 | **ROE** | **{{ db.net_margin }}% × {{ db.asset_turnover }} × {{ db.equity_multiplier_avg }}** | **{{ db.roe_reconciled }}%** |
 
 That ties back to the {{ site.data.case_study.ratios.FY25.roe }}% ROE reported in the case study, which is the
@@ -132,8 +132,8 @@ From Britannia's [audited consolidated FY25 results](https://media.britannia.co.
 | Component | Calculation | Value |
 |---|---|---:|
 | Net margin | PAT 2,178.73 / Revenue 17,942.67 | {{ bi.net_margin }}% |
-| Asset turnover | Revenue 17,942.67 / Avg assets {{ bi.avg_total_assets }} | {{ bi.asset_turnover }}x |
-| Equity multiplier | Avg assets {{ bi.avg_total_assets }} / Avg equity {{ bi.avg_equity_owners }} | {{ bi.equity_multiplier_avg }}x |
+| Asset turnover | Revenue 17,942.67 / Avg assets {% include inr.html n=bi.avg_total_assets %} | {{ bi.asset_turnover }}x |
+| Equity multiplier | Avg assets {% include inr.html n=bi.avg_total_assets %} / Avg equity {% include inr.html n=bi.avg_equity_owners %} | {{ bi.equity_multiplier_avg }}x |
 | **ROE** | **{{ bi.net_margin }}% × {{ bi.asset_turnover }} × {{ bi.equity_multiplier_avg }}** | **{{ bi.roe_reconciled }}%** |
 
 ## Reading the two side by side

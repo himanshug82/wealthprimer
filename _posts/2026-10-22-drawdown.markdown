@@ -62,7 +62,7 @@ Every fall of more than 15% from a peak, with how long it took to get back:
 
 | Peak | Trough | Fall | Back to break-even | Peak-to-peak |
 |---|---|---:|---|---:|{% for e in dd.episodes %}
-| {{ e.peak_date }} | {{ e.trough_date }} | **{{ e.fall_pct }}%** | {{ e.recovered_date }} | {{ e.days_peak_to_peak }} days |{% endfor %}
+| {{ e.peak_date }} | {{ e.trough_date }} | **{{ e.fall_pct }}%** | {{ e.recovered_date }} | {% include inr.html n=e.days_peak_to_peak %} days |{% endfor %}
 
 The worst was **{{ dd.worst_pct }}%**, on {{ dd.worst_date }}.
 

@@ -44,20 +44,24 @@ sentence per post, written once, used in three places.
   <section class="start-here">
     <h2 class="section-heading">Start here</h2>
     <div class="series-cards">
+      {%- comment -%}
+        Series with no published posts yet are left out entirely — a wall of
+        "Publishing soon" cards read as an empty site. A series appears here on
+        the day its first post goes live. `card_n` numbers only the cards shown.
+      {%- endcomment -%}
+      {%- assign card_n = 0 -%}
       {%- for s in site.data.series -%}
       {%- assign in_series = site.posts | where: "series", s.slug | sort: "date" -%}
+      {%- if in_series.size == 0 -%}{%- continue -%}{%- endif -%}
+      {%- assign card_n = card_n | plus: 1 -%}
       {%- assign first_post = in_series | first -%}
       <a class="series-card" href="{{ '/series/' | append: s.slug | append: '/' | relative_url }}">
-        <span class="series-card-num" aria-hidden="true">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+        <span class="series-card-num" aria-hidden="true">{{ card_n | prepend: '0' | slice: -2, 2 }}</span>
         <h3 class="series-card-title">{{ s.title }}</h3>
         <p class="series-card-desc">{{ s.description }}</p>
         <p class="series-card-meta">
-          {%- if in_series.size > 0 -%}
-            {{ in_series.size }} post{% if in_series.size != 1 %}s{% endif %} &middot; start with
-            &ldquo;{{ first_post.title | split: ":" | first | escape | truncatewords: 9 }}&rdquo;
-          {%- else -%}
-            <span class="pill">Publishing soon</span>
-          {%- endif -%}
+          {{ in_series.size }} post{% if in_series.size != 1 %}s{% endif %} &middot; start with
+          &ldquo;{{ first_post.title | split: ":" | first | escape | truncatewords: 9 }}&rdquo;
         </p>
       </a>
       {%- endfor -%}

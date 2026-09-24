@@ -55,7 +55,7 @@ comfortably past the long-term line:
 | Sale value | ₹{% include inr.html n=a.value %} |
 | Cost | ₹{% include inr.html n=a.invested %} |
 | **Gain** | **₹{% include inr.html n=a.gain %}** |
-| Holding period | {{ a.holding_days }} days — long-term |
+| Holding period | {% include inr.html n=a.holding_days %} days — long-term |
 | Less: annual exemption | ₹{% include inr.html n=a.exempt %} |
 | **Taxable** | **₹{% include inr.html n=a.taxable %}** |
 | Tax at {{ r.equity_ltcg_pct }}% | ₹{% include inr.html n=a.tax_before_cess %} |

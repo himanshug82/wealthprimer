@@ -778,6 +778,150 @@ ROADMAP — what comes after the first 69 posts (decided 24 Sep 2026)
   (DCF, rolling returns, SIP/XIRR — search posts for GOOGLE-SHEET-TODO) and a
   professional read of the tax series before 2026-12-16.
 
+DONE — R1..R7 WRITTEN AND SCHEDULED (47 posts, 2026-11-05 → 2026-12-21)
+
+- Written 24 Sep 2026, seven modules in parallel, then integrated: every post
+  passes scripts/check_posts.py (new — see below), the whole site builds with
+  --future (116 posts), OG cards regenerated. Daily cadence continues without a
+  gap from the last original post (2026-11-04). R8 (personal finance) remains
+  undecided and unwritten. `planned` in _data/series.yml bumped to
+  45/21/14/15/13 and the new `risk` series (8) added with series/risk.markdown.
+- NEW TOOL: scripts/check_posts.py — run before every commit that touches
+  _posts/. Fails on: a forward-dated post_url (the build-breaker), missing
+  front matter, filename/date mismatch, unknown series slug, site.data.X with
+  no _data/X.yml, a Liquid `{{ var }}` whose root was never assigned, a chart
+  path that doesn't exist. Warns on description length, missing term:, two
+  posts on one date, missing OG card. Stdlib only.
+- Local Python for derivation scripts: this machine has no pandas; a venv was
+  used (see the build note above for docker). To re-run any scripts/derive_*.py
+  create a venv with pandas numpy pyyaml matplotlib pillow.
+
+- R1 Risk series (8): 11-05 what-the-fo-numbers-actually-say (promoted from
+  _drafts; series: risk), 11-06 the-arithmetic-of-losses, 11-07
+  position-sizing-and-the-one-percent-rule, 11-08 leverage-and-margin, 11-09
+  diversification-is-a-correlation-problem, 11-10 sequence-of-returns-risk,
+  11-11 behavioural-biases-indian-edition, 11-12 how-finfluencers-make-money.
+  Data: scripts/derive_risk.py → _data/risk.yml + assets/charts/risk-*.svg,
+  from the index-fund NAV, Britannia OHLCV and Nifty PRI (all end Mar 2026).
+  _data/fno.yml: corroboration upgraded to "two independent secondary sources
+  agree; primary PDF still unread" (corplawupdates.in summary of SEBI press
+  release 50/2026 matched every fy26_unverified figure); participant count
+  still not quoted (98.1→78.6 lakh vs "8.75 million" definitional conflict).
+  Findings: FY07–FY26 arithmetic mean 13.03% vs CAGR 10.20% (2.83pp drag);
+  Britannia–Nifty daily correlation 0.28 (β 0.42); same 20 yearly returns
+  reordered turn a ₹10k SIP into ₹26.9 lakh (best-first) or ₹2.61 crore
+  (worst-first) vs ₹80.4 lakh actual, while the lump sum is identical.
+  VERIFY: fno.yml against SEBI's primary PDFs; RISK-8's summary of SEBI's
+  finfluencer rules (2024 association ban, 2025 education carve-out, ASCI) is
+  stated at confidence level only; RISK-8 says the site runs GA and has no
+  ads/referrals — keep true; RISK-4 MTF 12% / futures margin ~12% are
+  illustrative.
+- R2 FA module 2 "Reading between the lines" (7): 11-13
+  reading-an-annual-report, 11-14 desi-bites-cooks-the-books, 11-15
+  reading-quarterly-results, 11-16
+  contingent-liabilities-pledges-and-promoter-holding, 11-17
+  goodwill-exceptional-items-and-other-income, 11-18 capital-allocation, 11-19
+  reading-a-drhp. Data: scripts/build_case_study_2.py → _data/case_study_2.yml
+  (FY26 honest accounts tracking the DCF forecast; a FICTIONAL "dressed" FY26;
+  FY25 quarters + Q1/Q2 FY26; acquisition of "Chatpata Foods" for ₹600 lakh
+  with ₹245 lakh goodwill; shareholding + 15% pledge at 62% LTV; GST demand
+  as contingent liability; capital-allocation table; DRHP data). Script
+  asserts both balance sheets balance and cash ties. case_study.yml itself is
+  untouched. Diagrams: assets/charts/fa2-*.svg. Findings: dressed PAT +43% vs
+  honest but OCF only +4% (OCF/PAT 1.50→1.10, debtor days 30→45); interest on
+  idle IPO cash is 21% of honest PBT and drags closing-equity ROE 30.8%→12.1%.
+  VERIFY: regulatory statements made from memory — ICDR 25% cap on general
+  corporate purposes, SME promoter lock-in (3y minimum contribution / 1y
+  rest), 45/60-day results deadlines, 21-day shareholding-pattern filing, KAMs
+  since 2018. Note: FY26 inventory days show 56 vs 48 because acquired
+  inventory arrives with six months of COGS.
+- R3 FA module 3 "Banks and NBFCs" (6): 11-20 why-ratios-break-on-a-bank,
+  11-21 nim-and-the-spread, 11-22 casa-and-the-deposit-franchise, 11-23
+  gnpa-nnpa-and-provisions, 11-24 capital-adequacy, 11-25
+  valuing-a-bank-price-to-book. Real anchor: HDFC Bank standalone audited
+  FY25 (FY24 comparatives), results release 21 Apr 2025, primary source = the
+  bank's release filed as a Form 6-K exhibit with the US SEC (URL in
+  _data/real_bank.yml). scripts/derive_bank.py → real_bank.yml (reported
+  lines typed once, every ratio computed); scripts/make_bank_diagrams.py →
+  assets/charts/bank-*.svg. Two of the parent's extracted figures were wrong
+  and corrected from the filing: shareholders' equity is capital + reserves
+  ₹4,97,619 cr (₹4,88,900 cr is the RBI "net worth" line, kept separately);
+  CASA ₹9,44,600 cr. Price for P/B: NSE close 30 Jun 2025 = ₹2,001.50
+  pre-bonus (Yahoo's adjusted 1,000.75 × 2; 1:1 bonus record date 27 Aug 2025),
+  paired with pre-bonus FY25 EPS/BVPS — explained in BANK-6. Findings: NIM on
+  avg total assets 3.26% vs the bank's Q4 3.54% (methodology gap is the
+  lesson); FY25 PAT +10.7% while pre-provision profit +6.1% because the FY24
+  ₹10,900 cr floating provision wasn't repeated; P/B 3.08x with justified-P/B
+  ranging 1.08x–3.40x across input pairs — no verdict drawn. VERIFY: FY24
+  CASA ratio ~38.2% is not in the FY25 release (widely reported, flagged);
+  D-SIB surcharge (filing implies 0.2%, RBI reviews annually).
+- R4 Jargon module 6 (12): 11-26 beta, 11-27 alpha, 11-28
+  tracking-error-and-tracking-difference, 11-29 yield-to-maturity, 11-30
+  modified-duration, 12-01 exit-load, 12-02 aum, 12-03 operating-leverage,
+  12-04 earnings-yield-and-fcf-yield, 12-05 payout-ratio, 12-06
+  face-value-splits-and-bonuses, 12-07 enterprise-value.
+  scripts/derive_jargon_m6.py → _data/jargon_m6.yml. Findings: Britannia beta
+  0.42 over 2y but 0.29 (FY25) vs 0.55 (FY26), R² 0.18; index fund beats
+  Nifty PRI by ~1pp every year 2016–2025 (dividends, not skill), tracking
+  error 0.27%; Britannia payout 81.3% → sustainable growth ≈9.8%; Desi Bites
+  40.2% → ≈20.3% (consistent with the DCF's 18%); Britannia EV < market cap
+  (net cash). VERIFY: SEBI TER slab table in the AUM post is from memory.
+- R5 MF module 2 (6): 12-08 debt-funds-explained, 12-09
+  index-funds-vs-etfs, 12-10 sebi-fund-categories-decoded, 12-11
+  portfolio-overlap, 12-12 why-star-ratings-mislead, 12-13 stp-and-swp.
+  New data in assets/data/: uti-gilt-fund-nav.csv (102510/120792),
+  uti-overnight-fund-nav.csv (100814), uti-money-market-fund-nav.csv (112077),
+  uti-nifty50-etf-nav.csv (135320) — AMFI via mfapi.in, truncated 31 Mar
+  2026. scripts/derive_mf2.py → _data/mf2.yml; scripts/make_mf2_charts.py →
+  assets/charts/mf2-*.svg. Discontinuities found BY SCRIPT and taught: ETF
+  1:10 unit split 26 Sep 2023; ETF ~₹40.89 payout 25 Feb 2021 (not a growth
+  plan — comparisons use payout-reinvested NAV); overnight fund face value
+  ₹10→₹1,000 on 3 May 2018 AND its pre-2018 history is not an overnight
+  portfolio, so the debt comparison starts May 2018; money market fund face
+  value change 22 Aug 2009. Findings: overnight fund 0% down days 2018–26 vs
+  gilt 40%; gilt 20y max drawdown −16.05% (2009), 1,125 days to recover;
+  trailing-3y return of the index fund ranged −4.8% to +32.0%, past-3y vs
+  next-3y correlation 0.05 (the star-ratings post); SWP ₹1cr/₹50k from Jan
+  2008 never regained ₹1cr, from Jan 2010 → ₹2.19cr. VERIFY: SEBI category
+  thresholds in mf2.yml `categories:` typed from memory of the 2017 circular;
+  overnight mandate start date inferred from the face-value change.
+- R6 Tax add-ons (4): 12-14 esops-and-rsus, 12-15 buyback-taxation, 12-16
+  fo-is-business-income, 12-17 foreign-stocks-and-schedule-fa.
+  scripts/derive_tax2.py → _data/tax2.yml (a `verification` block per topic
+  with source URLs, verification date Sept 2026, and recorded disagreements).
+  Rules: ESOP perquisite at exercise (FMV − price, salary/TDS; section 192 →
+  392 under the 2025 Act), CG on sale from that FMV, 24-month/12.5%/no
+  exemption for foreign or unlisted, startup deferral only DPIIT+IMB (80-IAC).
+  Buyback regimes: to 30 Sep 2024 company-paid 23.296%; 1 Oct 2024–31 Mar
+  2026 deemed dividend at slab + cost as capital loss; from 1 Apr 2026 capital
+  gains (Finance Act 2026) with promoter additional tax to 22%/30%. F&O:
+  non-speculative business income, turnover = Σ|trade P&L| (ICAI), audit
+  > ₹10 cr digital, presumptive 6% to ₹3 cr (no loss under presumptive),
+  losses vs any head except salary, 8-year carry-forward only with a timely
+  ITR-3. Foreign: 24-month LTCG 12.5% no exemption, US 25% withholding via
+  Form 67 + FSI/TR, Schedule FA by CALENDAR year with no minimum, BMA ₹10 lakh
+  penalty waived under ₹20 lakh aggregate but disclosure still due, LRS TCS
+  20% above ₹10 lakh. PROFESSIONAL REVIEW NEEDED (also listed in tax2.yml):
+  whether the ₹1.25 lakh exemption applies to post-Apr-2026 buyback gains;
+  promoter definition for unlisted companies; ESOP deferral "48 months from
+  end of AY"; the 1 Apr 2026 STT hike (single source); the two exchange-rate
+  date conventions. Primary statute text still unfetchable.
+- R7 TA module 2 (4): 12-18 bollinger-bands-and-atr, 12-19
+  relative-strength-vs-the-index, 12-20 multiple-timeframe-analysis, 12-21
+  how-to-backtest-honestly (the series' closing capstone, ~2,000 words).
+  scripts/derive_ta2.py → _data/ta2.yml; scripts/make_ta2_charts.py →
+  assets/charts/ta2-*.svg. Findings (kept honest): closes above the upper
+  Bollinger band were followed by +0.92% avg over 10 sessions — the reversal
+  reading points the wrong way in this sample; only 6 daily-oversold events,
+  the one inside a weekly "uptrend" fell −12.6%; backtest (next-day fills,
+  0.1%/side, Jan 2025–Mar 2026): buy-and-hold +8.9% CAGR, SMA 50/200 −2.8%,
+  SMA 20/50 −25.2%, RSI 30/70 +14.5% on 3 trades / 12% time invested;
+  parameter grid 32.5pp spread, 0 of 15 SMA pairs beat buy-and-hold. VERIFY:
+  eyeball the four SVGs in a browser (not rasterised locally).
+- Cross-module links: R5 post_urls three R4 posts (tracking error, modified
+  duration, face value), R6 post_urls RISK-1; everything else forward is prose.
+  All checked backward-dated by scripts/check_posts.py.
+
 Lower-priority, not done (say the word if you want these next)
 
 - DONE: Series index pages. /series/ lists every track in _data/series.yml

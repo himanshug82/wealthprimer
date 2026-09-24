@@ -93,7 +93,8 @@ header_pages:
   - case-study.markdown
   - methodology.markdown
   - about.markdown
-  - privacy.markdown
+# privacy.markdown lives in the footer (and every post's disclaimer links to
+# it) — six nav items wrapped the header onto two lines on laptops.
 
 # --- SEO / social meta (used by jekyll-seo-tag for OG cards, Twitter cards, JSON-LD) ---
 twitter:

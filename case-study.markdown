@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "The Desi Bites Foods case study"
+nav_title: "Case study"   # short label for the header nav; `title` stays the page H1
 permalink: /case-study/
 ---
 

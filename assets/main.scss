@@ -4,217 +4,1098 @@
 
 @import "minima";
 
-.site-title {
+// ===========================================================================
+// Wealth Primer theme — layered on top of minima (classic).
+//
+// Everything visual is driven by the CSS custom properties below, so dark mode
+// is one block of token overrides rather than a second stylesheet. Brand blue
+// and the light tint come from assets/logo.svg and the matplotlib chart
+// scripts, so the chrome, the logo and the charts stay one visual system.
+//
+// Fonts are SYSTEM stacks on purpose: /privacy/ promises the site loads no
+// third-party resources on page render, which rules out Google Fonts. Charter
+// (macOS/iOS), Sitka (Windows) and Cambria/Georgia give a comfortable reading
+// serif for post bodies everywhere; UI, headings, tables and numbers use the
+// platform sans.
+// ===========================================================================
+
+:root {
+  --font-serif: Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+               "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+               "Apple Color Emoji", "Segoe UI Emoji";
+  --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas,
+               "Liberation Mono", monospace;
+
+  --bg:           #fcfbf8;
+  --surface:      #ffffff;
+  --surface-2:    #f4f2ec;
+  --ink:          #14171c;
+  --text:         #2a2e35;
+  --muted:        #585f6b;
+  --rule:         #e6e2d8;
+  --rule-strong:  #d6d1c4;
+
+  --brand:        #184f95;
+  --brand-strong: #0f3a70;
+  --brand-soft:   #eaf1fb;
+  --brand-tint:   #cde2fb;
+  --link:         #1a56a8;
+
+  --warm-bg:      #fdf5e7;
+  --warm-rule:    #efd6a8;
+  --warm-ink:     #8a4b0f;
+
+  --code-bg:      #f5f7fb;
+  --code-rule:    #dfe5ef;
+
+  --shadow-sm: 0 1px 2px rgba(20, 23, 28, 0.04), 0 1px 1px rgba(20, 23, 28, 0.03);
+  --shadow-md: 0 6px 20px -6px rgba(24, 79, 149, 0.18), 0 2px 6px rgba(20, 23, 28, 0.05);
+
+  --radius: 12px;
+  --radius-sm: 8px;
+  --measure: 44rem;     // reading column for posts and pages
+  --page-max: 72rem;    // header, footer, homepage
+
+  color-scheme: light;
+}
+
+@mixin dark-tokens {
+  --bg:           #0e1217;
+  --surface:      #151b23;
+  --surface-2:    #1b222c;
+  --ink:          #eef1f5;
+  --text:         #d2d7df;
+  --muted:        #9aa3b0;
+  --rule:         #26303c;
+  --rule-strong:  #334050;
+
+  --brand:        #7fb0f0;
+  --brand-strong: #a8c9f6;
+  --brand-soft:   #132236;
+  --brand-tint:   #1b3150;
+  --link:         #8ebcf5;
+
+  --warm-bg:      #231c12;
+  --warm-rule:    #4a3a1f;
+  --warm-ink:     #f0bd72;
+
+  --code-bg:      #111821;
+  --code-rule:    #253041;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 24px -8px rgba(0, 0, 0, 0.6);
+
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { @include dark-tokens; }
+}
+:root[data-theme="dark"] { @include dark-tokens; }
+
+// ---------------------------------------------------------------------------
+// Base
+// ---------------------------------------------------------------------------
+html { scroll-padding-top: 5rem; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+a {
+  color: var(--link);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+
+  &:visited { color: var(--link); }
+  &:hover { color: var(--brand-strong); text-decoration: underline; }
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+::selection { background: var(--brand-tint); color: var(--ink); }
+
+hr {
+  border: 0;
+  height: 1px;
+  background: var(--rule);
+  margin: 2.4em 0;
+}
+
+.wrapper {
+  max-width: calc(var(--page-max) - 3rem);
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.page-content { padding: 2.5rem 0 3.5rem; }
+
+// ---------------------------------------------------------------------------
+// Header
+// ---------------------------------------------------------------------------
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  min-height: 0;
+  border-top: 0;
+  border-bottom: 1px solid var(--rule);
+  background: var(--bg);  // fallback for browsers without color-mix()
+  background: unquote("color-mix(in srgb, var(--bg) 86%, transparent)");
+  -webkit-backdrop-filter: saturate(160%) blur(10px);
+  backdrop-filter: saturate(160%) blur(10px);
+
+  // Brand stripe in place of minima's grey top border.
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--brand) 0%, #3a7bd5 55%, var(--brand-tint) 100%);
+  }
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 4rem;
+
+    // minima's clearfix ::after would be a third flex item and pull the nav
+    // into the middle under space-between.
+    &::after { display: none; }
+  }
+}
+
+.site-title,
+.site-title:visited {
   display: inline-flex;
   align-items: center;
+  gap: 0.6rem;
+  float: none;
+  line-height: 1;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-decoration: none;
+
+  img { width: 34px; height: 34px; display: block; border-radius: 9px; }
+  &:hover { color: var(--ink); text-decoration: none; }
+}
+
+.site-nav {
+  float: none;
+  line-height: 1.4;
+
+  .page-link {
+    color: var(--muted);
+    font-size: 0.93rem;
+    font-weight: 500;
+    padding: 0.45rem 0.75rem;
+    margin: 0;
+    border-radius: 999px;
+    transition: color 0.15s ease, background-color 0.15s ease;
+
+    &:hover { color: var(--ink); background: var(--surface-2); text-decoration: none; }
+    &[aria-current="page"] { color: var(--brand); background: var(--brand-soft); }
+  }
+
+  .menu-icon > svg path { fill: var(--ink); }
+}
+
+@media screen and (min-width: 700px) {
+  .site-nav .trigger { display: flex; gap: 0.15rem; }
+  .site-nav .page-link:not(:last-child) { margin-right: 0; }
+}
+
+@media screen and (max-width: 699px) {
+  .site-nav {
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-md);
+
+    label[for="nav-trigger"] { display: block; float: right; width: 40px; height: 40px; cursor: pointer; }
+    .menu-icon { display: block; float: right; width: 40px; height: 40px; line-height: 0; padding-top: 12px; text-align: center; }
+    .trigger { clear: both; display: none; min-width: 12rem; padding: 0.25rem 0.4rem 0.5rem; }
+    .nav-trigger:checked ~ .trigger { display: block; }
+    .page-link { display: block; padding: 0.55rem 0.75rem; margin: 0; border-radius: var(--radius-sm); text-align: left; }
+    .page-link:not(:last-child) { margin-right: 0; }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Posts & pages — header
+// ---------------------------------------------------------------------------
+.post,
+.page-content article.post {
+  max-width: var(--measure);
+  margin: 0 auto;
+}
+
+.post-header { margin-bottom: 2rem; }
+
+.post-title,
+.post-content .post-title {
+  font-size: unquote("clamp(2rem, 1.4rem + 2.4vw, 2.85rem)");  // unquote: libsass (Pages build) would try to add rem + vw
+  line-height: 1.12;
+  letter-spacing: -0.028em;
+  margin: 0 0 0.6rem;
+}
+
+.post-meta {
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-family: var(--font-sans);
+}
+
+.post-series-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+
+  a {
+    color: var(--brand);
+    background: var(--brand-soft);
+    padding: 0.28rem 0.7rem;
+    border-radius: 999px;
+    text-decoration: none;
+    &:hover { background: var(--brand-tint); text-decoration: none; }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Posts & pages — body typography
+// ---------------------------------------------------------------------------
+.post-content {
+  font-family: var(--font-serif);
+  font-size: 1.12rem;
+  line-height: 1.72;
+  color: var(--text);
+
+  > p, > ul, > ol { margin-bottom: 1.15em; }
+
+  h2 {
+    font-size: 1.6rem;
+    margin: 2.4em 0 0.7em;
+    padding-top: 0.2em;
+  }
+  h3 { font-size: 1.25rem; margin: 1.9em 0 0.5em; }
+  h4 { font-size: 1.05rem; margin: 1.6em 0 0.4em; }
+
+  > h2:first-child, > h3:first-child { margin-top: 0; }
+
+  strong { color: var(--ink); font-weight: 700; }
+
+  li { margin-bottom: 0.45em; }
+  li > ul, li > ol { margin-top: 0.4em; }
+  ul li::marker { color: var(--brand); }
+  ol li::marker { color: var(--brand); font-family: var(--font-sans); font-weight: 600; font-size: 0.92em; }
 
   img {
-    height: 40px;
-    width: auto;
     display: block;
+    margin: 1.8em auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    border: 1px solid var(--rule);
+    box-shadow: var(--shadow-sm);
   }
 }
 
-// --- series index pages ---
-.series-description {
-  color: #555;
-  margin-bottom: 1.2em;
+// Minima's .page layout (About, Privacy, Methodology…) shares the same column.
+.page-content .post-content { max-width: var(--measure); }
+
+// ---------------------------------------------------------------------------
+// Tables — the heart of the worked examples, so they get real care:
+// sans + tabular figures so columns of ₹ line up, quiet rules, and a bold
+// "total" row that reads as a total. The .table-wrap div is added by the post
+// and page layouts; it carries the frame and scrolls wide tables on phones.
+// ---------------------------------------------------------------------------
+.table-wrap {
+  margin: 1.6em 0 1.9em;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
 }
 
-.series-count {
-  color: #666;
-  font-size: 0.92em;
-  margin-bottom: 0.6em;
-}
+.post-content table,
+.page-content table {
+  width: 100%;
+  margin: 1.6em 0 1.9em;
+  border-collapse: collapse;
+  border: 1px solid var(--rule);
+  background: var(--surface);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  line-height: 1.45;
+  font-variant-numeric: tabular-nums lining-nums;
+  color: var(--text);   // minima greys table text, which vanishes in dark mode
 
-.series-list {
-  padding-left: 1.4em;
+  tr, tr:nth-child(even) { background: transparent; }  // minima zebra-stripes <tr> white
 
-  li {
-    margin-bottom: 0.45em;
-    line-height: 1.45;
+  th, td {
+    padding: 0.7em 1em;
+    border: 0;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
   }
 
-  .series-date {
+  th {
+    background: var(--surface-2);
+    color: var(--muted);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--rule-strong);
+  }
+
+  tr:last-child td { border-bottom: 0; }
+  tbody tr:hover td { background: var(--brand-soft); }
+
+  td strong { color: var(--ink); }
+}
+
+.table-wrap > table { margin: 0; border: 0; }
+
+@media screen and (max-width: 699px) {
+  .post-content table,
+  .page-content table {
+    font-size: 0.84rem;
+    th, td { padding: 0.6em 0.75em; }
+    // Let the label column wrap; keep figures on one line and scroll instead.
+    td:not(:first-child), th:not(:first-child) { white-space: nowrap; }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Code: formula blocks (plain ```) and Python snippets (```python)
+// ---------------------------------------------------------------------------
+.post-content code,
+.page-content code {
+  font-family: var(--font-mono);
+  font-size: 0.84em;
+  background: var(--code-bg);
+  border: 1px solid var(--code-rule);
+  border-radius: 5px;
+  padding: 0.1em 0.35em;
+  color: var(--ink);
+}
+
+.post-content pre,
+.page-content pre,
+.highlight {
+  background: var(--code-bg);
+  border: 1px solid var(--code-rule);
+  border-radius: var(--radius);
+}
+
+.post-content pre,
+.page-content pre {
+  padding: 1em 1.2em;
+  margin: 1.5em 0 1.8em;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  overflow-x: auto;
+
+  > code { background: none; border: 0; padding: 0; font-size: inherit; }
+}
+
+.highlighter-rouge .highlight { margin: 1.5em 0 1.8em; }
+.highlighter-rouge .highlight pre { margin: 0; border: 0; background: transparent; }
+
+// Plain fences are always formulas in this repo (see CLAUDE.md "Formula"),
+// so give them a brand edge that marks them as the thing to remember.
+div.highlighter-rouge:not([class*="language-"]) .highlight,
+.language-plaintext .highlight {
+  border-left: 4px solid var(--brand);
+  background: var(--brand-soft);
+  border-color: var(--brand-tint);
+  border-left-color: var(--brand);
+
+  pre { color: var(--ink); font-weight: 500; }
+}
+
+// Python: label the block so readers know it's runnable.
+div.language-python {
+  position: relative;
+
+  &::before {
+    content: "Python";
+    position: absolute;
+    top: 0.55rem;
+    right: 0.8rem;
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Callouts
+// ---------------------------------------------------------------------------
+.post-content blockquote,
+.page-content blockquote {
+  margin: 1.6em 0;
+  padding: 1em 1.25em;
+  color: var(--text);
+  font-style: normal;
+  letter-spacing: 0;
+  font-size: 1em;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--brand);
+  border-radius: var(--radius-sm);
+
+  > :last-child { margin-bottom: 0; }
+}
+
+// "Explain it like I'm 10" — warm, clearly optional, never in the way.
+.post-content details {
+  margin: 1.8em 0;
+  background: var(--warm-bg);
+  border: 1px solid var(--warm-rule);
+  border-radius: var(--radius);
+  font-size: 1.02rem;
+
+  > summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 0.9em 1.2em;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 650;
+    color: var(--warm-ink);
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+
+    &::-webkit-details-marker { display: none; }
+    &::after {
+      content: "";
+      margin-left: auto;
+      width: 0.55em;
+      height: 0.55em;
+      border-right: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: rotate(45deg) translateY(-2px);
+      transition: transform 0.2s ease;
+      flex: none;
+    }
+    em { font-weight: 400; font-style: normal; opacity: 0.8; font-size: 0.9em; }
+    &:hover { text-decoration: none; }
+  }
+
+  &[open] > summary {
+    border-bottom: 1px dashed var(--warm-rule);
+    &::after { transform: rotate(-135deg) translateY(-2px); }
+  }
+
+  > :not(summary) { margin-left: 1.25rem; margin-right: 1.25rem; }
+  > :nth-child(2) { margin-top: 1em; }
+  > :last-child { margin-bottom: 1.1em; }
+}
+
+// The closing "Takeaway:" line (tagged in _layouts/post.html).
+.post-content p.takeaway {
+  position: relative;
+  margin: 2.6em 0 1em;
+  padding: 1.3em 1.4em 1.3em 1.5em;
+  background: linear-gradient(135deg, var(--brand-soft), var(--surface));
+  border: 1px solid var(--brand-tint);
+  border-radius: var(--radius);
+  font-size: 1.12rem;
+  line-height: 1.6;
+  color: var(--ink);
+
+  > strong:first-child {
     display: block;
-    color: #888;
-    font-size: 0.82em;
+    margin-bottom: 0.35em;
+    font-family: var(--font-sans);
+    font-size: 0.74rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--brand);
   }
 }
 
-// --- brand palette -------------------------------------------------------
-// Taken from assets/logo.svg and the matplotlib chart scripts, so the site
-// chrome, the logo and the charts stay one visual system.
-$wp-blue:        #184f95;
-$wp-blue-light:  #cde2fb;
-$wp-ink:         #0b0b0b;
-$wp-muted:       #52514e;
-$wp-rule:        #e8e8e8;
+// ---------------------------------------------------------------------------
+// Disclaimer — present and legible, but visibly "standing policy"
+// ---------------------------------------------------------------------------
+.post-disclaimer {
+  margin: 2.4rem 0 0;
+  padding: 1.1em 1.25em;
+  background: var(--surface-2);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--muted);
 
-// --- homepage: hero ------------------------------------------------------
+  strong { color: var(--text); display: block; margin-bottom: 0.25em; }
+}
+
+// ---------------------------------------------------------------------------
+// Table of contents
+// ---------------------------------------------------------------------------
+.post-toc {
+  margin: 0 0 2.2em;
+  padding: 1.1em 1.3em;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  font-size: 0.93rem;
+  box-shadow: var(--shadow-sm);
+
+  ol { margin: 0 0 0 1.3em; padding: 0; columns: 2 16rem; column-gap: 2rem; }
+  li { margin: 0.2em 0; break-inside: avoid; color: var(--muted); }
+  li::marker { color: var(--muted); font-size: 0.85em; }
+  a { color: var(--text); text-decoration: none; }
+  a:hover { color: var(--brand); text-decoration: underline; }
+}
+
+.post-toc-title {
+  margin: 0 0 0.5em;
+  font-weight: 700;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+// ---------------------------------------------------------------------------
+// Previous / next in series
+// ---------------------------------------------------------------------------
+.series-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+  margin: 3rem 0 0;
+  padding: 0;
+  border: 0;
+
+  > div {
+    min-width: 0;
+    padding: 1rem 1.15rem;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    &:hover { border-color: var(--brand); box-shadow: var(--shadow-md); }
+  }
+
+  a { font-weight: 650; text-decoration: none; color: var(--ink); line-height: 1.35; }
+  a:hover { color: var(--brand); }
+}
+
+.series-nav-next { text-align: right; }
+
+.series-nav-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--muted);
+  margin-bottom: 0.35em;
+}
+
+.series-nav-soon { font-size: 0.9rem; color: var(--text); }
+.series-nav-soon a { color: var(--link); }
+
+// ---------------------------------------------------------------------------
+// Buttons & pills
+// ---------------------------------------------------------------------------
+.button,
+.button:visited {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.2rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+
+  &:hover { text-decoration: none; transform: translateY(-1px); }
+}
+
+.button-primary,
+.button-primary:visited { background: var(--brand); color: #fff; }
+.button-primary:hover { background: var(--brand-strong); color: #fff; }
+
+.button-ghost,
+.button-ghost:visited { background: var(--surface); color: var(--ink); border-color: var(--rule-strong); }
+.button-ghost:hover { border-color: var(--brand); color: var(--brand); }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .button-primary { color: #0b1a2e; }
+}
+
+.pill {
+  display: inline-block;
+  padding: 0.18rem 0.6rem;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+// ---------------------------------------------------------------------------
+// Homepage
+// ---------------------------------------------------------------------------
 .hero {
-  padding: 0.5em 0 1.6em;
-  border-bottom: 1px solid $wp-rule;
-  margin-bottom: 1.8em;
+  position: relative;
+  padding: 3.2rem 2.4rem 2.6rem;
+  margin: 0 0 3rem;
+  border: 1px solid var(--rule);
+  border-radius: calc(var(--radius) * 1.6);
+  background:
+    radial-gradient(90% 120% at 100% 0%, var(--brand-tint) 0%, transparent 55%),
+    linear-gradient(180deg, var(--surface), var(--bg));
+  overflow: hidden;
+
+  // The logo's rising line, drawn large and faint behind the copy.
+  &::after {
+    content: "";
+    position: absolute;
+    right: -2.5rem;
+    bottom: -2.5rem;
+    width: 19rem;
+    height: 13rem;
+    opacity: 0.09;
+    pointer-events: none;
+    background: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 100'%3E%3Cpolyline points='10,90 45,55 70,75 110,20 128,38' fill='none' stroke='%23184f95' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='128' cy='38' r='5' fill='%23184f95'/%3E%3C/svg%3E");
+  }
+
+  > * { position: relative; z-index: 1; }
+}
+
+.hero-eyebrow {
+  margin: 0 0 0.9rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brand);
 }
 
 .hero-title {
-  font-size: 2.05em;
-  line-height: 1.18;
-  margin: 0 0 0.35em;
-  letter-spacing: -0.01em;
-  color: $wp-ink;
+  font-size: unquote("clamp(2.2rem, 1.4rem + 3.4vw, 3.6rem)");
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  margin: 0 0 1rem;
+  max-width: 14em;
+}
+
+.hero-accent {
+  color: var(--brand);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.02em;
 }
 
 .hero-sub {
-  font-size: 1.05em;
-  line-height: 1.55;
-  color: $wp-muted;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0 0 1.6rem;
+  max-width: 36em;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+}
+
+.hero-promises {
+  list-style: none;
   margin: 0;
-  max-width: 34em;
+  padding: 1.3rem 0 0;
+  border-top: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 0.6rem 1.5rem;
+  font-size: 0.88rem;
+  color: var(--muted);
+
+  li {
+    position: relative;
+    padding-left: 1.6rem;
+    margin: 0;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.2em;
+      width: 1.05rem;
+      height: 1.05rem;
+      border-radius: 50%;
+      background: var(--brand-soft) no-repeat center / 0.65rem url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6.5l2.5 2.5L10 3.5' fill='none' stroke='%23184f95' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      box-shadow: inset 0 0 0 1px var(--brand-tint);
+    }
+  }
+  strong { color: var(--ink); font-weight: 650; }
 }
 
 .section-heading {
-  font-size: 1.22em;
-  margin: 0 0 0.75em;
-  color: $wp-ink;
-}
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+  font-size: 1.45rem;
+  margin: 0 0 1.2rem;
+  color: var(--ink);
 
-// --- homepage: series cards ----------------------------------------------
-// auto-fit rather than a fixed column count, so adding a sixth series needs no
-// CSS change — same reason the counts are rendered from _data/series.yml.
-.series-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15.5em, 1fr));
-  gap: 0.9em;
-  margin-bottom: 2.4em;
-}
-
-.series-card {
-  display: block;
-  padding: 1.05em 1.15em;
-  border: 1px solid $wp-rule;
-  border-radius: 10px;
-  background: #fff;
-  text-decoration: none !important;
-  color: inherit;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
-
-  &:hover,
-  &:focus-visible {
-    border-color: $wp-blue;
-    box-shadow: 0 2px 10px rgba(24, 79, 149, 0.09);
-    transform: translateY(-1px);
+  &::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+    transform: translateY(-0.3em);
   }
 }
 
+// auto-fill rather than a fixed column count, so adding a series needs no CSS
+// change — same reason the counts are rendered from _data/series.yml.
+.series-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: 1rem;
+  margin-bottom: 3.5rem;
+}
+
+.series-card,
+.series-card:visited {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1.4rem 1.4rem 1.2rem;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: inherit;
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+
+  &:hover,
+  &:focus-visible {
+    border-color: var(--brand);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+    text-decoration: none;
+  }
+}
+
+.series-card-num {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--brand);
+  background: var(--brand-soft);
+  border-radius: 6px;
+  padding: 0.15rem 0.45rem;
+  align-self: flex-start;
+  margin-bottom: 0.9rem;
+}
+
 .series-card-title {
-  font-size: 1.02em;
-  margin: 0 0 0.4em;
-  color: $wp-blue;
+  font-size: 1.12rem;
+  margin: 0 0 0.45rem;
+  color: var(--ink);
   line-height: 1.3;
 }
 
 .series-card-desc {
-  font-size: 0.9em;
-  line-height: 1.45;
-  color: $wp-muted;
-  margin: 0 0 0.65em;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--muted);
+  margin: 0 0 1rem;
+  flex: 1;
 }
 
 .series-card-meta {
-  font-size: 0.79em;
-  color: #767676;   // >= 4.5:1 on white
+  font-size: 0.8rem;
+  color: var(--muted);
   margin: 0;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--rule);
   line-height: 1.4;
 }
 
-// --- homepage: latest list ------------------------------------------------
-.latest .post-list > li { margin-bottom: 1.9em; }
+// Latest posts: a two-up card grid on wide screens.
+.latest .post-list {
+  list-style: none;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  gap: 1rem;
 
-.post-summary {
-  font-size: 0.93em;
-  line-height: 1.5;
-  color: $wp-muted;
-  margin: 0.25em 0 0;
-  max-width: 42em;
+  > li {
+    margin: 0;
+    padding: 1.3rem 1.4rem;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    transition: border-color 0.18s ease, box-shadow 0.18s ease;
+    &:hover { border-color: var(--rule-strong); box-shadow: var(--shadow-md); }
+  }
+
+  h3 { margin: 0.35rem 0 0; font-size: 1.12rem; line-height: 1.35; }
 }
 
-.post-series-tag {
-  color: $wp-blue;
+.post-link,
+.post-link:visited {
+  display: inline;
+  font-size: inherit;
+  color: var(--ink);
+  text-decoration: none;
+  &:hover { color: var(--brand); text-decoration: none; }
+}
+
+.post-summary {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--muted);
+  margin: 0.5rem 0 0;
+}
+
+.post-series-tag,
+.post-series-tag:visited {
+  color: var(--brand);
+  font-weight: 600;
   text-decoration: none;
   &:hover { text-decoration: underline; }
 }
 
-.all-posts-link { margin-top: 1.6em; font-size: 0.95em; }
+.all-posts-link {
+  margin-top: 1.6rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  a { text-decoration: none; }
+}
 
-// --- newsletter -----------------------------------------------------------
-.newsletter {
-  margin: 2.6em 0 1.2em;
-  padding: 1.35em 1.45em;
-  background: $wp-blue-light;
-  border-radius: 10px;
+// ---------------------------------------------------------------------------
+// Series pages (/series/<slug>/) and the /series/ index
+// ---------------------------------------------------------------------------
+.series-description {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--muted);
+  margin-bottom: 1.6em;
+  em { font-style: normal; }
+}
 
-  h2 {
-    font-size: 1.12em;
-    margin: 0 0 0.35em;
-    color: $wp-ink;
+.series-count {
+  font-family: var(--font-sans);
+  color: var(--muted);
+  font-size: 0.88rem;
+  margin-bottom: 1em;
+}
+
+.series-list {
+  list-style: none;
+  counter-reset: part;
+  margin: 0 0 2em;
+  padding: 0;
+  font-family: var(--font-sans);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--surface);
+  overflow: hidden;
+
+  li {
+    counter-increment: part;
+    display: grid;
+    grid-template-columns: 2.6rem 1fr auto;
+    align-items: baseline;
+    gap: 0 0.8rem;
+    margin: 0;
+    padding: 0.85rem 1.1rem;
+    border-bottom: 1px solid var(--rule);
+    font-size: 1rem;
+    line-height: 1.4;
+    transition: background-color 0.15s ease;
+
+    &:last-child { border-bottom: 0; }
+    &:hover { background: var(--brand-soft); }
+
+    &::before {
+      content: counter(part, decimal-leading-zero);
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+  }
+
+  a { color: var(--ink); font-weight: 550; text-decoration: none; }
+  a:hover { color: var(--brand); }
+
+  .series-date {
+    display: block;
+    color: var(--muted);
+    font-size: 0.78rem;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
   }
 }
 
+@media screen and (max-width: 599px) {
+  .series-list li { grid-template-columns: 2.2rem 1fr; }
+  .series-list .series-date { grid-column: 2; margin-top: 0.2rem; }
+}
+
+// ---------------------------------------------------------------------------
+// Glossary
+// ---------------------------------------------------------------------------
+.glossary-letters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  margin: 1em 0 1.5em;
+
+  a {
+    display: inline-grid;
+    place-items: center;
+    min-width: 2.1rem;
+    height: 2.1rem;
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 0.92rem;
+    &:hover { border-color: var(--brand); color: var(--brand); background: var(--brand-soft); }
+  }
+}
+
+.glossary-count { font-family: var(--font-sans); font-size: 0.88rem; color: var(--muted); }
+
+.glossary-letter {
+  margin-top: 2em;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--rule);
+  color: var(--brand);
+}
+
+.glossary-list {
+  dt { margin-top: 1em; font-family: var(--font-sans); font-weight: 650; }
+  dt a { color: var(--ink); text-decoration: none; }
+  dt a:hover { color: var(--brand); text-decoration: underline; }
+  dt .post-series-tag, dt .post-series-tag:visited { margin-left: 0.5em; font-weight: 500; font-size: 0.8em; color: var(--brand); }
+  dd { margin: 0.2em 0 0; font-size: 0.98rem; color: var(--muted); line-height: 1.55; }
+}
+
+// ---------------------------------------------------------------------------
+// Newsletter (renders only once configured — see _includes/newsletter.html)
+// ---------------------------------------------------------------------------
+.newsletter {
+  margin: 3rem 0 1.5rem;
+  padding: 1.6rem 1.7rem;
+  background:
+    radial-gradient(120% 140% at 0% 0%, var(--brand-tint) 0%, transparent 60%),
+    var(--brand-soft);
+  border: 1px solid var(--brand-tint);
+  border-radius: var(--radius);
+  font-family: var(--font-sans);
+
+  h2 { font-size: 1.2rem; margin: 0 0 0.35em; color: var(--ink); }
+}
+
 .newsletter-blurb {
-  font-size: 0.93em;
-  line-height: 1.5;
-  color: #3d4a5c;
-  margin: 0 0 0.9em;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--muted);
+  margin: 0 0 1rem;
   max-width: 38em;
 }
 
 .newsletter-form {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5em;
-  margin: 0 0 0.7em;
+  gap: 0.5rem;
+  margin: 0 0 0.8rem;
 }
 
 .newsletter-email {
   flex: 1 1 15em;
   min-width: 0;                 // lets the input actually shrink inside flex
-  padding: 0.6em 0.75em;
-  font-size: 0.95em;
+  padding: 0.7rem 1rem;
+  font-size: 0.95rem;
   font-family: inherit;
-  border: 1px solid #a8c4e4;
-  border-radius: 6px;
-  background: #fff;
-  color: $wp-ink;
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink);
 
-  &:focus-visible {
-    outline: 2px solid $wp-blue;
-    outline-offset: 1px;
-    border-color: $wp-blue;
-  }
+  &:focus-visible { outline: 2px solid var(--brand); outline-offset: 1px; border-color: var(--brand); }
 }
 
 .newsletter-button {
   flex: 0 0 auto;
-  padding: 0.6em 1.3em;
-  font-size: 0.95em;
+  padding: 0.7rem 1.4rem;
+  font-size: 0.95rem;
   font-family: inherit;
   font-weight: 600;
   color: #fff;
-  background: $wp-blue;
-  border: 1px solid $wp-blue;
-  border-radius: 6px;
+  background: var(--brand);
+  border: 1px solid var(--brand);
+  border-radius: 999px;
   cursor: pointer;
 
-  &:hover { background: #12407c; border-color: #12407c; }
-  &:focus-visible { outline: 2px solid $wp-ink; outline-offset: 2px; }
+  &:hover { background: var(--brand-strong); border-color: var(--brand-strong); }
+  &:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 }
 
 .newsletter-fineprint {
-  font-size: 0.8em;
+  font-size: 0.8rem;
   line-height: 1.45;
-  color: #4a5567;
+  color: var(--muted);
   margin: 0;
 }
 
@@ -241,124 +1122,147 @@ $wp-rule:        #e8e8e8;
   border: 0;
 }
 
-// --- post header: series line -----------------------------------------------
-.post-series-line {
-  font-size: 0.86em;
-  letter-spacing: 0.01em;
-  color: #5a6678;
-  margin: 0 0 0.35em;
-
-  a { font-weight: 600; text-decoration: none; }
-  a:hover { text-decoration: underline; }
-}
-
-// --- table of contents ------------------------------------------------------
-.post-toc {
-  margin: 0 0 1.8em;
-  padding: 0.9em 1.15em;
-  background: $wp-blue-light;
-  border-radius: 10px;
-  font-size: 0.93em;
-
-  ol { margin: 0 0 0 1.25em; padding: 0; }
-  li { margin: 0.15em 0; }
-  a { text-decoration: none; }
-  a:hover { text-decoration: underline; }
-}
-
-.post-toc-title {
-  margin: 0 0 0.35em;
-  font-weight: 600;
-  font-size: 0.82em;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: #5a6678;
-}
-
-// --- previous / next in series ---------------------------------------------
-.series-nav {
-  display: flex;
-  gap: 1.2em;
-  justify-content: space-between;
-  margin: 2.6em 0 0;
-  padding-top: 1.2em;
-  border-top: 1px solid #e3e7ee;
-
-  > div { flex: 1 1 0; min-width: 0; }
-  a { font-weight: 600; text-decoration: none; }
-  a:hover { text-decoration: underline; }
-}
-
-.series-nav-next { text-align: right; }
-
-.series-nav-label {
-  display: block;
-  font-size: 0.8em;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: #5a6678;
-  margin-bottom: 0.25em;
-}
-
-.series-nav-soon {
-  font-size: 0.93em;
-  color: #3d4a5c;
-}
-
-// --- glossary ---------------------------------------------------------------
-.glossary-letters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35em 0.6em;
-  font-weight: 600;
-  a { text-decoration: none; }
-}
-
-.glossary-count { font-size: 0.9em; color: #5a6678; }
-
-.glossary-letter {
-  margin-top: 1.6em;
-  padding-bottom: 0.2em;
-  border-bottom: 1px solid #e3e7ee;
-}
-
-.glossary-list {
-  dt { margin-top: 0.9em; font-weight: 600; }
-  dt .post-series-tag { margin-left: 0.5em; font-weight: 400; }
-  dd { margin: 0.15em 0 0; font-size: 0.93em; color: #3d4a5c; line-height: 1.5; }
-}
-
-// --- comments (giscus) ----------------------------------------------------
-// Sits after the disclaimer. The note above the widget doubles as the
-// moderation policy, so keep it readable rather than fine-print sized.
+// ---------------------------------------------------------------------------
+// Comments (giscus)
+// ---------------------------------------------------------------------------
 .post-comments {
-  margin-top: 2.4em;
-  padding-top: 1.4em;
-  border-top: 1px solid #e3e7ee;
+  margin-top: 2.8rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--font-sans);
 
-  h2 {
-    font-size: 1.2em;
-    margin: 0 0 0.4em;
-    color: $wp-ink;
-  }
+  h2 { font-size: 1.25rem; margin: 0 0 0.4em; color: var(--ink); }
 }
 
 .post-comments-note {
-  font-size: 0.93em;
-  line-height: 1.5;
-  color: #3d4a5c;
+  font-size: 0.93rem;
+  line-height: 1.55;
+  color: var(--muted);
   margin: 0 0 1.1em;
   max-width: 38em;
 }
 
-// --- post diagrams --------------------------------------------------------
-// The hand-authored schematic SVGs (balance sheet, cash cycle, DuPont, DCF)
-// are drawn to a fixed viewBox; cap them so they don't tower on wide screens.
-.post-content img[src$=".svg"] { max-width: 100%; height: auto; }
+// ---------------------------------------------------------------------------
+// Footer
+// ---------------------------------------------------------------------------
+.site-footer {
+  border-top: 1px solid var(--rule);
+  background: var(--surface);
+  padding: 3rem 0 2rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
 
-@media screen and (max-width: 600px) {
-  .hero-title { font-size: 1.72em; }
-  .series-cards { grid-template-columns: 1fr; }
-  .newsletter { padding: 1.15em 1.1em; }
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2.2rem;
+}
+
+.footer-logo,
+.footer-logo:visited {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  text-decoration: none;
+  margin-bottom: 0.8rem;
+  img { border-radius: 7px; }
+  &:hover { color: var(--ink); text-decoration: none; }
+}
+
+.footer-tagline { max-width: 26rem; line-height: 1.55; margin: 0 0 1rem; }
+
+.footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0;
+
+  a {
+    padding: 0.3rem 0.75rem;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    color: var(--text);
+    font-size: 0.82rem;
+    font-weight: 500;
+    text-decoration: none;
+    &:hover { border-color: var(--brand); color: var(--brand); }
+  }
+}
+
+.footer-heading {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0.3rem 0 0.9rem;
+}
+
+.footer-col { float: none; padding: 0; margin: 0; }
+.footer-col ul { list-style: none; margin: 0; }
+.footer-col li { margin: 0 0 0.5rem; }
+.footer-col a { color: var(--muted); text-decoration: none; }
+.footer-col a:hover { color: var(--brand); }
+
+.footer-legal {
+  margin: 0;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+
+@media screen and (max-width: 799px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-brand { grid-column: 1 / -1; }
+}
+
+// ---------------------------------------------------------------------------
+// Dark mode: minima's Rouge theme is light-only, so re-tint the common tokens.
+// ---------------------------------------------------------------------------
+@mixin dark-syntax {
+  .highlight { color: var(--text); }
+  .highlight .c, .highlight .c1, .highlight .cm { color: #7d8a9a; font-style: italic; }
+  .highlight .k, .highlight .kn, .highlight .kd, .highlight .ow { color: #c7a0f5; font-weight: 600; }
+  .highlight .s, .highlight .s1, .highlight .s2, .highlight .sd { color: #9bd7a4; }
+  .highlight .m, .highlight .mi, .highlight .mf { color: #f0bd72; }
+  .highlight .nb, .highlight .bp { color: #7fc7e8; }
+  .highlight .nf, .highlight .nc { color: #8ebcf5; font-weight: 600; }
+  .highlight .o, .highlight .p { color: var(--text); }
+  .highlight .n, .highlight .nn, .highlight .na { color: var(--text); }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { @include dark-syntax; }
+}
+:root[data-theme="dark"] { @include dark-syntax; }
+
+// ---------------------------------------------------------------------------
+// Small screens
+// ---------------------------------------------------------------------------
+@media screen and (max-width: 599px) {
+  body { font-size: 16px; }
+  .wrapper { padding-left: 1rem; padding-right: 1rem; }
+  .page-content { padding-top: 1.6rem; }
+  .post-content { font-size: 1.06rem; }
+  .post-content h2 { font-size: 1.4rem; }
+  .hero { padding: 2.2rem 1.3rem 1.8rem; margin-bottom: 2.4rem; }
+  .hero::after { width: 14rem; height: 10rem; opacity: 0.12; }
+  .hero-sub { font-size: 1.04rem; }
+  .hero-actions .button { flex: 1 1 100%; }
+  .series-cards, .latest .post-list { grid-template-columns: 1fr; }
+  .series-nav { grid-template-columns: 1fr; }
+  .series-nav-next { text-align: left; }
+  .newsletter { padding: 1.3rem 1.2rem; }
   .newsletter-button { flex: 1 1 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; }
 }

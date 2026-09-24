@@ -1,0 +1,56 @@
+{%- comment -%}
+Overrides minima's footer. Series links render from _data/series.yml, so a new
+series appears here with no template change. Privacy & Disclaimer lives here
+rather than in the header nav (see header_pages in _config.yml).
+{%- endcomment -%}
+<footer class="site-footer h-card">
+  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+
+  <div class="wrapper">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="footer-logo" href="{{ "/" | relative_url }}">
+          <img src="{{ '/assets/icon.svg' | relative_url }}" alt="" width="28" height="28">
+          <span class="p-name">{{ site.title | escape }}</span>
+        </a>
+        <p class="footer-tagline">Financial concepts, one at a time — explained in plain language with worked examples on real Indian numbers.</p>
+        <p class="footer-social">
+          {%- if site.twitter_username -%}
+          <a href="https://twitter.com/{{ site.twitter_username }}" rel="me">@{{ site.twitter_username }}</a>
+          {%- endif -%}
+          <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+          {%- if site.email -%}
+          <a class="u-email" href="mailto:{{ site.email }}">Email</a>
+          {%- endif -%}
+        </p>
+      </div>
+
+      <nav class="footer-col" aria-label="Series">
+        <h2 class="footer-heading">Series</h2>
+        <ul>
+          {%- for s in site.data.series -%}
+          <li><a href="{{ '/series/' | append: s.slug | append: '/' | relative_url }}">{{ s.title | split: " — " | first }}</a></li>
+          {%- endfor -%}
+        </ul>
+      </nav>
+
+      <nav class="footer-col" aria-label="Site">
+        <h2 class="footer-heading">Site</h2>
+        <ul>
+          <li><a href="{{ '/glossary/' | relative_url }}">Glossary</a></li>
+          <li><a href="{{ '/case-study/' | relative_url }}">Case study</a></li>
+          <li><a href="{{ '/methodology/' | relative_url }}">Data &amp; methodology</a></li>
+          <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+          <li><a href="{{ '/privacy/' | relative_url }}">Privacy &amp; disclaimer</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <p class="footer-legal">
+      Educational content only — not investment advice. The author is not a
+      SEBI-registered Research Analyst or Investment Adviser. Worked examples use
+      historical data, shown only to illustrate a calculation.
+      &copy; {{ site.time | date: "%Y" }} <span class="p-author">{{ site.author | escape }}</span>.
+    </p>
+  </div>
+</footer>

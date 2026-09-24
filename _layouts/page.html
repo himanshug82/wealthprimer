@@ -1,0 +1,18 @@
+---
+layout: default
+---
+{%- comment -%}
+Overrides minima's page layout only to add the same table scroll wrapper as
+_layouts/post.html (the case study and methodology pages are table-heavy).
+{%- endcomment -%}
+<article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+  </header>
+
+  <div class="post-content">
+    {{ content | replace: '<table', '<div class="table-wrap"><table' | replace: '</table>', '</table></div>' }}
+  </div>
+
+</article>

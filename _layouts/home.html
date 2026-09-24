@@ -18,12 +18,22 @@ sentence per post, written once, used in three places.
 <div class="home">
 
   <section class="hero">
-    <h1 class="hero-title">Financial concepts, one at a time.</h1>
+    <p class="hero-eyebrow">Financial education for Indian investors</p>
+    <h1 class="hero-title">Financial concepts, <span class="hero-accent">one at a time.</span></h1>
     <p class="hero-sub">
       Wealth Primer explains how to read a company, a chart, a fund and a tax
       rule — in plain language, with worked examples on real Indian numbers.
       It teaches concepts. It never tells you what to buy.
     </p>
+    <div class="hero-actions">
+      <a class="button button-primary" href="{{ '/series/jargon/' | relative_url }}">Start with the basics</a>
+      <a class="button button-ghost" href="{{ '/glossary/' | relative_url }}">Browse the glossary</a>
+    </div>
+    <ul class="hero-promises">
+      <li><strong>Worked examples</strong> on audited filings and AMFI data</li>
+      <li><strong>Lagged data</strong> — every figure is at least 3 months old</li>
+      <li><strong>No tips, no calls</strong> — concepts only, ever</li>
+    </ul>
   </section>
 
   {%- comment -%}
@@ -38,6 +48,7 @@ sentence per post, written once, used in three places.
       {%- assign in_series = site.posts | where: "series", s.slug | sort: "date" -%}
       {%- assign first_post = in_series | first -%}
       <a class="series-card" href="{{ '/series/' | append: s.slug | append: '/' | relative_url }}">
+        <span class="series-card-num" aria-hidden="true">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
         <h3 class="series-card-title">{{ s.title }}</h3>
         <p class="series-card-desc">{{ s.description }}</p>
         <p class="series-card-meta">
@@ -45,7 +56,7 @@ sentence per post, written once, used in three places.
             {{ in_series.size }} post{% if in_series.size != 1 %}s{% endif %} &middot; start with
             &ldquo;{{ first_post.title | split: ":" | first | escape | truncatewords: 9 }}&rdquo;
           {%- else -%}
-            Publishing soon
+            <span class="pill">Publishing soon</span>
           {%- endif -%}
         </p>
       </a>

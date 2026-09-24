@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Privacy & Disclaimer
+nav_title: "Privacy"   # short label for the header nav; `title` stays the page H1
 permalink: /privacy/
 ---
 

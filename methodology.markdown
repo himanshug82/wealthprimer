@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Data & methodology"
+nav_title: "Methodology"   # short label for the header nav; `title` stays the page H1
 permalink: /methodology/
 description: "Where every number on Wealth Primer comes from: the audited filings, AMFI NAV history and exchange data behind each series, the 3-month lag rule, and how figures are derived rather than typed."
 ---

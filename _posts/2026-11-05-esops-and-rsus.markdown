@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "ESOPs and RSUs: taxed twice, on purpose"
-description: "Stock options are taxed as salary when you exercise and again as capital gains when you sell. Why the first bill arrives before any cash does, worked on a fictional ESOP."
+description: "Stock options are taxed as salary when you exercise and again as capital gains when you sell. Why the first bill comes before any cash, on a fictional ESOP."
 image: /assets/og/esops-and-rsus.png
 date: 2026-11-05 09:00:00 +0530
 series: tax

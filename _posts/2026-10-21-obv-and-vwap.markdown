@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "OBV and VWAP: two volume tools, and what daily data can't tell you"
-description: "On-balance volume adds and subtracts each day's volume; VWAP averages price by volume. How both work, a test of OBV divergence, and why true VWAP needs intraday data."
+description: "On-balance volume adds and subtracts each day's volume; VWAP averages price by volume. How both work, an OBV divergence test, and why VWAP needs intraday data."
 image: /assets/og/obv-and-vwap.png
 date: 2026-10-21 09:00:00 +0530
 series: technical-analysis

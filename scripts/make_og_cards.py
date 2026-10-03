@@ -145,7 +145,7 @@ def build_card(title, series_title):
         y += lh
 
     d.line([74, H - 92, W - 60, H - 92], fill=RULE, width=1)
-    d.text((74, H - 72), "dummynotes.com", font=font("bold", 24), fill=BLUE)
+    d.text((74, H - 72), "wealthprimer.in", font=font("bold", 24), fill=BLUE)
     tail = "Educational content — not investment advice"
     ft = font("regular", 21)
     d.text((W - 60 - width_of(d, tail, ft), H - 69), tail, font=ft, fill=MUTED)

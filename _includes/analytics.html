@@ -27,6 +27,34 @@ disclosure on there in the same commit.
     allow_ad_personalization_signals: false
   });
 </script>
+<script>
+  /* Custom GA4 events: outbound/sheet clicks, series navigation, newsletter
+     submits, and scroll depth (25/50/75/100). No personal data is sent. */
+  (function () {
+    function ev(n, p) { if (window.gtag) gtag('event', n, p || {}); }
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href]');
+      if (!a) return;
+      if (a.closest('.series-nav')) ev('series_nav_click', { link_url: a.href });
+      if (a.host && a.host !== location.host) {
+        var sheet = /docs\.google\.com\/spreadsheets|colab\.research|\.ipynb/.test(a.href);
+        ev(sheet ? 'calculator_click' : 'outbound_click', { link_url: a.href });
+      }
+    });
+    document.addEventListener('submit', function (e) {
+      if (e.target.closest && e.target.closest('.newsletter-form')) ev('newsletter_submit');
+    });
+    var seen = {};
+    addEventListener('scroll', function () {
+      var h = document.documentElement, max = h.scrollHeight - innerHeight;
+      if (max <= 0) return;
+      var pct = Math.round(100 * scrollY / max);
+      [25, 50, 75, 100].forEach(function (t) {
+        if (pct >= t && !seen[t]) { seen[t] = 1; ev('scroll_depth', { percent: t }); }
+      });
+    }, { passive: true });
+  })();
+</script>
 {%- endif -%}
 {%- if site.goatcounter and site.goatcounter != '' -%}
 <script data-goatcounter="https://{{ site.goatcounter }}.goatcounter.com/count"

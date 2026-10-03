@@ -239,7 +239,7 @@ browser — never rasterised locally.
   layout.
 - **`description:`** (140–160 chars) feeds the homepage summary, the meta
   description and the RSS summary.
-- **Analytics:** GA4 is live (`G-LYRDRDQSE8`, Google Signals and ads
+- **Analytics:** GA4 is live (`G-6KTY7W7VCR`, Google Signals and ads
   personalisation off — `/privacy/` asserts this, keep them in sync);
   GoatCounter optional. `/privacy/` turns each disclosure on from the same
   config keys that enable the feature.

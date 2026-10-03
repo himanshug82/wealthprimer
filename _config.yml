@@ -19,7 +19,7 @@ timezone: Asia/Kolkata # keeps scheduled/dated posts publishing on IST, not the 
 # Admin > Data streams > Web in analytics.google.com. GA4 sets first-party
 # cookies (_ga, _ga_*), so turning it on also switches /privacy/ from "no
 # cookies" to a cookie disclosure automatically.
-google_analytics: "G-LYRDRDQSE8"
+google_analytics: "G-6KTY7W7VCR"
 #
 # GoatCounter (cookie-free alternative / cross-check). Set to the site CODE
 # only — the "CODE" in https://CODE.goatcounter.com — NOT the full URL.

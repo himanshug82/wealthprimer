@@ -30,4 +30,4 @@ dataset, its source and the rules the posts follow.
 
 - Twitter/X: [@wealthprimer_in](https://twitter.com/wealthprimer_in)
 - Code & calculators: [github.com/wealthprimer/wealthprimer](https://github.com/wealthprimer/wealthprimer)
-- Email: [himanshu.direct@gmail.com](mailto:himanshu.direct@gmail.com)
+- Email: [wealthprimer@gmail.com](mailto:wealthprimer@gmail.com)

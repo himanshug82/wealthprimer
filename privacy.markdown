@@ -124,4 +124,4 @@ _includes/analytics.html; if you ever turn them on, change this page too.
 
 ## Contact
 
-Questions about this policy? Reach out at himanshu.direct@gmail.com.
+Questions about this policy? Reach out at wealthprimer@gmail.com.

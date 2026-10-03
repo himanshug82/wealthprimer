@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "F&O is business income, not capital gains"
+title: "F&O taxation in India: business income, not capital gains"
 description: "F&O profits and losses are business income: a different return form, different set-off rules, and a turnover that isn't what you think. Worked on SEBI's data."
 image: /assets/og/fo-is-business-income.png
 date: 2026-11-07 09:00:00 +0530

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "ELSS and the deduction that moved: 80C under the new regime"
+title: "ELSS tax saving: what happened to the 80C deduction"
 description: "The ₹1.5 lakh deduction still exists, but only in the old regime. What that means for ELSS, and how its lock-in interacts with tax on the way out."
 image: /assets/og/elss-and-the-deduction-that-moved.png
 date: 2026-11-03 09:00:00 +0530

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "P/E: how many years of earnings you're paying for"
+title: "P/E ratio explained: formula, meaning and common mistakes"
 description: "How many years of current earnings the market is charging for. The P/E formula, why high is not automatically expensive, and the earnings quality behind the E."
 image: /assets/og/price-to-earnings.png
 date: 2026-09-24 09:00:00 +0530

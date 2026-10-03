@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Market Cap: what the market values the whole company at"
+title: "Market cap: what it means and how it's calculated"
 description: "Price times shares outstanding: the number behind every large-cap, mid-cap and small-cap label, and why it is not what buying the company would cost."
 image: /assets/og/market-cap.png
 date: 2026-09-27 09:00:00 +0530

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Expense ratios: what the same fund costs in two different plans"
+title: "Expense ratio in mutual funds: direct vs regular plan"
 description: "The expense ratio is deducted from NAV daily, so you never see it charged. What the direct and regular plans of one fund actually cost you over time."
 image: /assets/og/expense-ratios-direct-vs-regular.png
 date: 2026-09-28 09:00:00 +0530

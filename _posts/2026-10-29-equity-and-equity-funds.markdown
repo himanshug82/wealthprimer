@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Equity and equity funds: 20%, 12.5%, and the ₹1.25 lakh that isn't taxed"
+title: "Capital gains tax on shares and equity funds: LTCG and STCG"
 description: "Listed shares and equity funds: the short-term and long-term rates, the annual exemption, cess and grandfathering, with worked examples on real fund NAVs."
 image: /assets/og/equity-and-equity-funds.png
 date: 2026-10-29 09:00:00 +0530

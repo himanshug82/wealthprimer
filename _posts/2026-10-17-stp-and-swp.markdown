@@ -6,6 +6,7 @@ image: /assets/og/stp-and-swp.png
 date: 2026-10-17 09:00:00 +0530
 series: mutual-funds
 term: "STP and SWP"
+last_modified_at: 2026-10-25
 needs_review: tax
 rules_as_of: "August 2026"
 ---
@@ -175,9 +176,10 @@ year.
 Tax isn't the only deduction. An SWP from an equity fund that starts within
 the fund's [exit load]({% post_url 2026-10-07-exit-load %}) window — commonly
 1% on units held less than a year — pays that load on every early withdrawal. An STP out of a
-liquid fund can attract SEBI's small graded exit load on units redeemed in
-their first week; overnight funds generally carry none. Check the scheme's
-exit-load terms before you set either one up.
+liquid fund pays an exit load on units redeemed within 7 calendar days of
+investment: SEBI requires one, on a graded minimum scale that AMFI sets
+([Master Circular for Mutual Funds, 20 March 2026, para 5.6.5](https://www.sebi.gov.in/legal/master-circulars/mar-2026/master-circular-for-mutual-funds_100491.html)).
+Check the scheme's exit-load terms before you set either one up.
 
 ## Doing it in Python
 

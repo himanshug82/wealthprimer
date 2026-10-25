@@ -87,7 +87,7 @@ stretch, and it isn't wrong; it's just rising.
 
 Two years of Britannia, with RSI underneath:
 
-![Britannia price with 14-day RSI]({{ '/assets/charts/ta-rsi.svg' | relative_url }}){: width="610" height="373"}
+![Britannia price with 14-day RSI]({{ '/assets/charts/ta-rsi.svg' | relative_url }}){: width="594" height="373"}
 
 Britannia (NSE: BRITANNIA), {{ ta.dataset.as_of }}. Source:
 [Yahoo Finance]({{ ta.dataset.source_url }}). Historical data, for illustration only.

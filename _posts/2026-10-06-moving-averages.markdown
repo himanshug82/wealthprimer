@@ -83,7 +83,7 @@ about things that turned out to be nothing.
 
 Britannia with the two most-watched averages, the 50-day and the 200-day:
 
-![Britannia with 50-day and 200-day moving averages]({{ '/assets/charts/ta-moving-averages.svg' | relative_url }}){: width="610" height="307"}
+![Britannia with 50-day and 200-day moving averages]({{ '/assets/charts/ta-moving-averages.svg' | relative_url }}){: width="594" height="307"}
 
 Britannia (NSE: BRITANNIA), {{ ta.dataset.as_of }}. Source:
 [Yahoo Finance]({{ ta.dataset.source_url }}). Historical data, for illustration only.

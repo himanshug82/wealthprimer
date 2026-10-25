@@ -10,7 +10,7 @@ of mistake only surface then:
   1. A {% post_url %} that points at a post whose date is LATER than the
      linking post's. That isn't a 404 — it fails the ENTIRE Jekyll build
      ("Could not find post ... in tag 'post_url'"), because unpublished posts
-     are not in site.posts. See the build rule in TODO.md.
+     are not in site.posts. See the build rule in _docs/how-it-works.md.
   2. Front matter that the layouts/SEO depend on: a `description` of the
      length Google shows, an `image` that exists in assets/og/, a `series`
      slug that exists in _data/series.yml, a valid date.

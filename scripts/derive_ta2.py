@@ -28,7 +28,7 @@ Bollinger specified). Indicator values are never quoted from inside their
 warmup window.
 
 Needs pandas, numpy, pyyaml (not in the system python on this machine — use
-the venv noted in TODO.md).
+the venv noted in _docs/how-it-works.md).
 """
 from __future__ import annotations
 

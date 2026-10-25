@@ -21,7 +21,7 @@ scheduled instalment before the first NAV is skipped; ATR uses Wilder's
 smoothing (alpha = 1/14) like the RSI in _data/ta.yml.
 
 Needs pandas, numpy, pyyaml, matplotlib (not in the system python on this
-machine — see TODO.md for the venv/docker note).
+machine — see _docs/how-it-works.md for the venv/docker note).
 """
 import math
 from pathlib import Path

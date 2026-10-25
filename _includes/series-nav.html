@@ -4,7 +4,7 @@ Previous / next post within the same series, in reading (date) order.
 `site.posts` only contains PUBLISHED posts (future: false), so "next" is
 naturally absent until the next post's date arrives — which is also why this
 must never use {% raw %}{% post_url %}{% endraw %} (a forward reference fails the whole build; see
-the build rule in TODO.md). When there is no next post but the series plans
+the build rule in _docs/how-it-works.md). When there is no next post but the series plans
 more, say so rather than leaving the reader at a dead end.
 
 Sets `series_meta`, `series_index` (1-based), `series_total` for post.html's

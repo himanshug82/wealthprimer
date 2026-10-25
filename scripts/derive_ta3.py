@@ -30,7 +30,7 @@ HOUSE RULES FOR EVERY TEST (same as scripts/derive_ta2.py and the
     the whole grid is reported, not the best cell.
   * Costs: 0.1% per side, illustrative all-in (same as ta2.yml).
 
-Needs pandas, numpy, pyyaml (use the venv noted in TODO.md).
+Needs pandas, numpy, pyyaml (use the venv noted in _docs/how-it-works.md).
 """
 from __future__ import annotations
 

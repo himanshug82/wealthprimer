@@ -211,7 +211,7 @@ for p in (0.50, 0.51, 0.53, 0.55):
 # Real data: the continuous Kelly fraction (mu - r) / sigma^2, re-estimated on rolling 5-FY windows.
 idx_fy = fy_end_values(idx)
 # The overnight fund's face value went from Rs 10 to Rs 1,000 on 3 May 2018 (a known quirk,
-# see TODO.md): chain daily returns and zero out that one re-denomination day.
+# see _docs/how-it-works.md): chain daily returns and zero out that one re-denomination day.
 ovn_d = ovn.pct_change()
 jumps = ovn_d[ovn_d.abs() > 0.5]
 assert len(jumps) == 1 and str(jumps.index[0].date()) == "2018-05-03", jumps

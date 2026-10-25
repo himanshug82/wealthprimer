@@ -39,6 +39,7 @@ VERDICT = (r"\b(overvalued|undervalued|cheap(ly)?|expensive|fairly (valued|price
 VALUATION = r"\b(DCF|WACC|discount rate|intrinsic value|fair value|justified (P/B|P/E|multiple))\b"
 SERIES_COPY = r"\b(the next (two|three|four|five|six|seven|eight|nine|ten|\d+) posts|final post|last post in this series|closes? the series|fifty-nine posts)\b"
 DO_NOT_TARGET = r"\b(best|top \d+|top (stocks|funds)|multibagger|intraday|strategy that works|tips?|should you (buy|invest)|which is better|target)\b"
+PROPER = {"Desi", "Bites", "Foods", "Britannia", "Industries", "Nifty", "Sensex", "Infosys", "HDFC", "Bank", "India", "Indian", "Act", "Tax", "Year", "Income", "Securities", "Exchange", "Board"}
 STOP_ACR = {"I", "A", "II", "III", "IV", "AM", "PM", "OK", "CSV", "SVG", "PNG", "ISO", "DB"}
 LIQUID = r"\{%.*?%\}|\{\{.*?\}\}"
 LAG_CUE = r"(?:as of|as at|up to|until|through|ends?|closing (?:price )?(?:on|of)|close on|prices? (?:on|of)|data (?:to|till|from))"
@@ -105,7 +106,7 @@ def lint(path):
     elif len(title) > 50:
         add("INFO", f"title is {len(title)} chars (aim ≤ 50 so the rendered <title> stays near 65)")
     tw = re.findall(r"[A-Za-z][A-Za-z'’]+", title)[1:]
-    if sum(w[0].isupper() and not w.isupper() for w in tw) >= 3:
+    if sum(w[0].isupper() and not w.isupper() and w not in PROPER for w in tw) >= 3:
         add("WARN", "title looks Title Case (house style is sentence case; proper nouns are fine)")
     if not 140 <= len(desc) <= 160:
         add("WARN", f"description is {len(desc)} chars (aim 140–160)")
@@ -185,7 +186,7 @@ def lint(path):
             if re.search(rx, h.group(2), re.I if rx != CALLS else 0):
                 add(lvl, f"line {n + off}: compliance word in heading: “{h.group(2)}”")
         ws = re.findall(r"[A-Za-z][A-Za-z'’]+", h.group(2))[1:]
-        if sum(w[0].isupper() and not w.isupper() for w in ws) >= 3:
+        if sum(w[0].isupper() and not w.isupper() and w not in PROPER for w in ws) >= 3:
             add("WARN", f"line {n + off}: heading looks Title Case: “{h.group(2)}”")
 
     # structure
@@ -240,7 +241,7 @@ def lint(path):
         if not re.search(rf"\({ea}\)|\b{ea}\s*\(|\*\*{ea}\b|\b{ea}\s+[—–-]|—\s*{ea}\b", ptext):
             undefined.append(a)
     if undefined:
-        add("INFO", "acronyms with no visible definition (every post must define each on first use): " + ", ".join(undefined))
+        add("INFO", "acronyms with no visible definition (the expansion must precede first use; this check only confirms one exists): " + ", ".join(undefined))
 
     # lag: exact dates are FAIL, month-only dates that could straddle the cutoff are WARN
     if pub:

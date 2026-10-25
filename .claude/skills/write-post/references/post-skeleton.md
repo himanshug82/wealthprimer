@@ -28,6 +28,20 @@ Assign everything the post uses at the top, then print with Liquid. Never type a
 | EBIT (FY25) | {{ db_is25.ebit }} |
 ```
 
+Simple arithmetic on `_data` values in Liquid (`plus`, `minus`, `times`, `divided_by` with a float, `round`) is fine; write a `scripts/derive_*.py` only when the figure is reused across posts or needs invariants asserted. Inputs for a generic/illustrative example still live in `_data/`, not in prose.
+
+`inr.html` takes a variable, not a filter chain: `assign` first, then `{% include inr.html n=x %}`. It drops a trailing `.0` and gives a true minus, so pass computed floats through it.
+
+Table from a loop — no blank lines between rows, or kramdown ends the table:
+
+```liquid
+| Year | Charge |
+|---|---:|
+{% for y in rows -%}
+| {{ y.year }} | {% assign c = y.charge %}{% include inr.html n=c %} |
+{% endfor %}
+```
+
 Prose rupee amounts: `{% include inr.html n=db_is25.ebit %}`. Table cells with pure numbers are grouped automatically. Never start a line with `{{ value }}. ` or `48. ` (kramdown makes it a list).
 
 ## Section order

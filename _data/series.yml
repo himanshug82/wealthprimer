@@ -43,3 +43,8 @@
   description: "What the F&O data says, what leverage does to a portfolio, how to size a position, and the biases that turn a temporary loss into a permanent one."
   about: "For the part of investing that happens before returns: what SEBI's F&O studies found, why losses compound against you, how leverage and position size change the outcome, why diversification is about correlation, and the biases that turn a temporary loss into a permanent one."
   planned: 16   # Module 1 (8) + Module 2 (8)
+- slug: money-before-markets
+  title: "Money Before Markets"
+  description: "How the safe-money basics work before you invest in markets: emergency funds, FDs, G-secs, PPF, EPF, NPS, ULIPs and REITs."
+  about: "For the money decisions that sit underneath investing: how big a cash buffer is and where it waits, how a fixed deposit differs from a debt fund, and how government securities, PPF and NPS exit rules work. It ends with what a ULIP's charges take and how a REIT is built. Rates and rules are dated and sourced to the issuing body, and nothing here tells you what to choose."
+  planned: 7   # Module 1: emergency fund, FD vs debt fund, G-secs, PPF, NPS exit rules, ULIP charges, REIT structure written; EPF (12 Nov slot) pending its primary sources, then bump to 8

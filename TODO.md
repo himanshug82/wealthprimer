@@ -47,15 +47,17 @@ for how the repo works.
   `noindex`. Confirm in Search Console which URL was flagged (Pages → that issue →
   example URL → URL Inspection shows the Google-selected canonical); if it isn't
   `/series/`, tell Claude the URL.
-- **Tax-touching posts already published (no `needs_review` yet; found 25 Oct):**
-  `arbitrage-funds` (whole "taxed as equity" section), `stp-and-swp` ("Tax,
-  briefly"), `what-a-mutual-fund-is` (IDCW/growth tax), `debt-funds-explained`
-  (post-April-2023 slab rule — the riskiest), `what-the-fo-numbers-actually-say`
-  (F&O as business income), `dividend-yield`, `record-date-and-ex-date`,
-  `index-funds-vs-etfs`, `inflation-and-real-returns`, `hybrid-funds`,
-  `international-funds`. Either add `needs_review: tax` + `rules_as_of` or soften each sentence to "check the
-  current rule". `python3 .claude/skills/write-post/scripts/lint_post.py
-  _posts/*.markdown | grep needs_review` lists them.
+- **Tax-touching published posts: flagged and softened (26 Oct 2026).** The 11
+  posts (`arbitrage-funds`, `stp-and-swp`, `what-a-mutual-fund-is`,
+  `debt-funds-explained`, `what-the-fo-numbers-actually-say`, `dividend-yield`,
+  `record-date-and-ex-date`, `index-funds-vs-etfs`, `inflation-and-real-returns`,
+  `hybrid-funds`, `international-funds`) now carry `needs_review: tax` +
+  `rules_as_of` and `last_modified_at: 2026-10-25`; tax sentences say
+  "generally" / "check the current rule", and a stray old-Act section number
+  (44AB) was removed. `rules_as_of` points at the Tax series' own verification
+  dates (Aug/Sep 2026), not a fresh check. The linter's remaining 3 warnings
+  (`how-to-backtest-honestly`, `wacc-cost-of-capital`, `capital-allocation`) are
+  false positives.
 - **Tax series: schedule it (decide dates).** No professional read will happen
   (decided 26 Oct), so the three-week hold has no reason left. All 18 posts carry
   `needs_review: tax`, `rules_as_of` and the as-at-date/"author is not a tax

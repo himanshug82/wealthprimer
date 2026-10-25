@@ -6,6 +6,9 @@ image: /assets/og/hybrid-funds.png
 date: 2026-10-18 09:00:00 +0530
 series: mutual-funds
 term: "Hybrid funds"
+needs_review: tax
+rules_as_of: "August 2026"
+last_modified_at: 2026-10-25
 ---
 
 {% assign m = site.data.mf3 %}

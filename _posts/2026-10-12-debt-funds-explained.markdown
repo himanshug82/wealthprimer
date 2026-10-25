@@ -7,6 +7,9 @@ image: /assets/og/debt-funds-explained.png
 date: 2026-10-12 09:00:00 +0530
 series: mutual-funds
 term: "Debt fund (accrual vs mark-to-market)"
+needs_review: tax
+rules_as_of: "August 2026"
+last_modified_at: 2026-10-25
 ---
 
 {% assign m = site.data.mf2 %}
@@ -204,8 +207,9 @@ the series used here were spliced.
 - **Ignoring credit risk because the NAV looks smooth.** Accrual funds
   holding lower-rated paper look like the overnight fund's line above — right
   up to the day a borrower defaults.
-- **Forgetting tax.** Gains on debt-fund units bought on or after 1 April
-  2023 are taxed at your slab rate regardless of holding period — see the
+- **Forgetting tax.** As at the date above, gains on "specified" debt-fund units bought on or after 1 April
+  2023 are generally taxed at your slab rate whatever the holding period; which funds count as
+  "specified" has changed, so check the current rule — see the
   tax series post on debt funds<!-- RELINK 2026-10-30-debt-funds-gold-and-the-rest -->.
 
 **Takeaway:** A debt fund earns two ways — interest accruing daily, and bonds

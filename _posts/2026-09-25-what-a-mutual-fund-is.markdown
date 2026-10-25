@@ -6,6 +6,9 @@ image: /assets/og/what-a-mutual-fund-is.png
 date: 2026-09-25 09:00:00 +0530
 series: mutual-funds
 term: "NAV (net asset value)"
+needs_review: tax
+rules_as_of: "August 2026"
+last_modified_at: 2026-10-25
 ---
 
 {% assign mf = site.data.mf %}
@@ -132,11 +135,11 @@ Two of these deserve flags now.
 **IDCW is not "dividend income."** It used to be called the dividend option,
 and the rename was an improvement, because the money isn't a return *on top
 of* your investment — it's paid out of your own NAV, which falls by the same
-amount. It's taxable in your hands at your slab rate. Many people choose
+amount. As at the date above it is generally taxable in your hands at your slab rate. Many people choose
 IDCW believing it produces extra income; it produces the same money, sooner,
-taxed less favourably — each payout is taxed at your slab rate in the year it's
-paid, while growth-option gains are taxed only when you redeem, and then at
-capital-gains rates.
+taxed less favourably — each payout is generally taxed at your slab rate in the year it's
+paid, while growth-option gains are generally taxed only when you redeem, and then at
+capital-gains rates. Check the current rule.
 
 **The expense ratio is already inside the NAV.** You'll never see it charged.
 Every NAV in that chart is *after* fees. The [post on expense ratios]({{ '/2026/09/28/expense-ratios-direct-vs-regular/' | relative_url }}) shows exactly what
@@ -173,7 +176,7 @@ the same answer regardless of whether its NAV is ₹10 or ₹500.
   fund starts at ₹10 by convention. It has no track record, which is a
   disadvantage, not an entry price.
 - **Choosing IDCW for "regular income."** The payout comes out of your NAV
-  and is taxed at your slab rate.
+  and is generally taxed at your slab rate.
 - **Comparing NAVs of two different funds.** Meaningless. Compare returns
   over identical periods.
 - **Forgetting returns are already net of expenses.** Every NAV is

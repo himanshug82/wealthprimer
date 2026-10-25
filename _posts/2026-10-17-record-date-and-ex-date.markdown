@@ -7,6 +7,9 @@ image: /assets/og/record-date-and-ex-date.png
 date: 2026-10-17 09:00:00 +0530
 series: jargon
 term: "Record date and ex-date"
+needs_review: tax
+rules_as_of: "August 2026"
+last_modified_at: 2026-10-25
 ---
 
 {% assign st = site.data.jargon_m7.settlement %}
@@ -53,7 +56,7 @@ evening before the ex-date, a share is a claim on the business *plus* the
 dividend about to be paid. The next morning it's a claim on the business
 alone. Nothing about the business changed; the dividend just moved from the
 company's bank account to yours. Your wealth is the same, split between the
-share and the cash (before tax — the dividend is taxable in your hands).
+share and the cash (before tax — the dividend is generally taxable in your hands).
 
 ## Worked example: Britannia's final dividend for FY 2024-25
 
@@ -114,7 +117,7 @@ The ex-date is the first day someone who buys it doesn't get the ₹5.
 
 - **Buying just before the ex-date to "capture" the dividend.** The price
   adjusts for it, so you're swapping share value for cash, and the dividend
-  is taxed as income. There is no free lunch in the mechanics, whatever a
+  is generally taxed as income. There is no free lunch in the mechanics, whatever a
   single day's chart seems to show.
 - **Buying on the record date.** Under T+1 your trade settles the next
   day, after the register is struck. The last day to buy is the working day

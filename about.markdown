@@ -5,6 +5,8 @@ description: "About Wealth Primer: a software engineer and retail investor expla
 permalink: /about/
 ---
 
+<img class="about-avatar" src="{{ '/assets/avatar.svg' | relative_url }}" alt="HG monogram for Himanshu Gupta, the author" width="96" height="96">
+
 I've spent 20 years writing software — starting out on order and inventory
 management systems for large retailers, and later moving into large-scale
 distributed systems, including open-source work in the supply-chain space.

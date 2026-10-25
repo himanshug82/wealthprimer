@@ -3,7 +3,7 @@ layout: post
 title: "STCG vs LTCG: the holding period that changes your tax rate"
 description: "Twelve months for listed equity, twenty-four for most other assets. How the holding period is counted, and why a day either side of the line changes the rate."
 image: /assets/og/short-term-vs-long-term.png
-date: 2026-10-28 09:00:00 +0530
+date: 2026-11-18 09:00:00 +0530
 series: tax
 term: "STCG and LTCG (capital gains)"
 ---
@@ -16,7 +16,7 @@ advice.*
 
 ## One line, two very different outcomes
 
-The [last post]({% post_url 2026-10-27-how-investment-income-is-taxed %}) said the holding
+The [last post]({% post_url 2026-11-17-how-investment-income-is-taxed %}) said the holding
 period decides most of what happens to a capital gain. This post is about
 exactly where that line sits and how it's counted, because the difference
 either side of it is large and entirely mechanical.

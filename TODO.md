@@ -3,10 +3,10 @@
 Current state (25 Oct 2026): **168 posts written and scheduled** across six
 series (Jargon 53 · FA 29 · TA 22 · MF 30 · Tax 18 · Risk 16). The cadence is
 **one post per series per day** (MF Module 4 runs every other day, by request). Scheduled through: Jargon 21 Oct · FA 23 Oct
-· TA 23 Oct · Risk 23 Oct · MF 7 Nov · **Tax held** 27 Oct → 13 Nov pending
-its professional read. **MF Module 4 (7 posts, 26 Oct → 7 Nov, every other
+· TA 23 Oct · Risk 23 Oct · MF 7 Nov · **Tax held** 17 Nov → 4 Dec (18 posts,
+moved back three weeks on 25 Oct) pending its professional read. **MF Module 4 (7 posts, 26 Oct → 7 Nov, every other
 day) was added on 25 Oct 2026, so MF is scheduled through 7 Nov (30 posts).**
-**The other written backlogs run out after 25 Oct** (Tax after 13 Nov) — the next module per series needs approving by about 10 Oct. All posts were reviewed and every P0/P1/P2 finding
+**The other written backlogs ran out on 25 Oct** (Tax runs to 4 Dec) — each series needs its next module planned and approved (`plan-module`). All posts were reviewed and every P0/P1/P2 finding
 fixed — see `_review/REVIEW-2026-09-24.md`. House style and the rules every
 post must follow are in `CLAUDE.md`; this file is for what's still open and
 for how the repo works.
@@ -20,35 +20,44 @@ for how the repo works.
   request indexing for `/`, `/series/` and `/series/risk/` (it was `noindex` until
   25 Oct); add DNS `CNAME www → himanshug82.github.io` (www doesn't resolve today);
   if applying for AdSense, add `ads.txt` and disclose ad cookies on `/privacy/`.
-- **Newsletter:** `newsletter.action` in `_config.yml` is empty, so the signup
-  box renders nothing. Mailchimp or Buttondown — three config keys; setup notes
-  in `_includes/newsletter.html`.
-- **Comments (giscus):** `giscus.repo_id` and `giscus.category_id` are empty.
-  Enable Discussions on the repo, create an "Announcement"-type category named
-  "Comments", install https://github.com/apps/giscus, then copy both ids from
-  https://giscus.app (mapping: pathname). Notes in `_includes/comments.html`.
-  Enforce the moderation note (no tips, no targets, no "should I buy X").
-- **Tax series professional read** — all 13 tax posts, held at 27 Oct →
-  8 Nov (daily). The rules were re-checked against primary sources where
+- **Tax series professional read** — all 18 tax posts, now held at 17 Nov →
+  4 Dec (daily; moved back three weeks on 25 Oct to make room for the read —
+  the Tax hub stays noindexed until 17 Nov automatically). The rules were re-checked against primary sources where
   reachable, but someone who files professionally should read them before
   they publish. `_data/tax2.yml` lists the recorded disagreements. Once
   reviewed, the tax posts can move earlier (rename the files; keep one per day
-  and check `scripts/check_posts.py`) — and restore the nine RELINK links below.
-- **Next content (approve a roadmap):** at one post per series per day the
-  backlog runs dry after 25 Oct (Tax 13 Nov). Pick the next module for each
-  series by ~10 Oct so it can be written and checked in time.
-- **Desi Bites' public float:** the fictional IPO left 20% public, below the
-  real 25% minimum public shareholding. The market-mechanics posts (free float,
-  18 Oct; OFS and delisting, 20 Oct) say so and use it as the teaching example.
-  Alternative: raise the IPO float in the case-study data (ripples through
-  every Desi Bites per-share figure). Decide which.
-- **About page avatar** — photo, illustration, or an SVG monogram?
-- **Decisions, whenever:** R8 personal-finance track ("Money Before Markets":
-  emergency fund, EPF/PPF/NPS, term insurance vs ULIP, FDs vs debt funds, real
-  returns; plus bonds/G-secs, REITs/InvITs) — widen the blog's scope or not? ·
-  A real peer table for the comparables post (Nestlé India, Tata Consumer…,
-  each sourced from its own filing) · MathJax/KaTeX for formulas instead of
-  code blocks.
+  and check `scripts/check_posts.py`) — and restore the RELINK links below (14 markers).
+- **Next content:** every series except Tax has run out of written posts (MF
+  runs to 7 Nov). Plan and approve the next module per series with
+  `plan-module`. **R8 "Money Before Markets" is approved (25 Oct) as a new
+  series and is next to plan** — emergency fund, EPF/PPF/NPS, term insurance vs
+  ULIP, FDs vs debt funds, real returns, plus bonds/G-secs and REITs/InvITs. It
+  needs a new slug in `_data/series.yml`, primary sources for every rule and
+  rate, and a professional read for the tax-touching posts.
+
+## Decided — 25 Oct 2026
+
+- **Desi Bites' public float stays at 20%** — the free-float and OFS/delisting
+  posts already use the gap below the 25% minimum as the teaching example; no
+  data change.
+- **Formulas stay in code blocks** — no MathJax/KaTeX.
+- **No real peer table** in the comparables post — it stays on Desi Bites
+  (a listed-peer table drifts toward relative-valuation verdicts).
+- **About page avatar: done** — `assets/avatar.svg` (HG monogram, brand blue),
+  floated beside the opening paragraph.
+- **Tax series moved back three weeks** (see "Tax series professional read").
+
+## Parked — revisit later
+
+- **Newsletter** (decided "later", 25 Oct): `newsletter.action` in `_config.yml`
+  is empty, so the signup box renders nothing. Mailchimp or Buttondown — three
+  config keys; setup notes in `_includes/newsletter.html`.
+- **Comments / giscus** (decided "not now", 25 Oct — moderating "should I buy
+  X" questions is a compliance load): `giscus.repo_id` and `giscus.category_id`
+  are empty, so nothing renders. To enable: Discussions on, an
+  "Announcement"-type category "Comments", install https://github.com/apps/giscus,
+  copy both ids from https://giscus.app (mapping: pathname). Notes in
+  `_includes/comments.html`.
 
 ## Open — verify before the affected post publishes
 
@@ -73,15 +82,15 @@ wording (or correct it).
 | ~~Liquid-fund graded exit load in the first week~~ — now confirmed: SEBI Master Circular (20 Mar 2026) para 5.6.5 requires an exit load for exits within 7 calendar days, graded as AMFI prescribes with SEBI; the scale itself is AMFI's and is not in the circular. Tighten the STP and SWP wording if it states more. | STP and SWP | 17 Oct | Master Circular text read 25 Oct |
 | Index-futures margins "low-to-mid teens" | leverage and margin | 11 Oct | hedged ("check NSE's margin files") |
 | 29 Aug 2024 intermediaries amendment "left room" for education | how finfluencers make money | 15 Oct | secondary sources |
-| Tax, from memory: property's 12.5%/20% option; business filers' one-time switch back to the new regime; CBDT condoning late filing; GAAR on round-trips; old 80C → section 123 | several tax posts | 27 Oct → 8 Nov | memory / secondary (incometaxindia.gov.in returns 403) |
-| Buyback Regime C: ₹1.25 lakh exemption, promoter definition, timing; foreign shares' exchange-rate convention | buyback taxation, foreign stocks | 6, 8 Nov | recorded as disagreements in `tax2.yml` |
+| Tax, from memory: property's 12.5%/20% option; business filers' one-time switch back to the new regime; CBDT condoning late filing; GAAR on round-trips; old 80C → section 123 | several tax posts | 17 Nov → 4 Dec | memory / secondary (incometaxindia.gov.in returns 403) |
+| Buyback Regime C: ₹1.25 lakh exemption, promoter definition, timing; foreign shares' exchange-rate convention | buyback taxation, foreign stocks | 27, 29 Nov | recorded as disagreements in `tax2.yml` |
 | Ex-date = record date under T+1 (inferred from NSE corporate-actions data); rights-issue rules "from April 2025" (7 or 8 April); OFS framework's current master circular; T+0 rollout status | T+1, record/ex-date, rights issues, OFS | 16–20 Oct | NSE data / secondary |
 | GSM stage mechanics ("buyer pays in full plus deposit" is inferred); "not an adverse action" confirmed only for ASM/ESM; GSM criteria after May 2026 | ASM and GSM surveillance | 21 Oct | NSE FAQs + inference |
 | Attributions: Lane (stochastic), Granville (OBV); papers cited without fetching (Bouman & Jacobsen 2002; Moskowitz, Ooi & Pedersen 2012; Jegadeesh & Titman 1993); NSE closing auction live from 3 Aug 2026 | TA honest-tests posts | 16–23 Oct | memory / citation not fetched |
 | USFDA NAI/VAI/OAI meanings, Form 483 → warning letter chain (fda.gov blocked); embedded value definition; Airtel net debt incl. leases (inferred); Bajaj Finance ALM gap limits (from its presentation, not RBI) | sector-lens posts | 20–23 Oct | secondary / inference |
 | Overseas-investment halts of Jan 2022 and 1 Apr 2024 (press reports); whether a domestic FoF uses your LRS limit; Franklin Templeton SAT stay and ₹250 cr escrow (FT disclosure only) | international funds, segregated portfolios | 20, 24 Oct | press / company disclosure |
 | SEBI → AMFI stress-test direction dated 27 Feb 2024 (an AMC policy document); "at least one SAT appeal succeeded" (SCC Online); SBI FD rates FY16–FY22 (messy SBI workbook, 4 cross-checked); deposit insurance (DICGC) and IRDAI rules left out | liquidity risk, broker risk, inflation, insurance | 17–23 Oct | secondary |
-| SGB early redemption after year five losing the exemption (no official clarification); clubbing "income on income" and loans to a spouse (case law); TRC form number under the new Rules | bonds and SGBs, gifts and clubbing, NRI basics | 10–13 Nov | case law / unconfirmed |
+| SGB early redemption after year five losing the exemption (no official clarification); clubbing "income on income" and loans to a spouse (case law); TRC form number under the new Rules | bonds and SGBs, gifts and clubbing, NRI basics | 1–4 Dec | case law / unconfirmed |
 
 Also: eyeball the four TA module 2 charts (`assets/charts/ta2-*.svg`) in a
 browser — never rasterised locally.
@@ -101,10 +110,7 @@ browser — never rasterised locally.
 - **Two USD/INR series:** `usd-inr-reference-rate.csv` (RBI/FBIL; currency
   risk, 19 Oct) and `usd-inr-fred-dexinus.csv` (Fed H.10; international funds,
   20 Oct) differ slightly. Consider standardising on the RBI/FBIL series.
-- **Privacy page wording:** `privacy.markdown` line 15 says the 3-month lag is
-  "per SEBI's guidance". Since the SEBI circular of 8 May 2026 (30 days from
-  1 Jul 2026) it is our stricter house rule — reword to match `CLAUDE.md`.
-- **Nine links into the held Tax series** were turned into plain text so the
+- **Links into the held Tax series (14 `RELINK` markers)** were turned into plain text so the
   other series aren't blocked (F&O numbers; YTM; modified duration; exit load;
   debt funds explained; index funds vs ETFs; STP and SWP). Each carries a
   hidden `<!-- RELINK <target> -->` marker right after the text — once Tax is
@@ -117,7 +123,7 @@ browser — never rasterised locally.
   yield, payout ratio, enterprise value) are explained inline in earlier FA
   posts; capex intensity in the free cash flow post; the portfolio-overlap,
   exit-load and STP/SWP posts from risk posts. Sweep once everything is live
-  (after 8 Nov):
+  (after 4 Dec, when Tax is live):
   `grep -rn "later in this series\|covered later\|coming up" _posts`.
 - **TA module 1 charts have no generator in the repo** (`assets/charts/ta-*.svg`;
   the script was left in a session scratchpad). Recreate it as
@@ -154,7 +160,7 @@ browser — never rasterised locally.
   ratings (16 Oct) → *survivorship bias*; tracking error (4 Oct) →
   *Sortino and information ratio*; STP and SWP (17 Oct) → *liquid and
   overnight funds*; *growth vs IDCW* → the Tax series' *dividends and
-  interest* (31 Oct, held) once the Tax read is done.
+  interest* (now 21 Nov, held) once the Tax read is done.
 - **Module 4 VERIFY / judgement calls:** (1) the ETF payout of 25 Feb 2021
   (₹40.89/unit) is an *estimate* from the NAV gap, as in `mf2.yml`; the post
   says so. (2) Capture ratios use the Nifty 50 TRI for a hybrid fund that does

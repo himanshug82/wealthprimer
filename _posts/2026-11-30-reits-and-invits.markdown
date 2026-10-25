@@ -3,7 +3,7 @@ layout: post
 title: "REITs and InvITs: one payout, three tax treatments"
 description: "A REIT or InvIT payout arrives as one credit but splits into interest, dividend and capital repayment, each taxed differently. Plus capital gains on the units."
 image: /assets/og/reits-and-invits.png
-date: 2026-11-09 09:00:00 +0530
+date: 2026-11-30 09:00:00 +0530
 series: tax
 term: "REIT and InvIT taxation"
 ---
@@ -188,20 +188,20 @@ Continuing the example: the investor sells all {% include inr.html n=x.units %} 
 Using the original cost would show a gain of ₹{% include inr.html n=x.gain_if_cost_not_reduced %}, understating it
 by exactly the ₹{% include inr.html n=x.repay %} of repayment that was tax-free on the way in.
 
-The [holding-period post]({% post_url 2026-10-28-short-term-vs-long-term %}) covers how the
+The [holding-period post]({% post_url 2026-11-18-short-term-vs-long-term %}) covers how the
 holding period is counted, and the
-[equity post]({% post_url 2026-10-29-equity-and-equity-funds %}) covers the annual exemption.
+[equity post]({% post_url 2026-11-19-equity-and-equity-funds %}) covers the annual exemption.
 
 ## Surcharge and TDS, briefly
 
 Above ₹50 lakh of total income, a surcharge is added to the tax, as the
-[opening post of this series]({% post_url 2026-10-27-how-investment-income-is-taxed %})
+[opening post of this series]({% post_url 2026-11-17-how-investment-income-is-taxed %})
 explained. The interest and rent components are ordinary income, so their
 surcharge can go higher. Capital gains on the units, and the taxable dividend
 component, are capped at 15%.
 
 The 10% TDS on the taxable components, like TDS on
-[dividends and interest]({% post_url 2026-10-31-dividends-and-interest %}), is an advance, not
+[dividends and interest]({% post_url 2026-11-21-dividends-and-interest %}), is an advance, not
 the final tax. In the 30% slab you'll owe the difference.
 
 ## Common mistakes

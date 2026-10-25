@@ -3,7 +3,7 @@ layout: post
 title: "F&O taxation in India: business income, not capital gains"
 description: "F&O profits and losses are business income: a different return form, different set-off rules, and a turnover that isn't what you think. Worked on SEBI's data."
 image: /assets/og/fo-is-business-income.png
-date: 2026-11-07 09:00:00 +0530
+date: 2026-11-28 09:00:00 +0530
 series: tax
 term: "Business income (F&O turnover)"
 ---
@@ -128,7 +128,7 @@ Two conditions, both absolute:
 One more consequence of having business income: the choice of tax regime
 gets stickier. A salaried filer can pick the old or new regime each year;
 someone with business income can leave the new regime and return to it only
-once (the [ELSS post]({% post_url 2026-11-03-elss-and-the-deduction-that-moved %}) covers the two regimes).
+once (the [ELSS post]({% post_url 2026-11-24-elss-and-the-deduction-that-moved %}) covers the two regimes).
 
 ## The presumptive trap
 

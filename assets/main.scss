@@ -1268,3 +1268,7 @@ div.language-python {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; }
 }
+
+// About page: the author's monogram (assets/avatar.svg), floated beside the opening paragraph.
+.post-content img.about-avatar { float: right; width: 96px; height: 96px; margin: 0.2em 0 1em 1.4em; border-radius: 50%; border: 0; box-shadow: none; }
+@media screen and (max-width: 699px) { .post-content img.about-avatar { width: 72px; height: 72px; margin-left: 1em; } }

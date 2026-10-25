@@ -3,7 +3,7 @@ layout: post
 title: "Bonds, debentures and SGBs: listed or not decides the tax"
 description: "Bond interest is taxed at your slab; the gain depends on listing. Listed bonds can be long-term, unlisted ones and MLDs never are, and SGBs have their own rule."
 image: /assets/og/bonds-debentures-and-sgbs.png
-date: 2026-11-10 09:00:00 +0530
+date: 2026-12-01 09:00:00 +0530
 series: tax
 term: "Bond and SGB taxation"
 ---
@@ -45,7 +45,7 @@ usually meet in a public issue.
 
 Interest on bonds and debentures is added to your income and taxed at your
 slab rate, exactly like the deposit interest in the
-[dividends and interest post]({% post_url 2026-10-31-dividends-and-interest %}).
+[dividends and interest post]({% post_url 2026-11-21-dividends-and-interest %}).
 
 TDS (tax deducted at source) on "interest on securities" is 10% for a
 resident, once the year's interest from a payer crosses
@@ -91,7 +91,7 @@ be taxed at the applicable rate, like interest.
 to a market index or other securities rather than a fixed coupon. They have
 been always-short-term since 1 April 2023, listed or not, by the same
 section. The same section also catches debt mutual fund units bought from
-April 2023, as the [debt funds tax post]({% post_url 2026-10-30-debt-funds-gold-and-the-rest %})
+April 2023, as the [debt funds tax post]({% post_url 2026-11-20-debt-funds-gold-and-the-rest %})
 explained: the tax law groups them together deliberately.
 
 **Worked example.** The same ₹{% include inr.html n=x.same_gain %} gain, taxed four ways (30% slab,
@@ -142,7 +142,7 @@ with the RBI after the fifth year.
 TDS** is deducted — so it's easy to forget, and it's taxable all the same.
 
 **The gain at redemption** is where Budget 2026 changed things, as
-[the debt funds and gold post]({% post_url 2026-10-30-debt-funds-gold-and-the-rest %}) noted.
+[the debt funds and gold post]({% post_url 2026-11-20-debt-funds-gold-and-the-rest %}) noted.
 From 1 April 2026, redemption is not treated as a transfer — so no capital
 gain arises — only if the bond was **held by an individual from the date of
 original issue till maturity** (section 70(1)(x) of the 2025 Act, as
@@ -180,13 +180,13 @@ All of the above assumes income under ₹50 lakh. Above it, a surcharge is
 added before cess. On bond interest, and on gains taxed at slab, it follows
 the ordinary scale (up to 25% in the new regime). On long-term gains from
 listed bonds and SGBs taxed at {{ r.equity_ltcg_pct }}%, it's capped at 15%. The
-[opening post]({% post_url 2026-10-27-how-investment-income-is-taxed %}) has the thresholds.
+[opening post]({% post_url 2026-11-17-how-investment-income-is-taxed %}) has the thresholds.
 
 ## Common mistakes
 
 - **Assuming bond gains get the ₹{% include inr.html n=r.ltcg_annual_exemption %} exemption.** It's for equity, equity
   funds and REIT/InvIT units, as in the
-  [REITs and InvITs post]({% post_url 2026-11-09-reits-and-invits %}). Listed bonds pay
+  [REITs and InvITs post]({% post_url 2026-11-30-reits-and-invits %}). Listed bonds pay
   {{ r.equity_ltcg_pct }}% on the whole long-term gain.
 - **Holding an unlisted bond "for the long-term rate".** There isn't one any
   more. Since 23 July 2024 every gain on an unlisted bond or debenture is

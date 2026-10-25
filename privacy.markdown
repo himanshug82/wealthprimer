@@ -13,8 +13,9 @@ technique — none of it is a recommendation to buy, sell, or hold any specific
 stock, fund, or security, and none of it is personalized advice. The author
 is not a SEBI-registered Research Analyst or Investment Adviser. Where posts
 use real companies or funds as worked examples, prices and figures are
-historical (at least three months old, per SEBI's guidance for educational
-content) and used only to illustrate a calculation. Past performance does not
+historical (at least three months old — our house rule, stricter than SEBI's
+30-day condition for educational content from 1 July 2026) and used only to
+illustrate a calculation. Past performance does not
 guarantee future results. Please do your own research, or consult a
 SEBI-registered adviser, before making investment decisions.
 

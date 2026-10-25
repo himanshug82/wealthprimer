@@ -3,7 +3,7 @@ layout: post
 title: "SIPs and FIFO: one redemption, sixty tax lots"
 description: "One redemption, sixty tax lots. Why each SIP instalment is a separate acquisition with its own holding-period clock, and how FIFO decides which units go first."
 image: /assets/og/sips-and-fifo.png
-date: 2026-11-02 09:00:00 +0530
+date: 2026-11-23 09:00:00 +0530
 series: tax
 term: "FIFO (tax lots)"
 ---
@@ -106,7 +106,7 @@ Work it through:
 
 - The short-term result is a loss of ₹{% include inr.html n=s.short_term_loss_abs %}, so there's no short-term tax.
 - That loss can't wait for a better year. Under the
-  [set-off rules]({% post_url 2026-11-01-losses-set-off-and-harvesting %}), a short-term loss is first set
+  [set-off rules]({% post_url 2026-11-22-losses-set-off-and-harvesting %}), a short-term loss is first set
   off against the same year's gains — short-term, then long-term — and only
   what's left over carries forward. There are no short-term gains here, so it
   comes off the long-term gain: ₹{% include inr.html n=s.long_term_gain %} − ₹{% include inr.html n=s.short_term_loss_abs %} = ₹{% include inr.html n=s.total_gain %}.

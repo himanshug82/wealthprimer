@@ -3,7 +3,7 @@ layout: post
 title: "Buybacks: the tax that moved three times"
 description: "How a buyback is taxed depends on its date: company-paid tax, then a deemed dividend, then capital gains from April 2026 — worked on the same 100 shares."
 image: /assets/og/buyback-taxation.png
-date: 2026-11-06 09:00:00 +0530
+date: 2026-11-27 09:00:00 +0530
 series: tax
 term: "Buyback taxation"
 ---
@@ -86,7 +86,7 @@ extract cash at a flat rate.
 From 1 October 2024 the buyback tax was abolished and the **entire
 consideration** — not the gain, the whole amount — was treated as a dividend
 in the shareholder's hands, taxed at slab like any other
-[dividend]({% post_url 2026-10-31-dividends-and-interest %}), with 10% TDS. No deduction
+[dividend]({% post_url 2026-11-21-dividends-and-interest %}), with 10% TDS. No deduction
 of cost was allowed against it.
 
 Instead, the cost of the shares became a **capital loss**: for capital-gains
@@ -105,7 +105,7 @@ of shares for nothing.
 
 Read that again: a ₹{% include inr.html n=b.gain %} gain, and a ₹{% include inr.html n=rb.tax_with_cess %} tax bill
 up front. The capital loss softens it only if you *have* capital gains to set
-it against (or will within the [eight-year carry-forward]({% post_url 2026-11-01-losses-set-off-and-harvesting %})).
+it against (or will within the [eight-year carry-forward]({% post_url 2026-11-22-losses-set-off-and-harvesting %})).
 A retiree with no other gains simply paid slab-rate tax on their own capital
 coming back. The loss's holding period matters too: our shareholder bought
 in June 2025, so any Regime B buyback came within twelve months and the loss
@@ -118,7 +118,7 @@ individuals in higher slabs, this regime made tendering tax-expensive.
 The Finance Act, 2026 reversed course. From 1 April 2026 a buyback is taxed
 as what it economically is: a **sale of shares**, with the cost deductible
 and the gain taxed under the normal equity rules from the
-[equity post]({% post_url 2026-10-29-equity-and-equity-funds %}).
+[equity post]({% post_url 2026-11-19-equity-and-equity-funds %}).
 
 | | Held > {{ r.equity_holding_months }} months | Held ≤ {{ r.equity_holding_months }} months |
 |---|---:|---:|
@@ -164,7 +164,7 @@ professional.
 If you tendered shares in a Regime B buyback, your return for that year needs
 two entries that don't feel like they belong together: a dividend (the whole
 amount, with its TDS in Form 26AS) and a capital loss (your cost). Both must
-be reported; the [AIS]({% post_url 2026-11-04-before-you-file %}) will show the
+be reported; the [AIS]({% post_url 2026-11-25-before-you-file %}) will show the
 company's payment and the department will expect to see it somewhere.
 
 ## Common mistakes

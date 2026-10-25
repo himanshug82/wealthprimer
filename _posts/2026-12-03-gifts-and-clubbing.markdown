@@ -4,7 +4,7 @@ title: "Gifts and clubbing: why moving money to family rarely moves the tax"
 seo_title: "Gifts and clubbing of income, explained"
 description: "Gifts from relatives are tax-free, others above Rs 50,000 aren't. But income on money gifted to a spouse or minor child is still taxed in your hands."
 image: /assets/og/gifts-and-clubbing.png
-date: 2026-11-12 09:00:00 +0530
+date: 2026-12-03 09:00:00 +0530
 series: tax
 term: "Clubbing of income"
 ---
@@ -147,7 +147,7 @@ UTI Nifty 50 Index Fund (regular plan, growth) on {{ x.ls_buy_date }} at a NAV o
 {{ x.ls_sell_date }} at ₹{{ x.ls_sell_nav }} (NAVs from AMFI, as of 31 March 2026,
 used for illustration only; we apply the rules for {{ v.financial_year }}). This is the
 same holding as the
-[equity post's lump sum]({% post_url 2026-10-29-equity-and-equity-funds %}).
+[equity post's lump sum]({% post_url 2026-11-19-equity-and-equity-funds %}).
 
 - Cost and holding period are Rahul's: ₹{% include inr.html n=x.ls_invested %}, held since 2020 — so
   the gain of ₹{% include inr.html n=x.ls_gain %} is long-term.

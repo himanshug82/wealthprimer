@@ -3,7 +3,7 @@ layout: post
 title: "NRI investment income: same rates, tax taken at source"
 description: "An NRI pays largely the same rates on Indian gains and interest, but the tax is deducted at source. TDS, treaties and TRCs, and NRE vs NRO interest."
 image: /assets/og/nri-investment-income.png
-date: 2026-11-13 09:00:00 +0530
+date: 2026-12-04 09:00:00 +0530
 series: tax
 term: "NRI taxation (TDS, DTAA, NRE/NRO)"
 ---
@@ -39,7 +39,7 @@ largely the ones earlier posts in this series used. What changes is
 
 | | Resident | Non-resident |
 |---|---|---|
-| Mutual fund redemption | No TDS; you pay at filing (or through [advance tax]({% post_url 2026-11-11-advance-tax-for-investors %})) | **TDS on the gain** at the applicable rate |
+| Mutual fund redemption | No TDS; you pay at filing (or through [advance tax]({% post_url 2026-12-02-advance-tax-for-investors %})) | **TDS on the gain** at the applicable rate |
 | Fund IDCW, share dividends | 10% TDS above a threshold | 20% TDS, or the treaty rate if lower |
 | Bank interest | 10% TDS above a threshold | **NRO: 30% TDS** plus cess · **NRE: exempt** |
 
@@ -69,7 +69,7 @@ residents only (sections 196 to 198 and 156). An NRI can't use either.
 ## Worked example: two real funds
 
 Same terms, real NAVs: an NRI redeems the same UTI Nifty 50 Index Fund
-holding the [equity post]({% post_url 2026-10-29-equity-and-equity-funds %}) used (₹{% include inr.html n=g.ls_invested %} invested on
+holding the [equity post]({% post_url 2026-11-19-equity-and-equity-funds %}) used (₹{% include inr.html n=g.ls_invested %} invested on
 {{ g.ls_buy_date }}), plus ₹{% include inr.html n=x.gilt_invested %} put into
 UTI Gilt Fund (regular plan, growth — the fund from the
 [debt funds post]({% post_url 2026-10-12-debt-funds-explained %})) on {{ x.gilt_buy_date }}. Both are
@@ -92,7 +92,7 @@ A resident in the 30% slab would owe exactly the same on each: ₹{% include inr
 ₹{% include inr.html n=x.gilt_resident_tax_with_cess %}. The difference is that the resident gets the full redemption
 and pays later; the NRI receives the money with the tax already gone. The
 gilt fund's treatment is the debt-fund rule from the
-[debt funds tax post]({% post_url 2026-10-30-debt-funds-gold-and-the-rest %}): no long-term category for units
+[debt funds tax post]({% post_url 2026-11-20-debt-funds-gold-and-the-rest %}): no long-term category for units
 bought from April 2023.
 
 Two consequences follow. **TDS can overshoot.** The payer doesn't know your
@@ -118,7 +118,7 @@ back.
 ## Treaties, and the certificate that unlocks them
 
 India has **DTAAs — double taxation avoidance agreements** — with many
-countries, as the [foreign stocks post]({% post_url 2026-11-08-foreign-stocks-and-schedule-fa %})
+countries, as the [foreign stocks post]({% post_url 2026-11-29-foreign-stocks-and-schedule-fa %})
 touched on from the other side. For a non-resident, the rule is simple: **the
 Act or the treaty, whichever is more beneficial** (section 159(4)). A treaty
 may cap India's tax on interest or dividends below the Act's rate, or
@@ -177,7 +177,7 @@ a lower-deduction certificate.
 ## What this series doesn't cover
 
 Being clear about the edges, as the
-[before-you-file post]({% post_url 2026-11-04-before-you-file %}) was. Since then this
+[before-you-file post]({% post_url 2026-11-25-before-you-file %}) was. Since then this
 series has picked up some of that post's gaps — gifts and clubbing, and the
 basics of non-resident investment income — but these stay out:
 

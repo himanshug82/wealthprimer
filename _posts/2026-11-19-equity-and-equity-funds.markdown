@@ -3,7 +3,7 @@ layout: post
 title: "Capital gains tax on shares and equity funds: LTCG and STCG"
 description: "Listed shares and equity funds: the short-term and long-term rates, the annual exemption, cess and grandfathering, with worked examples on real fund NAVs."
 image: /assets/og/equity-and-equity-funds.png
-date: 2026-10-29 09:00:00 +0530
+date: 2026-11-19 09:00:00 +0530
 series: tax
 ---
 
@@ -24,7 +24,7 @@ redemption. For long-term gains on shares, STT on the purchase is needed too,
 with notified exceptions such as shares allotted in an IPO (initial public
 offering). Short-term capital gains (STCG) and long-term capital gains (LTCG)
 split at the line explained in the
-[holding-period post]({% post_url 2026-10-28-short-term-vs-long-term %}):
+[holding-period post]({% post_url 2026-11-18-short-term-vs-long-term %}):
 
 ```
 Held {{ r.equity_holding_months }} months or less   ->  STCG at {{ r.equity_stcg_pct }}%

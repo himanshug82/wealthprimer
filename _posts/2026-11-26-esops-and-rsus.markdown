@@ -3,7 +3,7 @@ layout: post
 title: "ESOPs and RSUs: taxed twice, on purpose"
 description: "Stock options are taxed as salary when you exercise and again as capital gains when you sell. Why the first bill comes before any cash, on a fictional ESOP."
 image: /assets/og/esops-and-rsus.png
-date: 2026-11-05 09:00:00 +0530
+date: 2026-11-26 09:00:00 +0530
 series: tax
 term: "ESOP and RSU taxation"
 ---
@@ -106,7 +106,7 @@ smaller salary credits to show for it.
 
 Had she sold inside twelve months instead, the same ₹{% include inr.html n=e.capital_gain %} would be a
 short-term gain at {{ r.equity_stcg_pct }}%: ₹{% include inr.html n=e.stcg_tax_with_cess_if_sold_within_12m %}. The
-[holding-period post]({% post_url 2026-10-28-short-term-vs-long-term %}) has the rules; the
+[holding-period post]({% post_url 2026-11-18-short-term-vs-long-term %}) has the rules; the
 clock starts on the exercise date, not the grant date and not the vesting
 date.
 

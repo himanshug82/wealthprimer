@@ -3,7 +3,7 @@ layout: post
 title: "Advance tax for investors: pay as you earn, gains included"
 description: "If TDS doesn't cover your tax, you pay it in four instalments during the year. Capital gains get a special rule — and missing it costs interest. Worked example."
 image: /assets/og/advance-tax-for-investors.png
-date: 2026-11-11 09:00:00 +0530
+date: 2026-12-02 09:00:00 +0530
 series: tax
 term: "Advance tax"
 ---
@@ -29,7 +29,7 @@ That's **advance tax**.
 
 Investors are the classic case. A salaried person who redeems a large fund
 holding in August has a capital gain with no TDS on it at all (for a resident,
-[funds don't deduct tax on redemptions]({% post_url 2026-10-27-how-investment-income-is-taxed %})).
+[funds don't deduct tax on redemptions]({% post_url 2026-11-17-how-investment-income-is-taxed %})).
 The tax on that gain was due during the year. Pay it only at filing and you
 pay interest on top.
 
@@ -43,7 +43,7 @@ Under the Income-tax Act, 2025:
 - **Except** resident individuals aged **60 or more** with no business or
   professional income (section 403(3)). They can pay it all when they file.
 - F&O traders count as having business income, as the
-  [F&O post]({% post_url 2026-11-07-fo-is-business-income %}) explained, so the senior-citizen
+  [F&O post]({% post_url 2026-11-28-fo-is-business-income %}) explained, so the senior-citizen
   exemption doesn't help them.
 
 ## The four instalments

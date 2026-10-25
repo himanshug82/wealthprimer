@@ -518,7 +518,7 @@ div.language-python {
       transition: transform 0.2s ease;
       flex: none;
     }
-    em { font-weight: 400; font-style: normal; opacity: 0.8; font-size: 0.9em; }
+    em { font-weight: 400; font-style: normal; opacity: 0.92; font-size: 0.9em; }
     &:hover { text-decoration: none; }
   }
 
@@ -1024,6 +1024,8 @@ div.language-python {
   border-bottom: 1px solid var(--rule);
   color: var(--brand);
 }
+// The letters are h2s (a valid outline under the page's h1) but keep the old h3 look.
+.post-content h2.glossary-letter { font-size: 1.25rem; margin: 1.9em 0 0.5em; padding-top: 0; padding-bottom: 0.3em; }
 
 .glossary-list {
   dt { margin-top: 1em; font-family: var(--font-sans); font-weight: 650; }
@@ -1224,6 +1226,13 @@ div.language-python {
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .footer-brand { grid-column: 1 / -1; }
 }
+
+// Light-mode code colours: minima's Rouge theme has strings (#d14, 4.3:1) and numbers (#099, 3.0:1)
+// below the 4.5:1 WCAG AA contrast on the code background; these darker shades pass (5.8:1 / 5.3:1).
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s1, .highlight .s2,
+.highlight .se, .highlight .sh, .highlight .si, .highlight .sx, .highlight .sr { color: #b80e36; }
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .mo, .highlight .il { color: #006e6e; }
+.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs { color: #6a6a5a; }   // comments: #998 was 2.5:1
 
 // ---------------------------------------------------------------------------
 // Dark mode: minima's Rouge theme is light-only, so re-tint the common tokens.

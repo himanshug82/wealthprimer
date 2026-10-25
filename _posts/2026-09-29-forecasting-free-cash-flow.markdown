@@ -151,8 +151,8 @@ for year, (g, m, cx) in enumerate(zip(growth, margin, capex_pct), start=2026):
 ```
 
 Run it and you get the FCFF row above. Change `growth` to a flat 25% and
-watch what happens to the answer — that's the exercise the sensitivity post
-later in this series is built on.
+watch what happens to the answer — that's the exercise the [sensitivity post]({{ '/2026/10/01/margin-of-safety-and-sensitivity/' | relative_url }})
+is built on.
 
 ## Common mistakes
 

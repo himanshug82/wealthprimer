@@ -30,7 +30,7 @@ the toll for trading immediately instead of waiting.
 
 **Liquidity** is how much you can trade without moving that price much. A
 liquid stock has many orders stacked close to the best bid and ask; a thin
-("illiquid") one has a handful, spread far apart. The spread tells you what a
+("[illiquid]({{ '/2026/10/17/liquidity-risk/' | relative_url }})") one has a handful, spread far apart. The spread tells you what a
 *small* order costs. For a bigger order you need a second number,
 **impact cost**, because your order eats through several price levels.
 
@@ -129,7 +129,7 @@ pay ₹450 each. That's impact cost.
 - **Judging liquidity from the spread alone.** A ₹0.05 spread with 10 shares
   on each side is not liquid for a 5,000-share order. Look at the depth
   behind the best prices, or the impact cost for *your* size.
-- **Backtesting on closing prices.** A strategy that trades a small, thin
+- **[Backtesting]({{ '/2026/10/15/how-to-backtest-honestly/' | relative_url }}) on closing prices.** A strategy that trades a small, thin
   stock at the close every day ignores the spread and impact it would
   actually pay. On liquid large caps that cost is small; on thin stocks it
   can be larger than the edge being tested.

@@ -76,7 +76,7 @@ Ke = Risk-Free Rate + Beta × Equity Risk Premium
 | Equity risk premium | Extra return investors demand for holding stocks over bonds | Estimated, not observed. Aswath Damodaran's widely used [country risk table](https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/ctryprem.html) put India's total ERP at about 7.1% in its January 2026 update; other estimates sit a point or so either side |
 | Beta | How much this stock moves relative to the overall market | Regression against an index, or a sector average |
 
-Beta is the piece worth pausing on. A beta of 1.0 means the stock tends to
+[Beta]({{ '/2026/10/02/beta/' | relative_url }}) is the piece worth pausing on. A beta of 1.0 means the stock tends to
 move with the market. Above 1.0 means it swings harder in both directions;
 below 1.0 means it's steadier. CAPM's core claim is that investors should be
 compensated for the risk they *can't* diversify away — the market-wide kind —

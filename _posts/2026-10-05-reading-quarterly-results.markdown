@@ -46,7 +46,7 @@ Two things about that table before any comparison is made.
 
 The festive quarter carries {{ q.seasonality_shares_pct.Q3 }}% of the year's revenue and a
 visibly higher margin. That margin isn't a sign of better management in
-October; it's *operating leverage* — the factory, the sales force and the
+October; it's *[operating leverage]({{ '/2026/10/09/operating-leverage/' | relative_url }})* — the factory, the sales force and the
 rent cost roughly the same every quarter, so when volumes are 36% higher
 than Q1, more of each extra rupee falls through to profit.
 

@@ -59,7 +59,7 @@ Financials from HDFC Bank's [results for the year ended 31 March 2025]({{ b.comp
 (standalone). Price: NSE (National Stock Exchange) close on {{ mk.price_date }}, from
 [Yahoo Finance]({{ mk.source_url }}). Historical, for illustration only.
 
-One wrinkle first. HDFC Bank issued 1:1 bonus shares (record date
+One wrinkle first. HDFC Bank issued 1:1 bonus shares ([record date]({{ '/2026/10/17/record-date-and-ex-date/' | relative_url }})
 {{ mk.bonus_record_date }}), so price databases now show pre-bonus dates at
 half the price actually traded: Yahoo shows ₹{% include inr.html n=mk.price_adjusted_yahoo %}
 for 30 June 2025, when the share changed hands at about

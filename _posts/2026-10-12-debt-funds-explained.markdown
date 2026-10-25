@@ -159,7 +159,7 @@ structural, not about any one fund: a debt fund's yield above a government
 bond of the same maturity is the market's price for credit risk, and that risk
 tends to arrive all at once rather than a little each day.
 
-The categories post later in this series explains how SEBI's category labels
+The [categories post]({{ '/2026/10/14/sebi-fund-categories-decoded/' | relative_url }}) explains how SEBI's category labels
 signal both risks — duration by name, credit by portfolio rules.
 
 ## Doing it in Python

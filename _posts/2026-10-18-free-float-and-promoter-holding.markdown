@@ -102,7 +102,7 @@ within 12 months if it falls below
 A company of Desi Bites' size would also have had to offer at least 25% in
 its IPO (Rule 19(2)(b)). Our case study simplifies this: a real Desi Bites
 would need to find another {% include inr.html n=d.mps_shortfall_shares %} shares for the public, typically by
-promoters selling some — one of the routes the OFS post later in this module
+promoters selling some — one of the routes the [OFS post]({{ '/2026/10/20/offer-for-sale-and-delisting/' | relative_url }})
 describes. Very large companies get longer to reach 25%; the 13 March 2026
 amendment set new, staggered timelines by size.
 

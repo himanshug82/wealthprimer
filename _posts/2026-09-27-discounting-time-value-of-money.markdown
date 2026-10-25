@@ -73,7 +73,7 @@ paise to me now."
 
 ## Worked example: the discount factors in this series
 
-The DCF later in this series discounts Desi Bites' cash flows at
+The [full DCF]({{ '/2026/09/30/terminal-value-and-the-full-dcf/' | relative_url }}) discounts Desi Bites' cash flows at
 {{ site.data.case_study.dcf.wacc.wacc }}% — where that rate comes from is the
 next post's job. For
 now, take it as given and look at what it does to money over time. (The
@@ -94,7 +94,7 @@ its face value today. Not because anything went wrong — that's just what a
 14%-ish rate does over five years.
 
 This is also why long-dated cash flows get so little respect in a DCF, and
-why the terminal value (covered later in this series) needs handling with care:
+why the [terminal value]({{ '/2026/09/30/terminal-value-and-the-full-dcf/' | relative_url }}) needs handling with care:
 it sits *past* the final forecast year, gets discounted hardest, and still
 usually ends up being most of the answer.
 

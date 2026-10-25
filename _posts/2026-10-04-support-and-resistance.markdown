@@ -93,7 +93,7 @@ taking seriously:
    reflects more accumulated memory than one respected over a fortnight.
 3. **Volume at the level.** Heavy trading around a price means many people
    have a position established there — and therefore an opinion when it
-   returns. The volume post later in this series picks this up.
+   returns. The [volume post]({{ '/2026/10/07/volume/' | relative_url }}) picks this up.
 
 A level nobody traded much at, touched twice last week, is mostly noise.
 

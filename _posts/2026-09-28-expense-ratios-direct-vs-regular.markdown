@@ -147,7 +147,7 @@ The honest questions are narrower:
   isn't.
 - **For active management generally**: is the manager beating a comparable
   index by more than the extra fee, consistently? That's the subject of the
-  benchmarks post later in this series.
+  [benchmarks post]({{ '/2026/10/02/benchmarks-and-comparing-like-with-like/' | relative_url }}).
 
 Fees are only "high" or "low" relative to what they buy.
 
@@ -183,7 +183,7 @@ for plan in ["nav_regular_growth", "nav_direct_growth"]:
   be the best money you spend — just pay for it knowingly.
 - **Comparing expense ratios across categories.** Index funds, active equity
   and debt funds have structurally different cost bases and different caps.
-- **Ignoring exit loads and taxes when switching.** Moving from regular to
+- **Ignoring [exit loads]({{ '/2026/10/07/exit-load/' | relative_url }}) and taxes when switching.** Moving from regular to
   direct is a redemption and a fresh purchase, with the tax that implies.
 
 **Takeaway:** The expense ratio is deducted from NAV daily, so you never see

@@ -59,8 +59,8 @@ flows. For illustration only.
 For context, FY24's FCF (same filing) was ₹{% include inr.html n=bi_fcf24 %} crore — so FCF actually
 *rose* year on year, even though operating cash flow itself fell slightly
 (₹{% include inr.html n=bi_cf24.cfo %} crore in FY24 versus ₹{% include inr.html n=bi_cf25.cfo %} crore in FY25). The reason is on the other
-side of the formula — capex — which is exactly what the capex intensity post
-later in this series digs into.
+side of the formula — capex — which is exactly what the [capex intensity post]({{ '/2026/09/21/capex-intensity/' | relative_url }})
+digs into.
 
 One basis difference to keep in mind: Britannia's cash from operations is
 before interest (its filing shows interest paid under financing

@@ -139,7 +139,7 @@ paid, while growth-option gains are taxed only when you redeem, and then at
 capital-gains rates.
 
 **The expense ratio is already inside the NAV.** You'll never see it charged.
-Every NAV in that chart is *after* fees. The post on expense ratios later in this series shows exactly what
+Every NAV in that chart is *after* fees. The [post on expense ratios]({{ '/2026/09/28/expense-ratios-direct-vs-regular/' | relative_url }}) shows exactly what
 that invisible deduction costs over time, and the answer is larger than it
 looks.
 

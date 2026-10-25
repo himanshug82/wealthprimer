@@ -163,7 +163,7 @@ Disclosure Requirements (ICDR) Regulations, as amended in August 2021.
 the promoter stake was free of lock-in about six months after listing — which
 is roughly when the pledge above appeared. A
 lock-in expiry date is a date on which supply can appear. It's in the
-prospectus, and the DRHP post later in this module covers where.
+prospectus, and the [DRHP post]({{ '/2026/10/09/reading-a-drhp/' | relative_url }}) covers where.
 
 ## Where these live in a real filing
 

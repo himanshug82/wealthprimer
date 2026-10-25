@@ -71,8 +71,8 @@ Say you bought {{ qty }} Britannia shares at the {{ ex.last_cum_date | date: "%-
    11:00 am the money has gone to the clearing corporation; by 3:30 pm the
    shares are in your demat account.
 3. **What it bought you.** {{ t1_day | split: " " | first }} {{ st.settles_on | date: "%-d %B" }} happened to be Britannia's
-   record date for its FY 2024-25 final dividend (the next post in this
-   module explains record dates). Because the Friday purchase settled that
+   record date for its FY 2024-25 final dividend (the [record date and ex-date post]({{ '/2026/10/17/record-date-and-ex-date/' | relative_url }})
+   explains record dates). Because the Friday purchase settled that
    day, you'd be on the register and entitled. Buy on the Monday itself and
    the shares settle on {{ st.buy_on_record_date_settles | date: "%A %-d %B" }} — too late.
 

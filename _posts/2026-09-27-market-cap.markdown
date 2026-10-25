@@ -78,7 +78,7 @@ surprisingly close together.
 
 ## Common mistakes
 
-- **Confusing market cap with enterprise value.** Market cap only prices the
+- **Confusing market cap with [enterprise value]({{ '/2026/10/13/enterprise-value/' | relative_url }}).** Market cap only prices the
   equity — it ignores debt and cash entirely, which is exactly why [EV]({% post_url 2026-09-26-ev-ebitda %})
   exists as a separate, fuller measure of what it would cost to buy the
   whole business.

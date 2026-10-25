@@ -31,7 +31,7 @@ The difference is entirely in how you get in and out:
 | Price you pay | That day's **NAV**, whatever it turns out to be | The **market price** at the moment you trade |
 | Minimum | Often ₹100–₹500 | One unit (a few hundred rupees for a Nifty ETF) |
 | Account needed | Folio with the fund house | Demat + trading account |
-| Costs | Expense ratio only | Expense ratio (usually lower) **plus** brokerage, bid-ask spread, demat charges |
+| Costs | Expense ratio only | Expense ratio (usually lower) **plus** brokerage, [bid-ask spread]({{ '/2026/10/14/bid-ask-spread-and-liquidity/' | relative_url }}), demat charges |
 | SIP | Native | Only if your broker builds one for you |
 | Dividends | Growth plan reinvests automatically | Some ETFs **pay out** occasionally (this one did once, in February 2021); you get cash, with no growth-plan option to reinvest |
 

@@ -104,7 +104,7 @@ funding beyond their own equity — borrowings, but also things like money
 owed to suppliers, which capital employed doesn't count at all. It isn't a
 red flag by itself, but it does mean ROE alone overstates how efficiently
 the business turns capital into profit — which is exactly why ROCE is worth
-checking. The upcoming posts on debt-to-equity and the equity multiplier
+checking. The posts on [debt-to-equity]({{ '/2026/09/15/debt-to-equity/' | relative_url }}) and the [equity multiplier]({{ '/2026/09/16/equity-multiplier/' | relative_url }})
 pick up how much of ROE comes from that extra funding.
 
 <details markdown="1">

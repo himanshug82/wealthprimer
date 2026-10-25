@@ -161,7 +161,7 @@ the same fifty companies, is table one's first row. Two names, one bet.
 Diversification is a question about *what moves together*, so the useful
 audit isn't "how many do I hold?" but:
 
-- Do my equity funds hold the same companies? (Overlap between large-cap
+- Do my equity funds hold the same companies? ([Overlap]({{ '/2026/10/15/portfolio-overlap/' | relative_url }}) between large-cap
   funds can exceed half the portfolio.)
 - Is everything I own priced off the same thing — Indian equity, Indian
   rates, the rupee?

@@ -85,7 +85,7 @@ vanishes. It matters in three situations:
 
 - **Switching between schemes of the same fund house.** A switch is a
   redemption plus a purchase, so load applies to the exit side.
-- **STPs out of a fund** (systematic transfer plans) started within a year of
+- **STPs out of a fund** ([systematic transfer plans]({{ '/2026/10/17/stp-and-swp/' | relative_url }})) started within a year of
   the source investment.
 - **Panicking.** Selling in a drawdown inside the window turns a paper loss
   into a realised loss *and* pays a percent for the privilege.

@@ -194,10 +194,10 @@ def lint(path):
     if not tk:
         add("FAIL", "no paragraph starting exactly '**Takeaway:**'")
     else:
-        tt = re.sub(LIQUID, "000", " ".join(tk.group(1).split()))
+        tt = re.sub(LIQUID, "0000000000", " ".join(tk.group(1).split()))
         first = re.split(r"(?<![0-9A-Za-z]\.[A-Za-z])(?<!e\.g)(?<!i\.e)(?<!No)(?<=[.!?])\s+(?=[A-Z*_\"“])", tt)[0]
         if len(first) > 280:
-            add("WARN", f"first Takeaway sentence is {len(first)} chars (> 280; Liquid values counted as 3 chars)")
+            add("WARN", f"first Takeaway sentence is {len(first)} chars (> 280; Liquid values counted as 10 chars)")
         if len(re.findall(r"[.!?](?:\s|$)", tt)) > 4:
             add("INFO", "Takeaway runs past ~3 sentences")
         if body[tk.end():].strip():

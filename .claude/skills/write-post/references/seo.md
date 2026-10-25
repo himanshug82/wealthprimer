@@ -1,6 +1,6 @@
 # SEO rules for Wealth Primer
 
-Stack: Jekyll on GitHub Pages (safe mode, no custom plugins), `jekyll-seo-tag` (emits `<title>` as "page title | Wealth Primer", description, canonical from `page.url`, Open Graph, Twitter card, BlogPosting JSON-LD, `dateModified` from `last_modified_at`), `jekyll-sitemap`, `jekyll-feed`, `lang: en-IN`, permalink `/:year/:month/:day/:title/`. Money content is YMYL: Google scrutinises accuracy and trust. This blog's edge is correctness, sourcing and honest limits — not volume.
+Stack: Jekyll deployed by GitHub Actions (`actions/jekyll-build-pages`, safe mode: no `_plugins/` code), `jekyll-seo-tag` (emits `<title>` as "page title | Wealth Primer", description, canonical from `page.url`, Open Graph, Twitter card, BlogPosting JSON-LD, `dateModified` from `last_modified_at`), `jekyll-sitemap`, `jekyll-feed`, `lang: en-IN`, permalink `/:year/:month/:day/:title/`. Money content is YMYL: Google scrutinises accuracy and trust. This blog's edge is correctness, sourcing and honest limits — not volume.
 
 Google-behaviour statements below are working conventions, not guarantees. Never invent search volumes, difficulty scores, rankings or "people also ask" questions; if you can't check, say so.
 
@@ -32,7 +32,7 @@ Safe retitles: "What is a good P/E?" → "P/E ratio ranges: why 'good' depends o
 ## 3. On-page checklist
 
 **Title** (`title:` is also the visible H1 — never add `# ` in the body)
-- seo-tag appends " | Wealth Primer" (~15 characters). Put the primary keyword in the first ~45 characters; **aim ≤ 50, never > 60.** Existing titles run to 95 (median 63; 144 of 161 exceed 50) — don't copy the long ones. No clever subtitle after a colon unless it adds a searchable phrase ("…: formula and example").
+- seo-tag appends " | Wealth Primer" (~15 characters). Put the primary keyword in the first ~45 characters; **aim ≤ 50, never > 60.** Many existing titles are much longer — don't copy them. No clever subtitle after a colon unless it adds a searchable phrase ("…: formula and example").
 - Sentence case. No hype, no clickbait numbers.
 - Patterns: `<Term> explained: formula and example` · `How to calculate <X>: formula and worked example` · `<Concept>: what it tells you and what it can't`.
 - Year/Tax Year in a title only for rules that change yearly, and then add a refresh row to `TODO.md`.
@@ -82,8 +82,4 @@ Readers still search the old labels. Put both the Tax Year and FY label ("Tax Ye
 
 ## 6. Don't waste effort on
 
-Keyword stuffing; doorway variants of one keyword; padding to a word count; hand-written JSON-LD; "In today's fast-paced world" intros; promising results.
-
-## 7. Measuring
-
-GA4 only is configured; Search Console is the right tool. If the user shares exports: monthly, list queries at position 8–20 and refresh those posts (then `last_modified_at`); look for "Duplicate, Google chose different canonical" and "Crawled, not indexed" on thin glossary posts; submit `/sitemap.xml` once. Never report rankings or traffic you haven't seen.
+Keyword stuffing; doorway variants of one keyword; padding to a word count; hand-written JSON-LD; "In today's fast-paced world" intros; promising results. Measuring is Search Console's job (only GA4 is configured here); never report rankings or traffic you haven't seen.

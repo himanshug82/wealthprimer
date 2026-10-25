@@ -33,7 +33,7 @@ Run on the **rendered meaning**, not the Liquid. The Sept 2026 review (`_review/
 ## C. Rules and tax
 
 - [ ] Each rule/rate/threshold has an as-of date and a primary source (circular/notification number + date; Finance Act; Income-tax Act, 2025 "Tax Year" terminology).
-- [ ] If you could not open the primary document this session: no circular number, date, rate, threshold or section number. "Check the current rule", VERIFY row, delivered as a draft.
+- [ ] If you could not open the primary document this session: no circular number, date, rate, threshold or section number. "Check the current rule", VERIFY row, delivered as a draft. A labelled secondary source is allowed only where CLAUDE.md allows it (primary genuinely unreachable) and gets a VERIFY row.
 - [ ] Tax post: "Tax Year 2026-27" **and** "FY 2026-27" in the opening and one H2; old/new section numbers only from the Act itself; 4% cess consistent (or stated excluded); surcharge mentioned where it can change the answer; example fund and data source named; annual-refresh row in `TODO.md`.
 
 ## D. Style and rendering
@@ -41,16 +41,12 @@ Run on the **rendered meaning**, not the Liquid. The Sept 2026 review (`_review/
 - [ ] Every acronym defined on first use in this post (including P/E, SIP, NAV, NSE); jargon link at first use, earlier-dated posts only.
 - [ ] Sentence-case headings and running text; ₹ with Indian grouping; "−" for negatives; no ".0"; dates written out in prose.
 - [ ] No line starting with a number or Liquid value + ". ".
-- [ ] Takeaway: starts `**Takeaway:**`; 2–3 sentences; first sentence ≤ 280 chars and standalone (count it with ₹ amounts and decimals rendered); few figures; no verdict on a real company.
+- [ ] Takeaway: starts `**Takeaway:**`; 2–3 sentences; first sentence ≤ 280 chars *as rendered* and standalone (the lint approximates Liquid values at 10 characters; count the real thing); few figures; no verdict on a real company.
 - [ ] Common mistakes: 2–4, concrete (glossary posts may collapse it into the definition).
 - [ ] Voice: short sentences, contractions, plain, a little informal.
 - [ ] Desi Bites facts from `_data/`; never "SME".
 
-## E. Mechanical
-
-`lint_post.py` → `check_posts.py` (0 errors) → `make_og_cards.py` → Docker `jekyll build --future` → read the rendered page.
-
-## F. Module level (batches only)
+## E. Module level (batches only)
 
 - [ ] `grep -l` the same real company across the new files: are verdicts or praise accumulating? Frame as one-year facts.
 - [ ] No two new posts own the same term/intent; every internal link points to an earlier-dated post; owed links logged.

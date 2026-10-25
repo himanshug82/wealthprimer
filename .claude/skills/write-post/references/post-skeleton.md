@@ -7,7 +7,7 @@ Copy the shape of a recent post in the same series (e.g. `_posts/2026-09-03-roce
 ```yaml
 ---
 layout: post
-title: "ROCE explained: return on capital employed, with formula"   # aim ≤ 50 (never > 60), keyword first, sentence case
+title: "ROCE explained: formula and example"   # aim ≤ 50 (never > 60), keyword first, sentence case
 description: "…140–160 characters, primary keyword once, concrete promise…"
 image: /assets/og/roce.png          # generate with scripts/make_og_cards.py
 date: 2026-09-03 09:00:00 +0530     # matches filename; time ≤ 09:00 +0530 (house convention, TODO.md)
@@ -42,7 +42,7 @@ Table from a loop — no blank lines between rows, or kramdown ends the table:
 {% endfor %}
 ```
 
-Prose rupee amounts: `{% include inr.html n=db_is25.ebit %}`. Table cells with pure numbers are grouped automatically. Never start a line with `{{ value }}. ` or `48. ` (kramdown makes it a list).
+Prose rupee amounts: `{% include inr.html n=db_is25.ebit %}`. Table cells with pure numbers are grouped automatically.
 
 ## Section order
 

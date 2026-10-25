@@ -307,8 +307,11 @@ etf_vs_index_fund:
 categories:
   circular: SEBI/HO/IMD/DF3/CIR/P/2017/114, 6 October 2017 (categorisation and rationalisation of mutual fund schemes), as
     amended
-  master_circular: Master Circular for Mutual Funds, 27 June 2024 (clause 2.6)
+  master_circular_2024: Master Circular for Mutual Funds, 27 June 2024 (clause 2.6)
   revision_2026: HO/24/13/15(2)2026-IMD-RAC4/I/5764/2026, 26 February 2026
+  master_circular: Master Circular for Mutual Funds, HO/24/13/11(1)2026-IMD-POD-1/I/7602/2026, 20 March 2026 (paras 3.7 and
+    3.8)
+  master_circular_url: https://www.sebi.gov.in/legal/master-circulars/mar-2026/master-circular-for-mutual-funds_100491.html
   equity:
   - category: Large cap
     rule: At least 80% of assets in large-cap stocks

@@ -19,10 +19,17 @@ MONTHS = {m: i for i, m in enumerate(
     ["january", "february", "march", "april", "may", "june", "july",
      "august", "september", "october", "november", "december"], 1)}
 HYPE = r"guarantee[ds]?|sure[- ]?shot|multi-?baggers?|can'?t lose|easy money|get rich|double your money"
-CALLS = r"\b(buy|sell|accumulate|avoid)\s+(it|this|the stock|the share|[A-Z][a-z]+\b)|target price|price target|\bmust[- ]buy|\bstrong buy|\bbuy on dips?"
+CALLS = (r"\b(buy|sell|accumulate|avoid|exit)\s+(it|this|the stock|the share|[A-Z][a-z]+\b)|target price|price target|\bmust[- ]buy|\bstrong buy|"
+         r"\bbuy on dips?|add on dips?|worth (buying|owning)|you should (buy|sell|hold|invest)|investors? (may|could) consider|good entry|time to (enter|buy|sell)|"
+         r"book profits|stay invested|\bhold (it|this|the stock)")
 VERDICT = (r"\b(overvalued|undervalued|cheap(ly)?|expensive|fairly valued|mispric\w*|bargain|attractive(ly)? valued|"
-           r"rich valuation|moat|compounder|impressive|excellent|healthy|robust|strong balance sheet|honest of)\b")
-STOP_ACR = {"I", "A", "II", "III", "IV", "TA", "FA", "AM", "PM", "OK", "US", "UK", "IST", "CSV", "SVG", "PNG", "DB", "ISO", "FY"}
+           r"rich valuation|moat|compounder|impressive|excellent|healthy|robust|strong balance sheet|honest of|"
+           r"solid|sound|stable|reasonable(ly)? priced|prudent|disciplined|conservative(ly)?|well-run|best-in-class|durable|"
+           r"valued (below|above|at a premium|at a discount)|premium to peers|discount to peers|not (cheap|irrational|a mispricing)|"
+           r"inexpensive|cheaper|safe (bet|stock|choice)|outperform\w*|underperform\w*)\b")
+VALUATION = r"\b(DCF|WACC|discount rate|intrinsic value|fair value|justified (P/B|P/E|multiple))\b"
+SERIES_COPY = r"\b(the next (two|three|four|five|six|seven|eight|nine|ten|\d+) posts|final post|last post in this series|closes? the series|fifty-nine posts)\b"
+STOP_ACR = {"I", "A", "II", "III", "IV", "AM", "PM", "OK", "CSV", "SVG", "PNG", "ISO", "DB"}
 
 
 def split(text):
@@ -52,6 +59,18 @@ def prose_lines(body):
     return out
 
 
+def scan_lines(body):
+    """Every non-code line, including table rows and <details>/<summary> text, for compliance words."""
+    out, fenced = [], False
+    for n, line in enumerate(body.splitlines(), 1):
+        if line.strip().startswith("```"):
+            fenced = not fenced
+            continue
+        if not fenced and line.strip():
+            out.append((n, re.sub(r"\{%.*?%\}|\{\{.*?\}\}|<[^>]+>", " ", line)))
+    return out
+
+
 def lint(path):
     name = os.path.basename(path)
     text = open(path, encoding="utf-8").read()
@@ -72,6 +91,10 @@ def lint(path):
         add("WARN", f"description is {len(desc)} chars (aim 140–160)")
     if re.search(HYPE, title + " " + desc, re.I):
         add("FAIL", "hype word in title/description")
+    for rx, lbl in ((CALLS, "trade-call phrasing"), (VERDICT, "verdict word")):
+        m = re.search(rx, title + " " + desc, re.I if rx != CALLS else 0)
+        if m:
+            add("WARN", f"{lbl} in title/description: “{m.group(0)}”")
     if not fm.get("image"):
         add("WARN", "no image: front matter (run scripts/make_og_cards.py)")
     if pub and not re.search(r"\s(0\d|1[0-9]):\d\d:\d\d\s\+0530|\s09:00:00\s\+0530", fm.get("date", "")):
@@ -84,7 +107,7 @@ def lint(path):
     hard_rs = []
     ptext = "\n".join(t for _, t in plines)
 
-    for n, t in plines:
+    for n, t in scan_lines(body):
         for rx, lvl, label in ((HYPE, "WARN", "hype word (OK only if quoted/negated, e.g. “no guarantee”)"), (CALLS, "WARN", "possible trade call (OK only if quoted or negated)"),
                                (VERDICT, "WARN", "verdict-style word (fine only for a fictional/generic company or a mechanical statement)")):
             m = re.search(rx, t, re.I if rx != CALLS else 0)
@@ -133,7 +156,7 @@ def lint(path):
     if not tk:
         add("FAIL", "no paragraph starting exactly '**Takeaway:**'")
     else:
-        first = re.split(r"(?<=[.!?])\s", tk.group(1))[0]
+        first = re.split(r"(?<![0-9A-Za-z]\.[A-Za-z])(?<!e\.g)(?<!i\.e)(?<!No)(?<=[.!?])\s+(?=[A-Z*_\"“])", tk.group(1))[0]
         if len(first) > 280:
             add("WARN", f"first Takeaway sentence is {len(first)} chars (> 280; raw text, Liquid not rendered)")
     if "Common mistakes" not in body and fm.get("series") != "jargon":
@@ -155,6 +178,25 @@ def lint(path):
         t = re.sub(r"\(.*?\)", "", fm["term"]).strip().lower()
         if t and t not in intro:
             add("INFO", f"term “{t}” not in the first 100 words")
+
+    for n, t in scan_lines(body):
+        if re.search(VALUATION, t, re.I):
+            add("WARN", f"line {n + off}: valuation-model term; allowed only for Desi Bites or a generic/illustrative company, never a real listed one")
+        if re.search(SERIES_COPY, t, re.I):
+            add("WARN", f"line {n + off}: series-structure copy that goes stale (“{t.strip()[:50]}…”)")
+        if re.search(r"\bSME\b|NSE Emerge", t) and "desi" in body.lower():
+            add("WARN", f"line {n + off}: Desi Bites is a main-board company, not SME/Emerge")
+    if "post-disclaimer" in body or "not investment advice" in body.lower():
+        add("WARN", "disclaimer text in body; the layout renders it, don't paste or reword")
+    cm = re.search(r"^## Common mistakes\s*$(.*?)(?=^## |\Z)", body, re.M | re.S)
+    if cm:
+        items = len(re.findall(r"^(?:\d+\.|[-*]|###)\s", cm.group(1), re.M)) or len(re.findall(r"^\*\*[^*]+\*\*", cm.group(1), re.M))
+        if items and not 2 <= items <= 4:
+            add("INFO", f"Common mistakes has ~{items} items (house style 2–4)")
+    if "details" in body and "Explain it like I" not in body:
+        add("INFO", "<details> block without the standard “Explain it like I'm 10” summary")
+    if tk and body.strip().splitlines()[-1].strip() != tk.group(0).strip() and "Takeaway" not in body.strip().splitlines()[-1]:
+        add("INFO", "Takeaway is not the last paragraph of the post")
 
     # acronyms: heuristic — expansion nearby anywhere in post
     seen, undefined = set(), []
@@ -190,7 +232,8 @@ def main(argv):
     for p in argv:
         out = lint(p)
         fails += sum(l.startswith("FAIL") for l in out)
-        print("\n".join(out) if out else f"ok   {os.path.basename(p)}: no lint hits (not proof of compliance)")
+        print("\n".join(out) if out else f"ok   {os.path.basename(p)}: no lint hits")
+    print("\nExit 0 means no FAIL lines, NOT that the post is compliant or accurate. Read every WARN/INFO, then do the audit.")
     return 1 if fails else 0
 
 

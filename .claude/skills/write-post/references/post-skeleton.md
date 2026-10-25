@@ -34,7 +34,7 @@ Prose rupee amounts: `{% include inr.html n=db_is25.ebit %}`. Table cells with p
 
 1. **Definition** (`## What <X> means`) — one or two tight paragraphs; the 40–60-word direct answer first; define every acronym; jargon links.
 2. **Formula** (`## The formula`) — in a code block.
-3. **Worked example** (`## Worked example: <company>, FY25`) — numbered steps; as-of date stated; source linked; "for illustration only"; Desi Bites first, then at most one real company with observables only.
+3. **Worked example** (`## Worked example: <company>, FY25`) — numbered steps; as-of date stated; source linked; "for illustration only"; Desi Bites first, then at most one real company — observables only, one-year and backward-looking, no verdict.
 4. **Common mistakes** (`## Common mistakes`) — 2–4 real misreadings, each concrete, not "don't rely on one ratio".
 5. **Takeaway** — paragraph starting exactly `**Takeaway:**`; first sentence stands alone at ≤ 280 characters; no figures crammed in; no verdict on a real company.
 

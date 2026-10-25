@@ -1,74 +1,88 @@
 # SEO rules for Wealth Primer
 
-Context: Jekyll on GitHub Pages, `jekyll-seo-tag` (emits title, description, canonical, Open Graph, Twitter card and BlogPosting JSON-LD), `jekyll-sitemap`, `jekyll-feed`, `lang: en-IN`, permalink `/:year/:month/:day/:title/`. YMYL (money) niche: Google weighs experience, expertise, authoritativeness and trust heavily. This blog's edge is accuracy, sourcing and honest limits.
+Stack: Jekyll on GitHub Pages (safe mode, no custom plugins), `jekyll-seo-tag` (emits `<title>` as "page title | Wealth Primer", description, canonical from `page.url`, Open Graph, Twitter card, BlogPosting JSON-LD, `dateModified` from `last_modified_at`), `jekyll-sitemap`, `jekyll-feed`, `lang: en-IN`, permalink `/:year/:month/:day/:title/`. Money content is YMYL: Google scrutinises accuracy and trust. This blog's edge is correctness, sourcing and honest limits — not volume.
 
-## Search intent first
+Google-behaviour statements below are working conventions, not guarantees. Never invent search volumes, difficulty scores, rankings or "people also ask" questions; if you can't check, say so.
+
+## 1. Pick the query by intent — and by whether we're allowed to answer it
 
 | Intent | Typical queries | Page shape |
 |---|---|---|
-| Definition / glossary | "ROCE meaning", "what is P/E ratio" | Direct answer first, formula, one example, mistakes |
-| How-to-calculate | "how to calculate XIRR", "ROCE formula" | Formula block, numbered worked example, optional sheet/Python |
-| Method | "how to read a balance sheet", "how to evaluate a mutual fund" | Step-by-step; no recommendations |
-| Rules lookup | "LTCG on equity mutual funds India" | As-of date, primary source, Tax Year label, worked example |
-| Comparison | "ETF vs index fund" | Table of differences, who each suits *structurally*, no "winner" for the reader |
+| Definition | "ROCE meaning", "what is P/E ratio" | Definition sentence, formula, one example, mistakes |
+| How to calculate | "how to calculate XIRR", "ROCE formula" | Formula block, numbered worked example, sheet/Python if natural |
+| Method | "how to read a balance sheet", "how to evaluate a mutual fund" | Steps; no winners |
+| Rules lookup | "LTCG on equity mutual funds India" | As-of date, primary source, labels, worked example |
+| Comparison | "ETF vs index fund" | Table of differences stated as properties (cost, liquidity, tax treatment). Never map to reader types, ages or goals; never rank |
 
-Queries to **avoid targeting** (transactional/advisory, compliance conflict): best/top stocks or funds, multibagger, penny stock picks, buy/sell/hold, target price, tips, "will X go up", "is X overvalued", guaranteed or "safe high return". If the topic is wanted anyway, target the method version ("how to screen stocks — and what screens miss").
+**Do not target** (advisory/transactional; route to the method version instead):
+- best / top / ideal / good stocks, funds, SIPs, indicators or settings; "multibagger"; penny-stock picks; buy / sell / hold; target price; tips; intraday or F&O "strategy that works"
+- any query naming a real security plus good / bad / worth / outlook / forecast / review / IPO / GMP / subscribe-or-avoid; "is X a good investment"; "should I invest in X"
+- "X vs Y, which is better" for named funds, stocks, brokers or apps; broker / app / AMC rankings
+- Nifty / Sensex prediction or levels; "will X go up"
+- income-target queries ("how to make ₹1 crore", "retire by 40"); "how to save tax on…" (prescriptive — use "what the Act allows")
 
-## Keyword patterns per series
+Safe retitles: "What is a good P/E?" → "P/E ratio ranges: why 'good' depends on the sector". "How to save tax on capital gains" → "Capital gains exemptions: what the Act allows".
 
-- **Jargon**: `<term> meaning`, `<term> formula`, `how to calculate <term>`, `<term> example`, `<term> vs <term>`. Avoid "good/ideal <term>" as a verdict; if answering, say ranges depend on industry and give no pass/fail for a named company.
-- **Fundamental analysis**: `how to read <statement>`, `<ratio> analysis`, `DCF explained`, `how to analyse <sector> companies`.
-- **Technical analysis**: `how to read <indicator>`, `<indicator> formula`, `<indicator> in Python`, `<indicator> settings explained` (describe conventions; don't recommend settings).
-- **Mutual funds**: `how to read a factsheet`, `expense ratio explained`, `what is rolling return`, `SIP vs lump sum`, `XIRR vs CAGR`.
-- **Tax**: `how is <asset> taxed in India`, `<asset> capital gains tax Tax Year 2026-27` — rule posts only with primary sources.
-- **Risk / behaviour**: `position sizing explained`, `why F&O traders lose money (SEBI study)`, `what is leverage in trading`.
+## 2. One term, one owner
 
-## On-page checklist
+- The jargon post owns "<term> meaning / formula / example". Other series own method and context ("how to analyse X using ROCE"). Before drafting: `grep -il "<term>" _posts/*` and check `term:` front matter. A second post on a term must name a different intent in the SEO brief. Link from it to the owner with the term as anchor.
+- Any post that defines a term (not just jargon) sets `term:` so it reaches `/glossary/`.
+- Never rename or delete a published post (the date is in the URL and there is no redirect plugin). To consolidate, put the content in the stronger URL and leave a visible pointer on the old one. A redirect gem (`jekyll-redirect-from`) is an owner decision, not a skill action.
 
-**Title** (front matter `title`; layout renders it as the H1 — never add `# ` in the body)
-- ≤ 60 characters so it isn't truncated in results; primary keyword at or near the front; one idea; sentence case (some older posts are title case — don't copy them).
-- Patterns that fit: `<Term> explained: formula and example` · `How to calculate <X>: formula and worked example` · `<Concept>: what it tells you and what it can't`.
-- No hype words, no clickbait numbers, no year unless the rule changes yearly (tax/regulatory) — then use "Tax Year 2026-27" and refresh the post each year.
+## 3. On-page checklist
 
-**Description** (front matter; feeds meta description, homepage, RSS)
-- 140–160 characters. Primary keyword once, a concrete promise ("with formula and a worked example"), no hype, no advice.
+**Title** (`title:` is also the visible H1 — never add `# ` in the body)
+- seo-tag appends " | Wealth Primer". Put the primary keyword in the first ~45 characters; aim ≤ 60 total. Existing titles run to 95 and median 63 — don't copy the long ones. No clever subtitle after a colon unless it adds a searchable phrase ("…: formula and example").
+- Sentence case. No hype, no clickbait numbers.
+- Patterns: `<Term> explained: formula and example` · `How to calculate <X>: formula and worked example` · `<Concept>: what it tells you and what it can't`.
+- Year/Tax Year in a title only for rules that change yearly, and then add a refresh row to `TODO.md`.
 
-**Slug**: short, lowercase, hyphenated, keyword-led, no stop-word padding, no date (the permalink already carries one). Locked once published.
+**Description** (`description:`; feeds meta description, homepage, RSS): 140–160 characters, primary keyword once, a concrete promise ("with formula and a worked example"), no hype, no advice.
 
-**Opening**: the first 100 words contain the primary keyword and a plain definition. Put a 40–60-word direct answer immediately under the "What is X" heading — this is the snippet candidate.
+**Slug**: short, lowercase, hyphenated, keyword-led, no date. Locked once published.
 
-**Headings**: sentence-case H2s; phrase several as the questions readers type ("What does ROCE tell you?", "How is XIRR different from CAGR?"). One H1 only (the title). Logical H2 → H3 nesting. The TOC appears automatically at ≥ 6 H2s (`toc: false` to suppress).
+**Opening / snippet format**
+- First 100 words contain the primary keyword and a plain definition.
+- Under the first H2, one standalone definition sentence (≈ 40–60 words is a convention, not a Google rule). **The direct answer defines the term; it never states a "good" threshold or verdict** ("a good ROCE is above 15%" is out).
+- Formula in a code block, comparisons in a markdown table, worked example as numbered steps.
 
-**Internal links** (the main SEO lever on a 160-post site)
-- 3–6 contextual links in the body with descriptive anchors ("price-to-book ratio"), never "click here" or "this post".
-- Mandatory jargon links at first use (see `CLAUDE.md`). Link prerequisites forward-safely with `{% post_url %}` — earlier-dated posts only.
-- If a link would be useful but the target is dated later, don't link; log it in `TODO.md` as an owed link.
-- Don't force links; every link must help the reader's next question.
+**Headings**: sentence-case H2s, several phrased as the reader's question; logical H2→H3. TOC appears automatically at ≥ 6 H2s.
 
-**External links**: primary sources (sebi.gov.in, rbi.org.in, nseindia.com, incometaxindia.gov.in, company filings, AMFI) with descriptive anchors; cite the circular number/date in the text. Primary sources are an E-E-A-T signal; use them for every rule, rate and statistic.
+**Internal links** (the main lever on a 160-post site)
+- Link wherever a term first appears, plus one or two "next step" links; descriptive anchors, never "click here". Count isn't a ranking factor.
+- Every post links to its series hub once in the body, and at least one cross-series link where natural (tax → mutual funds, TA → risk).
+- Only `{% post_url %}` to posts dated on or before the post — **including when you edit an older post.** If a useful target is later-dated, don't link; log it in `TODO.md` as an owed link.
 
-**Images and charts**: SVG/PNG in `assets/charts/` from a script in `scripts/`; markdown alt text that says what the chart shows ("Britannia closing price with 50- and 200-day moving averages, March 2025 to March 2026"), not "chart". Never hotlink. Every post needs an OG card: run `python3 scripts/make_og_cards.py` and set `image: /assets/og/<slug>.png`.
+**External links**: primary sources (sebi.gov.in, rbi.org.in, nseindia.com, incometaxindia.gov.in, company filings, AMFI), descriptive anchors, circular number/date in the text.
 
-**Structured data**: `jekyll-seo-tag` already emits BlogPosting JSON-LD. Don't hand-write JSON-LD. Don't build FAQ markup for rich results — Google restricted FAQ rich results in 2023; question-style H2s capture the benefit.
+**Images**: charts from a `scripts/` file into `assets/charts/`; informative alt text ("Britannia closing price with 50- and 200-day moving averages, March 2025 to March 2026"). Every post sets its own `image: /assets/og/<slug>.png` — **if omitted, the site-wide logo silently ships as the social card.** Run `scripts/make_og_cards.py` and confirm the file exists.
 
-**Length**: as long as the intent needs and no longer. Existing posts run roughly 500–2,100 words. Compare with the SERP; beat competitors on correctness, worked examples and "common mistakes", not on word count.
+**Structured data**: seo-tag already emits BlogPosting JSON-LD; don't hand-write any. Don't add FAQ markup (Google restricted FAQ rich results in 2023 — from memory, unchecked). Question-style H2s give the benefit.
 
-**Freshness**: add `last_modified_at` when a post is materially updated. Keep as-of dates visible in the body. Rule/tax posts: recheck after the Union Budget and when SEBI/CBDT circulars land.
+**Front-matter facts**: canonical comes from `page.url` — never set `canonical_url`. `noindex: true` works via `head.html`; use only for drafts or thin pages. `author:` is a string matched to `_data/authors.yml`; no post sets it today.
 
-**Language**: Indian English (en-IN): "utilisation", lakh/crore, ₹, FY25 / Tax Year 2026-27. Use the terms Indian readers search: demat, Nifty 50, SIP, ELSS, LTCG/STCG, NAV, TER, F&O.
+**Freshness**: `last_modified_at` only for substantive changes (a rule, a number, a correction) — never for typo or SEO edits; fake freshness is a spam signal. Keep as-of dates visible. Re-check rule and tax posts after the Union Budget and when SEBI/CBDT circulars land.
 
-## Trust signals for a YMYL site
+**Language**: Indian English; en-IN only. Use search vocabulary Indians use: demat, lakh/crore, "in India", "for beginners", Nifty 50, SIP, ELSS, LTCG/STCG, NAV, TER, F&O. Hinglish/Hindi queries are real but out of scope — no Hinglish titles; a Hindi edition would be a separate project.
 
-- Every number has an as-of date and a source; every rule has a primary-source citation.
-- Honest limits sections ("what this can't tell you") — they are the differentiator.
-- No fabricated experience: no "I made ₹X", no invented reader stories, no testimonials.
-- The disclaimer is rendered by the layout — don't add or reword one.
-- Link to `/methodology/` where the data approach matters.
+## 4. Tax and rules posts
 
-## What not to do
+Readers still search the old labels. Put both the Tax Year and FY label ("Tax Year 2026-27 (FY 2026-27)") in the opening paragraph and one H2. Where section numbers changed under the Income-tax Act, 2025, name old and new (e.g. "old section 112A") **only after opening the Act or a primary source**; never guess a new number from memory. Tax posts are never "ready": mark them "draft pending professional read" and log it in `TODO.md`.
 
-Keyword stuffing; doorway posts for variants of the same keyword (consolidate and update instead); AI-boilerplate intros ("In today's fast-paced world…"); padding to hit a word count; clickbait titles; comparing yourself to named competitors; promising results ("learn to beat the market").
+## 5. Trust signals (YMYL) — without inventing any
 
-## Measuring (honest)
+- Every number has an as-of date and source; every rule a primary-source citation.
+- Honest-limits sections are the differentiator.
+- **Do not claim credentials, a team, a track record, "our analysts", or personal results** the repo doesn't document. `about.markdown` says what the author is; stay within it.
+- No fabricated reader stories, testimonials, "I made ₹X".
+- Disclaimer is rendered by the layout; don't add or reword one.
+- No broker/app/AMC rankings, referral or sponsored links unless the owner has decided on a disclosure policy.
+- Owner decisions (flag, don't do): adding `author:` and an author URL/`sameAs` in `authors.yml`; a named "reviewed by" credit (only if true); a redirect gem.
 
-The repo has GA4 only. Search Console is the right tool for query/impression data; if the user shares it, use it to pick titles and find posts that rank on page 2 for a refresh. Don't claim rankings or traffic you haven't seen.
+## 6. Don't waste effort on
+
+Keyword stuffing; doorway variants of the same keyword; padding to a word count (match the SERP's depth, win on correctness and "common mistakes"); hand-written JSON-LD; "In today's fast-paced world" intros; promising results.
+
+## 7. Measuring
+
+GA4 only is configured. Search Console is the right tool. If the user shares exports: monthly, list queries with impressions at position 8–20, refresh those posts (then `last_modified_at`), and look for "Duplicate, Google chose different canonical" and "Crawled, not indexed" on thin glossary posts. Submit `/sitemap.xml` once. Don't report rankings or traffic you haven't seen.

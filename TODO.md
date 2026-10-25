@@ -7,7 +7,7 @@ series (Jargon 53 · FA 29 · TA 22 · MF 30 · Tax 18 · Risk 16). The cadence 
 moved back three weeks on 25 Oct) held; its reason (a professional read) is gone, see Decided 26 Oct. **MF Module 4 (7 posts, 26 Oct → 7 Nov, every other
 day) was added on 25 Oct 2026, so MF is scheduled through 7 Nov (30 posts).**
 **The other written backlogs ran out on 25 Oct** (Tax runs to 4 Dec) — each series needs its next module planned and approved (`plan-module`). All posts were reviewed and every P0/P1/P2 finding
-fixed — see `_review/REVIEW-2026-09-24.md`. House style and the rules every
+fixed (git commits `fbef1a8`, `9fbaaa5`, `59dda72`). House style and the rules every
 post must follow are in `CLAUDE.md`; this file is for what's still open and
 for how the repo works.
 
@@ -32,7 +32,7 @@ for how the repo works.
   Admin → Data display → Custom definitions → Create custom dimension → scope **Event**, once
   for each of `content_series`, `content_category` (and optionally `content_type`), parameter
   name exactly as written. Data shows 24–48 h after registering; it is not retroactive.
-- **Search Console and DNS (from the SEO audit, `_review/SEO-AUDIT-2026-10-25.md`):**
+- **Search Console and DNS (from the 25 Oct SEO audit):**
   verify a *Domain* property for wealthprimer.in (DNS TXT), submit `/sitemap.xml`,
   request indexing for `/`, `/series/` and `/series/risk/` (it was `noindex` until
   25 Oct); www is fine — it resolves to GitHub Pages and 301-redirects to the apex
@@ -47,6 +47,7 @@ for how the repo works.
   `noindex`. Confirm in Search Console which URL was flagged (Pages → that issue →
   example URL → URL Inspection shows the Google-selected canonical); if it isn't
   `/series/`, tell Claude the URL.
+- **SEO content follow-ups (from the 25 Oct audit):** (1) add primary-source links (SEBI circulars, AMFI data, company filings) to the 41 posts with no external links — YMYL trust signal; newer posts already do this. (2) Monthly: export Search Console queries at position 8–20, refresh those posts (`refresh-post`), and set `last_modified_at` only for substantive changes. (3) Watch in Search Console: Pages (published posts indexed; only `/404.html` and an empty hub excluded), Sitemaps (status Success), Enhancements → Breadcrumbs (valid items ≈ number of posts; 1–3 weeks), Core Web Vitals (no CLS issues; monthly). Leave dated URLs alone — no redirect plugin, so renaming breaks links.
 - **Tax-touching published posts: flagged and softened (26 Oct 2026).** The 11
   posts (`arbitrage-funds`, `stp-and-swp`, `what-a-mutual-fund-is`,
   `debt-funds-explained`, `what-the-fo-numbers-actually-say`, `dividend-yield`,
@@ -92,7 +93,7 @@ for how the repo works.
   decision; conflicts with the no-verdicts rule. Skills and the research agent
   won't propose it.
 
-- **PageSpeed** (25 Oct, `_review/PAGESPEED-2026-10-25.md`): accessibility/best-practices/SEO are
+- **PageSpeed** (25 Oct, commit `c45b5db`): accessibility/best-practices/SEO are
   100 on all pages and desktop performance is 100. Google Analytics (`gtag.js`) was the one big
   mobile cost (the homepage swung 76–95 with the test machine's CPU), so since 25 Oct it loads at
   the visitor's first tap, click, scroll or key press, or after 10 s (see the comment in
@@ -368,7 +369,7 @@ browser — never rasterised locally.
   lines" and "Banks and NBFCs", Jargon module 6, MF module 2, tax add-ons,
   TA module 2). Posts were rescheduled into a daily cadence from 18 Aug.
 - 24 Sep 2026: site redesign; Indian comma grouping in tables; full review of
-  all 116 posts with every P0/P1/P2 fixed (`_review/REVIEW-2026-09-24.md`);
+  all 116 posts with every P0/P1/P2 fixed (commits `fbef1a8`, `9fbaaa5`, `59dda72`);
   `CLAUDE.md` updated with the lessons. Rescheduled the 88 unpublished posts
   to one per series per day (Tax held to 27 Oct).
 - 25 Sep 2026: six new modules, 45 posts — Jargon 7 market mechanics, FA 4

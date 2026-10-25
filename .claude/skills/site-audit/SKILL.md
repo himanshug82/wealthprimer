@@ -14,8 +14,6 @@ python3 .claude/skills/site-audit/scripts/audit_site.py /tmp/site
 .claude/skills/site-audit/scripts/lighthouse_run.sh http://localhost:8099/ /tmp/lh
 ```
 
-Baseline on 25 October 2026 (see `_review/SEO-AUDIT-2026-10-25.md`): 0 errors, 0 warnings, one intentional noindex (`/series/tax/` until its first post is live); accessibility 100.
-
 ## Interpret
 
 - **ERROR** = fix. **WARN** = look; most are small. **INFO** = confirm intent.

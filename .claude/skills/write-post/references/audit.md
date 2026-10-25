@@ -1,6 +1,6 @@
 # Audit checklist
 
-Run on the **rendered meaning**, not the Liquid. The Sept 2026 review (`_review/REVIEW-2026-09-24.md`) found arithmetic almost always right and **interpretation** often wrong. CLAUDE.md has the full rules; this list is what a script can't do and what a model skims.
+Run on the **rendered meaning**, not the Liquid. The Sept 2026 review (git commits `fbef1a8`, `9fbaaa5`, `59dda72`) found arithmetic almost always right and **interpretation** often wrong. CLAUDE.md has the full rules; this list is what a script can't do and what a model skims.
 
 ## A. Compliance — any failure blocks the post
 

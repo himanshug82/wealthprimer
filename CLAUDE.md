@@ -99,7 +99,7 @@ Twitter is a distribution channel, not a second content stream. Don't write thre
 
 ## Accuracy rules (learned the hard way)
 
-A full review of all 116 posts in September 2026 (`_review/REVIEW-2026-09-24.md`) found the arithmetic almost always right and the **interpretation** often wrong. Most errors were a sentence saying more than its own table showed. Before publishing, check every interpretive sentence against the numbers beside it.
+A full review of all 116 posts in September 2026 (fixes in git commits `fbef1a8`, `9fbaaa5`, `59dda72`) found the arithmetic almost always right and the **interpretation** often wrong. Most errors were a sentence saying more than its own table showed. Before publishing, check every interpretive sentence against the numbers beside it.
 
 - **Compare like with like.** Pre-tax vs post-tax (ROCE is pre-tax; ROE and WACC are post-tax — compare ROCE × (1 − t)). Same book (P/B = P/E × ROE only on the same equity; post-IPO book is mostly IPO cash). Same period and plan. Price index vs total-return index (say which; price-only returns understate).
 - **No hindsight endpoints.** Measure "what happened next" over a fixed horizon (e.g. 63 sessions), never "to the later peak/trough". Don't count an event whose forward window is incomplete, and say how many were dropped and why.

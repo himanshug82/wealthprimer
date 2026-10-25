@@ -6,6 +6,7 @@ Project instructions live in `/CLAUDE.md` (rules for what the blog may say). Thi
 
 | Skill | Use when | Key helper |
 |---|---|---|
+| `new-series` | Where does a topic go (existing series / new series / standalone `explainers`); scaffold a series | `scripts/new_series.py` |
 | `plan-module` | "What should we write next?" - roadmap for approval, no posts | - |
 | `write-post` | Draft, edit, audit or SEO-check a post | `scripts/lint_post.py`, `references/{seo,audit,post-skeleton}.md` |
 | `verify-claims` | A rule, rate or citation must be checked against the primary source | `scripts/fetch_source.py` |

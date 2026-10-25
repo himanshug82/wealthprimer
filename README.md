@@ -2,7 +2,7 @@
 
 A financial education blog for Indian retail investors, live at <https://wealthprimer.in>. It **teaches concepts**; it does not give stock tips, predictions, target prices or personalised advice. That line is both the brand ("credibility-first") and the legal position (no SEBI Research Analyst / Investment Adviser registration needed).
 
-Built with Jekyll on GitHub Pages. Six series (Jargon, Fundamental Analysis, Technical Analysis, Mutual Funds, Tax, Risk), one fictional case-study company (Desi Bites Foods) and a set of Claude Code skills, an agent pair and scheduled tasks that make writing, checking and shipping safer.
+Built with Jekyll on GitHub Pages. Six series today (Jargon, Fundamental Analysis, Technical Analysis, Mutual Funds, Tax, Risk), with new series and a standalone-explainers bucket possible via `new-series`, one fictional case-study company (Desi Bites Foods) and a set of Claude Code skills, an agent pair and scheduled tasks that make writing, checking and shipping safer.
 
 - Rules every post must follow: [`CLAUDE.md`](CLAUDE.md)
 - What is open / decided / parked, and how the repo works: [`TODO.md`](TODO.md)
@@ -17,6 +17,7 @@ You don't need to memorise anything. Describe what you want in plain words in a 
 | You say | What runs |
 |---|---|
 | "What should we write next for the tax series?" | `plan-module` |
+| "Where does this topic go?" / "start a series on X" | `new-series` |
 | "Write the posts in the approved plan" | `write-post` (+ `make-chart`, `verify-claims`, then `post-auditor`) |
 | "Is this circular citation right?" | `verify-claims` |
 | "Audit the site" | `site-audit` |
@@ -174,7 +175,7 @@ Manage them with the Claude routines UI or ask Claude to pause, change or delete
 | `_data/` | `series.yml`, `case_study*.yml` (Desi Bites), `mf*.yml`, `risk*.yml`… (generated; do not hand-edit) |
 | `assets/data/` | Source CSVs (NAVs, Nifty TRI, prices) read by `scripts/derive_*.py` |
 | `assets/charts/`, `assets/og/` | SVG charts; social cards (`scripts/make_og_cards.py`) |
-| `scripts/` | `check_posts.py`, `derive_*.py`, `make_*`, `add_img_dims.py`, `jekyll_build.sh`, `ship_check.sh` |
+| `scripts/` | `check_posts.py`, `derive_*.py`, `make_*`, `add_img_dims.py`, `new_series.py`, `jekyll_build.sh`, `ship_check.sh` |
 | `_includes/`, `_layouts/` | Shared Liquid: disclaimer, series nav, `inr.html` (Indian grouping), analytics, head/SEO |
 | `series/`, `series.markdown` | Series hub pages |
 | `_review/` | Audits and research briefs (not published: leading underscore) |

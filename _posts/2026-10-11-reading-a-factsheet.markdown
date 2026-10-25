@@ -5,6 +5,7 @@ description: "Section by section through a real mutual fund factsheet: holdings,
 image: /assets/og/reading-a-factsheet.png
 date: 2026-10-11 09:00:00 +0530
 series: mutual-funds
+last_modified_at: 2026-10-25
 term: "Factsheet"
 ---
 
@@ -60,8 +61,10 @@ if you might need the money early.
   different sectors.
 - **Number of holdings.** In our view, a fund with fifty-plus stocks starts
   to resemble an index, at a considerably higher fee.
-- **Portfolio turnover.** How much was traded. High turnover means trading
-  costs that sit *outside* the expense ratio and are never itemised anywhere.
+- **Portfolio turnover.** How much was traded. High turnover means more
+  trading costs: brokerage and transaction charges are inside the expense
+  ratio, but the price impact of the fund's own trading is not an expense line
+  anywhere. A later post in this series covers the ratio in full.
 
 **The overlap check** is worth doing once: if you own four large-cap funds,
 compare their top-10 lists. Owning the same twelve companies four times over
@@ -143,9 +146,10 @@ excellent records arise by chance alone.
 **What the portfolio holds today.** Factsheets show month-end holdings,
 published with a lag. An actively traded fund may look quite different now.
 
-**What it costs beyond the expense ratio.** Trading costs from portfolio
-turnover aren't in the TER (total expense ratio — the expense ratio's
-official name). Neither is the tax you'll pay on redemption.
+**What it costs beyond the expense ratio.** The price impact of the fund's own
+trading isn't in the TER (total expense ratio — the expense ratio's official
+name); brokerage and transaction charges are. Neither is the tax you'll pay on
+redemption.
 
 **Whether it suits you.** Nothing in the document knows your horizon, your
 other holdings, or whether you'd sell in a 60% drawdown. Suitability is not a

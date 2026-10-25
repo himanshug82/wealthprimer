@@ -1,11 +1,12 @@
 # TODO
 
-Current state (25 Sep 2026): **161 posts written and scheduled** across six
-series (Jargon 53 · FA 29 · TA 22 · MF 23 · Tax 18 · Risk 16). The cadence is
-**one post per series per day**. Scheduled through: Jargon 21 Oct · FA 23 Oct
-· TA 23 Oct · Risk 23 Oct · MF 25 Oct · **Tax held** 27 Oct → 13 Nov pending
-its professional read. **The written backlog runs out after 25 Oct** (Tax
-after 13 Nov) — the next module per series needs approving by about 10 Oct. All posts were reviewed and every P0/P1/P2 finding
+Current state (25 Oct 2026): **168 posts written and scheduled** across six
+series (Jargon 53 · FA 29 · TA 22 · MF 30 · Tax 18 · Risk 16). The cadence is
+**one post per series per day** (MF Module 4 runs every other day, by request). Scheduled through: Jargon 21 Oct · FA 23 Oct
+· TA 23 Oct · Risk 23 Oct · MF 7 Nov · **Tax held** 27 Oct → 13 Nov pending
+its professional read. **MF Module 4 (7 posts, 26 Oct → 7 Nov, every other
+day) was added on 25 Oct 2026, so MF is scheduled through 7 Nov (30 posts).**
+**The other written backlogs run out after 25 Oct** (Tax after 13 Nov) — the next module per series needs approving by about 10 Oct. All posts were reviewed and every P0/P1/P2 finding
 fixed — see `_review/REVIEW-2026-09-24.md`. House style and the rules every
 post must follow are in `CLAUDE.md`; this file is for what's still open and
 for how the repo works.
@@ -64,7 +65,7 @@ wording (or correct it).
 | Britannia FY25 declared dividend ₹75 | payout ratio | 11 Oct | stockanalysis.com |
 | Overnight fund's mandate change "around May 2018" | debt funds explained | 12 Oct | inferred from the NAV series |
 | SEBI Feb 2026 categorisation revision (value/contra/dividend yield/sectoral to 80%) | SEBI fund categories | 14 Oct | press summaries |
-| Liquid-fund graded exit load in the first week | STP and SWP | 17 Oct | memory, stated qualitatively |
+| ~~Liquid-fund graded exit load in the first week~~ — now confirmed: SEBI Master Circular (20 Mar 2026) para 5.6.5 requires an exit load for exits within 7 calendar days, graded as AMFI prescribes with SEBI; the scale itself is AMFI's and is not in the circular. Tighten the STP and SWP wording if it states more. | STP and SWP | 17 Oct | Master Circular text read 25 Oct |
 | Index-futures margins "low-to-mid teens" | leverage and margin | 11 Oct | hedged ("check NSE's margin files") |
 | 29 Aug 2024 intermediaries amendment "left room" for education | how finfluencers make money | 15 Oct | secondary sources |
 | Tax, from memory: property's 12.5%/20% option; business filers' one-time switch back to the new regime; CBDT condoning late filing; GAAR on round-trips; old 80C → section 123 | several tax posts | 27 Oct → 8 Nov | memory / secondary (incometaxindia.gov.in returns 403) |
@@ -126,10 +127,42 @@ browser — never rasterised locally.
   points"), diversification ("1.6 / 0.4 percentage points", "15% less"),
   sequence of returns ("₹24/₹27 lakh", "₹2.6 crore", incl. its description),
   position sizing ("26% decline").
+- **Module 4 data and sources (added 25 Oct 2026):** `assets/data/nifty50-tri.csv`
+  is the Nifty 50 **total return index** (NSE Indices' historical-data service,
+  fetched 25 Oct 2026, 2006-01-02 to 2026-03-30; checked against the price
+  index: daily-return correlation 0.99993, TRI beats PRI by ~1.3 points a year).
+  The benchmarks, alpha and tracking-error posts still use the price index —
+  they can now be redone against the TRI. `assets/data/uti-liquid-fund-nav.csv`
+  is UTI Liquid Fund regular growth (AMFI via mfapi.in, code 102012). The
+  **SEBI Master Circular for Mutual Funds of 20 March 2026** (HO/24/13/11(1)2026-IMD-POD-1/I/7602/2026)
+  was downloaded from sebi.gov.in and read in full for the new posts: it
+  supersedes older MF citations (see "Superseded MF citations" above).
+- **Correction made to a live post:** *Reading a factsheet* (11 Oct) said
+  trading costs "sit outside the expense ratio"; Master Circular para 11.2.4(a)
+  puts brokerage and transaction costs inside the TER (only market impact is
+  outside). Fixed on 25 Oct with `last_modified_at`. Other older posts that
+  discuss TER composition may carry the same pre-2026 wording: `grep -rn "outside the expense ratio\|not in the TER" _posts`.
+- **Owed links from Module 4 (targets are later-dated, so earlier posts can't
+  link yet — sweep after 7 Nov):** factsheet (11 Oct) → *portfolio turnover
+  ratio* (its text says "a later post covers it"); *volatility and Sharpe*
+  (30 Sep) → *Sortino and information ratio*; benchmarks (2 Oct) and star
+  ratings (16 Oct) → *survivorship bias*; tracking error (4 Oct) →
+  *Sortino and information ratio*; STP and SWP (17 Oct) → *liquid and
+  overnight funds*; *growth vs IDCW* → the Tax series' *dividends and
+  interest* (31 Oct, held) once the Tax read is done.
+- **Module 4 VERIFY / judgement calls:** (1) the ETF payout of 25 Feb 2021
+  (₹40.89/unit) is an *estimate* from the NAV gap, as in `mf2.yml`; the post
+  says so. (2) Capture ratios use the Nifty 50 TRI for a hybrid fund that does
+  not track it — the post says so; a hybrid-category TRI benchmark would be
+  the like-with-like choice. (3) The survivorship simulation's closing rule
+  (worst 10% by trailing 3-year return, years 3–9) is an assumption; no real
+  closure rate is quoted. (4) Market-impact assumptions (0.05/0.10/0.20% a
+  side) are illustrative. No tax rate or tax rule is stated in any Module 4
+  post, so no professional read is needed.
 - **Index data source:** Britannia prices and the Nifty 50 price index come
-  from Yahoo Finance. A Nifty 50 TRI series (niftyindices.com) would let the
-  benchmarks, alpha and tracking-error posts show tracking difference against
-  the right index.
+  from Yahoo Finance. The Nifty 50 TRI is now in the repo (see the Module 4
+  bullet above), so the benchmarks, alpha and tracking-error posts can be
+  redone against the right index.
 - **Glossary coverage:** 11 opener/closer posts have no `term:` (by design —
   `check_posts.py` warns). Add one if you want a post in `/glossary/`.
 
@@ -185,6 +218,7 @@ browser — never rasterised locally.
 | `derive_sectors.py` | `sectors.yml` (each figure with its filing URL) | FA module 4 (sector lenses) |
 | `derive_ta3.py` / `make_ta3_charts.py` | `ta3.yml` / `ta3-*.svg` (fixed random seed) | TA module 3 (honest tests) |
 | `derive_mf3.py` | `mf3.yml` | MF module 3 |
+| `derive_mf4.py` | `mf4.yml` (capture, Sortino/IR, turnover, survivorship simulation, liquid/overnight, IDCW; also holds the Master Circular citations it typed from the primary text) | MF module 4 |
 | `derive_risk2.py` | `risk2.yml`, `risk2-*.svg` | Risk module 2 |
 | `derive_tax3.py` | `tax3.yml` (with `verification` blocks) | Tax module 3 |
 | `make_diagrams.py`, `make_fa2_diagrams.py`, `make_bank_diagrams.py`, `make_ta2_charts.py` | schematic/chart SVGs | FA, TA |

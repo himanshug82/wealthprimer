@@ -19,7 +19,11 @@ Project instructions live in `/CLAUDE.md` (rules for what the blog may say). Thi
 
 Typical flow for a module: `plan-module` → (approve) → `refresh-data` if needed → `write-post` (+ `make-chart`, `verify-claims`) → `post-auditor` agent → `ship`.
 
-## Agent
+## Agents
+
+Full usage guide: the repository `README.md`.
+
+`agents/post-researcher.md` — weekly research for future posts (writes `_review/research/<date>.md` + a TODO row; research only). Scheduled Sundays 06:11 IST (`trig_01B2BK6zgJHbZG6DhFWFykPJ`).
 
 `agents/post-auditor.md` — independent read-only reviewer with a fresh context. Run it on every batch before scheduling; it reports P0/P1/P2 findings and never edits.
 

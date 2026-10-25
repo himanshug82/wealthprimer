@@ -69,7 +69,7 @@ Safe retitles: "What is a good P/E?" → "P/E ratio ranges: why 'good' depends o
 
 ## 4. Tax and rules posts
 
-Readers still search the old labels. Put both the Tax Year and FY label ("Tax Year 2026-27 (FY 2026-27)") in the opening paragraph and one H2. Where section numbers changed under the Income-tax Act, 2025, name old and new (e.g. "old section 112A") **only after opening the Act or a primary source**; never guess a new number from memory. Tax posts are never "ready": set `needs_review: tax` and `rules_as_of` in front matter (the layout then shows the as-at-date and "author is not a tax professional" notice; see CLAUDE.md, Professional review) and log it in `TODO.md`.
+Readers still search the old labels. Put both the Tax Year and FY label ("Tax Year 2026-27 (FY 2026-27)") in the opening paragraph and one H2. Where section numbers changed under the Income-tax Act, 2025, name old and new (e.g. "old section 112A") **only after opening the Act or a primary source**; never guess a new number from memory. Set `needs_review: tax` and `rules_as_of` in front matter (the layout then shows the as-at-date and "author is not a tax professional" notice; see CLAUDE.md, Professional review) and log it in `TODO.md`.
 
 ## 5. Trust signals (YMYL) — without inventing any
 

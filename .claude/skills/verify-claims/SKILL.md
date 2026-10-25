@@ -31,7 +31,7 @@ A post path, a quoted claim, or a `VERIFY` row from `TODO.md`. If none is given,
 
 ## Rules of thumb
 
-- Tax posts additionally need a professional read; this skill does not replace it. Say so in the report.
+- No professional reads the tax posts (owner decision), so this skill is the main safeguard: for flagged posts, every rule needs a primary source or must be softened. Say in the report what could not be confirmed. It is not a professional's review.
 - Quote at most a short phrase from a source; paraphrase the rest.
 - Rates and limits that change with the Budget: check the Finance Act / Income-tax Act, 2025 text, and state Tax Year and FY.
 - A circular number you cannot find in the document text is not a citation. Don't paraphrase one from a secondary page.

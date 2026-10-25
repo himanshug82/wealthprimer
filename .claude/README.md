@@ -47,4 +47,4 @@ They report; they do not edit, merge or publish. IDs (for update/delete): daily 
 
 ## Owner-only things no tool here can do
 
-Search Console (Domain property, sitemap, indexing requests, reading reports), GA4 custom-dimension registration, DNS, AdSense `ads.txt`, a professional read of tax posts, deciding anything marked "owner decision" in `TODO.md`.
+Search Console (Domain property, sitemap, indexing requests, reading reports), GA4 custom-dimension registration, DNS, AdSense `ads.txt`, deciding anything marked "owner decision" in `TODO.md`.

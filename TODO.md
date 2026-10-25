@@ -4,7 +4,7 @@ Current state (25 Oct 2026): **168 posts written and scheduled** across six
 series (Jargon 53 · FA 29 · TA 22 · MF 30 · Tax 18 · Risk 16). The cadence is
 **one post per series per day** (MF Module 4 runs every other day, by request). Scheduled through: Jargon 21 Oct · FA 23 Oct
 · TA 23 Oct · Risk 23 Oct · MF 7 Nov · **Tax held** 17 Nov → 4 Dec (18 posts,
-moved back three weeks on 25 Oct) pending its professional read. **MF Module 4 (7 posts, 26 Oct → 7 Nov, every other
+moved back three weeks on 25 Oct) held; its reason (a professional read) is gone, see Decided 26 Oct. **MF Module 4 (7 posts, 26 Oct → 7 Nov, every other
 day) was added on 25 Oct 2026, so MF is scheduled through 7 Nov (30 posts).**
 **The other written backlogs ran out on 25 Oct** (Tax runs to 4 Dec) — each series needs its next module planned and approved (`plan-module`). All posts were reviewed and every P0/P1/P2 finding
 fixed — see `_review/REVIEW-2026-09-24.md`. House style and the rules every
@@ -53,27 +53,23 @@ for how the repo works.
   (post-April-2023 slab rule — the riskiest), `what-the-fo-numbers-actually-say`
   (F&O as business income), `dividend-yield`, `record-date-and-ex-date`,
   `index-funds-vs-etfs`, `inflation-and-real-returns`, `hybrid-funds`,
-  `international-funds`. Either add `needs_review: tax` + `rules_as_of` (and
-  include them in the reviewer's read) or soften each sentence to "check the
+  `international-funds`. Either add `needs_review: tax` + `rules_as_of` or soften each sentence to "check the
   current rule". `python3 .claude/skills/write-post/scripts/lint_post.py
   _posts/*.markdown | grep needs_review` lists them.
-- **Tax series professional read** — all 18 tax posts (each now carries
-  `needs_review: tax` and `rules_as_of`; once a professional has read one,
-  add `reviewed_by` + `reviewed_on` to its front matter — see CLAUDE.md,
-  Professional review), now held at 17 Nov →
-  4 Dec (daily; moved back three weeks on 25 Oct to make room for the read —
-  the Tax hub stays noindexed until 17 Nov automatically). The rules were re-checked against primary sources where
-  reachable, but someone who files professionally should read them before
-  they publish. `_data/tax2.yml` lists the recorded disagreements. Once
-  reviewed, the tax posts can move earlier (rename the files; keep one per day
-  and check `scripts/check_posts.py`) — and restore the RELINK links below (14 markers).
+- **Tax series: schedule it (decide dates).** No professional read will happen
+  (decided 26 Oct), so the three-week hold has no reason left. All 18 posts carry
+  `needs_review: tax`, `rules_as_of` and the as-at-date/"author is not a tax
+  professional" notices, and were checked against primary text where reachable
+  (`_data/tax2.yml` lists the recorded disagreements/uncertain points). Choose new
+  dates (rename files, keep one per day, run `check_posts.py`) and then restore
+  the RELINK links below (14 markers). Hub stays noindexed until its first post.
 - **Next content:** every series except Tax has run out of written posts (MF
   runs to 7 Nov). Plan and approve the next module per series with
   `plan-module`. **R8 "Money Before Markets" is approved (25 Oct) as a new
   series and is next to plan** — emergency fund, EPF/PPF/NPS, term insurance vs
   ULIP, FDs vs debt funds, real returns, plus bonds/G-secs and REITs/InvITs. It
   needs a new slug in `_data/series.yml`, primary sources for every rule and
-  rate, and a professional read for the tax-touching posts.
+  rate, and the `needs_review` flag on any post that states a tax rule.
 
 ## Decided — 25 Oct 2026
 
@@ -85,7 +81,8 @@ for how the repo works.
   (a listed-peer table drifts toward relative-valuation verdicts).
 - **About page avatar: done** — `assets/avatar.svg` (HG monogram, brand blue),
   floated beside the opening paragraph.
-- **Tax series moved back three weeks** (see "Tax series professional read").
+- **Tax series moved back three weeks** on 25 Oct to make room for a professional read. **Superseded 26 Oct:** no read will happen; see "Tax series: schedule it".
+- **No professional review of tax posts (26 Oct 2026).** Decided by the owner. Labelled instead: `needs_review: tax` + `rules_as_of` notices, primary-source rule, `post-auditor`. See CLAUDE.md, Professional review.
 
 ## Parked — revisit later
 

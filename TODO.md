@@ -24,6 +24,8 @@ for how the repo works.
   first post is approved. Also: run `post-researcher` in discovery mode
   once, then pick topics.
 
+- **Research brief 25 Oct 2026 (discovery, `_review/research/2026-10-25.md`):** top picks: nomination rules (in force 1 Sep 2026), how an IPO application works (ASBA/UPI/T+3), contract note and trade charges; proposed new series "Your first year in the market" (7 posts). Approve via plan-module.
+
 - **GA4 content tagging — one-time setup in Google Analytics (needed for the topic chart):** every
   page now sends `content_type` (home / post / series_hub / page) and, for posts and series
   hubs, `content_series` (e.g. `mutual-funds`) and `content_category` (the series title). In GA4:

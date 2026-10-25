@@ -1,0 +1,21 @@
+{%- comment -%}
+Shown under the post header when front matter sets `needs_review: <kind>` (kinds in _data/review.yml).
+States the date the facts were checked, that the author is not the relevant professional, and whether a
+professional has actually read the post. Never claim a review that isn't recorded in `reviewed_by`/`reviewed_on`.
+{%- endcomment -%}
+{%- if page.needs_review -%}
+{%- assign rk = site.data.review[page.needs_review] -%}
+{%- if rk -%}
+<aside class="review-notice" aria-label="About the {{ rk.subject | downcase }} in this post">
+  <p><strong>{{ rk.subject }} as at {{ page.rules_as_of }}{% if page.rules_for %}, for {{ page.rules_for }}{% endif %}.</strong>
+  This post explains how the rules worked at that date. {{ rk.check }}, so check the current position before relying on anything here.</p>
+  <p><strong>The author is not a {{ rk.professional }}.</strong>
+  {%- if page.reviewed_by and page.reviewed_on %}
+  This post was reviewed by {{ page.reviewed_by }} on {{ page.reviewed_on | date: "%-d %B %Y" }}; any error that remains is the author's.
+  {%- else %}
+  This post has not yet been reviewed by one.
+  {%- endif %}
+  It is educational content, not {{ rk.advice }}. For your own situation, consult a qualified {{ rk.professional }}.</p>
+</aside>
+{%- endif -%}
+{%- endif -%}

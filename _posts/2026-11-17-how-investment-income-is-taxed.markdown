@@ -5,15 +5,13 @@ description: "Capital gains, dividends and interest are taxed under genuinely di
 image: /assets/og/how-investment-income-is-taxed.png
 date: 2026-11-17 09:00:00 +0530
 series: tax
+needs_review: tax
+rules_for: "Tax Year 2026-27 (FY 2026-27)"
+rules_as_of: "August 2026"
 ---
 
 {% assign t = site.data.tax %}
 {% assign r = t.rates %}
-
-*Rules described here apply to **{{ r.financial_year }}**. Tax rules change with each
-Budget — check anything important against the current position before acting
-on it. This is educational content, not tax advice; if the amounts matter,
-talk to someone who files professionally.*
 
 ## Why this series exists
 

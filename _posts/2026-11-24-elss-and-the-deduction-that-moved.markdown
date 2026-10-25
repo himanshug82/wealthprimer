@@ -6,13 +6,13 @@ image: /assets/og/elss-and-the-deduction-that-moved.png
 date: 2026-11-24 09:00:00 +0530
 series: tax
 term: "ELSS"
+needs_review: tax
+rules_for: "Tax Year 2026-27 (FY 2026-27)"
+rules_as_of: "August 2026"
 ---
 
 {% assign t = site.data.tax %}
 {% assign r = t.rates %}
-
-*Rules described here apply to **{{ r.financial_year }}**. Educational content, not tax
-advice.*
 
 ## The question that changed
 

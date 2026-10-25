@@ -47,7 +47,20 @@ for how the repo works.
   `noindex`. Confirm in Search Console which URL was flagged (Pages → that issue →
   example URL → URL Inspection shows the Google-selected canonical); if it isn't
   `/series/`, tell Claude the URL.
-- **Tax series professional read** — all 18 tax posts, now held at 17 Nov →
+- **Tax-touching posts already published (no `needs_review` yet; found 25 Oct):**
+  `arbitrage-funds` (whole "taxed as equity" section), `stp-and-swp` ("Tax,
+  briefly"), `what-a-mutual-fund-is` (IDCW/growth tax), `debt-funds-explained`
+  (post-April-2023 slab rule — the riskiest), `what-the-fo-numbers-actually-say`
+  (F&O as business income), `dividend-yield`, `record-date-and-ex-date`,
+  `index-funds-vs-etfs`, `inflation-and-real-returns`, `hybrid-funds`,
+  `international-funds`. Either add `needs_review: tax` + `rules_as_of` (and
+  include them in the reviewer's read) or soften each sentence to "check the
+  current rule". `python3 .claude/skills/write-post/scripts/lint_post.py
+  _posts/*.markdown | grep needs_review` lists them.
+- **Tax series professional read** — all 18 tax posts (each now carries
+  `needs_review: tax` and `rules_as_of`; once a professional has read one,
+  add `reviewed_by` + `reviewed_on` to its front matter — see CLAUDE.md,
+  Professional review), now held at 17 Nov →
   4 Dec (daily; moved back three weeks on 25 Oct to make room for the read —
   the Tax hub stays noindexed until 17 Nov automatically). The rules were re-checked against primary sources where
   reachable, but someone who files professionally should read them before

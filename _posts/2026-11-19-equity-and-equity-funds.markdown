@@ -5,15 +5,15 @@ description: "Listed shares and equity funds: the short-term and long-term rates
 image: /assets/og/equity-and-equity-funds.png
 date: 2026-11-19 09:00:00 +0530
 series: tax
+needs_review: tax
+rules_for: "Tax Year 2026-27 (FY 2026-27)"
+rules_as_of: "August 2026"
 ---
 
 {% assign t = site.data.tax %}
 {% assign r = t.rates %}
 {% assign a = t.example_lumpsum %}
 {% assign g = t.example_grandfathering %}
-
-*Rules described here apply to **{{ r.financial_year }}**. Educational content, not tax
-advice.*
 
 ## The rules in full
 

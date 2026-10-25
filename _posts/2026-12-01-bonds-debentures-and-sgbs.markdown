@@ -6,6 +6,9 @@ image: /assets/og/bonds-debentures-and-sgbs.png
 date: 2026-12-01 09:00:00 +0530
 series: tax
 term: "Bond and SGB taxation"
+needs_review: tax
+rules_for: "Tax Year 2026-27 (FY 2026-27)"
+rules_as_of: "September 2026"
 ---
 
 {% assign t3 = site.data.tax3 %}
@@ -14,10 +17,6 @@ term: "Bond and SGB taxation"
 {% assign r = site.data.tax.rates %}
 {% assign bd = site.data.jargon_m6.bond %}
 {% assign bd_gain = bd.face | minus: bd.buy_price %}
-
-*Rules described here apply to **{{ v.financial_year }}**, checked against the
-text of the Income-tax Act, 2025 and the Finance Act, 2026 in {{ v.verified_on }}.
-Educational content, not tax advice.*
 
 ## Two kinds of return, taxed separately
 

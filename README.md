@@ -124,6 +124,9 @@ Skills live in `.claude/skills/<name>/SKILL.md`. Claude loads one automatically 
 
 ---
 
+### Professional review (tax and similar)
+The author is not a tax professional, and the site says so. Any post that depends on a professional's reading (all Tax-series posts, and any post that states a tax rule) sets `needs_review: tax` and `rules_as_of: "Month YYYY"` in front matter. The layout then shows a notice under the header (rules as at that date; rules change; author is not a tax professional; not yet reviewed) and an extra closing disclaimer paragraph. When a professional really reads a post, add `reviewed_by` and `reviewed_on` together and the notice says so; never before. `check_posts.py` errors on a Tax post without the flag; `lint_post.py` warns on un-flagged posts that state a tax rule. Wording lives in `_data/review.yml`, `_includes/review-notice.html` and `_includes/disclaimer.html`; the rule is in `CLAUDE.md`. To support another profession (e.g. legal), add a key to `_data/review.yml`.
+
 ## 4. Agents (`.claude/agents/`)
 
 Agents run in a **fresh context**, so they don't inherit the author's blind spots. Ask for them by name.

@@ -6,13 +6,13 @@ description: "Where the concessional rates stop and your slab rate takes over. D
 image: /assets/og/debt-funds-gold-and-the-rest.png
 date: 2026-11-20 09:00:00 +0530
 series: tax
+needs_review: tax
+rules_for: "Tax Year 2026-27 (FY 2026-27)"
+rules_as_of: "August 2026"
 ---
 
 {% assign t = site.data.tax %}
 {% assign r = t.rates %}
-
-*Rules described here apply to **{{ r.financial_year }}**. Educational content, not tax
-advice.*
 
 ## Everything that isn't equity
 

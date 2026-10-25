@@ -1,0 +1,12 @@
+# Professional-review kinds. A post that depends on a professional's reading sets, in front matter:
+#   needs_review: tax            # a key below
+#   rules_as_of: "August 2026"   # when the rules/facts in the post were last checked against sources
+#   reviewed_by: "Name, qualification"   # ONLY when a professional really has read it (never before)
+#   reviewed_on: 2026-11-10              # ... and the date they did
+# _includes/review-notice.html (top of post) and _includes/disclaimer.html (bottom) render the notices
+# from this file. Add a kind here to support another profession (e.g. legal); then tell CLAUDE.md.
+tax:
+  subject: "Tax rules"
+  professional: "tax professional"
+  advice: "tax advice"
+  check: "Tax rules change, often with each Budget"

@@ -7,14 +7,14 @@ image: /assets/og/losses-set-off-and-harvesting.png
 date: 2026-11-22 09:00:00 +0530
 series: tax
 term: "Set-off, carry-forward and tax-loss harvesting"
+needs_review: tax
+rules_for: "Tax Year 2026-27 (FY 2026-27)"
+rules_as_of: "August 2026"
 ---
 
 {% assign t = site.data.tax %}
 {% assign r = t.rates %}
 {% assign l = t.example_loss %}
-
-*Rules described here apply to **{{ r.financial_year }}**. Educational content, not tax
-advice.*
 
 ## Losses are worth something, if you claim them
 

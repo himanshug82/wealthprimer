@@ -6,6 +6,9 @@ image: /assets/og/fo-is-business-income.png
 date: 2026-11-28 09:00:00 +0530
 series: tax
 term: "Business income (F&O turnover)"
+needs_review: tax
+rules_for: "Tax Year 2026-27 (FY 2026-27)"
+rules_as_of: "September 2026"
 ---
 
 {% assign t2 = site.data.tax2 %}
@@ -13,9 +16,6 @@ term: "Business income (F&O turnover)"
 {% assign f = t2.fno %}
 {% assign r = site.data.tax.rates %}
 {% assign sebi = site.data.fno.sources.fy25_fy26_study %}
-
-*Rules described here apply to **{{ v.financial_year }}**, verified against public
-sources in {{ v.verified_on }}. Educational content, not tax advice.*
 
 ## A different head of income altogether
 

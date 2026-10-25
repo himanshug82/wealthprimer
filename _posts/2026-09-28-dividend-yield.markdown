@@ -8,7 +8,6 @@ series: jargon
 term: "Dividend yield"
 needs_review: tax
 rules_as_of: "August 2026"
-last_modified_at: 2026-10-25
 ---
 
 {% assign listing = site.data.case_study.listing %}

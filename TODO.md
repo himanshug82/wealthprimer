@@ -52,19 +52,19 @@ for how the repo works.
   `debt-funds-explained`, `what-the-fo-numbers-actually-say`, `dividend-yield`,
   `record-date-and-ex-date`, `index-funds-vs-etfs`, `inflation-and-real-returns`,
   `hybrid-funds`, `international-funds`) now carry `needs_review: tax` +
-  `rules_as_of` and `last_modified_at: 2026-10-25`; tax sentences say
+  `rules_as_of` (no `last_modified_at`, by owner choice); tax sentences say
   "generally" / "check the current rule", and a stray old-Act section number
   (44AB) was removed. `rules_as_of` points at the Tax series' own verification
   dates (Aug/Sep 2026), not a fresh check. The linter's remaining 3 warnings
   (`how-to-backtest-honestly`, `wacc-cost-of-capital`, `capital-allocation`) are
   false positives.
-- **Tax series: schedule it (decide dates).** No professional read will happen
-  (decided 26 Oct), so the three-week hold has no reason left. All 18 posts carry
-  `needs_review: tax`, `rules_as_of` and the as-at-date/"author is not a tax
-  professional" notices, and were checked against primary text where reachable
-  (`_data/tax2.yml` lists the recorded disagreements/uncertain points). Choose new
-  dates (rename files, keep one per day, run `check_posts.py`) and then restore
-  the RELINK links below (14 markers). Hub stays noindexed until its first post.
+- **Tax series dates stay as they are (owner decision, 26 Oct 2026):** 17 Nov →
+  4 Dec, one per day. No professional read is planned, so the dates are now
+  simply the schedule, not a hold. All 18 posts carry `needs_review: tax`,
+  `rules_as_of` and the as-at-date/"author is not a tax professional"
+  notices, built from primary text where reachable (`_data/tax2.yml` lists the
+  recorded uncertain points). The RELINK links (14 markers) get restored in
+  the older posts after those dates.
 - **Next content:** every series except Tax has run out of written posts (MF
   runs to 7 Nov). Plan and approve the next module per series with
   `plan-module`. **R8 "Money Before Markets" is approved (25 Oct) as a new

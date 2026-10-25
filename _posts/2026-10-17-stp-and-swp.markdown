@@ -8,7 +8,6 @@ series: mutual-funds
 term: "STP and SWP"
 needs_review: tax
 rules_as_of: "August 2026"
-last_modified_at: 2026-10-25
 ---
 
 {% assign m = site.data.mf2 %}

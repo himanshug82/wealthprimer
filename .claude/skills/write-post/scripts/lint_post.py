@@ -274,9 +274,9 @@ def lint(path):
 
 
 def main(argv):
-    if not argv:
+    if not argv or argv[0] in ("-h", "--help"):
         print(__doc__)
-        return 2
+        return 0 if argv else 2
     fails = 0
     for p in argv:
         out = lint(p)

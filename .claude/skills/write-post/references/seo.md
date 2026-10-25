@@ -77,6 +77,7 @@ Readers still search the old labels. Put both the Tax Year and FY label ("Tax Ye
 - No fabricated reader stories, testimonials, "I made ₹X".
 - Disclaimer is rendered by the layout; don't add or reword one.
 - No broker/app/AMC rankings, referral or sponsored links unless the owner has decided on a disclosure policy.
+- If asked for authority copy ("our analysts…"): offer only what `about.markdown` documents (a solo author, not SEBI-registered, scripts and data committed in the repo) and flag the rest as an owner decision.
 - Owner decisions (flag, don't do): adding `author:` and an author URL/`sameAs` in `authors.yml`; a named "reviewed by" credit (only if true); a redirect gem.
 
 ## 6. Don't waste effort on

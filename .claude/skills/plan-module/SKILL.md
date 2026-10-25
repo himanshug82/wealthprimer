@@ -1,0 +1,43 @@
+---
+name: plan-module
+description: Plan the next module (roughly 4–8 posts) of a Wealth Primer series as a roadmap for the owner to approve, before any post is written. Use when asked "what should we write next", "plan the next module", "roadmap for <series>", or when a series' written backlog is running out. Output is a table and a TODO.md entry, never posts.
+---
+
+# Plan a module
+
+Ends at an **approval gate**. No post, data file or script is written until the user approves the roadmap; `write-post` then drafts it in date order. `CLAUDE.md` is the rulebook; `TODO.md` ("Open — needs you → Next content") is where roadmaps are recorded.
+
+## 1. Read the state (cheaply)
+
+```bash
+for s in jargon fundamental-analysis technical-analysis mutual-funds tax risk; do
+  echo "$s: $(grep -l "^series: $s" _posts/*.markdown | tail -1)  count=$(grep -l "^series: $s" _posts/*.markdown | wc -l)"; done
+grep -h "^term:" _posts/*.markdown | sort          # every owned term
+```
+
+Also read `_data/series.yml` (`planned:` and its comments), the series' section of `TODO.md`, and the titles in that series. Note what the last module said it would cover "later in this series" (`grep -rn "later in this series\|covered later\|coming up" _posts`) — those are promises the plan should keep or consciously drop.
+
+## 2. Choose topics by reader need, within the rules
+
+- Educational and mechanical only. No "best of" lists, no stock/fund picks, no do-not-target heads (`write-post/references/seo.md` §1), no topic that needs a verdict on a real company to be interesting.
+- Prefer gaps: terms readers search that no post owns (check `term:` list — **one term, one owner**), questions the last module raised, and the honest-limits posts that give the series credibility.
+- Outside the six series (R8 personal-finance track: emergency fund, EPF/PPF/NPS, insurance) is an open owner decision in `TODO.md` — propose it as an option, don't plan it as if approved.
+- Respect risk: tax and rules topics need primary sources and a professional read; say so in the plan.
+- Don't let real-company illustrations pile up: at most one real-company example per post, observables only, and note which company so the module doesn't repeat praise.
+
+## 3. Order by prerequisites
+
+Each post may link only to earlier-dated posts. Order so every prerequisite is already published or earlier in this module; a post that wants a later post's concept defines it inline and logs an owed link. Dates: one post per series per day, starting the first free day after the series' last post (house convention, `TODO.md`).
+
+## 4. Output: the roadmap table (in chat), then a TODO.md entry only if the user asks
+
+| # | Date | Working title (aim ≤ 50 chars) | Slug | Owned term / intent | Primary keyword | Prerequisite posts | Cross-series link | Data or script needed | Real company? | Risk / review needed |
+|---|---|---|---|---|---|---|---|---|---|---|
+
+Under the table: the `planned:` bump for `_data/series.yml`; new data files/scripts implied; open questions for the owner (scope, tax read, a real company's choice); anything you dropped and why. Keywords come from reasoning about reader questions, not invented volumes — say whether a SERP check was run.
+
+Checks before presenting: no duplicate owned term; every prerequisite earlier-dated; no do-not-target title; no verdict-dependent topic; every tax/rule row flagged; titles sentence case.
+
+## 5. After approval
+
+Hand off to `write-post` in **batch** mode (draft in date order, lint each, one `check_posts.py` + Jekyll build at the end, module-level audit `references/audit.md` §F). Update `TODO.md` roadmap status and `planned:` then.

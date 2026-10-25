@@ -7,10 +7,10 @@ Copy the shape of a recent post in the same series (e.g. `_posts/2026-09-03-roce
 ```yaml
 ---
 layout: post
-title: "ROCE explained: return on capital employed, with formula"   # ≤ 60 chars, sentence case
+title: "ROCE explained: return on capital employed, with formula"   # aim ≤ 50 (never > 60), keyword first, sentence case
 description: "…140–160 characters, primary keyword once, concrete promise…"
 image: /assets/og/roce.png          # generate with scripts/make_og_cards.py
-date: 2026-09-03 09:00:00 +0530     # time ≤ 09:00 +0530; matches filename
+date: 2026-09-03 09:00:00 +0530     # matches filename; time ≤ 09:00 +0530 (house convention, TODO.md)
 series: jargon                      # slug from _data/series.yml
 term: "ROCE (return on capital employed)"   # glossary posts only
 # last_modified_at: 2026-10-01      # only on material updates
@@ -34,7 +34,7 @@ Prose rupee amounts: `{% include inr.html n=db_is25.ebit %}`. Table cells with p
 
 1. **Definition** (`## What <X> means`) — one or two tight paragraphs; the 40–60-word direct answer first; define every acronym; jargon links.
 2. **Formula** (`## The formula`) — in a code block.
-3. **Worked example** (`## Worked example: <company>, FY25`) — numbered steps; as-of date stated; source linked; "for illustration only"; Desi Bites first, then at most one real company — observables only, one-year and backward-looking, no verdict.
+3. **Worked example** (`## Worked example: <company>, FY25`) — numbered steps; as-of date stated; source linked; "for illustration only"; Desi Bites first, then at most one real company (house convention, not a CLAUDE.md rule) — observables only, one-year and backward-looking, no verdict.
 4. **Common mistakes** (`## Common mistakes`) — 2–4 real misreadings, each concrete, not "don't rely on one ratio".
 5. **Takeaway** — paragraph starting exactly `**Takeaway:**`; first sentence stands alone at ≤ 280 characters; no figures crammed in; no verdict on a real company.
 
@@ -50,6 +50,10 @@ Optional, before Takeaway or after Definition:
 ```
 
 No-formula posts (biases, how finfluencers earn, reading a DRHP): replace Formula/Worked example with a sourced illustration; keep Common mistakes and Takeaway. Honest-limits sections are a feature, not a closer to apologise away.
+
+## Series hub link
+
+Link the series page once in the body, e.g. `[Jargon, Decoded]({{ '/series/jargon/' | relative_url }})` (slug from `_data/series.yml`); `post_url` can't target it. The linter looks for `/series/<slug>/`.
 
 ## Charts
 

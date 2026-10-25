@@ -32,7 +32,7 @@ Safe retitles: "What is a good P/E?" → "P/E ratio ranges: why 'good' depends o
 ## 3. On-page checklist
 
 **Title** (`title:` is also the visible H1 — never add `# ` in the body)
-- seo-tag appends " | Wealth Primer". Put the primary keyword in the first ~45 characters; aim ≤ 60 total. Existing titles run to 95 and median 63 — don't copy the long ones. No clever subtitle after a colon unless it adds a searchable phrase ("…: formula and example").
+- seo-tag appends " | Wealth Primer" (~15 characters). Put the primary keyword in the first ~45 characters; **aim ≤ 50, never > 60.** Existing titles run to 95 (median 63; 144 of 161 exceed 50) — don't copy the long ones. No clever subtitle after a colon unless it adds a searchable phrase ("…: formula and example").
 - Sentence case. No hype, no clickbait numbers.
 - Patterns: `<Term> explained: formula and example` · `How to calculate <X>: formula and worked example` · `<Concept>: what it tells you and what it can't`.
 - Year/Tax Year in a title only for rules that change yearly, and then add a refresh row to `TODO.md`.
@@ -50,7 +50,7 @@ Safe retitles: "What is a good P/E?" → "P/E ratio ranges: why 'good' depends o
 
 **Internal links** (the main lever on a 160-post site)
 - Link wherever a term first appears, plus one or two "next step" links; descriptive anchors, never "click here". Count isn't a ranking factor.
-- Every post links to its series hub once in the body, and at least one cross-series link where natural (tax → mutual funds, TA → risk).
+- Every post links to its series hub once in the body (`{{ '/series/<slug>/' | relative_url }}`), and at least one cross-series link where natural (tax → mutual funds, TA → risk).
 - Only `{% post_url %}` to posts dated on or before the post — **including when you edit an older post.** If a useful target is later-dated, don't link; log it in `TODO.md` as an owed link.
 
 **External links**: primary sources (sebi.gov.in, rbi.org.in, nseindia.com, incometaxindia.gov.in, company filings, AMFI), descriptive anchors, circular number/date in the text.
@@ -81,8 +81,8 @@ Readers still search the old labels. Put both the Tax Year and FY label ("Tax Ye
 
 ## 6. Don't waste effort on
 
-Keyword stuffing; doorway variants of the same keyword; padding to a word count (match the SERP's depth, win on correctness and "common mistakes"); hand-written JSON-LD; "In today's fast-paced world" intros; promising results.
+Keyword stuffing; doorway variants of one keyword; padding to a word count; hand-written JSON-LD; "In today's fast-paced world" intros; promising results.
 
 ## 7. Measuring
 
-GA4 only is configured. Search Console is the right tool. If the user shares exports: monthly, list queries with impressions at position 8–20, refresh those posts (then `last_modified_at`), and look for "Duplicate, Google chose different canonical" and "Crawled, not indexed" on thin glossary posts. Submit `/sitemap.xml` once. Don't report rankings or traffic you haven't seen.
+GA4 only is configured; Search Console is the right tool. If the user shares exports: monthly, list queries at position 8–20 and refresh those posts (then `last_modified_at`); look for "Duplicate, Google chose different canonical" and "Crawled, not indexed" on thin glossary posts; submit `/sitemap.xml` once. Never report rankings or traffic you haven't seen.

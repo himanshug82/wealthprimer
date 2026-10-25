@@ -189,9 +189,12 @@ n, value, rate = sip(r, "2007-01-01", "2012-01-01")
 print(f"{n} instalments, value Rs {value:,.0f}, XIRR {rate:.2f}%")
 ```
 
-<!-- GOOGLE-SHEET-TODO: CLAUDE.md asks for a SIP/XIRR Google Sheet calculator
-     (view-only, "make a copy to use"). The Python above works standalone;
-     the Sheet still needs building and linking here. -->
+Prefer a spreadsheet? The
+[SIP and XIRR calculator (Google Sheet)](https://docs.google.com/spreadsheets/d/1GhKA_QTOxRAM2_nokMzj-ouciaRpHZYwYuojFxcXSBo/edit?usp=sharing)
+reproduces the four scenarios above and works out the XIRR of any list of
+dated cash flows. It opens view-only; use File → Make a copy to change it.
+Google Sheets' `XIRR` counts a year as 365 days rather than the 365.25 used
+above, so its result can differ from the table in the second decimal place.
 
 That `if pd.isna(price): continue` is not decoration. The first scheduled
 instalment of the twenty-year run falls on 1 April 2006, before the fund's

@@ -147,9 +147,10 @@ for y in (3, 5, 7, 10):
           f"negative {100*(rc < 0).mean():4.1f}%")
 ```
 
-<!-- GOOGLE-SHEET-TODO: CLAUDE.md asks for a rolling-returns Google Sheet
-     calculator (view-only, "make a copy to use"). The Python above works
-     standalone; the Sheet still needs building and linking here. -->
+Prefer a spreadsheet? The
+[rolling returns calculator (Google Sheet)](https://docs.google.com/spreadsheets/d/1O8HKLVxA5V3rzWz1FfQ12wVqvQ0MfyvKEEK4EUTN3v4/edit?usp=sharing)
+runs the same windows on the same NAV data, and works on any daily series you
+paste in. It opens view-only; use File → Make a copy to change it.
 
 Two details that matter. `DateOffset(years=y)` handles calendar years
 correctly, including leap years — don't use a fixed number of days. And

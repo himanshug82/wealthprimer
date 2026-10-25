@@ -1,7 +1,7 @@
 # Google Sheet calculators: specs for owner approval (25 Oct 2026)
 
 Three view-only Google Sheets ("File → Make a copy to use") for the posts that
-need one (CLAUDE.md, Calculators and code). Nothing has been built or shared.
+need one (CLAUDE.md, Calculators and code). **Built 25 October 2026** (links below); not yet shared publicly.
 Building them creates Sheets in the owner's Google account. They must then be
 set to "Anyone with the link: Viewer" before a post links them, and that makes
 them public. So both steps wait for the owner's go-ahead (`build-calculator`
@@ -50,14 +50,26 @@ Common to all three:
 |---|---|
 | Purpose | Work out what a monthly SIP (systematic investment plan) became and its XIRR (extended internal rate of return), for any start and end date. A second tab takes any list of dated cash flows. |
 | Inputs | Tab "SIP": monthly amount (₹10,000), start date, end date, NAV series (same as sheet 2, pasted). Tab "Any cash flows": date and amount columns (outflows negative). |
-| Calculations | Instalment dates = 1st of each month from start while < end; price = last NAV on or before that date (`XLOOKUP … -1`); an instalment before the first NAV is skipped and counted (the post's 239-not-240 point); units = amount/price; final value = Σunits × NAV on or before the end date. XIRR = `XIRR(values, dates)` with the final value as the last positive flow. |
+| Calculations | Instalment dates = the same day each month from start, up to and including the valuation date (as `pd.date_range(..., freq="MS")` does); price = last NAV on or before that date (`XLOOKUP … -1`); an instalment before the first NAV is skipped and counted (the post's 239-not-240 point); units = amount/price; final value = Σunits × NAV on or before the end date. XIRR = `XIRR(values, dates)` with the final value as the last positive flow. |
 | Outputs | Instalments, skipped instalments, total invested, final value, XIRR; for comparison, the same total as a lump sum on the start date (its CAGR). |
-| Checks | Full 20 years (1 Apr 2006 – 31 Mar 2026): 239 instalments, ₹23,90,000 in, ₹77,80,190 out, XIRR 10.69%. Last 5 years: 60, ₹6,00,000 → ₹6,88,376, 5.44%. Jan 2007 – Jan 2012: 61, ₹6,10,000 → ₹6,09,712, −0.02%. All from `mf.yml` `sip.scenarios`. XIRR in Sheets and Python agree to about 4 decimal places; the check allows ±0.01 percentage point. |
+| Checks | Full 20 years (1 Apr 2006 – 31 Mar 2026): 239 instalments, ₹23,90,000 in, ₹77,80,190 out, XIRR 10.69%. Last 5 years: 60, ₹6,00,000 → ₹6,88,376, 5.44%. Jan 2007 – Jan 2012: 61, ₹6,10,000 → ₹6,09,712, −0.02%. All from `mf.yml` `sip.scenarios`. Sheets' XIRR uses a 365-day year and the post's Python 365.25, so they can differ by up to about 0.01 percentage point (10.68% vs 10.69% for the full 20 years); the check allows ±0.01. |
 | Notes | Say on the Read me tab that XIRR assumes every flow is reinvested at the same rate, and that the model ignores stamp duty, exit loads and tax. |
 | Post change | Replace the `GOOGLE-SHEET-TODO` comment with the link line. |
 
 ---
 
-**To build:** the owner confirms (a) create the three Sheets in their Google
-account and (b) after the Checks tabs are all TRUE, share each as "Anyone with
-the link: Viewer" and add the links to the three posts.
+## As built (25 October 2026)
+
+| Sheet | Link | Checks |
+|---|---|---|
+| Desi Bites DCF | https://docs.google.com/spreadsheets/d/1bcK0b7i_-xZKrH_MGSuW0b78CPBrN31v3LEC-ssNfro/edit | all TRUE (EV within ₹0.1 lakh: the post adds two rounded parts) |
+| Rolling returns | https://docs.google.com/spreadsheets/d/1O8HKLVxA5V3rzWz1FfQ12wVqvQ0MfyvKEEK4EUTN3v4/edit | all TRUE at 5 years; 3 years checked by hand (4,180 windows, −4.82%, 11.82%, 31.95%) |
+| SIP and XIRR | https://docs.google.com/spreadsheets/d/1GhKA_QTOxRAM2_nokMzj-ouciaRpHZYwYuojFxcXSBo/edit | all four scenarios TRUE |
+
+Differences from the spec: the NAV history is pasted as values (Sheets'
+`IMPORTDATA` needs each copy to click "Allow access"); the reverse DCF uses a
+closed-form solve instead of a bisection table; the rolling-returns checks
+cover the 5-year window automatically and list the other windows to check by
+eye. The posts link to these sheets. **Owner step before the links go live:**
+in each sheet, Share → General access → "Anyone with the link" → Viewer (the
+sharing tool available here can only share with named people).

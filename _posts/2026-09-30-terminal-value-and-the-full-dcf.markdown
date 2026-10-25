@@ -210,6 +210,12 @@ print(f"Enterprise value {ev:8.1f}")
 print(f"Value per share  {equity / SHARES:8.2f}")
 ```
 
+Prefer a spreadsheet? The
+[Desi Bites DCF calculator (Google Sheet)](https://docs.google.com/spreadsheets/d/1bcK0b7i_-xZKrH_MGSuW0b78CPBrN31v3LEC-ssNfro/edit?usp=sharing)
+has the same model, the reverse DCF and the sensitivity grid, with a checks tab
+that reproduces this post's figures. It opens view-only; use File → Make a copy
+to change the assumptions.
+
 ## Common mistakes
 
 - **Not checking what share of the value is terminal.** If terminal value is

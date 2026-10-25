@@ -61,6 +61,8 @@ Safe retitles: "What is a good P/E?" → "P/E ratio ranges: why 'good' depends o
 
 **Front-matter facts**: canonical comes from `page.url` — never set `canonical_url`. `noindex: true` works via `head.html`; use only for drafts or thin pages. Series hubs are noindexed automatically while they have no published post — never hard-code `noindex` or `sitemap: false` on a hub (Risk sat de-indexed for weeks that way). `author:` is a string matched to `_data/authors.yml`; no post sets it today.
 
+**Analytics tagging**: `_includes/analytics.html` sends `content_type`, `content_series` and `content_category` with every hit, read from the post's `series:` front matter and `_data/series.yml`. A new series needs only its `series.yml` entry; never rename a series `slug` (it is the stable key in GA4). `gtag.js` loads on first interaction (or after 10 s), so don't add anything that expects `window.gtag`'s library to be ready at page load.
+
 **Freshness**: `last_modified_at` only for substantive changes (a rule, a number, a correction) — never for typo or SEO edits; fake freshness is a spam signal. Keep as-of dates visible. Re-check rule and tax posts after the Union Budget and when SEBI/CBDT circulars land.
 
 **Language**: Indian English; en-IN only. Use search vocabulary Indians use: demat, lakh/crore, "in India", "for beginners", Nifty 50, SIP, ELSS, LTCG/STCG, NAV, TER, F&O. Hinglish/Hindi queries are real but out of scope — no Hinglish titles; a Hindi edition would be a separate project.

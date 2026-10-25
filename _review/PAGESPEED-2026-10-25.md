@@ -36,12 +36,13 @@ desktop. Desktop performance 100 everywhere. Mobile performance 92–98 (glossar
 
 ## Looked at and deliberately not changed
 
-- **Google Analytics (`gtag.js`) is the largest remaining cost** (≈180 KB, 300–600 ms of script on a
-  throttled phone; it is also the whole "unused JavaScript" and "network dependency" finding).
-  I tried loading it after the page is idle: the lab scores did not move (97→96, 94→93, 97→98,
-  within run-to-run noise), so I did **not** ship it — it adds risk to analytics for no
-  measured gain. If you want a bigger step, the option is to load GA on first interaction only;
-  that would drop the lab TBT but undercount visitors who read without scrolling or tapping.
+- **Google Analytics (`gtag.js`) is the largest remaining cost** (≈180 KB, 300–1,100 ms of script on
+  a throttled phone depending on the test machine's CPU; the live homepage scored 76–95 across
+  runs for that reason; it is also the whole "unused JavaScript" and "network dependency"
+  finding). Loading it when the page is idle did not move the lab scores (97→96, 94→93,
+  97→98: noise), so that variant was dropped. **Update, same day, owner's decision:** it now
+  loads at the first tap, click, scroll or key press, or after 10 s. Results are in the PR.
+  `mousemove` is not a trigger: Chrome sends a synthetic one ~45 ms after layout.
 - **Render-blocking CSS (≈190 ms simulated)**: one 7.7 KB gzipped file; inlining it into every page
   would cost more than it saves for repeat views.
 - **Cache lifetime of 10 minutes** on CSS/icons: GitHub Pages fixes `Cache-Control: max-age=600`

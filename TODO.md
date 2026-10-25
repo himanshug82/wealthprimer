@@ -15,6 +15,12 @@ for how the repo works.
 
 ## Open — needs you
 
+- **GA4 content tagging — one-time setup in Google Analytics (needed for the topic chart):** every
+  page now sends `content_type` (home / post / series_hub / page) and, for posts and series
+  hubs, `content_series` (e.g. `mutual-funds`) and `content_category` (the series title). In GA4:
+  Admin → Data display → Custom definitions → Create custom dimension → scope **Event**, once
+  for each of `content_series`, `content_category` (and optionally `content_type`), parameter
+  name exactly as written. Data shows 24–48 h after registering; it is not retroactive.
 - **Search Console and DNS (from the SEO audit, `_review/SEO-AUDIT-2026-10-25.md`):**
   verify a *Domain* property for wealthprimer.in (DNS TXT), submit `/sitemap.xml`,
   request indexing for `/`, `/series/` and `/series/risk/` (it was `noindex` until
@@ -60,10 +66,11 @@ for how the repo works.
 ## Parked — revisit later
 
 - **PageSpeed** (25 Oct, `_review/PAGESPEED-2026-10-25.md`): accessibility/best-practices/SEO are
-  100 on all pages and desktop performance is 100; mobile performance is 92–98 in our runs. After
-  deploy, re-run your PageSpeed link and send the numbers if mobile is still below ~90. The only
-  big remaining cost is Google Analytics; the next option is loading it on first interaction
-  (cost: undercounts visitors who never scroll or tap).
+  100 on all pages and desktop performance is 100. Google Analytics (`gtag.js`) was the one big
+  mobile cost (the homepage swung 76–95 with the test machine's CPU), so since 25 Oct it loads at
+  the visitor's first tap, click, scroll or key press, or after 10 s (see the comment in
+  `_includes/analytics.html`). Trade-off: visitors who leave within 10 s without interacting are
+  not counted. Re-run your PageSpeed link after deploy and send the numbers if mobile is below ~90.
 
 - **Newsletter** (decided "later", 25 Oct): `newsletter.action` in `_config.yml`
   is empty, so the signup box renders nothing. Mailchimp or Buttondown — three

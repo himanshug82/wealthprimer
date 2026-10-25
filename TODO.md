@@ -59,6 +59,12 @@ for how the repo works.
 
 ## Parked — revisit later
 
+- **PageSpeed** (25 Oct, `_review/PAGESPEED-2026-10-25.md`): accessibility/best-practices/SEO are
+  100 on all pages and desktop performance is 100; mobile performance is 92–98 in our runs. After
+  deploy, re-run your PageSpeed link and send the numbers if mobile is still below ~90. The only
+  big remaining cost is Google Analytics; the next option is loading it on first interaction
+  (cost: undercounts visitors who never scroll or tap).
+
 - **Newsletter** (decided "later", 25 Oct): `newsletter.action` in `_config.yml`
   is empty, so the signup box renders nothing. Mailchimp or Buttondown — three
   config keys; setup notes in `_includes/newsletter.html`.

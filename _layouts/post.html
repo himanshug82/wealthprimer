@@ -59,7 +59,7 @@ the header line; the same include renders the prev/next block after the body.
   {%- endcomment -%}
   <div class="post-content e-content" itemprop="articleBody">
     {%- capture body -%}{% include inr-tables.html html=content %}{%- endcapture -%}
-    {{ body | replace: '<p><strong>Takeaway:</strong>', '<p class="takeaway"><strong>Takeaway:</strong>' | replace: '<table', '<div class="table-wrap"><table' | replace: '</table>', '</table></div>' | replace: '<img ', '<img loading="lazy" decoding="async" ' }}
+    {{ body | replace: '<p><strong>Takeaway:</strong>', '<p class="takeaway"><strong>Takeaway:</strong>' | replace: '<table', '<div class="table-wrap"><table' | replace: '</table>', '</table></div>' | replace: '<img ', '<img loading="lazy" decoding="async" ' | replace: '<th> </th>', '<th><span class="visually-hidden">Item</span></th>' | replace: '<th></th>', '<th><span class="visually-hidden">Item</span></th>' }}
   </div>
 
   {%- comment -%}

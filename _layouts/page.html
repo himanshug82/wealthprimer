@@ -13,7 +13,7 @@ comma grouping as _layouts/post.html (the case study and methodology pages are t
 
   <div class="post-content">
     {%- capture body -%}{% include inr-tables.html html=content %}{%- endcapture -%}
-    {{ body | replace: '<table', '<div class="table-wrap"><table' | replace: '</table>', '</table></div>' }}
+    {{ body | replace: '<table', '<div class="table-wrap"><table' | replace: '</table>', '</table></div>' | replace: '<th> </th>', '<th><span class="visually-hidden">Item</span></th>' | replace: '<th></th>', '<th><span class="visually-hidden">Item</span></th>' }}
   </div>
 
 </article>

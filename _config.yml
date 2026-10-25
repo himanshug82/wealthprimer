@@ -57,6 +57,8 @@ newsletter:
 
 # --- theme ---
 theme: minima
+sass:
+  style: compressed   # main.css 42 KB -> smaller; same rules
 minima:
   skin: classic
   # show_excerpts REMOVED — it was a no-op. minima's home layout prints

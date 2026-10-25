@@ -37,7 +37,7 @@ need isn't here yet, it's probably on the [series roadmap]({{ '/series/' | relat
 {%- if l != current -%}
 {%- if current != "" %}</dl>{% endif -%}
 {%- assign current = l %}
-<h3 class="glossary-letter" id="{{ l | downcase }}">{{ l }}</h3>
+<h2 class="glossary-letter" id="{{ l | downcase }}">{{ l }}</h2>
 <dl class="glossary-list">
 {%- endif -%}
 {%- assign meta = site.data.series | where: "slug", p.series | first -%}

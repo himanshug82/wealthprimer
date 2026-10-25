@@ -1,0 +1,40 @@
+name: PR checks
+# Advisory quality gates for pull requests. Deliberately separate from pages.yml: publishing runs
+# on a daily cron and must never depend on these. Make them "required" in branch protection only
+# if you decide to.
+on:
+  pull_request:
+    branches: ["main"]
+permissions:
+  contents: read
+jobs:
+  content:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pyyaml pillow pandas numpy matplotlib requests
+      - name: Post structure (check_posts.py)
+        run: python3 scripts/check_posts.py
+      - name: Lint changed posts
+        run: |
+          files=$(git diff --name-only origin/${{ github.base_ref }}...HEAD -- '_posts/*.markdown' '_posts/*.md' | tr '\n' ' ')
+          if [ -n "$files" ]; then python3 .claude/skills/write-post/scripts/lint_post.py $files; else echo "no changed posts"; fi
+      - name: OG cards current
+        run: python3 scripts/make_og_cards.py --check
+      - name: Image dimensions
+        run: python3 scripts/add_img_dims.py --check
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+      - name: Build with scheduled posts included (catches Liquid and forward post_url errors)
+        run: bundle exec jekyll build --future -d /tmp/site

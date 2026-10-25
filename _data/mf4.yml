@@ -499,3 +499,13 @@ regulation:
     para: 14.1.3
     text: Advertisements of payouts must state, immediately below the payout figure, that the NAV will fall to the extent
       of the payout and statutory levy.
+benchmark_tri:
+  note: Regular plan vs Nifty 50 TRI over mf.yml's benchmark window; calendar-year gaps use full years only (2007 starts in
+    September, 2026 is partial).
+  index_tri_cagr: 10.32
+  fund_minus_tri_pp: -0.86
+  tri_minus_pri_pp: 1.28
+  calendar_gap_mean_2008_2015_pp: -1.35
+  calendar_gap_mean_2016_2025_pp: -0.42
+  calendar_years_negative: 18
+  calendar_years: 18

@@ -13,6 +13,7 @@ happens in one place. Nothing in jargon_m6.yml is typed by hand — re-run this.
 INPUTS (all already committed, all read-only here):
   assets/data/britannia-ohlcv-2024-04-to-2026-03.csv   Yahoo Finance BRITANNIA.NS daily
   assets/data/nifty50-price-index.csv                  Yahoo Finance ^NSEI daily close (price index)
+  assets/data/nifty50-tri.csv                          NSE Indices Nifty 50 total return index (TRI), to 30 Mar 2026
   assets/data/uti-nifty50-index-fund-nav.csv           AMFI NAV via mfapi.in (regular + direct)
   _data/case_study.yml                                 Desi Bites (fictional) model
   _data/real_company.yml                               Britannia FY25 audited results + 30 Jun 2025 price
@@ -43,6 +44,7 @@ RF = cs["dcf"]["wacc"]["risk_free_rate"]  # 6.5, the illustrative G-Sec yield th
 brit = pd.read_csv(ROOT / "assets/data/britannia-ohlcv-2024-04-to-2026-03.csv", parse_dates=["date"]).set_index("date")
 nifty = pd.read_csv(ROOT / "assets/data/nifty50-price-index.csv", parse_dates=["date"]).set_index("date")
 nav = pd.read_csv(ROOT / "assets/data/uti-nifty50-index-fund-nav.csv", parse_dates=["date"]).set_index("date")
+tri = pd.read_csv(ROOT / "assets/data/nifty50-tri.csv", parse_dates=["date"]).set_index("date")["nifty50_tri_close"]
 
 px = pd.concat([brit["close"].rename("brit"), nifty["nifty50_pri_close"].rename("nifty")], axis=1, sort=False).dropna()
 ret = px.pct_change().dropna()
@@ -116,10 +118,15 @@ common = pd.concat([fund.rename("fund"), nifty["nifty50_pri_close"].rename("idx"
 ye = common.resample("YE").last()
 yr_ret = ye.pct_change().dropna() * 100
 yr_ret = yr_ret.loc["2016":"2025"]
+common_t = pd.concat([fund.rename("fund"), tri.rename("tri")], axis=1, sort=False).dropna()
+yr_tri = (common_t.resample("YE").last().pct_change().dropna() * 100).loc["2016":"2025"]
+assert list(yr_tri.index.year) == list(yr_ret.index.year)
 alpha_years = [
-    {"year": int(i.year), "fund_pct": r2(row["fund"]), "index_pri_pct": r2(row["idx"]), "diff_pp": r2(row["fund"] - row["idx"])}
+    {"year": int(i.year), "fund_pct": r2(row["fund"]), "index_pri_pct": r2(row["idx"]), "diff_pp": r2(row["fund"] - row["idx"]),
+     "index_tri_pct": r2(yr_tri.loc[i, "tri"]), "diff_vs_tri_pp": r2(yr_tri.loc[i, "fund"] - yr_tri.loc[i, "tri"])}
     for i, row in yr_ret.iterrows()
 ]
+nifty_tri_cagr, _ = annualised(tri.loc[px.index[0]:px.index[-1]])
 alpha = {
     "risk_free_pct": RF,
     "window": f"{px.index[0].date()} to {px.index[-1].date()}",
@@ -132,6 +139,10 @@ alpha = {
     "jensen_alpha_pp": r2(jensen * 100),
     "index_fund_vs_pri_years": alpha_years,
     "index_fund_vs_pri_mean_pp": r2(float(np.mean([a["diff_pp"] for a in alpha_years]))),
+    "index_fund_vs_tri_mean_pp": r2(float(np.mean([a["diff_vs_tri_pp"] for a in alpha_years]))),
+    "index_fund_vs_tri_years_negative": int(sum(a["diff_vs_tri_pp"] < 0 for a in alpha_years)),
+    "tri_minus_pri_mean_pp": r2(float(np.mean([a["index_tri_pct"] - a["index_pri_pct"] for a in alpha_years]))),
+    "nifty_tri_cagr_pct": r2(nifty_tri_cagr * 100),
 }
 
 # ---------------------------------------------------------------- 3. tracking error / difference
@@ -140,8 +151,12 @@ for col, label in (("nav_regular_growth", "regular"), ("nav_direct_growth", "dir
     s = pd.concat([nav[col].rename("fund"), nifty["nifty50_pri_close"].rename("idx")], axis=1, sort=False).dropna()
     y = s.resample("YE").last().pct_change().dropna() * 100
     y = y.loc["2016":"2025"]
+    st = pd.concat([nav[col].rename("fund"), tri.rename("idx")], axis=1, sort=False).dropna()
+    yt = (st.resample("YE").last().pct_change().dropna() * 100).loc["2016":"2025"]
     for i, row in y.iterrows():
-        td_rows.append({"year": int(i.year), "plan": label, "fund_pct": r2(row["fund"]), "index_pri_pct": r2(row["idx"]), "tracking_difference_pp": r2(row["fund"] - row["idx"])})
+        assert r2(row["fund"]) == r2(yt.loc[i, "fund"]), (label, i)  # same fund return on either index's trading days
+        td_rows.append({"year": int(i.year), "plan": label, "fund_pct": r2(row["fund"]), "index_pri_pct": r2(row["idx"]), "tracking_difference_pp": r2(row["fund"] - row["idx"]),
+                        "index_tri_pct": r2(yt.loc[i, "idx"]), "td_vs_tri_pp": r2(yt.loc[i, "fund"] - yt.loc[i, "idx"])})
 
 reg = pd.concat([nav["nav_regular_growth"].rename("fund"), nifty["nifty50_pri_close"].rename("idx")], axis=1, sort=False).dropna()
 last3 = reg.loc["2023-04-01":"2026-03-31"]
@@ -152,7 +167,17 @@ m = last3.resample("ME").last().pct_change().dropna()
 te_monthly = (m["fund"] - m["idx"]).std() * math.sqrt(12) * 100
 td_3y_fund, _ = annualised(last3["fund"])
 td_3y_idx, _ = annualised(last3["idx"])
+reg_t = pd.concat([nav["nav_regular_growth"].rename("fund"), tri.rename("idx")], axis=1, sort=False).dropna()
+last3_t = reg_t.loc["2023-04-01":"2026-03-31"]
+dt_daily = last3_t.pct_change().dropna()
+te_daily_tri = (dt_daily["fund"] - dt_daily["idx"]).std() * math.sqrt(252) * 100
+mt = last3_t.resample("ME").last().pct_change().dropna()
+te_monthly_tri = (mt["fund"] - mt["idx"]).std() * math.sqrt(12) * 100
+td_3y_fund_t, _ = annualised(last3_t["fund"])
+td_3y_tri, _ = annualised(last3_t["idx"])
 reg_years = [r for r in td_rows if r["plan"] == "regular"]
+# the tracking-error post says "All N differences in that table are negative"
+assert all(r["td_vs_tri_pp"] < 0 for r in td_rows), [r for r in td_rows if r["td_vs_tri_pp"] >= 0]
 dir_years = [r for r in td_rows if r["plan"] == "direct"]
 tracking = {
     "window_3y": "1 Apr 2023 – 31 Mar 2026",
@@ -166,6 +191,16 @@ tracking = {
     "regular_mean_td_pp": r2(float(np.mean([r["tracking_difference_pp"] for r in reg_years]))),
     "direct_mean_td_pp": r2(float(np.mean([r["tracking_difference_pp"] for r in dir_years]))),
     "direct_minus_regular_pp": r2(float(np.mean([r["tracking_difference_pp"] for r in dir_years])) - float(np.mean([r["tracking_difference_pp"] for r in reg_years]))),
+    "window_3y_tri": f"{last3_t.index[0].day} {last3_t.index[0]:%b %Y} – {last3_t.index[-1].day} {last3_t.index[-1]:%b %Y}",
+    "tracking_error_daily_vs_tri_pct": r2(te_daily_tri),
+    "tracking_error_monthly_vs_tri_pct": r2(te_monthly_tri),
+    "fund_cagr_3y_tri_window_pct": r2(td_3y_fund_t * 100),
+    "index_tri_cagr_3y_pct": r2(td_3y_tri * 100),
+    "tracking_difference_3y_vs_tri_pp": r2((td_3y_fund_t - td_3y_tri) * 100),
+    "regular_mean_td_vs_tri_pp": r2(float(np.mean([r["td_vs_tri_pp"] for r in reg_years]))),
+    "direct_mean_td_vs_tri_pp": r2(float(np.mean([r["td_vs_tri_pp"] for r in dir_years]))),
+    "direct_minus_regular_vs_tri_pp": r2(float(np.mean([r["td_vs_tri_pp"] for r in dir_years])) - float(np.mean([r["td_vs_tri_pp"] for r in reg_years]))),
+    "years_negative_vs_tri": int(sum(r["td_vs_tri_pp"] < 0 for r in reg_years + dir_years)),
     "pri_caveat": "The benchmark here is the *price* index, which excludes dividends. A positive tracking difference against it is mostly the roughly 1–1.5% dividend yield of the fifty stocks, minus the expense ratio — not outperformance.",
 }
 

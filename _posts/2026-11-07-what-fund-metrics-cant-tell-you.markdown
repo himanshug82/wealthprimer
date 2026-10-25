@@ -43,11 +43,11 @@ This post goes through what each one throws away, using numbers from the last fe
 
 **The window.** The hybrid fund's up-capture was {{ h10.up_capture_avg }} over ten years and {{ h5.up_capture_avg }} over the last five. Same fund, same benchmark, two windows. Its capture ratio went from {{ h10.capture_ratio_avg }} to {{ h5.capture_ratio_avg }}.
 
-**The benchmark.** Against the Nifty 50 total return index, the index fund's capture was {{ ixt.up_capture_avg }} up and {{ ixt.down_capture_avg }} down. Against the price index, it was {{ ixp.up_capture_avg }} and {{ ixp.down_capture_avg }}, which looks like beating the index in both directions. The fund held the same stocks. The dividends explain the difference.
+**The benchmark.** Against the Nifty 50 total return index, the index fund's capture was {{ ixt.up_capture_avg }} up and {{ ixt.down_capture_avg }} down. Against the price index, it was {{ ixp.up_capture_avg }} and {{ ixp.down_capture_avg }}, which looks like beating the index in both directions. The fund held the same stocks. Dividends are the main reason.
 
 **The formula.** The same index fund had a Sharpe of {{ r.sharpe }} and a Sortino of {{ r.sortino }} over the same ten years. Neither is wrong. They answer different questions, and they can't be compared with each other.
 
-**The benchmark again.** The information ratio for that index fund against its own benchmark was {{ ir_ix }}. That's a cost, {{ r.active_return_pct | abs }} points a year, divided by a very small wander of {{ r.tracking_error_pct }} points. It says nothing about the fund's quality.
+**The benchmark again.** The information ratio for that index fund against its own benchmark was {{ ir_ix }}. That's mostly a cost, {{ r.active_return_pct | abs }} points a year, divided by a very small wander of {{ r.tracking_error_pct }} points. It says nothing about the fund's quality.
 
 **Who's in the table.** In a simulated world where no fund had any skill, a survivors-only table showed {{ sv.survivor_ahead_share_pct }}% of funds ahead of the benchmark. The full group of {{ sv.funds }} had {{ sv.all_ahead_share_pct }}%. Both came from identical returns.
 
@@ -58,7 +58,7 @@ None of this is an argument against measuring. It's an argument for asking, ever
 Some things don't appear in any of the numbers above.
 
 - **The manager next year.** The [manager changes post]({% post_url 2026-10-23-manager-changes-and-style-drift %}) showed how a fund can change while keeping its name. A track record belongs to whoever earned it.
-- **Costs that have no line.** The price impact of a fund's own trading is in no expense line. Our made-up busy fund lost about {{ tc.fund_b.impact_drag_pct_of_aum }}% of its assets a year to it, against about {{ tc.fund_a.impact_drag_pct_of_aum }}% for a quiet one, on an assumed impact cost.
+- **Costs that aren't itemised.** The price impact of a fund's own trading isn't itemised as an expense. Our made-up busy fund lost about {{ tc.fund_b.impact_drag_pct_of_aum }}% of its assets a year to it, against about {{ tc.fund_a.impact_drag_pct_of_aum }}% for a quiet one, on an assumed impact cost.
 - **Your own behaviour.** A fund's drawdown is a number. Sitting through it is a decision, and no table measures whether you would.
 - **Tax and your goals.** None of these metrics knows your tax position, your horizon, or what the money is for.
 

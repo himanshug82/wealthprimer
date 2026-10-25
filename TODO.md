@@ -196,6 +196,9 @@ browser — never rasterised locally.
   missing data files, unassigned Liquid roots, missing charts), then build with
   future posts. This machine's Ruby is too old; build in Docker:
   `docker run --rm -v "$PWD":/site -w /site -v wp-bundle:/usr/local/bundle ruby:3.3 bash -c "bundle install -q && bundle exec jekyll build --future"`
+  In the Claude cloud session Ruby 3.3 and the gems are already installed (but `bundle exec`
+  and `jekyll` aren't on PATH): `ruby $(gem env gemdir)/gems/jekyll-4.4.1/exe/jekyll build --future -d /tmp/site`
+  builds in ~5 seconds (`--future` includes the scheduled posts).
 - Python scripts need a venv with pandas, numpy, pyyaml, matplotlib, pillow.
   Re-running a chart script rewrites every SVG it owns with new random ids —
   revert the ones whose only diff is ids.

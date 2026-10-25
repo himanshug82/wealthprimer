@@ -15,7 +15,7 @@ term: "Survivorship bias"
 
 Survivorship bias is what happens when you study only the things that are still around, and the ones that dropped out would have changed the answer.
 
-For funds, the dropouts are the schemes that were merged into a sibling or wound up. Their track records usually vanish from the tables you see later, so a ten-year table lists the funds that made it to year ten. The weak ones aren't in it, and the average looks better than the group that started.
+For funds, the dropouts are the schemes that were merged into a sibling or wound up. In our view their track records often drop out of the tables you see later, so a ten-year table lists the funds that made it to year ten. The weak ones aren't in it, and the average looks better than the group that started.
 
 Earlier posts mentioned this in passing: the [benchmarks post]({% post_url 2026-10-02-benchmarks-and-comparing-like-with-like %}) and the [star ratings post]({% post_url 2026-10-16-why-star-ratings-mislead %}) both note that the peer group is missing its worst members. This post measures it, on a case where we know the truth. It's part of [Mutual Funds, Minus the Marketing]({{ '/series/mutual-funds/' | relative_url }}).
 
@@ -42,7 +42,7 @@ The closing rule is our assumption. Real funds are merged or closed for many rea
 | Year-end | Funds closed | Funds remaining |
 |---|---:|---:|
 {% for rv in sv.reviews -%}
-| {{ rv.month | divided_by: 12 }} | {{ rv.closed }} | {{ rv.alive_after }} |
+| Year {{ rv.month | divided_by: 12 }} | {{ rv.closed }} | {{ rv.alive_after }} |
 {% endfor %}
 
 By year {{ sv.years }}, {{ sv.survivors }} of the {{ sv.funds }} funds are left, or {{ sv.survivors_share_pct }}%.

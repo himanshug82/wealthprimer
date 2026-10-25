@@ -27,20 +27,20 @@ term: "Portfolio turnover ratio"
 
 The portfolio turnover ratio shows how much of its own size a fund bought or sold over a year. A fund that holds its stocks for years scores low. A fund that moves in and out all the time scores high.
 
-You'll find it in a fund's financial highlights and on its factsheet, and the [factsheet post]({% post_url 2026-10-11-reading-a-factsheet %}) shows where. It matters because trading isn't free. Every purchase and sale has a cost, and that cost comes out of the NAV (net asset value, the fund's price per unit) that you own a slice of. This post is part of [Mutual Funds, Minus the Marketing]({{ '/series/mutual-funds/' | relative_url }}).
+You'll find it in a fund's key statistics (the financial highlights) and on its factsheet, and the [factsheet post]({% post_url 2026-10-11-reading-a-factsheet %}) shows where. It matters because trading isn't free. Every purchase and sale has a cost, and that cost comes out of the NAV (net asset value, the fund's price per unit) that you own a slice of. This post is part of [Mutual Funds, Minus the Marketing]({{ '/series/mutual-funds/' | relative_url }}).
 
 ## The formula
 
-SEBI (the Securities and Exchange Board of India) defines it this way in its reporting format ([Master Circular for Mutual Funds]({{ mc.url }}), {{ mc.date | date: "%-d %B %Y" }}, number {{ mc.number }}, financial-highlights table in the formats annex):
+SEBI (the Securities and Exchange Board of India) defines it this way in its reporting format, where AUM is assets under management, the fund's total size ([Master Circular for Mutual Funds]({{ mc.url }}), {{ mc.date | date: "%-d %B %Y" }}, number {{ mc.number }}, Key Statistics table in the formats annex, footnote 3):
 
 ```
 Portfolio turnover = lower of (total sales, total purchases)
                      ÷ average AUM for the year × 100
 ```
 
-**AUM — assets under management** is the fund's total size; the [AUM post]({% post_url 2026-10-08-aum %}) covers how it's measured. Using the *lower* of purchases and sales is a way to strip out trading that was only a response to money coming in or going out. If investors add money, the fund buys more than it sells, and the sales side shows the churn that was a choice.
+The [AUM post]({% post_url 2026-10-08-aum %}) covers how AUM is measured. The idea behind using the *lower* of purchases and sales is to strip out trading that was only a response to money coming in or going out. If investors add money, the fund buys more than it sells, and the sales side shows the churn that was a choice.
 
-A ratio of 100% means the fund traded roughly its whole size in a year. It can also exceed 100%.
+A ratio of 100% means the fund sold, and bought, roughly its whole size in a year. It can also exceed 100%.
 
 ## What a trade costs
 
@@ -50,9 +50,9 @@ Three costs sit behind each trade, and the rules put them in different places. T
 |---|---|---|
 | Brokerage | What the broker charges | Inside the TER |
 | Transaction charges | Other costs of executing the trade | Inside the TER |
-| Market impact | Buying pushes the price up and selling pushes it down, so you pay a little worse than the screen price | No expense line anywhere; it's in the price the fund got |
+| Market impact | Buying pushes the price up and selling pushes it down, so you pay a little worse than the screen price | Not itemised as an expense; it's in the price the fund got |
 
-The TER formula in the same Master Circular, paragraph 11.2.4(a), is "base expense ratio + brokerage cost + transaction cost incurred for the purpose of execution of trade + statutory levies (including GST)", where **GST** is the goods and services tax. So the explicit charges are already in the expense ratio covered in the [expense ratio post]({% post_url 2026-09-28-expense-ratios-direct-vs-regular %}). What's left out is the third row. The [bid-ask spread post]({% post_url 2026-10-14-bid-ask-spread-and-liquidity %}) explains impact cost: it's bigger for stocks that trade thinly and bigger for large orders.
+The TER formula in the same Master Circular, paragraph 11.2.4(a), is "Base Expense Ratio (BER) + Brokerage Cost + Transaction Cost incurred for the purpose of execution of trade + Statutory levies (including GST)", where **GST** is the goods and services tax. So the explicit charges are already in the expense ratio covered in the [expense ratio post]({% post_url 2026-09-28-expense-ratios-direct-vs-regular %}). What's left out is the third row. The [bid-ask spread post]({% post_url 2026-10-14-bid-ask-spread-and-liquidity %}) explains impact cost: it's bigger for stocks that trade thinly and bigger for large orders.
 
 ## Worked example: two funds, same size
 
@@ -95,7 +95,7 @@ The scheme's offer document also has to say something about the policy: for equi
 
 - **Treating high turnover as bad and low as good, or comparing it across categories.** It's a strategy. An index fund trades mostly when its index changes or when money flows in and out, so it scores low by design. A fund that opens and closes positions every month, like the mechanism in the [arbitrage fund post]({% post_url 2026-10-19-arbitrage-funds %}), can score high by design. Compare within a category.
 - **Assuming a single year is typical.** A big inflow or a manager change can push a year's figure up. Look at several years, and read it with the [manager change post]({% post_url 2026-10-23-manager-changes-and-style-drift %}) in mind.
-- **Using the same words for different things.** The Master Circular also uses "portfolio turnover ratio" in paragraph 6.7.3, for how much a *distributor's* client money is churned (flagged when it is more than twice the industry average). That isn't a fund's ratio.
-- **Counting only what's itemised.** The brokerage is in the TER. The price impact isn't anywhere, which is why it gets missed.
+- **Using the same words for different things.** The Master Circular also uses "portfolio turnover ratio" in paragraph 6.7.3, for how much a *distributor's* client money is churned (AMCs must do extra due diligence on a distributor above twice the industry average). That isn't a fund's ratio.
+- **Counting only what's itemised.** The brokerage is in the TER. The price impact isn't itemised, which is why it gets missed.
 
 **Takeaway:** Portfolio turnover shows how much of its size a fund trades in a year, and trading has costs that only partly show up in the expense ratio. A high ratio is a strategy to understand, not a verdict, so compare it within a category.

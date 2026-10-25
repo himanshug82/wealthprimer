@@ -37,7 +37,7 @@ Down-capture = average fund return in benchmark-down months
 Capture ratio = Up-capture ÷ Down-capture
 ```
 
-"Months" is the usual choice, built from month-end NAVs (**NAV — net asset value**, a fund's price per unit). Some providers compound the returns instead of averaging them. Both are in use, and they give different answers on the same data. We use the simple average and show the compounded version once, further down.
+"Months" is the usual choice, built from month-end NAVs (**NAV — net asset value**, a fund's price per unit). Another common version takes the annualised compounded return of the up months (and of the down months), for fund and benchmark, instead of the simple average. The two give different answers on the same data. We use the simple average and show the compounded version once, further down.
 
 ## Worked example: a hybrid fund and an index fund, ten years
 
@@ -64,7 +64,7 @@ The steps for each fund:
 
 The index fund is close to 100 in both directions. It can't do much else: it holds the same stocks and pays its costs every month, so it keeps a little less than all of the gains and takes a little more than all of the losses.
 
-The hybrid fund keeps {{ h.up_capture_avg }}% of the gains and takes {{ h.down_capture_avg }}% of the losses. A fund holding part of its money outside Nifty 50 stocks will show numbers below 100 in both directions almost by construction. This table can't separate that from anything the manager did. It also isn't a verdict: the [hybrid funds post]({% post_url 2026-10-18-hybrid-funds %}) covers what the category holds.
+The hybrid fund keeps {{ h.up_capture_avg }}% of the gains and takes {{ h.down_capture_avg }}% of the losses. A fund holding part of its money outside Nifty 50 stocks will tend to show numbers below 100 in both directions. This table can't separate that from anything the manager did. It also isn't a verdict: the [hybrid funds post]({% post_url 2026-10-18-hybrid-funds %}) covers what the category holds.
 
 Note the yardstick, too. The Nifty 50 TRI is not this hybrid fund's own benchmark. We use it for both funds to hold the ruler constant, so the numbers describe behaviour relative to large-company equity, not performance against the fund's mandate.
 
@@ -91,13 +91,13 @@ The answer depends on three choices. Here is the hybrid fund, and the index fund
 | Index fund | Nifty 50 TRI | 10 years | {{ ix.up_capture_avg }} | {{ ix.down_capture_avg }} |
 | Index fund | Nifty 50 **price** index | 10 years | {{ ixp.up_capture_avg }} | {{ ixp.down_capture_avg }} |
 
-Three things to read off it.
+The price index series is from Yahoo Finance and the TRI from NSE Indices, for the same dates. Three things to read off it.
 
 **The window matters.** The hybrid fund's up-capture is {{ h.up_capture_avg }} over ten years and {{ h5.up_capture_avg }} over the last five. Its down-capture hardly moves ({{ h.down_capture_avg }} against {{ h5.down_capture_avg }}). The ratio is {{ h.capture_ratio_avg }} in one window and {{ h5.capture_ratio_avg }} in the other.
 
-**The benchmark must include dividends if the fund does.** A fund's NAV includes the dividends its stocks pay. The price index leaves them out. Against the price index, the index fund shows {{ ixp.up_capture_avg }} up and {{ ixp.down_capture_avg }} down, which reads like a fund that beat its index in both directions. It didn't: the fund holds the same stocks, and the dividends are the whole difference. The [benchmarks post]({% post_url 2026-10-02-benchmarks-and-comparing-like-with-like %}) calls this comparing like with like.
+**The benchmark must include dividends if the fund does.** A fund's NAV includes the dividends its stocks pay. The price index leaves them out. Against the price index, the index fund shows {{ ixp.up_capture_avg }} up and {{ ixp.down_capture_avg }} down, which reads like a fund that beat its index in both directions. It didn't: the fund holds the same stocks, and dividends are the main difference. The [benchmarks post]({% post_url 2026-10-02-benchmarks-and-comparing-like-with-like %}) calls this comparing like with like.
 
-**The formula matters.** For the hybrid fund over ten years, compounding the up and down months instead of averaging them gives {{ h.up_capture_comp }} up and {{ h.down_capture_comp }} down, against {{ h.up_capture_avg }} and {{ h.down_capture_avg }}. Same data, two standard definitions.
+**The formula matters.** For the hybrid fund over ten years, taking the annualised compounded return of the up months, and of the down months, gives {{ h.up_capture_comp }} up and {{ h.down_capture_comp }} down, against {{ h.up_capture_avg }} and {{ h.down_capture_avg }}. Same data, two standard definitions.
 
 ## Doing it in Python
 

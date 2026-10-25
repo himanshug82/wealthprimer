@@ -29,9 +29,9 @@ A fund usually offers two kinds of option. In the **growth option**, nothing is 
 The [Master Circular for Mutual Funds]({{ mc.url }}) from SEBI (the Securities and Exchange Board of India), dated {{ mc.date | date: "%-d %B %Y" }} (number {{ mc.number }}), sets the main points in chapter 12.
 
 - **Names (12.1).** The options are called "Payout of Income Distribution cum capital withdrawal option", "Reinvestment of Income Distribution cum capital withdrawal option" and "Transfer of Income Distribution cum capital withdrawal plan".
-- **Capital (12.2, 12.3).** Offer documents must say that amounts can be distributed out of investors' capital (the *equalisation reserve*), and the account statement must separate income distribution (NAV appreciation) from capital distribution.
+- **Capital (12.2, 12.3).** Offer documents must say that amounts can be distributed out of investors' capital (the *equalisation reserve*, which the circular describes as the part of the sale price that represents realised gains), and the account statement must separate income distribution (NAV appreciation) from capital distribution.
 - **Not assured (12.5.1(a)).** The trustees decide the amount and the record date, and the payout is made "subject to availability of distributable surplus".
-- **NAV falls (12.5.1(b), (e)).** The NAV is adjusted at close of business on the record date, and the notice must state that the NAV will fall by the payout and statutory levy. Advertisements must say the same (14.1.3).
+- **NAV falls (12.5.1(b), (e), for unlisted schemes).** The NAV is adjusted at close of business on the record date, and the notice must state that the NAV will fall by the payout and statutory levy. Paragraph 12.5.2 relaxes the notice for schemes that pay up to monthly. Advertisements of payouts must say the same (14.1.3).
 - **Timing (12.4).** Payment is due within {{ reg.idcw_payment.days }} working days of the record date.
 
 These are the rules as of 20 March 2026. Check the current text before relying on any detail.
@@ -48,13 +48,13 @@ This example is made up for illustration. A fund's NAV is ₹{{ e.nav_before }},
 | Cash received | | ₹{{ e.cash_received }} |
 | **Total** | **₹{{ e.value_before }}** | **₹{{ e.value_after_nav | plus: e.cash_received }}** |
 
-Nothing was created. The payout moved ₹{% include inr.html n=e.cash_received %} from the fund to you, and the NAV fell to match. If you chose the *reinvestment* option, that cash would buy {{ e.reinvest_new_units }} new units at ₹{{ e.nav_after }}, giving {{ e.reinvest_total_units }} units worth ₹{% include inr.html n=e.reinvest_value %}: the same value as before the payout.
+Nothing was created. The payout moved ₹{% include inr.html n=e.cash_received %} from the fund to you, and the NAV fell to match. If you chose the *reinvestment* option, that cash would buy {{ e.reinvest_new_units }} new units at ₹{{ e.nav_after }}, giving {% include inr.html n=e.reinvest_total_units %} units worth ₹{% include inr.html n=e.reinvest_value %}: the same value as before the payout.
 
 Now suppose someone bought {% include inr.html n=e.units %} units at ₹{{ e.nav_before }} the day before the record date. They'd get the same ₹{% include inr.html n=e.cash_received %} and see the same ₹{{ e.nav_after }} NAV. They earned nothing, and part of their own money came back to them labelled as a distribution. That's the "capital withdrawal" in the name.
 
-### A real payout, in an ETF
+### A likely payout, in an ETF
 
-An exchange-traded fund (**ETF**) isn't a growth plan, and shows the same mechanics. On {{ etf.ex_date | date: "%-d %B %Y" }}, the UTI (Unit Trust of India) Nifty 50 ETF's NAV fell from ₹{% include inr.html n=etf_b %} to ₹{% include inr.html n=etf_a %}, which was {{ etf.nav_gap_vs_index_pct | abs }} percentage points behind the Nifty 50's move that day. We estimate the payout at about ₹{{ etf.estimated_payout_per_unit }} per unit. That figure is our estimate from the gap, not an amount read from the fund's notice. It's the same series used in the [index funds vs ETFs post]({% post_url 2026-10-13-index-funds-vs-etfs %}).
+An exchange-traded fund (**ETF**) isn't a growth plan, and appears to show the same mechanics. On {{ etf.ex_date | date: "%-d %B %Y" }}, the UTI (Unit Trust of India) Nifty 50 ETF's NAV fell from ₹{% include inr.html n=etf_b %} to ₹{% include inr.html n=etf_a %}, which was {{ etf.nav_gap_vs_index_pct | abs }} percentage points behind the Nifty 50's move that day. We estimate the payout at about ₹{{ etf.estimated_payout_per_unit }} per unit. That figure is our estimate from the gap, not an amount read from the fund's notice. It's the same series used in the [index funds vs ETFs post]({% post_url 2026-10-13-index-funds-vs-etfs %}).
 
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>

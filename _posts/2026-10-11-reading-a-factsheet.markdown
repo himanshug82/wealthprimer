@@ -63,8 +63,8 @@ if you might need the money early.
   to resemble an index, at a considerably higher fee.
 - **Portfolio turnover.** How much was traded. High turnover means more
   trading costs: brokerage and transaction charges are inside the expense
-  ratio, but the price impact of the fund's own trading is not an expense line
-  anywhere. A later post in this series covers the ratio in full.
+  ratio, but the price impact of the fund's own trading isn't itemised as an
+  expense. A later post in this series covers the ratio in full.
 
 **The overlap check** is worth doing once: if you own four large-cap funds,
 compare their top-10 lists. Owning the same twelve companies four times over

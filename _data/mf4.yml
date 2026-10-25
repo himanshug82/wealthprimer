@@ -452,7 +452,7 @@ regulation:
     read: 'Full text downloaded from sebi.gov.in and read on 25 October 2026. It applies alongside the SEBI (Mutual Funds)
       Regulations, 2026, in force from 1 April 2026. Later circulars may amend it: check the current text.'
   turnover_definition:
-    para: Formats annex, financial-highlights table, note 3
+    para: Formats annex, Key Statistics table, note 3
     text: Portfolio turnover = lower of sales or purchases divided by the average AuM for the year or period.
   turnover_disclosure:
     para: Scheme Information Document format, investment strategy section

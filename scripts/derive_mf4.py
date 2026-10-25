@@ -423,7 +423,7 @@ MC = {
 }
 out["regulation"] = {
     "master_circular": MC,
-    "turnover_definition": {"para": "Formats annex, financial-highlights table, note 3",
+    "turnover_definition": {"para": "Formats annex, Key Statistics table, note 3",
                             "text": "Portfolio turnover = lower of sales or purchases divided by the average AuM for the year or period."},
     "turnover_disclosure": {"para": "Scheme Information Document format, investment strategy section",
                             "text": "Equity-oriented schemes must disclose a portfolio turnover policy and, where significant, the probable effect of their strategy on turnover, including higher brokerage and transaction costs."},

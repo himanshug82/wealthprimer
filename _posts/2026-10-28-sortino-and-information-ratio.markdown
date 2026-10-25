@@ -98,7 +98,7 @@ It only makes sense with the right benchmark, and for a fund that is trying to d
 | Tracking error | {{ ix.tracking_error_pct }}% | {{ hy.tracking_error_pct }}% |
 | **Information ratio** | **{{ ix.information_ratio }}** | **{{ hy.information_ratio }}** |
 
-**The index fund.** Its benchmark is the Nifty 50 TRI, from [NSE Indices]({{ src.tri.url }}). It trails by {{ ix.active_return_pct | abs }} points a year, which is the cost of running the fund, and it wanders from the index by only {{ ix.tracking_error_pct }} points. Dividing a small gap by an even smaller wander gives {{ ir_ix }}, a dramatic number that says nothing about skill. Nobody was trying to beat the index. It's the tracking difference divided by the tracking error, and nothing else.
+**The index fund.** Its benchmark is the Nifty 50 TRI, from [NSE Indices]({{ src.tri.url }}). It trails by {{ ix.active_return_pct | abs }} points a year, which is mostly the cost of running the fund (the tracking difference), and it wanders from the index by only {{ ix.tracking_error_pct }} points. Dividing a small gap by an even smaller wander gives {{ ir_ix }}, a dramatic number that says nothing about skill. Nobody was trying to beat the index. It's the tracking difference divided by the tracking error, and nothing else.
 
 **The hybrid fund.** The Nifty 50 TRI is not its benchmark, and the fund was never trying to match it. The active return is {{ hy.active_return_pct }} points and the tracking error is {{ hy.tracking_error_pct }} points, so the ratio is {{ hy.information_ratio }}. That reads as "matched the index while wandering a long way from it", and it describes nothing useful. Use the index the fund's own documents name, or don't use the ratio.
 

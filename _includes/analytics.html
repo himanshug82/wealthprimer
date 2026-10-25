@@ -17,14 +17,55 @@ disclosure on there in the same commit.
 {%- endcomment -%}
 {%- if jekyll.environment == 'production' -%}
 {%- if site.google_analytics and site.google_analytics != '' -%}
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+{%- comment -%}
+  Content tagging: every hit carries content_type (home / post / series_hub / page) and, for a post
+  or series hub, content_series (the series slug, stable) and content_category (its display title).
+  To use them in GA4 reports, register two EVENT-scoped custom dimensions in Admin > Data display >
+  Custom definitions, with exactly these parameter names: content_series, content_category (and
+  content_type if wanted). Not retroactive; reports show them 24-48 h after registration.
+{%- endcomment -%}
+{%- assign _series_slug = page.series | default: page.series_slug -%}
+{%- if page.url == '/' -%}{%- assign _ctype = 'home' -%}
+{%- elsif page.layout == 'post' -%}{%- assign _ctype = 'post' -%}
+{%- elsif page.layout == 'series' -%}{%- assign _ctype = 'series_hub' -%}
+{%- else -%}{%- assign _ctype = 'page' -%}{%- endif -%}
+{%- if _series_slug -%}{%- assign _series_meta = site.data.series | where: "slug", _series_slug | first -%}{%- endif -%}
 <script>
+  /* gtag.js is ~180 KB of JavaScript (0.3-1.1 s of main-thread work on a throttled phone, the main
+     reason the homepage's mobile PageSpeed score swings between 76 and 95). So the library is only
+     fetched at the visitor's first tap, click, scroll or key press, or after 10 s as a
+     fallback for someone who just reads. The inline gtag() calls below queue in dataLayer in the
+     meantime and are sent when the library arrives, so the pageview and the custom events from
+     that visit are not lost. Trade-off: a visitor who leaves within 10 s without any interaction is
+     not counted, and a click on an outbound link that is the visitor's very first interaction can
+     navigate away before its event is sent. (mousemove is deliberately not a trigger: Chrome fires a
+     synthetic one ~45 ms after layout whenever a pointer rests over the page.) Revert: replace this block with the single
+     <script async src="https://www.googletagmanager.com/gtag/js?id=..."> tag. */
+  (function () {
+    var loaded = false, events = ['pointerdown', 'keydown', 'scroll', 'touchstart'];
+    function load() {
+      if (loaded) return;
+      loaded = true;
+      events.forEach(function (t) { removeEventListener(t, load); });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}';
+      document.head.appendChild(s);
+    }
+    events.forEach(function (t) { addEventListener(t, load, { once: true, passive: true }); });
+    setTimeout(load, 10000);
+  })();
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', '{{ site.google_analytics }}', {
     allow_google_signals: false,
-    allow_ad_personalization_signals: false
+    allow_ad_personalization_signals: false,
+    content_type: {{ _ctype | jsonify }}
+    {%- if _series_meta -%},
+    content_series: {{ _series_meta.slug | jsonify }},
+    content_category: {{ _series_meta.title | jsonify }}
+    {%- endif %}
   });
 </script>
 <script>

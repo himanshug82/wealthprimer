@@ -7,7 +7,8 @@ sources:
   label: AMFI NAV history via mfapi.in
   api: https://api.mfapi.in/mf/SCHEME_CODE
   end: '2026-03-31'
-  lag_note: Every NAV and exchange-rate series ends 31 March 2026; the first Module 3 post publishes 18 October 2026.
+  lag_note: Every NAV series ends 31 March 2026 and the exchange rate 30 March 2026; the first Module 3 post publishes 18
+    October 2026.
   arbitrage:
     name: UTI Arbitrage Fund
     regular_code: 104075
@@ -47,11 +48,12 @@ sources:
     regular_code: 100814
     csv: /assets/data/uti-overnight-fund-nav.csv
   fx:
-    name: Rupees per US dollar (noon buying rate, New York)
-    source: Federal Reserve Board H.10 release, series DEXINUS, via FRED
-    url: https://fred.stlouisfed.org/series/DEXINUS
-    csv: /assets/data/usd-inr-fred-dexinus.csv
-    note: Close to, but not identical with, the RBI/FBIL reference rate for the same day.
+    name: Rupees per US dollar, reference rate
+    source: RBI reference rate to 9 July 2018, FBIL reference rate from 10 July 2018
+    url: https://www.fbil.org.in/
+    rbi_url: https://www.rbi.org.in/scripts/ReferenceRateArchive.aspx
+    csv: /assets/data/usd-inr-reference-rate.csv
+    note: A year-end rate is the last reference rate published on or before 31 March.
 hybrid:
   windows:
   - key: cy2008
@@ -205,67 +207,67 @@ arbitrage:
 international:
   fy_rows:
   - fy: FY 2016-17
-    start: 66.25
-    end: 64.85
-    change_pct: -2.11
+    start: 66.33
+    end: 64.84
+    change_pct: -2.25
   - fy: FY 2017-18
-    start: 64.85
-    end: 65.11
-    change_pct: 0.4
+    start: 64.84
+    end: 65.04
+    change_pct: 0.31
   - fy: FY 2018-19
-    start: 65.11
-    end: 69.16
-    change_pct: 6.22
+    start: 65.04
+    end: 69.17
+    change_pct: 6.35
   - fy: FY 2019-20
-    start: 69.16
+    start: 69.17
     end: 75.39
-    change_pct: 9.01
+    change_pct: 8.99
   - fy: FY 2020-21
     start: 75.39
-    end: 73.14
-    change_pct: -2.98
+    end: 73.5
+    change_pct: -2.51
   - fy: FY 2021-22
-    start: 73.14
-    end: 75.87
-    change_pct: 3.73
+    start: 73.5
+    end: 75.81
+    change_pct: 3.14
   - fy: FY 2022-23
-    start: 75.87
-    end: 82.19
-    change_pct: 8.33
+    start: 75.81
+    end: 82.22
+    change_pct: 8.46
   - fy: FY 2023-24
-    start: 82.19
-    end: 83.34
+    start: 82.22
+    end: 83.37
     change_pct: 1.4
   - fy: FY 2024-25
-    start: 83.34
-    end: 85.43
-    change_pct: 2.51
+    start: 83.37
+    end: 85.58
+    change_pct: 2.65
   - fy: FY 2025-26
-    start: 85.43
-    end: 93.83
-    change_pct: 9.83
+    start: 85.58
+    end: 94.65
+    change_pct: 10.6
   years: 10
   years_rupee_weakened: 8
   years_rupee_strengthened: 2
-  cagr_10y_pct: 3.54
+  cagr_10y_pct: 3.62
   usd_return_pct: 10
-  fy26_rupee_return_pct: 20.81
-  fy21_rupee_return_pct: 6.72
+  fy26_rupee_return_pct: 21.66
+  fy21_rupee_return_pct: 7.24
   fy21:
     fy: FY 2020-21
     start: 75.39
-    end: 73.14
-    change_pct: -2.98
+    end: 73.5
+    change_pct: -2.51
   fy26:
     fy: FY 2025-26
-    start: 85.43
-    end: 93.83
-    change_pct: 9.83
+    start: 85.58
+    end: 94.65
+    change_pct: 10.6
   walk:
     inr: 100000
-    usd: 1170.55
-    usd_end: 1287.6
-    inr_end: 120816
+    usd: 1168.5
+    usd_end: 1285.35
+    inr_end: 121658
 nfo:
   first_nav_date: '2021-07-16'
   first_navs:

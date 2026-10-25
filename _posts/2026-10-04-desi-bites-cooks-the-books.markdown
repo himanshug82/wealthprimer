@@ -184,6 +184,10 @@ reading quarters.
 - **Thinking this only happens at small companies.** Size changes the
   zeroes, not the techniques.
 
+## Sources
+
+- [Indian Accounting Standards (Ind AS), Ministry of Corporate Affairs](https://www.mca.gov.in/MinistryV2/indianaccountingstandards.html): the text of the standards this post names (Ind AS 115, 16, 24 and 38). Also: [ICAI's compendium of Ind AS](https://icai.org/post/15642).
+
 **Takeaway:** A few defensible-looking tricks can turn a good year into a
 spectacular one on paper while operating cash barely moves — and that gap is
 the tell. OCF/PAT, debtor days and the related-party note catch what the P&L

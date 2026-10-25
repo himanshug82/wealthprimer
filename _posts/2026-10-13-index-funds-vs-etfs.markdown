@@ -188,6 +188,11 @@ Not a recommendation — a checklist of which *frictions* apply to you:
   but the index can be anything from the Nifty 50 to a narrow sector or theme.
   Read the scheme document.
 
+## Sources
+
+- [SEBI Master Circular for Mutual Funds (20 March 2026)](https://www.sebi.gov.in/legal/master-circulars/mar-2026/master-circular-for-mutual-funds_100491.html): SEBI's rules on index funds and ETFs, including tracking error and the indicative NAV.
+- [AMFI, net asset value data](https://www.amfiindia.com/net-asset-value): the NAV data used in the comparison.
+
 **Takeaway:** An index fund and an ETF on the same index own the same stocks;
 the difference is that one sells you units at NAV and the other lets you trade
 them at a price. Over ten years the ETF's lower cost showed up as about a

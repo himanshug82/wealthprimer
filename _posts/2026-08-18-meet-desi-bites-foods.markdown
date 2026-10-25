@@ -64,6 +64,11 @@ statement — each one using Desi Bites as the example. After that, we get into
 the ratios themselves: profitability, efficiency, leverage, cash flow
 quality, and eventually valuation.
 
+## Sources
+
+- [NSE corporate filings and actions](https://www.nseindia.com/companies-listing/corporate-filings-actions): where a real listed company's results, annual report and shareholding pattern are filed.
+- [BSE corporate announcements](https://www.bseindia.com/corporates/ann.html): the same filings on the other exchange.
+
 **Takeaway:** you don't need to know twenty terms to start understanding a
 company's financials — you need to know one term at a time, applied to one
 company you already understand. That's the whole idea here.

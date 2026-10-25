@@ -143,6 +143,12 @@ come back to it only once.
 - **Letting the tax break choose the product.** A 30% saving once doesn't
   redeem fifteen years in something you didn't want.
 
+## Sources
+
+- [Income-tax Act, 2025 (a copy hosted by ICAI)](https://resource.cdn.icai.org/87647dtc-aps2139-inceome-tax-act-2025.pdf): the Act itself.
+- [Finance Act, 2026, Gazette of India](https://egazette.gov.in/WriteReadData/2026/271439.pdf): the Finance Act that made the 2026 changes.
+- [Memorandum explaining the provisions of the Finance Bill, 2026](https://www.indiabudget.gov.in/doc/memo.pdf): the government's explanation of those changes.
+
 **Takeaway:** The ₹1.5 lakh deduction still exists, but only in the old
 regime — and since the new regime is the default, tax-saving investments now
 help only if you've actively chosen the system where they count. ELSS remains

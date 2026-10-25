@@ -111,6 +111,10 @@ scales) is on the [case study page]({{ '/case-study/' | relative_url }}).
   shaky trend — that's why the case study page shows three years, and we
   compare prior years where it matters.
 
+## Sources
+
+- [Indian Accounting Standards (Ind AS), Ministry of Corporate Affairs](https://www.mca.gov.in/MinistryV2/indianaccountingstandards.html): the full text of Ind AS 1, which governs how financial statements are presented. Also: [ICAI's compendium of Ind AS](https://icai.org/post/15642).
+
 **Takeaway:** an income statement is a waterfall from revenue down to profit,
 and every subtraction along the way answers a different question — reading
 only the top line (revenue) or the bottom line (PAT) skips the story of where

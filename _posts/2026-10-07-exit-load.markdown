@@ -121,6 +121,10 @@ The three you've had for over a year are free. The eleven newer ones each cost
   [expense ratio post]({% post_url 2026-09-28-expense-ratios-direct-vs-regular %})
   covers the first.
 
+## Sources
+
+- [SEBI Master Circular for Mutual Funds (20 March 2026)](https://www.sebi.gov.in/legal/master-circulars/mar-2026/master-circular-for-mutual-funds_100491.html): the regulator's text on exit loads; see the paragraphs on exit load.
+
 **Takeaway:** an exit load is a percentage — typically 1% within a year —
 deducted from the redemption value of units sold early, assessed purchase by
 purchase. That lot-by-lot rule is why a fourteen-month SIP redeemed at once

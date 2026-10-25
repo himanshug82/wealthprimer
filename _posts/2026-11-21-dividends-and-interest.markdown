@@ -145,6 +145,12 @@ properly.
 - **Assuming small dividends escape tax.** Below the TDS threshold means
   nothing was *deducted*, not that nothing is *taxable*.
 
+## Sources
+
+- [Income-tax Act, 2025 (a copy hosted by ICAI)](https://resource.cdn.icai.org/87647dtc-aps2139-inceome-tax-act-2025.pdf): the Act itself.
+- [Finance Act, 2026, Gazette of India](https://egazette.gov.in/WriteReadData/2026/271439.pdf): the Finance Act that made the 2026 changes.
+- [Memorandum explaining the provisions of the Finance Bill, 2026](https://www.indiabudget.gov.in/doc/memo.pdf): the government's explanation of those changes.
+
 **Takeaway:** Dividends and interest are simply added to your income and
 taxed at your slab rate — which, for anyone in the top slab, is a heavier
 charge than long-term capital gains on the same shares. TDS deducted along

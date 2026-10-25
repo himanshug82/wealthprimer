@@ -127,6 +127,10 @@ page]({{ '/case-study/' | relative_url }}).
   company borrowing or raising it. Operating cash flow is the number that
   reflects the business itself.
 
+## Sources
+
+- [Indian Accounting Standards (Ind AS), Ministry of Corporate Affairs](https://www.mca.gov.in/MinistryV2/indianaccountingstandards.html): the full text of Ind AS 7, on statements of cash flows. Also: [ICAI's compendium of Ind AS](https://icai.org/post/15642).
+
 **Takeaway:** profit is an opinion, cash is a fact — the cash flow statement
 is where you check whether a company's paper profit actually showed up as
 money in the bank.

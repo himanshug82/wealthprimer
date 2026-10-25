@@ -159,6 +159,12 @@ on the sums involved, and on many portfolios it simply isn't.
 - **Forgetting the carried-forward loss when you finally have gains.** It
   needs to be tracked across years and reported each year to stay alive.
 
+## Sources
+
+- [Income-tax Act, 2025 (a copy hosted by ICAI)](https://resource.cdn.icai.org/87647dtc-aps2139-inceome-tax-act-2025.pdf): the Act itself.
+- [Finance Act, 2026, Gazette of India](https://egazette.gov.in/WriteReadData/2026/271439.pdf): the Finance Act that made the 2026 changes.
+- [Memorandum explaining the provisions of the Finance Bill, 2026](https://www.indiabudget.gov.in/doc/memo.pdf): the government's explanation of those changes.
+
 **Takeaway:** A capital loss is worth real money — short-term losses offset
 any capital gain, long-term losses only offset long-term gains, and whatever
 is unused carries forward eight years *provided you file on time*. On the

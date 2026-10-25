@@ -141,6 +141,10 @@ in, or paste them from the disclosure file.
 - **Checking once.** Portfolios drift; overlap that was 40% at purchase can be
   65% two years later. Re-run it when factsheets refresh.
 
+## Sources
+
+- [SEBI Master Circular for Mutual Funds (20 March 2026)](https://www.sebi.gov.in/legal/master-circulars/mar-2026/master-circular-for-mutual-funds_100491.html): SEBI's rules on portfolio disclosure, which is where fund holdings come from.
+
 **Takeaway:** Portfolio overlap is the sum, over every shared holding, of the
 smaller of the two funds' weights — and for two large-cap funds it can easily
 exceed half, because the mandate leaves few ways to build one. Two funds with

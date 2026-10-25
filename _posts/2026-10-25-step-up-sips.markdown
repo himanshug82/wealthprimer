@@ -185,6 +185,10 @@ label is the marketing, and the mechanism is what happens to your money.
   shortest time — the same [sequence problem]({% post_url 2026-10-13-sequence-of-returns-risk %})
   withdrawals face, in reverse.
 
+## Sources
+
+- [AMFI, net asset value data](https://www.amfiindia.com/net-asset-value): the NAV history used in the worked example.
+
 **Takeaway:** A step-up SIP builds a bigger corpus because it invests more
 money, not because it earns a better return — on real index-fund data its
 XIRR was sometimes higher and sometimes lower than a flat SIP's. It's the

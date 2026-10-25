@@ -179,6 +179,11 @@ hard part was never the code.
   accurate. Padding the rate to feel prudent is just a different way of
   making the number up.
 
+## Sources
+
+- [RBI, Government Securities Market in India: a primer (FAQ)](https://www.rbi.org.in/commonperson/English/Scripts/FAQs.aspx?Id=711): how government securities work; the post's 6.5% bond is an illustration.
+- [RBI, Government Stock auction results (19 June 2026)](https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=62972): one real set of auction yields, for comparison with that illustration.
+
 **Takeaway:** A rupee tomorrow is worth less than a rupee today, and
 discounting is the arithmetic that prices the wait — divide each future cash
 flow by (1 + r)ⁿ and add them up. The formula is easy; the discount rate is

@@ -179,6 +179,10 @@ is built on.
   price is and you nudge growth rates until the model agrees with it, you
   haven't valued anything. You've decorated a number you already had.
 
+## Sources
+
+- [Britannia Industries, audited consolidated results for FY25](https://media.britannia.co.in/Audited_Consolidated_Financial_Results_31_03_2025_74a7c03628.pdf): the filing behind the Britannia FY25 figures that the earlier free cash flow post, referred to here, used.
+
 **Takeaway:** Free cash flow to the firm is operating profit after notional
 tax, plus depreciation, minus capex and the cash growth swallows into working
 capital — the money genuinely available to everyone who funded the business.

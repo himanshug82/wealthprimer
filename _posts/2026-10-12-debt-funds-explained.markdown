@@ -211,6 +211,12 @@ the series used here were spliced.
   "specified" has changed, so check the current rule — see the
   tax series post on debt funds<!-- RELINK 2026-10-30-debt-funds-gold-and-the-rest -->.
 
+## Sources
+
+- [RBI, Government Securities Market in India: a primer (FAQ)](https://www.rbi.org.in/commonperson/English/Scripts/FAQs.aspx?Id=711): how government securities, which gilt funds hold, are priced.
+- [SEBI Master Circular for Mutual Funds (20 March 2026)](https://www.sebi.gov.in/legal/master-circulars/mar-2026/master-circular-for-mutual-funds_100491.html): SEBI's rules on mutual fund categories and portfolios.
+- [AMFI, net asset value data](https://www.amfiindia.com/net-asset-value): the NAV history the post's figures come from.
+
 **Takeaway:** A debt fund earns two ways — interest accruing daily, and bonds
 repricing as rates move — and duration decides which one you feel. Across
 eight years the overnight fund never had a down day, while the gilt fund fell

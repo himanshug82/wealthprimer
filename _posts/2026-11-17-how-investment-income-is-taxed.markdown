@@ -175,6 +175,12 @@ arithmetic sits on actual prices rather than round invented numbers.
 - **Trusting section numbers from older articles.** With the 2025 Act in
   force, the numbering in anything written before 2026 no longer matches.
 
+## Sources
+
+- [Income-tax Act, 2025 (a copy hosted by ICAI)](https://resource.cdn.icai.org/87647dtc-aps2139-inceome-tax-act-2025.pdf): the Act itself.
+- [Finance Act, 2026, Gazette of India](https://egazette.gov.in/WriteReadData/2026/271439.pdf): the Finance Act that made the 2026 changes.
+- [Memorandum explaining the provisions of the Finance Bill, 2026](https://www.indiabudget.gov.in/doc/memo.pdf): the government's explanation of those changes.
+
 **Takeaway:** Investment income splits into capital gains, dividends and
 interest, and only the first has rules of its own — its rate turns on what
 you held and for how long. Nothing is owed until you sell, which makes the

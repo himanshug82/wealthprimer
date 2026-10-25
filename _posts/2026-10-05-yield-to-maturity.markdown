@@ -117,6 +117,11 @@ about 8%, not 7%.
 - **Forgetting the relationship runs both ways.** If yields fall after you
   buy, your bond's price rises — the mirror image of the risk.
 
+## Sources
+
+- [RBI, Government Securities Market in India: a primer (FAQ)](https://www.rbi.org.in/commonperson/English/Scripts/FAQs.aspx?Id=711): how government bonds are priced and how price and yield move.
+- [RBI, Government Stock auction results (19 June 2026)](https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=62972): yields at cut-off in a real auction.
+
 **Takeaway:** YTM is the single rate that makes a bond's future coupons and
 repayment worth exactly what you paid for it — {{ bd.ytm_pct | round }}% for a {{ bd.coupon_pct | round }}% bond bought at
 ₹{% include inr.html n=bd.buy_price %}. Price and yield move in opposite directions, and a debt fund's quoted

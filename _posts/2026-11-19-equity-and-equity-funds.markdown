@@ -172,6 +172,12 @@ charges that *are* deductible.
 - **Assuming the fund withholds the tax.** For residents it generally
   doesn't. The full redemption arrives and the liability is yours to settle.
 
+## Sources
+
+- [Income-tax Act, 2025 (a copy hosted by ICAI)](https://resource.cdn.icai.org/87647dtc-aps2139-inceome-tax-act-2025.pdf): the Act itself.
+- [Finance Act, 2026, Gazette of India](https://egazette.gov.in/WriteReadData/2026/271439.pdf): the Finance Act that made the 2026 changes.
+- [Memorandum explaining the provisions of the Finance Bill, 2026](https://www.indiabudget.gov.in/doc/memo.pdf): the government's explanation of those changes.
+
 **Takeaway:** Equity and equity funds are taxed at {{ r.equity_stcg_pct }}% short-term and {{ r.equity_ltcg_pct }}%
 long-term, with the first ₹{% include inr.html n=r.ltcg_annual_exemption %} of long-term gains each year exempt — an
 allowance that is per person, per year, and gone if unused. On anything held

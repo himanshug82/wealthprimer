@@ -227,6 +227,11 @@ is an STP.
   bought less than a year ago can each lose the exit load (often 1%), on top of
   tax.
 
+## Sources
+
+- [SEBI Master Circular for Mutual Funds (20 March 2026)](https://www.sebi.gov.in/legal/master-circulars/mar-2026/master-circular-for-mutual-funds_100491.html): SEBI's master circular, including its text on exit loads.
+- [AMFI, net asset value data](https://www.amfiindia.com/net-asset-value): the NAV data behind the worked examples.
+
 **Takeaway:** An STP paces a lump sum into equity and an SWP paces a corpus
 out; neither changes what the market does, only *how many months of it you're
 exposed to*. On real data, a 12-month STP from the January 2008 top beat the

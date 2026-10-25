@@ -103,4 +103,9 @@ Change the closing rule or the cost, and watch how the gap moves.
 - **Using a list of top performers as evidence of skill.** A list built from past results has already selected on those results. See the [star ratings post]({% post_url 2026-10-16-why-star-ratings-mislead %}) for the same problem in rating form.
 - **Taking the simulation as a measurement.** The direction holds in every run: closing laggards lifts the survivors' average. The size depends on the closing rule, which is assumed here. This post doesn't quote a real survival rate because we haven't verified one.
 
+## Sources
+
+- [SEBI Master Circular for Mutual Funds (20 March 2026)](https://www.sebi.gov.in/legal/master-circulars/mar-2026/master-circular-for-mutual-funds_100491.html): SEBI's rules on scheme mergers and consolidation, one way funds drop out of tables.
+- [AMFI, net asset value data](https://www.amfiindia.com/net-asset-value): AMFI's NAV data.
+
 **Takeaway:** A table of today's funds leaves out the ones that were closed or merged, which makes the group look better than the one that started. In a world where no fund has any skill, closing the laggards still leaves a survivors' table that looks respectable.

@@ -111,6 +111,10 @@ to inventory and receivables, which are funded partly by supplier credit
   single best sanity check available — total assets must equal total
   liabilities plus equity, always.
 
+## Sources
+
+- [Indian Accounting Standards (Ind AS), Ministry of Corporate Affairs](https://www.mca.gov.in/MinistryV2/indianaccountingstandards.html): the full text of Ind AS 1, which governs how financial statements are presented. Also: [ICAI's compendium of Ind AS](https://icai.org/post/15642).
+
 **Takeaway:** a balance sheet is a snapshot of what a company owns versus what
 it owes, on one specific day — and the two sides always match, by definition,
 because equity is simply defined as whatever's left over.

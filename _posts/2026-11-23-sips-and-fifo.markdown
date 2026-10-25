@@ -161,6 +161,12 @@ purchase with a fresh date and its own clock.
 - **Estimating tax from the total gain.** The split between long and short
   lots is what determines it, and the two can point in opposite directions.
 
+## Sources
+
+- [Income-tax Act, 2025 (a copy hosted by ICAI)](https://resource.cdn.icai.org/87647dtc-aps2139-inceome-tax-act-2025.pdf): the Act itself.
+- [Finance Act, 2026, Gazette of India](https://egazette.gov.in/WriteReadData/2026/271439.pdf): the Finance Act that made the 2026 changes.
+- [Memorandum explaining the provisions of the Finance Bill, 2026](https://www.indiabudget.gov.in/doc/memo.pdf): the government's explanation of those changes.
+
 **Takeaway:** A SIP is as many separate investments as it has instalments,
 each with its own purchase date, and redemptions consume the oldest units
 first under FIFO. That's why one redemption can produce a long-term gain and

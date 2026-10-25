@@ -202,6 +202,10 @@ the next investor call.
   business's margin two and three years later — and whether goodwill is
   still on the books at full value.
 
+## Sources
+
+- [Indian Accounting Standards (Ind AS), Ministry of Corporate Affairs](https://www.mca.gov.in/MinistryV2/indianaccountingstandards.html): the text of Ind AS 103, on business combinations and goodwill. Also: [ICAI's compendium of Ind AS](https://icai.org/post/15642).
+
 **Takeaway:** An acquisition brings three lines a ratio reader can
 misread: goodwill, exceptional items and other income. Goodwill pads equity
 until it's impaired, a recurring "exceptional" is an operating cost, and

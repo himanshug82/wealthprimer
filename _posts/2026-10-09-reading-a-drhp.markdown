@@ -206,6 +206,11 @@ the correct division of labour.
   quarterly deviation reports and the annual report are where you check
   whether it was kept — which is what this whole module has been doing.
 
+## Sources
+
+- [SEBI (Issue of Capital and Disclosure Requirements) Regulations, 2018, amended up to 21 March 2026](https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1774592300989.pdf): the rules on what a draft offer document must contain, including restated financials and the basis for the issue price.
+- [SEBI Master Circular on public issues under the ICDR Regulations (last updated 9 February 2026)](https://www.sebi.gov.in/sebi_data/attachdocs/feb-2026/1770636136785.pdf): SEBI's master circular on the public issue process.
+
 **Takeaway:** A prospectus is the most complete and most legally
 accountable description of a business you'll ever be handed, and most
 investors read only the price. Read six things: fresh issue or offer for

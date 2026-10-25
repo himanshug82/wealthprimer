@@ -76,6 +76,11 @@ why.
   worth today. That pushes book value down and P/B up — the same direction
   as the brand-value issue above, so the two can stack.
 
+## Sources
+
+- [Britannia Industries, audited consolidated results for FY25](https://media.britannia.co.in/Audited_Consolidated_Financial_Results_31_03_2025_74a7c03628.pdf): the source of the Britannia figures used in the second worked example.
+- [NSE corporate filings and actions](https://www.nseindia.com/companies-listing/corporate-filings-actions): where to find any listed company's filed results.
+
 **Takeaway:** P/B measures how much the market pays over a company's
 accounting net worth. A high number often just reflects a high return on
 that equity, so read P/B together with ROE, not as a verdict on cheap or

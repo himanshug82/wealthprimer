@@ -143,6 +143,11 @@ replacing "Previous Year" and "Assessment Year" with a single **Tax Year**.
 Anything you read that predates 2026, including section references, needs
 checking against the current position.
 
+## Sources
+
+- [Income-tax Act, 2025 (a copy hosted by ICAI)](https://resource.cdn.icai.org/87647dtc-aps2139-inceome-tax-act-2025.pdf): the Act itself.
+- [Finance Act, 2026, Gazette of India](https://egazette.gov.in/WriteReadData/2026/271439.pdf): the Finance Act that made the 2026 changes.
+
 **Takeaway:** Filing is mostly reconciliation — the department already holds
 the data, so the work is making your records agree with it, and mismatches
 are what generate notices. Aggregate long-term gains across every source

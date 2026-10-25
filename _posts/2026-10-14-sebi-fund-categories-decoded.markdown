@@ -169,6 +169,12 @@ label literally.
 - **Not noticing a category change.** Funds do get reclassified; a scheme's
   five-year record may belong to a different mandate.
 
+## Sources
+
+- [SEBI circular on categorization and rationalization of mutual fund schemes (February 2026)](https://www.sebi.gov.in/legal/circulars/feb-2026/categorization-and-rationalization-of-mutual-fund-schemes_99983.html): the circular that revised the categories in February 2026.
+- [SEBI Master Circular for Mutual Funds (20 March 2026)](https://www.sebi.gov.in/legal/master-circulars/mar-2026/master-circular-for-mutual-funds_100491.html): the master circular that consolidates the category rules.
+- [AMFI, average market capitalisation list for the six months to 30 June 2025](https://www.amfiindia.com/Themes/Theme1/downloads/AverageMarketCapitalization30Jun2025.pdf): the half-yearly list that classifies companies as large, mid or small cap.
+
 **Takeaway:** SEBI's categories are hard portfolio constraints, not marketing
 adjectives — large cap means 80% in the top 100 companies, credit risk means
 65% in bonds rated AA or below, flexi cap means no band minimums at all. Know

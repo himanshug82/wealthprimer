@@ -128,6 +128,10 @@ small push (a change in interest rates) swings the whole thing.
   yields fall. Investors who bought long-duration funds before a rate-cutting
   cycle earned exactly this.
 
+## Sources
+
+- [RBI, Government Securities Market in India: a primer (FAQ)](https://www.rbi.org.in/commonperson/English/Scripts/FAQs.aspx?Id=711): RBI's explanation that a bond's price falls when market yields rise, which is what duration measures.
+
 **Takeaway:** modified duration is roughly the percentage a bond's price moves
 for a one-point move in yields — {{ bd.modified_duration }} for our five-year bond, about 7 for a
 ten-year one. It's why two funds that are both "debt" can behave nothing

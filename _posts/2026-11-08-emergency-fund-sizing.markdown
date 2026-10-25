@@ -87,4 +87,9 @@ The liquid fund's FY26 return was {{ f.liquid_return_pct }}% before tax, which w
 - **Forgetting the lag.** If you have to wait days or pay an exit charge to reach the money, the fund isn't doing its job. Check the terms of wherever it sits.
 - **Counting money that is already committed.** An emergency fund that also has to cover next quarter's tax or a planned purchase is smaller than it looks.
 
+## Sources
+
+- [DICGC, A Guide to Deposit Insurance](https://www.dicgc.org.in/guide-to-deposit-insurance): the deposit insurance limit that applies to savings accounts and fixed deposits.
+- [AMFI, net asset value data](https://www.amfiindia.com/net-asset-value): the NAV data behind the liquid, overnight and gilt fund figures.
+
 **Takeaway:** An emergency fund is sized from what you must keep paying if income stops, multiplied by the months you want covered, and judged by whether the full rupee amount is there when you need it. Where it sits changes how fast you can reach it and whether its price can fall, so compare those properties first and the return after.

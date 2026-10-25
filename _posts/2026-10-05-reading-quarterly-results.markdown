@@ -200,6 +200,11 @@ quarters can start to. Twelve can.
   follows the stock. None of that is analysis. The number you need is the
   one that will be visible in three quarters' time.
 
+## Sources
+
+- [SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015, as notified in the Gazette (later amended)](https://www.sebi.gov.in/sebi_data/attachdocs/1441284401427.pdf): the regulations on quarterly results, including filing timelines.
+- [Indian Accounting Standards (Ind AS), Ministry of Corporate Affairs](https://www.mca.gov.in/MinistryV2/indianaccountingstandards.html): the text of Ind AS 103, on business combinations. Also: [NSE corporate filings and actions](https://www.nseindia.com/companies-listing/corporate-filings-actions).
+
 **Takeaway:** A quarter is a short, seasonal, noisy slice of a year. Compare
 it with the same quarter last year (YoY), read quarter-on-quarter only
 against the seasonal pattern, and use the trailing twelve months for

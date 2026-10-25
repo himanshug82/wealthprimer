@@ -124,6 +124,11 @@ smaller piece of the same pizza.
 - **Missing that dividends declared "per cent" are on face value.** A "300%
   dividend" on a ₹1 face value is ₹3 a share, not 300% of anything you paid.
 
+## Sources
+
+- [SEBI (Issue of Capital and Disclosure Requirements) Regulations, 2018, amended up to 21 March 2026](https://www.sebi.gov.in/sebi_data/attachdocs/mar-2026/1774592300989.pdf): the rules for bonus issues by listed companies.
+- [NSE corporate filings and actions](https://www.nseindia.com/companies-listing/corporate-filings-actions): where a company's corporate actions, including splits and bonuses, are announced.
+
 **Takeaway:** face value is the nominal amount on a share, unrelated to price;
 splits and bonuses multiply the share count and divide everything per share
 by the same factor. Desi Bites at ₹320 after a 1:1 bonus is exactly as

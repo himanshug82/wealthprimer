@@ -197,6 +197,12 @@ post come from a real company's filing.
   for group companies, are contingent liabilities that become very real
   very quickly when the group company can't pay.
 
+## Sources
+
+- [Indian Accounting Standards (Ind AS), Ministry of Corporate Affairs](https://www.mca.gov.in/MinistryV2/indianaccountingstandards.html): the text of Ind AS 37, on provisions and contingent liabilities.
+- [SEBI's FAQs on the Takeover (SAST) Regulations, 2011 (March 2022)](https://www.sebi.gov.in/sebi_data/faqfiles/mar-2022/1648620806406.pdf): SEBI's own explanation of promoter encumbrance disclosures under the takeover regulations.
+- [SEBI's FAQs on the LODR Regulations (April 2025)](https://www.sebi.gov.in/sebi_data/faqfiles/apr-2025/1745399101865.pdf): SEBI's FAQs on shareholding pattern disclosures.
+
 **Takeaway:** The statements stop at the edge of what the rules let them
 record. Three disclosures just past that edge — a ₹{{ cl.gst_demand }} lakh tax demand not
 yet booked, {% include inr.html n=sh.pledged_pct_of_promoter_holding %}% of the promoter's shares pledged for an unrelated loan, and a

@@ -183,6 +183,13 @@ Plus {{ r.cess_pct }}% cess on the tax throughout.
 - **Concluding debt funds are now pointless.** The rate advantage went; the
   deferral advantage over annually-taxed deposit interest did not.
 
+## Sources
+
+- [Income-tax Act, 2025 (a copy hosted by ICAI)](https://resource.cdn.icai.org/87647dtc-aps2139-inceome-tax-act-2025.pdf): the Act itself.
+- [Finance Act, 2026, Gazette of India](https://egazette.gov.in/WriteReadData/2026/271439.pdf): the Finance Act that made the 2026 changes.
+- [Memorandum explaining the provisions of the Finance Bill, 2026](https://www.indiabudget.gov.in/doc/memo.pdf): the government's explanation of those changes.
+- [RBI, FAQs on Sovereign Gold Bonds](https://www.rbi.org.in/commonman/English/Scripts/FAQs.aspx?Id=1658): RBI's FAQs on Sovereign Gold Bonds.
+
 **Takeaway:** Outside listed equity and equity funds, the concessional rates
 mostly don't apply — and debt funds bought from April 2023 lost their
 long-term category entirely, taxed at your slab rate however long you hold

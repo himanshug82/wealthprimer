@@ -179,6 +179,12 @@ steeper, at the same time.
   case: the hole is deeper, the multiplier is larger, and the wipeout line is
   closer.
 
+## Sources
+
+- [SEBI master circular, chapter 4: comprehensive risk management for the cash market (December 2024 version)](https://www.sebi.gov.in/sebi_data/commondocs/dec-2024/RE_Chapter%204%20-%20Comprehensive%20Risk%20Management%20for%20Cash%20Market%20and%20Debt%20SegmeFINAL_p.pdf): SEBI's rules on margin in the cash market.
+- [SEBI master circular, chapter 5: exchange traded derivatives (December 2024 version)](https://www.sebi.gov.in/sebi_data/commondocs/dec-2024/RE_Chapter%205%20-%20Exchange%20Traded%20Derivatives%20FINAL_1_p.pdf): SEBI's rules on margin in derivatives.
+- [NSE, FAQs on margin collection and reporting](https://www.nseindia.com/static/trade/members-faqs-margin-collection-and-reporting): the exchange's FAQs on how margin is collected and reported.
+
 **Takeaway:** Leverage multiplies both directions by the same number and then
 charges you for the privilege — at 2× a flat market costs you the interest, a
 5% rise can earn less than owning outright, and at 10× an ordinary 10% fall

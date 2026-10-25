@@ -161,6 +161,10 @@ Not nothing. Used as intended:
   which windows flatter them and market accordingly. Treat the stars on an
   advertisement as marketing.
 
+## Sources
+
+- [AMFI, net asset value data](https://www.amfiindia.com/net-asset-value): the NAV history behind the figures in this post.
+
 **Takeaway:** A star rating ranks a fund's trailing risk-adjusted return
 within its category — it describes the weather that was, not the weather to
 come. On a passive Nifty index fund that trailing figure swung from −1% to 27%

@@ -203,6 +203,11 @@ directors who resigned during the year**, with their stated reasons.
   policies as much as in numbers. A quiet change to the revenue recognition
   policy is a bigger event than a loud change in the margin.
 
+## Sources
+
+- [SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015, as notified in the Gazette (later amended)](https://www.sebi.gov.in/sebi_data/attachdocs/1441284401427.pdf): the regulations that set what a listed company must file, including its annual report.
+- [NSE corporate filings and actions](https://www.nseindia.com/companies-listing/corporate-filings-actions): where annual reports are filed. Also: [BSE corporate announcements](https://www.bseindia.com/corporates/ann.html).
+
 **Takeaway:** An annual report is 140 pages written by the people it judges,
 sequenced to persuade: the reassuring letter up front, the seventy pages of
 notes at the back. Read it backwards — auditor's report, statements, then

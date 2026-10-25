@@ -80,4 +80,9 @@ Fund numbers are scorecards. They record what happened. They don't know what com
 - **Taking a precise-looking figure at face value.** A Sharpe of {{ r.sharpe }} quoted to two decimals carries every assumption behind it: the dates, the risk-free rate, the data frequency. Ask for them.
 - **Treating the metrics as a substitute for reading the documents.** The factsheet, the scheme documents and the category rules tell you what the fund is allowed to do. The numbers only tell you what it did.
 
+## Sources
+
+- [SEBI Master Circular for Mutual Funds (20 March 2026)](https://www.sebi.gov.in/legal/master-circulars/mar-2026/master-circular-for-mutual-funds_100491.html): SEBI's rules on benchmarks, the riskometer and tracking error.
+- [AMFI, net asset value data](https://www.amfiindia.com/net-asset-value): the NAV data behind the metrics.
+
 **Takeaway:** Fund metrics describe a past, over a window, against a benchmark, for the funds still around, and each one leaves something out. Use them to ask better questions about a fund, not to predict how it will do.

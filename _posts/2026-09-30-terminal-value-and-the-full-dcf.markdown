@@ -232,6 +232,10 @@ print(f"Value per share  {equity / SHARES:8.2f}")
   consequence of a stack of estimates. It is not what the share is worth to
   two decimal places, and the next post is entirely about why.
 
+## Sources
+
+- [RBI, the monetary policy framework and the inflation target](https://www.rbi.org.in/scripts/FS_Overview.aspx?fn=2752): the official CPI inflation target, relevant to the post's discussion of using long-run inflation as an anchor for the terminal growth rate.
+
 **Takeaway:** Terminal value collapses everything past the forecast horizon
 into one number, and that number is usually most of the valuation — so the
 perpetual growth rate deserves more scrutiny than any line in the forecast.

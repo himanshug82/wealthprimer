@@ -165,6 +165,10 @@ recover from, and don't carry it alone.
   depend on the income for 25, a shorter policy leaves the last years
   uncovered.
 
+## Sources
+
+- [IRDAI, Master Circular on Life Insurance Products (12 June 2024)](https://irdai.gov.in/documents/37343/365525/Master+Circular+on+Life+Insurance+Products.pdf/d7ca89f3-b894-8c93-3e53-d8caf67a8ba6?version=1.1&t=1718190178836): the regulator's master circular on life insurance products.
+
 **Takeaway:** Insurance is for losses you can't afford to carry, not for
 returns — you pay a small certain cost so that a large uncertain one lands on
 someone else. Size life cover by what it must replace, and if a policy bundles

@@ -309,9 +309,11 @@ for key, s in [("etf", etf), ("index_fund_direct", idx_dir), ("index_fund_regula
 # 26 Feb 2026 superseded: value, contra, dividend yield and focused funds now
 # need at least 80% in equity (was 65%); a fund house may run both a value and
 # a contra fund if their portfolios overlap by no more than 50%; solution-
-# oriented schemes were discontinued. Checked against press summaries of the
-# Feb 2026 circular (Upstox, ICICI Direct, Taxmann) in Sept 2026, not the PDF.
-# VERIFY against the current circular before relying on any threshold.
+# oriented schemes were discontinued. From 1 April 2026 the rules sit in SEBI's
+# Master Circular for Mutual Funds of 20 March 2026
+# (HO/24/13/11(1)2026-IMD-POD-1/I/7602/2026), paras 3.7-3.8, which lists the
+# Feb 2026 circular among those it rescinds. The equity thresholds below were
+# checked against para 3.8.1 of that PDF on 25 Oct 2026.
 categories_equity = [
     {"category": "Large cap", "rule": "At least 80% of assets in large-cap stocks", "universe": "Stocks ranked 1st to 100th by market cap"},
     {"category": "Large & mid cap", "rule": "At least 35% in large caps AND at least 35% in mid caps", "universe": "Ranks 1-100 and 101-250"},
@@ -521,8 +523,10 @@ out = {
     },
     "categories": {
         "circular": "SEBI/HO/IMD/DF3/CIR/P/2017/114, 6 October 2017 (categorisation and rationalisation of mutual fund schemes), as amended",
-        "master_circular": "Master Circular for Mutual Funds, 27 June 2024 (clause 2.6)",
+        "master_circular_2024": "Master Circular for Mutual Funds, 27 June 2024 (clause 2.6)",
         "revision_2026": "HO/24/13/15(2)2026-IMD-RAC4/I/5764/2026, 26 February 2026",
+        "master_circular": "Master Circular for Mutual Funds, HO/24/13/11(1)2026-IMD-POD-1/I/7602/2026, 20 March 2026 (paras 3.7 and 3.8)",
+        "master_circular_url": "https://www.sebi.gov.in/legal/master-circulars/mar-2026/master-circular-for-mutual-funds_100491.html",
         "equity": categories_equity,
         "debt": categories_debt,
         "note": "Regulatory definitions typed from the circular, not derived from data. Verify thresholds against the current text before relying on them.",

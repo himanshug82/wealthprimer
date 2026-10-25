@@ -376,8 +376,8 @@ dcf:
     ev_implied_by_ipo_price: 6520        # 640 x 12.5 lakh shares + net debt (-1480); ties to listing.ev
     implied_terminal_growth: 9.62        # vs 5.0% assumed above
     cash_flow_multiple_required: 1.87    # forecast FCFF would need to be 1.87x
-    scenario_market_case: 595            # 25% revenue growth, EBITDA margin to 20%, capex easing
-    scenario_aggressive: 753             # 30% revenue growth, EBITDA margin to 22%
+    scenario_market_case: 596            # scripts/derive_dcf_scenarios.py: 25% growth, EBITDA margin 20%, base capex path
+    scenario_aggressive: 769             # scripts/derive_dcf_scenarios.py: 30% growth, EBITDA margin 22%, base capex path
   # Sensitivity grid: value per share (Rs) at varying WACC (rows) and
   # terminal growth (columns). Base case (13.91%, 5.0%) = 398.
   sensitivity:

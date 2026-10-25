@@ -26,9 +26,11 @@ truncated at 31 March 2026 (the first Module 3 post publishes 18 October
   assets/data/uti-overnight-fund-nav.csv          (existing) UTI Overnight Fund, regular (100814); face value
                                                   Rs 10 -> Rs 1,000 on 3 May 2018, corrected here as in derive_mf2.py
 Exchange rate:
-  assets/data/usd-inr-fred-dexinus.csv            Rupees per US dollar, Federal Reserve Board H.10 noon buying
-                                                  rates in New York, series DEXINUS via FRED
-                                                  (https://fred.stlouisfed.org/series/DEXINUS), 1 Apr 2006 to 31 Mar 2026.
+  assets/data/usd-inr-reference-rate.csv          Rupees per US dollar reference rate: RBI to 9 July 2018
+                                                  (https://www.rbi.org.in/scripts/ReferenceRateArchive.aspx), FBIL
+                                                  from 10 July 2018 (https://www.fbil.org.in/); to 30 Mar 2026.
+                                                  Same series as derive_risk2.py (currency risk post). Until 25 Oct
+                                                  2026 this script used the Fed H.10 series (DEXINUS), since removed.
 
 COMPLIANCE: every named fund is used only to show a mechanism. Nothing here
 ranks funds, compares managers or assesses whether any fund is worth owning.
@@ -161,7 +163,7 @@ navi_dir = load("navi-nifty50-index-fund-nav.csv", "nav_direct_growth")
 idx = load("uti-nifty50-index-fund-nav.csv", "nav_regular_growth")
 idx_dir = load("uti-nifty50-index-fund-nav.csv", "nav_direct_growth")
 overnight, ov_events = fix_face_value(load("uti-overnight-fund-nav.csv", "nav_regular_growth"))
-fx = load("usd-inr-fred-dexinus.csv", "usd_inr")
+fx = load("usd-inr-reference-rate.csv", "usd_inr")
 
 assert ov_events == ["2018-05-03"], ov_events
 for s in (arb, arb_dir, aggr, eqs, baf, navi, navi_dir, idx, idx_dir, overnight, fx):
@@ -175,7 +177,7 @@ SOURCES = {
     "label": "AMFI NAV history via mfapi.in",
     "api": "https://api.mfapi.in/mf/SCHEME_CODE",
     "end": END,
-    "lag_note": "Every NAV and exchange-rate series ends 31 March 2026; the first Module 3 post publishes 18 October 2026.",
+    "lag_note": "Every NAV series ends 31 March 2026 and the exchange rate 30 March 2026; the first Module 3 post publishes 18 October 2026.",
     "arbitrage": {"name": "UTI Arbitrage Fund", "regular_code": 104075, "direct_code": 120795,
                   "csv": "/assets/data/uti-arbitrage-fund-nav.csv", "start": arb.index[0].strftime("%Y-%m-%d")},
     "aggressive_hybrid": {"name": "UTI Aggressive Hybrid Fund", "regular_code": 100684, "direct_code": 120674,
@@ -189,11 +191,12 @@ SOURCES = {
     "index_fund": {"name": "UTI Nifty 50 Index Fund", "regular_code": 100822, "direct_code": 120716,
                    "csv": "/assets/data/uti-nifty50-index-fund-nav.csv"},
     "overnight": {"name": "UTI Overnight Fund", "regular_code": 100814, "csv": "/assets/data/uti-overnight-fund-nav.csv"},
-    "fx": {"name": "Rupees per US dollar (noon buying rate, New York)",
-           "source": "Federal Reserve Board H.10 release, series DEXINUS, via FRED",
-           "url": "https://fred.stlouisfed.org/series/DEXINUS",
-           "csv": "/assets/data/usd-inr-fred-dexinus.csv",
-           "note": "Close to, but not identical with, the RBI/FBIL reference rate for the same day."},
+    "fx": {"name": "Rupees per US dollar, reference rate",
+           "source": "RBI reference rate to 9 July 2018, FBIL reference rate from 10 July 2018",
+           "url": "https://www.fbil.org.in/",
+           "rbi_url": "https://www.rbi.org.in/scripts/ReferenceRateArchive.aspx",
+           "csv": "/assets/data/usd-inr-reference-rate.csv",
+           "note": "A year-end rate is the last reference rate published on or before 31 March."},
 }
 
 
@@ -291,8 +294,9 @@ assert arbitrage["full_history"]["negative_months"] < 10 and arbitrage["arbitrag
 # ===================================================== MF3-3 international
 fy_rows = []
 for y in range(2017, 2027):
-    a = fx.loc[:f"{y-1}-03-31"].iloc[-1]
-    b = fx.loc[:f"{y}-03-31"].iloc[-1]
+    # rates rounded to paise as displayed, so a reader recomputing the change gets the post's figure
+    a = round(float(fx.loc[:f"{y-1}-03-31"].iloc[-1]), 2)
+    b = round(float(fx.loc[:f"{y}-03-31"].iloc[-1]), 2)
     fy_rows.append({"fy": f"FY {y-1}-{str(y)[2:]}", "start": float(a), "end": float(b), "change_pct": r2((b / a - 1) * 100)})
 weakened = sum(1 for r in fy_rows if r["change_pct"] > 0)
 fy26 = fy_rows[-1]

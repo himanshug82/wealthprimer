@@ -7,6 +7,7 @@ image: /assets/og/alpha.png
 date: 2026-10-03 09:00:00 +0530
 series: jargon
 term: "Alpha"
+last_modified_at: 2026-10-25
 ---
 
 {% assign a = site.data.jargon_m6.alpha %}
@@ -76,11 +77,13 @@ look like a laggard.
 
 One honest caveat on the inputs. Both returns here are *price-only*:
 Britannia's share price and the Nifty 50 price index, with dividends left
-out, because a total return index series isn't in this post's data. That's
-the very mistake the next section warns about. In the raw comparison the two
-missing dividend streams partly cancel. In the CAPM line they don't: the
-risk-free rate is a full yield, but the market return it's compared with is
-missing its dividends, so the market's excess return is understated. Treat
+out, because this post's Britannia data is price-only and comparing it with a
+total return index would mix bases. That's the very mistake the next section
+warns about. In the raw comparison the two missing dividend streams partly
+cancel. In the CAPM line they don't: the risk-free rate is a full yield, but
+the market return it's compared with is missing its dividends. Over the same
+window the Nifty 50 total return index returned {{ a.nifty_tri_cagr_pct }}% a year against the
+price index's {% include inr.html n=a.nifty_pri_cagr_pct %}%, so the market's excess return is understated. Treat
 the alpha figure as rough — it illustrates the method, not a precise
 measurement.
 
@@ -93,23 +96,24 @@ so the alpha number inherits every bit of that instability.
 
 Here is a more instructive example. Take the UTI Nifty 50 Index Fund (regular plan) — a
 passive fund whose entire job is to *match* the index — and compute its
-calendar-year return minus the Nifty 50 price index:
+calendar-year return minus the Nifty 50 price index, then minus the total return index:
 
-| Year | Fund | Nifty 50 (price) | Difference |
-|---|---:|---:|---:|{% for y in a.index_fund_vs_pri_years %}
-| {{ y.year }} | {{ y.fund_pct }}% | {{ y.index_pri_pct }}% | +{{ y.diff_pp }} pp |{% endfor %}
+| Year | Fund | Nifty 50 (price) | Difference | Nifty 50 (TRI) | Difference |
+|---|---:|---:|---:|---:|---:|{% for y in a.index_fund_vs_pri_years %}
+| {{ y.year }} | {{ y.fund_pct }}% | {{ y.index_pri_pct }}% | +{{ y.diff_pp }} pp | {{ y.index_tri_pct }}% | {{ y.diff_vs_tri_pp | replace: "-", "−" }} pp |{% endfor %}
 
-Ten years, ten positive numbers, averaging **+{{ a.index_fund_vs_pri_mean_pp }} pp a year**.
-Sources: fund NAV from AMFI via mfapi.in; index from Yahoo Finance. Data to
-31 March 2026.
+Against the price index: ten years, ten positive numbers, averaging
+**+{{ a.index_fund_vs_pri_mean_pp }} pp a year**. Sources: fund NAV from AMFI via mfapi.in; price
+index from Yahoo Finance; total return index from
+[{{ site.data.mf4.sources.tri.source }}]({{ site.data.mf4.sources.tri.url }}). Data to 31 March 2026.
 
 An index fund with a decade of positive "alpha" is obviously nonsense — and it
 is, because the benchmark is wrong. The **price index (PRI)** ignores the
-dividends the fifty companies pay; the fund receives and reinvests them. That
-one-point gap is roughly the Nifty's dividend yield minus the fund's expense
-ratio. Against the **total return index (TRI)**, which includes dividends, the
-same fund would likely show a *small negative* number most years — the expense ratio
-and tracking error, which is what an index fund is supposed to show.
+dividends the fifty companies pay; the fund receives and reinvests them. The
+**total return index (TRI)** counts them, and it ran {{ a.tri_minus_pri_mean_pp }} pp a year ahead of
+the price index over these ten years. Against the TRI the same fund was
+*behind* in {{ a.index_fund_vs_tri_years_negative }} of the {{ a.index_fund_vs_pri_years | size }} years, by {{ a.index_fund_vs_tri_mean_pp | replace: "-", "" }} pp a year on average: its costs, which
+is what an index fund is supposed to show.
 
 This is exactly why the
 [benchmarks post]({% post_url 2026-10-02-benchmarks-and-comparing-like-with-like %})

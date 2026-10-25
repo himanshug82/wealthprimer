@@ -7,6 +7,7 @@ image: /assets/og/terminal-value-and-the-full-dcf.png
 date: 2026-09-30 09:00:00 +0530
 series: fundamental-analysis
 term: "DCF (discounted cash flow) and terminal value"
+last_modified_at: 2026-10-25
 ---
 
 {% assign dcf = site.data.case_study.dcf %}
@@ -163,7 +164,7 @@ assumptions instead:
 |---|---|---:|
 | Base case | Growth fading 18% → 10%, [EBITDA]({% post_url 2026-08-28-ebitda-margin %}) margin to 17.5% | ₹{% include inr.html n=r.value_per_share %} |
 | Market case | Growth 25% for five years, EBITDA margin 20%, base-case capex path (8% of revenue easing to 5%) | ₹{% include inr.html n=dcf.reverse.scenario_market_case %} |
-| Aggressive | Growth 30% for five years, EBITDA margin to 22% | ₹{% include inr.html n=dcf.reverse.scenario_aggressive %} |
+| Aggressive | Growth 30% for five years, EBITDA margin 22%, base-case capex path | ₹{% include inr.html n=dcf.reverse.scenario_aggressive %} |
 
 Now the ₹{% include inr.html n=r.ipo_price %} price says something specific and testable: it's priced for
 sustained 25–30% revenue growth with meaningful margin expansion. Whether

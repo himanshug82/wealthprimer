@@ -7,6 +7,7 @@ image: /assets/og/rights-issues.png
 date: 2026-10-19 09:00:00 +0530
 series: jargon
 term: "Rights issue"
+last_modified_at: 2026-10-25
 ---
 
 {% assign r = site.data.jargon_m7.rights %}
@@ -36,7 +37,7 @@ Three terms do most of the work:
   REs that are neither used nor renounced lapse when the issue closes.
 
 SEBI (the Securities and Exchange Board of India) sped the process up in 2025.
-For issues approved by a company's board from April 2025, a rights
+For issues approved by a company's board on or after 7 April 2025, a rights
 issue must be completed within 23 working days of that approval; the draft
 letter of offer goes to the stock exchanges rather than to SEBI for
 observations; the issue stays open for 7 to 30 days; and on-exchange RE

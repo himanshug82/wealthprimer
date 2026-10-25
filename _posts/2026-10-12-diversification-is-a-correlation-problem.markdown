@@ -95,8 +95,8 @@ that:
 |---:|---:|{% for row in c.n_asset_table %}
 | {{ row.n }} | **{{ row.portfolio_vol_pct }}%** |{% endfor %}
 
-Going from one holding to two removes 1.6 percentage points of volatility.
-Going from ten to a *thousand* removes 0.4. The formula's floor is
+Going from one holding to two removes {{ c.one_to_two_drop_pp }} percentage points of volatility.
+Going from ten to a *thousand* removes {{ c.ten_to_thousand_drop_pp }}. The formula's floor is
 σ × √ρ = {{ c.rho_floor_vol_pct }}%, and no amount of counting gets below it.
 That floor is the risk the holdings share — the market itself — and the only
 way under it is to add things that *aren't* correlated, not more things that
@@ -218,7 +218,7 @@ your diversification is actually worth.
 **Takeaway:** Diversification reduces risk only to the extent the things you
 own fall at different times, and correlation is the number that measures
 {% assign ten = c.n_asset_table | where: "n", 10 | first %}that. Ten equity funds correlated at {{ c.n_asset_rho }} get you a portfolio only about
-15% less volatile than one ({{ ten.portfolio_vol_pct }}% vs {{ c.n_asset_sigma }}%), and no number of them gets
+{{ c.ten_vs_one_less_pct }}% less volatile than one ({{ ten.portfolio_vol_pct }}% vs {{ c.n_asset_sigma }}%), and no number of them gets
 below {{ c.rho_floor_vol_pct }}% — while a single stock correlated at
 {{ c.britannia_nifty_rho }} with the index cut a 50/50 portfolio's bounce almost to the index's
 own. Count less; check what moves together.

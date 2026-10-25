@@ -105,7 +105,7 @@ Add those twenty numbers up and divide by twenty:
 The fund's yearly returns *averaged* {{ a.arithmetic_mean_pct }}%. Its actual
 growth rate — the CAGR the
 [point-to-point returns post]({% post_url 2026-09-26-point-to-point-returns %}) defined —
-was {{ a.geometric_mean_pct }}%. Nearly three percentage points a year went
+was {{ a.geometric_mean_pct }}%. That is {{ a.drag_pp }} percentage points a year that went
 missing, and nobody took them. They were consumed by the bouncing.
 
 Put money on it:
@@ -115,7 +115,7 @@ Put money on it:
 | If it had grown at the {{ a.arithmetic_mean_pct }}% "average" every year | ₹{% include inr.html n=a.lakh_at_arithmetic_mean %} |
 | What it actually became (NAV {{ a.start_nav }} → {{ a.end_nav }}) | **₹{% include inr.html n=a.lakh_actual %}** |
 
-The "average return" version is worth about 66% more than the real one. Same
+The "average return" version is worth about {{ a.arithmetic_overstates_pct }}% more than the real one. Same
 twenty years, same fund. The only difference is that one number describes
 what happened and the other describes something that never did.
 

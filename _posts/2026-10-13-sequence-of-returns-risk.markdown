@@ -86,7 +86,7 @@ applied evenly across its twelve months:
 instalments, because this model spreads each year's return evenly across its
 months instead of using real daily NAVs.
 
-Ten times. Not 10% — a factor of ten between the best and worst ordering of
+{{ s.sip_worst_over_best_x }} times. Not {{ s.sip_worst_over_best_x }}% — close to a factor of ten between the best and worst ordering of
 *exactly the same returns*.
 
 The reason is mechanical. With a SIP, most of your money is in the fund
@@ -94,8 +94,8 @@ during the *later* years — the last year's returns act on twenty years of
 accumulated contributions, the first year's on a few months' worth. So the
 late returns dominate. Worst-years-first puts {{ worst.first_three_fy_pct | first | replace: "-", "−" }}%
 on almost nothing and +{{ worst.last_three_fy_pct | last }}% on the full pile.
-Best-years-first does the reverse, and turns ₹24 lakh of contributions into
-barely ₹27 lakh.
+Best-years-first does the reverse, and turns ₹{{ s.sip_invested_lakh }} lakh of contributions into
+barely ₹{{ s.sip_low_lakh }} lakh.
 
 Notice which way this cuts. For someone *accumulating*, an early crash is the
 good sequence — cheap units when the pile is small, growth when it's large.
@@ -140,7 +140,7 @@ Now the early years dominate, because that's when the pile is largest and the
 withdrawals are eating into a falling balance. The ordering that was best for
 the saver is fatal for the spender: worst-years-first empties the account in
 about {{ worst.swp_depleted_year }} years, while best-years-first leaves it
-five times its starting size after two decades of withdrawals.
+{{ s.swp_best_over_start_x }} times its starting size after two decades of withdrawals.
 
 This is why the [drawdown post's]({% post_url 2026-09-29-drawdown %}) recovery
 times matter so much more to someone withdrawing than to someone
@@ -214,7 +214,7 @@ That contrast is the entire post.
   you'll have.
 
 **Takeaway:** Twenty real annual returns, reordered, take the same
-₹10,000-a-month SIP anywhere from ₹27 lakh to ₹2.6 crore — and empty or
-quintuple a retiree's ₹50 lakh — while a lump sum ends at the same figure
+₹{% include inr.html n=s.sip_monthly %}-a-month SIP anywhere from ₹{{ s.sip_low_lakh }} lakh to ₹{{ s.sip_high_crore }} crore — and empty or
+multiply {{ s.swp_best_over_start_x }}-fold a retiree's ₹{{ s.swp_start_lakh }} lakh — while a lump sum ends at the same figure
 every time. Returns don't care about order. Money moving in or out does, and
 the years when the most money is exposed are the ones that decide.

@@ -7,6 +7,7 @@ image: /assets/og/international-funds.png
 date: 2026-10-20 09:00:00 +0530
 series: mutual-funds
 term: "International fund and FoF (fund of funds)"
+last_modified_at: 2026-10-25
 needs_review: tax
 rules_as_of: "August 2026"
 ---
@@ -109,10 +110,11 @@ manager doesn't choose this; it comes with the asset.
 
 ## Worked example: ten financial years of the rupee
 
-{{ fx.name }}, from the Federal Reserve Board's H.10 release (series DEXINUS,
-[via FRED]({{ fx.url }})), on the last
-trading day of each financial year (April to March), to 31 March 2026.
-{{ fx.note }} Historical data, for illustration only.
+{{ fx.name }}: the RBI (Reserve Bank of India) reference rate
+([archive]({{ fx.rbi_url }})) up to 9 July 2018 and the FBIL (Financial Benchmarks
+India Ltd) reference rate after that ([fbil.org.in]({{ fx.url }})), the same series
+the [currency risk post]({% post_url 2026-10-19-currency-risk %}) uses, to
+March 2026. {{ fx.note }} Historical data, for illustration only.
 
 | Financial year | ₹ per $ at start | ₹ per $ at end | Change |
 |---|---:|---:|---:|{% for y in i.fy_rows %}

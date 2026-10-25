@@ -444,6 +444,39 @@ out["regulation"] = {
 }
 
 
+# ------------------------------------------------- MF module 1: benchmarks post, TRI side
+# The benchmarks post (2 Oct 2026) compares the regular plan with the Nifty 50 PRI over
+# mf.yml's benchmark window. This adds the TRI over the same window and method (values
+# as of the end date, years to the end date), and asserts the PRI and fund figures
+# reproduce what mf.yml already prints.
+_mf = yaml.safe_load(open(os.path.join(ROOT, "_data", "mf.yml"), encoding="utf-8"))["benchmark"]
+_reg = fix_face_value(load("uti-nifty50-index-fund-nav.csv", "nav_regular_growth"))
+_b0, _b1 = pd.Timestamp(_mf["common_start"]), pd.Timestamp(_mf["common_end"])
+_yrs = (_b1 - _b0).days / 365.25
+
+
+def _bcagr(s):
+    return ((s.asof(_b1) / s.asof(_b0)) ** (1 / _yrs) - 1) * 100
+
+
+assert abs(_bcagr(pri) - _mf["index_pri_cagr"]) < 0.005 and abs(_bcagr(_reg) - _mf["fund_regular_cagr"]) < 0.005
+_cy = pd.concat([_reg.rename("fund"), tri.rename("tri")], axis=1, sort=False).dropna()
+_cy = (_cy.resample("YE").last().pct_change().dropna() * 100).loc["2008":"2025"]
+_gap = _cy.fund - _cy.tri
+# the benchmarks post says the fund trailed the TRI in "all" full calendar years
+assert (_gap < 0).all(), _gap[_gap >= 0]
+out["benchmark_tri"] = {
+    "note": "Regular plan vs Nifty 50 TRI over mf.yml's benchmark window; calendar-year gaps use full years only (2007 starts in September, 2026 is partial).",
+    "index_tri_cagr": r2(_bcagr(tri)),
+    "fund_minus_tri_pp": r2(_bcagr(_reg) - _bcagr(tri)),
+    "tri_minus_pri_pp": r2(_bcagr(tri) - _bcagr(pri)),
+    "calendar_gap_mean_2008_2015_pp": r2(_gap.loc["2008":"2015"].mean()),
+    "calendar_gap_mean_2016_2025_pp": r2(_gap.loc["2016":"2025"].mean()),
+    "calendar_years_negative": int((_gap < 0).sum()),
+    "calendar_years": int(len(_gap)),
+}
+
+
 def _clean(x):
     if isinstance(x, dict):
         return {k: _clean(v) for k, v in x.items()}

@@ -7,11 +7,13 @@ image: /assets/og/benchmarks-and-comparing-like-with-like.png
 date: 2026-10-02 09:00:00 +0530
 series: mutual-funds
 term: "Benchmark (TRI vs PRI)"
+last_modified_at: 2026-10-25
 ---
 
 {% assign mf = site.data.mf %}
 {% assign f = mf.index_fund %}
 {% assign b = mf.benchmark %}
+{% assign bt = site.data.mf4.benchmark_tri %}
 
 ## Compared to what?
 
@@ -75,6 +77,15 @@ Fund return ≈ Index price return
 
 The {{ b.fund_minus_pri_pp }} pp gap above is the Nifty's dividend yield, net of this fund's
 costs. It is an artefact of the comparison, not a result.
+
+You can see both halves in the data. Over the same window the Nifty 50 total
+return index ([{{ site.data.mf4.sources.tri.source }}]({{ site.data.mf4.sources.tri.url }})) compounded at
+{{ bt.index_tri_cagr }}% a year, {{ bt.tri_minus_pri_pp }} points ahead of the price index: that's the
+dividends. Against the TRI the fund was **{{ bt.fund_minus_tri_pp | replace: "-", "" }} pp a year behind**, and it trailed
+it in all {{ bt.calendar_years }} full calendar years from 2008 to 2025. That shortfall is the cost
+of owning the fund, and it is what an index fund should show. It was wider in
+2008–2015 ({{ bt.calendar_gap_mean_2008_2015_pp | replace: "-", "−" }} pp a year on average) than in 2016–2025
+({{ bt.calendar_gap_mean_2016_2025_pp | replace: "-", "−" }} pp); this post doesn't try to break down why.
 
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
@@ -154,6 +165,8 @@ nav = pd.read_csv("uti-nifty50-index-fund-nav.csv",
                   parse_dates=["date"]).set_index("date")
 idx = pd.read_csv("nifty50-price-index.csv",
                   parse_dates=["date"]).set_index("date").nifty50_pri_close
+tri = pd.read_csv("nifty50-tri.csv",
+                  parse_dates=["date"]).set_index("date").nifty50_tri_close
 fund = nav.nav_regular_growth.dropna()
 
 start = max(idx.index[0], fund.index[0])
@@ -165,6 +178,7 @@ def cagr(s):
 
 print(f"index (PRI) {cagr(idx):.2f}%   fund {cagr(fund):.2f}%   "
       f"gap {cagr(fund) - cagr(idx):+.2f} pp")
+print(f"index (TRI) {cagr(tri):.2f}%   gap {cagr(fund) - cagr(tri):+.2f} pp")
 ```
 
 Note both series must be compared over the *same* window — hence taking the

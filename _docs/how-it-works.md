@@ -57,6 +57,8 @@ Moved out of `TODO.md` on 25 Oct 2026. `CLAUDE.md` is the writing rulebook; this
 | `derive_risk2.py` | `risk2.yml`, `risk2-*.svg` | Risk module 2 |
 | `derive_tax3.py` | `tax3.yml` (with `verification` blocks) | Tax module 3 |
 | `derive_mbm.py` | `mbm.yml` (emergency fund, FD vs debt fund, G-secs, PPF, NPS exits, ULIP, REIT; sourced rules typed once with their URLs, asserts reproduce the regulators' own examples) | Money Before Markets |
+| `derive_dcf_scenarios.py` | the reverse-DCF scenarios in `case_study.yml` (`dcf.reverse`, written in place; asserts the base case, implied growth, cash-flow multiple and sensitivity grid) | FA terminal value post |
+| `make_ta_charts.py` | `ta-*.svg` (asserts `ta.yml`'s RSI, MACD, SMA, zone and double-top figures, and the trend-line post's figures, against the CSV) | TA module 1 |
 | `make_diagrams.py`, `make_fa2_diagrams.py`, `make_bank_diagrams.py`, `make_ta2_charts.py` | schematic/chart SVGs | FA, TA |
 | `make_og_cards.py` | `assets/og/*.png` (re-run when a title changes; CI's advisory `--check` flags stale cards) | every post |
 

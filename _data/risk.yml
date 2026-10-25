@@ -99,6 +99,7 @@ arithmetic_of_losses:
   end_nav: 153.8204
   lakh_at_arithmetic_mean: 1158213
   lakh_actual: 697418
+  arithmetic_overstates_pct: 66
 position_sizing:
   capital: 1000000
   risk_pct: 1.0
@@ -150,6 +151,7 @@ position_sizing:
     fixed_50_risk_rupees: 10475
     fixed_50_risk_pct: 1.05
   fixed_shares: 50
+  calm_vs_wild_value_x: 2.2
 leverage:
   table:
   - move_pct: -2
@@ -272,6 +274,9 @@ correlation:
   two_funds_monthly_rho: 0.84
   two_funds_window_start: '2013-05-28'
   two_funds_window_end: '2026-03-31'
+  one_to_two_drop_pp: 1.6
+  ten_to_thousand_drop_pp: 0.4
+  ten_vs_one_less_pct: 14.5
 sequence_of_returns:
   years: 20
   first_fy: FY07
@@ -323,6 +328,12 @@ sequence_of_returns:
       - 71.8
       - 72.1
   sip_best_minus_worst: -23420191
+  sip_invested_lakh: 24
+  sip_low_lakh: 27
+  sip_high_crore: 2.6
+  sip_worst_over_best_x: 9.7
+  swp_start_lakh: 50
+  swp_best_over_start_x: 5.4
 behaviour:
   days: 4915
   pct_days_at_high: 10.0

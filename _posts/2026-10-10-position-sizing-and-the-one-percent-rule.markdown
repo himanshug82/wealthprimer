@@ -121,10 +121,10 @@ day, a middling one, and the wildest (days picked by ATR as a % of price):
 Rows are computed from unrounded prices and ATRs, so the rounded figures shown
 can be a rupee off when you redo the sums by hand.
 
-Same stock, same rules, and the position is more than twice as large by value
+Same stock, same rules, and the position is {{ p.calm_vs_wild_value_x }} times as large by value
 on the calm day as on the wild one. That is the method working as designed. On
-{{ wild.date | date: "%-d %B %Y" }} — in the middle of the 26% decline the
-[RSI post]({% post_url 2026-10-08-rsi %}) documented — the stock was moving
+{% assign rsi_fall = site.data.ta.rsi.overbought_then_fell %}{{ wild.date | date: "%-d %B %Y" }} — inside the {{ rsi_fall.change_pct | abs }}% fall over the three months after
+{{ rsi_fall.date | date: "%-d %B %Y" }} that the [RSI post]({% post_url 2026-10-08-rsi %}) documented — the stock was moving
 {{ wild.atr_pct }}% a day. A stop had to sit further away to survive the
 noise, so fewer shares could be held for the same ₹{% include inr.html n=wild.risk_rupees %}
 of risk.

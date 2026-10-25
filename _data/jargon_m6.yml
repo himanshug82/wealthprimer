@@ -61,43 +61,67 @@ alpha:
     fund_pct: 4.0
     index_pri_pct: 3.01
     diff_pp: 0.99
+    index_tri_pct: 4.39
+    diff_vs_tri_pp: -0.39
   - year: 2017
     fund_pct: 29.68
     index_pri_pct: 28.65
     diff_pp: 1.03
+    index_tri_pct: 30.27
+    diff_vs_tri_pp: -0.59
   - year: 2018
     fund_pct: 4.26
     index_pri_pct: 3.15
     diff_pp: 1.11
+    index_tri_pct: 4.64
+    diff_vs_tri_pp: -0.38
   - year: 2019
     fund_pct: 13.25
     index_pri_pct: 12.02
     diff_pp: 1.22
+    index_tri_pct: 13.48
+    diff_vs_tri_pp: -0.23
   - year: 2020
     fund_pct: 15.5
     index_pri_pct: 14.9
     diff_pp: 0.6
+    index_tri_pct: 16.14
+    diff_vs_tri_pp: -0.64
   - year: 2021
     fund_pct: 25.2
     index_pri_pct: 24.12
     diff_pp: 1.08
+    index_tri_pct: 25.59
+    diff_vs_tri_pp: -0.39
   - year: 2022
     fund_pct: 5.33
     index_pri_pct: 4.33
     diff_pp: 1.0
+    index_tri_pct: 5.69
+    diff_vs_tri_pp: -0.36
   - year: 2023
     fund_pct: 20.89
     index_pri_pct: 20.03
     diff_pp: 0.86
+    index_tri_pct: 21.3
+    diff_vs_tri_pp: -0.41
   - year: 2024
     fund_pct: 9.64
     index_pri_pct: 8.8
     diff_pp: 0.84
+    index_tri_pct: 10.09
+    diff_vs_tri_pp: -0.45
   - year: 2025
     fund_pct: 11.57
     index_pri_pct: 10.51
     diff_pp: 1.06
+    index_tri_pct: 11.88
+    diff_vs_tri_pp: -0.32
   index_fund_vs_pri_mean_pp: 0.98
+  index_fund_vs_tri_mean_pp: -0.42
+  index_fund_vs_tri_years_negative: 10
+  tri_minus_pri_mean_pp: 1.4
+  nifty_tri_cagr_pct: 0.89
 tracking:
   window_3y: 1 Apr 2023 – 31 Mar 2026
   tracking_error_daily_annualised_pct: 0.27
@@ -111,105 +135,155 @@ tracking:
     fund_pct: 4.0
     index_pri_pct: 3.01
     tracking_difference_pp: 0.99
+    index_tri_pct: 4.39
+    td_vs_tri_pp: -0.39
   - year: 2017
     plan: regular
     fund_pct: 29.68
     index_pri_pct: 28.65
     tracking_difference_pp: 1.03
+    index_tri_pct: 30.27
+    td_vs_tri_pp: -0.59
   - year: 2018
     plan: regular
     fund_pct: 4.26
     index_pri_pct: 3.15
     tracking_difference_pp: 1.11
+    index_tri_pct: 4.64
+    td_vs_tri_pp: -0.38
   - year: 2019
     plan: regular
     fund_pct: 13.25
     index_pri_pct: 12.02
     tracking_difference_pp: 1.22
+    index_tri_pct: 13.48
+    td_vs_tri_pp: -0.23
   - year: 2020
     plan: regular
     fund_pct: 15.5
     index_pri_pct: 14.9
     tracking_difference_pp: 0.6
+    index_tri_pct: 16.14
+    td_vs_tri_pp: -0.64
   - year: 2021
     plan: regular
     fund_pct: 25.2
     index_pri_pct: 24.12
     tracking_difference_pp: 1.08
+    index_tri_pct: 25.59
+    td_vs_tri_pp: -0.39
   - year: 2022
     plan: regular
     fund_pct: 5.33
     index_pri_pct: 4.33
     tracking_difference_pp: 1.0
+    index_tri_pct: 5.69
+    td_vs_tri_pp: -0.36
   - year: 2023
     plan: regular
     fund_pct: 20.89
     index_pri_pct: 20.03
     tracking_difference_pp: 0.86
+    index_tri_pct: 21.3
+    td_vs_tri_pp: -0.41
   - year: 2024
     plan: regular
     fund_pct: 9.64
     index_pri_pct: 8.8
     tracking_difference_pp: 0.84
+    index_tri_pct: 10.09
+    td_vs_tri_pp: -0.45
   - year: 2025
     plan: regular
     fund_pct: 11.57
     index_pri_pct: 10.51
     tracking_difference_pp: 1.06
+    index_tri_pct: 11.88
+    td_vs_tri_pp: -0.32
   direct_years:
   - year: 2016
     plan: direct
     fund_pct: 4.1
     index_pri_pct: 3.01
     tracking_difference_pp: 1.09
+    index_tri_pct: 4.39
+    td_vs_tri_pp: -0.29
   - year: 2017
     plan: direct
     fund_pct: 29.79
     index_pri_pct: 28.65
     tracking_difference_pp: 1.14
+    index_tri_pct: 30.27
+    td_vs_tri_pp: -0.48
   - year: 2018
     plan: direct
     fund_pct: 4.33
     index_pri_pct: 3.15
     tracking_difference_pp: 1.18
+    index_tri_pct: 4.64
+    td_vs_tri_pp: -0.3
   - year: 2019
     plan: direct
     fund_pct: 13.33
     index_pri_pct: 12.02
     tracking_difference_pp: 1.3
+    index_tri_pct: 13.48
+    td_vs_tri_pp: -0.15
   - year: 2020
     plan: direct
     fund_pct: 15.56
     index_pri_pct: 14.9
     tracking_difference_pp: 0.66
+    index_tri_pct: 16.14
+    td_vs_tri_pp: -0.58
   - year: 2021
     plan: direct
     fund_pct: 25.3
     index_pri_pct: 24.12
     tracking_difference_pp: 1.18
+    index_tri_pct: 25.59
+    td_vs_tri_pp: -0.29
   - year: 2022
     plan: direct
     fund_pct: 5.44
     index_pri_pct: 4.33
     tracking_difference_pp: 1.11
+    index_tri_pct: 5.69
+    td_vs_tri_pp: -0.25
   - year: 2023
     plan: direct
     fund_pct: 21.04
     index_pri_pct: 20.03
     tracking_difference_pp: 1.01
+    index_tri_pct: 21.3
+    td_vs_tri_pp: -0.26
   - year: 2024
     plan: direct
     fund_pct: 9.8
     index_pri_pct: 8.8
     tracking_difference_pp: 0.99
+    index_tri_pct: 10.09
+    td_vs_tri_pp: -0.29
   - year: 2025
     plan: direct
     fund_pct: 11.68
     index_pri_pct: 10.51
     tracking_difference_pp: 1.17
+    index_tri_pct: 11.88
+    td_vs_tri_pp: -0.21
   regular_mean_td_pp: 0.98
   direct_mean_td_pp: 1.08
   direct_minus_regular_pp: 0.1
+  window_3y_tri: 3 Apr 2023 – 30 Mar 2026
+  tracking_error_daily_vs_tri_pct: 0.04
+  tracking_error_monthly_vs_tri_pct: 0.04
+  fund_cagr_3y_tri_window_pct: 9.61
+  index_tri_cagr_3y_pct: 9.98
+  tracking_difference_3y_vs_tri_pp: -0.38
+  regular_mean_td_vs_tri_pp: -0.42
+  direct_mean_td_vs_tri_pp: -0.31
+  direct_minus_regular_vs_tri_pp: 0.11
+  years_negative_vs_tri: 20
   pri_caveat: The benchmark here is the *price* index, which excludes dividends. A positive tracking difference against it
     is mostly the roughly 1–1.5% dividend yield of the fifty stocks, minus the expense ratio — not outperformance.
 bond:

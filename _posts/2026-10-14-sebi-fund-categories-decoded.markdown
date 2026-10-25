@@ -7,6 +7,7 @@ image: /assets/og/sebi-fund-categories-decoded.png
 date: 2026-10-14 09:00:00 +0530
 series: mutual-funds
 term: "Fund categories (SEBI)"
+last_modified_at: 2026-10-25
 ---
 
 {% assign c = site.data.mf2.categories %}
@@ -31,15 +32,16 @@ lets you compare like with like, which the
 argued is most of the work in evaluating a fund.
 
 Definitions below start from that circular ({{ c.circular }} in 2020), later
-consolidated in SEBI's {{ c.master_circular }}. SEBI then replaced
+consolidated in SEBI's {{ c.master_circular_2024 }}. SEBI then replaced
 that clause with a revised categorisation circular ({{ c.revision_2026 }}):
 value, contra, dividend yield and focused funds now need at least 80% in
 equity rather than 65%, a fund house may run both a value and a contra fund
 as long as their portfolios overlap by no more than 50%, sectoral and thematic
 funds face a similar overlap cap, and the "solution-oriented" category was
 discontinued. Existing schemes got six months to comply (three years for the
-sectoral/thematic overlap cap). The thresholds below reflect the text of the February 2026
-circular (clause 2.6 and its sub-clauses). The earlier 65% figure for these categories comes from the 2017
+sectoral/thematic overlap cap). From 1 April 2026 these rules sit in SEBI's
+[{{ c.master_circular }}]({{ c.master_circular_url }}), which folds in the
+February 2026 circular; the equity thresholds below match its para 3.8.1. The earlier 65% figure for these categories comes from the 2017
 framework and was not re-read for this post. SEBI revises these, so check the current text before
 relying on one.
 

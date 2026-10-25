@@ -202,7 +202,7 @@ for name, r in [("daily", s.pct_change()), ("monthly", me.pct_change())]:
 ## Where this leaves us
 
 Put the tests from this run side by side and a consistent picture emerges. Gaps filled about as often as
-nearby prices get revisited anyway. Fibonacci levels caught no more pullbacks
+nearby prices get revisited anyway. [Fibonacci levels]({% post_url 2026-10-17-fibonacci-retracements %}) caught no more pullbacks
 than lines nobody draws. The calendar looked like a pattern until the month
 labels were shuffled. Budget days were volatile but not directional.
 Oscillators and OBV divergences often came before the opposite of what their

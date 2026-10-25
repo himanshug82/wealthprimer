@@ -137,7 +137,7 @@ The reason given, as reproduced in the Supreme Court's order of
 {{ ft.sc_feb2021.date | date: "%-d %B %Y" }}: "it is no longer possible for
 certain schemes of Franklin Templeton to generate adequate liquidity to fund
 daily redemptions", in light of "the severe market dislocation" and
-illiquidity caused by the Covid-19 pandemic. Winding up meant redemptions
+[illiquidity]({% post_url 2026-10-17-liquidity-risk %}) caused by the Covid-19 pandemic. Winding up meant redemptions
 stopped, and the portfolios would be sold down and the proceeds paid out
 over time.
 

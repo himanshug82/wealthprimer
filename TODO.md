@@ -126,14 +126,19 @@ browser — never rasterised locally.
   hidden `<!-- RELINK <target> -->` marker right after the text — once Tax is
   live (or rescheduled earlier than the linking post), turn each back into
   `[text]({% post_url <target> %})`: `grep -rn "RELINK" _posts`.
-- **Links owed once targets publish.** Posts can only `post_url` earlier-dated
-  posts, so several explain a term inline and name its post in plain text
-  ("later in this series"). After the target's date the link becomes safe to
-  add — e.g. jargon module 6 terms (beta, operating leverage, earnings
-  yield, payout ratio, enterprise value) are explained inline in earlier FA
-  posts; capex intensity in the free cash flow post; the portfolio-overlap,
-  exit-load and STP/SWP posts from risk posts. Sweep once everything is live
-  (after 4 Dec, when Tax is live):
+- **Links owed once targets publish — swept 25 Oct for every live target.** 42
+  links added in 35 posts: each "later in this series" promise whose target was
+  live now links to it, plus links into the posts Search Console listed as
+  "Crawled – currently not indexed" (record date, bid-ask spread, T+1, Kelly,
+  backtesting, Fibonacci, liquidity risk, STP/SWP, bank P/B) and the jargon terms
+  first explained inline (beta, operating leverage, earnings yield, payout ratio,
+  enterprise value, portfolio overlap, exit load). **Rule used:** a post links an
+  *earlier* post with `{% post_url %}`; it links a *later* post only once that
+  post is live, with a plain relative link (`{{ '/YYYY/MM/DD/slug/' | relative_url }}`)
+  — `post_url` to a later post breaks the build, and live URLs never change.
+  Still owed (targets not live yet): the Tax series (RELINK markers, after
+  4 Dec), Module 4 MF posts (after 7 Nov), and the F&O post's tax-series
+  pointer. Re-run the sweep with
   `grep -rn "later in this series\|covered later\|coming up" _posts`.
 - **TA module 1 charts have no generator in the repo** (`assets/charts/ta-*.svg`;
   the script was left in a session scratchpad). Recreate it as

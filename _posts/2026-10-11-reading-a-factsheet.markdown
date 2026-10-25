@@ -66,7 +66,7 @@ if you might need the money early.
   ratio, but the price impact of the fund's own trading isn't itemised as an
   expense. A later post in this series covers the ratio in full.
 
-**The overlap check** is worth doing once: if you own four large-cap funds,
+**The [overlap check]({{ '/2026/10/15/portfolio-overlap/' | relative_url }})** is worth doing once: if you own four large-cap funds,
 compare their top-10 lists. Owning the same twelve companies four times over
 is not diversification, and in our view it's one of the most common portfolio
 errors among investors who own many funds.

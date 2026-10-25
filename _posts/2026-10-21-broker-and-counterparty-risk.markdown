@@ -41,7 +41,7 @@ walks through the rules that now sit between a broker and your assets.
 The weak point, historically, was the second and third rows plus one
 document: the **power of attorney (POA)** many investors signed when opening
 an account, letting the broker move securities out of their demat account to
-meet settlement. That's the key Karvy used.
+meet [settlement]({% post_url 2026-10-16-t-plus-1-settlement %}). That's the key Karvy used.
 
 ## The formula: SEBI's client-money check
 

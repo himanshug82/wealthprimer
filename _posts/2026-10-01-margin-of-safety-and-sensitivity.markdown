@@ -27,7 +27,7 @@ measurement.
 
 It isn't. It's the output of a chain of estimates — a growth rate that fades
 on a schedule someone chose, a
-[margin path]({% post_url 2026-09-29-forecasting-free-cash-flow %}) someone assumed, a beta borrowed
+[margin path]({% post_url 2026-09-29-forecasting-free-cash-flow %}) someone assumed, a [beta]({{ '/2026/10/02/beta/' | relative_url }}) borrowed
 from a sector, an equity risk premium that reasonable people put anywhere in
 a range several percentage points wide, and a perpetual growth rate for a company that will
 outlive everyone reading this. Every one of those is arguable. The

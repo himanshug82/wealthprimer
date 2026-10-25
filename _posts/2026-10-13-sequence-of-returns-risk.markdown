@@ -126,7 +126,7 @@ rich or annoyed.
 ## Case three: a retiree cares in the opposite direction
 
 Flip the cash flows. Start with ₹{% include inr.html n=s.swp_start %} and
-withdraw ₹{% include inr.html n=s.swp_monthly %} a month — an **SWP**, a
+withdraw ₹{% include inr.html n=s.swp_monthly %} a month — an **[SWP]({{ '/2026/10/17/stp-and-swp/' | relative_url }})**, a
 Systematic Withdrawal Plan — for twenty years, against the same three
 orderings:
 

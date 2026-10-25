@@ -43,7 +43,7 @@ of some kind, not necessarily debt specifically.
 From Britannia Industries' [audited consolidated FY25 results](https://media.britannia.co.in/Audited_Consolidated_Financial_Results_31_03_2025_74a7c03628.pdf)
 (year ended 31 March 2025, filed 8 May 2025). For illustration only. Equity here
 is *total* equity, including the small minority (non-controlling) interest, to
-match total assets. (The book value per share post later in this series uses
+match total assets. (The [book value per share post]({{ '/2026/09/22/book-value-per-share/' | relative_url }}) uses
 owners' equity only.)
 
 | | ₹ Crore |

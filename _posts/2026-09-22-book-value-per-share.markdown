@@ -76,7 +76,7 @@ actually is — a reminder for the very first common mistake below.
 
 - **Confusing book value with market value.** BVPS is an accounting number,
   not what the market thinks the company is worth. The gap between the two
-  is exactly what P/B (the price-to-book ratio), a few posts from now,
+  is exactly what [P/B (the price-to-book ratio)]({{ '/2026/09/25/price-to-book/' | relative_url }})
   measures.
 - **Not adjusting for share count changes.** A stock split doubles the share
   count and halves BVPS overnight, without changing anything real about the

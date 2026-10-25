@@ -21,7 +21,7 @@ would have been selling something.
 
 Everything below is drawn from the same Britannia dataset the rest of the
 series used. None of it is hypothetical. A second module follows this post —
-volatility, relative strength, multiple timeframes and backtesting — and it
+volatility, relative strength, multiple timeframes and [backtesting]({{ '/2026/10/15/how-to-backtest-honestly/' | relative_url }}) — and it
 keeps the same rule: every signal gets checked against what actually happened.
 
 ## 1. It cannot see anything that isn't in the price

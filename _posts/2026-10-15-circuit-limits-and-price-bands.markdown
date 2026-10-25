@@ -135,7 +135,7 @@ circuit breaker.
   upper circuit means the queue of buyers is longer than the queue of
   sellers *at a capped price*. Your order joins the back of that queue. And
   small, thin stocks can hit circuit on very little volume, which is exactly
-  why the exchanges watch them (the surveillance post later in this module
+  why the exchanges watch them (the [surveillance post]({{ '/2026/10/21/asm-and-gsm-surveillance/' | relative_url }})
   covers how).
 - **Thinking the band limits your loss.** A lower circuit stops the price
   printing lower *today*; it doesn't let you sell. Locked lower circuits

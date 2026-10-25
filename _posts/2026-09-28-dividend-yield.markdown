@@ -51,7 +51,7 @@ investor; the pre-issue one mixes an old share count with a new price.
 ## Worked example: Britannia Industries
 
 Dividend per share is the trailing 12-month figure: the single dividend
-Britannia paid during FY25 (ex-date 5 August 2024). That payment was the
+Britannia paid during FY25 ([ex-date]({{ '/2026/10/17/record-date-and-ex-date/' | relative_url }}) 5 August 2024). That payment was the
 final dividend for FY24, paid in August 2024 — there was no interim
 dividend during FY25. Sourced from [stockanalysis.com's dividend
 history](https://stockanalysis.com/quote/nse/BRITANNIA/dividend/). Price is
@@ -80,7 +80,7 @@ law that similar businesses converge here.
   company choosing to reinvest profit instead of paying it out isn't doing
   anything wrong — it's often the more value-accretive choice at that stage,
   not evidence of weakness.
-- **Ignoring the payout ratio.** A company paying out more in dividends than
+- **Ignoring the [payout ratio]({{ '/2026/10/11/payout-ratio/' | relative_url }}).** A company paying out more in dividends than
   it earns in profit is spending down its own reserves, which isn't
   sustainable — dividend yield alone doesn't reveal this, but comparing the
   dividend to PAT (profit after tax) does.

@@ -187,8 +187,8 @@ when it moves.
   from the same company and the same year. State the basis.
 - **Ignoring the base.** A bank with a lower NIM on a much larger, safer
   balance sheet can earn more, more reliably, than a bank with a higher NIM.
-  Margin is one term of a product; the price-to-book post later in this
-  module puts the terms together.
+  Margin is one term of a product; the [price-to-book post]({{ '/2026/10/15/valuing-a-bank-price-to-book/' | relative_url }})
+  puts the terms together.
 
 **Takeaway:** NIM is a bank's gross margin — what it earns on what it lends
 minus what it pays for the money, on a base of lakhs of crores. The same

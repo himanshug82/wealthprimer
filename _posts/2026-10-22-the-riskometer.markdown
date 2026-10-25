@@ -203,7 +203,7 @@ paper — so don't mix the two scales up.)
   doesn't come with an exit window.
 - **Treating a low reading as "safe".** A debt fund at "Low to Moderate" still
   holds bonds that can be downgraded — which is where the side-pocket rules
-  come in, covered later in this series.
+  come in, covered in the [segregated portfolios post]({{ '/2026/10/24/segregated-portfolios/' | relative_url }}).
 
 **Takeaway:** The riskometer is a monthly score of a fund's holdings — market
 cap, each stock's own volatility and liquidity for equity; rating, duration

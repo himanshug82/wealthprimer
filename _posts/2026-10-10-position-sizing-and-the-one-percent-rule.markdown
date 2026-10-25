@@ -151,7 +151,8 @@ per position means a run of ten consecutive losers — which will happen to
 anyone who trades long enough — costs about 10%. At 5% per position, the
 same run costs about 40%, and the account needs a 67% gain just to get back
 to where it started. Position sizing is how you make sure your worst
-realistic streak is a setback and not an ending.
+realistic streak is a setback and not an ending. The [risk of ruin and Kelly
+criterion post]({{ '/2026/10/16/kelly-criterion-and-risk-of-ruin/' | relative_url }}) works through the maths of how much to stake on an edge.
 
 It also does something quieter: it separates *how sure you are* from *how
 much you hold*. Conviction is the least reliable input in investing. Sizing
@@ -201,7 +202,7 @@ during which its values mean nothing.
   which is a reason to size *smaller* than the formula, not larger.
 - **Applying the rule per position but not per portfolio.** Ten positions at
   1% each in ten highly correlated stocks is closer to one position at 10%.
-  That's coming up in the diversification post.
+  The [diversification post]({{ '/2026/10/12/diversification-is-a-correlation-problem/' | relative_url }}) covers why.
 - **Forgetting the rule exists once a position is winning.** Position sizing
   governs entries. It says nothing about when to take profits, and it isn't a trading
   system. It just keeps you in the game long enough for one to matter.

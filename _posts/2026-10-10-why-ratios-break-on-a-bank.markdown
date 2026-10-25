@@ -116,7 +116,7 @@ provision the bank chose to make; FY25's didn't. Two other lines moved too.
 was held down by tax provisions written back. And FY24's other income
 included a one-off gain of about ₹7,340 crore from selling most of the
 bank's stake in HDFC Credila ([Business Standard, April 2024](https://www.business-standard.com/amp/companies/results/hdfc-bank-q4-results-profit-jumps-37-to-rs-16-512-crore-nii-up-24-5-124042000440_1.html)).
-The NPA post later in this module is about the provisions part: a bank's
+The [NPA post]({{ '/2026/10/13/gnpa-nnpa-and-provisions/' | relative_url }}) is about the provisions part: a bank's
 profit is partly a *decision*.
 
 ## The balance sheet is the business
@@ -140,7 +140,7 @@ Equity is {{ f25.equity_to_assets_pct }}% of the balance sheet. Put
 differently, every ₹1 of shareholders' money supports about
 ₹{{ f25.leverage_assets_to_equity }} of assets. That leverage is not a
 warning sign; it is the engine. The whole of banking regulation — the
-subject of the capital adequacy post later in this module — exists to decide how thin that slice of equity is
+subject of the [capital adequacy post]({{ '/2026/10/14/capital-adequacy/' | relative_url }}) — exists to decide how thin that slice of equity is
 allowed to get.
 
 And this is why the ordinary ratios fail. They were built for a company whose
@@ -199,7 +199,7 @@ balance sheet to begin with: [ROA]({% post_url 2026-09-05-roa %}) and
 [ROE]({% post_url 2026-09-01-roe %}). For a bank, ROA is the honest measure
 of how well it lends and ROE is what leverage does to that — the
 [DuPont]({% post_url 2026-09-25-dupont-roe-decomposition %}) logic with the
-asset-turnover term collapsed to almost nothing. The price-to-book post leans on both.
+asset-turnover term collapsed to almost nothing. The [price-to-book post]({{ '/2026/10/15/valuing-a-bank-price-to-book/' | relative_url }}) leans on both.
 
 ## Common mistakes
 

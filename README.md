@@ -99,7 +99,7 @@ Skills live in `.claude/skills/<name>/SKILL.md`. Claude loads one automatically 
 ### `refresh-post` — update a live post safely
 - **Purpose:** keep published posts correct without breaking URLs.
 - **Use when:** a rule changed, data was extended, Search Console shows page-2 queries, after the Budget.
-- **How:** `scripts/stale_posts.py` ranks candidates (age × changeable-fact markers). Rules: never rename/delete; `last_modified_at` only for substantive changes; no forward `post_url`; numbers via scripts; tax posts go back to "pending professional read".
+- **How:** `scripts/stale_posts.py` ranks candidates (age × changeable-fact markers). Rules: never rename/delete; `last_modified_at` only for substantive changes; no forward `post_url`; numbers via scripts; flagged posts (`needs_review`) get `rules_as_of` re-checked and updated.
 
 ### `make-chart` — SVG charts in house style
 - **Purpose:** one claim per chart, drawn from committed data, byte-stable, with alt text and dimensions.

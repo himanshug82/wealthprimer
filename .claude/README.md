@@ -38,7 +38,7 @@ Typical flow for a module: `plan-module` → (approve) → `refresh-data` if nee
 2. Monthly: site health audit (`site-audit`) and stale-post list.
 3. Yearly, early February: post-Budget review of rules and tax posts (`verify-claims`, `refresh-post`).
 
-They report; they do not edit, merge or publish.
+They report; they do not edit, merge or publish. IDs (for update/delete): daily `trig_01JpMrvSVsvxtSCvfRnejobK` (04:20 UTC), monthly `trig_01R2mMjNsWCJDAJawwwTui3x` (1st, 05:26 UTC), yearly `trig_01Tqpq9VY1KyQdcAsYQ5K6z7` (5 Feb, 10:41 IST). They were created with no repository source attached: if a fired session shows no repo, attach `himanshug82/wealthprimer` to the task in the Claude routines UI. Until the tooling PR is merged to main, the prompts report that and stop.
 
 ## Owner-only things no tool here can do
 

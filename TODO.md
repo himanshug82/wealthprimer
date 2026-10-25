@@ -120,6 +120,16 @@ browser — never rasterised locally.
 
 ## Open — content and tooling
 
+- **Tooling PR follow-ups (Oct 2026):** the new skills, `post-auditor` agent,
+  `pr-checks.yml` workflow and three scheduled tasks are inventoried in
+  `.claude/README.md`. After the PR merges: (1) check the first **PR checks**
+  run is green (workflow files can be refused by token scope — if so, add the
+  file by hand in GitHub); (2) attach the repo to the three scheduled tasks in
+  the Claude routines UI if a fired session shows no checkout; (3) run
+  `verify-claims` on the VERIFY table below, starting with the superseded MF
+  citations; (4) the Google Sheet calculators below can now start from the
+  `build-calculator` specs.
+
 - **Google Sheet calculators (3):** DCF (terminal value post, 30 Sep — its
   placeholder comment was removed, but the sheet is still owed), rolling
   returns (27 Sep) and SIP/XIRR (1 Oct) — search `_posts/` for

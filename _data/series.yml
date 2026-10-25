@@ -48,3 +48,8 @@
   description: "How the safe-money basics work before you invest in markets: emergency funds, FDs, G-secs, PPF, EPF, NPS, ULIPs and REITs."
   about: "For the money decisions that sit underneath investing: how big a cash buffer is and where it waits, how a fixed deposit differs from a debt fund, and how government securities, PPF and NPS exit rules work. It ends with what a ULIP's charges take and how a REIT is built. Rates and rules are dated and sourced to the issuing body, and nothing here tells you what to choose."
   planned: 7   # Module 1: emergency fund, FD vs debt fund, G-secs, PPF, NPS exit rules, ULIP charges, REIT structure written; EPF (12 Nov slot) pending its primary sources, then bump to 8
+- slug: market-basics
+  title: "Your first year in the market"
+  description: "What actually happens when you open a demat account, nominate someone, place an order, apply for an IPO, or file a complaint in India."
+  about: "For the plumbing between you and your first trade: the accounts, the nomination rules, order types, the charges on a contract note, how an IPO application blocks and releases your money, where complaints go, and what a merger does to your holding. Rules are dated and sourced to SEBI, the exchanges and the depositories, and nothing here tells you what to buy."
+  planned: 7   # Module 1 (7): demat accounts, nomination, order types, contract note, IPO application, SCORES and SMART ODR, mergers and demergers

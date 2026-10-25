@@ -20,6 +20,14 @@ for how the repo works.
   request indexing for `/`, `/series/` and `/series/risk/` (it was `noindex` until
   25 Oct); add DNS `CNAME www → himanshug82.github.io` (www doesn't resolve today);
   if applying for AdSense, add `ads.txt` and disclose ad cookies on `/privacy/`.
+  **Canonical issue (25 Oct):** Search Console reported 1 page as "Duplicate,
+  Google chose different canonical than user". The likely cause was `/series/`,
+  which repeated the homepage's series cards (54% shared text, 199 words); it
+  now has its own per-series text (`about:` in `_data/series.yml`) plus
+  start-with/latest links (under 15% overlap, 534 words). `/404.html` is now
+  `noindex`. Confirm in Search Console which URL was flagged (Pages → that issue →
+  example URL → URL Inspection shows the Google-selected canonical); if it isn't
+  `/series/`, tell Claude the URL.
 - **Tax series professional read** — all 18 tax posts, now held at 17 Nov →
   4 Dec (daily; moved back three weeks on 25 Oct to make room for the read —
   the Tax hub stays noindexed until 17 Nov automatically). The rules were re-checked against primary sources where

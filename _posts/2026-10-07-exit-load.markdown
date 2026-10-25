@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Exit load: the fee for leaving early, and why SIPs pay it in pieces"
+seo_title: "Exit load in mutual funds, explained"
 description: "An exit load is a fee on units redeemed early, usually 1% within a year, charged lot by lot. A 14-instalment SIP redeemed at once still pays it on 11 lots."
 image: /assets/og/exit-load.png
 date: 2026-10-07 09:00:00 +0530

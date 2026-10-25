@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Tracking error vs tracking difference: two numbers that sound alike and aren't"
+seo_title: "Tracking error vs tracking difference, explained"
 description: "Tracking difference is how far an index fund ended from its index; tracking error is how much the gap wobbled. Only one costs money; a plus sign is a warning."
 image: /assets/og/tracking-error-and-tracking-difference.png
 date: 2026-10-04 09:00:00 +0530

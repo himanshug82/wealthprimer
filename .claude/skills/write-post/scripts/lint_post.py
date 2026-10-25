@@ -101,10 +101,11 @@ def lint(path):
 
     title, desc = fm.get("title", ""), fm.get("description", "")
     both = title + " " + desc
-    if len(title) > 60:
-        add("WARN", f"title is {len(title)} chars; seo-tag appends ' | Wealth Primer', so aim ≤ 50 and never > 60")
-    elif len(title) > 50:
-        add("INFO", f"title is {len(title)} chars (aim ≤ 50 so the rendered <title> stays near 65)")
+    serp = fm.get("seo_title") or title   # head.html renders seo_title if set; brand suffix only when it fits in 60
+    if len(serp) > 60:
+        add("WARN", f"search title is {len(serp)} chars (> 60, Google truncates); shorten it or add a seo_title ≤ 60")
+    elif len(serp) > 44 and not fm.get("seo_title"):
+        add("INFO", f"title is {len(serp)} chars, so ' | Wealth Primer' won't be appended (fine; ≤ 44 keeps the brand)")
     tw = re.findall(r"[A-Za-z][A-Za-z'’]+", title)[1:]
     if sum(w[0].isupper() and not w.isupper() and w not in PROPER for w in tw) >= 3:
         add("WARN", "title looks Title Case (house style is sentence case; proper nouns are fine)")

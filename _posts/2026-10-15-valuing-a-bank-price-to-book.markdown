@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Valuing a bank: why price-to-book is the anchor, and what justifies it"
+seo_title: "Valuing a bank: why price-to-book is the anchor"
 description: "Banks are valued on book because their assets are mostly money near fair value. How P/B, ROE and cost of equity fit together, and why ROA × leverage is the key."
 image: /assets/og/valuing-a-bank-price-to-book.png
 date: 2026-10-15 09:00:00 +0530

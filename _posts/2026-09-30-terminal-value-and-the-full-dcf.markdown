@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Terminal value: the number that quietly becomes most of your valuation"
+seo_title: "Terminal value in a DCF, explained"
 description: "Terminal value is usually most of a DCF's answer. The perpetuity growth and exit multiple methods, and the full valuation finally assembled end to end."
 image: /assets/og/terminal-value-and-the-full-dcf.png
 date: 2026-09-30 09:00:00 +0530
@@ -135,7 +136,7 @@ than the same company without it.
 | Shares outstanding | {{ r.shares_lakh }} lakh |
 | **Value per share** | **₹{% include inr.html n=r.value_per_share %}** |
 
-![Composition of the valuation: most of enterprise value comes from terminal value, then the bridge to a per-share figure]({{ '/assets/charts/fa-dcf-structure.svg' | relative_url }})
+![Composition of the valuation: most of enterprise value comes from terminal value, then the bridge to a per-share figure]({{ '/assets/charts/fa-dcf-structure.svg' | relative_url }}){: width="720" height="360"}
 
 Desi Bites Foods — the fictional case study. The bar shows how much of the
 valuation rests on the terminal value assumption. Illustration of a method

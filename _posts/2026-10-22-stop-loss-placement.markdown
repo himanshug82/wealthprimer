@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Stop-loss placement: fixed %, ATR or swing low — how often each gets hit"
+seo_title: "Stop-loss placement: fixed %, ATR or swing low"
 description: "Three common ways to place a stop, tested on every day of two years of Britannia: how often each was hit, what gaps did to them, and what they cost."
 image: /assets/og/stop-loss-placement.png
 date: 2026-10-22 09:00:00 +0530
@@ -75,7 +76,7 @@ Britannia (NSE: BRITANNIA), {{ ds.stock_as_of }}, from
 
 ## How far away each stop sat
 
-![How far each stop rule put the stop from the entry]({{ '/assets/charts/ta3-stops.svg' | relative_url }})
+![How far each stop rule put the stop from the entry]({{ '/assets/charts/ta3-stops.svg' | relative_url }}){: width="612" height="259"}
 
 | | Fixed {{ s.fixed_pct }}% | {{ s.atr_mult }} × ATR | Swing low |
 |---|---:|---:|---:|

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Sector lenses: why one set of ratios doesn't fit every business"
+seo_title: "Sector analysis: why one set of ratios doesn't fit"
 description: "The same EBITDA margin or return on assets means different things in FMCG, cement, telecom and lending. Why each sector needs its own lens, from real filings."
 image: /assets/og/why-one-set-of-ratios-doesnt-fit.png
 date: 2026-10-16 09:00:00 +0530

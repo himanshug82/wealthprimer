@@ -2,7 +2,21 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {%- seo -%}
+  {%- comment -%}
+    <title>: jekyll-seo-tag always appends " | Wealth Primer", which pushed 156 of 168 titles
+    past the ~60 characters Google shows. We render the title ourselves: `seo_title` (front
+    matter) if set, else `title`; the brand is appended only when the whole thing fits in 60.
+    `title=false` stops seo-tag emitting its own <title>; og:title, JSON-LD etc. are unchanged.
+  {%- endcomment -%}
+  {%- seo title=false -%}
+  {%- assign _t = page.seo_title | default: page.title | default: site.title -%}
+  {%- capture _full -%}{{ _t }} | {{ site.title }}{%- endcapture -%}
+  {%- assign _n = _full | size -%}
+  {%- if _t contains site.title or _n > 60 -%}
+  <title>{{ _t | strip_html | escape }}</title>
+  {%- else -%}
+  <title>{{ _full | strip_html | escape }}</title>
+  {%- endif %}
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
   {%- feed_meta -%}
   {%- include analytics.html -%}
@@ -15,5 +29,14 @@
   <link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
   <meta name="theme-color" content="#184f95">
   <meta name="google-adsense-account" content="ca-pub-4908822596312600">
-  {% if page.noindex %}<meta name="robots" content="noindex, follow">{% endif %}
+  {%- comment -%}
+    A series hub is noindex only while it has no published posts (it flips by itself on the
+    day its first post goes live); `noindex: true` in front matter still forces it.
+  {%- endcomment -%}
+  {%- assign _noindex = page.noindex -%}
+  {%- if page.layout == 'series' and page.series_slug -%}
+    {%- assign _published = site.posts | where: "series", page.series_slug | size -%}
+    {%- if _published == 0 -%}{%- assign _noindex = true -%}{%- endif -%}
+  {%- endif -%}
+  {% if _noindex %}<meta name="robots" content="noindex, follow">{% endif %}
 </head>

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "The riskometer: how SEBI's risk dial is scored, and what it can't see"
+seo_title: "SEBI riskometer: how it's scored, what it misses"
 description: "SEBI's riskometer scores every fund monthly on six levels. How the score is computed, worked through, and why nearly every equity fund lands on Very High."
 image: /assets/og/the-riskometer.png
 date: 2026-10-22 09:00:00 +0530

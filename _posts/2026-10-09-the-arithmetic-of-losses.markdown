@@ -48,7 +48,7 @@ measure of how widely returns swing around their own average.
 
 ## Part one: the recovery table
 
-![Gain needed to break even against loss from peak]({{ '/assets/charts/risk-recovery.svg' | relative_url }})
+![Gain needed to break even against loss from peak]({{ '/assets/charts/risk-recovery.svg' | relative_url }}){: width="446" height="238"}
 
 | Loss from peak | Gain needed to break even |
 |---:|---:|{% for row in a.recovery_table %}

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Currency risk: what the rupee does to your foreign investments"
+seo_title: "Currency risk in foreign investments, explained"
 description: "A US fund's rupee return is two returns multiplied: the asset's and the exchange rate's. Twenty years of RBI and FBIL rates show how much the second moves."
 image: /assets/og/currency-risk.png
 date: 2026-10-19 09:00:00 +0530
@@ -71,7 +72,7 @@ AMFI, the Association of Mutual Funds in India, via
 [mfapi.in]({{ d.fund_source_url }})). Data to
 {{ cu.end_date | date: "%-d %B %Y" }}; historical, for illustration only.
 
-![USD/INR reference rate, 2006 to 2026]({{ '/assets/charts/risk2-usdinr.svg' | relative_url }})
+![USD/INR reference rate, 2006 to 2026]({{ '/assets/charts/risk2-usdinr.svg' | relative_url }}){: width="446" height="230"}
 
 | Year | Date | ₹ per $ | Change in ₹ per $ | Index fund return |
 |---|---|---:|---:|---:|{% for row in cu.rows %}

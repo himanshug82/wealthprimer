@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Inventory Days: how long stock sits on the shelf before it sells"
+seo_title: "Inventory days: formula and what it tells you"
 description: "How many days of stock a company sits on before it sells. Inventory days, the formula, and what a steadily rising number usually signals about demand."
 image: /assets/og/inventory-days.png
 date: 2026-09-07 09:00:00 +0530

@@ -102,7 +102,7 @@ means nothing here can be read as a view on current markets.
 
 ## Twenty years, on a log scale
 
-![UTI Nifty 50 Index Fund NAV, 2006 to 2026]({{ '/assets/charts/mf-nav-history.svg' | relative_url }})
+![UTI Nifty 50 Index Fund NAV, 2006 to 2026]({{ '/assets/charts/mf-nav-history.svg' | relative_url }}){: width="595" height="315"}
 
 Source: [AMFI, the Association of Mutual Funds in India, via mfapi.in]({{ f.source_url }}) —
 {{ f.name }}, {{ f.plan_regular }}.

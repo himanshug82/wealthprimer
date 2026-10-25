@@ -78,7 +78,7 @@ the dog will run next — only how far it's *been* running lately.
 
 ## The chart
 
-![Britannia with 20-day Bollinger Bands, bandwidth and ATR]({{ '/assets/charts/ta2-bollinger-atr.svg' | relative_url }})
+![Britannia with 20-day Bollinger Bands, bandwidth and ATR]({{ '/assets/charts/ta2-bollinger-atr.svg' | relative_url }}){: width="612" height="461"}
 
 Britannia (NSE: BRITANNIA), {{ ta2.dataset.as_of }}. Source:
 [Yahoo Finance]({{ ta2.dataset.source_url }}). Historical data, for illustration only.

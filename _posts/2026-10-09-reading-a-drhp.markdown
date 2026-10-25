@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Reading a DRHP: the Desi Bites IPO, retold from the prospectus"
+seo_title: "How to read a DRHP: an IPO prospectus walkthrough"
 description: "A prospectus tells you what the money is for, who is selling, what could go wrong and what you're paying. The six sections that matter, on the Desi Bites IPO."
 image: /assets/og/reading-a-drhp.png
 date: 2026-10-09 09:00:00 +0530

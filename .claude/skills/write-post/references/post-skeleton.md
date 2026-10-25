@@ -7,7 +7,8 @@ Copy the shape of a recent post in the same series (e.g. `_posts/2026-09-03-roce
 ```yaml
 ---
 layout: post
-title: "ROCE explained: formula and example"   # aim ≤ 50 (never > 60), keyword first, sentence case
+title: "ROCE explained: formula and example"   # the H1; aim ≤ 50 (never > 60), keyword first, sentence case
+# seo_title: "…"                    # optional search-result title ≤ 60 when the H1 must be longer
 description: "…140–160 characters, primary keyword once, concrete promise…"
 image: /assets/og/roce.png          # generate with scripts/make_og_cards.py
 date: 2026-09-03 09:00:00 +0530     # matches filename; time ≤ 09:00 +0530 (house convention, TODO.md)
@@ -71,4 +72,4 @@ Link the series page once in the body, e.g. `[Jargon, Decoded]({{ '/series/jargo
 
 ## Charts
 
-SVG from a `scripts/make_*` file with a fixed seed, saved in `assets/charts/`; reference with `![alt]({{ '/assets/charts/x.svg' | relative_url }})`. `check_posts.py` errors on a missing chart file.
+SVG from a `scripts/make_*` file with a fixed seed, saved in `assets/charts/`; reference with `![alt]({{ '/assets/charts/x.svg' | relative_url }})`. `check_posts.py` errors on a missing chart file. Then run `python3 scripts/add_img_dims.py` (adds width/height from the SVG viewBox; `--check` to verify).

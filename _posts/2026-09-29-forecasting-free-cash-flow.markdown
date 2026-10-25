@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Forecasting free cash flow: the half of a DCF that actually matters"
+seo_title: "Forecasting free cash flow for a DCF"
 description: "The half of a DCF that actually decides the answer. Building an FCFF forecast from revenue growth, margins, tax, depreciation, capex and working capital."
 image: /assets/og/forecasting-free-cash-flow.png
 date: 2026-09-29 09:00:00 +0530

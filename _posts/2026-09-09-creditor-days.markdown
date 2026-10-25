@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Creditor Days: how long a company takes to pay its own suppliers"
+seo_title: "Creditor days: formula and what it tells you"
 description: "How long a company takes to pay its own suppliers, and why stretching payables is interest-free funding right up until the point that it isn't."
 image: /assets/og/creditor-days.png
 date: 2026-09-09 09:00:00 +0530

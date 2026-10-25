@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Segregated portfolios: side pockets, and the 2020 Franklin Templeton wind-up"
+seo_title: "Segregated portfolios (side pockets) explained"
 description: "How a side pocket ring-fences a defaulted bond so no one can dump the loss on others, and a sourced timeline of the 2020 Franklin Templeton wind-up."
 image: /assets/og/segregated-portfolios.png
 date: 2026-10-24 09:00:00 +0530

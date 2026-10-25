@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Series"
+description: "Every Wealth Primer learning series in reading order: jargon, fundamental analysis, technical analysis, mutual funds, tax and risk for Indian investors."
 permalink: /series/
 ---
 {%- comment -%}

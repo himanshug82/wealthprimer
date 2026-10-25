@@ -85,7 +85,7 @@ left alone:
 | Worst 21-trading-day return | {{ ps.worst_21d_pct }}% | {{ p7.worst_21d_pct }}% | {{ ph.worst_21d_pct }}% | {{ pi.worst_21d_pct }}% |
 | Lowest value reached (₹) | {% include inr.html n=ps.lowest_value %} | {% include inr.html n=p7.lowest_value %} | {% include inr.html n=ph.lowest_value %} | {% include inr.html n=pi.lowest_value %} |
 
-![Drawdowns of the single-stock, 50/50 and index portfolios]({{ '/assets/charts/risk2-concentration.svg' | relative_url }})
+![Drawdowns of the single-stock, 50/50 and index portfolios]({{ '/assets/charts/risk2-concentration.svg' | relative_url }}){: width="461" height="245"}
 
 Read it honestly, because it cuts both ways.
 

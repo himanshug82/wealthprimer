@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Manager changes and style drift: when the fund you bought quietly changes"
+seo_title: "Fund manager changes and style drift explained"
 description: "A fund can change manager or drift in style without changing its name or category. How to spot it in factsheets, worked on a hypothetical flexi-cap fund."
 image: /assets/og/manager-changes-and-style-drift.png
 date: 2026-10-23 09:00:00 +0530

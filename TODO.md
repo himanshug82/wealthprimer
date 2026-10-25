@@ -15,6 +15,11 @@ for how the repo works.
 
 ## Open — needs you
 
+- **Search Console and DNS (from the SEO audit, `_review/SEO-AUDIT-2026-10-25.md`):**
+  verify a *Domain* property for wealthprimer.in (DNS TXT), submit `/sitemap.xml`,
+  request indexing for `/`, `/series/` and `/series/risk/` (it was `noindex` until
+  25 Oct); add DNS `CNAME www → himanshug82.github.io` (www doesn't resolve today);
+  if applying for AdSense, add `ads.txt` and disclose ad cookies on `/privacy/`.
 - **Newsletter:** `newsletter.action` in `_config.yml` is empty, so the signup
   box renders nothing. Mailchimp or Buttondown — three config keys; setup notes
   in `_includes/newsletter.html`.

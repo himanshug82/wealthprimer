@@ -91,7 +91,7 @@ the Nifty 50 price index. Source: {{ m.sources.label }}, codes
 Yahoo Finance. Historical data, for illustration only — this is about how the
 wrappers behave, not about either product's merits.
 
-![Growth of ₹100 in a Nifty 50 ETF, the same fund house's index fund (direct and regular), and the price index]({{ '/assets/charts/mf2-etf-vs-index-fund.svg' | relative_url }})
+![Growth of ₹100 in a Nifty 50 ETF, the same fund house's index fund (direct and regular), and the price index]({{ '/assets/charts/mf2-etf-vs-index-fund.svg' | relative_url }}){: width="595" height="281"}
 
 | | Annualised return | ₹100 became |
 |---|---:|---:|

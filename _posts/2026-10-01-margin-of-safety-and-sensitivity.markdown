@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Margin of safety: what to do with a valuation you don't fully trust"
+seo_title: "Margin of safety and sensitivity analysis"
 description: "A DCF gives a number to two decimals and supports a range. Sensitivity tables, margin of safety, and what to do with a valuation you don't fully trust."
 image: /assets/og/margin-of-safety-and-sensitivity.png
 date: 2026-10-01 09:00:00 +0530

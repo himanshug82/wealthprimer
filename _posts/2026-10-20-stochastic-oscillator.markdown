@@ -102,7 +102,7 @@ above 70. The stochastic is at an "extreme" far more often. A signal that fires
 several times as often isn't several times as informative. Mostly, it's
 noisier.
 
-![Britannia with slow stochastic and RSI]({{ '/assets/charts/ta3-stochastic.svg' | relative_url }})
+![Britannia with slow stochastic and RSI]({{ '/assets/charts/ta3-stochastic.svg' | relative_url }}){: width="612" height="446"}
 
 Britannia (NSE: BRITANNIA), {{ ds.stock_as_of }}. Source:
 [Yahoo Finance]({{ ds.stock_source_url }}). Historical data, for illustration only.

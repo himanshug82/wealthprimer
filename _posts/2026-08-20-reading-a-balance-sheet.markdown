@@ -54,7 +54,7 @@ suppliers), non-current liabilities aren't (like a multi-year loan).
 from assets. It's share capital (money shareholders originally put in) plus
 reserves (profit the company has kept and reinvested instead of paying out).
 
-![Balance sheet drawn to scale: assets on the left, the equity and liabilities funding them on the right]({{ '/assets/charts/fa-balance-sheet.svg' | relative_url }})
+![Balance sheet drawn to scale: assets on the left, the equity and liabilities funding them on the right]({{ '/assets/charts/fa-balance-sheet.svg' | relative_url }}){: width="720" height="450"}
 
 Desi Bites Foods, FY25 — the fictional case study, drawn to scale from the
 same figures used in the tables below. Illustration only.

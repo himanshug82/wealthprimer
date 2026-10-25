@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Before you file: the statement, the AIS, and what to reconcile"
+seo_title: "Before you file: the AIS and what to reconcile"
 description: "The department already holds most of your numbers. Reconciling a capital gains statement against the AIS, and the checks worth doing before you submit."
 image: /assets/og/before-you-file.png
 date: 2026-11-04 09:00:00 +0530

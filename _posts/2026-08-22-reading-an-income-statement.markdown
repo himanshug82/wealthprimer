@@ -60,7 +60,7 @@ every cost is the only number that tells you what you actually get to keep.
 
 </details>
 
-![Income statement waterfall: revenue reduced step by step down to profit after tax]({{ '/assets/charts/fa-income-waterfall.svg' | relative_url }})
+![Income statement waterfall: revenue reduced step by step down to profit after tax]({{ '/assets/charts/fa-income-waterfall.svg' | relative_url }}){: width="720" height="400"}
 
 Desi Bites Foods, FY25 — the fictional case study, drawn to scale from the
 same figures used in the tables below. Illustration only.

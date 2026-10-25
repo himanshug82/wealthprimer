@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "T+1 settlement: what happens between clicking 'buy' and owning the share"
+seo_title: "T+1 settlement: from buy click to owning the share"
 description: "Indian stock trades settle one working day after the trade. What the clearing corporation does in between, when shares reach your demat, and what T+0 adds."
 image: /assets/og/t-plus-1-settlement.png
 date: 2026-10-16 09:00:00 +0530

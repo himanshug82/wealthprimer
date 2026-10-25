@@ -78,7 +78,7 @@ Now here is where the conventional readings meet reality.
 
 ## The chart, and the day that breaks the story
 
-![Britannia price with volume]({{ '/assets/charts/ta-volume.svg' | relative_url }})
+![Britannia price with volume]({{ '/assets/charts/ta-volume.svg' | relative_url }}){: width="609" height="359"}
 
 Britannia (NSE: BRITANNIA), {{ ta.dataset.as_of }}. Source:
 [Yahoo Finance]({{ ta.dataset.source_url }}). Historical data, for illustration only.

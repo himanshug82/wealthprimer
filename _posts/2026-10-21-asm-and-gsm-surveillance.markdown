@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "ASM and GSM: what it means when the exchange puts a stock under surveillance"
+seo_title: "ASM and GSM surveillance, explained"
 description: "The exchanges' surveillance lists raise margins, narrow price bands and slow trading in stocks with unusual moves. What each stage changes for a trader."
 image: /assets/og/asm-and-gsm-surveillance.png
 date: 2026-10-21 09:00:00 +0530

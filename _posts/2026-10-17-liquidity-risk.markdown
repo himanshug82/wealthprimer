@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Liquidity risk: what it costs to get out, and how long it takes"
+seo_title: "Liquidity risk: the cost and time of getting out"
 description: "Impact cost, days to liquidate, and the stress tests small-cap and mid-cap funds have published since 2024 — what they show and what they can't."
 image: /assets/og/liquidity-risk.png
 date: 2026-10-17 09:00:00 +0530

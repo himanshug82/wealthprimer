@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Debt funds explained: accrual, mark-to-market, and why a gilt fund can fall"
+seo_title: "Debt funds explained: accrual vs mark-to-market"
 description: "How a debt fund earns — accrual plus repricing — and why an overnight fund never had a down day while a gilt fund fell 16% and took three years to recover."
 image: /assets/og/debt-funds-explained.png
 date: 2026-10-12 09:00:00 +0530
@@ -84,7 +85,7 @@ Regular plans, {{ dbt.window_start | date: "%-d %B %Y" }} to {{ dbt.window_end |
 {{ src.label }}, scheme codes {{ src.overnight.code }}, {{ src.money_market.code }} and {{ src.gilt.code }}. Historical NAV
 data, for illustration only.
 
-![Growth of ₹100 in three UTI debt funds since May 2018, and the gilt fund's rolling one-year return since 2007]({{ '/assets/charts/mf2-debt-funds.svg' | relative_url }})
+![Growth of ₹100 in three UTI debt funds since May 2018, and the gilt fund's rolling one-year return since 2007]({{ '/assets/charts/mf2-debt-funds.svg' | relative_url }}){: width="595" height="446"}
 
 | | {{ ov.name }} | {{ mm.name }} | {{ g.name }} |
 |---|---:|---:|---:|

@@ -74,7 +74,7 @@ your ruler — because it means something changed about the ramp.
 Both of these come from the same Britannia data, drawn by connecting exactly
 two swing points and extending. No adjusting, no curves.
 
-![Britannia trend lines and their breaks]({{ '/assets/charts/ta-trendlines.svg' | relative_url }})
+![Britannia trend lines and their breaks]({{ '/assets/charts/ta-trendlines.svg' | relative_url }}){: width="594" height="320"}
 
 Britannia (NSE: BRITANNIA), daily, September 2024 to March 2026. Source:
 [Yahoo Finance]({{ ta.dataset.source_url }}). Historical data, for illustration only.

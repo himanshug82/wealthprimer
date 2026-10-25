@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Equity Multiplier: how many times equity is levered up into total assets"
+seo_title: "Equity multiplier: formula and what it tells you"
 description: "Total assets divided by equity: how far an asset base is levered above the equity backing it, once every liability is counted, not just the loans."
 image: /assets/og/equity-multiplier.png
 date: 2026-09-16 09:00:00 +0530

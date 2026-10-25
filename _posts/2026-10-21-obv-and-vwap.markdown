@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "OBV and VWAP: two volume tools, and what daily data can't tell you"
+seo_title: "OBV and VWAP: two volume indicators, explained"
 description: "On-balance volume adds and subtracts each day's volume; VWAP averages price by volume. How both work, an OBV divergence test, and why VWAP needs intraday data."
 image: /assets/og/obv-and-vwap.png
 date: 2026-10-21 09:00:00 +0530
@@ -67,7 +68,7 @@ isn't lying, exactly. It's just not measuring what you'd think.
 
 ## OBV on Britannia
 
-![Britannia price with anchored VWAP, and OBV]({{ '/assets/charts/ta3-obv-vwap.svg' | relative_url }})
+![Britannia price with anchored VWAP, and OBV]({{ '/assets/charts/ta3-obv-vwap.svg' | relative_url }}){: width="612" height="389"}
 
 Britannia (NSE: BRITANNIA), {{ ds.stock_as_of }}. Source:
 [Yahoo Finance]({{ ds.stock_source_url }}). Historical data, for illustration only.

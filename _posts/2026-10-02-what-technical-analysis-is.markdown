@@ -81,7 +81,7 @@ Here's the dataset this entire series uses — daily closing prices for
 Britannia Industries, the same company the rest of this blog has been
 analysing:
 
-![Britannia daily closing price, April 2024 to March 2026]({{ '/assets/charts/ta-overview.svg' | relative_url }})
+![Britannia daily closing price, April 2024 to March 2026]({{ '/assets/charts/ta-overview.svg' | relative_url }}){: width="610" height="305"}
 
 Britannia (NSE: BRITANNIA), closing prices, {{ ds.as_of }}. Source:
 [Yahoo Finance]({{ ds.source_url }}). Historical data, for illustration only.

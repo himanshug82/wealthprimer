@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Circuit limits: why a stock can be 'locked' at upper circuit, and when the whole market stops"
+seo_title: "Circuit limits and price bands, explained"
 description: "Price bands cap how far a stock can move in a day; market-wide circuit breakers halt everything. How NSE's 2/5/10/20% bands and the index triggers work."
 image: /assets/og/circuit-limits-and-price-bands.png
 date: 2026-10-15 09:00:00 +0530

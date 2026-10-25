@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Multiple timeframes: the weekly chart is not a second opinion"
+seo_title: "Multiple timeframe analysis in technical analysis"
 description: "Weekly trend, daily signal: the classic recipe. Six real oversold readings on one chart, sorted by weekly trend, and why the 'uptrend' one fell the most."
 image: /assets/og/multiple-timeframe-analysis.png
 date: 2026-10-14 09:00:00 +0530
@@ -65,7 +66,7 @@ chart. That's not a flaw you can fix — it's what smoothing *is*.
 
 ## The chart
 
-![Weekly trend on top, daily RSI underneath]({{ '/assets/charts/ta2-multi-timeframe.svg' | relative_url }})
+![Weekly trend on top, daily RSI underneath]({{ '/assets/charts/ta2-multi-timeframe.svg' | relative_url }}){: width="612" height="418"}
 
 Britannia (NSE: BRITANNIA), {{ ta2.dataset.as_of }}, with weekly bars built from them. Source:
 [Yahoo Finance]({{ ta2.dataset.source_url }}). Historical data, for illustration only.

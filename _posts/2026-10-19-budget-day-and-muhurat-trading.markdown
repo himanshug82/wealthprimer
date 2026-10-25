@@ -87,7 +87,7 @@ Across **{% include inr.html n=all.n %} trading days**, the Nifty's average move
 | Rose | {{ b.rises }} of {{ b.n }} ({{ b.share_positive_pct }}%) | {{ all.share_positive_pct }}% |
 | Average move | {% include inr.html n=b.avg_pct %}% | {{ all.avg_pct }}% |
 
-![Nifty's move on each Budget day]({{ '/assets/charts/ta3-budget-days.svg' | relative_url }})
+![Nifty's move on each Budget day]({{ '/assets/charts/ta3-budget-days.svg' | relative_url }}){: width="612" height="274"}
 
 Nifty 50 price index. Source: [Yahoo Finance]({{ ds.index_source_url }}).
 Historical data, for illustration only.

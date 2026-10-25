@@ -28,7 +28,7 @@ The whole reason this blog doesn't need RA/IA registration is that it stays educ
    - **No discount rate, justified multiple or fair-value range for a real listed company** — that's a short step from a valuation call. DCFs, WACCs and justified-P/B scenarios run on Desi Bites or a generic/illustrative company; real companies get observables only.
    - Watch the cumulative effect: praise repeated across a module ("structural strength", "genuine operating strength") reads like a quality case. Frame real-company figures as one-year, backward-looking facts.
 2. **Use lagged data in worked examples.** Any market price, chart, or figure used as a worked example must be at least **3 months** old at time of publishing. This is our **house rule**, deliberately stricter than SEBI's: SEBI's condition for education content was 3 months (circular of 29 January 2025) and was shortened to 30 days from 1 July 2026 (circular of 8 May 2026) — don't describe 3 months as "SEBI's rule". State the as-of date explicitly, e.g. "prices as of March 2026, used for illustration only." This is not optional — check the date on every chart/table before publishing. (Research statistics such as a newly published SEBI study are not worked-example prices and may be quoted when released — say so if a post implies otherwise.)
-3. **Carry a disclaimer.** Every post ends with the shared disclaimer in `_includes/disclaimer.html`, rendered automatically by the post layout. Don't paste or reword it per post; change the include if the policy changes.
+3. **Carry a disclaimer.** Every post ends with the shared disclaimer in `_includes/disclaimer.html`, rendered automatically by the post layout. Don't paste or reword it per post; change the include if the policy changes. Posts that set `needs_review` get an extra tax/professional paragraph from the same include, and a notice under the header (see **Professional review**).
 4. **Frame mistakes/limitations honestly.** Especially in the TA series — end it with an honest reckoning of what technical analysis can't do. Credibility comes from admitting limits, not from every post ending on "and that's why this indicator wins."
 
 ## The post template
@@ -115,7 +115,23 @@ A full review of all 116 posts in September 2026 (`_review/REVIEW-2026-09-24.md`
 
 - **State the as-of date and cite the primary source** for every rule, rate, threshold or limit: circular/notification number and date (sebi.gov.in, rbi.org.in, incometaxindia.gov.in, the Finance Act text). Secondary summaries (news, broker blogs, law-firm notes) are acceptable only when labelled and when a primary source genuinely can't be reached — record it in TODO.md as VERIFY.
 - **Never state a rule from memory.** Rules changed a lot in 2024–26 (debt-fund indexation gone for sales from 23 July 2024; "specified mutual fund" redefined as >65% debt from FY 2025-26; STT raised from 1 April 2026; SGB exemption narrowed; the Income-tax Act, 2025 renumbered sections and replaced PY/AY with "Tax Year"; SEBI MF Regulations 2026; SEBI category revisions Feb 2026). If you can't confirm the current position, soften to what is certain and say "check the current rule".
-- Tax posts use "Tax Year 2026-27 (FY 2026-27)" style, apply 4% cess consistently (or say it's excluded), mention surcharge where it could change the answer, and name the example fund and data source. Every tax post needs a read by someone who files professionally before it goes out (tracked in TODO.md).
+- Tax posts use "Tax Year 2026-27 (FY 2026-27)" style, apply 4% cess consistently (or say it's excluded), mention surcharge where it could change the answer, and name the example fund and data source. No professional read is planned (owner decision, 26 Oct 2026), so every tax post carries the `needs_review` notice and the safeguards under **Professional review** below.
+
+## Professional review (tax, and any rule the author can't professionally verify)
+
+The author is **not** a tax professional (or any other licensed professional), and **no professional review is planned** (owner decision, 26 Oct 2026). The blog is honest about that and makes up for it with process, not with claims it can't back.
+
+1. **Flag it in front matter:** every Tax-series post, and any other post that states a tax or similar rule rather than just pointing at it, sets `needs_review: tax` (a key in `_data/review.yml`; add a key for another profession) and `rules_as_of: "Month YYYY"` — the date the rules were last checked against primary sources. Optional `rules_for: "Tax Year 2026-27 (FY 2026-27)"`. `check_posts.py` errors if a Tax-series post lacks the flag, if `rules_as_of` is missing, or if the kind is unknown; `lint_post.py` warns when a post states a tax rule without the flag (flag it or soften it).
+2. **The layout states the position.** `_includes/review-notice.html` (under the header) says the rules are stated as at that date, that rules change, that the author is not that professional, that the post has not been reviewed by one, and that it is not advice. `_includes/disclaimer.html` adds the matching closing paragraph. Don't write these per post; change the includes or `_data/review.yml` if the wording should change.
+3. **Safeguards that replace the review (all mandatory for flagged posts):**
+   - every rule, rate and threshold comes from a primary source opened this session (`verify-claims`), cited with number and date; if it can't be confirmed, state what is certain and "check the current rule";
+   - teach mechanics, not planning: no "how to save tax", no "you should", no optimisation advice; examples are computed by script from `_data/`;
+   - avoid section numbers unless checked in the Act itself; state old and new labels only from the source;
+   - dates, never "currently" / "this year" without the as-at date;
+   - `post-auditor` reviews the post before it is scheduled;
+   - re-check every flagged post after each Union Budget; change `rules_as_of` only when the rules were actually re-checked.
+4. **Never claim a review that hasn't happened.** `reviewed_by: "Name, qualification"` and `reviewed_on: YYYY-MM-DD` exist only for the case where a professional really does read a version of a post; set them together, supplied by the owner. If none ever does, they stay unused and the notice keeps saying so.
+5. **A post that states a tax rule but isn't flagged is a bug** — flag it or soften it. `TODO.md` lists any known cases.
 
 ## Style conventions
 

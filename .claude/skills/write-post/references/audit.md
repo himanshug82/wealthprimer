@@ -34,6 +34,7 @@ Run on the **rendered meaning**, not the Liquid. The Sept 2026 review (`_review/
 
 - [ ] Each rule/rate/threshold has an as-of date and a primary source (circular/notification number + date; Finance Act; Income-tax Act, 2025 "Tax Year" terminology).
 - [ ] If you could not open the primary document this session: no circular number, date, rate, threshold or section number. "Check the current rule", VERIFY row, delivered as a draft. A labelled secondary source is allowed only where CLAUDE.md allows it (primary genuinely unreachable) and gets a VERIFY row.
+- [ ] Flagged: `needs_review` + `rules_as_of` set; no `reviewed_by` unless a professional really read this version (none is planned); rules stated "as at" the date (no bare "currently"/"this year"); any post that states a tax rule is either flagged or softened.
 - [ ] Tax post: "Tax Year 2026-27" **and** "FY 2026-27" in the opening and one H2; old/new section numbers only from the Act itself; 4% cess consistent (or stated excluded); surcharge mentioned where it can change the answer; example fund and data source named; annual-refresh row in `TODO.md`.
 
 ## D. Style and rendering
@@ -50,4 +51,4 @@ Run on the **rendered meaning**, not the Liquid. The Sept 2026 review (`_review/
 
 - [ ] `grep -l` the same real company across the new files: are verdicts or praise accumulating? Frame as one-year facts.
 - [ ] No two new posts own the same term/intent; every internal link points to an earlier-dated post; owed links logged.
-- [ ] `planned:` in `_data/series.yml` bumped; one post per series per day; Tax posts (if any) all marked pending professional read.
+- [ ] `planned:` in `_data/series.yml` bumped; one post per series per day; Tax posts (if any) all flagged `needs_review: tax` with `rules_as_of`.

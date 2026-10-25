@@ -6,6 +6,9 @@ image: /assets/og/buyback-taxation.png
 date: 2026-11-27 09:00:00 +0530
 series: tax
 term: "Buyback taxation"
+needs_review: tax
+rules_for: "Tax Year 2026-27 (FY 2026-27)"
+rules_as_of: "September 2026"
 ---
 
 {% assign t2 = site.data.tax2 %}
@@ -16,9 +19,8 @@ term: "Buyback taxation"
 {% assign rc = b.regime_c %}
 {% assign r = site.data.tax.rates %}
 
-*Rules described here are date-specific — three regimes are shown, the current
-one applying from 1 April 2026. Verified against public sources in
-{{ v.verified_on }}. Educational content, not tax advice.*
+*Rules described here are date-specific: three regimes are shown, the current
+one applying from 1 April 2026.*
 
 ## What a buyback is, and why the tax kept changing
 

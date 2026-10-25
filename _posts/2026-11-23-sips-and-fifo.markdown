@@ -6,14 +6,14 @@ image: /assets/og/sips-and-fifo.png
 date: 2026-11-23 09:00:00 +0530
 series: tax
 term: "FIFO (tax lots)"
+needs_review: tax
+rules_for: "Tax Year 2026-27 (FY 2026-27)"
+rules_as_of: "August 2026"
 ---
 
 {% assign t = site.data.tax %}
 {% assign r = t.rates %}
 {% assign s = t.example_sip %}
-
-*Rules described here apply to **{{ r.financial_year }}**. Educational content, not tax
-advice.*
 
 ## A SIP is not one investment
 

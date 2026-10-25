@@ -11,6 +11,8 @@
 # only sees published ones, so counting those would show "Part 3 of 3" on day
 # three. Bump it when a module is added to a series; if it is ever missing or
 # below the published count, the layout falls back to the published count.
+# Optional `numbered: false` (for a grab-bag series such as `explainers`) hides "Part N of M"
+# on posts; prev/next still work. Add a series with scripts/new_series.py (see .claude/skills/new-series).
 - slug: jargon
   title: "Jargon, Decoded"
   description: "One financial term or ratio at a time — P/E, ROCE, P/B, and the rest, explained with a worked example."

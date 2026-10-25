@@ -95,7 +95,7 @@ Brief:    <the SEO brief>
 Audit:    lint <n FAIL / n WARN, each WARN dispositioned>; check_posts <result>; build <run | not run>; fresh reviewer <run | not run>
 Unverified: <claims + VERIFY rows added>
 Not run:  <WebSearch, Docker, professional read, …>
-Status:   draft | ready-for-owner   (tax: always draft pending professional read)
+Status:   draft | ready-for-owner   (tax: flag needs_review/rules_as_of; no professional review is planned, so primary sources + post-auditor are the gate)
 Owner decisions: <author/sameAs metadata, named reviewer credit, redirect gem, referral-link policy — flag, don't implement; or none>
 ```
 

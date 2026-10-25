@@ -6,6 +6,8 @@ image: /assets/og/index-funds-vs-etfs.png
 date: 2026-10-13 09:00:00 +0530
 series: mutual-funds
 term: "ETF (exchange-traded fund)"
+needs_review: tax
+rules_as_of: "August 2026"
 ---
 
 {% assign m = site.data.mf2 %}
@@ -178,7 +180,7 @@ Not a recommendation — a checklist of which *frictions* apply to you:
 - **Not correcting for splits.** A 1:10 split looks like a 90% crash in a raw
   NAV download.
 - **Forgetting an ETF may pay out.** The cash arrives in your bank account and
-  is taxed as dividend income in the year received — see the
+  is generally taxed as dividend income in the year received — see the
   dividends and interest post in the Tax series<!-- RELINK 2026-10-31-dividends-and-interest -->.
   A growth-plan index fund defers all of that until you sell.
 - **Assuming "ETF" means "Nifty 50".** SEBI's category rules make an index

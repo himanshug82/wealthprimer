@@ -6,16 +6,15 @@ image: /assets/og/advance-tax-for-investors.png
 date: 2026-12-02 09:00:00 +0530
 series: tax
 term: "Advance tax"
+needs_review: tax
+rules_for: "Tax Year 2026-27 (FY 2026-27)"
+rules_as_of: "September 2026"
 ---
 
 {% assign t3 = site.data.tax3 %}
 {% assign v = t3.verification %}
 {% assign x = t3.advance %}
 {% assign r = site.data.tax.rates %}
-
-*Rules described here apply to **{{ v.financial_year }}**, checked against the
-text of the Income-tax Act, 2025 and the Finance Act, 2026 in {{ v.verified_on }}.
-Educational content, not tax advice.*
 
 ## Tax is due during the year, not when you file
 

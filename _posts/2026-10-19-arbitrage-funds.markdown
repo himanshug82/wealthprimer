@@ -7,6 +7,8 @@ image: /assets/og/arbitrage-funds.png
 date: 2026-10-19 09:00:00 +0530
 series: mutual-funds
 term: "Arbitrage fund"
+needs_review: tax
+rules_as_of: "August 2026"
 ---
 
 {% assign m = site.data.mf3 %}

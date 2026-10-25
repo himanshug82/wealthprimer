@@ -28,7 +28,7 @@ the header line; the same include renders the prev/next block after the body.
     {%- if series_meta -%}
     <p class="post-series-line">
       <a href="{{ '/series/' | append: page.series | append: '/' | relative_url }}">{{ series_meta.title }}</a>
-      {%- if series_index > 0 %} &middot; Part {{ series_index }} of {{ series_total }}{% endif -%}
+      {%- if series_index > 0 and series_meta.numbered != false %} &middot; Part {{ series_index }} of {{ series_total }}{% endif -%}
     </p>
     {%- endif -%}
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
@@ -47,6 +47,8 @@ the header line; the same include renders the prev/next block after the body.
         &middot; <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
       {%- endif -%}</p>
   </header>
+
+  {%- include review-notice.html -%}
 
   {%- include toc.html -%}
 

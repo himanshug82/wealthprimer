@@ -15,6 +15,10 @@ date: 2026-09-03 09:00:00 +0530     # matches filename; time ≤ 09:00 +0530 (ho
 series: jargon                      # slug from _data/series.yml
 term: "ROCE (return on capital employed)"   # glossary posts only
 # last_modified_at: 2026-10-01      # only on material updates
+# needs_review: tax                 # REQUIRED for Tax series and any post stating a tax rule (key in _data/review.yml)
+# rules_as_of: "August 2026"        # when the rules were last checked against primary sources (required with needs_review)
+# rules_for: "Tax Year 2026-27 (FY 2026-27)"   # optional label shown in the notice
+# reviewed_by: / reviewed_on:       # ONLY after a professional actually read it; set together; owner supplies
 # toc: false                        # TOC auto-shows at ≥ 6 H2s
 ---
 ```

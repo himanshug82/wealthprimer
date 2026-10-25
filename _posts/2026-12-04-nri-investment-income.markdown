@@ -6,6 +6,9 @@ image: /assets/og/nri-investment-income.png
 date: 2026-12-04 09:00:00 +0530
 series: tax
 term: "NRI taxation (TDS, DTAA, NRE/NRO)"
+needs_review: tax
+rules_for: "Tax Year 2026-27 (FY 2026-27)"
+rules_as_of: "September 2026"
 ---
 
 {% assign t3 = site.data.tax3 %}
@@ -13,11 +16,6 @@ term: "NRI taxation (TDS, DTAA, NRE/NRO)"
 {% assign x = t3.nri %}
 {% assign g = t3.gifts %}
 {% assign r = site.data.tax.rates %}
-
-*Rules described here apply to **{{ v.financial_year }}**, checked against the
-text of the Income-tax Act, 2025 and the Finance Act, 2026 in {{ v.verified_on }}.
-Educational content, not tax advice — and for non-residents especially, the
-rules of the country you live in matter as much as India's.*
 
 ## What changes when you leave
 

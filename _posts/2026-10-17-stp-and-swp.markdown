@@ -6,6 +6,8 @@ image: /assets/og/stp-and-swp.png
 date: 2026-10-17 09:00:00 +0530
 series: mutual-funds
 term: "STP and SWP"
+needs_review: tax
+rules_as_of: "August 2026"
 ---
 
 {% assign m = site.data.mf2 %}
@@ -155,9 +157,9 @@ margin. Low volatility during withdrawals is worth more than it looks.
 Both tools create taxable events every month:
 
 - An **STP** is a redemption from the parking fund each month (debt-fund
-  gains, taxed at slab rate) and a purchase into the equity fund — so it
+  gains, generally taxed at slab rate; check which rule applies to your fund) and a purchase into the equity fund — so it
   creates a fresh **tax lot** with its own holding period every month.
-- An **SWP** is a monthly redemption; each one is matched to your oldest
+- An **SWP** is a monthly redemption; each one is generally matched to your oldest
   units first under FIFO — first in, first out (the
   FIFO post in the Tax series<!-- RELINK 2026-11-02-sips-and-fifo --> walks through it). So
   in a fund you've held for years, or built up through a SIP, the oldest (and usually

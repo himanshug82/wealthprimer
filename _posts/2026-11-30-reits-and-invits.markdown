@@ -6,16 +6,15 @@ image: /assets/og/reits-and-invits.png
 date: 2026-11-30 09:00:00 +0530
 series: tax
 term: "REIT and InvIT taxation"
+needs_review: tax
+rules_for: "Tax Year 2026-27 (FY 2026-27)"
+rules_as_of: "September 2026"
 ---
 
 {% assign t3 = site.data.tax3 %}
 {% assign v = t3.verification %}
 {% assign x = t3.reit %}
 {% assign r = site.data.tax.rates %}
-
-*Rules described here apply to **{{ v.financial_year }}**, checked against the
-text of the Income-tax Act, 2025 and the Finance Act, 2026 in {{ v.verified_on }}.
-Educational content, not tax advice.*
 
 ## A payout that isn't one thing
 

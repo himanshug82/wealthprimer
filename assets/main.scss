@@ -571,6 +571,24 @@ div.language-python {
   strong { color: var(--text); display: block; margin-bottom: 0.25em; }
 }
 
+.post-disclaimer + .post-disclaimer { margin-top: 0.6rem; }
+
+// Professional-review notice (tax and other rule-based posts) — under the post header
+.review-notice {
+  margin: 0 0 1.8em;
+  padding: 0.9em 1.15em;
+  background: var(--surface-2);
+  border-left: 4px solid var(--brand);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--text);
+
+  p { margin: 0 0 0.5em; }
+  p:last-child { margin-bottom: 0; }
+}
+
 // ---------------------------------------------------------------------------
 // Table of contents
 // ---------------------------------------------------------------------------

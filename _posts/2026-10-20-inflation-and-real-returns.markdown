@@ -6,6 +6,8 @@ image: /assets/og/inflation-and-real-returns.png
 date: 2026-10-20 09:00:00 +0530
 series: risk
 term: "Real return"
+needs_review: tax
+rules_as_of: "August 2026"
 ---
 
 {% assign r2 = site.data.risk2 %}

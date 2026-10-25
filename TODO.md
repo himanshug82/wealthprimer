@@ -4,7 +4,7 @@ Current state (25 Oct 2026): **168 posts written and scheduled** across six
 series (Jargon 53 · FA 29 · TA 22 · MF 30 · Tax 18 · Risk 16). The cadence is
 **one post per series per day** (MF Module 4 runs every other day, by request). Scheduled through: Jargon 21 Oct · FA 23 Oct
 · TA 23 Oct · Risk 23 Oct · MF 7 Nov · **Tax held** 17 Nov → 4 Dec (18 posts,
-moved back three weeks on 25 Oct) pending its professional read. **MF Module 4 (7 posts, 26 Oct → 7 Nov, every other
+moved back three weeks on 25 Oct) held; its reason (a professional read) is gone, see Decided 26 Oct. **MF Module 4 (7 posts, 26 Oct → 7 Nov, every other
 day) was added on 25 Oct 2026, so MF is scheduled through 7 Nov (30 posts).**
 **The other written backlogs ran out on 25 Oct** (Tax runs to 4 Dec) — each series needs its next module planned and approved (`plan-module`). All posts were reviewed and every P0/P1/P2 finding
 fixed — see `_review/REVIEW-2026-09-24.md`. House style and the rules every
@@ -14,6 +14,17 @@ for how the repo works.
 ---
 
 ## Open — needs you
+
+- **Decide: new series and a home for standalone topics (26 Oct 2026).** The
+  `new-series` skill and `scripts/new_series.py` now make a new series a
+  two-minute scaffold. Proposed structure: (1) extend an existing series where
+  the topic fits; (2) start a new series only with ≥ 5 named posts and a
+  distinct reader question; (3) everything else goes to a catch-all
+  `explainers` series ("Investing explainers", unnumbered), created when its
+  first post is approved. Also: run `post-researcher` in discovery mode
+  once, then pick topics.
+
+- **Research brief 25 Oct 2026 (discovery, `_review/research/2026-10-25.md`):** top picks: nomination rules (in force 1 Sep 2026), how an IPO application works (ASBA/UPI/T+3), contract note and trade charges; proposed new series "Your first year in the market" (7 posts). Approve via plan-module.
 
 - **GA4 content tagging — one-time setup in Google Analytics (needed for the topic chart):** every
   page now sends `content_type` (home / post / series_hub / page) and, for posts and series
@@ -36,20 +47,31 @@ for how the repo works.
   `noindex`. Confirm in Search Console which URL was flagged (Pages → that issue →
   example URL → URL Inspection shows the Google-selected canonical); if it isn't
   `/series/`, tell Claude the URL.
-- **Tax series professional read** — all 18 tax posts, now held at 17 Nov →
-  4 Dec (daily; moved back three weeks on 25 Oct to make room for the read —
-  the Tax hub stays noindexed until 17 Nov automatically). The rules were re-checked against primary sources where
-  reachable, but someone who files professionally should read them before
-  they publish. `_data/tax2.yml` lists the recorded disagreements. Once
-  reviewed, the tax posts can move earlier (rename the files; keep one per day
-  and check `scripts/check_posts.py`) — and restore the RELINK links below (14 markers).
+- **Tax-touching published posts: flagged and softened (26 Oct 2026).** The 11
+  posts (`arbitrage-funds`, `stp-and-swp`, `what-a-mutual-fund-is`,
+  `debt-funds-explained`, `what-the-fo-numbers-actually-say`, `dividend-yield`,
+  `record-date-and-ex-date`, `index-funds-vs-etfs`, `inflation-and-real-returns`,
+  `hybrid-funds`, `international-funds`) now carry `needs_review: tax` +
+  `rules_as_of` (no `last_modified_at`, by owner choice); tax sentences say
+  "generally" / "check the current rule", and a stray old-Act section number
+  (44AB) was removed. `rules_as_of` points at the Tax series' own verification
+  dates (Aug/Sep 2026), not a fresh check. The linter's remaining 3 warnings
+  (`how-to-backtest-honestly`, `wacc-cost-of-capital`, `capital-allocation`) are
+  false positives.
+- **Tax series dates stay as they are (owner decision, 26 Oct 2026):** 17 Nov →
+  4 Dec, one per day. No professional read is planned, so the dates are now
+  simply the schedule, not a hold. All 18 posts carry `needs_review: tax`,
+  `rules_as_of` and the as-at-date/"author is not a tax professional"
+  notices, built from primary text where reachable (`_data/tax2.yml` lists the
+  recorded uncertain points). The RELINK links (14 markers) get restored in
+  the older posts after those dates.
 - **Next content:** every series except Tax has run out of written posts (MF
   runs to 7 Nov). Plan and approve the next module per series with
   `plan-module`. **R8 "Money Before Markets" is approved (25 Oct) as a new
   series and is next to plan** — emergency fund, EPF/PPF/NPS, term insurance vs
   ULIP, FDs vs debt funds, real returns, plus bonds/G-secs and REITs/InvITs. It
   needs a new slug in `_data/series.yml`, primary sources for every rule and
-  rate, and a professional read for the tax-touching posts.
+  rate, and the `needs_review` flag on any post that states a tax rule.
 
 ## Decided — 25 Oct 2026
 
@@ -61,9 +83,14 @@ for how the repo works.
   (a listed-peer table drifts toward relative-valuation verdicts).
 - **About page avatar: done** — `assets/avatar.svg` (HG monogram, brand blue),
   floated beside the opening paragraph.
-- **Tax series moved back three weeks** (see "Tax series professional read").
+- **Tax series moved back three weeks** on 25 Oct to make room for a professional read. **Superseded 26 Oct:** no read will happen; see "Tax series: schedule it".
+- **No professional review of tax posts (26 Oct 2026).** Decided by the owner. Labelled instead: `needs_review: tax` + `rules_as_of` notices, primary-source rule, `post-auditor`. See CLAUDE.md, Professional review.
 
 ## Parked — revisit later
+
+- **Company analysis series (parked 26 Oct 2026).** Removed from the plan by
+  decision; conflicts with the no-verdicts rule. Skills and the research agent
+  won't propose it.
 
 - **PageSpeed** (25 Oct, `_review/PAGESPEED-2026-10-25.md`): accessibility/best-practices/SEO are
   100 on all pages and desktop performance is 100. Google Analytics (`gtag.js`) was the one big
@@ -119,6 +146,16 @@ Also: eyeball the four TA module 2 charts (`assets/charts/ta2-*.svg`) in a
 browser — never rasterised locally.
 
 ## Open — content and tooling
+
+- **Tooling PR follow-ups (Oct 2026):** the new skills, `post-auditor` agent,
+  `pr-checks.yml` workflow and three scheduled tasks are inventoried in
+  `.claude/README.md`. After the PR merges: (1) check the first **PR checks**
+  run is green (workflow files can be refused by token scope — if so, add the
+  file by hand in GitHub); (2) attach the repo to the three scheduled tasks in
+  the Claude routines UI if a fired session shows no checkout; (3) run
+  `verify-claims` on the VERIFY table below, starting with the superseded MF
+  citations; (4) the Google Sheet calculators below can now start from the
+  `build-calculator` specs.
 
 - **Google Sheet calculators (3):** DCF (terminal value post, 30 Sep — its
   placeholder comment was removed, but the sheet is still owed), rolling

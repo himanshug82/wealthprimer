@@ -7,6 +7,8 @@ image: /assets/og/international-funds.png
 date: 2026-10-20 09:00:00 +0530
 series: mutual-funds
 term: "International fund and FoF (fund of funds)"
+needs_review: tax
+rules_as_of: "August 2026"
 ---
 
 {% assign m = site.data.mf3 %}

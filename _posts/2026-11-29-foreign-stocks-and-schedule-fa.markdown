@@ -7,15 +7,15 @@ image: /assets/og/foreign-stocks-and-schedule-fa.png
 date: 2026-11-29 09:00:00 +0530
 series: tax
 term: "Schedule FA (foreign assets)"
+needs_review: tax
+rules_for: "Tax Year 2026-27 (FY 2026-27)"
+rules_as_of: "September 2026"
 ---
 
 {% assign t2 = site.data.tax2 %}
 {% assign v = t2.verification %}
 {% assign x = t2.foreign %}
 {% assign r = site.data.tax.rates %}
-
-*Rules described here apply to **{{ v.financial_year }}**, verified against public
-sources in {{ v.verified_on }}. Educational content, not tax advice.*
 
 ## Three separate obligations
 

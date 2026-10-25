@@ -8,3 +8,13 @@
   before making investment decisions. See the
   <a href="{{ '/privacy/' | relative_url }}">privacy &amp; disclaimer policy</a> for more.
 </p>
+{%- if page.needs_review -%}
+{%- assign rk = site.data.review[page.needs_review] -%}
+{%- if rk %}
+<p class="post-disclaimer">
+  <strong>{{ rk.subject }} are described as at {{ page.rules_as_of }} and may have changed since.</strong>
+  The author is not a {{ rk.professional }}, and this post is not {{ rk.advice }}. Confirm the current
+  position, and how it applies to you, with a qualified {{ rk.professional }} before you act.
+</p>
+{%- endif -%}
+{%- endif -%}

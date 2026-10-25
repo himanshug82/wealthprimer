@@ -6,15 +6,15 @@ image: /assets/og/esops-and-rsus.png
 date: 2026-11-26 09:00:00 +0530
 series: tax
 term: "ESOP and RSU taxation"
+needs_review: tax
+rules_for: "Tax Year 2026-27 (FY 2026-27)"
+rules_as_of: "September 2026"
 ---
 
 {% assign t2 = site.data.tax2 %}
 {% assign v = t2.verification %}
 {% assign e = t2.esop %}
 {% assign r = site.data.tax.rates %}
-
-*Rules described here apply to **{{ v.financial_year }}**, verified against public
-sources in {{ v.verified_on }}. Educational content, not tax advice.*
 
 ## Two events, two heads of income
 

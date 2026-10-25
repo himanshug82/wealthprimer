@@ -133,6 +133,16 @@ def lint(path):
     if fm.get("series") == "tax" and not re.search(r"Tax Year|FY", both):
         add("INFO", "tax post: Tax Year / FY label not in title or description (must be in the opening and one H2)")
 
+    if not fm.get("needs_review") and fm.get("series") != "tax":
+        tm = re.search(r"\b(LTCG|STCG|STT|TDS|capital gains? tax|taxed at|slab rate|indexation|taxed (?:as|at|in|differently|when|only)|taxable in|Income-tax Act|section 1[0-9]{2}[A-Z]*)\b", body, re.I)
+        if tm:
+            add("WARN", f"states a tax rule (“{tm.group(0)}”) but has no needs_review: front matter; either soften to what is certain plus “check the current rule”, or add needs_review: tax and rules_as_of (CLAUDE.md, Professional review)")
+    if fm.get("needs_review"):
+        if not fm.get("rules_as_of"):
+            add("FAIL", "needs_review set but rules_as_of is missing")
+        if bool(fm.get("reviewed_by")) != bool(fm.get("reviewed_on")):
+            add("FAIL", "reviewed_by and reviewed_on must be set together, and only when a professional really reviewed the post")
+
     plines = prose_lines(body)
     ptext = "\n".join(t for _, t in plines)
     hard_rs = []

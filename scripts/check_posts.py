@@ -117,6 +117,20 @@ def main():
             if fm.get("series") not in series_slugs:
                 print(f"ERROR {name}: series '{fm.get('series')}' is not in _data/series.yml")
                 errors += 1
+            review_kinds = set(re.findall(r"^([a-z][\w-]*):\s*$", open(os.path.join(ROOT, "_data", "review.yml"), encoding="utf-8").read(), re.M))
+            if fm.get("series") == "tax" and fm.get("needs_review") != "tax":
+                print(f"ERROR {name}: Tax series posts must set needs_review: tax (professional-review notice)")
+                errors += 1
+            if fm.get("needs_review"):
+                if fm["needs_review"] not in review_kinds:
+                    print(f"ERROR {name}: needs_review '{fm['needs_review']}' is not a key in _data/review.yml")
+                    errors += 1
+                if not fm.get("rules_as_of"):
+                    print(f"ERROR {name}: needs_review requires rules_as_of (when the facts were last checked)")
+                    errors += 1
+                if bool(fm.get("reviewed_by")) != bool(fm.get("reviewed_on")):
+                    print(f"ERROR {name}: reviewed_by and reviewed_on must be set together (only when a professional really reviewed it)")
+                    errors += 1
             if "term" not in fm:
                 print(f"WARN  {name}: no term: (won't appear in /glossary/)")
                 warnings += 1

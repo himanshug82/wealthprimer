@@ -6,6 +6,8 @@ image: /assets/og/dividend-yield.png
 date: 2026-09-28 09:00:00 +0530
 series: jargon
 term: "Dividend yield"
+needs_review: tax
+rules_as_of: "August 2026"
 ---
 
 {% assign listing = site.data.case_study.listing %}
@@ -87,8 +89,8 @@ law that similar businesses converge here.
 - **Treating dividend yield as the whole return story.** It's cash income
   only — price appreciation (or decline) is a separate, often larger,
   component of total return that yield alone says nothing about. It's also
-  pre-tax: since 1 April 2020, Indian dividends are taxed in your hands at
-  your income-tax slab rate.
+  pre-tax: as at August 2026, Indian dividends are generally taxed in your hands at
+  your income-tax slab rate (check the current rule).
 
 **Takeaway:** dividend yield measures the cash a share pays back each year
 relative to its price. It's only one part of total return, and a high yield

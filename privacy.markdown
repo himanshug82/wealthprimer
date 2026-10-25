@@ -19,6 +19,13 @@ illustrate a calculation. Past performance does not
 guarantee future results. Please do your own research, or consult a
 SEBI-registered adviser, before making investment decisions.
 
+**Tax and other rule-based posts.** Posts about tax (and any other topic where a
+professional's reading matters) carry a notice stating the date their rules were
+checked against sources, that the author is not a tax professional, and whether a
+professional has reviewed the post. A review is mentioned only when one has
+actually taken place. Rules change, often with each Budget: confirm the current
+position, and how it applies to you, with a qualified professional.
+
 ## Privacy
 
 This site does not require you to create an account or submit personal

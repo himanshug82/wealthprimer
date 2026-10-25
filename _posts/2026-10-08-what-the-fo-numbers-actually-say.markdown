@@ -5,6 +5,8 @@ description: "SEBI has measured every year from FY22 to FY26: most individual de
 image: /assets/og/what-the-fo-numbers-actually-say.png
 date: 2026-10-08 09:00:00 +0530
 series: risk
+needs_review: tax
+rules_as_of: "September 2026"
 ---
 
 {% assign f = site.data.fno %}
@@ -205,7 +207,7 @@ not to individuals.
   ₹1.25 lakh exemption in the Tax series<!-- RELINK 2026-10-29-equity-and-equity-funds -->
   that this blog's tax series covers do not apply to them. Different return
   form, different rules, sometimes an audit requirement (above the
-  section 44AB turnover limits). That's covered later in the tax series.
+  tax-audit turnover limits). That's covered later in the tax series.
 
 ## If you're going to do it anyway
 

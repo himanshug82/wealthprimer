@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Cash Conversion Cycle: how long cash is actually stuck in the business"
+seo_title: "Cash conversion cycle: formula and meaning"
 description: "Inventory, debtor and creditor days combined into one number: how many days cash is genuinely stuck in the business, and what a negative cycle means."
 image: /assets/og/cash-conversion-cycle.png
 date: 2026-09-10 09:00:00 +0530
@@ -33,7 +34,7 @@ while before it has to pay it out. That's why it's subtracted — every day of
 creditor days is a day of financing the company gets from its suppliers
 instead of needing its own cash.
 
-![Cash conversion cycle timeline: inventory days plus receivable days minus payable days]({{ '/assets/charts/fa-cash-conversion-cycle.svg' | relative_url }})
+![Cash conversion cycle timeline: inventory days plus receivable days minus payable days]({{ '/assets/charts/fa-cash-conversion-cycle.svg' | relative_url }}){: width="720" height="330"}
 
 Desi Bites Foods, FY25 — the fictional case study, drawn to scale from the
 same figures used in the tables below. Illustration only.

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Fibonacci retracements: do 38.2, 50 and 61.8 really attract reversals?"
+seo_title: "Fibonacci retracements: do the levels attract reversals?"
 description: "Where Fibonacci levels come from, how to draw them, and a test on 18 years of Nifty: did pullbacks stop near the famous ratios any more than near others?"
 image: /assets/og/fibonacci-retracements.png
 date: 2026-10-17 09:00:00 +0530
@@ -109,7 +110,7 @@ one.
 With a {{ f.main_threshold_pct }}% zigzag, the Nifty made {{ fm.swings }} swings in
 {{ ds.index_years }} years, of which **{{ fm.pullbacks }}** were pullbacks.
 
-![Where Nifty pullbacks ended, with Fibonacci bands shaded]({{ '/assets/charts/ta3-fibonacci.svg' | relative_url }})
+![Where Nifty pullbacks ended, with Fibonacci bands shaded]({{ '/assets/charts/ta3-fibonacci.svg' | relative_url }}){: width="612" height="274"}
 
 The pullbacks are spread across the whole range, mostly between about 30% and
 100%. Look for spikes inside the shaded bands and you won't find them.

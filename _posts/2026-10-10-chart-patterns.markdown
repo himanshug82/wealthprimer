@@ -56,7 +56,7 @@ So let's not stop here.
 
 ## The same chart, with nothing left out
 
-![Britannia: six swing highs in one band]({{ '/assets/charts/ta-double-top.svg' | relative_url }})
+![Britannia: six swing highs in one band]({{ '/assets/charts/ta-double-top.svg' | relative_url }}){: width="613" height="320"}
 
 Britannia (NSE: BRITANNIA), daily, late August 2025 to March 2026. Source:
 [Yahoo Finance]({{ ta.dataset.source_url }}). Historical data, for illustration only.

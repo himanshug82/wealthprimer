@@ -62,7 +62,7 @@ that older history. So wherever the numbers below start before May 2018 (the
 fund as "a low-volatility debt fund of its day", not as what a modern
 overnight fund would have done.
 
-![Value of ₹12 lakh from January 2008 as a lump sum, as a 12-month STP, and left in the parking fund]({{ '/assets/charts/mf2-stp.svg' | relative_url }})
+![Value of ₹12 lakh from January 2008 as a lump sum, as a 12-month STP, and left in the parking fund]({{ '/assets/charts/mf2-stp.svg' | relative_url }}){: width="595" height="281"}
 
 | Start | Lump sum after 3 years | STP after 3 years | Parking fund only, after 3 years |
 |---|---:|---:|---:|
@@ -117,7 +117,7 @@ Now the other direction. ₹{% include inr.html n=swp.corpus %} in the index fun
 withdrawal rate — starting on three different dates, and running to
 {{ swp.end | date: "%-d %B %Y" }}.
 
-![Corpus remaining after each monthly withdrawal, for SWPs starting January 2008, January 2010 and April 2020, and a parking-fund SWP from 2008]({{ '/assets/charts/mf2-swp.svg' | relative_url }})
+![Corpus remaining after each monthly withdrawal, for SWPs starting January 2008, January 2010 and April 2020, and a parking-fund SWP from 2008]({{ '/assets/charts/mf2-swp.svg' | relative_url }}){: width="595" height="281"}
 
 | Start | Withdrawals made | Total withdrawn | Corpus left, index fund | Corpus left if it had sat in the parking fund |
 |---|---:|---:|---:|---:|

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Face value, splits and bonuses: why a ₹320 share isn't cheaper than a ₹640 one"
+seo_title: "Face value, stock splits and bonus shares explained"
 description: "Face value is the nominal amount on a share; splits and bonuses change the share count, not the company. A 1:1 bonus halves Desi Bites' price and EPS, not P/E."
 image: /assets/og/face-value-splits-and-bonuses.png
 date: 2026-10-12 09:00:00 +0530

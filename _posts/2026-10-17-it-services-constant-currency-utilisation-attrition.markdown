@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "IT services: constant currency, utilisation, attrition and deal wins"
+seo_title: "IT services: constant currency, utilisation and attrition"
 description: "Why an Indian IT company's rupee revenue growth can be triple its real growth, and how utilisation, attrition and deal wins explain the rest. Infosys FY26."
 image: /assets/og/it-services-constant-currency-utilisation-attrition.png
 date: 2026-10-17 09:00:00 +0530

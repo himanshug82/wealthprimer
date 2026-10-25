@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Insurance as risk transfer: why term cover isn't an investment"
+seo_title: "Insurance as risk transfer, explained"
 description: "Some risks you can't afford to carry. How term life cover transfers them, a needs-based sum, and how to find the savings return inside a bundled plan."
 image: /assets/og/insurance-as-risk-transfer.png
 date: 2026-10-23 09:00:00 +0530

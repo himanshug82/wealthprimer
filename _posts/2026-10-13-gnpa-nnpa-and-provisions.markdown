@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "GNPA, NNPA, provision coverage and credit cost: the loans that don't come back"
+seo_title: "GNPA, NNPA and provision coverage explained"
 description: "A bank's real cost of goods is the loans that fail. How a missed EMI becomes an NPA, how provisions turn gross into net, and why profit is partly a decision."
 image: /assets/og/gnpa-nnpa-and-provisions.png
 date: 2026-10-13 09:00:00 +0530
@@ -34,7 +35,7 @@ clock starts. In India the classification is rule-based (the Reserve Bank of
 India's, or RBI's, income recognition and asset
 classification norms), which is what makes it comparable across banks:
 
-![NPA lifecycle]({{ '/assets/charts/bank-npa-lifecycle.svg' | relative_url }})
+![NPA lifecycle]({{ '/assets/charts/bank-npa-lifecycle.svg' | relative_url }}){: width="760" height="330"}
 
 | Stage | Definition (simplified) | What the bank does |
 |---|---|---|

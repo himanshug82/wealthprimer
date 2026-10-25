@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "DuPont: breaking ROE into the three things that actually drive it"
+seo_title: "DuPont analysis: breaking ROE into three drivers"
 description: "DuPont splits ROE into margin, asset turnover and leverage, turning a single score into a reason. The three-step decomposition, worked end to end."
 image: /assets/og/dupont-roe-decomposition.png
 date: 2026-09-25 09:00:00 +0530
@@ -89,7 +90,7 @@ DuPont and your product won't tie out to the reported ROE, and you'll waste
 an afternoon hunting a bug that isn't there. Recompute it on averages for
 this exercise.
 
-![DuPont tree: ROE split into net margin, asset turnover and equity multiplier]({{ '/assets/charts/fa-dupont-tree.svg' | relative_url }})
+![DuPont tree: ROE split into net margin, asset turnover and equity multiplier]({{ '/assets/charts/fa-dupont-tree.svg' | relative_url }}){: width="720" height="330"}
 
 Desi Bites Foods, FY25 — the fictional case study, drawn to scale from the
 same figures used in the tables below. Illustration only.

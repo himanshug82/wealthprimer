@@ -101,7 +101,7 @@ twitter:
   username: wealthprimer_in
   card: summary_large_image
 social:
-  name: Himanshu Gupta
+  name: Wealth Primer   # WebSite "name" in JSON-LD (Google's site-name signal); was the author's name
   links:
     - "https://twitter.com/wealthprimer_in"
 logo: /assets/icon.png  # square mark, used for schema.org/JSON-LD logo

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Risk of ruin and the Kelly criterion: the maths of how much to bet"
+seo_title: "Kelly criterion and risk of ruin, explained"
 description: "Kelly's 1956 formula says how much of your capital to stake on an edge. Why full Kelly is brutal, and why the edge you plug in is the part most likely wrong."
 image: /assets/og/kelly-criterion-and-risk-of-ruin.png
 date: 2026-10-16 09:00:00 +0530
@@ -155,7 +156,7 @@ Every number above assumed you *know* the win probability is {{ k.p_pct }}%. You
 happens if you believe {{ k.p_pct }}% and bet accordingly, but the true
 probability is lower:
 
-![Growth per bet against fraction staked, for the believed and a smaller true edge]({{ '/assets/charts/risk2-kelly.svg' | relative_url }})
+![Growth per bet against fraction staked, for the believed and a smaller true edge]({{ '/assets/charts/risk2-kelly.svg' | relative_url }}){: width="446" height="238"}
 
 | True win probability | True Kelly fraction | Growth per bet, staking 10% (full Kelly on your belief) | Growth per bet, staking 5% (half) | Median wealth after {% include inr.html n=k.n_bets %} bets: 10% / 5% |
 |---:|---:|---:|---:|---:|{% for row in k.estimation_table %}

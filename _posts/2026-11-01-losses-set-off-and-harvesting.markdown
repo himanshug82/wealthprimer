@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Losses: set-off, carry-forward, and the ₹1.25 lakh you can use each year"
+seo_title: "Capital losses: set-off, carry-forward, harvesting"
 description: "A capital loss is an asset for tax purposes. Which losses offset which gains, the carry-forward window, and how harvesting works against the annual exemption."
 image: /assets/og/losses-set-off-and-harvesting.png
 date: 2026-11-01 09:00:00 +0530

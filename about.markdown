@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About
+description: "About Wealth Primer: a software engineer and retail investor explaining investing concepts for Indian readers, with sourced data and no stock tips."
 permalink: /about/
 ---
 

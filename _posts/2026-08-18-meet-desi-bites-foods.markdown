@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Meet Desi Bites Foods: the company we'll use to decode every ratio"
+seo_title: "Meet Desi Bites Foods: our case-study company"
 description: "Jargon, Decoded starts here. Meet Desi Bites Foods, the fictional snacks company whose three years of reconciled financials every ratio post is built on."
 image: /assets/og/meet-desi-bites-foods.png
 date: 2026-08-18 09:00:00 +0530

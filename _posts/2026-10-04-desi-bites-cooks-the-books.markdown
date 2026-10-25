@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Desi Bites cooks the books: four tricks and the ratios that catch them"
+seo_title: "Accounting tricks and the ratios that catch them"
 description: "A fictional dressed-up FY26 beside the honest one: channel stuffing, capitalised expenses, a related-party gain, a write-back — and the ratios that expose each."
 image: /assets/og/desi-bites-cooks-the-books.png
 date: 2026-10-04 09:00:00 +0530
@@ -66,7 +67,7 @@ for longer.
 | EPS (₹) | {{ h.eps }} | {{ d.eps }} | |
 | PAT growth on FY25 | {{ hr.pat_growth }}% | {{ dr.pat_growth }}% | |
 
-![Honest vs dressed FY26]({{ '/assets/charts/fa2-honest-vs-dressed.svg' | relative_url }})
+![Honest vs dressed FY26]({{ '/assets/charts/fa2-honest-vs-dressed.svg' | relative_url }}){: width="720" height="330"}
 
 The honest year was already good: PAT up {{ hr.pat_growth }}%. The dressed year
 reports PAT more than doubling. Every rupee of the difference is

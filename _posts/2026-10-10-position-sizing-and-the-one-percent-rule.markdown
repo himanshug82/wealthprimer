@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Position sizing: the 1% rule, and letting volatility pick the number"
+seo_title: "Position sizing and the 1% rule, explained"
 description: "How much to buy is a risk decision, not a conviction decision. ATR, the 1–2% rule, and why the same stock gets a different position size on different days."
 image: /assets/og/position-sizing-and-the-one-percent-rule.png
 date: 2026-10-10 09:00:00 +0530
@@ -97,7 +98,7 @@ Britannia (NSE: BRITANNIA), daily data {{ d.britannia_start | date: "%-d %B %Y" 
 Historical data, for illustration only — these dates were chosen after the
 fact to show the range, which is exactly what you can't do in real time.
 
-![Britannia price with 14-day ATR as a percentage of price]({{ '/assets/charts/risk-atr.svg' | relative_url }})
+![Britannia price with 14-day ATR as a percentage of price]({{ '/assets/charts/risk-atr.svg' | relative_url }}){: width="461" height="302"}
 
 Over these two years the 14-day ATR ranged from ₹{{ p.atr_min }} to
 ₹{{ p.atr_max }} a share — {{ p.atr_pct_min }}% to {{ p.atr_pct_max }}% of the

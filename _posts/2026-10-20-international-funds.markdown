@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "International funds and fund of funds: the limit and the currency"
+seo_title: "International funds and fund of funds, explained"
 description: "Why Indian funds that invest abroad sometimes stop taking money, how SEBI's industry-wide overseas limits work, and what the rupee added in rupee returns."
 image: /assets/og/international-funds.png
 date: 2026-10-20 09:00:00 +0530

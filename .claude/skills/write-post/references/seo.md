@@ -32,7 +32,7 @@ Safe retitles: "What is a good P/E?" → "P/E ratio ranges: why 'good' depends o
 ## 3. On-page checklist
 
 **Title** (`title:` is also the visible H1 — never add `# ` in the body)
-- seo-tag appends " | Wealth Primer" (~15 characters). Put the primary keyword in the first ~45 characters; **aim ≤ 50, never > 60.** Many existing titles are much longer — don't copy them. No clever subtitle after a colon unless it adds a searchable phrase ("…: formula and example").
+- `_includes/head.html` renders the `<title>` itself: `seo_title` if set, else `title`, with " | Wealth Primer" appended **only if the whole thing fits in 60**. So a title ≤ 44 characters keeps the brand; 45–60 shows bare; over 60 gets truncated by Google. Put the primary keyword in the first ~45 characters; **aim ≤ 50, never > 60.** If the H1 needs to be longer, keep it and add `seo_title:` (≤ 60) for search results only. Many existing titles are much longer — don't copy them. No clever subtitle after a colon unless it adds a searchable phrase ("…: formula and example").
 - Sentence case. No hype, no clickbait numbers.
 - Patterns: `<Term> explained: formula and example` · `How to calculate <X>: formula and worked example` · `<Concept>: what it tells you and what it can't`.
 - Year/Tax Year in a title only for rules that change yearly, and then add a refresh row to `TODO.md`.
@@ -55,11 +55,11 @@ Safe retitles: "What is a good P/E?" → "P/E ratio ranges: why 'good' depends o
 
 **External links**: primary sources (sebi.gov.in, rbi.org.in, nseindia.com, incometaxindia.gov.in, company filings, AMFI), descriptive anchors, circular number/date in the text.
 
-**Images**: charts from a `scripts/` file into `assets/charts/`; informative alt text ("Britannia closing price with 50- and 200-day moving averages, March 2025 to March 2026"). Every post sets its own `image: /assets/og/<slug>.png` — **if omitted, the site-wide logo silently ships as the social card.** Run `scripts/make_og_cards.py` and confirm the file exists.
+**Images**: charts from a `scripts/` file into `assets/charts/`; then run `python3 scripts/add_img_dims.py` so each chart gets width/height (no layout shift; content images are lazy-loaded by the layout); informative alt text ("Britannia closing price with 50- and 200-day moving averages, March 2025 to March 2026"). Every post sets its own `image: /assets/og/<slug>.png` — **if omitted, the site-wide logo silently ships as the social card.** Run `scripts/make_og_cards.py` and confirm the file exists.
 
-**Structured data**: seo-tag already emits BlogPosting JSON-LD; don't hand-write any. Don't add FAQ markup (Google restricted FAQ rich results in 2023 — from memory, unchecked). Question-style H2s give the benefit.
+**Structured data**: seo-tag emits BlogPosting/WebSite JSON-LD and `_layouts/post.html` adds a BreadcrumbList (Home › Series › series › post); don't hand-write any more. Don't add FAQ markup (Google restricted FAQ rich results in 2023 — from memory, unchecked). Question-style H2s give the benefit.
 
-**Front-matter facts**: canonical comes from `page.url` — never set `canonical_url`. `noindex: true` works via `head.html`; use only for drafts or thin pages. `author:` is a string matched to `_data/authors.yml`; no post sets it today.
+**Front-matter facts**: canonical comes from `page.url` — never set `canonical_url`. `noindex: true` works via `head.html`; use only for drafts or thin pages. Series hubs are noindexed automatically while they have no published post — never hard-code `noindex` or `sitemap: false` on a hub (Risk sat de-indexed for weeks that way). `author:` is a string matched to `_data/authors.yml`; no post sets it today.
 
 **Freshness**: `last_modified_at` only for substantive changes (a rule, a number, a correction) — never for typo or SEO edits; fake freshness is a spam signal. Keep as-of dates visible. Re-check rule and tax posts after the Union Budget and when SEBI/CBDT circulars land.
 

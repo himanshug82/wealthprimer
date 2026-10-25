@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Seasonality myths, part one: \"sell in May\" and the best month to invest"
+seo_title: "Sell in May: seasonality myths in investing"
 description: "Month-by-month Nifty returns since 2007, with the spread that averages hide, a shuffle test, and what \"sell in May and go away\" would actually have done."
 image: /assets/og/sell-in-may-and-month-of-year.png
 date: 2026-10-18 09:00:00 +0530
@@ -63,7 +64,7 @@ They add a little to every month and don't change which month looks best.
 {% for m in s.by_month %}| {{ m.month_name }} | {{ m.n }} | {{ m.avg_pct }}% | {{ m.median_pct }}% | {{ m.share_positive_pct }}% | {{ m.stdev_pct }}% | {{ m.worst_pct }}% | {{ m.best_pct }}% |
 {% endfor %}| **All months** | {{ s.months }} | {{ s.all_months.avg_pct }}% | {{ s.all_months.median_pct }}% | {{ s.all_months.share_positive_pct }}% | {{ s.all_months.stdev_pct }}% | | |
 
-![Every monthly Nifty return by calendar month]({{ '/assets/charts/ta3-month-of-year.svg' | relative_url }})
+![Every monthly Nifty return by calendar month]({{ '/assets/charts/ta3-month-of-year.svg' | relative_url }}){: width="612" height="302"}
 
 Nifty 50 price index. Source: [Yahoo Finance]({{ ds.index_source_url }}).
 Historical data, for illustration only.

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Offer for sale and delisting: when promoters sell shares, and when they buy everyone out"
+seo_title: "Offer for sale and delisting, explained"
 description: "An offer for sale moves existing shares to new owners; a delisting buys out the public. The OFS window and reverse book building, on fictional Desi Bites."
 image: /assets/og/offer-for-sale-and-delisting.png
 date: 2026-10-20 09:00:00 +0530

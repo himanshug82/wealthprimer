@@ -2,6 +2,7 @@
 layout: page
 title: Privacy & Disclaimer
 nav_title: "Privacy"   # short label for the header nav; `title` stays the page H1
+description: "Wealth Primer's disclaimer and privacy policy: educational content only, not investment advice, what analytics are used, and how worked-example data is lagged."
 permalink: /privacy/
 ---
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "MACD: two averages in an argument, and 31 signals in 460 days"
+seo_title: "MACD indicator explained: signals and limits"
 description: "MACD plots the gap between a fast and a slow moving average. How the line, signal and histogram work, and what 31 signals in 460 days actually produced."
 image: /assets/og/macd.png
 date: 2026-10-09 09:00:00 +0530
@@ -82,7 +83,7 @@ Practitioners look at MACD three ways:
 
 ## The chart, and the whipsaw problem
 
-![Britannia with MACD]({{ '/assets/charts/ta-macd.svg' | relative_url }})
+![Britannia with MACD]({{ '/assets/charts/ta-macd.svg' | relative_url }}){: width="594" height="373"}
 
 Britannia (NSE: BRITANNIA), daily, January 2025 to March 2026. Source:
 [Yahoo Finance]({{ ta.dataset.source_url }}). Historical data, for illustration only.

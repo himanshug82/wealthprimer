@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Why P/E and D/E break on a bank: the balance sheet is the business"
+seo_title: "Why P/E and debt-to-equity break on a bank"
 description: "Debt-to-equity, EBITDA and the current ratio mean nothing for a bank. What a bank sells, how its P&L is built, and which ratios replace the ones you know."
 image: /assets/og/why-ratios-break-on-a-bank.png
 date: 2026-10-10 09:00:00 +0530
@@ -94,7 +95,7 @@ for illustration only.
 | − Tax | {% include inr.html n=f25.tax %} | {% include inr.html n=f24.tax %} |
 | **= Profit after tax** | **{% include inr.html n=f25.pat %}** | **{% include inr.html n=f24.pat %}** |
 
-![How a bank's profit is built]({{ '/assets/charts/bank-pnl-waterfall.svg' | relative_url }})
+![How a bank's profit is built]({{ '/assets/charts/bank-pnl-waterfall.svg' | relative_url }}){: width="760" height="400"}
 
 Two things to notice, because they recur through this module.
 
@@ -124,7 +125,7 @@ For a manufacturer, the balance sheet is the machinery that makes the
 product. For a bank, the balance sheet *is* the product. The loans are the
 sales; the deposits are the cost of goods.
 
-![A bank's balance sheet]({{ '/assets/charts/bank-balance-sheet.svg' | relative_url }})
+![A bank's balance sheet]({{ '/assets/charts/bank-balance-sheet.svg' | relative_url }}){: width="720" height="420"}
 
 | Funding (liabilities) | ₹ crore | Deployed as (assets) | ₹ crore |
 |---|---:|---|---:|

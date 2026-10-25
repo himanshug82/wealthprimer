@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Capital allocation: what a company does with a rupee it doesn't need"
+seo_title: "Capital allocation: what companies do with spare cash"
 description: "Six things a company can do with spare cash, and one test that ranks them: does the return clear the cost of capital? Desi Bites' IPO money, a year on."
 image: /assets/og/capital-allocation.png
 date: 2026-10-08 09:00:00 +0530

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Gaps: the hole in the chart, and whether it really gets filled"
+seo_title: "Price gaps: do gaps really get filled?"
 description: "\"Gaps get filled\" is one of the oldest lines in charting. We test it on two years of Britannia, against a base rate most gap tutorials never show you."
 image: /assets/og/do-gaps-get-filled.png
 date: 2026-10-16 09:00:00 +0530
@@ -119,7 +120,7 @@ In {{ g.sessions_scanned }} sessions there were **{{ gu.count }} gap ups** and
 {{ gd.windows.h20.dropped_no_forward_data }} from the 20-session test. No gap ups
 needed dropping.*
 
-![Gap fill rates against the base rate]({{ '/assets/charts/ta3-gaps.svg' | relative_url }})
+![Gap fill rates against the base rate]({{ '/assets/charts/ta3-gaps.svg' | relative_url }}){: width="612" height="259"}
 
 Britannia (NSE: BRITANNIA), {{ ds.stock_as_of }}. Source:
 [Yahoo Finance]({{ ds.stock_source_url }}). Historical data, for illustration only.

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Point-to-point returns: the same fund, from 2.6% to 23.9% a year"
+seo_title: "Point-to-point returns in mutual funds, explained"
 description: "The same index fund returned 2.6% and 23.9% a year over five-year windows, depending only on the start month. Why a quoted return is a choice of dates."
 image: /assets/og/point-to-point-returns.png
 date: 2026-09-26 09:00:00 +0530
@@ -62,7 +63,7 @@ start months:
 |---|---:|{% for w in p2p.windows %}
 | {{ w.label }} | **{{ w.cagr }}%** |{% endfor %}
 
-![Five-year CAGR by start date]({{ '/assets/charts/mf-point-to-point.svg' | relative_url }})
+![Five-year CAGR by start date]({{ '/assets/charts/mf-point-to-point.svg' | relative_url }}){: width="594" height="282"}
 
 {{ f.name }}, {{ f.plan_regular }}. Source: [AMFI via mfapi.in]({{ f.source_url }}).
 Historical data, for illustration only.

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Goodwill, exceptional items and other income: three lines that arrive with an acquisition"
+seo_title: "Goodwill, exceptional items and other income explained"
 description: "Desi Bites buys a regional brand. Where the ₹600 lakh went, why 41% of it is goodwill, what an exceptional item is, and how other income flatters profit."
 image: /assets/og/goodwill-exceptional-items-and-other-income.png
 date: 2026-10-07 09:00:00 +0530
@@ -38,7 +39,7 @@ each piece at fair value, and record the leftover as goodwill:
 Goodwill = Purchase price − Fair value of identifiable net assets acquired
 ```
 
-![Purchase price allocation]({{ '/assets/charts/fa2-purchase-price-allocation.svg' | relative_url }})
+![Purchase price allocation]({{ '/assets/charts/fa2-purchase-price-allocation.svg' | relative_url }}){: width="720" height="420"}
 
 For Chatpata Foods:
 

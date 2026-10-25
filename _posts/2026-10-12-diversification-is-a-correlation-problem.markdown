@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Diversification is a correlation problem, not a counting problem"
+seo_title: "Diversification is a correlation problem"
 description: "Ten funds can be one bet. What correlation does to portfolio volatility, and why how holdings move together matters far more than how many you own."
 image: /assets/og/diversification-is-a-correlation-problem.png
 date: 2026-10-12 09:00:00 +0530
@@ -113,7 +114,7 @@ Sources: [Yahoo Finance, BRITANNIA.NS]({{ d.britannia_source_url }}) and
 [Yahoo Finance, ^NSEI]({{ d.nifty_source_url }}). Historical data, for
 illustration only.
 
-![Scatter of Britannia daily returns against Nifty 50 daily returns]({{ '/assets/charts/risk-correlation.svg' | relative_url }})
+![Scatter of Britannia daily returns against Nifty 50 daily returns]({{ '/assets/charts/risk-correlation.svg' | relative_url }}){: width="374" height="302"}
 
 | | |
 |---|---:|

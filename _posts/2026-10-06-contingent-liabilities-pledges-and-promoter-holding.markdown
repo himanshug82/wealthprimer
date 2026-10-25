@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Contingent liabilities, pledged shares and promoter holding: the page after the balance sheet"
+seo_title: "Contingent liabilities, pledged shares, promoter holding"
 description: "Three disclosures outside the statements that can outweigh them: a tax demand not yet booked, promoter shares pledged for a loan, and who owns the company."
 image: /assets/og/contingent-liabilities-pledges-and-promoter-holding.png
 date: 2026-10-06 09:00:00 +0530

@@ -80,7 +80,7 @@ lose the fee, and also all the growth that fee would have produced.
 
 ## Two real comparisons
 
-![Direct vs regular plans of the same funds]({{ '/assets/charts/mf-direct-vs-regular.svg' | relative_url }})
+![Direct vs regular plans of the same funds]({{ '/assets/charts/mf-direct-vs-regular.svg' | relative_url }}){: width="623" height="325"}
 
 Source: [AMFI via mfapi.in]({{ f.source_url }}). Historical data, for illustration only.
 

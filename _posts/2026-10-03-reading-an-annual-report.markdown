@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Reading an annual report: the map, and where the bodies are buried"
+seo_title: "How to read an annual report"
 description: "An annual report is 140 pages written by the people it judges. Which sections to read first, which to skip, and why the notes beat the chairman's letter."
 image: /assets/og/reading-an-annual-report.png
 date: 2026-10-03 09:00:00 +0530

@@ -79,7 +79,7 @@ unambiguously the shareholders' money.
 From HDFC Bank's [results for the year ended 31 March 2025]({{ b.company.source_url }})
 (standalone). Historical, for illustration only.
 
-![Capital adequacy stack]({{ '/assets/charts/bank-capital-stack.svg' | relative_url }})
+![Capital adequacy stack]({{ '/assets/charts/bank-capital-stack.svg' | relative_url }}){: width="720" height="360"}
 
 | | Reported |
 |---|---:|

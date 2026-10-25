@@ -28,7 +28,7 @@ traders in the 1700s and popularised in the West by Steve Nison in the
 
 ## The anatomy
 
-![Anatomy of a candlestick]({{ '/assets/charts/ta-candle-anatomy.svg' | relative_url }})
+![Anatomy of a candlestick]({{ '/assets/charts/ta-candle-anatomy.svg' | relative_url }}){: width="401" height="267"}
 
 Schematic illustration — not real price data.
 
@@ -72,7 +72,7 @@ hard the fight was.
 
 Here's Britannia through the turn of 2026 — two months of real trading days:
 
-![Britannia candlestick chart, December 2025 to February 2026]({{ '/assets/charts/ta-candles-real.svg' | relative_url }})
+![Britannia candlestick chart, December 2025 to February 2026]({{ '/assets/charts/ta-candles-real.svg' | relative_url }}){: width="594" height="294"}
 
 Britannia (NSE: BRITANNIA), daily, mid-December 2025 to mid-February 2026.
 Source: [Yahoo Finance]({{ ta.dataset.source_url }}). Historical data, for

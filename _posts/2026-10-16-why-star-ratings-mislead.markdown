@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Why star ratings mislead — and why the same fund can swing from five stars to two"
+seo_title: "Why mutual fund star ratings mislead"
 description: "Star ratings rank trailing risk-adjusted returns within a category. On one index fund that figure swung from −1% to 27% a year; past winners earned no more."
 image: /assets/og/why-star-ratings-mislead.png
 date: 2026-10-16 09:00:00 +0530
@@ -45,7 +46,7 @@ number for one fund — the Nifty 50 index fund this series has used throughout
 change, the same fifty stocks the whole time. Source: AMFI via mfapi.in,
 regular plan, {{ mf.index_fund.regular_start | date: "%-d %B %Y" }} to {{ mf.index_fund.regular_end | date: "%-d %B %Y" }}. Historical data, for illustration only.
 
-![Trailing three-year CAGR of the index fund at every date, with the 31 March readings marked]({{ '/assets/charts/mf2-trailing-3y.svg' | relative_url }})
+![Trailing three-year CAGR of the index fund at every date, with the 31 March readings marked]({{ '/assets/charts/mf2-trailing-3y.svg' | relative_url }}){: width="595" height="281"}
 
 | Read on | Trailing 3-year return (a year) | Percentile within the fund's own history |
 |---|---:|---:|{% for s in r.trailing_3y_snapshots %}

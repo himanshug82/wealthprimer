@@ -2,7 +2,7 @@
 layout: page
 title: "Glossary"
 permalink: /glossary/
-description: "A–Z index of every financial term and ratio Wealth Primer has explained — P/E, ROCE, drawdown, XIRR, WACC and more — each linking to the post that decodes it with a worked example."
+description: "A–Z index of every financial term Wealth Primer explains, from P/E and ROCE to drawdown, XIRR and WACC, each linking to a worked-example post."
 ---
 
 {%- comment -%}

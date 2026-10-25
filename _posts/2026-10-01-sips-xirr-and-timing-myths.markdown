@@ -73,7 +73,7 @@ fair way to score money that arrived at different times.
 
 ## Twenty years of ₹10,000 a month
 
-![SIP value vs amount invested]({{ '/assets/charts/mf-sip.svg' | relative_url }})
+![SIP value vs amount invested]({{ '/assets/charts/mf-sip.svg' | relative_url }}){: width="597" height="302"}
 
 {{ f.name }}, {{ f.plan_regular }}. Source: [AMFI via mfapi.in]({{ f.source_url }}).
 Historical data, for illustration only.

@@ -56,7 +56,7 @@ This is the single most common way beginners get support and resistance
 wrong. Textbooks draw a crisp horizontal line at an exact price. Real charts
 don't cooperate.
 
-![Britannia support and resistance zones]({{ '/assets/charts/ta-support-resistance.svg' | relative_url }})
+![Britannia support and resistance zones]({{ '/assets/charts/ta-support-resistance.svg' | relative_url }}){: width="610" height="320"}
 
 Britannia (NSE: BRITANNIA), {{ ta.dataset.as_of }}. Source:
 [Yahoo Finance]({{ ta.dataset.source_url }}). Historical data, for illustration only.

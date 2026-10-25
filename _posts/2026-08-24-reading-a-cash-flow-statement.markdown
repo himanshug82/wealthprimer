@@ -57,7 +57,7 @@ exactly what a cash flow statement tracks.
 
 </details>
 
-![Cash flow bridge: opening cash, plus operating, investing and financing flows, to closing cash]({{ '/assets/charts/fa-cash-flow-bridge.svg' | relative_url }})
+![Cash flow bridge: opening cash, plus operating, investing and financing flows, to closing cash]({{ '/assets/charts/fa-cash-flow-bridge.svg' | relative_url }}){: width="720" height="380"}
 
 Desi Bites Foods, FY25 — the fictional case study, drawn to scale from the
 same figures used in the tables below. Illustration only.

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Enterprise value: what it would cost to buy the whole business, debt and all"
+seo_title: "Enterprise value (EV): formula and what it tells you"
 description: "Enterprise value is market cap plus debt minus cash: the price of the business, not just its shares. Desi Bites' Rs 8,000 lakh market cap is a Rs 6,520 lakh EV."
 image: /assets/og/enterprise-value.png
 date: 2026-10-13 09:00:00 +0530

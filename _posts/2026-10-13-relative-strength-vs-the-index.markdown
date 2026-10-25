@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Relative strength vs the index: the other RS, and the one that means what it says"
+seo_title: "Relative strength vs the index, explained"
 description: "Not RSI. Relative strength divides a stock by its index to show whether it's beating the market. Britannia vs Nifty 50 over two years, and what the ratio hid."
 image: /assets/og/relative-strength-vs-the-index.png
 date: 2026-10-13 09:00:00 +0530
@@ -66,7 +67,7 @@ from whether your own score went up or down.
 
 ## The chart
 
-![Britannia vs Nifty 50, and the relative strength ratio]({{ '/assets/charts/ta2-relative-strength.svg' | relative_url }})
+![Britannia vs Nifty 50, and the relative strength ratio]({{ '/assets/charts/ta2-relative-strength.svg' | relative_url }}){: width="612" height="403"}
 
 Britannia (NSE: BRITANNIA) and the Nifty 50 price index, daily,
 {{ rs.common_start | date: "%-d %B %Y" }} to {{ rs.common_end | date: "%-d %B %Y" }} ({{ rs.common_bars }} common

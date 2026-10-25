@@ -72,7 +72,7 @@ Every possible start date in {% include inr.html n=f.years_of_history %} years o
 | 7 years | {{ rr.years_7.windows }} | {{ rr.years_7.min }}% | {{ rr.years_7.median }}% | {{ rr.years_7.max }}% | {{ rr.years_7.pct_negative }}% | {{ rr.years_7.pct_below_8 }}% |
 | 10 years | {{ rr.years_10.windows }} | {{ rr.years_10.min }}% | {{ rr.years_10.median }}% | {{ rr.years_10.max }}% | {{ rr.years_10.pct_negative }}% | {{ rr.years_10.pct_below_8 }}% |
 
-![Rolling returns by holding period]({{ '/assets/charts/mf-rolling-returns.svg' | relative_url }})
+![Rolling returns by holding period]({{ '/assets/charts/mf-rolling-returns.svg' | relative_url }}){: width="594" height="308"}
 
 {{ f.name }}, {{ f.plan_regular }}. Source: [AMFI via mfapi.in]({{ f.source_url }}).
 Historical data, for illustration only.

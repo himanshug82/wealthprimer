@@ -103,7 +103,7 @@ every fifteen sessions.
 
 Next-day execution, costs included, the same window for everyone:
 
-![Equity curves: buy and hold vs the three rules]({{ '/assets/charts/ta2-backtest.svg' | relative_url }})
+![Equity curves: buy and hold vs the three rules]({{ '/assets/charts/ta2-backtest.svg' | relative_url }}){: width="612" height="317"}
 
 Britannia (NSE: BRITANNIA), daily bars, {{ bt.start | date: "%-d %B %Y" }} to {{ bt.end | date: "%-d %B %Y" }}. Source:
 [Yahoo Finance]({{ ta2.dataset.source_url }}). Historical data, for illustration only.

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "FMCG: volume growth vs price growth, and why revenue alone misleads"
+seo_title: "FMCG analysis: volume growth vs price growth"
 description: "A consumer company's revenue can jump 20% while it sells barely more. How to split growth into volume and price, with Marico's FY26 update as the example."
 image: /assets/og/fmcg-volume-growth-vs-price-growth.png
 date: 2026-10-18 09:00:00 +0530

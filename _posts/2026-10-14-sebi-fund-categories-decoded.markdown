@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "SEBI fund categories decoded: what the label on the tin actually constrains"
+seo_title: "SEBI mutual fund categories decoded"
 description: "SEBI's 2017 rules define every fund category by a hard portfolio constraint. What large cap, flexi cap and credit risk actually bind, and why it matters."
 image: /assets/og/sebi-fund-categories-decoded.png
 date: 2026-10-14 09:00:00 +0530

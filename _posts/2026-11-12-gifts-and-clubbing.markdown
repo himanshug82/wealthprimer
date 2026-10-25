@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Gifts and clubbing: why moving money to family rarely moves the tax"
+seo_title: "Gifts and clubbing of income, explained"
 description: "Gifts from relatives are tax-free, others above Rs 50,000 aren't. But income on money gifted to a spouse or minor child is still taxed in your hands."
 image: /assets/og/gifts-and-clubbing.png
 date: 2026-11-12 09:00:00 +0530

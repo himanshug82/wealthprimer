@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Reading quarterly results: YoY, QoQ, TTM, and why one quarter proves nothing"
+seo_title: "Reading quarterly results: YoY, QoQ and TTM"
 description: "Quarterly results are misread four times a year. YoY vs QoQ, the festive-season trap, trailing twelve months, and what a single quarter can't tell you."
 image: /assets/og/reading-quarterly-results.png
 date: 2026-10-05 09:00:00 +0530

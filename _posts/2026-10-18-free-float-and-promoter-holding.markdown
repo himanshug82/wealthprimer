@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Free float and promoter holding: the part of a company that actually trades"
+seo_title: "Free float and promoter holding explained"
 description: "Free float is the share of a company available to ordinary investors, outside promoters' hands. Why index weights use it, worked on Britannia and Desi Bites."
 image: /assets/og/free-float-and-promoter-holding.png
 date: 2026-10-18 09:00:00 +0530

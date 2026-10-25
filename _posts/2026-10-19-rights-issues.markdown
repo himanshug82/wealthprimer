@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Rights issues: new shares offered to you first, at a discount, and what ignoring them costs"
+seo_title: "Rights issues explained: what ignoring one costs"
 description: "A rights issue offers existing shareholders new shares at a discount. Ratio, price, renunciation and dilution, worked on a fictional Desi Bites 1-for-5 issue."
 image: /assets/og/rights-issues.png
 date: 2026-10-19 09:00:00 +0530

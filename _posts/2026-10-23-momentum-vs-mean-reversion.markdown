@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Momentum vs mean reversion: does the trend continue, or snap back?"
+seo_title: "Momentum vs mean reversion in stock prices"
 description: "Two opposite beliefs, both popular: winners keep winning, or what falls must bounce. We test 12-1 momentum and one-month reversal on 18 years of Nifty data."
 image: /assets/og/momentum-vs-mean-reversion.png
 date: 2026-10-23 09:00:00 +0530
@@ -95,7 +96,7 @@ independent observations. And the spread after negative momentum was much
 wider: a standard deviation of {{ m.mom_negative.stdev_next_pct }}% a month, against
 {{ m.mom_positive.stdev_next_pct }}% after positive momentum.
 
-![Nifty 12-1 momentum against the next month's return]({{ '/assets/charts/ta3-momentum.svg' | relative_url }})
+![Nifty 12-1 momentum against the next month's return]({{ '/assets/charts/ta3-momentum.svg' | relative_url }}){: width="612" height="302"}
 
 Nifty 50 price index. Source: [Yahoo Finance]({{ ds.index_source_url }}).
 Historical data, for illustration only.

@@ -2,6 +2,7 @@
 layout: page
 title: "The Desi Bites Foods case study"
 nav_title: "Case study"   # short label for the header nav; `title` stays the page H1
+description: "Desi Bites Foods is a fictional listed snacks company with one consistent set of books, used across Wealth Primer's ratio, valuation and IPO posts."
 permalink: /case-study/
 ---
 

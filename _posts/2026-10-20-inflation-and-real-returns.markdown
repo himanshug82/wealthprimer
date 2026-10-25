@@ -105,7 +105,7 @@ And over the whole period:
 | …in March-2013 rupees | {% include inr.html n=si.lakh_real %} | {% include inr.html n=sg.lakh_real %} | {% include inr.html n=sf.lakh_real %} |
 | Years with a negative real return | {{ si.negative_real_years }} of {{ inf.years }} | {{ sg.negative_real_years }} of {{ inf.years }} | {{ sf.negative_real_years }} of {{ inf.years }} |
 
-![Real value of ₹1 lakh in each, deflated by CPI]({{ '/assets/charts/risk2-real-returns.svg' | relative_url }})
+![Real value of ₹1 lakh in each, deflated by CPI]({{ '/assets/charts/risk2-real-returns.svg' | relative_url }}){: width="446" height="238"}
 
 What the tables say:
 

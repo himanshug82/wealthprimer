@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Sequence-of-returns risk: the same twenty years, in a different order"
+seo_title: "Sequence-of-returns risk, explained"
 description: "Reorder twenty real annual returns and a ₹10,000 SIP ends anywhere from ₹27 lakh to ₹2.6 crore. Why the order of returns matters when money moves in or out."
 image: /assets/og/sequence-of-returns-risk.png
 date: 2026-10-13 09:00:00 +0530
@@ -71,7 +72,7 @@ Now put ₹{% include inr.html n=s.sip_monthly %} a month in for the same twenty
 years — ₹{% include inr.html n=s.sip_invested %} in total, each year's return
 applied evenly across its twelve months:
 
-![SIP value under three orderings of the same twenty annual returns]({{ '/assets/charts/risk-sequence.svg' | relative_url }})
+![SIP value under three orderings of the same twenty annual returns]({{ '/assets/charts/risk-sequence.svg' | relative_url }}){: width="461" height="259"}
 
 | Order | Final value |
 |---|---:|

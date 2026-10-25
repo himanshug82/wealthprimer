@@ -15,6 +15,19 @@ for how the repo works.
 
 ## Open — needs you
 
+- **Decide: new series and a home for standalone topics (26 Oct 2026).** The
+  `new-series` skill and `scripts/new_series.py` now make a new series a
+  two-minute scaffold. Proposed structure: (1) extend an existing series where
+  the topic fits; (2) start a new series only with ≥ 5 named posts and a
+  distinct reader question; (3) everything else goes to a catch-all
+  `explainers` series ("Investing explainers", unnumbered), created when its
+  first post is approved. **Company analysis** is possible only as "How to read
+  a company's filings" (observables, no verdicts, rule-based company
+  selection) — see the guarded design in `.claude/skills/new-series/SKILL.md`;
+  needs your go-ahead and ideally a securities-law adviser's view first, and a
+  matching section in `CLAUDE.md`. Also: run `post-researcher` in discovery mode
+  once, then pick topics.
+
 - **GA4 content tagging — one-time setup in Google Analytics (needed for the topic chart):** every
   page now sends `content_type` (home / post / series_hub / page) and, for posts and series
   hubs, `content_series` (e.g. `mutual-funds`) and `content_category` (the series title). In GA4:

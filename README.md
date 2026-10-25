@@ -66,6 +66,11 @@ Principles baked into every tool:
 
 Skills live in `.claude/skills/<name>/SKILL.md`. Claude loads one automatically when your request matches its description, or you can name it ("run plan-module for risk").
 
+### `new-series` — where does a new topic go?
+- **Purpose:** decide between an existing series, a brand-new series, or the standalone bucket (`explainers`, unnumbered), and scaffold a series with `python3 scripts/new_series.py <slug> "Title" --description … --about …` (adds the `_data/series.yml` entry and the hub page; everything else follows automatically; the hub is noindexed until its first post is live; the slug is permanent).
+- **Use when:** "this doesn't fit anywhere", "start a series on X", "company analysis".
+- **Company analysis:** the skill holds a guarded design ("How to read a company's filings": rubric, observables only, no verdicts, rule-based selection, lag). It is an **owner decision**, ideally checked with a securities-law adviser, before any such post is planned.
+
 ### `plan-module` — decide what to write next
 - **Purpose:** produce a roadmap (about 4–8 posts) for one series, for you to approve. Output is a table and a `TODO.md` entry, never posts.
 - **Use when:** a series' written backlog is running out, or you ask "what next".
@@ -131,6 +136,7 @@ Agents run in a **fresh context**, so they don't inherit the author's blind spot
 ### `post-researcher` — weekly research for future posts
 - **Purpose:** find which series are running out of written posts, scan the last 7 days of SEBI/RBI/income-tax/exchange circulars from primary sources, and propose 3–6 teaching topics per series with sources and compliance notes. Writes `_review/research/YYYY-MM-DD.md` and one `TODO.md` row. Research only: it never drafts posts and has no stock or fund views.
 - **Use when:** weekly (scheduled), or before `plan-module`.
+- **Discovery mode:** also finds *new* topics that could help you show up in search and help retail investors: it maps what the site already owns, looks at what ranks and what is missing (SERP look, regulator and exchange investor material, recent rule changes, seasonal hooks), and sorts each candidate into existing series / new series / standalone / not for this blog. It cannot see search volumes or rankings and says so; paste a Search Console export to give it real signals. Ask for it any time ("run post-researcher in discovery mode"); it also runs automatically when no brief in the last 28 days has a Discovery section.
 - **Workflow:** read the brief → pick topics → "run plan-module for <series>, using the research brief" → approve → write.
 
 ---

@@ -18,8 +18,10 @@ for how the repo works.
 - **Search Console and DNS (from the SEO audit, `_review/SEO-AUDIT-2026-10-25.md`):**
   verify a *Domain* property for wealthprimer.in (DNS TXT), submit `/sitemap.xml`,
   request indexing for `/`, `/series/` and `/series/risk/` (it was `noindex` until
-  25 Oct); add DNS `CNAME www → himanshug82.github.io` (www doesn't resolve today);
-  if applying for AdSense, add `ads.txt` and disclose ad cookies on `/privacy/`.
+  25 Oct); www is fine — it resolves to GitHub Pages and 301-redirects to the apex
+  over http and https (re-checked 25 Oct; the audit's "doesn't resolve" was a test
+  timeout). "Page with redirect" (8 URLs: the http:// and www variants) is expected;
+  no validation needed. If applying for AdSense, add `ads.txt` and disclose ad cookies on `/privacy/`.
   **Canonical issue (25 Oct):** Search Console reported 1 page as "Duplicate,
   Google chose different canonical than user". The likely cause was `/series/`,
   which repeated the homepage's series cards (54% shared text, 199 words); it

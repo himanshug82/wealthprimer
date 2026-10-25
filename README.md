@@ -68,8 +68,8 @@ Skills live in `.claude/skills/<name>/SKILL.md`. Claude loads one automatically 
 
 ### `new-series` — where does a new topic go?
 - **Purpose:** decide between an existing series, a brand-new series, or the standalone bucket (`explainers`, unnumbered), and scaffold a series with `python3 scripts/new_series.py <slug> "Title" --description … --about …` (adds the `_data/series.yml` entry and the hub page; everything else follows automatically; the hub is noindexed until its first post is live; the slug is permanent).
-- **Use when:** "this doesn't fit anywhere", "start a series on X", "company analysis".
-- **Company analysis:** the skill holds a guarded design ("How to read a company's filings": rubric, observables only, no verdicts, rule-based selection, lag). It is an **owner decision**, ideally checked with a securities-law adviser, before any such post is planned.
+- **Use when:** "this doesn't fit anywhere", "start a series on X".
+- **Parked:** company analysis is deliberately not offered (it conflicts with the educational-only rule); the skill and research agent won't propose it.
 
 ### `plan-module` — decide what to write next
 - **Purpose:** produce a roadmap (about 4–8 posts) for one series, for you to approve. Output is a table and a `TODO.md` entry, never posts.

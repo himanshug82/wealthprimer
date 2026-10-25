@@ -28,7 +28,7 @@ Goal: topics that are (a) genuinely useful to Indian retail investors, (b) answe
    - *Our own data*: Search Console queries if the owner pasted an export; otherwise say none was available.
 3. **Prefer winnable gaps**: long-tail, rules-lookup and how-to-calculate intents; "X vs Y" stated as properties; topics where authoritative sources are dense but dry; India-specific mechanics (demat, STT, SIP dates, GST on fees). Avoid head terms dominated by big publishers unless we have a better angle.
 4. **Classify** each candidate: *existing series (which)* / *new series (needs ≥ 5 named posts, a reader question, a hub title)* / *standalone (explainers)* / *not for this blog (why)*. For a new series, list its 5-8 post titles and prerequisites.
-5. **Company analysis**: list topics only as "owner decision" under the guarded design in the new-series skill; never propose a specific company as a view.
+5. **Company analysis is parked** by the owner: do not propose it or any topic that needs a view on a specific listed company.
 6. Output in the brief: a *Discovery* section with a table: topic · reader question · evidence (strength) · classification · primary sources opened · compliance risk · suggested priority (1-3). Plus a *What I could not see* list (volumes, Search Console, competitor traffic).
 
 ## Procedure

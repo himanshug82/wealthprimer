@@ -21,11 +21,7 @@ for how the repo works.
   the topic fits; (2) start a new series only with ≥ 5 named posts and a
   distinct reader question; (3) everything else goes to a catch-all
   `explainers` series ("Investing explainers", unnumbered), created when its
-  first post is approved. **Company analysis** is possible only as "How to read
-  a company's filings" (observables, no verdicts, rule-based company
-  selection) — see the guarded design in `.claude/skills/new-series/SKILL.md`;
-  needs your go-ahead and ideally a securities-law adviser's view first, and a
-  matching section in `CLAUDE.md`. Also: run `post-researcher` in discovery mode
+  first post is approved. Also: run `post-researcher` in discovery mode
   once, then pick topics.
 
 - **GA4 content tagging — one-time setup in Google Analytics (needed for the topic chart):** every
@@ -77,6 +73,10 @@ for how the repo works.
 - **Tax series moved back three weeks** (see "Tax series professional read").
 
 ## Parked — revisit later
+
+- **Company analysis series (parked 26 Oct 2026).** Removed from the plan by
+  decision; conflicts with the no-verdicts rule. Skills and the research agent
+  won't propose it.
 
 - **PageSpeed** (25 Oct, `_review/PAGESPEED-2026-10-25.md`): accessibility/best-practices/SEO are
   100 on all pages and desktop performance is 100. Google Analytics (`gtag.js`) was the one big

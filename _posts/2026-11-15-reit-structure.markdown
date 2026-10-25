@@ -16,9 +16,9 @@ term: "REIT (real estate investment trust)"
 
 ## What a REIT is
 
-A **real estate investment trust (REIT)** is, in the wording of SEBI (the Securities and Exchange Board of India), "a trust registered as such under these regulations". It owns income-producing property, such as leased offices, and sells **units** (defined as "beneficial interest of the REIT") to investors. Those units are listed on a stock exchange, so you can buy and sell a share of the trust without buying a building.
+A **real estate investment trust (REIT)**, as SEBI (the Securities and Exchange Board of India) now defines it, pools ₹{{ rg.pool_min_cr }} crore or more by issuing units to at least {{ rg.min_investors }} investors, to buy and manage real estate whose income goes to those investors without giving them day-to-day control. It owns income-producing property, such as leased offices, and sells **units** (defined as "beneficial interest of the REIT") to investors. Those units are listed on a stock exchange, so you can buy and sell a share of the trust without buying a building.
 
-The rules are in SEBI's [Real Estate Investment Trusts Regulations, 2014]({{ rg.url }}), notified {{ rg.notified | date: "%-d %B %Y" }}. The text used here carries amendments only up to {{ rg.amendments_in_text_to | date: "%-d %B %Y" }}. SEBI has issued later amendments and circulars that this post did not read, so every limit below is as of that text's last amendment, {{ rg.amendments_in_text_to | date: "%-d %B %Y" }}. Check SEBI's current text before relying on any of them. It sits in [Money Before Markets]({{ '/series/money-before-markets/' | relative_url }}) because a REIT is another place money can go, with its own rules. InvITs (infrastructure investment trusts, the infrastructure counterpart) and how REIT payouts are taxed are not covered here.
+The rules are in SEBI's [Real Estate Investment Trusts Regulations, 2014]({{ rg.url }}), notified {{ rg.notified | date: "%-d %B %Y" }}. This post reads SEBI's consolidated text as last amended on {{ rg.last_amended | date: "%-d %B %Y" }} (read {{ rg.read | date: "%-d %B %Y" }}). SEBI's REIT master circular, which adds detail on disclosures and procedures, was not read, and SEBI amends these rules often, so check the current text before relying on any limit below. It sits in [Money Before Markets]({{ '/series/money-before-markets/' | relative_url }}) because a REIT is another place money can go, with its own rules. InvITs (infrastructure investment trusts, the infrastructure counterpart) and how REIT payouts are taxed are not covered here.
 
 ## Who does what
 
@@ -26,24 +26,24 @@ The regulations define these roles:
 
 - **Sponsor:** the person or group that sets up the REIT.
 - **Trustee:** holds the REIT's assets "in trust for the benefit of the unit holders".
-- **Manager:** a company or LLP (limited liability partnership) that "manages assets and investments of the REIT and undertakes operational activities".
-- **SPV (special purpose vehicle):** a company or LLP in which the REIT or its holding company holds a controlling interest of at least 51%, which holds at least 80% of its assets directly in properties, and which does nothing other than hold and develop property. The regulations also describe a **holdco**, a holding company through which the REIT can own several SPVs.
+- **Manager:** a company, LLP (limited liability partnership) or other body corporate incorporated in India that "manages assets and investments of the REIT and undertakes operational activities".
+- **SPV (special purpose vehicle):** a company or LLP in which the REIT or its holding company holds at least {{ rg.spv_min_holding_pct }}% of the equity or interest, which holds at least 80% of its assets directly in properties and doesn't invest in other SPVs, and which does nothing other than hold and develop property (and what is incidental to that). The regulations also describe a **holdco**, a holding company through which the REIT can own several SPVs.
 
 The property sits in the SPVs or holdco, the REIT owns them, and you own units of the REIT.
 
 ## The two rules that shape a REIT
 
-1. **Where the money sits.** At least {{ rg.assets_min_pct }}% of the value of the REIT's assets must be in completed and rent-generating properties (regulation 18(4)).
-2. **What must be paid out.** At least {{ rg.dist_pct }}% of an SPV's *net distributable cash flows* must go to the REIT, and at least {{ rg.dist_pct }}% of the REIT's own net distributable cash flows must go to unit holders. Payouts must be declared at least once every {{ rg.dist_months }} months and paid within {{ rg.dist_days }} days of declaration (regulation 18(16)). Where a holdco sits in between, it must pass on all the cash it receives from SPVs and at least {{ rg.dist_pct }}% of cash it generates itself.
+1. **Where the money sits.** At least {{ rg.assets_min_pct }}% of the value of the REIT's assets must be in completed properties that generate rent or other income (regulation 18(4)).
+2. **What must be paid out.** At least {{ rg.dist_pct }}% of an SPV's *net distributable cash flows* must go to the REIT, and at least {{ rg.dist_pct }}% of the REIT's own net distributable cash flows must go to unit holders. Payouts must be declared at least once every {{ rg.dist_months }} months in each financial year. Since {{ rg.dist_rule_from | date: "%-d %B %Y" }} the record date is {{ rg.record_working_days_after_declaration }} working days after the declaration, and the payout must be made within {{ rg.dist_working_days_after_record }} working days of the record date (regulation 18(16)). Where a holdco sits in between, it must pass on all the cash it receives from SPVs and at least {{ rg.dist_pct }}% of cash it generates itself.
 
-In the 2016 text, if a property is sold and the REIT proposes to reinvest the proceeds in another property, it is not required to distribute them. If it proposes not to reinvest them within one year, at least 90% of the proceeds must be distributed. The payout rule is about cash flows, not about profit or unit price. For why a payout isn't the same as a return, see [free cash flow]({% post_url 2026-09-19-free-cash-flow %}).
+If a property is sold and the REIT proposes to reinvest the proceeds in another property, it is not required to distribute them. If it proposes not to reinvest them within one year, at least 90% of the proceeds must be distributed. The payout rule is about cash flows, not about profit or unit price. For why a payout isn't the same as a return, see [free cash flow]({% post_url 2026-09-19-free-cash-flow %}).
 
 ## The formulas
 
 ```
 Minimum payout to the REIT       =  90% × SPV net distributable cash flows
 Minimum payout to unit holders   =  90% × REIT net distributable cash flows
-Minimum in rent-generating property  =  80% × value of REIT assets
+Minimum in income-generating property  =  80% × value of REIT assets
 ```
 
 Net distributable cash flows (NDCF) are defined in the regulations; this post doesn't reproduce the definition, so the example below treats them as given.
@@ -52,7 +52,7 @@ Net distributable cash flows (NDCF) are defined in the regulations; this post do
 
 Every number here is invented to show the arithmetic. It isn't any REIT.
 
-**The asset rule.** If the REIT's assets are worth ₹{% include inr.html n=a.total_cr %} crore, at least ₹{% include inr.html n=a.rent_generating_min_cr %} crore must be in completed and rent-generating property, which leaves at most ₹{% include inr.html n=a.other_max_cr %} crore for everything else the regulations permit.
+**The asset rule.** If the REIT's assets are worth ₹{% include inr.html n=a.total_cr %} crore, at least ₹{% include inr.html n=a.rent_generating_min_cr %} crore must be in completed property that generates rent or other income, which leaves at most ₹{% include inr.html n=a.other_max_cr %} crore for everything else the regulations permit.
 
 **The payout rule.** One SPV earns net distributable cash flows of ₹{% include inr.html n=po.spv_ndcf %} crore, and the REIT owns 100% of it directly, with no holdco. The REIT has no other cash flows.
 
@@ -69,4 +69,4 @@ At the legal minimum at each step, unit holders receive {{ po.floor_share_pct }}
 - **Ignoring the layers.** The 90% rule applies at the SPV and again at the REIT, so a chain of SPVs and holdcos changes what reaches you.
 - **Assuming a unit's price follows the property's value.** The regulations define a REIT's **net asset value (NAV)** as the value of its assets reduced by external debt, divided by units outstanding. The listed price is set by trading and can differ from that figure, much as an exchange-traded fund's (ETF's) price can differ from its NAV, as the [index funds vs ETFs post]({% post_url 2026-10-13-index-funds-vs-etfs %}) explained.
 
-**Takeaway:** A REIT is a listed trust whose rules, in the SEBI text read here, require most of its assets to be in completed rent-generating property and most of its distributable cash to be paid out. Those are floors on structure and payout, not a promise of any return on the unit, and the current rules may differ.
+**Takeaway:** A REIT is a listed trust whose rules require most of its assets to be in completed, income-generating property and most of its distributable cash to be paid out. Those are floors on structure and payout, not a promise of any return on the unit, and SEBI amends them often.

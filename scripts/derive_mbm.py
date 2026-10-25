@@ -165,6 +165,14 @@ dicgc = {
         ],
         "note": "The guide page gives no effective date for the limit.",
     },
+    # RBI press release 2019-2020/1878 of 4 Feb 2020, read 25 Oct 2026: the limit was raised
+    # "from the present level of Rs 1 lakh to Rs 5 lakh per depositor with effect from February 4, 2020".
+    "effective": {
+        "date": "2020-02-04",
+        "previous_limit": 100000,
+        "name": "RBI press release 2019-2020/1878, 4 February 2020",
+        "url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=49330",
+    },
 }
 assert dicgc["uninsured"] == 120000
 
@@ -434,12 +442,16 @@ ulip = {
 }
 
 # ---------------------------------------------------------------- 7. REIT
-# SEBI (Real Estate Investment Trusts) Regulations, 2014, notified 26 September 2014: the SEBI-published text read here carries
-# footnoted amendments up to 30 November 2016 only; later amendments and the SEBI master circular exist and were NOT read.
-# reg 2(1)(zm) REIT = a trust registered under the regulations; (zx) unit = beneficial interest of the REIT; reg 18(4) at least 80% of
-# the value of REIT assets in completed and rent-generating properties; reg 18(16) (a) at least 90% of an SPV's net distributable cash
-# flows to the REIT, (b) at least 90% of the REIT's net distributable cash flows to unit holders, (c) declared at least once every six
-# months and paid within fifteen days of declaration; (aa) a holdco passes on 100% of cash received from SPVs and at least 90% of its own.
+# SEBI (Real Estate Investment Trusts) Regulations, 2014, notified 26 September 2014, read 25 Oct 2026 in SEBI's consolidated text
+# "last amended on October 15, 2026". SEBI's REIT master circular was NOT read.
+# reg 2(1)(zm) REIT = a person that pools Rs 50 crore or more to issue units to at least 200 investors to acquire and manage real
+# estate (substituted w.e.f. 8 Mar 2024); (zx) unit = beneficial interest of the REIT; (zza) SPV: REIT or holdco holds not less than
+# 50% (the "controlling interest" and "fifty one" wording went w.e.f. 10 Apr 2018), >= 80% of assets directly in properties, no
+# other SPVs; reg 18(4) at least 80% of the value of REIT assets in completed and rent and/or income generating properties;
+# reg 18(16) (a) >= 90% of an SPV's NDCF to the REIT/holdco, (aa) holdco passes on 100% of SPV cash and >= 90% of its own (a negative
+# own NDCF may be set off, w.e.f. 3 Sep 2025), (b) >= 90% of the REIT's NDCF to unit holders, (c) declared not less than once every
+# six months in every financial year and made within five working days from the record date, which is two working days after
+# declaration (w.e.f. 27 Nov 2024; before that, within fifteen days of declaration).
 reit_assets = 10000   # Rs crore, illustrative
 reit_rg_min = reit_assets * 80 // 100
 spv_ndcf = 100.0
@@ -451,8 +463,10 @@ per_unit = to_holders / units_cr
 assert abs(to_reit - 90.0) < 1e-9 and abs(to_holders - 81.0) < 1e-9 and abs(per_unit - 9.0) < 1e-9
 reit = {
     "regs": {"title": "SEBI (Real Estate Investment Trusts) Regulations, 2014", "notified": "2014-09-26",
-             "url": "https://www.sebi.gov.in/sebi_data/attachdocs/1411722678653.pdf", "read": "2026-10-25",
-             "amendments_in_text_to": "2016-11-30", "assets_min_pct": 80, "dist_pct": 90, "dist_months": 6, "dist_days": 15},
+             "url": "https://www.sebi.gov.in/legal/regulations/oct-2026/securities-and-exchange-board-of-india-real-estate-investment-trusts-regulations-2014-last-amended-on-october-15-2026-_105376.html",
+             "read": "2026-10-25", "last_amended": "2026-10-15", "assets_min_pct": 80, "dist_pct": 90, "dist_months": 6,
+             "dist_working_days_after_record": 5, "record_working_days_after_declaration": 2, "dist_rule_from": "2024-11-27",
+             "spv_min_holding_pct": 50, "pool_min_cr": 50, "min_investors": 200},
     "assets": {"total_cr": reit_assets, "rent_generating_min_cr": reit_rg_min, "other_max_cr": reit_assets - reit_rg_min},
     "payout": {"spv_ndcf": spv_ndcf, "to_reit_min": to_reit, "reit_ndcf": reit_ndcf, "to_holders_min": to_holders,
                "floor_share_pct": 81, "units_cr": units_cr, "per_unit": per_unit},

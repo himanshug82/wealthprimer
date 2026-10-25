@@ -160,6 +160,11 @@ fd_vs_debt:
       - 'FAQ: If you have deposits with more than one bank, deposit insurance coverage limit is applied separately to the
         deposits in each bank.'
       note: The guide page gives no effective date for the limit.
+    effective:
+      date: '2020-02-04'
+      previous_limit: 100000
+      name: RBI press release 2019-2020/1878, 4 February 2020
+      url: https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=49330
 gsec:
   auction:
     date: '2026-06-19'
@@ -596,13 +601,18 @@ reit:
   regs:
     title: SEBI (Real Estate Investment Trusts) Regulations, 2014
     notified: '2014-09-26'
-    url: https://www.sebi.gov.in/sebi_data/attachdocs/1411722678653.pdf
+    url: https://www.sebi.gov.in/legal/regulations/oct-2026/securities-and-exchange-board-of-india-real-estate-investment-trusts-regulations-2014-last-amended-on-october-15-2026-_105376.html
     read: '2026-10-25'
-    amendments_in_text_to: '2016-11-30'
+    last_amended: '2026-10-15'
     assets_min_pct: 80
     dist_pct: 90
     dist_months: 6
-    dist_days: 15
+    dist_working_days_after_record: 5
+    record_working_days_after_declaration: 2
+    dist_rule_from: '2024-11-27'
+    spv_min_holding_pct: 50
+    pool_min_cr: 50
+    min_investors: 200
   assets:
     total_cr: 10000
     rent_generating_min_cr: 8000

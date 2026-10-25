@@ -70,7 +70,7 @@ Each is one instrument over five years, so these are examples of how the mechani
 
 ## The insurance limit
 
-Deposit insurance counts what you hold *per bank*. The DICGC's [guide to deposit insurance]({{ dq.source.url }}) says: "{{ dq.source.wording }}" It covers principal and interest together, and deposits across the branches of one bank are added up. Deposits in different banks are insured separately. (Read on {{ dq.source.read | date: "%-d %B %Y" }}; the guide gives no effective date for the limit.)
+Deposit insurance counts what you hold *per bank*. The DICGC's [guide to deposit insurance]({{ dq.source.url }}) says: "{{ dq.source.wording }}" It covers principal and interest together, and deposits across the branches of one bank are added up. Deposits in different banks are insured separately. (Read on {{ dq.source.read | date: "%-d %B %Y" }}.) The limit has applied since {{ dq.effective.date | date: "%-d %B %Y" }}, when it was raised from ₹{% include inr.html n=dq.effective.previous_limit %} ([{{ dq.effective.name }}]({{ dq.effective.url }})).
 
 Take an illustrative total of ₹{% include inr.html n=dq.illustrative_balance %} at one bank across a savings account and FDs. The insured part is ₹{% include inr.html n=dq.insured %}; ₹{% include inr.html n=dq.uninsured %} is above the limit. The same total split evenly across two banks is ₹{% include inr.html n=dq.split_banks_each %} in each, and all of it falls under the limit. That is how the rule counts, not a suggestion about where to hold money. Mutual fund units sit outside this scheme altogether.
 

@@ -5,6 +5,7 @@ description: "Referral fees, paid courses, sponsored posts and the pump: the inc
 image: /assets/og/how-finfluencers-make-money.png
 date: 2026-10-15 09:00:00 +0530
 series: risk
+last_modified_at: 2026-10-25
 ---
 
 {% assign f = site.data.fno %}
@@ -107,16 +108,19 @@ the level I'm confident of; a compliance professional would add detail.
   or Research Analyst. Unregistered persons doing so are in breach, and SEBI
   has passed orders against several, including disgorgement of fees.
 - **Regulated entities can't associate with them.** Through amendments to
-  its Intermediaries Regulations notified on 29 August 2024, SEBI
+  its Intermediaries Regulations in force from 29 August 2024 (new
+  Regulation 16A, notification SEBI/LAD-NRO/GN/2024/201; see the
+  [current text](https://www.sebi.gov.in/legal/regulations/oct-2026/securities-and-exchange-board-of-india-intermediaries-regulations-2008-last-amended-on-october-10-2026-_105373.html)), SEBI
   prohibited its regulated intermediaries — brokers, fund houses, registered
   advisers — from having any association, including paying referral fees,
   with persons who give unregistered advice or make performance claims. This
   is the rule aimed at revenue model one. It cut off one of the largest
   funding sources for tip-based content at the intermediary end rather than trying to
   police every creator.
-- **Education is carved out — with conditions.** The same framework left
-  room for regulated entities to associate with persons engaged purely in
-  investor education, and a SEBI circular of 29 January 2025 spelled out the
+- **Education is carved out — with conditions.** Explanation 4 to the same
+  regulation says the ban doesn't cover a person engaged in investor
+  education, as long as that person doesn't give advice or make return claims
+  without SEBI's permission. A SEBI circular of 29 January 2025 spelled out the
   conditions: no recommendations, no claims about returns, and no use of
   market price data from the preceding three months when naming a security.
   A [circular of 8 May 2026](https://www.sebi.gov.in/legal/circulars/may-2026/norms-for-sharing-and-usage-of-price-data-for-educational-purposes_101293.html)

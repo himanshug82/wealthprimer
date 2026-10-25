@@ -1,121 +1,22 @@
 # TODO
 
-Current state (25 Oct 2026): **168 posts written and scheduled** across six
-series (Jargon 53 · FA 29 · TA 22 · MF 30 · Tax 18 · Risk 16). The cadence is
-**one post per series per day** (MF Module 4 runs every other day, by request). Scheduled through: Jargon 21 Oct · FA 23 Oct
-· TA 23 Oct · Risk 23 Oct · MF 7 Nov · **Tax held** 17 Nov → 4 Dec (18 posts,
-moved back three weeks on 25 Oct) held; its reason (a professional read) is gone, see Decided 26 Oct. **MF Module 4 (7 posts, 26 Oct → 7 Nov, every other
-day) was added on 25 Oct 2026, so MF is scheduled through 7 Nov (30 posts).**
-**The other written backlogs ran out on 25 Oct** (Tax runs to 4 Dec) — each series needs its next module planned and approved (`plan-module`). All posts were reviewed and every P0/P1/P2 finding
-fixed (git commits `fbef1a8`, `9fbaaa5`, `59dda72`). House style and the rules every
-post must follow are in `CLAUDE.md`; this file is for what's still open and
-for how the repo works.
+Current state (25 Oct 2026): **168 posts written** across six series (Jargon 53 · FA 29 · TA 22 · MF 30 · Tax 18 · Risk 16), one post per series per day (MF Module 4 every other day). Scheduled through: Jargon 21 Oct · FA, TA, Risk 23 Oct · MF 7 Nov · Tax 4 Dec (starts 17 Nov). **Every series except MF and Tax has run out of written posts.** House style and the rules every post must follow are in `CLAUDE.md`; this file is for what's still open and for how the repo works.
 
 ---
 
 ## Open — needs you
 
-- **Decide: new series and a home for standalone topics (26 Oct 2026).** The
-  `new-series` skill and `scripts/new_series.py` now make a new series a
-  two-minute scaffold. Proposed structure: (1) extend an existing series where
-  the topic fits; (2) start a new series only with ≥ 5 named posts and a
-  distinct reader question; (3) everything else goes to a catch-all
-  `explainers` series ("Investing explainers", unnumbered), created when its
-  first post is approved. Also: run `post-researcher` in discovery mode
-  once, then pick topics.
+- **Next content.** Every series needs its next module planned and approved with `plan-module`. Two inputs are waiting:
+  - **R8 "Money Before Markets" is approved (25 Oct) as a new series and is next to plan** — emergency fund, EPF/PPF/NPS, term insurance vs ULIP, FDs vs debt funds, real returns, plus bonds/G-secs and REITs/InvITs. It needs a new slug in `_data/series.yml`, primary sources for every rule and rate, and the `needs_review` flag on any post that states a tax rule.
+  - **Decide how new topics are housed (26 Oct).** Proposed: (1) extend an existing series where the topic fits; (2) start a new series only with at least 5 named posts and a distinct reader question; (3) everything else goes to a catch-all `explainers` series ("Investing explainers", unnumbered), created when its first post is approved. The 25 Oct research brief (`_review/research/2026-10-25.md`) has top picks: nomination rules (in force 1 Sep 2026), how an IPO application works (ASBA/UPI/T+3), contract note and trade charges; and a proposed series "Your first year in the market" (7 posts). Approve via `plan-module`.
+- **GA4 content tagging — one-time setup (needed for the topic chart).** Every page sends `content_type` (home / post / series_hub / page) and, for posts and series hubs, `content_series` and `content_category`. In GA4: Admin → Data display → Custom definitions → Create custom dimension → scope **Event**, once for each of `content_series`, `content_category` (and optionally `content_type`), parameter name exactly as written. Data shows 24–48 h after registering; it is not retroactive.
+- **Search Console and DNS.** Verify a *Domain* property for wealthprimer.in (DNS TXT), submit `/sitemap.xml`, request indexing for `/`, `/series/` and `/series/risk/`. If applying for AdSense, add `ads.txt` and disclose ad cookies on `/privacy/`. **Canonical issue:** Search Console reported 1 page as "Duplicate, Google chose different canonical than user". The likely cause was `/series/` (it repeated the homepage's series cards); it now has its own text. Confirm which URL was flagged (Pages → that issue → example URL → URL Inspection shows the Google-selected canonical); if it isn't `/series/`, tell Claude the URL.
+- **SEO content follow-ups.** (1) Add primary-source links (SEBI circulars, AMFI data, company filings) to the 41 posts with no external links. (2) Monthly: export Search Console queries at position 8–20, refresh those posts (`refresh-post`), and set `last_modified_at` only for substantive changes. (3) Watch Pages (published posts indexed), Sitemaps (status Success), Enhancements → Breadcrumbs (valid items ≈ number of posts) and Core Web Vitals (no CLS issues). Leave dated URLs alone — no redirect plugin, so renaming breaks links.
+- **PageSpeed.** Re-run your PageSpeed link after the 25 Oct analytics change (`gtag.js` now loads on first interaction or after 10 s) and send the numbers if mobile is below about 90.
 
-- **Research brief 25 Oct 2026 (discovery, `_review/research/2026-10-25.md`):** top picks: nomination rules (in force 1 Sep 2026), how an IPO application works (ASBA/UPI/T+3), contract note and trade charges; proposed new series "Your first year in the market" (7 posts). Approve via plan-module.
+## Open — verify claims
 
-- **GA4 content tagging — one-time setup in Google Analytics (needed for the topic chart):** every
-  page now sends `content_type` (home / post / series_hub / page) and, for posts and series
-  hubs, `content_series` (e.g. `mutual-funds`) and `content_category` (the series title). In GA4:
-  Admin → Data display → Custom definitions → Create custom dimension → scope **Event**, once
-  for each of `content_series`, `content_category` (and optionally `content_type`), parameter
-  name exactly as written. Data shows 24–48 h after registering; it is not retroactive.
-- **Search Console and DNS (from the 25 Oct SEO audit):**
-  verify a *Domain* property for wealthprimer.in (DNS TXT), submit `/sitemap.xml`,
-  request indexing for `/`, `/series/` and `/series/risk/` (it was `noindex` until
-  25 Oct); www is fine — it resolves to GitHub Pages and 301-redirects to the apex
-  over http and https (re-checked 25 Oct; the audit's "doesn't resolve" was a test
-  timeout). "Page with redirect" (8 URLs: the http:// and www variants) is expected;
-  no validation needed. If applying for AdSense, add `ads.txt` and disclose ad cookies on `/privacy/`.
-  **Canonical issue (25 Oct):** Search Console reported 1 page as "Duplicate,
-  Google chose different canonical than user". The likely cause was `/series/`,
-  which repeated the homepage's series cards (54% shared text, 199 words); it
-  now has its own per-series text (`about:` in `_data/series.yml`) plus
-  start-with/latest links (under 15% overlap, 534 words). `/404.html` is now
-  `noindex`. Confirm in Search Console which URL was flagged (Pages → that issue →
-  example URL → URL Inspection shows the Google-selected canonical); if it isn't
-  `/series/`, tell Claude the URL.
-- **SEO content follow-ups (from the 25 Oct audit):** (1) add primary-source links (SEBI circulars, AMFI data, company filings) to the 41 posts with no external links — YMYL trust signal; newer posts already do this. (2) Monthly: export Search Console queries at position 8–20, refresh those posts (`refresh-post`), and set `last_modified_at` only for substantive changes. (3) Watch in Search Console: Pages (published posts indexed; only `/404.html` and an empty hub excluded), Sitemaps (status Success), Enhancements → Breadcrumbs (valid items ≈ number of posts; 1–3 weeks), Core Web Vitals (no CLS issues; monthly). Leave dated URLs alone — no redirect plugin, so renaming breaks links.
-- **Tax-touching published posts: flagged and softened (26 Oct 2026).** The 11
-  posts (`arbitrage-funds`, `stp-and-swp`, `what-a-mutual-fund-is`,
-  `debt-funds-explained`, `what-the-fo-numbers-actually-say`, `dividend-yield`,
-  `record-date-and-ex-date`, `index-funds-vs-etfs`, `inflation-and-real-returns`,
-  `hybrid-funds`, `international-funds`) now carry `needs_review: tax` +
-  `rules_as_of` (no `last_modified_at`, by owner choice); tax sentences say
-  "generally" / "check the current rule", and a stray old-Act section number
-  (44AB) was removed. `rules_as_of` points at the Tax series' own verification
-  dates (Aug/Sep 2026), not a fresh check. The linter's remaining 3 warnings
-  (`how-to-backtest-honestly`, `wacc-cost-of-capital`, `capital-allocation`) are
-  false positives.
-- **Tax series dates stay as they are (owner decision, 26 Oct 2026):** 17 Nov →
-  4 Dec, one per day. No professional read is planned, so the dates are now
-  simply the schedule, not a hold. All 18 posts carry `needs_review: tax`,
-  `rules_as_of` and the as-at-date/"author is not a tax professional"
-  notices, built from primary text where reachable (`_data/tax2.yml` lists the
-  recorded uncertain points). The RELINK links (14 markers) get restored in
-  the older posts after those dates.
-- **Next content:** every series except Tax has run out of written posts (MF
-  runs to 7 Nov). Plan and approve the next module per series with
-  `plan-module`. **R8 "Money Before Markets" is approved (25 Oct) as a new
-  series and is next to plan** — emergency fund, EPF/PPF/NPS, term insurance vs
-  ULIP, FDs vs debt funds, real returns, plus bonds/G-secs and REITs/InvITs. It
-  needs a new slug in `_data/series.yml`, primary sources for every rule and
-  rate, and the `needs_review` flag on any post that states a tax rule.
-
-## Decided — 25 Oct 2026
-
-- **Desi Bites' public float stays at 20%** — the free-float and OFS/delisting
-  posts already use the gap below the 25% minimum as the teaching example; no
-  data change.
-- **Formulas stay in code blocks** — no MathJax/KaTeX.
-- **No real peer table** in the comparables post — it stays on Desi Bites
-  (a listed-peer table drifts toward relative-valuation verdicts).
-- **About page avatar: done** — `assets/avatar.svg` (HG monogram, brand blue),
-  floated beside the opening paragraph.
-- **Tax series moved back three weeks** on 25 Oct to make room for a professional read. **Superseded 26 Oct:** no read will happen; see "Tax series: schedule it".
-- **No professional review of tax posts (26 Oct 2026).** Decided by the owner. Labelled instead: `needs_review: tax` + `rules_as_of` notices, primary-source rule, `post-auditor`. See CLAUDE.md, Professional review.
-
-## Parked — revisit later
-
-- **Company analysis series (parked 26 Oct 2026).** Removed from the plan by
-  decision; conflicts with the no-verdicts rule. Skills and the research agent
-  won't propose it.
-
-- **PageSpeed** (25 Oct, commit `c45b5db`): accessibility/best-practices/SEO are
-  100 on all pages and desktop performance is 100. Google Analytics (`gtag.js`) was the one big
-  mobile cost (the homepage swung 76–95 with the test machine's CPU), so since 25 Oct it loads at
-  the visitor's first tap, click, scroll or key press, or after 10 s (see the comment in
-  `_includes/analytics.html`). Trade-off: visitors who leave within 10 s without interacting are
-  not counted. Re-run your PageSpeed link after deploy and send the numbers if mobile is below ~90.
-
-- **Newsletter** (decided "later", 25 Oct): `newsletter.action` in `_config.yml`
-  is empty, so the signup box renders nothing. Mailchimp or Buttondown — three
-  config keys; setup notes in `_includes/newsletter.html`.
-- **Comments / giscus** (decided "not now", 25 Oct — moderating "should I buy
-  X" questions is a compliance load): `giscus.repo_id` and `giscus.category_id`
-  are empty, so nothing renders. To enable: Discussions on, an
-  "Announcement"-type category "Comments", install https://github.com/apps/giscus,
-  copy both ids from https://giscus.app (mapping: pathname). Notes in
-  `_includes/comments.html`.
-
-## Open — verify before the affected post publishes
-
-Each of these is in a post today, worded cautiously, but rests on a secondary
-source or on memory. **Several now publish within days** (the schedule moved
-earlier on 24 Sep) — work top-down by date. Confirm from the primary source, then tighten the
-wording (or correct it).
+Each of these is in a post today, worded cautiously, but rests on a secondary source or on memory. Most of the October posts are already live; Tax and Module 4 are still ahead. Confirm from the primary source, then tighten the wording (or correct it); `verify-claims` does this. Separately: the STP and SWP post's liquid-fund exit-load wording is now confirmed against the SEBI Master Circular (20 Mar 2026) para 5.6.5 — tighten it if it states more than "an exit load applies for exits within 7 calendar days; the scale is AMFI's".
 
 | Claim | Post(s) | Publishes | Current basis |
 |---|---|---|---|
@@ -130,7 +31,6 @@ wording (or correct it).
 | Britannia FY25 declared dividend ₹75 | payout ratio | 11 Oct | stockanalysis.com |
 | Overnight fund's mandate change "around May 2018" | debt funds explained | 12 Oct | inferred from the NAV series |
 | SEBI Feb 2026 categorisation revision (value/contra/dividend yield/sectoral to 80%) | SEBI fund categories | 14 Oct | press summaries |
-| ~~Liquid-fund graded exit load in the first week~~ — now confirmed: SEBI Master Circular (20 Mar 2026) para 5.6.5 requires an exit load for exits within 7 calendar days, graded as AMFI prescribes with SEBI; the scale itself is AMFI's and is not in the circular. Tighten the STP and SWP wording if it states more. | STP and SWP | 17 Oct | Master Circular text read 25 Oct |
 | Index-futures margins "low-to-mid teens" | leverage and margin | 11 Oct | hedged ("check NSE's margin files") |
 | 29 Aug 2024 intermediaries amendment "left room" for education | how finfluencers make money | 15 Oct | secondary sources |
 | Tax, from memory: property's 12.5%/20% option; business filers' one-time switch back to the new regime; CBDT condoning late filing; GAAR on round-trips; old 80C → section 123 | several tax posts | 17 Nov → 4 Dec | memory / secondary (incometaxindia.gov.in returns 403) |
@@ -143,105 +43,29 @@ wording (or correct it).
 | SEBI → AMFI stress-test direction dated 27 Feb 2024 (an AMC policy document); "at least one SAT appeal succeeded" (SCC Online); SBI FD rates FY16–FY22 (messy SBI workbook, 4 cross-checked); deposit insurance (DICGC) and IRDAI rules left out | liquidity risk, broker risk, inflation, insurance | 17–23 Oct | secondary |
 | SGB early redemption after year five losing the exemption (no official clarification); clubbing "income on income" and loans to a spouse (case law); TRC form number under the new Rules | bonds and SGBs, gifts and clubbing, NRI basics | 1–4 Dec | case law / unconfirmed |
 
-Also: eyeball the four TA module 2 charts (`assets/charts/ta2-*.svg`) in a
-browser — never rasterised locally.
+Also: eyeball the four TA module 2 charts (`assets/charts/ta2-*.svg`) in a browser — never rasterised locally.
 
 ## Open — content and tooling
 
-- **Tooling PR follow-ups (Oct 2026):** the new skills, `post-auditor` agent,
-  `pr-checks.yml` workflow and three scheduled tasks are inventoried in
-  `.claude/README.md`. After the PR merges: (1) check the first **PR checks**
-  run is green (workflow files can be refused by token scope — if so, add the
-  file by hand in GitHub); (2) attach the repo to the three scheduled tasks in
-  the Claude routines UI if a fired session shows no checkout; (3) run
-  `verify-claims` on the VERIFY table below, starting with the superseded MF
-  citations; (4) the Google Sheet calculators below can now start from the
-  `build-calculator` specs.
+- **Tooling follow-ups.** Attach the repo to the three scheduled tasks in the Claude routines UI if a fired session shows no checkout (inventory in `.claude/README.md`); run `verify-claims` on the table above.
+- **Google Sheet calculators (3):** DCF (terminal value post, 30 Sep — the sheet is still owed), rolling returns (27 Sep) and SIP/XIRR (1 Oct). Search `_posts/` for `GOOGLE-SHEET-TODO`. View-only, "make a copy to use"; link from each post. The `build-calculator` skill can write the specs.
+- **Superseded MF citations.** SEBI's Master Circular for Mutual Funds (27 Jun 2024) and the 1996 MF Regulations were replaced from 1 Apr 2026 (Master Circular 20 Mar 2026; SEBI (Mutual Funds) Regulations, 2026). `_data/mf2.yml` line 310 still cites the 27 June 2024 circular (clause 2.6) for the *SEBI fund categories* post (14 Oct) — update it to the new Master Circular's clause (the new citation is already in `mf3.yml`).
+- **Two USD/INR series:** `usd-inr-reference-rate.csv` (RBI/FBIL; currency risk, 19 Oct) and `usd-inr-fred-dexinus.csv` (Fed H.10; international funds, 20 Oct) differ slightly. Consider standardising on the RBI/FBIL series.
+- **Benchmarks, alpha and tracking-error posts** still use the Nifty 50 *price* index (Yahoo Finance). The Nifty 50 total return index is now in the repo (`assets/data/nifty50-tri.csv`, NSE Indices, 2006-01-02 to 2026-03-30; TRI beats PRI by about 1.3 points a year), so they can be redone against the right index.
+- **Links owed once targets publish.**
+  - Tax series (14 `RELINK` markers, after 4 Dec): these links were turned into plain text so other series weren't blocked. Each carries a hidden `<!-- RELINK <target> -->` marker; turn each back into `[text]({% post_url <target> %})` (`grep -rn "RELINK" _posts`). Also the F&O post's tax-series pointer.
+  - Module 4 MF posts (sweep after 7 Nov): factsheet (11 Oct) → *portfolio turnover ratio*; *volatility and Sharpe* (30 Sep) and tracking error (4 Oct) → *Sortino and information ratio*; benchmarks (2 Oct) and star ratings (16 Oct) → *survivorship bias*; STP and SWP (17 Oct) → *liquid and overnight funds*; *growth vs IDCW* → the Tax series' *dividends and interest*.
+  - **Rule:** a post links an *earlier* post with `{% post_url %}`; it links a *later* post only once that post is live, with a plain relative link (`{{ '/YYYY/MM/DD/slug/' | relative_url }}`). Re-run the sweep with `grep -rn "later in this series\|covered later\|coming up" _posts`.
+- **TA module 1 charts have no generator in the repo** (`assets/charts/ta-*.svg`; the script was left in a session scratchpad). Recreate it as `scripts/make_ta_charts.py` from the Britannia CSV, and redraw `ta-rsi.svg`, which predates the switch to Wilder-seeded RSI (differs only in the first month shown).
+- **Terminal value post, "aggressive" case (₹753):** the value is typed by hand in `_data/case_study.yml` (`scenario_aggressive`) and can't be reproduced from the other data. Derive it in a script with stated margin/capex assumptions, or drop it.
+- **Prose numbers still typed by hand** (should come from `_data/risk.yml` / `mf.yml`): arithmetic of losses ("about 66% more", "nearly three percentage points"), diversification ("1.6 / 0.4 percentage points", "15% less"), sequence of returns ("₹24/₹27 lakh", "₹2.6 crore", incl. its description), position sizing ("26% decline").
+- **Module 4 judgement calls to revisit:** (1) the ETF payout of 25 Feb 2021 (₹40.89/unit) is an *estimate* from the NAV gap, as in `mf2.yml`; the post says so. (2) Capture ratios use the Nifty 50 TRI for a hybrid fund that does not track it — a hybrid-category TRI benchmark would be the like-with-like choice. (3) The survivorship simulation's closing rule (worst 10% by trailing 3-year return, years 3–9) is an assumption. (4) Market-impact assumptions (0.05/0.10/0.20% a side) are illustrative.
 
-- **Google Sheet calculators (3):** DCF (terminal value post, 30 Sep — its
-  placeholder comment was removed, but the sheet is still owed), rolling
-  returns (27 Sep) and SIP/XIRR (1 Oct) — search `_posts/` for
-  `GOOGLE-SHEET-TODO`. View-only, "make a copy to use"; link from each post.
-- **Superseded MF citations in existing posts:** SEBI's Master Circular for
-  Mutual Funds (27 Jun 2024) and the 1996 MF Regulations were replaced from
-  1 Apr 2026 (new Master Circular 20 Mar 2026; SEBI (Mutual Funds)
-  Regulations, 2026). The new module-3 posts cite the new ones; older MF posts
-  (notably SEBI fund categories, 14 Oct, and its clause numbers) still cite the
-  old — update before they publish.
-- **Two USD/INR series:** `usd-inr-reference-rate.csv` (RBI/FBIL; currency
-  risk, 19 Oct) and `usd-inr-fred-dexinus.csv` (Fed H.10; international funds,
-  20 Oct) differ slightly. Consider standardising on the RBI/FBIL series.
-- **Links into the held Tax series (14 `RELINK` markers)** were turned into plain text so the
-  other series aren't blocked (F&O numbers; YTM; modified duration; exit load;
-  debt funds explained; index funds vs ETFs; STP and SWP). Each carries a
-  hidden `<!-- RELINK <target> -->` marker right after the text — once Tax is
-  live (or rescheduled earlier than the linking post), turn each back into
-  `[text]({% post_url <target> %})`: `grep -rn "RELINK" _posts`.
-- **Links owed once targets publish — swept 25 Oct for every live target.** 42
-  links added in 35 posts: each "later in this series" promise whose target was
-  live now links to it, plus links into the posts Search Console listed as
-  "Crawled – currently not indexed" (record date, bid-ask spread, T+1, Kelly,
-  backtesting, Fibonacci, liquidity risk, STP/SWP, bank P/B) and the jargon terms
-  first explained inline (beta, operating leverage, earnings yield, payout ratio,
-  enterprise value, portfolio overlap, exit load). **Rule used:** a post links an
-  *earlier* post with `{% post_url %}`; it links a *later* post only once that
-  post is live, with a plain relative link (`{{ '/YYYY/MM/DD/slug/' | relative_url }}`)
-  — `post_url` to a later post breaks the build, and live URLs never change.
-  Still owed (targets not live yet): the Tax series (RELINK markers, after
-  4 Dec), Module 4 MF posts (after 7 Nov), and the F&O post's tax-series
-  pointer. Re-run the sweep with
-  `grep -rn "later in this series\|covered later\|coming up" _posts`.
-- **TA module 1 charts have no generator in the repo** (`assets/charts/ta-*.svg`;
-  the script was left in a session scratchpad). Recreate it as
-  `scripts/make_ta_charts.py` from the Britannia CSV — and redraw `ta-rsi.svg`,
-  which predates the switch to Wilder-seeded RSI (differs only in the first
-  month shown).
-- **Terminal value post, "aggressive" case (₹753):** can't be reproduced from
-  `_data/case_study.yml`. Derive it in a script with stated margin/capex
-  assumptions, or drop it.
-- **Prose numbers still typed by hand** (should come from `_data/risk.yml` /
-  `mf.yml`): arithmetic of losses ("about 66% more", "nearly three percentage
-  points"), diversification ("1.6 / 0.4 percentage points", "15% less"),
-  sequence of returns ("₹24/₹27 lakh", "₹2.6 crore", incl. its description),
-  position sizing ("26% decline").
-- **Module 4 data and sources (added 25 Oct 2026):** `assets/data/nifty50-tri.csv`
-  is the Nifty 50 **total return index** (NSE Indices' historical-data service,
-  fetched 25 Oct 2026, 2006-01-02 to 2026-03-30; checked against the price
-  index: daily-return correlation 0.99993, TRI beats PRI by ~1.3 points a year).
-  The benchmarks, alpha and tracking-error posts still use the price index —
-  they can now be redone against the TRI. `assets/data/uti-liquid-fund-nav.csv`
-  is UTI Liquid Fund regular growth (AMFI via mfapi.in, code 102012). The
-  **SEBI Master Circular for Mutual Funds of 20 March 2026** (HO/24/13/11(1)2026-IMD-POD-1/I/7602/2026)
-  was downloaded from sebi.gov.in and read in full for the new posts: it
-  supersedes older MF citations (see "Superseded MF citations" above).
-- **Correction made to a live post:** *Reading a factsheet* (11 Oct) said
-  trading costs "sit outside the expense ratio"; Master Circular para 11.2.4(a)
-  puts brokerage and transaction costs inside the TER (only market impact is
-  outside). Fixed on 25 Oct with `last_modified_at`. Other older posts that
-  discuss TER composition may carry the same pre-2026 wording: `grep -rn "outside the expense ratio\|not in the TER" _posts`.
-- **Owed links from Module 4 (targets are later-dated, so earlier posts can't
-  link yet — sweep after 7 Nov):** factsheet (11 Oct) → *portfolio turnover
-  ratio* (its text says "a later post covers it"); *volatility and Sharpe*
-  (30 Sep) → *Sortino and information ratio*; benchmarks (2 Oct) and star
-  ratings (16 Oct) → *survivorship bias*; tracking error (4 Oct) →
-  *Sortino and information ratio*; STP and SWP (17 Oct) → *liquid and
-  overnight funds*; *growth vs IDCW* → the Tax series' *dividends and
-  interest* (now 21 Nov, held) once the Tax read is done.
-- **Module 4 VERIFY / judgement calls:** (1) the ETF payout of 25 Feb 2021
-  (₹40.89/unit) is an *estimate* from the NAV gap, as in `mf2.yml`; the post
-  says so. (2) Capture ratios use the Nifty 50 TRI for a hybrid fund that does
-  not track it — the post says so; a hybrid-category TRI benchmark would be
-  the like-with-like choice. (3) The survivorship simulation's closing rule
-  (worst 10% by trailing 3-year return, years 3–9) is an assumption; no real
-  closure rate is quoted. (4) Market-impact assumptions (0.05/0.10/0.20% a
-  side) are illustrative. No tax rate or tax rule is stated in any Module 4
-  post, so no professional read is needed.
-- **Index data source:** Britannia prices and the Nifty 50 price index come
-  from Yahoo Finance. The Nifty 50 TRI is now in the repo (see the Module 4
-  bullet above), so the benchmarks, alpha and tracking-error posts can be
-  redone against the right index.
-- **Glossary coverage:** 11 opener/closer posts have no `term:` (by design —
-  `check_posts.py` warns). Add one if you want a post in `/glossary/`.
+## Parked — revisit later
+
+- **Company analysis series** (parked 26 Oct): conflicts with the no-verdicts rule; skills and the research agent won't propose it.
+- **Newsletter:** `newsletter.action` in `_config.yml` is empty, so the signup box renders nothing. Mailchimp or Buttondown — three config keys; notes in `_includes/newsletter.html`.
+- **Comments / giscus** (moderating "should I buy X" questions is a compliance load): `giscus.repo_id` and `giscus.category_id` are empty, so nothing renders. Notes in `_includes/comments.html`.
 
 ---
 
@@ -360,19 +184,4 @@ browser — never rasterised locally.
 - **Nav:** Series · Glossary · Case study · Methodology · About
   (`header_pages`); Privacy lives in the footer. Pages can set `nav_title:`.
 
----
-
-## History
-
-- Aug–Sep 2026: 69 posts across Jargon (M0–M5), FA (8), TA (10), MF (9) and
-  Tax (9); then R1–R7 added 47 more (Risk series, FA "Reading between the
-  lines" and "Banks and NBFCs", Jargon module 6, MF module 2, tax add-ons,
-  TA module 2). Posts were rescheduled into a daily cadence from 18 Aug.
-- 24 Sep 2026: site redesign; Indian comma grouping in tables; full review of
-  all 116 posts with every P0/P1/P2 fixed (commits `fbef1a8`, `9fbaaa5`, `59dda72`);
-  `CLAUDE.md` updated with the lessons. Rescheduled the 88 unpublished posts
-  to one per series per day (Tax held to 27 Oct).
-- 25 Sep 2026: six new modules, 45 posts — Jargon 7 market mechanics, FA 4
-  sector lenses, TA 3 honest tests, MF 3, Risk 2, Tax 3 add-ons — continuing
-  each series daily to 21–25 Oct (Tax 9–13 Nov).
 - Details of any change: `git log`.

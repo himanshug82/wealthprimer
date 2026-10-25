@@ -5,7 +5,7 @@ A financial education blog for Indian retail investors, live at <https://wealthp
 Built with Jekyll on GitHub Pages. Six series today (Jargon, Fundamental Analysis, Technical Analysis, Mutual Funds, Tax, Risk), with new series and a standalone-explainers bucket possible via `new-series`, one fictional case-study company (Desi Bites Foods) and a set of Claude Code skills, an agent pair and scheduled tasks that make writing, checking and shipping safer.
 
 - Rules every post must follow: [`CLAUDE.md`](CLAUDE.md)
-- What is open / decided / parked, and how the repo works: [`TODO.md`](TODO.md)
+- What is open / parked, and how the repo works: [`TODO.md`](TODO.md)
 - Audits and reviews: [`_review/`](_review/)
 
 ---

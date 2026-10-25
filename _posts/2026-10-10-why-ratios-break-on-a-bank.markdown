@@ -5,6 +5,7 @@ seo_title: "Why P/E and debt-to-equity break on a bank"
 description: "Debt-to-equity, EBITDA and the current ratio mean nothing for a bank. What a bank sells, how its P&L is built, and which ratios replace the ones you know."
 image: /assets/og/why-ratios-break-on-a-bank.png
 date: 2026-10-10 09:00:00 +0530
+last_modified_at: 2026-10-25
 series: fundamental-analysis
 term: "Net interest income (NII)"
 ---
@@ -114,8 +115,8 @@ one-off ₹{% include inr.html n=f24.floating_provision %} crore "floating"
 provision the bank chose to make; FY25's didn't. Two other lines moved too.
 {% assign _t24 = f24.tax | round %}{% assign _t25 = f25.tax | round %}Tax roughly doubled, from ₹{% include inr.html n=_t24 %} crore to ₹{% include inr.html n=_t25 %} crore, because FY24's
 was held down by tax provisions written back. And FY24's other income
-included a one-off gain of about ₹7,340 crore from selling most of the
-bank's stake in HDFC Credila ([Business Standard, April 2024](https://www.business-standard.com/amp/companies/results/hdfc-bank-q4-results-profit-jumps-37-to-rs-16-512-crore-nii-up-24-5-124042000440_1.html)).
+included a one-off gain of ₹7,341.42 crore from selling its shares in
+HDFC Credila, after which Credila stopped being a subsidiary ([note 9 of HDFC Bank's FY25 results release](https://www.sec.gov/Archives/edgar/data/1144967/000119312525087787/d930582dex99.htm)).
 The [NPA post]({{ '/2026/10/13/gnpa-nnpa-and-provisions/' | relative_url }}) is about the provisions part: a bank's
 profit is partly a *decision*.
 

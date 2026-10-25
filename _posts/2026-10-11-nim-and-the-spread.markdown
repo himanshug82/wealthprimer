@@ -157,7 +157,7 @@ and the two sides of the spread move at different speeds.
 
 - **Loans reprice faster than deposits when rates rise.** Since October
   2019 the RBI has required new floating-rate retail and MSME loans to be
-  linked to an external benchmark (the repo rate, for example), and those
+  linked to an external benchmark (the repo rate, for example) under [circular RBI/2019-20/53 of 4 September 2019](https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=11677&Mode=0), and those
   reset within months. Fixed deposits stay at the old rate until
   they mature. So when rates go up, yield rises before cost of funds does and
   NIM widens — temporarily.

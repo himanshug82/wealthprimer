@@ -75,7 +75,7 @@ checkable. *Working capital* is vaguer but legitimate. *General corporate
 purposes* (GCP) is the catch-all — money with no stated use. *Inorganic
 growth* means acquisitions not yet identified, which is a request to trust
 management's judgement on deals it hasn't found. Both are capped, precisely
-because companies would otherwise put everything there: {{ d.gcp_cap_note }}
+because companies would otherwise put everything there: {{ d.gcp_cap_note }} (regulation 7(2) and (3), in the text amended up to 21 March 2026)
 (the combined cap came in with the SEBI ICDR (Amendment) Regulations, 2022,
 notified 14 January 2022).
 Desi Bites sits just inside the combined limit: GCP plus unidentified

@@ -17,17 +17,10 @@ Each of these is in a post today, worded cautiously, but rests on a secondary so
 
 | Claim | Post(s) | Publishes | Current basis |
 |---|---|---|---|
-| Britannia left the Nifty 50 effective 28 Mar 2025 | volume | 7 Oct | news coverage, not NSE's circular |
-| ICDR caps: GCP ≤ 25%, GCP + unidentified acquisitions ≤ 35%; lock-ins 18 m / 6 m | contingent liabilities, reading a DRHP | 6, 9 Oct | law-firm write-ups |
-| HDFC Bank FY24 one-off gain (HDFC Credila stake sale, ₹7,340 cr) | why ratios break on a bank | 10 Oct | Business Standard |
-| RBI external-benchmark rule for floating-rate loans (Oct 2019) | NIM and the spread | 11 Oct | memory |
-| HDFC Bank FY24 CASA ratio 38.2% | CASA and the deposit franchise | 12 Oct | Business Standard (the Q4 FY24 presentation timed out) |
-| HDFC Bank D-SIB surcharge 0.40% from 1 Apr 2025 | capital adequacy | 14 Oct | news report of the RBI release |
+| HDFC Bank FY24 CASA ratio 38.2% | CASA and the deposit franchise | 12 Oct | Business Standard; HDFC Bank's Q4 FY24 presentation timed out (a search snippet of it says "38%" for the quarter), so the one-decimal figure is unconfirmed |
+| HDFC Bank D-SIB surcharge 0.40% **from 1 Apr 2025**: bucket 2 and 0.40% are confirmed from RBI's list of 2 Dec 2025; the 1 Apr 2025 effective date is not (RBI's 2024 release sits behind a captcha). The post no longer states the date | capital adequacy | 14 Oct | RBI 2025 list (primary); date unconfirmed |
 | SPIVA India Year-End 2025: 76.3% of large-cap funds lagged over 10 years | alpha | 3 Oct | search results (PDF returned 403) |
-| SEBI MF Regulations 2026 expense-ratio slabs (post keeps the 2018/19 slabs, labelled) | AUM, expense ratios | 8 Oct, 28 Sep | new slab table not found |
-| Britannia FY25 declared dividend ₹75 | payout ratio | 11 Oct | stockanalysis.com |
 | Overnight fund's mandate change "around May 2018" | debt funds explained | 12 Oct | inferred from the NAV series |
-| SEBI Feb 2026 categorisation revision (value/contra/dividend yield/sectoral to 80%) | SEBI fund categories | 14 Oct | press summaries |
 | Index-futures margins "low-to-mid teens" | leverage and margin | 11 Oct | hedged ("check NSE's margin files") |
 | 29 Aug 2024 intermediaries amendment "left room" for education | how finfluencers make money | 15 Oct | secondary sources |
 | DICGC's ₹5 lakh limit: the guide page states it but gives no effective date; the 4 Feb 2020 date and the payout timing are not read from a primary page | FD vs debt fund | 9 Nov | DICGC guide (primary), dates unconfirmed |
@@ -36,15 +29,14 @@ Each of these is in a post today, worded cautiously, but rests on a secondary so
 | NPS exit rules read from the Gazette of 12 Dec 2025 and PFRDA's March 2026 FAQ; the 13 Jul 2026 amendment read (specific-purpose schemes only). Tier-I/Tier-II, asset classes and annuity terms not covered | NPS exit rules | 13 Nov | primary |
 | ULIP: IRDAI's life-products master circular of 12 Jun 2024 (reviewed yearly: a later version may exist); the charge caps in Schedule I of the Insurance Products Regulations, 2024 were NOT read | ULIP charges | 14 Nov | primary circular; Schedule I unread |
 | REIT: SEBI's published regulations text carries amendments only to 30 Nov 2016; the master circular and later amendments (including the 2024–25 changes to holdco distribution) were NOT read; 25% public holding and listing thresholds not stated | REIT structure | 15 Nov | primary, dated |
-| Tax, from memory: property's 12.5%/20% option; business filers' one-time switch back to the new regime; CBDT condoning late filing; GAAR on round-trips; old 80C → section 123 | several tax posts | 17 Nov → 4 Dec | memory / secondary (incometaxindia.gov.in returns 403) |
-| Buyback Regime C: ₹1.25 lakh exemption, promoter definition, timing; foreign shares' exchange-rate convention | buyback taxation, foreign stocks | 27, 29 Nov | recorded as disagreements in `tax2.yml` |
+| Buyback Regime C: which date fixes the regime (the post says the date the company pays you, "on the current reading"); foreign shares' SBI TT buying rate convention (Income-tax Rules, not read; the Act only defines "rate of exchange" at s.2(24)) | buyback taxation, foreign stocks | 27, 29 Nov | not in the Act text read |
 | Ex-date = record date under T+1 (inferred from NSE corporate-actions data); rights-issue rules "from April 2025" (7 or 8 April); OFS framework's current master circular; T+0 rollout status | T+1, record/ex-date, rights issues, OFS | 16–20 Oct | NSE data / secondary |
 | GSM stage mechanics ("buyer pays in full plus deposit" is inferred); "not an adverse action" confirmed only for ASM/ESM; GSM criteria after May 2026 | ASM and GSM surveillance | 21 Oct | NSE FAQs + inference |
 | Attributions: Lane (stochastic), Granville (OBV); papers cited without fetching (Bouman & Jacobsen 2002; Moskowitz, Ooi & Pedersen 2012; Jegadeesh & Titman 1993); NSE closing auction live from 3 Aug 2026 | TA honest-tests posts | 16–23 Oct | memory / citation not fetched |
 | USFDA NAI/VAI/OAI meanings, Form 483 → warning letter chain (fda.gov blocked); embedded value definition; Airtel net debt incl. leases (inferred); Bajaj Finance ALM gap limits (from its presentation, not RBI) | sector-lens posts | 20–23 Oct | secondary / inference |
 | Overseas-investment halts of Jan 2022 and 1 Apr 2024 (press reports); whether a domestic FoF uses your LRS limit; Franklin Templeton SAT stay and ₹250 cr escrow (FT disclosure only) | international funds, segregated portfolios | 20, 24 Oct | press / company disclosure |
 | SEBI → AMFI stress-test direction dated 27 Feb 2024 (an AMC policy document); "at least one SAT appeal succeeded" (SCC Online); SBI FD rates FY16–FY22 (messy SBI workbook, 4 cross-checked); deposit insurance (DICGC) and IRDAI rules left out | liquidity risk, broker risk, inflation, insurance | 17–23 Oct | secondary |
-| SGB early redemption after year five losing the exemption (no official clarification); clubbing "income on income" and loans to a spouse (case law); TRC form number under the new Rules | bonds and SGBs, gifts and clubbing, NRI basics | 1–4 Dec | case law / unconfirmed |
+| SGB early redemption after year five (the 2026 text says "till maturity" and is silent on early redemption); "income on clubbed income" and loans to a spouse (case law, hedged in the post); the TRC form is not stated in the post | bonds and SGBs, gifts and clubbing, NRI basics | 1–4 Dec | text silent / case law not read |
 
 Also: eyeball the four TA module 2 charts (`assets/charts/ta2-*.svg`) in a browser — never rasterised locally.
 

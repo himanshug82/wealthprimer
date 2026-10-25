@@ -98,7 +98,7 @@ The close moved **−0.2%**.
 
 Enormous participation, no price change. The likely reason: it was the last
 session before Britannia's exit from the Nifty 50 took effect on 28 March
-2025 (NSE announced the change in February 2025), so index funds tracking
+2025 (NSE Indices announced the change on [21 February 2025](https://www.niftyindices.com/Press_Release/ind_prs21022025.pdf), effective from the close of 27 March), so index funds tracking
 the Nifty had to sell at that day's close — and the price barely noticed,
 because that selling had been known for weeks and buyers were lined up to
 match it.

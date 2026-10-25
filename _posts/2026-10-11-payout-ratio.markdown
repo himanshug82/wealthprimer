@@ -72,7 +72,7 @@ company *could* have grown without the IPO, and why the
 
 DPS from the [dividend yield post]({% post_url 2026-09-28-dividend-yield %}):
 ₹{{ b.dps }}, the dividend actually *paid* during FY25 (in August 2024). Strictly,
-that was the final dividend for FY24, so this is a trailing ratio — the
+that was the final dividend for FY24 (item 2 of the [notice of Britannia's 105th annual general meeting](https://media.britannia.co.in/Notice_of_105th_Annual_General_Meeting_pdf_8f7245e7e5.pdf)), so this is a trailing ratio — the
 dividend paid in FY25 divided by FY25 EPS. EPS and ROE from the
 [audited FY25 results](https://media.britannia.co.in/Audited_Consolidated_Financial_Results_31_03_2025_74a7c03628.pdf)
 (year ended 31 March 2025). For illustration only.
@@ -86,8 +86,8 @@ dividend paid in FY25 divided by FY25 EPS. EPS and ROE from the
 | FY25 ROE | {{ b.roe_pct }}% |
 | **Sustainable growth** = {{ b.roe_pct }}% × {{ b.retention_pct }}% | **≈ {{ b.sustainable_growth_pct }}%** |
 
-The dividend declared *for* FY25 — ₹{{ bi_dps_decl | round }} a share, paid in August 2025 (per
-[stockanalysis.com's dividend history](https://stockanalysis.com/quote/nse/BRITANNIA/dividend/)) —
+The final dividend recommended *for* FY25 — ₹{{ bi_dps_decl | round }} a share, to be declared at the AGM of 11 August 2025 (per
+[Britannia's board-meeting outcome of 8 May 2025](https://media.britannia.co.in/Intimation_of_Final_Dividend_pdf_43b8412ff2.pdf)) —
 gives a payout of {{ bi_payout_decl }}% on the same EPS. Matching the dividend to the
 year it was declared for is the tidier method; the two land close here.
 

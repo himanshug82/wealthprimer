@@ -63,7 +63,9 @@ listed ones:
 Two further wrinkles. Gains are computed in **rupees**, so a move in the
 exchange rate is part of your gain (or loss) even if the dollar price never
 changed. And the rupee conversion uses a prescribed rate, not the rate your
-broker happened to give you. The common approach converts each leg at the
+broker happened to give you. The Income-tax Act, 2025 defines the "rate of exchange"
+as the rate determined or recognised by the Central Government (section 2(24)); the
+specific rate is set in the Income-tax Rules, which this post has not read. The common approach converts each leg at the
 **SBI TT buying rate** — the State Bank of India's telegraphic-transfer
 buying rate — **on the last day of the month before** the month of purchase,
 and likewise for the sale. Practice differs, though: some advisers read the

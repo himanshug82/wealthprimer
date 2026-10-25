@@ -98,8 +98,9 @@ A gift to your spouse is tax-free when it's made. But the interest, dividends
 and capital gains it earns come back into **your** return, at **your** slab.
 A loss is clubbed too.
 
-A minor child's income is added to the income of whichever parent earns more,
-after excluding ₹{% include inr.html n=x.minor_exclusion %} per child a year (Schedule III of the 2025 Act).
+A minor child's income is added to the income of the parent whose total income is greater
+where the parents are married to each other, or of the parent who maintains the child
+where they are not (section 99(5)(b) of the 2025 Act), after excluding ₹{% include inr.html n=x.minor_exclusion %} per child a year (Schedule III of the 2025 Act).
 
 **Not clubbed**: income on gifts to an **adult child**, to your parents, or to
 siblings. They aren't in section 99. Gifts to them are tax-free when made

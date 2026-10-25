@@ -4,6 +4,7 @@ title: "AUM: what a fund's size tells you, and what it doesn't"
 description: "AUM is the market value of everything a fund holds. It moves with the market even when nobody buys a unit, and SEBI ties the fee cap to it. What size can't say."
 image: /assets/og/aum.png
 date: 2026-10-08 09:00:00 +0530
+last_modified_at: 2026-10-25
 series: jargon
 term: "AUM (assets under management)"
 ---
@@ -49,25 +50,26 @@ how much of it was flows. The number that tells you what *investors* did is
 
 ## Where size genuinely matters
 
-**Fees.** SEBI caps a scheme's total expense ratio (TER) — its annual running
-costs as a percentage of AUM — in slabs that fall as
-AUM rises — the regulator's view being that running a ₹20,000 crore fund
-doesn't cost forty times what running a ₹500 crore fund does. For open-ended
-equity schemes:
+**Fees.** SEBI caps what an open-ended scheme can charge, in slabs that fall as
+AUM rises. The logic is that running a ₹20,000 crore fund doesn't cost forty times
+what running a ₹500 crore fund does. Under the [SEBI (Mutual Funds) Regulations, 2026](https://www.sebi.gov.in/legal/regulations/apr-2026/securities-and-exchange-board-of-india-mutual-funds-regulations-2026_100744.html),
+in force from 1 April 2026, the cap is on the **base expense ratio** (BER), and for open-ended
+equity-oriented schemes other than index funds, ETFs (exchange-traded funds) and funds of funds
+it is, per the daily net assets in each slab ({{ au.ber_regulation }}):
 
-| AUM slab | Maximum TER |
-|---|---:|{% for s in au.ter_slabs_equity %}
-| {{ s.aum_slab }} | {% if s.max_ter_note %}{{ s.max_ter_note }}{% else %}{% assign tp = s.max_ter_pct | append: '' | split: '.' %}{{ tp[0] }}.{{ tp[1] | append: '00' | slice: 0, 2 }}%{% endif %} |{% endfor %}
+| AUM slab | Maximum base expense ratio |
+|---|---:|{% for s in au.ber_slabs_equity %}
+| {{ s.aum_slab }} | {% if s.max_ber_note %}{{ s.max_ber_note }}{% else %}{% assign tp = s.max_ber_pct | append: '' | split: '.' %}{{ tp[0] }}.{{ tp[1] | append: '00' | slice: 0, 2 }}%{% endif %} |{% endfor %}
 
-Index funds and ETFs (exchange-traded funds) are capped at {% include inr.html n=au.ter_cap_index_funds_pct %}% regardless of size.
-These are the slabs of SEBI's 2018/19 TER framework. From 1 April 2026, the
-[SEBI (Mutual Funds) Regulations, 2026](https://www.sebi.gov.in/legal/regulations/jan-2026/securities-and-exchange-board-of-india-mutual-funds-regulations-2026_99173.html)
-restructured the cap as a "base expense ratio" that leaves out statutory
-levies and brokerage, with somewhat lower limits — check the current
-regulation and SEBI circulars for today's exact figures. The shape hasn't
-changed: the cap still falls as the fund grows. The practical consequence: as a fund grows, its maximum permitted
-fee *falls*. Whether the fund actually charges less is a different question —
-the cap is a ceiling, not a price — and the
+Index funds and ETFs are capped at {{ au.ber_cap_index_etf_pct | append: '0' }}% of daily net assets regardless of size.
+The base expense ratio leaves out statutory levies and transaction costs, and a scheme may charge brokerage
+on top of it, up to {% assign x = au.ber_brokerage_cash_pct %}{% include inr.html n=x %}% of trade value in the cash market and
+{% assign x = au.ber_brokerage_derivatives_pct %}{% include inr.html n=x %}% in derivatives. So the total expense ratio an investor
+sees can sit above the base figure. Before 1 April 2026 the 2018/19 framework capped the *total*
+expense ratio, starting at {% assign x = au.ter_slabs_equity[0].max_ter_pct %}{% include inr.html n=x %}% on the first ₹500 crore, so the two sets of numbers
+are not directly comparable. The shape is the same: the cap falls as the fund grows. The practical
+consequence is that as a fund grows, its maximum permitted fee *falls*. Whether the fund actually charges less is a
+different question — the cap is a ceiling, not a price — and the
 [expense ratio post]({% post_url 2026-09-28-expense-ratios-direct-vs-regular %})
 is where to check what you're really paying.
 

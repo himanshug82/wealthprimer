@@ -115,9 +115,10 @@ is the sum for this particular bank:
 Within the base 9%, RBI requires at least {% include inr.html n=m.cet1_min %}% as CET1 and
 {% include inr.html n=m.tier1_min %}% as Tier 1. The D-SIB surcharge depends on the bucket RBI
 places a bank in, and it moves. The {{ m.dsib_surcharge }}% above is what applied to HDFC
-Bank on 31 March 2025. RBI's D-SIB list (reaffirmed in its press release of
-13 November 2024) placed HDFC Bank in a higher bucket from 1 April 2025, with
-a {{ m.dsib_surcharge_from_apr2025 }}% surcharge — lifting the floor to {{ m.total_from_apr2025 }}%. Always check the
+Bank on 31 March 2025. RBI's [list of 2 December 2025](https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=61729)
+puts HDFC Bank in bucket 2, an additional CET1 requirement of {{ m.dsib_surcharge_from_apr2025 }}% of risk-weighted
+assets on top of the capital conservation buffer — which would lift the floor to {{ m.total_from_apr2025 }}%. The release doesn't state the date from which a bucket
+change applies, so check that date in RBI's list for the year in question, and always check the
 current designation rather than the last one you read.
 
 ## The headroom, in rupees

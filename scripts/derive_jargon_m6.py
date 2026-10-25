@@ -283,7 +283,7 @@ aum = {
     "fy26_aum_end_no_flows_cr": r2(10000 * (1 + fy26_chg / 100)),
     "fy25_nav_change_pct": r2(fy25_chg),
     "fy25_aum_end_no_flows_cr": r2(10000 * (1 + fy25_chg / 100)),
-    # SEBI TER slabs for open-ended equity schemes (in force since 1 April 2019). VERIFY before publishing.
+    # SEBI TER slabs for open-ended equity schemes (in force from 1 April 2019 until the 2026 Regulations replaced them on 1 April 2026).
     "ter_slabs_equity": [
         {"aum_slab": "First ₹500 crore", "max_ter_pct": 2.25},
         {"aum_slab": "Next ₹250 crore", "max_ter_pct": 2.00},
@@ -296,6 +296,23 @@ aum = {
         {"aum_slab": "Above ₹50,000 crore", "max_ter_pct": 1.05},
     ],
     "ter_cap_index_funds_pct": 1.00,
+    # SEBI (Mutual Funds) Regulations, 2026, in force from 1 April 2026: regulation 66(7)(c), open-ended schemes
+    # other than index funds, ETFs and funds of funds. Read from the regulations' own text (SEBI PDF
+    # sebi_data/attachdocs/apr-2026/1775477332137.pdf, Gazette extraordinary, pp. 177-178). The "base expense ratio"
+    # excludes statutory levies and transaction cost; brokerage is allowed on top (regulation 66(9)).
+    "ber_slabs_equity": [
+        {"aum_slab": "First ₹500 crore", "max_ber_pct": 2.10},
+        {"aum_slab": "Next ₹250 crore", "max_ber_pct": 1.90},
+        {"aum_slab": "Next ₹1,250 crore", "max_ber_pct": 1.60},
+        {"aum_slab": "Next ₹3,000 crore", "max_ber_pct": 1.50},
+        {"aum_slab": "Next ₹5,000 crore", "max_ber_pct": 1.40},
+        {"aum_slab": "Next ₹40,000 crore", "max_ber_note": "reduced by 0.05% for every ₹5,000 crore of net assets, or part of it"},
+        {"aum_slab": "On the balance of the assets", "max_ber_pct": 0.95},
+    ],
+    "ber_cap_index_etf_pct": 0.90,
+    "ber_brokerage_cash_pct": 0.06,
+    "ber_brokerage_derivatives_pct": 0.02,
+    "ber_regulation": "SEBI (Mutual Funds) Regulations, 2026, regulation 66(7)(c), 66(9) and 67",
 }
 
 # ---------------------------------------------------------------- 8. operating leverage

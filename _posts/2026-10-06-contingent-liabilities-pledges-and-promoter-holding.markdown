@@ -158,7 +158,7 @@ institutional check on management yet.
 
 **Is the promoter's stake locked in?** For a main-board IPO the rules are in
 SEBI's (Securities and Exchange Board of India) Issue of Capital and
-Disclosure Requirements (ICDR) Regulations, as amended in August 2021.
+Disclosure Requirements (ICDR) Regulations (regulations 14, 16 and 17, in the text amended up to 21 March 2026).
 {{ sh.promoter_lockin }}. So on Desi Bites' {% include inr.html n=sh.promoter_pct %}%, most of
 the promoter stake was free of lock-in about six months after listing — which
 is roughly when the pledge above appeared. A

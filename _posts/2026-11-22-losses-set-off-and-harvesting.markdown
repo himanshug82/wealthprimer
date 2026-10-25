@@ -58,8 +58,10 @@ this series. Someone with a large loss and no gains this year might reasonably
 think there's nothing to report. But filing on time is precisely what
 preserves the loss for the eight years in which it might be worth a great
 deal. A return filed late doesn't just delay the benefit — it destroys it.
-(The CBDT, the Central Board of Direct Taxes, can condone a delay in genuine
-hardship, but that's a rare, discretionary exception, not a plan.)
+(The Central Board of Direct Taxes (CBDT) has a power, in section 239(3)(b) of the
+Income-tax Act, 2025, to authorise a tax authority to admit a claim for relief after
+its time limit to avoid genuine hardship. It is discretionary, and the text doesn't say
+it covers a late loss return, so it's an exception to hope for, not a plan.)
 
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
@@ -122,7 +124,8 @@ either now or plausibly within eight years. And selling and immediately
 rebuying incurs real transaction costs, plus a day or two out of the market —
 so the tax saving needs to exceed the friction. India has no explicit
 wash-sale rule, but an arrangement whose main purpose is a tax benefit can in
-principle be challenged under the general anti-avoidance rules (GAAR), so keep
+principle be challenged under the general anti-avoidance rule (GAAR, Chapter XI of the
+Income-tax Act, 2025, which covers arrangements whose main purpose is a tax benefit), so keep
 the trades genuine.
 
 **Harvesting gains is the more interesting idea**, and it's specific to

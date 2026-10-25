@@ -38,9 +38,10 @@ equity rather than 65%, a fund house may run both a value and a contra fund
 as long as their portfolios overlap by no more than 50%, sectoral and thematic
 funds face a similar overlap cap, and the "solution-oriented" category was
 discontinued. Existing schemes got six months to comply (three years for the
-sectoral/thematic overlap cap). The thresholds below reflect the 2026 revision
-as reported when this post was written — check the current text before
-relying on one, since these do get tweaked.
+sectoral/thematic overlap cap). The thresholds below reflect the text of the February 2026
+circular (clause 2.6 and its sub-clauses). The earlier 65% figure for these categories comes from the 2017
+framework and was not re-read for this post. SEBI revises these, so check the current text before
+relying on one.
 
 ## Market cap bands: who counts as large, mid and small
 

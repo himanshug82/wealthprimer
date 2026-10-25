@@ -185,14 +185,15 @@ ratios:
 # equals equity_share_capital (24.09) at a face value of Rs 1 — self-
 # consistent, so not an estimate.
 # dividend_per_share is the single dividend paid during FY25 (ex-date
-# 5 Aug 2024): source https://stockanalysis.com/quote/nse/BRITANNIA/dividend/
+# 5 Aug 2024): FY24 final dividend Rs 73.50, item 2 of the 105th AGM notice
+# https://media.britannia.co.in/Notice_of_105th_Annual_General_Meeting_pdf_8f7245e7e5.pdf
 market:
   price_date: "30 June 2025"
   price: 5851.00                 # Rs per share, NSE close
   shares_outstanding_cr: 24.09   # crore shares
   market_cap_cr: 140950.59       # price * shares_outstanding_cr
   dividend_per_share_fy25: 73.50 # Rs per share, ex-date 5 Aug 2024 — the FY24 final dividend, paid during FY25 (no interim in FY25)
-  dividend_per_share_fy25_declared: 75.00 # Rs per share, final dividend FOR FY25, ex-date 4 Aug 2025 (stockanalysis.com dividend history)
+  dividend_per_share_fy25_declared: 75.00 # Rs per share, final dividend FOR FY25, record date 4 Aug 2025 (board-meeting outcome of 8 May 2025, https://media.britannia.co.in/Intimation_of_Final_Dividend_pdf_43b8412ff2.pdf)
   ev_cr: 140751.24               # market_cap_cr + total_borrowings (FY25) - (cash_and_bank + current_investments) (FY25), all in Rs Cr
   pat_growth_fy24_fy25_pct: 1.8  # (2178.73 - 2139.81) / 2139.81 — a genuinely low single-year growth number, kept deliberately for the PEG post
 

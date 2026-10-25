@@ -54,9 +54,9 @@ investor; the pre-issue one mixes an old share count with a new price.
 
 Dividend per share is the trailing 12-month figure: the single dividend
 Britannia paid during FY25 ([ex-date]({{ '/2026/10/17/record-date-and-ex-date/' | relative_url }}) 5 August 2024). That payment was the
-final dividend for FY24, paid in August 2024 — there was no interim
-dividend during FY25. Sourced from [stockanalysis.com's dividend
-history](https://stockanalysis.com/quote/nse/BRITANNIA/dividend/). Price is
+final dividend for FY24 — there was no interim
+dividend during FY25. Sourced from Britannia's [notice of its 105th annual general meeting](https://media.britannia.co.in/Notice_of_105th_Annual_General_Meeting_pdf_8f7245e7e5.pdf):
+a final dividend of ₹73.50 per share for FY24, record date 5 August 2024, payable on or before 10 September 2024. Price is
 the {{ bi_market.price_date }} NSE close used throughout this module. For illustration
 only.
 

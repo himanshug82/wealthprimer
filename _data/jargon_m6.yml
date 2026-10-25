@@ -403,6 +403,25 @@ aum:
   - aum_slab: Above ₹50,000 crore
     max_ter_pct: 1.05
   ter_cap_index_funds_pct: 1.0
+  ber_slabs_equity:
+  - aum_slab: First ₹500 crore
+    max_ber_pct: 2.1
+  - aum_slab: Next ₹250 crore
+    max_ber_pct: 1.9
+  - aum_slab: Next ₹1,250 crore
+    max_ber_pct: 1.6
+  - aum_slab: Next ₹3,000 crore
+    max_ber_pct: 1.5
+  - aum_slab: Next ₹5,000 crore
+    max_ber_pct: 1.4
+  - aum_slab: Next ₹40,000 crore
+    max_ber_note: reduced by 0.05% for every ₹5,000 crore of net assets, or part of it
+  - aum_slab: On the balance of the assets
+    max_ber_pct: 0.95
+  ber_cap_index_etf_pct: 0.9
+  ber_brokerage_cash_pct: 0.06
+  ber_brokerage_derivatives_pct: 0.02
+  ber_regulation: SEBI (Mutual Funds) Regulations, 2026, regulation 66(7)(c), 66(9) and 67
 operating_leverage:
   desi_fy23_fy24:
     revenue_growth_pct: 20.0

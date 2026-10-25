@@ -117,7 +117,8 @@ individuals in higher slabs, this regime made tendering tax-expensive.
 
 ### Regime C — {{ rc.period }}: a sale, taxed on the gain
 
-The Finance Act, 2026 reversed course. From 1 April 2026 a buyback is taxed
+The Finance Act, 2026 reversed course. From 1 April 2026 (the Act omits buybacks from
+the deemed-dividend definition, section 35 of the Finance Act, 2026) a buyback is taxed
 as what it economically is: a **sale of shares**, with the cost deductible
 and the gain taxed under the normal equity rules from the
 [equity post]({% post_url 2026-11-19-equity-and-equity-funds %}).
@@ -134,7 +135,8 @@ against ₹{% include inr.html n=rb.tax_with_cess %} a few months earlier under 
 identical transaction.
 
 **The promoter surcharge.** To stop buybacks becoming a low-tax route for
-controlling shareholders again, Regime C adds an *additional* tax when the
+controlling shareholders again, Regime C (section 69(2) and (3) of the Income-tax
+Act, 2025, as substituted by section 42 of the Finance Act, 2026) adds an *additional* tax when the
 tendering shareholder is a **promoter** (for a listed company, as defined in
 SEBI's buyback regulations; otherwise a Companies Act promoter or a holder of
 more than 10%). Their effective rate on the gain becomes about

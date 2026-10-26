@@ -24,7 +24,7 @@ Typical flow for a module: `plan-module` → (approve) → `refresh-data` if nee
 
 Full usage guide: the repository `README.md`.
 
-`agents/post-researcher.md` — weekly research for future posts (writes `_review/research/<date>.md` + a TODO row; research only). Scheduled Sundays 06:11 IST (`trig_01B2BK6zgJHbZG6DhFWFykPJ`).
+`agents/post-researcher.md` — weekly research for future posts (writes `_review/research/<date>.md` + a TODO row; research only). Scheduled Fridays 22:00 IST together with `plan-module`, opening a research + roadmap PR (`trig_01B2BK6zgJHbZG6DhFWFykPJ`); approved roadmaps are drafted by the Sunday 10:00 IST drafting routine (`trig_01VQPiCaGpgUB8T99nbcfY5w`), which opens a drafts PR. See `_docs/how-it-works.md` → Weekly content pipeline.
 
 `agents/post-auditor.md` — independent read-only reviewer with a fresh context. Run it on every batch before scheduling; it reports P0/P1/P2 findings and never edits.
 

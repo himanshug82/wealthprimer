@@ -36,6 +36,37 @@ Moved out of `TODO.md` on 25 Oct 2026. `CLAUDE.md` is the writing rulebook; this
   revert the ones whose only diff is ids.
 - minima's SCSS prints Dart-Sass deprecation warnings (`lighten()`); harmless.
 
+## Weekly content pipeline
+
+Two cloud routines in the owner's Claude account (set up 26 Oct 2026), with
+the owner as the gate between them. Neither merges or pushes to `main`.
+
+1. **Friday 22:00 IST: research and roadmap** (`trig_01B2BK6zgJHbZG6DhFWFykPJ`).
+   Runs `post-researcher`, then `plan-module` for the one or two series with
+   the shortest written backlog. Writes `_review/research/<date>.md`, one
+   roadmap per series in `_review/roadmaps/<date>-<series>.md`, and one
+   `**[Proposed]**` bullet per roadmap in `TODO.md` → *Next content*. Opens a
+   PR from `research/<date>`.
+2. **Owner, over the weekend:** in that PR, edit the roadmap(s), change
+   `[Proposed]` to `[Approved]` for what should be written, delete the rest,
+   and merge. Not merging = nothing gets drafted.
+3. **Sunday 10:00 IST: drafting** (`trig_01VQPiCaGpgUB8T99nbcfY5w`). Reads
+   `[Approved]` bullets on `main`, drafts up to 8 posts (earliest dates first)
+   with `write-post` batch mode, runs `post-auditor` and fixes P0/P1, then
+   `check_posts.py` and `scripts/jekyll_build.sh /tmp/site --future`. Opens a
+   PR from `drafts/<date>`. A post counts as done once its slug exists in
+   `_posts/` on `main` or on any `drafts/*` branch, so an unmerged drafts PR
+   is not redrafted the next week. The tag becomes `[Drafted]` when every
+   post in the roadmap is in a PR.
+4. **Owner:** read the rendered pages, merge the drafts PR. The daily 09:00
+   IST build publishes each post on its date.
+
+Dates follow the cadence rules above: the roadmap gives each post a date
+(first free day after the series' latest post, one per series per day); if
+that date is taken by the time drafting runs, the routine moves it and later
+posts of that roadmap to the next free days, keeping their order. Keep two to
+three weeks of written backlog so a skipped week leaves no gap.
+
 ## Data discipline
 - Every figure in a post comes from `_data/` via Liquid, and every derived
   `_data/` file comes from a script — re-run the script, don't hand-edit:

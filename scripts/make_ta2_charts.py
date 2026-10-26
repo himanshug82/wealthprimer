@@ -24,18 +24,21 @@ import matplotlib.dates as mdates  # noqa: E402
 import matplotlib.pyplot as plt  # noqa: E402
 import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
+import yaml  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "assets/charts"
 px = pd.read_csv(ROOT / "assets/data/britannia-ohlcv-2024-04-to-2026-03.csv", parse_dates=["date"]).set_index("date").sort_index()
 nifty = pd.read_csv(ROOT / "assets/data/nifty50-price-index.csv", parse_dates=["date"]).set_index("date").sort_index()["nifty50_pri_close"]
+ta2 = yaml.safe_load((ROOT / "_data/ta2.yml").read_text(encoding="utf-8"))  # every label below comes from here
 
 NAVY, GREEN, RED, ORANGE, GREY, GRID, LIGHT = "#2b4c7e", "#2e7d5b", "#b3403a", "#c77d21", "#555555", "#e8e8e8", "#b9c4d4"
+INK = "#222222"
 plt.rcParams.update({
     "font.family": "DejaVu Sans", "font.size": 9, "axes.edgecolor": GREY, "axes.labelcolor": GREY,
     "xtick.color": GREY, "ytick.color": GREY, "axes.grid": True, "grid.color": GRID, "grid.linewidth": 0.7,
     "axes.spines.top": False, "axes.spines.right": False, "legend.frameon": False, "legend.fontsize": 8,
-    "svg.fonttype": "none",
+    "svg.fonttype": "none", "svg.hashsalt": "wealthprimer-ta2",
 })
 
 
@@ -48,6 +51,18 @@ def atr_wilder(df, n=14):
     prev = df.close.shift()
     tr = pd.concat([df.high - df.low, (df.high - prev).abs(), (df.low - prev).abs()], axis=1).max(axis=1)
     return tr.ewm(alpha=1 / n, adjust=False).mean()
+
+
+def pct(x):
+    return f"{x:+.1f}%".replace("-", "−")
+
+
+def day(d):
+    d = pd.Timestamp(d)
+    return f"{d.day} {d:%b %Y}"
+
+
+BOX = {"boxstyle": "round,pad=0.2", "fc": "white", "ec": "none", "alpha": 0.85}
 
 
 def fmt_dates(ax):
@@ -72,9 +87,11 @@ a1.fill_between(px.index, lo, up, color=LIGHT, alpha=0.35, linewidth=0)
 a1.plot(px.index, up, color=GREY, lw=0.7); a1.plot(px.index, lo, color=GREY, lw=0.7)
 a1.plot(px.index, mid, color=ORANGE, lw=1, label="20-day SMA")
 a1.plot(px.index, px.close, color=NAVY, lw=1.1, label="Close")
-for t, lab in [("2025-01-06", "squeeze → +8.6%"), ("2025-12-11", "squeeze → +2.2%")]:
-    t = pd.Timestamp(t); a1.axvline(t, color=RED, lw=0.8, ls="--"); a2.axvline(t, color=RED, lw=0.8, ls="--")
-    a1.annotate(lab, (t, px.close.loc[t]), xytext=(8, -28), textcoords="offset points", fontsize=8, color=RED)
+bb = ta2["bollinger"]
+for sq, side in ((bb["squeeze_then_big_move"], 1), (bb["squeeze_then_nothing"], -1)):
+    t = pd.Timestamp(sq["date"]); a1.axvline(t, color=RED, lw=0.8, ls="--"); a2.axvline(t, color=RED, lw=0.8, ls="--")
+    a2.annotate(f"squeeze {day(t)}\n{pct(sq['move_20_bars_pct'])} in 20 sessions", (t, 0.95), xycoords=("data", "axes fraction"),
+                xytext=(5 * side, 0), textcoords="offset points", fontsize=8, color=RED, va="top", ha="left" if side > 0 else "right")
 a1.set_ylabel("₹"); a1.legend(loc="upper left"); a1.set_title("Britannia: 20-day Bollinger Bands (±2σ), bandwidth and ATR(14)", loc="left", fontsize=10, color="#222222")
 a2.plot(px.index, bw, color=GREEN, lw=1); a2.set_ylabel("Bandwidth %")
 a3.plot(px.index, atr, color=RED, lw=1); a3.set_ylabel("ATR ₹")
@@ -90,8 +107,15 @@ a1.legend(loc="upper left"); a1.set_title("Britannia vs Nifty 50, and the ratio 
 a2.plot(rs.index, rs, color=GREEN, lw=1.2, label="Relative strength = Britannia ÷ Nifty, rebased 100")
 a2.plot(rs.index, rs.rolling(50).mean(), color=ORANGE, lw=1, label="50-day MA of the ratio")
 a2.axhline(100, color=GREY, lw=0.7, ls=":")
-a2.annotate("low 89.3\n10 Dec 24", (rs.idxmin(), rs.min()), xytext=(6, -22), textcoords="offset points", fontsize=8, color=RED)
-a2.annotate("high 115.6\n11 Sep 25", (rs.idxmax(), rs.max()), xytext=(6, 4), textcoords="offset points", fontsize=8, color=GREEN)
+r = ta2["relative_strength"]
+assert abs(rs.min() - r["rs_low"]) < 0.05 and str(rs.idxmin().date()) == r["rs_low_date"]
+assert abs(rs.max() - r["rs_high"]) < 0.05 and str(rs.idxmax().date()) == r["rs_high_date"]
+a2.plot([rs.idxmin()], [rs.min()], "o", color=RED, ms=4); a2.plot([rs.idxmax()], [rs.max()], "o", color=GREEN, ms=4)
+a2.annotate(f"low {r['rs_low']}, {day(r['rs_low_date'])}", (rs.idxmin(), rs.min()), xytext=(8, 0), textcoords="offset points",
+            fontsize=8, color=RED, va="center", bbox=BOX)
+a2.annotate(f"high {r['rs_high']}, {day(r['rs_high_date'])}", (rs.idxmax(), rs.max()), xytext=(8, 0), textcoords="offset points",
+            fontsize=8, color=GREEN, va="center", bbox=BOX)
+a2.set_ylim(rs.min() - 3, rs.max() + 3)
 a2.legend(loc="lower right"); fmt_dates(a2); save(fig, "ta2-relative-strength.svg")
 
 # ------------------------------------------------------------ 3. Multiple timeframes
@@ -104,11 +128,21 @@ a1.plot(wk.index, wk.close, color=NAVY, lw=1.3, label="Weekly close")
 a1.plot(wk_ma.index, wk_ma, color=ORANGE, lw=1.2, label="20-week SMA (weekly trend)")
 a1.legend(loc="upper left"); a1.set_ylabel("₹")
 a1.set_title("Weekly trend on top, daily RSI(14) underneath", loc="left", fontsize=10, color="#222222")
-a2.plot(px.index, drsi, color=GREEN, lw=0.9); a2.axhline(70, color=GREY, lw=0.7, ls=":"); a2.axhline(30, color=GREY, lw=0.7, ls=":")
+shown = drsi.copy(); shown.iloc[:15] = np.nan  # the first 14 bars are RSI warmup, not a reading
+a2.plot(px.index, shown, color=GREY, lw=0.9); a2.axhline(70, color=GREY, lw=0.7, ls=":"); a2.axhline(30, color=GREY, lw=0.7, ls=":")
 a2.set_ylim(0, 100); a2.set_ylabel("Daily RSI")
-for t, lab in [("2024-10-24", "oversold, weekly 'up'\n→ −12.6%"), ("2025-02-28", "oversold, weekly 'down'\n→ +6.6%")]:
-    t = pd.Timestamp(t); a1.axvline(t, color=RED, lw=0.8, ls="--"); a2.axvline(t, color=RED, lw=0.8, ls="--")
-    a2.annotate(lab, (t, 30), xytext=(6, 30), textcoords="offset points", fontsize=8, color=RED)
+mt = ta2["multi_timeframe"]
+for e in mt["events"]:
+    t = pd.Timestamp(e["date"]); col = RED if e["weekly_trend"] == "up" else NAVY
+    assert abs(drsi.loc[t] - e["rsi"]) < 0.05, e
+    a2.plot([t], [e["rsi"]], "o", color=col, ms=5); a1.plot([t], [px.close.loc[t]], "o", color=col, ms=5)
+up, dn = mt["in_weekly_uptrend"], mt["in_weekly_downtrend"]
+a1.text(0.98, 0.04, f"Fresh daily oversold readings (RSI below 30), 20 sessions later:\n"
+        f"weekly trend up: {up['count']} event, average {pct(up['avg_fwd_20_bars_pct'])}\n"
+        f"weekly trend down: {dn['count']} events, average {pct(dn['avg_fwd_20_bars_pct'])}",
+        transform=a1.transAxes, ha="right", va="bottom", fontsize=8, color=INK, bbox=BOX)
+a1.plot([], [], "o", color=RED, ms=5, label="oversold, weekly trend up"); a1.plot([], [], "o", color=NAVY, ms=5, label="oversold, weekly trend down")
+a1.legend(loc="upper left")
 fmt_dates(a2); save(fig, "ta2-multi-timeframe.svg")
 
 # ------------------------------------------------------------ 4. Backtest equity curves

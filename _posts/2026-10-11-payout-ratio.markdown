@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Payout ratio: how much of the profit goes out the door"
-description: "Payout ratio is dividends as a share of profit; retention is the rest. Britannia paid out 81% of FY25 earnings, Desi Bites 40%; ROE times retention sets growth."
+description: "Payout ratio is dividends as a share of profit; retention is the rest. Britannia paid out 81% of FY25 profit, Desi Bites 40%; ROE × retention sets growth."
 image: /assets/og/payout-ratio.png
 date: 2026-10-11 09:00:00 +0530
 series: jargon

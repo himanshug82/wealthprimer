@@ -2,7 +2,7 @@
 layout: post
 title: "Risk of ruin and the Kelly criterion: the maths of how much to bet"
 seo_title: "Kelly criterion and risk of ruin, explained"
-description: "Kelly's 1956 formula says how much of your capital to stake on an edge. Why full Kelly is brutal, and why the edge you plug in is the part most likely wrong."
+description: "Kelly's 1956 formula says how much capital to stake on an edge. Why full Kelly is brutal, and why the edge you plug in is the part most likely wrong."
 image: /assets/og/kelly-criterion-and-risk-of-ruin.png
 date: 2026-10-16 09:00:00 +0530
 series: risk

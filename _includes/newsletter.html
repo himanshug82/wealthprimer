@@ -49,4 +49,26 @@ Switching providers is these three keys — no template change.
     Or subscribe <a href="{{ '/feed.xml' | relative_url }}">via RSS</a> instead.
   </p>
 </aside>
+{%- else -%}
+{%- comment -%}
+No email list configured yet: still give the reader a way to come back. RSS
+needs no third party, so this is complete as it stands; it gives way to the
+email form above the day `newsletter.action` is set.
+{%- endcomment -%}
+<aside class="newsletter newsletter-follow" aria-labelledby="newsletter-heading">
+  <h2 id="newsletter-heading">Follow along</h2>
+  <p class="newsletter-blurb">
+    {{ nl.blurb | default: "One concept at a time, every day. No tips, no calls, no hype — just the explainers." }}
+  </p>
+  <p class="newsletter-actions">
+    <a class="button button-primary" href="{{ '/feed.xml' | relative_url }}" type="application/atom+xml">Subscribe via RSS</a>
+    {%- if site.twitter_username %}
+    <a class="button button-ghost" href="https://twitter.com/{{ site.twitter_username }}" rel="me">Follow @{{ site.twitter_username }}</a>
+    {%- endif %}
+  </p>
+  <p class="newsletter-fineprint">
+    Paste the feed link into any feed reader to get new posts as they publish.
+    Educational posts only — never a recommendation to buy or sell anything.
+  </p>
+</aside>
 {%- endif -%}

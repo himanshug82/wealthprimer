@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The arithmetic of losses: why −50% needs +100%"
-description: "Losses and gains aren't symmetric, and the average return you're quoted isn't the return you get. Volatility drag, worked on twenty years of a real index fund."
+description: "Losses and gains aren't symmetric, and the average return quoted isn't the return you get. Volatility drag, worked on twenty years of a real index fund."
 image: /assets/og/the-arithmetic-of-losses.png
 date: 2026-10-09 09:00:00 +0530
 series: risk

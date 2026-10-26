@@ -2,7 +2,7 @@
 layout: post
 title: "Record date and ex-date: why a share 'falls' on the day its dividend is stripped off"
 seo_title: "Record date and ex-date, explained"
-description: "The record date decides who gets a dividend; the ex-date is when the share starts trading without it. Worked on Britannia's ₹75 final dividend of August 2025."
+description: "The record date decides who gets a dividend; the ex-date is when the share trades without it. Worked on Britannia's ₹75 final dividend of August 2025."
 image: /assets/og/record-date-and-ex-date.png
 date: 2026-10-17 09:00:00 +0530
 series: jargon

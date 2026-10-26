@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "What mutual fund metrics can't tell you"
-description: "Returns, Sharpe, capture ratios, ratings and the rest all describe the past. An honest look at what each fund metric leaves out, with numbers from this series."
+description: "Returns, Sharpe, capture ratios, ratings and the rest describe the past. An honest look at what each fund metric leaves out, with this series' numbers."
 image: /assets/og/what-fund-metrics-cant-tell-you.png
 date: 2026-11-07 09:00:00 +0530
 series: mutual-funds

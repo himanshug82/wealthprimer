@@ -2,7 +2,7 @@
 layout: post
 title: "NIM and the spread: a bank's gross margin, measured in basis points"
 seo_title: "Net interest margin (NIM) and the spread, explained"
-description: "Net interest margin is a bank's gross margin: yield on what it lends minus what it pays for the money. How to compute it, and why the basis changes the answer."
+description: "Net interest margin is a bank's gross margin: yield on loans minus the cost of its money. How to compute it, and why the basis changes the answer."
 image: /assets/og/nim-and-the-spread.png
 date: 2026-10-11 09:00:00 +0530
 series: fundamental-analysis

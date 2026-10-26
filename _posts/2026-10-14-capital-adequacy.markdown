@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Capital adequacy: the buffer that makes deposits safe"
-description: "CAR, CET1, Tier 1, Tier 2 and risk-weighted assets, decoded. What the 11.7% floor is made of, why it's measured on risk not size, and the headroom in rupees."
+description: "CAR, CET1, Tier 1, Tier 2 and risk-weighted assets, decoded. What the 11.7% floor is made of, why it's measured on risk, and the headroom in rupees."
 image: /assets/og/capital-adequacy.png
 date: 2026-10-14 09:00:00 +0530
 series: fundamental-analysis

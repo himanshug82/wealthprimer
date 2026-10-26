@@ -2,7 +2,7 @@
 layout: post
 title: "Desi Bites cooks the books: four tricks and the ratios that catch them"
 seo_title: "Accounting tricks and the ratios that catch them"
-description: "A fictional dressed-up FY26 beside the honest one: channel stuffing, capitalised expenses, a related-party gain, a write-back — and the ratios that expose each."
+description: "A dressed-up FY26 beside the honest one: channel stuffing, capitalised costs, a related-party gain, a write-back — and the ratios that expose each."
 image: /assets/og/desi-bites-cooks-the-books.png
 date: 2026-10-04 09:00:00 +0530
 series: fundamental-analysis

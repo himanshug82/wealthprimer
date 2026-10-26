@@ -2,7 +2,7 @@
 layout: post
 title: "Operating leverage: why profit grows faster than sales — and shrinks faster too"
 seo_title: "Operating leverage: why profit swings faster than sales"
-description: "Operating leverage: how fast profit moves when sales move, because of fixed costs. Desi Bites turned 20% sales growth into 39% EBIT growth; Britannia 7% into 0."
+description: "How fast profit moves when sales move, because of fixed costs. Desi Bites turned 20% sales growth into 39% EBIT growth; Britannia turned 7% into 0."
 image: /assets/og/operating-leverage.png
 date: 2026-10-09 09:00:00 +0530
 series: jargon

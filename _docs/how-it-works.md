@@ -96,6 +96,7 @@ three weeks of written backlog so a skipped week leaves no gap.
 | `make_ta_charts.py` | `ta-*.svg` (asserts `ta.yml`'s RSI, MACD, SMA, zone and double-top figures, and the trend-line post's figures, against the CSV) | TA module 1 |
 | `make_diagrams.py`, `make_fa2_diagrams.py`, `make_bank_diagrams.py`, `make_ta2_charts.py` | schematic/chart SVGs | FA, TA |
 | `make_og_cards.py` | `assets/og/*.png` (re-run when a title changes; CI's advisory `--check` flags stale cards) | every post |
+| `build_related.py` | `_data/related.yml`, the "Related reading" cards (re-run when a post is added or retitled; `check_posts.py` warns on a missing post) | every post |
 
 - Hand-maintained (no script): `case_study.yml`, `real_company.yml`,
   `ta.yml`, `mf.yml`, `fno.yml`. Keep existing values stable — many posts read
@@ -144,7 +145,7 @@ three weeks of written backlog so a skipped week leaves no gap.
   variable first.
 - **Takeaway card:** a paragraph starting `**Takeaway:**` is styled by the post
   layout.
-- **`description:`** (140–160 chars) feeds the homepage summary, the meta
+- **`description:`** (140–155 chars) feeds the homepage summary, the meta
   description and the RSS summary.
 - **Analytics:** GA4 is live (`G-6KTY7W7VCR`, Google Signals and ads
   personalisation off — `/privacy/` asserts this, keep them in sync);

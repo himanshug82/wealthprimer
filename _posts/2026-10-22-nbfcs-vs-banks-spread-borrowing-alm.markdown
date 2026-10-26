@@ -2,7 +2,7 @@
 layout: post
 title: "NBFCs vs banks: cost of borrowing, no CASA, and asset-liability matching"
 seo_title: "NBFCs vs banks: borrowing cost, CASA and ALM"
-description: "An NBFC lends like a bank but can't take current or savings deposits. How that changes its spread, returns and liquidity risk, with Bajaj Finance's FY26 data."
+description: "An NBFC lends like a bank but can't take current or savings deposits. How that changes its spread, returns and liquidity risk, on Bajaj Finance's FY26."
 image: /assets/og/nbfcs-vs-banks-spread-borrowing-alm.png
 date: 2026-10-22 09:00:00 +0530
 series: fundamental-analysis

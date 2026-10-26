@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Survivorship bias in fund performance tables"
-description: "Fund tables show only the funds still alive. A zero-skill simulation shows how closing the laggards makes survivors look better than the funds that started."
+description: "Fund tables show only the funds still alive. A zero-skill simulation shows how closing laggards makes survivors look better than the funds that started."
 image: /assets/og/survivorship-bias-in-fund-tables.png
 date: 2026-11-01 09:00:00 +0530
 series: mutual-funds

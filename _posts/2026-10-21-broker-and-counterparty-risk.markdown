@@ -2,7 +2,7 @@
 layout: post
 title: "Counterparty risk: what the Karvy case showed, and what changed after"
 seo_title: "Counterparty risk: what the Karvy case showed"
-description: "Your shares sit in your demat account, so how did a broker pledge them? The Karvy case from SEBI's own orders, and the rules that now keep client assets apart."
+description: "Your shares sit in your demat account, so how did a broker pledge them? The Karvy case from SEBI's orders, and the rules that now keep client assets apart."
 image: /assets/og/broker-and-counterparty-risk.png
 date: 2026-10-21 09:00:00 +0530
 series: risk

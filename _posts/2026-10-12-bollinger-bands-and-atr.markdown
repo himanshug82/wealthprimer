@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Bollinger Bands and ATR: measuring volatility, not direction"
-description: "Two tools that measure how much a stock moves, not where. Bollinger Bands, the squeeze, ATR, and two real squeezes on one chart that resolved very differently."
+description: "Two tools that measure how much a stock moves, not where. Bollinger Bands, the squeeze, ATR, and two real squeezes on one chart that ended differently."
 image: /assets/og/bollinger-bands-and-atr.png
 date: 2026-10-12 09:00:00 +0530
 series: technical-analysis

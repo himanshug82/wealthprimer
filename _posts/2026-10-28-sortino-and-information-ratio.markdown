@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Sortino and information ratio: two Sharpe variants"
-description: "Sortino counts only the falls; the information ratio measures against a benchmark, not cash. How each is built, worked on a real index fund and hybrid fund."
+description: "Sortino counts only the falls; the information ratio measures against a benchmark, not cash. How each is built, on a real index fund and hybrid fund."
 image: /assets/og/sortino-and-information-ratio.png
 date: 2026-10-28 09:00:00 +0530
 series: mutual-funds

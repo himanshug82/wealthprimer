@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Inflation and real returns: what your money actually bought"
-description: "Thirteen years of MoSPI's CPI against an index fund, a gilt fund and a rolled SBI fixed deposit — nominal returns, real returns, and the years each lost ground."
+description: "Thirteen years of MoSPI's CPI against an index fund, a gilt fund and a rolled SBI FD — nominal returns, real returns, and the years each lost ground."
 image: /assets/og/inflation-and-real-returns.png
 date: 2026-10-20 09:00:00 +0530
 series: risk

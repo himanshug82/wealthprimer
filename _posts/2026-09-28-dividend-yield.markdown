@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Dividend yield: formula, meaning and what it can't tell you"
-description: "The cash a share pays back each year as a percentage of its price. How dividend yield is computed, and why an unusually high yield is often a falling price."
+description: "The cash a share pays each year as a percentage of its price. How dividend yield is computed, and why an unusually high yield is often a falling price."
 image: /assets/og/dividend-yield.png
 date: 2026-09-28 09:00:00 +0530
 series: jargon

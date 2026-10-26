@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Bonds, debentures and SGBs: listed or not decides the tax"
-description: "Bond interest is taxed at your slab; the gain depends on listing. Listed bonds can be long-term, unlisted ones and MLDs never are, and SGBs have their own rule."
+description: "Bond interest is taxed at your slab; the gain depends on listing. Listed bonds can be long-term; unlisted ones and MLDs never are. SGBs differ again."
 image: /assets/og/bonds-debentures-and-sgbs.png
 date: 2026-12-01 09:00:00 +0530
 series: tax

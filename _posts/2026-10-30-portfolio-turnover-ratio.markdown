@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Portfolio turnover ratio: how busy is a fund?"
-description: "Portfolio turnover shows how much of its size a fund trades in a year. SEBI's formula, what trading costs, and why a high ratio is a strategy, not a verdict."
+description: "Portfolio turnover is how much of its size a fund trades in a year. SEBI's formula, what trading costs, and why a high ratio is a strategy, not a verdict."
 image: /assets/og/portfolio-turnover-ratio.png
 date: 2026-10-30 09:00:00 +0530
 series: mutual-funds

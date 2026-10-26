@@ -2,7 +2,7 @@
 layout: post
 title: "Momentum vs mean reversion: does the trend continue, or snap back?"
 seo_title: "Momentum vs mean reversion in stock prices"
-description: "Two opposite beliefs, both popular: winners keep winning, or what falls must bounce. We test 12-1 momentum and one-month reversal on 18 years of Nifty data."
+description: "Two opposite beliefs: winners keep winning, or what falls must bounce. We test 12-1 momentum and one-month reversal on 18 years of Nifty data."
 image: /assets/og/momentum-vs-mean-reversion.png
 date: 2026-10-23 09:00:00 +0530
 series: technical-analysis

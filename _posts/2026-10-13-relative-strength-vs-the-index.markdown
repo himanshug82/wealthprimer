@@ -2,7 +2,7 @@
 layout: post
 title: "Relative strength vs the index: the other RS, and the one that means what it says"
 seo_title: "Relative strength vs the index, explained"
-description: "Not RSI. Relative strength divides a stock by its index to show whether it's beating the market. Britannia vs Nifty 50 over two years, and what the ratio hid."
+description: "Not RSI. Relative strength divides a stock by its index to show whether it's beating the market. Britannia vs Nifty 50 over two years, and what it hid."
 image: /assets/og/relative-strength-vs-the-index.png
 date: 2026-10-13 09:00:00 +0530
 series: technical-analysis

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Capstone: reading one real company with the whole toolkit"
-description: "One real company, the whole toolkit, in the order you would actually use it, and a straight explanation of why this blog stops short of a verdict on the stock."
+description: "One real company, the whole toolkit, in the order you'd actually use it, and a straight explanation of why this blog stops short of a verdict on it."
 image: /assets/og/capstone-britannia-end-to-end.png
 date: 2026-10-02 09:00:00 +0530
 series: fundamental-analysis

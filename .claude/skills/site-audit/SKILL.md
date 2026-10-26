@@ -17,7 +17,7 @@ python3 .claude/skills/site-audit/scripts/audit_site.py /tmp/site
 ## Interpret
 
 - **ERROR** = fix. **WARN** = look; most are small. **INFO** = confirm intent.
-- Titles >60 chars: add `seo_title`. Descriptions outside 140–160: edit. Image without dimensions: `python3 scripts/add_img_dims.py`. Orphan: add an internal link from a related post (`post_url` only to earlier-dated; plain relative link for later-dated already-live targets).
+- Titles >60 chars: add `seo_title`. Descriptions outside 140–155: edit. Image without dimensions: `python3 scripts/add_img_dims.py`. Orphan: add an internal link from a related post (`post_url` only to earlier-dated; plain relative link for later-dated already-live targets).
 - Near-duplicate bodies: decide which URL owns the term; don't delete or rename (no redirects).
 - Lighthouse: judge local numbers only. Live runs from the sandbox are inflated by the egress proxy; say so if you report them.
 - Search Console issues: see `references/gsc.md`. You can't see Search Console; ask for a screenshot or export.

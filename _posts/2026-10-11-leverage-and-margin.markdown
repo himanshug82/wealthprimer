@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Leverage and margin: how a 10% move becomes 100%"
-description: "Margin trading and futures margin do one thing to your returns: multiply them, both ways. Worked with round numbers, including the interest bill nobody counts."
+description: "Margin trading and futures margin do one thing to returns: multiply them, both ways. Worked with round numbers, including the interest bill nobody counts."
 image: /assets/og/leverage-and-margin.png
 date: 2026-10-11 09:00:00 +0530
 series: risk

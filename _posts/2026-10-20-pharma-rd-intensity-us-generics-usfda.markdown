@@ -2,7 +2,7 @@
 layout: post
 title: "Pharma: R&D intensity, the US generics mix and USFDA inspections"
 seo_title: "Pharma analysis: R&D intensity, US generics, USFDA"
-description: "Why a pharma company's revenue can hold steady while its US business shrinks by a fifth, and what R&D intensity and US FDA inspections show. Dr. Reddy's FY26."
+description: "Why a pharma firm's revenue can hold steady while its US business shrinks by a fifth, and what R&D intensity and US FDA inspections show. Dr. Reddy's FY26."
 image: /assets/og/pharma-rd-intensity-us-generics-usfda.png
 date: 2026-10-20 09:00:00 +0530
 series: fundamental-analysis

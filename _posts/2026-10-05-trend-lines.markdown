@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Trend lines: drawing a trend, and knowing when it broke"
-description: "An uptrend has a definition, not a mood: higher highs and higher lows. Drawing trend lines, knowing when one broke, and why ranges are commoner than trends."
+description: "An uptrend has a definition, not a mood: higher highs and higher lows. Drawing trend lines, spotting a break, and why ranges are commoner than trends."
 image: /assets/og/trend-lines.png
 date: 2026-10-05 09:00:00 +0530
 series: technical-analysis

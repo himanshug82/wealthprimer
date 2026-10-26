@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Step-up SIPs: the arithmetic of raising your SIP every year"
-description: "What raising a SIP by 5% or 10% a year did over 10, 15 and 20 years of real index-fund NAVs: a bigger corpus from bigger contributions, not a better return."
+description: "What raising a SIP 5% or 10% a year did over 10, 15 and 20 years of real index-fund NAVs: a bigger corpus from bigger contributions, not a better return."
 image: /assets/og/step-up-sips.png
 date: 2026-10-25 09:00:00 +0530
 series: mutual-funds

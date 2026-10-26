@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Beta: how much a stock moves when the market moves"
-description: "Beta is how much a stock tends to move for a 1% move in the index. Britannia's two-year beta is 0.42, but it nearly doubled between the two years inside it."
+description: "Beta is how much a stock tends to move for a 1% move in the index. Britannia's two-year beta is 0.42, but it nearly doubled between the two years in it."
 image: /assets/og/beta.png
 date: 2026-10-02 09:00:00 +0530
 series: jargon

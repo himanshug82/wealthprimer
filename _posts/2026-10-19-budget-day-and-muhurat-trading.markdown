@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Seasonality myths, part two: Budget day and Muhurat trading"
-description: "Two Indian market rituals, checked against 18 years of Nifty data with verified dates: is Budget day unusually volatile, and is the Diwali session a good omen?"
+description: "Two Indian market rituals checked against 18 years of Nifty data with verified dates: is Budget day unusually volatile, and is Diwali's session an omen?"
 image: /assets/og/budget-day-and-muhurat-trading.png
 date: 2026-10-19 09:00:00 +0530
 series: technical-analysis

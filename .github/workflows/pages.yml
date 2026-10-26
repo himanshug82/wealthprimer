@@ -4,8 +4,15 @@ on:
     branches: ["main"]
   schedule:
     # Daily rebuild so future-dated posts in _posts/ go live automatically on their
-    # publish date, with no manual step. 03:30 UTC = 09:00 IST.
-    - cron: "30 3 * * *"
+    # publish date, with no manual step. GitHub delayed the single 03:30 UTC run by
+    # 4.5-7.5 hours (Oct 2026), so several off-peak times give the first one that
+    # fires a chance to land near 09:00 IST. None may be earlier than 03:30 UTC
+    # (09:00 IST, the posts' publish time), or that build would skip today's post.
+    # Extra runs just rebuild the same site. IST: 09:01, 09:37, 10:13, 11:49.
+    - cron: "31 3 * * *"
+    - cron: "7 4 * * *"
+    - cron: "43 4 * * *"
+    - cron: "19 6 * * *"
   workflow_dispatch:
 permissions:
   contents: read

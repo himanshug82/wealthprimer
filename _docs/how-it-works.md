@@ -3,10 +3,14 @@
 Moved out of `TODO.md` on 25 Oct 2026. `CLAUDE.md` is the writing rulebook; this file is the repo mechanics: build, scheduling, data scripts, site features.
 
 ## Build and publish
-- Pages deploys via GitHub Actions (`.github/workflows/pages.yml`), daily at
-  09:00 IST, with `future: false` — a post goes live on its date with no manual
-  step. Keep post times at or before `09:00:00 +0530` or they miss that day's
-  build.
+- Pages deploys via GitHub Actions (`.github/workflows/pages.yml`) on every
+  push to main and on four daily schedules (09:01, 09:37, 10:13 and 11:49 IST),
+  with `future: false` — a post goes live on its date with no manual step.
+  GitHub delays scheduled runs (the single 09:00 run fired 4.5–7.5 hours late
+  in October 2026), so the extra times are there to get the post up close to
+  09:00 IST. Keep post times at or before `09:00:00 +0530`, and never add a
+  schedule earlier than 03:30 UTC: that build would run before the post's time
+  and skip it.
 - **Cadence: one post per series per day.** Several posts share a date (one
   per series); `check_posts.py` only warns when two posts from the SAME
   series share one. A series skips a day when its next post links to a post
@@ -58,8 +62,8 @@ the owner as the gate between them. Neither merges or pushes to `main`.
    `_posts/` on `main` or on any `drafts/*` branch, so an unmerged drafts PR
    is not redrafted the next week. The tag becomes `[Drafted]` when every
    post in the roadmap is in a PR.
-4. **Owner:** read the rendered pages, merge the drafts PR. The daily 09:00
-   IST build publishes each post on its date.
+4. **Owner:** read the rendered pages, merge the drafts PR. The daily
+   scheduled build publishes each post on its date.
 
 Dates follow the cadence rules above: the roadmap gives each post a date
 (first free day after the series' latest post, one per series per day); if

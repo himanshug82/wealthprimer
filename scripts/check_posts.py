@@ -84,6 +84,10 @@ def main():
 
     errors = warnings = 0
     by_date = {}
+    # _data/related.yml is generated (scripts/build_related.py); a post missing from it
+    # still renders (cards fall back to its own series), but its cards are weaker.
+    related_path = os.path.join(ROOT, "_data", "related.yml")
+    related_keys = set(re.findall(r"^([a-z0-9][a-z0-9-]*):", open(related_path, encoding="utf-8").read(), re.M)) if os.path.exists(related_path) else set()
     for key, (path, d) in posts.items():
         name = os.path.basename(path)
         text = open(path, encoding="utf-8").read()
@@ -107,8 +111,8 @@ def main():
                 print(f"ERROR {name}: front matter missing '{k}'")
                 errors += 1
         desc = fm.get("description", "")
-        if desc and not (110 <= len(desc) <= 170):
-            print(f"WARN  {name}: description is {len(desc)} chars (aim 140–160)")
+        if desc and not (140 <= len(desc) <= 155):
+            print(f"WARN  {name}: description is {len(desc)} chars (aim 140–155)")
             warnings += 1
         if fm.get("date", "")[:10] != d.isoformat():
             print(f"ERROR {name}: front matter date '{fm.get('date')}' disagrees with filename date {d}")
@@ -134,6 +138,9 @@ def main():
             if "term" not in fm:
                 print(f"WARN  {name}: no term: (won't appear in /glossary/)")
                 warnings += 1
+        if "_posts" in path and key[11:] not in related_keys:
+            print(f"WARN  {name}: not in _data/related.yml (run scripts/build_related.py)")
+            warnings += 1
         img = fm.get("image", "")
         if img and not os.path.exists(os.path.join(ROOT, img.lstrip("/"))):
             print(f"WARN  {name}: image '{img}' does not exist yet (run scripts/make_og_cards.py)")

@@ -2,7 +2,7 @@
 layout: post
 title: "Foreign stocks and Schedule FA: the disclosure is the hard part"
 seo_title: "Foreign stocks and Schedule FA: the disclosure"
-description: "US-share gains are long-term only after 24 months, taxed at 12.5% with no exemption. Dividends face 25% withholding, and every foreign asset must be disclosed."
+description: "US-share gains are long-term only after 24 months, taxed at 12.5% with no exemption. Dividends face 25% withholding; every foreign asset is disclosed."
 image: /assets/og/foreign-stocks-and-schedule-fa.png
 date: 2026-11-29 09:00:00 +0530
 series: tax

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "STCG vs LTCG: the holding period that changes your tax rate"
-description: "Twelve months for listed equity, twenty-four for most other assets. How the holding period is counted, and why a day either side of the line changes the rate."
+description: "Twelve months for listed equity, twenty-four for most other assets. How the holding period is counted, and why a day either side changes the rate."
 image: /assets/og/short-term-vs-long-term.png
 date: 2026-11-18 09:00:00 +0530
 series: tax

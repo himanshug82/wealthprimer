@@ -2,7 +2,7 @@
 layout: post
 title: "Bid-ask spread and liquidity: why the price on the screen isn't the price you get"
 seo_title: "Bid-ask spread and liquidity, explained"
-description: "The gap between the best buyer and the best seller, and what happens when your order is bigger than it. Impact cost worked on a thin, hypothetical order book."
+description: "The gap between the best buyer and best seller, and what happens when your order is bigger than it. Impact cost worked on a thin, hypothetical order book."
 image: /assets/og/bid-ask-spread-and-liquidity.png
 date: 2026-10-14 09:00:00 +0530
 series: jargon

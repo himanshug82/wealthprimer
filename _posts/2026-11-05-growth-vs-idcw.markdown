@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Growth vs IDCW: what a payout does to NAV"
-description: "An IDCW payout lowers a fund's NAV by the amount paid, and can come from your own capital. SEBI's rules, a worked example, and a ten-year pre-tax comparison."
+description: "An IDCW payout lowers a fund's NAV by the amount paid, and can come from your own capital. SEBI's rules, a worked example, and a ten-year pre-tax test."
 image: /assets/og/growth-vs-idcw.png
 date: 2026-11-05 09:00:00 +0530
 series: mutual-funds

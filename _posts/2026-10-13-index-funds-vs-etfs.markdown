@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Index funds vs ETFs: same fifty stocks, two wrappers"
-description: "An index fund and an ETF on the Nifty 50 hold the same shares; what differs is buying at NAV or at market price — and the traps: iNAV, spreads, splits, payouts."
+description: "A Nifty 50 index fund and ETF hold the same shares; one trades at NAV, the other at market price. The traps: iNAV, spreads, splits and payouts."
 image: /assets/og/index-funds-vs-etfs.png
 date: 2026-10-13 09:00:00 +0530
 series: mutual-funds

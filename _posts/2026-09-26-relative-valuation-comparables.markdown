@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Relative valuation: what a company is worth compared to whom"
-description: "Valuing a company against its peers. How multiples-based valuation works in practice, how the peer set gets chosen, and the traps that make cheap look cheap."
+description: "Valuing a company against its peers. How multiples-based valuation works, how the peer set gets chosen, and the traps that make cheap look cheap."
 image: /assets/og/relative-valuation-comparables.png
 date: 2026-09-26 09:00:00 +0530
 series: fundamental-analysis

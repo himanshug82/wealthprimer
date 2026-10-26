@@ -68,12 +68,15 @@ the header line; the same include renders the prev/next block after the body.
     Order below is deliberate:
       1. prev/next in series — the reader's next step, while they still have
          momentum;
-      2. newsletter — ABOVE the disclaimer, because a signup buried under legal
-         text is a signup nobody sees (self-hides until configured);
-      3. disclaimer — always the last thing the post itself says;
-      4. comments — after the disclaimer, self-hides until giscus is configured.
+      2. related reading — three cards on the same idea from other posts;
+      3. newsletter — ABOVE the disclaimer, because a signup buried under legal
+         text is a signup nobody sees (an RSS/follow box until email is configured);
+      4. disclaimer — always the last thing the post itself says;
+      5. comments — after the disclaimer, self-hides until giscus is configured.
   {%- endcomment -%}
   {%- include series-nav.html -%}
+
+  {%- include related-posts.html -%}
 
   {%- include newsletter.html -%}
 

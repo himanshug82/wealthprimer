@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Advance tax for investors: pay as you earn, gains included"
-description: "If TDS doesn't cover your tax, you pay it in four instalments during the year. Capital gains get a special rule — and missing it costs interest. Worked example."
+description: "If TDS doesn't cover your tax, you pay it in four instalments. Capital gains get a special rule, and missing it costs interest. With a worked example."
 image: /assets/og/advance-tax-for-investors.png
 date: 2026-12-02 09:00:00 +0530
 series: tax

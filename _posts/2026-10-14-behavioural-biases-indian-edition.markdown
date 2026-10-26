@@ -2,7 +2,7 @@
 layout: post
 title: "Behavioural biases, Indian edition: five ways you'll fight your own portfolio"
 seo_title: "Behavioural biases in investing: an Indian edition"
-description: "Loss aversion, recency, anchoring, the disposition effect and herding — each tied to a number already on this blog, so you can spot the bias before it bites."
+description: "Loss aversion, recency, anchoring, the disposition effect and herding — each tied to a number already on this blog, so you can spot the bias early."
 image: /assets/og/behavioural-biases-indian-edition.png
 date: 2026-10-14 09:00:00 +0530
 series: risk

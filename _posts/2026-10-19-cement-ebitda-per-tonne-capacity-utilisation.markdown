@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Cement: EBITDA per tonne and capacity utilisation"
-description: "In cement, percentage margins hide what matters: profit per tonne and how full the plants are. Both explained, and rebuilt from UltraTech Cement's FY26 release."
+description: "In cement, percentage margins hide what matters: profit per tonne and how full the plants are. Both explained, rebuilt from UltraTech's FY26 release."
 image: /assets/og/cement-ebitda-per-tonne-capacity-utilisation.png
 date: 2026-10-19 09:00:00 +0530
 series: fundamental-analysis

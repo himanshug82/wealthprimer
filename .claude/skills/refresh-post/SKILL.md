@@ -19,7 +19,7 @@ description: Update an existing published Wealth Primer post that may be stale (
 4. **Links**: `{% post_url %}` only to posts dated on or before this post. A newer target that is already live may be linked with a plain relative link (`{{ '/YYYY/MM/DD/slug/' | relative_url }}`); one still scheduled must not be linked at all (it would 404 on the live site) — log an owed link in `TODO.md` instead.
 5. **Numbers** stay in `_data/` via scripts; re-run the derive script, don't hand-edit.
 6. **Compliance** unchanged: no verdicts, no tips, lag rule for any new worked-example data, disclaimer from the layout.
-7. Title/description changes only when search intent clearly demands (and keep slug). Re-check ≤60-char `<title>`, 140–160 description.
+7. Title/description changes only when search intent clearly demands (and keep slug). Re-check ≤60-char `<title>`, 140–155 description.
 8. Flagged posts (`needs_review`): after a rule change re-check against primary sources, update `rules_as_of` (only if actually re-checked) and `last_modified_at`.
 
 ## Finish

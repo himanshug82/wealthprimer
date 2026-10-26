@@ -1,0 +1,8 @@
+{%- comment -%}One card for related-posts.html. Pass post=<a site.posts item>.{%- endcomment -%}
+{%- assign _p = include.post -%}
+{%- assign _ps = site.data.series | where: "slug", _p.series | first -%}
+<li class="related-card">
+  {%- if _ps %}<span class="related-series">{{ _ps.title | split: " — " | first }}</span>{% endif %}
+  <a href="{{ _p.url | relative_url }}">{{ _p.title | escape }}</a>
+  {%- if _p.description %}<p>{{ _p.description | escape }}</p>{% endif -%}
+</li>

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to backtest an indicator honestly"
-description: "Three rules, one stock, one window: how look-ahead bias, costs and parameter-picking change a backtest — and why none of fifteen SMA pairs beat buy-and-hold."
+description: "Three rules, one stock, one window: how look-ahead bias, costs and parameter-picking change a backtest, and why none of 15 SMA pairs beat buy-and-hold."
 image: /assets/og/how-to-backtest-honestly.png
 date: 2026-10-15 09:00:00 +0530
 series: technical-analysis

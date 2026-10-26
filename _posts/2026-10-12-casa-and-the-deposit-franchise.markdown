@@ -2,7 +2,7 @@
 layout: post
 title: "CASA and the deposit franchise: why the cheapest money is the hardest to get"
 seo_title: "CASA ratio and the deposit franchise, explained"
-description: "Current and savings accounts are a bank's cheapest money, so a high CASA ratio is a structural edge. What it measures, why it moves, and the CD ratio beside it."
+description: "Current and savings accounts are a bank's cheapest money. What the CASA ratio measures, why it moves, and the credit-deposit ratio beside it."
 image: /assets/og/casa-and-the-deposit-franchise.png
 date: 2026-10-12 09:00:00 +0530
 series: fundamental-analysis

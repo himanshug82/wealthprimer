@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Earnings yield and FCF yield: the P/E turned upside down"
-description: "Earnings yield is the P/E flipped into a percentage you can hold beside a bond. Britannia's 64.7x P/E is a 1.55% yield against a 6.5% G-Sec; what the gap means."
+description: "Earnings yield is the P/E flipped into a percentage to hold beside a bond. Britannia's 64.7x P/E is a 1.55% yield against a 6.5% G-Sec; what the gap means."
 image: /assets/og/earnings-yield-and-fcf-yield.png
 date: 2026-10-10 09:00:00 +0530
 series: jargon

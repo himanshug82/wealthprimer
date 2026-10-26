@@ -9,7 +9,7 @@ Copy the shape of a recent post in the same series (e.g. `_posts/2026-09-03-roce
 layout: post
 title: "ROCE explained: formula and example"   # the H1; aim ≤ 50 (never > 60), keyword first, sentence case
 # seo_title: "…"                    # optional search-result title ≤ 60 when the H1 must be longer
-description: "…140–160 characters, primary keyword once, concrete promise…"
+description: "…140–155 characters, primary keyword once, concrete promise…"
 image: /assets/og/roce.png          # generate with scripts/make_og_cards.py
 date: 2026-09-03 09:00:00 +0530     # matches filename; time ≤ 09:00 +0530 (house convention, _docs/how-it-works.md)
 series: jargon                      # slug from _data/series.yml

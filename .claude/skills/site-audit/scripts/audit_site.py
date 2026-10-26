@@ -6,7 +6,7 @@ Crawl a built copy of the site (the way Googlebot reads the HTML) and report SEO
     scripts/jekyll_build.sh /tmp/site            # as live: scheduled posts left out
     python3 audit_site.py /tmp/site [--json out.json]
 
-Checks: <title> missing/duplicate/over 60; meta description missing/duplicate/outside 140-160
+Checks: <title> missing/duplicate/over 60; meta description missing/duplicate/outside 140-155 (posts) or over 160 (other pages)
 (posts) ; canonical missing/off-site/not self; h1 count; skipped heading levels; images without
 alt or width/height; internal links to files that don't exist; posts with no inbound internal link
 (orphans); noindex pages; near-duplicate bodies (Jaccard on word 5-grams); JSON-LD that doesn't parse.
@@ -89,7 +89,7 @@ def main():
         titles[t].append(url)
         d = pg.meta.get("description", "")
         if not d: res["ERROR"].append(f"no meta description: {url}")
-        elif is_post(url) and not 140 <= len(d) <= 160: res["WARN"].append(f"description {len(d)} chars: {url}")
+        elif (is_post(url) and not 140 <= len(d) <= 155) or len(d) > 160: res["WARN"].append(f"description {len(d)} chars: {url}")
         descs[d].append(url)
         if not pg.canonical: res["ERROR"].append(f"no canonical: {url}")
         else:

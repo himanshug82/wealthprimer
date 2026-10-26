@@ -2,7 +2,7 @@
 layout: post
 title: "Pump and dump: how an \"operator\" stock works, from a SEBI order"
 seo_title: "Pump and dump: how an operator stock works"
-description: "Circular trades, YouTube videos, a price up twelvefold, then the exit. One SEBI case read from its orders, how exchange surveillance works, and the red flags."
+description: "Circular trades, YouTube videos, a price up twelvefold, then the exit. One SEBI case read from its orders, how surveillance works, and the red flags."
 image: /assets/og/pump-and-dump-and-operator-stocks.png
 date: 2026-10-22 09:00:00 +0530
 series: risk

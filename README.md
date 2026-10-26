@@ -186,8 +186,8 @@ Manage them with the Claude routines UI or ask Claude to pause, change or delete
 
 ### Adding a post by hand (what the skills automate)
 1. Pick a slug from `_data/series.yml` for `series:`; name the file `YYYY-MM-DD-slug.markdown`; time ≤ `09:00:00 +0530`.
-2. Front matter: `title`, `description` (140–160 chars), `date`, `series`, `image: /assets/og/<slug>.png`, `term` for glossary posts.
-3. `python3 scripts/make_og_cards.py`, then `scripts/ship_check.sh`.
+2. Front matter: `title`, `description` (140–155 chars), `date`, `series`, `image: /assets/og/<slug>.png`, `term` for glossary posts.
+3. `python3 scripts/make_og_cards.py` and `python3 scripts/build_related.py`, then `scripts/ship_check.sh`.
 4. `{% post_url %}` only to posts dated on or before this one.
 
 ---

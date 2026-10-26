@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "REITs and InvITs: one payout, three tax treatments"
-description: "A REIT or InvIT payout arrives as one credit but splits into interest, dividend and capital repayment, each taxed differently. Plus capital gains on the units."
+description: "A REIT or InvIT payout arrives as one credit but splits into interest, dividend and capital repayment, each taxed differently. Plus gains on the units."
 image: /assets/og/reits-and-invits.png
 date: 2026-11-30 09:00:00 +0530
 series: tax

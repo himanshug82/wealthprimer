@@ -2,7 +2,7 @@
 layout: post
 title: "Arbitrage funds: an equity fund that behaves like a debt fund"
 seo_title: "Arbitrage funds explained: equity that acts like debt"
-description: "How an arbitrage fund earns the gap between a share's cash and futures prices, what that did on real NAV data from 2018 to 2026, and why it's taxed as equity."
+description: "How an arbitrage fund earns the gap between cash and futures prices, what that did on real NAV data from 2018 to 2026, and why it's taxed as equity."
 image: /assets/og/arbitrage-funds.png
 date: 2026-10-19 09:00:00 +0530
 series: mutual-funds

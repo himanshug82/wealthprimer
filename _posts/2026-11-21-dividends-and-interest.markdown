@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Dividends and interest: taxed at your slab, with TDS on top"
-description: "Both are simply added to your income and taxed at your slab rate. What changed when the dividend distribution tax went, and how TDS arrives before you file."
+description: "Both are added to your income and taxed at your slab rate. What changed when the dividend distribution tax went, and how TDS arrives before you file."
 image: /assets/og/dividends-and-interest.png
 date: 2026-11-21 09:00:00 +0530
 series: tax

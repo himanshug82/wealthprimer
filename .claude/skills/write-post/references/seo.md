@@ -37,7 +37,7 @@ Safe retitles: "What is a good P/E?" → "P/E ratio ranges: why 'good' depends o
 - Patterns: `<Term> explained: formula and example` · `How to calculate <X>: formula and worked example` · `<Concept>: what it tells you and what it can't`.
 - Year/Tax Year in a title only for rules that change yearly, and then add a refresh row to `TODO.md`.
 
-**Description** (`description:`; feeds meta description, homepage, RSS): 140–160 characters, primary keyword once, a concrete promise ("with formula and a worked example"), no hype, no advice.
+**Description** (`description:`; feeds meta description, homepage, RSS): 140–155 characters, primary keyword once, a concrete promise ("with formula and a worked example"), no hype, no advice.
 
 **Slug**: short, lowercase, hyphenated, keyword-led, no date. Locked once published.
 

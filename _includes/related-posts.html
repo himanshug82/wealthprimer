@@ -1,0 +1,40 @@
+{%- comment -%}
+"Related reading": three cards at the end of a post, so a reader who finished
+it has somewhere to go besides the back button.
+
+Candidates come from _data/related.yml (scripts/build_related.py, content
+similarity, best first). A candidate is shown only if it is in site.posts, i.e.
+already published (future: false), so a scheduled post never leaks and
+nothing here uses {% raw %}{% post_url %}{% endraw %}. The post's own previous/next in series
+(prev_post / next_post, set by series-nav.html) are skipped: they sit just
+above. A post with no entry yet falls back to the newest posts in its series.
+{%- endcomment -%}
+{%- assign _slug = page.slug -%}
+{%- assign _cands = site.data.related[_slug] -%}
+{%- assign _shown = 0 -%}
+{%- capture _cards -%}
+{%- if _cands -%}
+  {%- for c in _cands -%}
+    {%- if _shown >= 3 -%}{%- break -%}{%- endif -%}
+    {%- assign rp = site.posts | where: "slug", c | first -%}
+    {%- unless rp -%}{%- continue -%}{%- endunless -%}
+    {%- if rp.url == page.url or rp.url == prev_post.url or rp.url == next_post.url -%}{%- continue -%}{%- endif -%}
+    {%- include related-card.html post=rp -%}
+    {%- assign _shown = _shown | plus: 1 -%}
+  {%- endfor -%}
+{%- else -%}
+  {%- assign _same = site.posts | where: "series", page.series -%}
+  {%- for rp in _same -%}
+    {%- if _shown >= 3 -%}{%- break -%}{%- endif -%}
+    {%- if rp.url == page.url or rp.url == prev_post.url or rp.url == next_post.url -%}{%- continue -%}{%- endif -%}
+    {%- include related-card.html post=rp -%}
+    {%- assign _shown = _shown | plus: 1 -%}
+  {%- endfor -%}
+{%- endif -%}
+{%- endcapture -%}
+{%- if _shown > 0 -%}
+<nav class="related-posts" aria-labelledby="related-heading">
+  <h2 id="related-heading">Related reading</h2>
+  <ul class="related-grid">{{ _cards }}</ul>
+</nav>
+{%- endif -%}

@@ -66,7 +66,7 @@ Follow `references/post-skeleton.md` (front matter, Liquid pattern, section orde
 
 ## Step 4 — SEO pass
 
-Apply `references/seo.md` §3: title (keyword in the first ~45 chars, aim ≤ 50), description 140–160, a one-sentence standalone definition opening the first H2 (never a "good" threshold), question-style H2s where natural, links (series hub, jargon owners, one cross-series), primary-source links, alt text, own `image:` and OG card, `term:` if it defines one. SEO edits never change a number, a claim, or a heading's meaning.
+Apply `references/seo.md` §3: title (keyword in the first ~45 chars, aim ≤ 50), description 140–155, a one-sentence standalone definition opening the first H2 (never a "good" threshold), question-style H2s where natural, links (series hub, jargon owners, one cross-series), primary-source links, alt text, own `image:` and OG card, `term:` if it defines one. SEO edits never change a number, a claim, or a heading's meaning.
 
 ## Step 5 — Audit like a reviewer
 
@@ -75,6 +75,7 @@ Apply `references/seo.md` §3: title (keyword in the first ~45 chars, aim ≤ 50
    python3 .claude/skills/write-post/scripts/lint_post.py _posts/<file>
    python3 scripts/check_posts.py          # must be 0 errors
    python3 scripts/make_og_cards.py        # OG card for the (final) title
+   python3 scripts/build_related.py        # "Related reading" cards (_data/related.yml)
    git status --short assets/og            # the script has no --only flag and rewrites every card's bytes:
    git checkout -- assets/og/<each modified existing card>   # keep only the new card in the diff
    ```

@@ -109,8 +109,8 @@ def lint(path):
     tw = re.findall(r"[A-Za-z][A-Za-z'’]+", title)[1:]
     if sum(w[0].isupper() and not w.isupper() and w not in PROPER for w in tw) >= 3:
         add("WARN", "title looks Title Case (house style is sentence case; proper nouns are fine)")
-    if not 140 <= len(desc) <= 160:
-        add("WARN", f"description is {len(desc)} chars (aim 140–160)")
+    if not 140 <= len(desc) <= 155:
+        add("WARN", f"description is {len(desc)} chars (aim 140–155)")
     if re.search(HYPE, both, re.I):
         add("FAIL", "hype word in title/description")
     for rx, lbl in ((CALLS, "trade-call phrasing"), (VERDICT, "verdict word")):

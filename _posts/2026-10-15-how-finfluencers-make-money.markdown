@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How finfluencers make money (and why it isn't from the tips)"
-description: "Referral fees, paid courses, sponsored posts and the pump: the incentives behind financial content, what SEBI did about them, and this blog's own disclosure."
+description: "Referral fees, paid courses, sponsored posts and the pump: the incentives behind finance content, what SEBI did about them, and this blog's disclosure."
 image: /assets/og/how-finfluencers-make-money.png
 date: 2026-10-15 09:00:00 +0530
 series: risk

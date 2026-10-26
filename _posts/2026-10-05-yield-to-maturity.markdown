@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "YTM: what a bond actually pays if you hold it to the end"
-description: "YTM is the one rate that makes a bond's coupons and repayment worth its price today. A 7% bond bought at Rs 960 yields 8%; a fund's quoted YTM isn't a promise."
+description: "YTM is the one rate that makes a bond's coupons and repayment worth its price. A 7% bond bought at Rs 960 yields 8%; a fund's quoted YTM isn't a promise."
 image: /assets/og/yield-to-maturity.png
 date: 2026-10-05 09:00:00 +0530
 series: jargon

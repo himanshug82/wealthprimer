@@ -2,7 +2,7 @@
 layout: post
 title: "Why star ratings mislead — and why the same fund can swing from five stars to two"
 seo_title: "Why mutual fund star ratings mislead"
-description: "Star ratings rank trailing risk-adjusted returns within a category. On one index fund that figure swung from −1% to 27% a year; past winners earned no more."
+description: "Star ratings rank trailing risk-adjusted returns in a category. On one index fund that figure swung from −1% to 27% a year; past winners earned no more."
 image: /assets/og/why-star-ratings-mislead.png
 date: 2026-10-16 09:00:00 +0530
 series: mutual-funds

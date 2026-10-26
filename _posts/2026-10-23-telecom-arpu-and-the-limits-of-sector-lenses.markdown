@@ -2,7 +2,7 @@
 layout: post
 title: "Telecom: ARPU, EBITDA after leases, and the limits of sector lenses"
 seo_title: "Telecom analysis: ARPU and EBITDA after leases"
-description: "A telecom firm's revenue is customers times ARPU, and its big EBITDA margin must pay for the network. Bharti Airtel's FY26 data, then what sector lenses miss."
+description: "A telecom firm's revenue is customers times ARPU, and its big EBITDA margin must pay for the network. Bharti Airtel's FY26, then what sector lenses miss."
 image: /assets/og/telecom-arpu-and-the-limits-of-sector-lenses.png
 date: 2026-10-23 09:00:00 +0530
 series: fundamental-analysis

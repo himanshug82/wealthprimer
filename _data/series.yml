@@ -22,7 +22,7 @@
   title: "Fundamental Analysis — Beginner to Expert"
   description: "Reading financial statements, key ratios, and valuation basics, from first principles to DCF."
   about: "For reading a company from its own filings. It moves from the three financial statements to ratios, then to what the numbers can hide, how banks and NBFCs differ, sector-specific measures, and the basics of valuing a business with a discounted cash flow. Best read in order; each post builds on the last."
-  planned: 29   # FA-1..8 (8) + Reading between the lines (7) + Banks and NBFCs (6) + Sector lenses (8)
+  planned: 37   # FA-1..8 (8) + Reading between the lines (7) + Banks and NBFCs (6) + Sector lenses (8) + More sector lenses (8)
 - slug: technical-analysis
   title: "Technical Analysis — Zero to Hero"
   description: "Candlesticks to chart patterns — plus an honest look at what technical analysis can't tell you."

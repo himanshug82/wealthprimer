@@ -93,6 +93,20 @@ vanishes. It matters in three situations:
 It also interacts with tax: the load is deducted from the sale consideration,
 so it reduces the capital gain slightly. Small consolation.
 
+## Exit load vs expense ratio
+
+Both are costs of owning a fund, and both are easy to miss, but they work
+in opposite ways:
+
+| | Exit load | [Expense ratio]({% post_url 2026-09-28-expense-ratios-direct-vs-regular %}) |
+|---|---|---|
+| When it's charged | Once, on units redeemed inside the window | Every day you hold the fund |
+| Charged on | The value of the units redeemed | The fund's assets, as an annual % |
+| How you see it | Deducted from your redemption amount | Never directly — it's already netted out of the NAV |
+| Where the money goes | Back into the scheme, for the investors who stay | The AMC and the scheme's running costs (including distributor commission in a regular plan) |
+| Does it ever stop? | Yes — it lapses once the window passes | No — it applies for as long as you hold (a direct plan's is lower) |
+| Who it hurts most | Short-term holders | Long-term holders, because it compounds |
+
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
 

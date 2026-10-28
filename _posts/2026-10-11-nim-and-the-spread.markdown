@@ -46,6 +46,18 @@ different bases (earning assets vs. funding), NIM puts the net figure over one
 base. Banks quote NIM; analysts often back out the spread to see *which side*
 moved.
 
+| | NIM | Spread |
+|---|---|---|
+| What it is | Net interest income as a % of earning assets | Yield on assets minus cost of funds |
+| Bases used | One: average interest-earning assets | Two: earning assets for the yield, deposits + borrowings for the cost |
+| Counts assets funded by equity? | Yes — they earn interest at no interest cost, which lifts NIM | No — it compares rates only, not how much of each |
+| Who quotes it | Banks, in every results release | Mostly analysts, backed out from the P&L |
+| Best for | The overall margin on the book | Seeing whether lending rates or funding costs moved |
+
+When a bank's earning assets are larger than its deposits and borrowings —
+the gap funded by its own equity, which costs no interest — NIM comes out
+above the spread. The worked example below shows that happening.
+
 Two words in the formula matter enormously: **average** and
 **interest-earning**. The [balance sheet]({% post_url 2026-08-20-reading-a-balance-sheet %}) is a snapshot at 31 March; the
 interest was earned over twelve months on whatever balances existed each day.

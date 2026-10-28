@@ -40,6 +40,15 @@ Under the old T+2 cycle they were a day apart: Britannia's ₹{{ t2.dps }} inter
 dividend in 2020 went ex on {{ t2.ex_date | date: "%-d %B %Y" }}, with a record date of
 {{ t2.record_date | date: "%-d %B %Y" }}.
 
+| | Record date | Ex-date |
+|---|---|---|
+| Who sets it | The company | Follows from the record date and the settlement cycle |
+| What it decides | Whose name must be on the register to get the dividend | The first day a buyer no longer gets it |
+| Under T+1 (now) | The record date | The same day as the record date |
+| Under T+2 (before) | The record date | One working day before the record date |
+| Last day to buy and still get it | The working day before the record date (T+1) | The working day before the ex-date |
+| What you'd notice | Nothing on screen; it's a register check | In theory, the price adjusts down by about the dividend |
+
 ## The rule
 
 ```

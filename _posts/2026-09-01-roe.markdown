@@ -74,6 +74,21 @@ money that isn't shareholders' (suppliers' credit as well as loans). That's
 worth remembering for the next post: a high ROE alone doesn't tell you *why*
 it's high, and one common reason — leverage — deserves real scrutiny.
 
+## ROE vs ROCE vs ROA
+
+ROE has two close relatives, and the three are easy to mix up. Each divides
+a profit figure by a different pool of capital:
+
+| Ratio | Numerator | Denominator | Whose capital? |
+|---|---|---|---|
+| ROE | PAT | Average equity | Shareholders' only |
+| [ROCE]({{ '/2026/09/03/roce/' | relative_url }}) (return on capital employed) | EBIT | Average (equity + debt) | Shareholders' + lenders' |
+| [ROA]({{ '/2026/09/05/roa/' | relative_url }}) (return on assets) | PAT | Average total assets | Everyone financing the asset base, incl. suppliers |
+
+ROCE uses profit *before* tax and interest, so compare it with ROE only
+after taking tax off. The ROA post puts
+[Britannia's FY25 figures for all three side by side]({{ '/2026/09/05/roa/' | relative_url }}#roe-vs-roce-vs-roa-side-by-side).
+
 ## Common mistakes
 
 - **Not checking what's driving a high ROE.** A company can boost ROE two

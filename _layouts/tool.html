@@ -1,0 +1,60 @@
+---
+layout: default
+---
+{%- comment -%}
+One reader tool at /tools/<id>/. The stub in _tools/<id>.md supplies the title,
+description and how-to text; everything else (kind, link, summary, prefilled
+data, explainer post, posts that use it) comes from the _data/tools.yml entry
+whose id matches the stub's `tool:`. Posts are listed only once published.
+{%- endcomment -%}
+{%- assign t = site.data.tools | where: "id", page.tool | first -%}
+{%- assign _ps = site.data.series | where: "slug", t.series | first -%}
+{%- assign _post = site.posts | where: "slug", t.post | first -%}
+<article class="post tool-page">
+
+  <header class="post-header">
+    <span class="tool-kind">Tool · {{ t.kind | escape }}{% if _ps %} · {{ _ps.title | split: " — " | first }}{% endif %}</span>
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+    <p class="tool-lede">{{ t.summary | escape }}</p>
+  </header>
+
+  <div class="post-content">
+    <div class="tool-launch">
+      <a class="button button-primary" href="{{ t.url }}">Open the {{ t.kind | escape }}</a>
+      {%- if t.kind == "Google Sheet" %}
+      <p>It opens view-only. Use <strong>File → Make a copy</strong> to get your own editable version; nothing you type is shared with us or anyone else.</p>
+      {%- endif %}
+      <p class="tool-data">Prefilled with: {{ t.data | escape }}.</p>
+    </div>
+
+    {%- capture body -%}{% include inr-tables.html html=content %}{%- endcapture -%}
+    {{ body | replace: '<table', '<div class="table-wrap"><table' | replace: '</table>', '</table></div>' }}
+
+    {%- if _post %}
+    <h2 id="how-it-works">How it works</h2>
+    <p>The method, step by step, with the worked example this tool reproduces:
+      <a href="{{ _post.url | relative_url }}">{{ _post.title | escape }}</a>.</p>
+    {%- endif %}
+
+    {%- assign _used = "" | split: "" -%}
+    {%- for slug in t.used_in -%}
+      {%- assign _p = site.posts | where: "slug", slug | first -%}
+      {%- if _p and _p.slug != t.post -%}{%- assign _used = _used | push: _p -%}{%- endif -%}
+    {%- endfor -%}
+    {%- if _used.size > 0 %}
+    <h2 id="used-in">Also used in</h2>
+    <ul>
+      {%- for p in _used %}
+      <li><a href="{{ p.url | relative_url }}">{{ p.title | escape }}</a></li>
+      {%- endfor %}
+    </ul>
+    {%- endif %}
+
+    <p class="tool-footer">This is a teaching tool. It shows how a calculation works on the
+      numbers you give it; it doesn't tell you what to buy, sell or hold, makes no forecast,
+      and doesn't value any real listed company. See the
+      <a href="{{ '/privacy/' | relative_url }}">disclaimer</a>.</p>
+    <p><a href="{{ '/tools/' | relative_url }}">← All tools</a></p>
+  </div>
+
+</article>

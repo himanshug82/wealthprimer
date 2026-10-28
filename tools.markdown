@@ -7,8 +7,8 @@ description: "Free calculators for Indian investors: rolling returns, SIP and XI
 
 {%- comment -%}
 Cards are built from _data/tools.yml; there is nothing to edit on this page.
-To add a tool, add an entry there and link it from the relevant posts with
-{% include tool.html id="..." %}.
+To add a tool, add an entry there, a stub page in _tools/<id>.md, and link it
+from the relevant posts with {% include tool.html id="..." %}.
 {%- endcomment -%}
 
 Calculators you can use without writing code. Each one comes with a post
@@ -24,11 +24,12 @@ editable version; nothing you type is shared with us or anyone else.
 {%- assign _post = site.posts | where: "slug", t.post | first %}
 <li class="tool-card" id="{{ t.id }}">
 <span class="tool-kind">{{ t.kind | escape }}{% if _ps %} · {{ _ps.title | split: " — " | first }}{% endif %}</span>
-<h2>{{ t.name | escape }}</h2>
+<h2><a href="{{ '/tools/' | relative_url }}{{ t.id }}/">{{ t.name | escape }}</a></h2>
 <p>{{ t.summary | escape }}</p>
 <p class="tool-data">Prefilled with: {{ t.data | escape }}.</p>
 <p class="tool-actions">
 <a class="button button-primary" href="{{ t.url }}">Open the {{ t.kind | escape }}</a>
+<a class="tool-explainer" href="{{ '/tools/' | relative_url }}{{ t.id }}/">How to use it</a>
 {%- if _post %}
 <a class="tool-explainer" href="{{ _post.url | relative_url }}">How it works: {{ _post.title | escape }}</a>
 {%- endif %}

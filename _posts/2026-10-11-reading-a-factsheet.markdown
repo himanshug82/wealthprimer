@@ -165,7 +165,7 @@ Condensed from the whole series:
 3. **Ignore the headline point-to-point returns.** They're one window,
    ending today.
 4. **Compute rolling returns yourself.** The distribution, not one number.
-   The [rolling returns calculator]({{ '/tools/' | relative_url }}#rolling-returns)
+   The [rolling returns calculator]({{ '/tools/rolling-returns/' | relative_url }})
    does it for any [NAV]({% post_url 2026-09-25-what-a-mutual-fund-is %}) series you paste in.
 5. **Look up the worst drawdown and how long recovery took.** Ask honestly
    whether you'd have held.

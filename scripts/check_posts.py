@@ -15,6 +15,9 @@ of mistake only surface then:
      length Google shows, an `image` that exists in assets/og/, a `series`
      slug that exists in _data/series.yml, a valid date.
 
+Also checks the reader tools: every _data/tools.yml entry has a _tools/<id>.md
+page, every tool.html id exists, and each tool's used_in list names real posts.
+
 Also warns (not fails) on: missing `term:` (glossary), two posts from the same series on one date,
 a `{{ site.data.X }}` reference to a data file that doesn't exist, and any
 Liquid variable of the form `{{ foo.bar }}` whose root `foo` was never
@@ -40,6 +43,7 @@ FOR_RE = re.compile(r"{%-?\s*for\s+([A-Za-z_][A-Za-z0-9_]*)\s+in\s+")
 CAPTURE_RE = re.compile(r"{%-?\s*capture\s+([A-Za-z_][A-Za-z0-9_]*)")
 VAR_RE = re.compile(r"{{-?\s*([A-Za-z_][A-Za-z0-9_]*)[\.\[\s|}]")
 DATA_RE = re.compile(r"site\.data\.([A-Za-z_][A-Za-z0-9_]*)")
+TOOL_RE = re.compile(r"{%-?\s*include\s+tool\.html\s+id=\"([^\"]+)\"")
 BUILTIN = {"site", "page", "content", "include", "forloop", "layout", "paginator", "jekyll"}
 
 
@@ -84,6 +88,7 @@ def main():
 
     errors = warnings = 0
     by_date = {}
+    tool_refs = []
     # _data/related.yml is generated (scripts/build_related.py); a post missing from it
     # still renders (cards fall back to its own series), but its cards are weaker.
     related_path = os.path.join(ROOT, "_data", "related.yml")
@@ -157,11 +162,54 @@ def main():
                 print(f"ERROR {name}: Liquid variable '{root_var}' is used but never assigned")
                 errors += 1
 
+        tool_refs += [(tid, key[11:], name) for tid in TOOL_RE.findall(body)]
+
         # --- chart references ---------------------------------------------
         for chart in re.findall(r"/assets/charts/([A-Za-z0-9_\-\.]+)", body):
             if not os.path.exists(os.path.join(ROOT, "assets", "charts", chart)):
                 print(f"ERROR {name}: chart assets/charts/{chart} does not exist")
                 errors += 1
+
+    # --- reader tools: _data/tools.yml, its _tools/<id>.md pages, and the
+    # posts that link a tool with {% include tool.html id="..." %} -----------
+    tools_path = os.path.join(ROOT, "_data", "tools.yml")
+    if os.path.exists(tools_path):
+        used_in = {}
+        for block in re.split(r"^(?=- id:)", open(tools_path, encoding="utf-8").read(), flags=re.M):
+            m = re.match(r"- id:\s*(\S+)", block)
+            if m:
+                u = re.search(r"^\s+used_in:\s*\[(.*)\]", block, re.M)
+                used_in[m.group(1)] = {x.strip() for x in u.group(1).split(",") if x.strip()} if u else set()
+        slugs = {k[11:] for k in posts}
+        for tid, users in used_in.items():
+            stub = os.path.join(ROOT, "_tools", tid + ".md")
+            if not os.path.exists(stub):
+                print(f"ERROR tools.yml: '{tid}' has no page _tools/{tid}.md")
+                errors += 1
+            else:
+                fm, _ = front_matter(open(stub, encoding="utf-8").read())
+                desc = fm.get("description", "")
+                if not (140 <= len(desc) <= 155):
+                    print(f"WARN  _tools/{tid}.md: description is {len(desc)} chars (aim 140–155)")
+                    warnings += 1
+                img = fm.get("image", "")
+                if img and not os.path.exists(os.path.join(ROOT, img.lstrip("/"))):
+                    print(f"WARN  _tools/{tid}.md: image '{img}' does not exist yet (run scripts/make_og_cards.py)")
+                    warnings += 1
+            for slug in sorted(users - slugs):
+                print(f"ERROR tools.yml: '{tid}' used_in names '{slug}', which is not a post")
+                errors += 1
+        for stub in sorted(glob.glob(os.path.join(ROOT, "_tools", "*.md"))):
+            if os.path.basename(stub)[:-3] not in used_in:
+                print(f"ERROR _tools/{os.path.basename(stub)}: no entry with that id in _data/tools.yml")
+                errors += 1
+        for tid, slug, name in tool_refs:
+            if tid not in used_in:
+                print(f"ERROR {name}: tool.html id '{tid}' is not in _data/tools.yml (the callout renders nothing)")
+                errors += 1
+            elif slug not in used_in[tid]:
+                print(f"WARN  {name}: links tool '{tid}' but isn't in its used_in list in _data/tools.yml")
+                warnings += 1
 
     for (d, ser), names in sorted(by_date.items()):
         if len(names) > 1:

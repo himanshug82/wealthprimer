@@ -80,6 +80,8 @@ The yield on premiums paid treats each year's premium as paid at the start of th
 
 What the table shows: the allocation charge falls only in the first five years, while the fund management charge and the administration charge recur every year, so the gap between the fund's return and your return is not one number but a fee that applies all through the term. What it doesn't show: the mortality charge, any guarantee, or what the same premiums would have earned elsewhere.
 
+{% include tool.html id="cost-drag" note="A ULIP's charges are built differently, so this shows only what a single annual % cost does over time, not a ULIP's full drag." %}
+
 ## Common mistakes
 
 - **Comparing the fund's return with a policy's return.** The fund's return is before charges. What you earned on premiums paid is lower, by the reduction in yield.

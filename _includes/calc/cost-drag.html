@@ -1,0 +1,32 @@
+{%- comment -%}
+Cost drag calculator. Defaults are the expense ratio post's active-fund
+example (direct vs regular), at the exact rates from the NAV CSV, from
+_data/tool_defaults.json (scripts/derive_tool_defaults.py). Formulas and
+wiring: assets/js/calc.js.
+{%- endcomment -%}
+{%- assign d = site.data.tool_defaults["cost-drag"].defaults -%}
+<form class="calc" data-calc="cost-drag" data-defaults='{{ d | jsonify }}' novalidate>
+<fieldset>
+<legend>What an extra annual cost takes</legend>
+<div class="calc-inputs">
+<label>Amount invested <span class="calc-unit">₹, lump sum</span><input name="amount" type="text" inputmode="decimal" autocomplete="off" value="{{ d.amount }}"></label>
+<label>Years<input name="years" type="text" inputmode="decimal" autocomplete="off" value="{{ d.years }}"></label>
+<label>Return of the lower-cost plan <span class="calc-unit">% a year, after its costs</span><input name="rate_pct" type="text" inputmode="decimal" autocomplete="off" value="{{ d.rate_pct }}"></label>
+<label>Extra cost of the higher-cost plan <span class="calc-unit">percentage points a year</span><input name="extra_cost_pp" type="text" inputmode="decimal" autocomplete="off" value="{{ d.extra_cost_pp }}"></label>
+</div>
+<div class="calc-result" aria-live="polite">
+<dl class="calc-table">
+<dt>Lower-cost plan grows to</dt><dd><output data-out="low"></output></dd>
+<dt>Higher-cost plan grows to</dt><dd><output data-out="high"></output></dd>
+<dt>Difference</dt><dd><output class="calc-key" data-out="diff"></output></dd>
+<dt>Lower-cost plan ends higher by</dt><dd><output data-out="diff_pct"></output></dd>
+<dt>Share of the final value the extra cost took</dt><dd><output data-out="share_pct"></output></dd>
+</dl>
+</div>
+<p class="calc-error" role="alert"></p>
+<p class="calc-note">The starting figures are the expense ratio post's direct and regular plans of one fund, at the exact growth rates from their daily NAVs, so the result matches the post to the rupee; round them and it moves by a few rupees. The regular plan's extra cost pays for distribution and advice; <a href="{{ '/2026/09/28/expense-ratios-direct-vs-regular/' | relative_url }}#what-you-actually-get-for-it">the post covers what you get for it</a>. Lump sum only; before tax.</p>
+</fieldset>
+<div class="calc-actions"><button type="button" class="calc-reset">Reset to the post's example</button></div>
+<noscript><p class="calc-note">This calculator needs JavaScript. The tables in the post show the same arithmetic.</p></noscript>
+<script src="{{ '/assets/js/calc.js' | relative_url }}" defer></script>
+</form>

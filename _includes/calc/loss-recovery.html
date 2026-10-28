@@ -1,0 +1,43 @@
+{%- comment -%}
+Loss recovery and leverage calculator. Defaults are The arithmetic of losses'
+fall and Leverage and margin's MTF example, from _data/tool_defaults.json
+(scripts/derive_tool_defaults.py). Formulas and wiring: assets/js/calc.js.
+{%- endcomment -%}
+{%- assign d = site.data.tool_defaults["loss-recovery"].defaults -%}
+<form class="calc" data-calc="loss-recovery" data-defaults='{{ d | jsonify }}' novalidate>
+<fieldset data-part="0">
+<legend>Getting back from a fall</legend>
+<div class="calc-inputs">
+<label>Fall from the peak <span class="calc-unit">%</span><input name="fall_pct" type="text" inputmode="decimal" autocomplete="off" value="{{ d.fall_pct }}"></label>
+</div>
+<p class="calc-result" aria-live="polite">A fall of <output data-out="fall_pct_echo"></output> needs a rise of <output class="calc-key" data-out="gain_pct"></output> to get back to where it was.</p>
+<p class="calc-error" role="alert"></p>
+</fieldset>
+<fieldset data-part="1">
+<legend>The same move, with borrowed money</legend>
+<div class="calc-inputs">
+<label>Your own money <span class="calc-unit">₹</span><input name="own" type="text" inputmode="decimal" autocomplete="off" value="{{ d.own }}"></label>
+<label>Borrowed <span class="calc-unit">₹</span><input name="borrowed" type="text" inputmode="decimal" autocomplete="off" value="{{ d.borrowed }}"></label>
+<label>Interest rate <span class="calc-unit">% a year</span><input name="rate_pct" type="text" inputmode="decimal" autocomplete="off" value="{{ d.rate_pct }}"></label>
+<label>Held for <span class="calc-unit">months</span><input name="months" type="text" inputmode="decimal" autocomplete="off" value="{{ d.months }}"></label>
+<label>Price move <span class="calc-unit">%</span><input name="move_pct" type="text" inputmode="decimal" autocomplete="off" value="{{ d.move_pct }}"></label>
+</div>
+<div class="calc-result" aria-live="polite">
+<dl class="calc-table">
+<dt>Position</dt><dd><output data-out="position"></output></dd>
+<dt>Leverage</dt><dd><output data-out="leverage"></output></dd>
+<dt>Interest for the period</dt><dd><output data-out="interest"></output></dd>
+<dt>Price rise needed just to break even</dt><dd><output data-out="breakeven_pct"></output></dd>
+<dt>Profit or loss</dt><dd><output data-out="pnl"></output></dd>
+<dt>Return on your own money</dt><dd><output class="calc-key" data-out="return_pct"></output></dd>
+<dt>Fall that takes all your own money</dt><dd><output data-out="wipeout_pct"></output></dd>
+</dl>
+<p class="calc-warn" data-show-if="owed>0" hidden>That loss is bigger than your own money: you'd still owe <output data-out="owed"></output>.</p>
+</div>
+<p class="calc-error" role="alert"></p>
+<p class="calc-note">Brokers don't wait for −100%: a margin call comes first, and the position may be sold at the low. Real margin rules, rates and charges vary by broker and aren't modelled.</p>
+</fieldset>
+<div class="calc-actions"><button type="button" class="calc-reset">Reset to the post's example</button></div>
+<noscript><p class="calc-note">This calculator needs JavaScript. The tables in the post show the same arithmetic.</p></noscript>
+<script src="{{ '/assets/js/calc.js' | relative_url }}" defer></script>
+</form>

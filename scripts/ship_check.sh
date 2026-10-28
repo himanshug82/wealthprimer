@@ -6,7 +6,8 @@
 #
 # 1 check_posts.py (0 errors)   2 lint_post.py on changed posts (0 FAIL)
 # 3 make_og_cards.py --check    4 add_img_dims.py --check
-# 5 full Jekyll build with --future (catches Liquid errors and forward post_url links)
+# 5 check_tools.mjs: on-page calculators reproduce their posts (local only; skipped without Node)
+# 6 full Jekyll build with --future (catches Liquid errors and forward post_url links)
 set -uo pipefail
 cd "$(dirname "$0")/.."
 base="${1:-origin/main}"
@@ -29,6 +30,13 @@ fi
 
 step "og cards";  run python3 scripts/make_og_cards.py --check
 step "img dims";  run python3 scripts/add_img_dims.py --check
+
+step "calculators reproduce their posts"
+if command -v node >/dev/null 2>&1; then
+  run node scripts/check_tools.mjs
+else
+  echo "node not installed; skipped (run: node scripts/check_tools.mjs)"
+fi
 
 step "jekyll build --future"
 out="$(mktemp -d)"

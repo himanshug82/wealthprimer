@@ -451,7 +451,9 @@ for k in ("idx", "gilt", "fd"):
     real_summary[k] = {"nominal_cagr_pct": r2((cum[k] ** (1 / N) - 1) * 100, 1),
                        "real_cagr_pct": r2(((cum[k] / cum["cpi"]) ** (1 / N) - 1) * 100, 1),
                        "lakh_nominal": int(round(100000 * cum[k])), "lakh_real": int(round(100000 * cum[k] / cum["cpi"])),
-                       "negative_real_years": int(neg_real[k])}
+                       "negative_real_years": int(neg_real[k]),
+                       # unrounded, for the real-return calculator's defaults (scripts/derive_tool_defaults.py)
+                       "growth_factor": r2(cum[k], 10)}
 for k in ("idx", "gilt", "fd"):
     worst = min(rows, key=lambda r: r[f"{k}_real_pct"])
     real_summary[k]["worst_real_pct"] = worst[f"{k}_real_pct"]
@@ -462,7 +464,7 @@ cpi_cagr = (cum["cpi"] ** (1 / N) - 1) * 100
 hi_y = max(infl, key=infl.get); lo_y = min(infl, key=infl.get)
 out["inflation"] = {"rows": rows, "years": N, "first_fy": "FY14", "last_fy": "FY26",
                     "cpi_cagr_pct": r2(cpi_cagr, 1), "cpi_cum_pct": r2((cum["cpi"] - 1) * 100, 0),
-                    "lakh_needed": int(round(100000 * cum["cpi"])),
+                    "lakh_needed": int(round(100000 * cum["cpi"])), "cpi_factor": r2(cum["cpi"], 10),
                     "cpi_mar2013": float(old["2013-03"]), "cpi_mar2025_old": float(old["2025-03"]),
                     "cpi_mar2025_new": float(new["2025-03"]), "cpi_mar2026_new": float(new["2026-03"]),
                     "highest_fy": f"FY{str(hi_y)[-2:]}", "highest_pct": r2(infl[hi_y] * 100, 1),

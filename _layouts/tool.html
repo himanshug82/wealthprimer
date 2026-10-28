@@ -6,6 +6,7 @@ One reader tool at /tools/<id>/. The stub in _tools/<id>.md supplies the title,
 description and how-to text; everything else (kind, link, summary, prefilled
 data, explainer post, posts that use it) comes from the _data/tools.yml entry
 whose id matches the stub's `tool:`. Posts are listed only once published.
+An on-page calculator (`calc:` set) is drawn in place of the "Open" button.
 {%- endcomment -%}
 {%- assign t = site.data.tools | where: "id", page.tool | first -%}
 {%- assign _ps = site.data.series | where: "slug", t.series | first -%}
@@ -20,7 +21,11 @@ whose id matches the stub's `tool:`. Posts are listed only once published.
 
   <div class="post-content">
     <div class="tool-launch">
+      {%- if t.calc %}
+      {% include calc/{{ t.calc }}.html %}
+      {%- else %}
       <a class="button button-primary" href="{{ t.url }}">Open the {{ t.kind | escape }}</a>
+      {%- endif %}
       {%- if t.kind == "Google Sheet" %}
       <p>It opens view-only. Use <strong>File → Make a copy</strong> to get your own editable version; nothing you type is shared with us or anyone else.</p>
       {%- endif %}

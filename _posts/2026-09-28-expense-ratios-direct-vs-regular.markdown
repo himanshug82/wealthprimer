@@ -116,6 +116,8 @@ is a good fund, and nothing here should be read as suggesting anyone buy or
 avoid it. It appears because it has a normal actively-managed expense ratio
 and nearly thirteen years of both plans, which is what the arithmetic needed.
 
+{% include tool.html id="cost-drag" embed=true note="It starts from the active fund above." %}
+
 ## Why 0.83% becomes 9.5%
 
 The leap from "under one percent a year" to "₹74,000" is the part worth

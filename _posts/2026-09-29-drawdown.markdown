@@ -145,6 +145,8 @@ print(f"peak {peak_date.date()} -> recovered {recovered.index[0].date()} "
 `cummax()` is the whole trick — the running maximum is the "highest so far,"
 so dividing by it gives the distance below the previous high at every point.
 
+{% include tool.html id="loss-recovery" %}
+
 ## Common mistakes
 
 - **Quoting depth without recovery time.** 59.7% over six years and 38.4%

@@ -157,6 +157,8 @@ is what makes it so unforgiving. A leveraged account that drops 50% needs
 same interest. Leverage makes every drawdown deeper *and* every recovery
 steeper, at the same time.
 
+{% include tool.html id="loss-recovery" embed=true note="Its second part starts from this post's margin example." %}
+
 ## Common mistakes
 
 - **Thinking of leverage as "a bigger position."** It's a bigger position

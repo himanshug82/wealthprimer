@@ -1,0 +1,33 @@
+{%- comment -%}
+Real return calculator. Defaults are the inflation post's SBI fixed-deposit
+example and CPI over the same years, at exact rates, from
+_data/tool_defaults.json (scripts/derive_tool_defaults.py). Formulas and
+wiring: assets/js/calc.js.
+{%- endcomment -%}
+{%- assign d = site.data.tool_defaults["real-return"].defaults -%}
+<form class="calc" data-calc="real-return" data-defaults='{{ d | jsonify }}' novalidate>
+<fieldset>
+<legend>What a return bought, after inflation</legend>
+<div class="calc-inputs">
+<label>Amount <span class="calc-unit">₹</span><input name="amount" type="text" inputmode="decimal" autocomplete="off" value="{{ d.amount }}"></label>
+<label>Years<input name="years" type="text" inputmode="decimal" autocomplete="off" value="{{ d.years }}"></label>
+<label>Return <span class="calc-unit">% a year, before tax</span><input name="rate_pct" type="text" inputmode="decimal" autocomplete="off" value="{{ d.rate_pct }}"></label>
+<label>Inflation <span class="calc-unit">% a year</span><input name="inflation_pct" type="text" inputmode="decimal" autocomplete="off" value="{{ d.inflation_pct }}"></label>
+</div>
+<div class="calc-result" aria-live="polite">
+<dl class="calc-table">
+<dt>Grows to, in rupees</dt><dd><output data-out="nominal"></output></dd>
+<dt>Worth, in start-year rupees</dt><dd><output class="calc-key" data-out="real"></output></dd>
+<dt>Real return a year</dt><dd><output data-out="real_rate_pct"></output></dd>
+<dt>The shortcut (return − inflation)</dt><dd><output data-out="approx_pct"></output></dd>
+<dt>How far off the shortcut is</dt><dd><output data-out="gap_pp"></output></dd>
+<dt>Needed at the end to buy what the amount bought at the start</dt><dd><output data-out="needed"></output></dd>
+</dl>
+</div>
+<p class="calc-error" role="alert"></p>
+<p class="calc-note">The starting figures are the inflation post's one-year SBI deposit, rolled over, and CPI inflation over the same years, at exact rates so the result matches the post to the rupee. Before tax: tax lowers the real return further (<a href="{{ '/2026/10/20/inflation-and-real-returns/' | relative_url }}#what-pre-tax-hides">what pre-tax hides</a>). CPI is a national average basket; your own costs may rise faster or slower.</p>
+</fieldset>
+<div class="calc-actions"><button type="button" class="calc-reset">Reset to the post's example</button></div>
+<noscript><p class="calc-note">This calculator needs JavaScript. The tables in the post show the same arithmetic.</p></noscript>
+<script src="{{ '/assets/js/calc.js' | relative_url }}" defer></script>
+</form>

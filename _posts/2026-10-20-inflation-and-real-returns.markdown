@@ -132,6 +132,8 @@ What the tables say:
    describes, showing up as real losses in the years its nominal return was
    low.
 
+{% include tool.html id="real-return" embed=true note="It starts from the fixed deposit above." %}
+
 ## What "pre-tax" hides
 
 Every figure above is before tax, and that flatters the FD most. FD interest

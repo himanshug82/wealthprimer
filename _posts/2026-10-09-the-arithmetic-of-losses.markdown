@@ -173,6 +173,8 @@ for loss in (0.1, 0.2, 0.5, 0.6, 0.9):
     print(f"-{loss:.0%} needs +{1 / (1 - loss) - 1:.0%}")
 ```
 
+{% include tool.html id="loss-recovery" embed=true note="Its defaults are this post's 2008 fall and the leverage post's margin example." %}
+
 ## Common mistakes
 
 - **Mentally netting a −20% year against a +20% year.** They don't cancel.

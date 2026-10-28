@@ -753,6 +753,69 @@ div.language-python {
   .tool-explainer { font-size: 0.88rem; }
 }
 
+// On-page calculators (_includes/calc/*.html, assets/js/calc.js): drawn inside a
+// .tool-callout in a post (embed=true) or in .tool-launch on the tool's page.
+.post-content .calc {
+  margin: 1em 0 0.4em;
+  font-family: var(--font-sans);
+
+  fieldset { margin: 0 0 1.2em; padding: 0; border: 0; min-width: 0; }
+  legend { padding: 0; margin-bottom: 0.6em; font-size: 0.95rem; font-weight: 650; color: var(--ink); }
+
+  .calc-inputs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+    gap: 0.7rem 1rem;
+  }
+  label { display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.85rem; font-weight: 600; color: var(--text); }
+  .calc-unit { font-weight: 400; color: var(--muted); font-size: 0.78rem; }
+  input {
+    width: 100%;
+    margin-top: auto; // inputs line up when labels wrap to different heights
+    box-sizing: border-box;
+    padding: 0.45rem 0.6rem;
+    font: inherit;
+    font-size: 1rem; // 16px+ keeps iOS from zooming on focus
+    font-variant-numeric: tabular-nums;
+    color: var(--ink);
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-sm);
+    &:focus { outline: 2px solid var(--brand); outline-offset: 1px; border-color: var(--brand); }
+  }
+
+  .calc-result { margin: 0.9em 0 0; font-size: 0.95rem; line-height: 1.5; }
+  .calc-table {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.35rem 1rem;
+    margin: 0;
+    dt { margin: 0; color: var(--text); }
+    dd { margin: 0; text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; color: var(--ink); }
+  }
+  .calc-key { font-weight: 700; color: var(--brand); }
+  .calc-warn { margin: 0.7em 0 0; font-size: 0.9rem; font-weight: 600; color: var(--ink); }
+  .calc-note { margin: 0.8em 0 0; font-size: 0.8rem; line-height: 1.5; color: var(--muted); }
+  .calc-error { margin: 0.6em 0 0; padding-left: 0.6em; border-left: 3px solid var(--brand); font-size: 0.88rem; font-weight: 600; color: var(--ink); &:empty { display: none; } }
+  .calc-invalid .calc-result { opacity: 0.35; }
+
+  // Results and the reset button mean nothing until the script has run.
+  &:not(.calc-ready) .calc-result, &:not(.calc-ready) .calc-actions { display: none; }
+
+  .calc-reset {
+    padding: 0.4rem 0.8rem;
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--brand);
+    background: transparent;
+    border: 1px solid var(--brand-tint);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    &:hover, &:focus-visible { border-color: var(--brand); }
+  }
+}
+
 // A tool's own page, /tools/<id>/ (_layouts/tool.html).
 .tool-page {
   .tool-lede { margin: 0.6em 0 0; font-size: 1.05rem; line-height: 1.55; color: var(--muted); }

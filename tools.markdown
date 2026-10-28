@@ -2,7 +2,7 @@
 layout: page
 title: "Tools"
 permalink: /tools/
-description: "Free calculators for Indian investors: rolling returns, SIP and XIRR, and a DCF on a fictional company, each linked to the post that explains the method."
+description: "Free calculators for Indian investors: rolling returns, SIP and XIRR, DCF, loss recovery, cost drag and real returns, each tied to its explainer post."
 ---
 
 {%- comment -%}
@@ -15,8 +15,9 @@ Calculators you can use without writing code. Each one comes with a post
 that explains the method step by step, and each reproduces that post's
 worked example, so you can check it before trusting it with your own numbers.
 
-The Google Sheets open view-only. Use **File → Make a copy** to get your own
-editable version; nothing you type is shared with us or anyone else.
+The calculators work right on the page. The Google Sheets open view-only: use
+**File → Make a copy** to get your own editable version. Either way, nothing
+you type is shared with us or anyone else.
 
 <ul class="tools-grid">
 {%- for t in site.data.tools %}
@@ -28,8 +29,12 @@ editable version; nothing you type is shared with us or anyone else.
 <p>{{ t.summary | escape }}</p>
 <p class="tool-data">Prefilled with: {{ t.data | escape }}.</p>
 <p class="tool-actions">
+{%- if t.calc %}
+<a class="button button-primary" href="{{ '/tools/' | relative_url }}{{ t.id }}/">Use the calculator</a>
+{%- else %}
 <a class="button button-primary" href="{{ t.url }}">Open the {{ t.kind | escape }}</a>
 <a class="tool-explainer" href="{{ '/tools/' | relative_url }}{{ t.id }}/">How to use it</a>
+{%- endif %}
 {%- if _post %}
 <a class="tool-explainer" href="{{ _post.url | relative_url }}">How it works: {{ _post.title | escape }}</a>
 {%- endif %}

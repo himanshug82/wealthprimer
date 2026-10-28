@@ -74,6 +74,8 @@ Deposit insurance counts what you hold *per bank*. The DICGC's [guide to deposit
 
 Take an illustrative total of ₹{% include inr.html n=dq.illustrative_balance %} at one bank across a savings account and FDs. The insured part is ₹{% include inr.html n=dq.insured %}; ₹{% include inr.html n=dq.uninsured %} is above the limit. The same total split evenly across two banks is ₹{% include inr.html n=dq.split_banks_each %} in each, and all of it falls under the limit. That is how the rule counts, not a suggestion about where to hold money. Mutual fund units sit outside this scheme altogether.
 
+{% include tool.html id="real-return" %}
+
 ## Common mistakes
 
 - **Reading an FD rate and a debt fund's past return as the same kind of number.** One is a rate fixed in advance. The other is a result known only afterwards. And an FD's rate is certain only for its term, not for the renewal after it.

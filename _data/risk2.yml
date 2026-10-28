@@ -669,6 +669,7 @@ inflation:
   cpi_cagr_pct: 5
   cpi_cum_pct: 88
   lakh_needed: 188183
+  cpi_factor: 1.8818311723
   cpi_mar2013: 105.5
   cpi_mar2025_old: 192.0
   cpi_mar2025_new: 101.39
@@ -684,6 +685,7 @@ inflation:
       lakh_nominal: 434915
       lakh_real: 231113
       negative_real_years: 4
+      growth_factor: 4.3491527628
       worst_real_pct: -29.5
       worst_real_fy: FY20
       negative_real_fy_list: ''
@@ -693,6 +695,7 @@ inflation:
       lakh_nominal: 262119
       lakh_real: 139290
       negative_real_years: 6
+      growth_factor: 2.6211933005
       worst_real_pct: -4.9
       worst_real_fy: FY14
       negative_real_fy_list: ''
@@ -702,6 +705,7 @@ inflation:
       lakh_nominal: 243538
       lakh_real: 129416
       negative_real_years: 2
+      growth_factor: 2.4353821691
       worst_real_pct: -1.7
       worst_real_fy: FY22
       negative_real_fy_list: FY22 and FY23

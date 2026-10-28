@@ -10,9 +10,12 @@
 #   id       the page name (/tools/<id>/, _tools/<id>.md), the anchor on
 #            /tools/ and the key the include looks up
 #   name     sentence case
-#   kind     shown as a label ("Google Sheet", "Python notebook", ...)
+#   kind     shown as a label ("Google Sheet", "Calculator", ...)
 #   url      where the tool lives; a Google Sheet must be shared
-#            "Anyone with the link: Viewer" before it goes here
+#            "Anyone with the link: Viewer" before it goes here. Omitted for
+#            an on-page calculator, which lives on its own page
+#   calc     on-page calculators only: the form in _includes/calc/<calc>.html,
+#            run by assets/js/calc.js, defaults from _data/tool_defaults.json
 #   summary  one or two sentences on what it does, in plain words
 #   data     what comes prefilled, with its source and as-of date
 #   post     slug of the post that explains the method (shown on /tools/
@@ -68,3 +71,45 @@
   series: fundamental-analysis
   used_in: [forecasting-free-cash-flow, terminal-value-and-the-full-dcf, margin-of-safety-and-sensitivity]
   built: 2026-10-25
+
+- id: loss-recovery
+  name: Loss recovery and leverage calculator
+  kind: Calculator
+  calc: loss-recovery
+  summary: >-
+    Enter a fall and see the rise needed to get back. Then add borrowed money,
+    an interest rate and a price move, and see what leverage does to the
+    return on your own money, including the move that wipes it out.
+  data: "the losses post's Nifty 50 index fund fall in 2008, and the leverage post's illustrative margin trade"
+  post: the-arithmetic-of-losses
+  series: risk
+  used_in: [the-arithmetic-of-losses, leverage-and-margin, drawdown]
+  built: 2026-10-28
+
+- id: cost-drag
+  name: Cost drag calculator
+  kind: Calculator
+  calc: cost-drag
+  summary: >-
+    See what an extra annual cost, such as a regular plan's higher expense
+    ratio, takes out of a lump sum over any number of years, in rupees and as
+    a share of the final value.
+  data: "the direct and regular plans of Parag Parikh Flexi Cap Fund, 28 May 2013 to 31 March 2026, from AMFI via mfapi.in (the expense ratio post's example)"
+  post: expense-ratios-direct-vs-regular
+  series: mutual-funds
+  used_in: [expense-ratios-direct-vs-regular, ulip-charges]
+  built: 2026-10-28
+
+- id: real-return
+  name: Real return calculator
+  kind: Calculator
+  calc: real-return
+  summary: >-
+    Turn a return into what it actually bought after inflation: the value in
+    start-year rupees, the real return a year, and how far off the "return
+    minus inflation" shortcut is.
+  data: "a one-year SBI fixed deposit rolled over, and CPI inflation, March 2013 to March 2026 (the inflation post's example)"
+  post: inflation-and-real-returns
+  series: risk
+  used_in: [inflation-and-real-returns, fixed-deposit-vs-debt-fund]
+  built: 2026-10-28

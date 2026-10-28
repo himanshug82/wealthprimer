@@ -51,7 +51,7 @@ that loan as income (so NII falls), and it must set money aside. Both hit the
 P&L, which is why the moment of classification matters and why banks watch
 the SMA-2 bucket — the loans one month from tipping over.
 
-## Gross, net, and the number in between
+## GNPA vs NNPA: gross, net, and the number in between
 
 ```
 Gross NPA (GNPA)  =  Total loans classified as non-performing
@@ -66,6 +66,17 @@ Provision coverage ratio (PCR)  =  Provisions held  /  Gross NPA
 Gross NPA is what has gone wrong. Net NPA is what has gone wrong that the
 bank has *not yet* set money aside for — the part still exposed to
 shareholders. Provision coverage is the bridge between them.
+
+| | Gross NPA (GNPA) | Net NPA (NNPA) |
+|---|---|---|
+| What it counts | Every loan classified as non-performing | The part of those loans not yet covered by provisions |
+| The % is taken on | Gross advances | Net advances (after provisions) |
+| What moves it | Loans turning bad, recoveries, upgrades, write-offs | All of those, plus how much the bank chooses to provide |
+| What it answers | How much of the loan book has gone wrong? | How much of that is still exposed to shareholders? |
+
+Two banks with the same GNPA can report very different NNPA, because
+provisioning is partly a choice (more on that below). Read the two together,
+with the coverage ratio, rather than either one alone.
 
 ## Worked example: HDFC Bank, FY25
 

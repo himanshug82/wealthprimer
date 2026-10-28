@@ -122,6 +122,21 @@ itself, not who financed it.
 
 </details>
 
+## ROE vs ROCE vs ROA
+
+The three return ratios differ only in which profit they use and which pool
+of capital they divide it by:
+
+| Ratio | Numerator | Denominator | Whose capital? |
+|---|---|---|---|
+| [ROE]({% post_url 2026-09-01-roe %}) (return on equity) | PAT | Average equity | Shareholders' only |
+| ROCE | EBIT | Average (equity + debt) | Shareholders' + lenders' |
+| [ROA]({{ '/2026/09/05/roa/' | relative_url }}) (return on assets) | PAT | Average total assets | Everyone financing the asset base, incl. suppliers |
+
+ROCE is the only pre-tax one of the three, which is why the table above takes
+tax off it before setting it beside ROE. The ROA post puts
+[Britannia's FY25 figures for all three side by side]({{ '/2026/09/05/roa/' | relative_url }}#roe-vs-roce-vs-roa-side-by-side).
+
 ## Common mistakes
 
 - **Comparing pre-tax ROCE with post-tax ROE.** ROCE is built on EBIT

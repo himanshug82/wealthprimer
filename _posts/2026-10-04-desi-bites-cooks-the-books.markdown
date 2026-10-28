@@ -95,7 +95,7 @@ actually in the jar?* That question is what the rest of this post is about.
 
 ## The fingerprints
 
-Each trick moves a P&L line. But the balance sheet and cash flow statement
+Each trick moves a P&L line. But the [balance sheet]({% post_url 2026-08-20-reading-a-balance-sheet %}) and cash flow statement
 have to keep balancing — the model behind this post asserts that both
 versions do — and *that* is what leaves the marks. The
 [cash flow post]({% post_url 2026-08-24-reading-a-cash-flow-statement %}) called

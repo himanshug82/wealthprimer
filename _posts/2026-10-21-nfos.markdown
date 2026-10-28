@@ -112,7 +112,7 @@ Not the price. These things:
   [drawdown]({% post_url 2026-09-29-drawdown %}) posts asked you to check
   simply doesn't exist yet.
 - **Why it's being launched.** SEBI allows only one scheme per category per
-  fund house, except index funds and ETFs (exchange-traded funds) on different indices, funds of funds
+  fund house, except index funds and [ETFs]({% post_url 2026-10-13-index-funds-vs-etfs %}) (exchange-traded funds) on different indices, [funds of funds]({% post_url 2026-10-20-international-funds %})
   with different underlying funds, and sectoral or thematic funds on different
   themes (Master Circular, paragraph 3.10.1). So a new active NFO is usually
   one of those exceptions — often a theme — or a fund house filling a

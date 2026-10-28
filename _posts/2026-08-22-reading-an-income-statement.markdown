@@ -12,7 +12,7 @@ term: "Income statement (P&L)"
 
 ## What an income statement is
 
-If the balance sheet is a photograph, the income statement — also called the
+If the [balance sheet]({% post_url 2026-08-20-reading-a-balance-sheet %}) is a photograph, the income statement — also called the
 **P&L** (profit and loss statement) — is the video. It shows what happened
 **over a period** (a quarter, a year), not on one specific day: how much the
 company sold, what it cost to sell it, and what was left over as profit.

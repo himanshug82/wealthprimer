@@ -34,7 +34,7 @@ end up close).
 Both numbers are now published. SEBI's
 [passive funds circular of 23 May 2022](https://www.sebi.gov.in/legal/circulars/may-2022/circular-on-development-of-passive-funds_59098.html)
 (SEBI/HO/IMD/DOF2/P/CIR/2022/69) caps tracking error for equity index funds
-and ETFs (exchange-traded funds) at 2% (measured on one year of daily data), requires it to be
+and [ETFs]({{ '/2026/10/13/index-funds-vs-etfs/' | relative_url }}) (exchange-traded funds) at 2% (measured on one year of daily data), requires it to be
 disclosed daily, and requires tracking difference to be disclosed monthly
 over 1, 3, 5 and 10 years. Tracking error is still the one that tends to get
 quoted, because it's almost always a small, reassuring number. Tracking
@@ -67,7 +67,7 @@ Historical data, for illustration only.
 
 Against the right index the wobble is tiny: a few hundredths of a percent a
 year. Against the price index it looks several times bigger, because every
-time a Nifty company goes ex-dividend the price index drops and the fund
+time a Nifty company goes [ex-dividend]({{ '/2026/10/17/record-date-and-ex-date/' | relative_url }}) the price index drops and the fund
 doesn't. The wrong benchmark inflates the error as well as the difference.
 
 **Tracking difference, regular plan, same three years:** fund {{ t.fund_cagr_3y_tri_window_pct }}% a year, TRI

@@ -107,7 +107,7 @@ to inventory and receivables, which are funded partly by supplier credit
   is a very different risk from one due in seven years, even if the rupee
   amount is identical.
 - **Not checking that it actually balances.** If you're ever building your
-  own summary of a company's numbers from an annual report, this is the
+  own summary of a company's numbers from an [annual report]({{ '/2026/10/03/reading-an-annual-report/' | relative_url }}), this is the
   single best sanity check available — total assets must equal total
   liabilities plus equity, always.
 

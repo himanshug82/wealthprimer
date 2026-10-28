@@ -205,7 +205,7 @@ Put the tests from this run side by side and a consistent picture emerges. Gaps 
 nearby prices get revisited anyway. [Fibonacci levels]({% post_url 2026-10-17-fibonacci-retracements %}) caught no more pullbacks
 than lines nobody draws. The calendar looked like a pattern until the month
 labels were shuffled. Budget days were volatile but not directional.
-Oscillators and OBV divergences often came before the opposite of what their
+Oscillators and [OBV]({% post_url 2026-10-21-obv-and-vwap %}) divergences often came before the opposite of what their
 names say. Stops capped the worst loss but didn't improve the average. And the
 trend on the index pointed the wrong way.
 

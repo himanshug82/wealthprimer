@@ -32,7 +32,7 @@ category. No concessional rate. No indexation.
 
 "Specified" has a precise meaning. From FY 2025-26 onward (Finance Act 2025),
 a specified mutual fund is one that invests **more than 65%** of its money in
-debt and money-market instruments — or a fund of funds that puts at least 65%
+debt and money-market instruments — or a [fund of funds]({% post_url 2026-10-20-international-funds %}) that puts at least 65%
 into such funds. In plain terms: a debt fund.
 
 Before 1 April 2023, debt funds held over three years were taxed at 20% *with
@@ -75,7 +75,7 @@ the *timing* advantage didn't.
 
 **Why gold funds aren't on the slab rate any more.** Until 31 March 2025 the
 test for a "specified" fund was different — not more than 35% in Indian
-equity — and that swept in gold ETFs, gold funds of funds, international funds
+equity — and that swept in gold [ETFs]({% post_url 2026-10-13-index-funds-vs-etfs %}), gold funds of funds, international funds
 and many hybrids along with debt funds. The Finance Act 2025 narrowed it to
 funds that are more than 65% debt, so from 1 April 2025 gold funds get a
 long-term category again. If you're reconciling an older return: gold fund

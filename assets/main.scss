@@ -699,6 +699,60 @@ div.language-python {
   margin-bottom: 0.35em;
 }
 
+// Reader tools: the callout inside posts (_includes/tool.html) and the cards
+// on /tools/ (tools.markdown), both drawn from _data/tools.yml.
+.tool-kind {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--brand);
+  margin-bottom: 0.35em;
+}
+
+.post-content .tool-callout {
+  margin: 1.8em 0;
+  padding: 1.1em 1.3em;
+  background: var(--surface);
+  border: 1px solid var(--brand-tint);
+  border-left: 4px solid var(--brand);
+  border-radius: var(--radius);
+  font-family: var(--font-sans);
+
+  .tool-name { font-size: 1.05rem; font-weight: 650; }
+  p { margin: 0.4em 0 0.5em; font-size: 0.92rem; line-height: 1.5; color: var(--text); }
+  .tool-all { font-size: 0.85rem; font-weight: 600; }
+}
+
+.post-content .tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1rem;
+  margin: 1.8em 0;
+  padding: 0;
+  list-style: none;
+}
+
+.post-content .tool-card {
+  min-width: 0;
+  margin: 0;
+  padding: 1.2rem 1.3rem;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  font-family: var(--font-sans);
+  scroll-margin-top: 1rem;
+  &:target { border-color: var(--brand); box-shadow: var(--shadow-md); }
+
+  h2 { margin: 0 0 0.4em; font-size: 1.15rem; color: var(--ink); }
+  p { margin: 0 0 0.7em; font-size: 0.92rem; line-height: 1.5; }
+  .tool-data { font-size: 0.82rem; color: var(--muted); }
+  .tool-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1rem; margin: 0.9em 0 0; }
+  .tool-explainer { font-size: 0.88rem; }
+}
+
 // ---------------------------------------------------------------------------
 // Buttons & pills
 // ---------------------------------------------------------------------------

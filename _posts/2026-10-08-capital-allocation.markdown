@@ -114,7 +114,7 @@ shareholder sees; this is what the board sees.
 shares, so the return depends entirely on the price paid. Buying back
 stock at the IPO price of ₹{% include inr.html n=cs.listing.ipo_price %} — a
 [P/E]({% post_url 2026-09-24-price-to-earnings %}) of about {{ ca.pe_at_ipo_price_fy26 }} on FY26
-earnings per share of ₹{{ f.eps }} — is accepting an [earnings yield]({{ '/2026/10/10/earnings-yield-and-fcf-yield/' | relative_url }}) of
+[earnings per share]({% post_url 2026-09-23-eps %}) of ₹{{ f.eps }} — is accepting an [earnings yield]({{ '/2026/10/10/earnings-yield-and-fcf-yield/' | relative_url }}) of
 {{ ca.earnings_yield_at_ipo_price }}% (1 ÷ {{ ca.pe_at_ipo_price_fy26 }}), below the hurdle again. Buying back at a P/E
 of 10 is a 10% yield on money the company knows better than any other
 investment. Buybacks are excellent or terrible depending on one number,
@@ -156,13 +156,13 @@ and divide by the change in capital employed. That's roughly what the
 *new* money earned. A company with a 30% ROCE and a 9% incremental ROCE
 is living off an old plant and wasting new cash.
 
-**Goodwill and impairments.** A balance sheet where goodwill grows every
+**Goodwill and impairments.** A [balance sheet]({% post_url 2026-08-20-reading-a-balance-sheet %}) where goodwill grows every
 year is a serial acquirer. Impairments in the notes are the acquisitions
 that didn't work, admitted late.
 
 The best allocators are rare and look boring: they reinvest when returns
 are high, buy back when the stock is cheap, hand cash back when neither is
-true, and say so in plain language in the annual report. The worst look
+true, and say so in plain language in the [annual report]({% post_url 2026-10-03-reading-an-annual-report %}). The worst look
 exciting — a deal a year, a rising cash pile that's "strategic," and a
 chairman's letter about transformation.
 

@@ -88,7 +88,7 @@ and you should be able to say why.
 
 Also note what the capex assumption is doing. Desi Bites raised
 ₹{% include inr.html n=site.data.case_study.listing.ipo_proceeds %} lakh in its IPO explicitly to expand. Modelling flat capex
-while that cash sits on the balance sheet would give you the cash *and* the
+while that cash sits on the [balance sheet]({% post_url 2026-08-20-reading-a-balance-sheet %}) would give you the cash *and* the
 growth for free. If the money is being spent, the model has to spend it.
 
 ## Worked example: Desi Bites Foods Ltd, FY26–FY30
@@ -154,6 +154,11 @@ Run it and you get the FCFF row above. Change `growth` to a flat 25% and
 watch what happens to the answer — that's the exercise the [sensitivity post]({{ '/2026/10/01/margin-of-safety-and-sensitivity/' | relative_url }})
 is built on.
 
+To change the forecast without code, the DCF calculator carries the same
+five-year model and takes it through to value per share.
+
+{% include tool.html id="dcf" %}
+
 ## Common mistakes
 
 - **Subtracting interest.** The single most common FCFF error. Interest is
@@ -162,7 +167,7 @@ is built on.
   same borrowing.
 - **Ignoring working capital entirely.** It's the least visible line and it
   can be the difference between a business that funds its own growth and one
-  that needs a rights issue every three years.
+  that needs a [rights issue]({{ '/2026/10/19/rights-issues/' | relative_url }}) every three years.
 - **Forecasting capex below depreciation forever.** That's a company whose
   asset base is shrinking. Fine for a few years of a capex holiday, incoherent
   as a permanent assumption — over the long run, maintenance capex and

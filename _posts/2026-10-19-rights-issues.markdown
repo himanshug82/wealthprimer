@@ -49,7 +49,7 @@ under the [ICDR (Amendment) Regulations, 2025](https://www.sebi.gov.in/legal/reg
 
 Because the new shares come in below market, the share price adjusts when it
 goes ex-rights. The standard estimate is the **theoretical ex-rights price
-(TERP)** — the same calculation Ind AS 33 uses to adjust EPS for the "bonus
+(TERP)** — the same calculation Ind AS 33 uses to adjust [EPS]({% post_url 2026-09-23-eps %}) for the "bonus
 element" in a rights issue:
 
 ```

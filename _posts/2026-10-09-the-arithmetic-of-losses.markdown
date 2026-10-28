@@ -62,7 +62,7 @@ This is why the [drawdown post]({% post_url 2026-09-29-drawdown %}) made such a
 point of recovery *time*. When {{ d.fund_name }} fell {{ a.gfc_fall_pct | abs }}% from
 its January 2008 peak, getting back did not require a {{ a.gfc_fall_pct | abs }}% rise.
 It required **+{{ a.gfc_gain_needed_pct }}%** — which is why the wait was nearly
-six years for this fund's regular-plan NAV, even though the year right after
+six years for this fund's regular-plan [NAV]({% post_url 2026-09-25-what-a-mutual-fund-is %}), even though the year right after
 the crash was spectacular (+{{ a.fy10_pct }}% in FY10). The Nifty itself
 briefly touched its January 2008 close in November 2010, then fell away again.
 
@@ -186,7 +186,7 @@ for loss in (0.1, 0.2, 0.5, 0.6, 0.9):
   after −{{ a.fy09_pct | abs }}% left the investor up {{ a.fy09_fy10_compound_pct }}% over two
   years. Look at the level, not the headline.
 - **Forgetting this applies to your own trading.** Every leveraged position,
-  every stop-loss hit and re-entry, every drawdown in a trading account is a
+  every [stop-loss]({{ '/2026/10/22/stop-loss-placement/' | relative_url }}) hit and re-entry, every drawdown in a trading account is a
   small version of the recovery table. The next two posts are about exactly
   that.
 

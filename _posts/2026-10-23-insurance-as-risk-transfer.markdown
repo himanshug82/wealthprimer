@@ -143,7 +143,7 @@ Read back through this series and one idea keeps returning: **stay in the
 game**. The [arithmetic of losses]({% post_url 2026-10-09-the-arithmetic-of-losses %})
 showed that deep losses need huge gains to repair. Position sizing, Kelly and
 leverage were all about never taking a bet that can end you. Concentration,
-liquidity, currency, inflation and counterparty risk, and outright
+liquidity, currency, inflation and [counterparty risk]({% post_url 2026-10-21-broker-and-counterparty-risk %}), and outright
 manipulation, were about losses that arrive from directions the price chart
 doesn't show. Insurance is the same idea applied
 to your life instead of your portfolio: identify the loss you couldn't

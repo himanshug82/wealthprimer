@@ -87,7 +87,7 @@ each April by 0%, 5% or 10% (rounded to the rupee), all ending
 | | 10% a year | ₹{% include inr.html n=x.step_10.invested %} | ₹{% include inr.html n=x.step_10.value %} | {{ x.step_10.xirr_pct }}% | ₹{% include inr.html n=x.step_10.last_instalment %} |{% endfor %}
 
 (The twenty-year run has {{ t20.step_0.instalments }} instalments, not 240, because the fund's first
-NAV (net asset value) in the data is 3 April 2006 — the same reason as in the SIP post. Its flat
+[NAV]({% post_url 2026-09-25-what-a-mutual-fund-is %}) (net asset value) in the data is 3 April 2006 — the same reason as in the SIP post. Its flat
 row matches that post's ₹{% include inr.html n=t20.step_0.value %}.)
 
 Reading the table:
@@ -158,14 +158,20 @@ it just means her bigger orchard is about planting more, not growing faster.
 
 </details>
 
+The SIP and XIRR calculator's second tab works out the XIRR of any list of
+dated cash flows. Enter a step-up plan's instalments as outflows and its
+final value as the last inflow, and it gives you that plan's XIRR.
+
+{% include tool.html id="sip-xirr" %}
+
 ## The thread through these posts
 
 A step-up SIP is one more product whose name describes the feature and hides
 the arithmetic — the same pattern as the other posts around this one. A
-"balanced" fund is a mix, not a promise; an arbitrage fund's equity is
-hedged; an international fund carries a currency and a limit; a ₹10 NFO (new fund offer) is a
-unit size; the riskometer scores ingredients; a fund can drift without
-changing its name; a side pocket decides who owns a loss. In every case the
+"balanced" fund is a mix, not a promise; an [arbitrage fund]({% post_url 2026-10-19-arbitrage-funds %})'s equity is
+hedged; an [international fund]({% post_url 2026-10-20-international-funds %}) carries a currency and a limit; a ₹10 [NFO]({% post_url 2026-10-21-nfos %}) (new fund offer) is a
+unit size; the [riskometer]({% post_url 2026-10-22-the-riskometer %}) scores ingredients; a fund can drift without
+changing its name; a [side pocket]({% post_url 2026-10-24-segregated-portfolios %}) decides who owns a loss. In every case the
 label is the marketing, and the mechanism is what happens to your money.
 
 ## Common mistakes

@@ -92,6 +92,7 @@ rss: RSS
 header_pages:
   - series.markdown
   - glossary.markdown
+  - tools.markdown
   - case-study.markdown
   - methodology.markdown
   - about.markdown

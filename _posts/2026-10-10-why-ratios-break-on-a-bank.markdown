@@ -40,7 +40,7 @@ out and there is nothing left to analyse.
 [Current ratio]({% post_url 2026-09-13-current-ratio %})? Almost all of a
 bank's liabilities are deposits its customers can withdraw at short notice,
 and most of its assets
-are loans due over years. Banks don't even split their balance sheet into
+are loans due over years. Banks don't even split their [balance sheet]({% post_url 2026-08-20-reading-a-balance-sheet %}) into
 current and non-current, so there's no current ratio to compute.
 [Inventory days]({% post_url 2026-09-07-inventory-days %})? There is no
 inventory.

@@ -82,7 +82,7 @@ YTM of the bonds it holds. Three reasons it isn't the return you'll get:
 1. **It's before expenses.** Subtract the expense ratio. A portfolio YTM of
    7.5% in a fund charging 0.8% is a 6.7% starting point.
 2. **The fund doesn't hold to maturity.** Open-ended funds buy and sell
-   constantly; as yields move, so do bond prices, and so does the NAV. Only a
+   constantly; as yields move, so do bond prices, and so does the [NAV]({% post_url 2026-09-25-what-a-mutual-fund-is %}). Only a
    *target-maturity* fund, held to its end date, roughly locks in its YTM.
 3. **Yields change.** Coupons received get reinvested at whatever the market
    yield is then, not at today's YTM.

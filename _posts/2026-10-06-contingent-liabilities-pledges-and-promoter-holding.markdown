@@ -28,7 +28,7 @@ shareholder needs to know and won't find in the statements:
    pattern**.
 
 All three live in disclosures around the statements: a note, a quarterly
-filing to the exchange, a table at the back of the annual report. This post
+filing to the exchange, a table at the back of the [annual report]({% post_url 2026-10-03-reading-an-annual-report %}). This post
 walks through each on Desi Bites Foods (fictional, as always): the
 contingent-liability note from the 31 March 2026 accounts, and the
 shareholding pattern filed with the exchange as of {{ sh.as_of | split: " (" | first }}.

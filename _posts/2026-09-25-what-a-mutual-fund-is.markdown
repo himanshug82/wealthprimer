@@ -171,7 +171,7 @@ the same answer regardless of whether its NAV is ₹10 or ₹500.
 - **Thinking a low NAV means a cheap fund.** The single most exploited
   misconception in Indian fund marketing. NAV level carries no information
   about value or future returns.
-- **Believing a new fund offer at ₹10 is a ground-floor opportunity.** A new
+- **Believing a [new fund offer]({{ '/2026/10/21/nfos/' | relative_url }}) at ₹10 is a ground-floor opportunity.** A new
   fund starts at ₹10 by convention. It has no track record, which is a
   disadvantage, not an entry price.
 - **Choosing IDCW for "regular income."** The payout comes out of your NAV

@@ -64,7 +64,7 @@ why.
   coherent, expected combination — not a red flag on its own.
 - **Comparing P/B across asset-light and asset-heavy businesses.** A
   brand-driven FMCG (fast-moving consumer goods) company or a services business carries most of its real
-  value off the balance sheet (brand, customer relationships, know-how) —
+  value off the [balance sheet]({% post_url 2026-08-20-reading-a-balance-sheet %}) (brand, customer relationships, know-how) —
   book value mechanically understates it, inflating P/B for reasons that
   have nothing to do with overvaluation.
 - **Treating low P/B as automatically a bargain.** A company with a low

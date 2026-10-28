@@ -54,7 +54,7 @@ how much of it was flows. The number that tells you what *investors* did is
 AUM rises. The logic is that running a ₹20,000 crore fund doesn't cost forty times
 what running a ₹500 crore fund does. Under the [SEBI (Mutual Funds) Regulations, 2026](https://www.sebi.gov.in/legal/regulations/apr-2026/securities-and-exchange-board-of-india-mutual-funds-regulations-2026_100744.html),
 in force from 1 April 2026, the cap is on the **base expense ratio** (BER), and for open-ended
-equity-oriented schemes other than index funds, ETFs (exchange-traded funds) and funds of funds
+equity-oriented schemes other than index funds, [ETFs]({{ '/2026/10/13/index-funds-vs-etfs/' | relative_url }}) (exchange-traded funds) and [funds of funds]({{ '/2026/10/20/international-funds/' | relative_url }})
 it is, per the daily net assets in each slab ({{ au.ber_regulation }}):
 
 | AUM slab | Maximum base expense ratio |
@@ -75,7 +75,7 @@ is where to check what you're really paying.
 
 **Liquidity.** A large fund can't buy meaningful positions in small companies
 without moving their prices. A ₹50,000 crore small-cap fund putting 2% into a
-company with a ₹1,000 crore market cap would own the whole company. This is why very large
+company with a ₹1,000 crore [market cap]({% post_url 2026-09-27-market-cap %}) would own the whole company. This is why very large
 small- and mid-cap funds sometimes stop accepting lump sums, and why "biggest
 fund in the category" is not a compliment in every category.
 

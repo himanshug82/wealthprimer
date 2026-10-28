@@ -37,7 +37,7 @@ Down-capture = average fund return in benchmark-down months
 Capture ratio = Up-capture ÷ Down-capture
 ```
 
-"Months" is the usual choice, built from month-end NAVs (**NAV — net asset value**, a fund's price per unit). Another common version takes the annualised compounded return of the up months (and of the down months), for fund and benchmark, instead of the simple average. The two give different answers on the same data. We use the simple average and show the compounded version once, further down.
+"Months" is the usual choice, built from month-end [NAVs]({% post_url 2026-09-25-what-a-mutual-fund-is %}) (**NAV — net asset value**, a fund's price per unit). Another common version takes the annualised compounded return of the up months (and of the down months), for fund and benchmark, instead of the simple average. The two give different answers on the same data. We use the simple average and show the compounded version once, further down.
 
 ## Worked example: a hybrid fund and an index fund, ten years
 

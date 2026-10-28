@@ -74,7 +74,7 @@ Debt risk value = average of (credit, interest-rate, liquidity scores)
 ```
 
 Cash scores 1. Hedged positions (a share plus the future sold against it)
-are left out entirely, which helps explain why an arbitrage fund scores low. Mixed
+are left out entirely, which helps explain why an [arbitrage fund]({% post_url 2026-10-19-arbitrage-funds %}) scores low. Mixed
 funds add up the weighted parts. Then:
 
 | Risk value | Level |

@@ -73,7 +73,7 @@ company *could* have grown without the IPO, and why the
 DPS from the [dividend yield post]({% post_url 2026-09-28-dividend-yield %}):
 ₹{{ b.dps }}, the dividend actually *paid* during FY25 (in August 2024). Strictly,
 that was the final dividend for FY24 (item 2 of the [notice of Britannia's 105th annual general meeting](https://media.britannia.co.in/Notice_of_105th_Annual_General_Meeting_pdf_8f7245e7e5.pdf)), so this is a trailing ratio — the
-dividend paid in FY25 divided by FY25 EPS. EPS and ROE from the
+dividend paid in FY25 divided by FY25 [EPS]({% post_url 2026-09-23-eps %}). EPS and ROE from the
 [audited FY25 results](https://media.britannia.co.in/Audited_Consolidated_Financial_Results_31_03_2025_74a7c03628.pdf)
 (year ended 31 March 2025). For illustration only.
 

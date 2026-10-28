@@ -55,7 +55,7 @@ worth grew the moment it took in fresh shareholder capital.
 
 From Britannia Industries' [audited consolidated FY25 results](https://media.britannia.co.in/Audited_Consolidated_Financial_Results_31_03_2025_74a7c03628.pdf)
 (year ended 31 March 2025, filed 8 May 2025). Shares outstanding here ({{ bi_market.shares_outstanding_cr }}
-crore) is derived from reported EPS and PAT, and matches the reported
+crore) is derived from reported [EPS]({{ '/2026/09/23/eps/' | relative_url }}) and PAT, and matches the reported
 equity share capital at a face value of ₹1 — a consistency check, not a
 separate estimate. For illustration only.
 

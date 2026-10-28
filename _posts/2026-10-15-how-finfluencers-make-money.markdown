@@ -51,7 +51,7 @@ incentive is to make the *skill* look learnable and the *results* look
 routine. Testimonials are selected. Losses aren't screenshot.
 
 **3. Sponsored content and brand deals.** A fund house, a fintech, an
-insurance seller or an NFO (new fund offer) pays for a mention, a review or an
+insurance seller or an [NFO]({{ '/2026/10/21/nfos/' | relative_url }}) (new fund offer) pays for a mention, a review or an
 "explainer." Sometimes disclosed with a small #ad; often not. The tell is
 content that reviews a product without ever finding a reason not to buy it.
 

@@ -169,7 +169,7 @@ Not nothing. A quarter is where you first see:
   the MD&A citing raw material, is the kind of thing that shows up
   quarterly and resolves — or doesn't — over the next two.
 - **A one-off.** Exceptional items, a fire, a plant shutdown. Quarterly
-  results are where you learn it happened; the annual report is where you
+  results are where you learn it happened; the [annual report]({% post_url 2026-10-03-reading-an-annual-report %}) is where you
   learn what it cost.
 - **Acquisitions changing the base.** Desi Bites bought a regional brand
   on 1 October 2025. From Q3 FY26 onwards, its reported revenue includes

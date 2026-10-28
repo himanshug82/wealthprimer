@@ -84,7 +84,7 @@ applied evenly across its twelve months:
 [SIP post's]({% post_url 2026-10-01-sips-xirr-and-timing-myths %})
 ₹{{ sip20.value | divided_by: 100000.0 | round: 1 }} lakh on ₹{{ sip20.invested | divided_by: 100000.0 | round: 1 }} lakh of real
 instalments, because this model spreads each year's return evenly across its
-months instead of using real daily NAVs.
+months instead of using real daily [NAVs]({% post_url 2026-09-25-what-a-mutual-fund-is %}).
 
 {{ s.sip_worst_over_best_x }} times. Not {{ s.sip_worst_over_best_x }}% — close to a factor of ten between the best and worst ordering of
 *exactly the same returns*.

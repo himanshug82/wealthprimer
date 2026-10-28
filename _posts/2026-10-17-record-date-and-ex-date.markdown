@@ -19,7 +19,7 @@ rules_as_of: "August 2026"
 
 ## What the two dates mean
 
-When a company declares a dividend (or a bonus, split or rights issue), it
+When a company declares a dividend (or a bonus, split or [rights issue]({{ '/2026/10/19/rights-issues/' | relative_url }})), it
 has to decide *who* gets it. Shares change hands all day, so it picks a
 date and says: whoever is on our register of shareholders at the end of
 that day is entitled. That's the **record date**.

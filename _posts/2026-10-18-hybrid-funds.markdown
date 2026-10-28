@@ -106,7 +106,7 @@ data, for illustration only. **This post takes no view on any of these funds**,
 and nothing here compares their managers — the point is what each
 *category's* rule allowed to happen.
 
-Returns over fixed calendar windows, each measured from the last NAV (net
+Returns over fixed calendar windows, each measured from the last [NAV]({% post_url 2026-09-25-what-a-mutual-fund-is %}) (net
 asset value, the per-unit value of the fund) of the previous period:
 
 | Window | Aggressive hybrid | Balanced advantage | Equity savings | Arbitrage | Nifty 50 index fund |

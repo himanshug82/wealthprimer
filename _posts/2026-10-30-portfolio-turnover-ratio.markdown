@@ -27,7 +27,7 @@ term: "Portfolio turnover ratio"
 
 The portfolio turnover ratio shows how much of its own size a fund bought or sold over a year. A fund that holds its stocks for years scores low. A fund that moves in and out all the time scores high.
 
-You'll find it in a fund's key statistics (the financial highlights) and on its factsheet, and the [factsheet post]({% post_url 2026-10-11-reading-a-factsheet %}) shows where. It matters because trading isn't free. Every purchase and sale has a cost, and that cost comes out of the NAV (net asset value, the fund's price per unit) that you own a slice of. This post is part of [Mutual Funds, Minus the Marketing]({{ '/series/mutual-funds/' | relative_url }}).
+You'll find it in a fund's key statistics (the financial highlights) and on its factsheet, and the [factsheet post]({% post_url 2026-10-11-reading-a-factsheet %}) shows where. It matters because trading isn't free. Every purchase and sale has a cost, and that cost comes out of the [NAV]({% post_url 2026-09-25-what-a-mutual-fund-is %}) (net asset value, the fund's price per unit) that you own a slice of. This post is part of [Mutual Funds, Minus the Marketing]({{ '/series/mutual-funds/' | relative_url }}).
 
 ## The formula
 

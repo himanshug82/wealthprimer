@@ -34,7 +34,7 @@ already changed what you own.
 The rules don't stop either. The list kept by SEBI (the Securities and
 Exchange Board of India) of of a scheme's **fundamental
 attributes** — the things a fund house can't change without writing to every
-unitholder and offering a {{ f.exit_days }}-day exit at NAV (net asset value) with no exit load — covers
+unitholder and offering a {{ f.exit_days }}-day exit at [NAV]({% post_url 2026-09-25-what-a-mutual-fund-is %}) (net asset value) with no exit load — covers
 the type of scheme, the investment objective and asset-allocation ranges,
 and the terms of issue: liquidity, fees and any safety net (paragraph
 {{ f.mc_para }} of SEBI's [Master Circular for Mutual Funds]({{ r.mc26.url }}),

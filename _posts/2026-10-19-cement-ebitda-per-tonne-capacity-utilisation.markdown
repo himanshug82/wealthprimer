@@ -121,7 +121,7 @@ the reported version for another.
 | Capex, ₹ crore (share of net sales) | {% include inr.html n=rp.capex_fy26_cr %} ({% include inr.html n=d.capex_intensity_fy26_pct %}%) | |
 
 8. PBIDT grew about twice as fast as net sales, and the margin rose — the
-   operating-leverage pattern. The release credits "strong volume growth,
+   operating-leverage pattern. The release credits "strong [volume growth]({% post_url 2026-10-18-fmcg-volume-growth-vs-price-growth %}),
    cost discipline, and the progressive integration of acquired assets".
 9. That last phrase matters: FY26 isn't a clean like-for-like year. Part of
    the growth came from integrating acquired plants, so not all of it is

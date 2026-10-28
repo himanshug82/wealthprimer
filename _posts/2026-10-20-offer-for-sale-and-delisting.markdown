@@ -35,7 +35,7 @@ You meet OFS in two places:
    investors bid on day T, retail investors on T+1; at least 10% of the offer
    is reserved for retail investors (bids up to ₹2 lakh) and at least 25%
    for mutual funds and insurers. It's open to companies with an average
-   market cap of ₹1,000 crore or more, with a ₹25 crore minimum size — and,
+   [market cap]({% post_url 2026-09-27-market-cap %}) of ₹1,000 crore or more, with a ₹25 crore minimum size — and,
    whatever their size, to promoters selling down to meet the minimum public
    shareholding rule.
 
@@ -93,7 +93,7 @@ and in one tranche can go below the ₹{{ x.min_size_cr }} crore minimum size.
 | Public holding after | {{ x.public_after_pct }}% |
 | Total shares | {{ x.shares_total_lakh_unchanged }} lakh — unchanged |
 
-The company raises nothing. Its share count, earnings per share and balance
+The company raises nothing. Its share count, [earnings per share]({% post_url 2026-09-23-eps %}) and balance
 sheet are exactly as before; only the names on the register change.
 
 ## Worked example 2: a reverse book building for Desi Bites

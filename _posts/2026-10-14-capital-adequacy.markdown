@@ -28,7 +28,7 @@ For a bank the question is identical and far more serious, because the
 "lenders" are depositors — millions of them, holding money they believe is
 safe. The [bank ratios post]({% post_url 2026-10-10-why-ratios-break-on-a-bank %})
 showed that HDFC Bank's equity is about {{ f25.equity_to_assets_pct }}% of its
-balance sheet. If loans worth more than that went bad and stayed bad,
+[balance sheet]({% post_url 2026-08-20-reading-a-balance-sheet %}). If loans worth more than that went bad and stayed bad,
 depositors would be the ones absorbing the loss.
 
 **Capital adequacy** is the regulatory answer. It says: a bank must hold

@@ -131,7 +131,7 @@ Three limitations worth carrying.
 
 **It treats upside and downside identically.** Standard deviation punishes a
 +15% month exactly as much as a −15% month. But investors do not experience
-those symmetrically at all. The **Sortino ratio** exists for this reason — it
+those symmetrically at all. The **[Sortino]({{ '/2026/10/28/sortino-and-information-ratio/' | relative_url }}) ratio** exists for this reason — it
 divides by downside deviation only, counting just the falls.
 
 **It assumes returns are normally distributed.** They aren't. Real market

@@ -147,10 +147,10 @@ for y in (3, 5, 7, 10):
           f"negative {100*(rc < 0).mean():4.1f}%")
 ```
 
-Prefer a spreadsheet? The
-[rolling returns calculator (Google Sheet)](https://docs.google.com/spreadsheets/d/1O8HKLVxA5V3rzWz1FfQ12wVqvQ0MfyvKEEK4EUTN3v4/edit?usp=sharing)
-runs the same windows on the same NAV data, and works on any daily series you
-paste in. It opens view-only; use File → Make a copy to change it.
+Prefer a spreadsheet? The calculator below runs the same windows on the same
+[NAV]({% post_url 2026-09-25-what-a-mutual-fund-is %}) data, and works on any daily series you paste in.
+
+{% include tool.html id="rolling-returns" %}
 
 Two details that matter. `DateOffset(years=y)` handles calendar years
 correctly, including leap years — don't use a fixed number of days. And

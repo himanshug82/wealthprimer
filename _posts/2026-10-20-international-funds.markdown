@@ -27,7 +27,7 @@ An Indian mutual fund can give you overseas exposure in two ways:
   technology stock, a Japanese carmaker — and holds them in its own
   portfolio.
 - **A fund of funds (FoF)** doesn't buy shares at all. It buys units of
-  *another* fund — often an overseas mutual fund or an exchange-traded fund
+  *another* fund — often an overseas mutual fund or an [exchange-traded fund]({% post_url 2026-10-13-index-funds-vs-etfs %})
   (ETF) listed abroad — and passes the result on to you. SEBI files FoFs under
   "other schemes" — SEBI being the Securities and Exchange Board of India, the
 markets regulator (the [categories post]({% post_url 2026-10-14-sebi-fund-categories-decoded %})

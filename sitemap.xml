@@ -23,4 +23,9 @@ sitemap: false
   {%- endif %}
 <url><loc>{{ p.url | replace: 'index.html', '' | absolute_url }}</loc></url>
 {%- endfor %}
+{%- for p in site.tools %}
+  {%- unless p.sitemap == false or p.noindex %}
+<url><loc>{{ p.url | absolute_url }}</loc></url>
+  {%- endunless %}
+{%- endfor %}
 </urlset>

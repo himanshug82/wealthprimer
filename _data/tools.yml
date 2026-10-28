@@ -1,11 +1,14 @@
 # Reader tools: calculators a reader can use without writing code.
 #
-# Drawn by /tools/ (tools.markdown) as cards, and inside posts by
+# Each tool also has a page at /tools/<id>/: a stub in _tools/<id>.md (title,
+# description, how-to) drawn by _layouts/tool.html. Drawn by /tools/
+# (tools.markdown) as cards, and inside posts by
 #   {% include tool.html id="rolling-returns" %}
-# which renders a callout linking the tool and the /tools/ page. Add a tool
+# which renders a callout linking the tool and its page. Add a tool
 # here first, then link it from the posts where a reader would reach for it.
 #
-#   id       anchor on /tools/ and the key the include looks up
+#   id       the page name (/tools/<id>/, _tools/<id>.md), the anchor on
+#            /tools/ and the key the include looks up
 #   name     sentence case
 #   kind     shown as a label ("Google Sheet", "Python notebook", ...)
 #   url      where the tool lives; a Google Sheet must be shared
@@ -13,7 +16,9 @@
 #   summary  one or two sentences on what it does, in plain words
 #   data     what comes prefilled, with its source and as-of date
 #   post     slug of the post that explains the method (shown on /tools/
-#            only once that post is published)
+#            and the tool's page only once that post is published)
+#   used_in  slugs of every post that links the tool with tool.html,
+#            the explainer included (check_posts.py keeps this honest)
 #   series   a slug from _data/series.yml, for the card's label
 #   built    date the tool was built and checked against its post
 #
@@ -32,6 +37,7 @@
   data: "UTI Nifty 50 Index Fund (regular, growth) NAV to 31 March 2026, from AMFI via mfapi.in"
   post: rolling-returns
   series: mutual-funds
+  used_in: [rolling-returns]
   built: 2026-10-25
 
 - id: sip-xirr
@@ -45,6 +51,7 @@
   data: "UTI Nifty 50 Index Fund (regular, growth) NAV to 31 March 2026, from AMFI via mfapi.in"
   post: sips-xirr-and-timing-myths
   series: mutual-funds
+  used_in: [sips-xirr-and-timing-myths, step-up-sips]
   built: 2026-10-25
 
 - id: dcf
@@ -59,4 +66,5 @@
   data: "Desi Bites Foods FY25 accounts and the base-case forecast from the case study (fictional company)"
   post: terminal-value-and-the-full-dcf
   series: fundamental-analysis
+  used_in: [forecasting-free-cash-flow, terminal-value-and-the-full-dcf, margin-of-safety-and-sensitivity]
   built: 2026-10-25

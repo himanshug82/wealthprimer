@@ -123,6 +123,15 @@ plugins:
 future: false
 permalink: /:year/:month/:day/:title/
 
+# --- reader tools ---
+# One page per tool at /tools/<id>/, so each calculator has a URL of its own that
+# can rank. Each _tools/<id>.md is a short stub (title, description, how-to); the
+# tool's facts come from _data/tools.yml and the page is drawn by _layouts/tool.html.
+collections:
+  tools:
+    output: true
+    permalink: /tools/:name/
+
 # --- front matter defaults ---
 # jekyll-seo-tag's og:image/twitter:image only reads `image:` from a page's own
 # front matter (not site config), so set it here as a default every page/post
@@ -132,6 +141,11 @@ defaults:
       path: ""
     values:
       image: /assets/logo.png
+  - scope:
+      path: ""
+      type: tools
+    values:
+      layout: tool
 
 # --- don't ship repo/editorial files as public pages ---
 exclude:

@@ -12,6 +12,8 @@ the single biggest lever on click-through a text blog has.
     python3 scripts/make_og_cards.py            # write cards for all posts
     python3 scripts/make_og_cards.py --check    # exit 1 if any are missing/stale
 
+Tool pages in _tools/ get assets/og/tool-<id>.png the same way.
+
 Output: assets/og/<slug>.png at 1200x630 (the size Twitter, Facebook, LinkedIn
 and Slack all render), checked in — the Pages build does not run this.
 
@@ -35,6 +37,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # _drafts too: a draft carries the same `image:` front matter it will keep when
 # it moves to _posts, so its card should exist before the promotion, not after.
 SOURCE_DIRS = [os.path.join(ROOT, "_posts"), os.path.join(ROOT, "_drafts")]
+# Tool pages (_tools/<id>.md) get a card too, as assets/og/tool-<id>.png, labelled "Tools".
+TOOLS_DIR = os.path.join(ROOT, "_tools")
 OUT = os.path.join(ROOT, "assets", "og")
 
 W, H = 1200, 630
@@ -168,14 +172,20 @@ def main():
         if os.path.isdir(d):
             entries += [(d, n) for n in sorted(os.listdir(d)) if n.endswith(".markdown")]
 
+    if os.path.isdir(TOOLS_DIR):
+        entries += [(TOOLS_DIR, n) for n in sorted(os.listdir(TOOLS_DIR)) if n.endswith(".md")]
+
     stale, written = [], 0
     for src_dir, name in entries:
-        slug = re.sub(r"^\d{4}-\d{2}-\d{2}-", "", name[: -len(".markdown")])
         fm = read_front_matter(os.path.join(src_dir, name))
         if not fm:
             continue
         title = fm.get("title", "")
-        series_title = series_titles.get(fm.get("series"), "")
+        if src_dir == TOOLS_DIR:
+            slug, series_title = "tool-" + name[: -len(".md")], "Tools"
+        else:
+            slug = re.sub(r"^\d{4}-\d{2}-\d{2}-", "", name[: -len(".markdown")])
+            series_title = series_titles.get(fm.get("series"), "")
         stamp = "%s\x1f%s" % (title, series_title)
         dest = os.path.join(OUT, slug + ".png")
 

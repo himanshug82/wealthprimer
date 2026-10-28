@@ -92,10 +92,12 @@ From HDFC Bank's [results for the year ended 31 March 2025]({{ b.company.source_
 | Provisions held against NPAs (GNPA − NNPA) | {% include inr.html n=f24.npa_provisions_held %} | {% include inr.html n=f25.npa_provisions_held %} |
 | **Provision coverage ratio** | **{{ f24.provision_coverage_pct }}%** | **{{ f25.provision_coverage_pct }}%** |
 
-So on 31 March 2025, of every ₹100 of loans about ₹1.33 was non-performing;
-the bank had set aside about ₹{{ f25.provision_coverage_pct | divided_by: 100 | times: 1.33 | round: 2 }}
-of that, leaving ₹0.43 still exposed. (The filing also notes GNPA excluding
-agricultural loans was 1.13% — farm lending has a seasonal NPA pattern that
+{% assign per100_provided = f25.provision_coverage_pct | divided_by: 100 | times: f25.gross_npa_pct_reported | round: 2 %}
+{% assign per100_exposed = f25.gross_npa_pct_reported | minus: per100_provided | round: 2 %}
+So on 31 March 2025, of every ₹100 of loans about ₹{{ f25.gross_npa_pct_reported }} was non-performing;
+the bank had set aside about ₹{{ per100_provided }} of that, leaving
+₹{{ per100_exposed }} still exposed. (The filing also notes GNPA excluding
+agricultural loans was {{ f25.gross_npa_pct_ex_agri_reported }}% — farm lending has a seasonal NPA pattern that
 banks often show separately.)
 
 Notice that coverage computed this way is *specific* provisions against NPAs.

@@ -46,6 +46,7 @@ reported:
     gross_npa_pct_reported: 1.33
     net_npa: 11320.43
     net_npa_pct_reported: 0.43
+    gross_npa_pct_ex_agri_reported: 1.13
     car_pct: 19.55
     tier1_pct: 17.7
     cet1_pct: 17.2

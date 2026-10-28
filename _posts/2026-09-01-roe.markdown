@@ -64,7 +64,7 @@ matched against PAT attributable to owners. For illustration only.
 | Average equity | {{ bi_bs24.total_equity_owners | plus: bi_bs25.total_equity_owners | divided_by: 2.0 }} |
 | **ROE** | **{{ site.data.real_company.ratios.FY25.roe }}%** |
 
-A {{ site.data.real_company.ratios.FY25.roe }}% ROE is high, even for a well-run FMCG business. It isn't
+That {{ site.data.real_company.ratios.FY25.roe }}% is well above Desi Bites' {{ site.data.case_study.ratios.FY25.roe }}% for the same year. The gap isn't
 because Britannia gets more sales out of its assets: its asset turnover
 (revenue ÷ average total assets) is {{ site.data.real_company.dupont.FY25.asset_turnover }}x, about the same as Desi Bites'
 {{ site.data.case_study.ratios.FY25.asset_turnover }}x. The drivers are a {{ site.data.real_company.ratios.FY25.net_margin }}% net margin, a small equity

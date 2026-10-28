@@ -58,6 +58,7 @@ R = {
         advances=2619608.61, fixed_assets=13655.40, other_assets=201004.57,
         savings_deposits=630500.0, current_deposits=314100.0,  # ₹6,305 bn and ₹3,141 bn as printed
         gross_npa=35222.64, gross_npa_pct_reported=1.33, net_npa=11320.43, net_npa_pct_reported=0.43,
+        gross_npa_pct_ex_agri_reported=1.13,   # "GNPA excluding agricultural loans", as printed
         car_pct=19.55, tier1_pct=17.7, cet1_pct=17.2, rwa=2660000.0,  # RWA ₹26,600 bn as printed
         eps_basic=88.29, eps_diluted=87.90, branches=9455,
     ),

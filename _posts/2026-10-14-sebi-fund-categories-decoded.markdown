@@ -73,7 +73,7 @@ then has one month to rebalance to the updated list.
 
 That's the equity group only. SEBI also defines debt categories (below),
 hybrid categories, life-cycle funds, and an "other schemes" group that holds
-index funds, ETFs and funds of funds — hybrids and the
+index funds, [ETFs]({% post_url 2026-10-13-index-funds-vs-etfs %}) and [funds of funds]({{ '/2026/10/20/international-funds/' | relative_url }}) — hybrids and the
 rest are out of scope here.
 
 Read the rules for what they *don't* say.
@@ -118,7 +118,7 @@ Flexi cap is the Open race. Multi cap is the Mixed one.
 
 Debt categories are sliced two ways at once, and the
 [debt funds post]({% post_url 2026-10-12-debt-funds-explained %}) explained why both
-matter: **duration** decides how much the NAV moves when rates move; **credit
+matter: **duration** decides how much the [NAV]({% post_url 2026-09-25-what-a-mutual-fund-is %}) moves when rates move; **credit
 quality** decides whether a borrower might not pay.
 
 Most debt categories are defined by **Macaulay duration** — the
@@ -146,7 +146,7 @@ straight lines.
 
 Every performance comparison — returns, [rolling returns]({% post_url 2026-09-27-rolling-returns %}),
 [drawdowns]({% post_url 2026-09-29-drawdown %}), [Sharpe ratios]({% post_url 2026-09-30-volatility-and-sharpe %}),
-rankings, star ratings — is only meaningful *within* a category, because the
+rankings, [star ratings]({{ '/2026/10/16/why-star-ratings-mislead/' | relative_url }}) — is only meaningful *within* a category, because the
 category constraint is what makes the funds comparable. A small-cap fund
 beating a large-cap fund over five years is not information about either
 manager; it is information about small caps over those five years.

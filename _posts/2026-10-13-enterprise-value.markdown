@@ -58,7 +58,7 @@ behind pairing EV with EBITDA and market cap with earnings.
 ## Worked example: Desi Bites Foods Ltd, at listing
 
 From the [case study](/case-study/)'s listing block. The IPO raised
-₹{% include inr.html n=site.data.case_study.listing.ipo_proceeds %} lakh of fresh cash that sits on the balance sheet, which is what makes
+₹{% include inr.html n=site.data.case_study.listing.ipo_proceeds %} lakh of fresh cash that sits on the [balance sheet]({% post_url 2026-08-20-reading-a-balance-sheet %}), which is what makes
 this example instructive:
 
 | ₹ lakh | |

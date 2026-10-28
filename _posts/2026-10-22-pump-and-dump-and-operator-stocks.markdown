@@ -51,7 +51,7 @@ Volume multiple                              =  average daily volume during / be
 ```
 
 Every price in the order is adjusted for a 10-for-1 share split in June 2022.
-A stock's *circuit* (price band) is the furthest its price may move in a
+A stock's *circuit* ([price band]({% post_url 2026-10-15-circuit-limits-and-price-bands %})) is the furthest its price may move in a
 day; a stock locked at the upper circuit has buyers queued and almost no
 sellers, and at the lower circuit the reverse.
 
@@ -153,7 +153,7 @@ SEBI and the exchanges don't wait for complaints. Two frameworks put
 restrictions on stocks that trip objective filters, often while a pump is
 still running:
 
-- **GSM, the Graded Surveillance Measure** — introduced by
+- **[GSM]({% post_url 2026-10-21-asm-and-gsm-surveillance %}), the Graded Surveillance Measure** — introduced by
   [NSE circular of 23 February 2017]({{ src.gsm_circular }}) for "securities
   which witness an abnormal price rise not commensurate with financial health
   and fundamentals like Earnings, Book value, Fixed assets, Net-worth, P/E
@@ -195,7 +195,7 @@ against unsolicited tips on SMS, WhatsApp and Telegram, including on
   looks like evidence.
 - **Assuming you'll get out in time.** The order records a month of lower
   circuits in December 2022. When a stock is locked at its lower limit
-  there are sellers and no buyers — a stop-loss order can't execute.
+  there are sellers and no buyers — a [stop-loss]({% post_url 2026-10-22-stop-loss-placement %}) order can't execute.
 - **Trusting technical signals on thin, manipulated stocks.** RSI, MACD and
   breakouts describe what the price did. When the price is the product, they
   describe the product.

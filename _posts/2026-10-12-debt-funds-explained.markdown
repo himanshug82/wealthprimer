@@ -29,7 +29,7 @@ and it earns in two quite different ways at once.
 **Accrual.** A bond pays interest (the *coupon*). A fund holding ₹100 crore
 of bonds yielding 7% is owed roughly ₹1.9 lakh of interest every single day,
 whether or not anyone is watching. That income is added to the fund's assets
-daily, which is why a debt fund's NAV tends to creep upward in a nearly
+daily, which is why a debt fund's [NAV]({% post_url 2026-09-25-what-a-mutual-fund-is %}) tends to creep upward in a nearly
 straight line.
 
 **Mark-to-market.** The fund also has to value every bond it holds at what

@@ -157,7 +157,7 @@ different things in different businesses. It's worth being just as clear
 about what a sector lens *can't* tell you.
 
 - **Most sector metrics are the company's own.** Utilisation, underlying
-  volume growth, cement profit per tonne, value of new business, ARPU —
+  [volume growth]({% post_url 2026-10-18-fmcg-volume-growth-vs-price-growth %}), cement profit per tonne, value of new business, ARPU —
   each is defined and
   calculated by the company, and many sit outside the audited financial
   statements. They're useful, but they deserve the same scepticism as any

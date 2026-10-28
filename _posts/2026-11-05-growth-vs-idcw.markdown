@@ -30,7 +30,7 @@ The [Master Circular for Mutual Funds]({{ mc.url }}) from SEBI (the Securities a
 
 - **Names (12.1).** The options are called "Payout of Income Distribution cum capital withdrawal option", "Reinvestment of Income Distribution cum capital withdrawal option" and "Transfer of Income Distribution cum capital withdrawal plan".
 - **Capital (12.2, 12.3).** Offer documents must say that amounts can be distributed out of investors' capital (the *equalisation reserve*, which the circular describes as the part of the sale price that represents realised gains), and the account statement must separate income distribution (NAV appreciation) from capital distribution.
-- **Not assured (12.5.1(a)).** The trustees decide the amount and the record date, and the payout is made "subject to availability of distributable surplus".
+- **Not assured (12.5.1(a)).** The trustees decide the amount and the [record date]({% post_url 2026-10-17-record-date-and-ex-date %}), and the payout is made "subject to availability of distributable surplus".
 - **NAV falls (12.5.1(b), (e), for unlisted schemes).** The NAV is adjusted at close of business on the record date, and the notice must state that the NAV will fall by the payout and statutory levy. Paragraph 12.5.2 relaxes the notice for schemes that pay up to monthly. Advertisements of payouts must say the same (14.1.3).
 - **Timing (12.4).** Payment is due within {{ reg.idcw_payment.days }} working days of the record date.
 

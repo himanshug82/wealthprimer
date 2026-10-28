@@ -66,7 +66,7 @@ residents only (sections 196 to 198 and 156). An NRI can't use either.
 
 ## Worked example: two real funds
 
-Same terms, real NAVs: an NRI redeems the same UTI Nifty 50 Index Fund
+Same terms, real [NAVs]({% post_url 2026-09-25-what-a-mutual-fund-is %}): an NRI redeems the same UTI Nifty 50 Index Fund
 holding the [equity post]({% post_url 2026-11-19-equity-and-equity-funds %}) used (₹{% include inr.html n=g.ls_invested %} invested on
 {{ g.ls_buy_date }}), plus ₹{% include inr.html n=x.gilt_invested %} put into
 UTI Gilt Fund (regular plan, growth — the fund from the

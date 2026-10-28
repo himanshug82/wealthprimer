@@ -134,7 +134,7 @@ written by the people whose bonuses depend on the answer, which makes it
 something to read against the numbers rather than instead of them.
 
 A practical test: for each claim in the MD&A, find the line in the
-statements that would be true if the claim were true. "Strong volume growth"
+statements that would be true if the claim were true. "Strong [volume growth]({{ '/2026/10/18/fmcg-volume-growth-vs-price-growth/' | relative_url }})"
 should show up as revenue growing faster than any price increase
 mentioned. "Improved operational efficiency" should show up as opex growing
 slower than revenue. "Prudent working capital management" should show up in

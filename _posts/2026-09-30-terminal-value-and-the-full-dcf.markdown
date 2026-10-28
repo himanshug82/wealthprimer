@@ -27,7 +27,7 @@ into a single figure: the **terminal value**, the worth of all remaining
 cash flows as of the final forecast year.
 
 It sounds like a tidying-up exercise. It is usually most of the answer. In
-the model below it's **{{ r.terminal_pct_of_ev }}% of the enterprise value** — the five years we
+the model below it's **{{ r.terminal_pct_of_ev }}% of the [enterprise value]({{ '/2026/10/13/enterprise-value/' | relative_url }})** — the five years we
 carefully forecast account for barely a quarter. That ratio is typical, and
 it should make you handle this input more carefully than any other in the
 model, not less.
@@ -210,11 +210,10 @@ print(f"Enterprise value {ev:8.1f}")
 print(f"Value per share  {equity / SHARES:8.2f}")
 ```
 
-Prefer a spreadsheet? The
-[Desi Bites DCF calculator (Google Sheet)](https://docs.google.com/spreadsheets/d/1bcK0b7i_-xZKrH_MGSuW0b78CPBrN31v3LEC-ssNfro/edit?usp=sharing)
-has the same model, the reverse DCF and the sensitivity grid, with a checks tab
-that reproduces this post's figures. It opens view-only; use File → Make a copy
-to change the assumptions.
+Prefer a spreadsheet? The calculator below has the same model, the reverse DCF
+and the sensitivity grid.
+
+{% include tool.html id="dcf" note="Its checks tab reproduces this post's figures." %}
 
 ## Common mistakes
 

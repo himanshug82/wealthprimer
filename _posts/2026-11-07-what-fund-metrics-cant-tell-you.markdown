@@ -58,7 +58,7 @@ None of this is an argument against measuring. It's an argument for asking, ever
 Some things don't appear in any of the numbers above.
 
 - **The manager next year.** The [manager changes post]({% post_url 2026-10-23-manager-changes-and-style-drift %}) showed how a fund can change while keeping its name. A track record belongs to whoever earned it.
-- **Costs that aren't itemised.** The price impact of a fund's own trading isn't itemised as an expense. Our made-up busy fund lost about {{ tc.fund_b.impact_drag_pct_of_aum }}% of its assets a year to it, against about {{ tc.fund_a.impact_drag_pct_of_aum }}% for a quiet one, on an assumed impact cost.
+- **Costs that aren't itemised.** The price impact of a fund's own trading isn't itemised as an expense. Our made-up busy fund lost about {{ tc.fund_b.impact_drag_pct_of_aum }}% of its assets a year to it, against about {{ tc.fund_a.impact_drag_pct_of_aum }}% for a quiet one, on an assumed [impact cost]({% post_url 2026-10-14-bid-ask-spread-and-liquidity %}).
 - **Your own behaviour.** A fund's drawdown is a number. Sitting through it is a decision, and no table measures whether you would.
 - **Tax and your goals.** None of these metrics knows your tax position, your horizon, or what the money is for.
 

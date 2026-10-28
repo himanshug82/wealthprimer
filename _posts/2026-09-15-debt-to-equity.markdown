@@ -19,7 +19,7 @@ longer-term question: how is the business funded at all — by shareholders'
 own money, or by borrowed money?
 
 This series defines "debt" as interest-bearing borrowings only (term loans,
-bonds, working capital debt) — not every liability on the balance sheet.
+bonds, working capital debt) — not every liability on the [balance sheet]({% post_url 2026-08-20-reading-a-balance-sheet %}).
 Trade payables, for instance, aren't counted here, even though they're
 technically a liability too; they showed up in their own right back in
 [creditor days]({% post_url 2026-09-09-creditor-days %}). Lease liabilities — which Indian accounting rules

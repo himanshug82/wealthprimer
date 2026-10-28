@@ -53,7 +53,7 @@ The line isn't in the same place for everything:
 | Specified debt funds (more than 65% in debt) bought on/after 1 Apr 2023 | *No long-term rate at all — slab rate always* |
 
 The gold rows reflect a Finance Act 2025 change that applies from FY 2025-26
-onward: gold ETFs and gold funds of funds are no longer lumped in with debt
+onward: gold [ETFs]({% post_url 2026-10-13-index-funds-vs-etfs %}) and gold [funds of funds]({% post_url 2026-10-20-international-funds %}) are no longer lumped in with debt
 funds, so a listed gold ETF goes long-term after {{ r.equity_holding_months }} months and an unlisted
 gold fund of funds after {{ r.other_holding_months }}.
 

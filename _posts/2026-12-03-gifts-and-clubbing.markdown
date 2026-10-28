@@ -142,7 +142,7 @@ child's name:
 | Tax at 30% + cess | ₹{% include inr.html n=x.minor_tax_with_cess %} |
 
 **Fund units given to a spouse — real prices.** Rahul bought ₹{% include inr.html n=x.ls_invested %} of
-UTI Nifty 50 Index Fund (regular plan, growth) on {{ x.ls_buy_date }} at a NAV of
+UTI Nifty 50 Index Fund (regular plan, growth) on {{ x.ls_buy_date }} at a [NAV]({% post_url 2026-09-25-what-a-mutual-fund-is %}) of
 ₹{{ x.ls_buy_nav }}, and later gave the units to Priya. She redeems them on
 {{ x.ls_sell_date }} at ₹{{ x.ls_sell_nav }} (NAVs from AMFI, as of 31 March 2026,
 used for illustration only; we apply the rules for {{ v.financial_year }}). This is the

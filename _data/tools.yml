@@ -1,0 +1,62 @@
+# Reader tools: calculators a reader can use without writing code.
+#
+# Drawn by /tools/ (tools.markdown) as cards, and inside posts by
+#   {% include tool.html id="rolling-returns" %}
+# which renders a callout linking the tool and the /tools/ page. Add a tool
+# here first, then link it from the posts where a reader would reach for it.
+#
+#   id       anchor on /tools/ and the key the include looks up
+#   name     sentence case
+#   kind     shown as a label ("Google Sheet", "Python notebook", ...)
+#   url      where the tool lives; a Google Sheet must be shared
+#            "Anyone with the link: Viewer" before it goes here
+#   summary  one or two sentences on what it does, in plain words
+#   data     what comes prefilled, with its source and as-of date
+#   post     slug of the post that explains the method (shown on /tools/
+#            only once that post is published)
+#   series   a slug from _data/series.yml, for the card's label
+#   built    date the tool was built and checked against its post
+#
+# Rules from CLAUDE.md apply: no output that reads as a recommendation or a
+# fair value for a real listed company (valuation tools run on Desi Bites or
+# a reader's own inputs), and prefilled market data is at least 3 months old.
+
+- id: rolling-returns
+  name: Rolling returns calculator
+  kind: Google Sheet
+  url: "https://docs.google.com/spreadsheets/d/1O8HKLVxA5V3rzWz1FfQ12wVqvQ0MfyvKEEK4EUTN3v4/edit?usp=sharing"
+  summary: >-
+    Paste any daily NAV or index series and see the spread of N-year CAGRs
+    (compound annual growth rates) across every start date: windows counted,
+    minimum, median, maximum and the share of windows below a threshold.
+  data: "UTI Nifty 50 Index Fund (regular, growth) NAV to 31 March 2026, from AMFI via mfapi.in"
+  post: rolling-returns
+  series: mutual-funds
+  built: 2026-10-25
+
+- id: sip-xirr
+  name: SIP and XIRR calculator
+  kind: Google Sheet
+  url: "https://docs.google.com/spreadsheets/d/1GhKA_QTOxRAM2_nokMzj-ouciaRpHZYwYuojFxcXSBo/edit?usp=sharing"
+  summary: >-
+    Work out what a monthly SIP (systematic investment plan) became and its
+    XIRR (extended internal rate of return) for any start and end date. A
+    second tab takes any list of dated cash flows.
+  data: "UTI Nifty 50 Index Fund (regular, growth) NAV to 31 March 2026, from AMFI via mfapi.in"
+  post: sips-xirr-and-timing-myths
+  series: mutual-funds
+  built: 2026-10-25
+
+- id: dcf
+  name: Desi Bites DCF calculator
+  kind: Google Sheet
+  url: "https://docs.google.com/spreadsheets/d/1bcK0b7i_-xZKrH_MGSuW0b78CPBrN31v3LEC-ssNfro/edit?usp=sharing"
+  summary: >-
+    Change the forecast for Desi Bites Foods, the blog's fictional company, and
+    watch enterprise value, the terminal value's share and value per share
+    move. Includes a reverse DCF (discounted cash flow) and a sensitivity grid
+    of WACC (weighted average cost of capital) against terminal growth.
+  data: "Desi Bites Foods FY25 accounts and the base-case forecast from the case study (fictional company)"
+  post: terminal-value-and-the-full-dcf
+  series: fundamental-analysis
+  built: 2026-10-25

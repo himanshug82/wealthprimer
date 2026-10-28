@@ -139,7 +139,7 @@ is generally taxed year by year as it accrues, while fund gains are taxed
 when you sell, under different rules; the tax series covers how each is taxed. After
 tax, a deposit whose pre-tax real return is about {{ sf.real_cagr_pct }}% a
 year can end up close to zero or below it, depending on your slab. The
-funds' figures are regular-plan NAVs, so they're already after the
+funds' figures are regular-plan [NAVs]({% post_url 2026-09-25-what-a-mutual-fund-is %}), so they're already after the
 [expense ratio]({% post_url 2026-09-28-expense-ratios-direct-vs-regular %});
 direct plans would show a little more.
 

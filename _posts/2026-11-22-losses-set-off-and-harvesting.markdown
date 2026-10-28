@@ -83,7 +83,7 @@ only thing keeping the voucher alive.
 
 ## Worked example: a real loss
 
-The fund NAV (net asset value, the per-unit price) history used throughout
+The fund [NAV]({% post_url 2026-09-25-what-a-mutual-fund-is %}) (net asset value, the per-unit price) history used throughout
 this blog — UTI Nifty 50 Index Fund (regular plan, growth), NAVs from AMFI
 (the Association of Mutual Funds in India), as of 31 March 2026, used for
 illustration only — contains an actual loss. A ₹{% include inr.html n=l.monthly_amount %} monthly

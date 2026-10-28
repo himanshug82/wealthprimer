@@ -52,7 +52,7 @@ Desi Bites' issue was {{ d.issue_type | downcase }}: {{ d.fresh_issue_shares_lak
 ₹{% include inr.html n=d.issue_size %} lakh, all of it going into the business. That's the cleaner
 story — the company needs capital and is asking for it.
 
-An **offer for sale (OFS)** is the other kind. The company gets nothing;
+An **[offer for sale]({{ '/2026/10/20/offer-for-sale-and-delisting/' | relative_url }}) (OFS)** is the other kind. The company gets nothing;
 early investors or the promoter are cashing out, and you are buying from
 people who know the business far better than you do. Plenty of legitimate
 IPOs are mostly OFS — venture funds need exits — but an IPO that's 90% OFS
@@ -138,7 +138,7 @@ revenue — on {{ d.related_party.credit_terms }}. That's not necessarily wrong;
 distributors are how many Indian consumer businesses started. It is a
 channel through which revenue can be pulled forward or margins shifted,
 and the longer credit terms are a small example of the favour flowing one
-way. This is the same note you'll read in every annual report afterwards,
+way. This is the same note you'll read in every [annual report]({% post_url 2026-10-03-reading-an-annual-report %}) afterwards,
 and the prospectus is where you first see how large it is.
 
 ## 5. The financials: restated, and three years of them

@@ -50,7 +50,7 @@ Days to sell a fund pro rata (every holding in proportion):
     Days  =  the slowest holding's days — the fund isn't done until it is
 ```
 
-NSE Indices describes impact cost as "the percentage mark up observed while
+NSE Indices describes [impact cost]({% post_url 2026-10-14-bid-ask-spread-and-liquidity %}) as "the percentage mark up observed while
 buying / selling the desired quantity of a stock with reference to its ideal
 price (best buy + best sell) / 2" ([methodology
 document](https://www.niftyindices.com/Methodology/Method_NIFTY_Equity_Indices.pdf),

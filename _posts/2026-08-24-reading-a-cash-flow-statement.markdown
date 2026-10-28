@@ -42,7 +42,7 @@ splits the answer into three buckets:
 
 Add the three together and you get the change in the company's cash balance
 for the year — which should match the difference between last year's closing
-cash and this year's, on the balance sheet. If it doesn't, something's wrong.
+cash and this year's, on the [balance sheet]({% post_url 2026-08-20-reading-a-balance-sheet %}). If it doesn't, something's wrong.
 
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>

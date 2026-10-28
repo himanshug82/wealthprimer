@@ -15,7 +15,7 @@ term: "Interest coverage"
 ## What interest coverage means
 
 [Debt-to-equity]({% post_url 2026-09-15-debt-to-equity %}) and the [equity multiplier]({% post_url 2026-09-16-equity-multiplier %}) both look at how much debt
-and leverage sit on the balance sheet. **Interest coverage** asks a more
+and leverage sit on the [balance sheet]({% post_url 2026-08-20-reading-a-balance-sheet %}). **Interest coverage** asks a more
 immediate question: whatever the debt load, can the company comfortably
 afford the interest payments on it out of its regular operating profit?
 

@@ -75,7 +75,7 @@ decides what it costs you to spend it.
 ## Worked example: sixty instalments, one redemption
 
 A ₹{% include inr.html n=s.monthly_amount %} monthly SIP into the fund used throughout this blog — UTI
-Nifty 50 Index Fund (regular plan, growth), NAVs (net asset values, the
+Nifty 50 Index Fund (regular plan, growth), [NAVs]({% post_url 2026-09-25-what-a-mutual-fund-is %}) (net asset values, the
 per-unit prices) from AMFI (the Association of Mutual Funds in India), as of
 31 March 2026, used for illustration only — running from
 {{ s.start | date: "%-d %B %Y" }} to {{ s.last_instalment | date: "%-d %B %Y" }}, redeemed in full on {{ s.redemption_date | date: "%-d %B %Y" }}:

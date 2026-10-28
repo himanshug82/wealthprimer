@@ -29,7 +29,7 @@ this pay me per rupee" numbers.
 [free cash flow]({% post_url 2026-09-19-free-cash-flow %}) instead of
 accounting profit: cash the business actually generated after capex (capital
 expenditure), divided
-by market capitalisation. It is the stricter of the two, for the reasons the
+by [market capitalisation]({% post_url 2026-09-27-market-cap %}). It is the stricter of the two, for the reasons the
 [OCF/PAT post]({% post_url 2026-09-20-ocf-pat %}) laid out — profit is an
 opinion, cash is a fact. Strictly, free cash flow before interest belongs to
 lenders as well as shareholders, so it pairs more consistently with

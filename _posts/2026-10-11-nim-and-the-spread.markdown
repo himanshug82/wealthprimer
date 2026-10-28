@@ -47,7 +47,7 @@ base. Banks quote NIM; analysts often back out the spread to see *which side*
 moved.
 
 Two words in the formula matter enormously: **average** and
-**interest-earning**. The balance sheet is a snapshot at 31 March; the
+**interest-earning**. The [balance sheet]({% post_url 2026-08-20-reading-a-balance-sheet %}) is a snapshot at 31 March; the
 interest was earned over twelve months on whatever balances existed each day.
 Using year-end balances instead of averages, or total assets instead of the
 assets that actually earn interest, gives a different — usually lower — number.
@@ -168,7 +168,7 @@ and the two sides of the spread move at different speeds.
   wholesale borrowings. That is the next post, on CASA.
 - **Asset mix.** Unsecured retail loans yield more than home loans, which
   yield more than government bonds. A bank can raise its NIM by lending
-  riskier — which is not the same as being a better bank, and the NPA post
+  riskier — which is not the same as being a better bank, and the [NPA]({{ '/2026/10/13/gnpa-nnpa-and-provisions/' | relative_url }}) post
   later in this module is about the bill for that.
 
 None of this says where HDFC Bank's margin is going. It says what to watch

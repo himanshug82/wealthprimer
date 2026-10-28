@@ -124,7 +124,7 @@ Then the cost of debt, which for once comes straight out of the
 
 Now the weights. These use **market** values, not book values — the whole
 point is what capital costs today, and Desi Bites' equity is worth its
-₹{% include inr.html n=site.data.case_study.listing.market_cap %} lakh market capitalisation at the IPO price, not the
+₹{% include inr.html n=site.data.case_study.listing.market_cap %} lakh [market capitalisation]({% post_url 2026-09-27-market-cap %}) at the IPO price, not the
 ₹{% include inr.html n=site.data.case_study.listing.post_ipo_equity %} lakh of book equity:
 
 | | ₹ lakh | Weight |

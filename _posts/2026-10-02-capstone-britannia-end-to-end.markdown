@@ -172,7 +172,7 @@ P/B of {{ m.pb }}x. P/B = P/E × ROE, so a business earning {{ r.roe }}% on its 
 value mechanically produces a high P/B at any given P/E. Part of the reason
 ROE is that high is that the assets doing the work (brands, distribution
 relationships, shelf position) were built through the P&L over decades and
-appear nowhere on the balance sheet. That explains *why* the number is large;
+appear nowhere on the [balance sheet]({% post_url 2026-08-20-reading-a-balance-sheet %}). That explains *why* the number is large;
 whether {{ m.pb }}x is justified is exactly the question this post doesn't answer.
 
 The PEG of ~35.9 is the one to be most careful with, and the

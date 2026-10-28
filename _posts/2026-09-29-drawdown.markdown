@@ -66,7 +66,7 @@ Every fall of more than 15% from a peak, with how long it took to get back:
 
 \* The January 2026 row is still open. The data ends on {{ f.regular_end | date: "%-d %B %Y" }}, with the
 fund still more than 15% below its January 2026 high, so the "trough" there is
-just the last NAV we have. It could fall further or recover; this table can't
+just the last [NAV]({% post_url 2026-09-25-what-a-mutual-fund-is %}) we have. It could fall further or recover; this table can't
 tell you which.
 
 The worst was a fall of **{{ dd.worst_pct | abs }}%**, on {{ dd.worst_date | date: "%-d %B %Y" }}.

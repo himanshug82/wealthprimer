@@ -106,7 +106,7 @@ The same problem hits returns. Britannia's [ROA]({% post_url 2026-09-05-roa %})
 same year was {{ o.hdfc_bank_roa }}% — Britannia's is about {{ roa_ratio }} times as high. That
 isn't a verdict on either; it's what the [banks module]({% post_url 2026-10-10-why-ratios-break-on-a-bank %})
 explained. A bank's assets are loans funded mostly with other people's money,
-so it earns a thin return on a huge balance sheet and multiplies it with
+so it earns a thin return on a huge [balance sheet]({% post_url 2026-08-20-reading-a-balance-sheet %}) and multiplies it with
 leverage (about {% include inr.html n=o.hdfc_bank_leverage %}x assets to equity), landing at
 [ROE]({% post_url 2026-09-01-roe %}) (return on equity) of {{ o.hdfc_bank_roe }}%.
 A biscuit maker's assets are ovens and inventory it owns outright. ROA is
@@ -161,14 +161,14 @@ business this series has used from the start.
   ([relative valuation]({% post_url 2026-09-26-relative-valuation-comparables %})
   made the same point about multiples).
 - **Treating company-defined metrics as standard.** "PBIDT", "operating
-  PBIDT per tonne", "underlying volume growth", "before one-time actions" —
+  PBIDT per tonne", "[underlying volume growth]({{ '/2026/10/18/fmcg-volume-growth-vs-price-growth/' | relative_url }})", "before one-time actions" —
   each company chooses its own definitions, and many of these numbers sit
   outside the audited statements. Before comparing two companies' versions,
   read the footnote that defines each one.
 - **Letting the lens replace the basics.** A sector KPI explains a
   company's economics; it doesn't replace the balance sheet, the cash-flow
   statement or the red-flag checks from earlier in this series. A cement
-  company with a great EBITDA per tonne can still be over-borrowed.
+  company with a great [EBITDA per tonne]({{ '/2026/10/19/cement-ebitda-per-tonne-capacity-utilisation/' | relative_url }}) can still be over-borrowed.
 
 **Takeaway:** The same ratio measures different things in different
 businesses, so it can only be compared within a sector. Each sector has a

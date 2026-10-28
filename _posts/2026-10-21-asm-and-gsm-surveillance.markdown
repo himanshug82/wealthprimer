@@ -95,7 +95,7 @@ up for ₹{% include inr.html n=sv.trade_value %} worth of shares at each stage?
    can repeat session after session.
 
 For a company the size of our [fictional](/case-study/) Desi Bites
-(₹{{ sv.desi_mcap_cr }} crore market cap), ESM is the framework in play: every company under
+(₹{{ sv.desi_mcap_cr }} crore [market cap]({% post_url 2026-09-27-market-cap %})), ESM is the framework in play: every company under
 ₹{% include inr.html n=sv.esm_mcap_limit_cr %} crore is in its universe, and a burst of unusual price moves could
 put it on the list. Being in the universe isn't being on the list.
 

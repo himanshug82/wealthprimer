@@ -20,7 +20,7 @@ Every share has a **face value** (also called par or nominal value): the
 amount printed on it, set when the shares are issued (a split changes it
 later) — ₹10 is common in
 India, ₹1 and ₹2 also. It is an accounting quantity: share capital on the
-balance sheet is face value × number of shares, and dividends are often
+[balance sheet]({% post_url 2026-08-20-reading-a-balance-sheet %}) is face value × number of shares, and dividends are often
 declared as a percentage of it ("150% dividend" on a ₹10 face value means
 ₹15 a share).
 
@@ -82,7 +82,7 @@ capitalised ₹{% include inr.html n=a1.reserves_capitalised_lakh %} lakh of res
 ₹{{ bo.face_value }}); the split left share capital alone and halved the face value.
 
 For a real-world instance: HDFC Bank issued 1:1 bonus shares in August 2025.
-Its share price roughly halved on the ex-date, its EPS and book value per
+Its share price roughly halved on the [ex-date]({{ '/2026/10/17/record-date-and-ex-date/' | relative_url }}), its [EPS]({% post_url 2026-09-23-eps %}) and book value per
 share halved with it, and anyone comparing its post-bonus EPS with its FY25
 EPS without adjusting would conclude profit had collapsed. It hadn't. This is
 why any per-share history — EPS, DPS, price charts — has to be *adjusted* for
@@ -112,7 +112,7 @@ smaller piece of the same pizza.
 ## Common mistakes
 
 - **Thinking a post-split share is cheap.** Same company, smaller slice.
-  Compare P/E, P/B or EV (enterprise value) multiples, never price.
+  Compare P/E, P/B or EV ([enterprise value]({{ '/2026/10/13/enterprise-value/' | relative_url }})) multiples, never price.
 - **Comparing unadjusted per-share figures across a bonus or split.** EPS
   "falling" 50% on the ex-date is arithmetic, not performance.
 - **Treating a bonus as free money.** You own the same fraction of the same

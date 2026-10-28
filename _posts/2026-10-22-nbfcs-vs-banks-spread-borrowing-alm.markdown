@@ -23,7 +23,7 @@ term: "ALM (asset-liability management)"
 
 An NBFC (non-banking financial company) makes loans much as a bank does —
 to buy a phone, a car, a house, to run a small business. The difference is
-on the other side of the balance sheet. The Reserve Bank of India's
+on the other side of the [balance sheet]({% post_url 2026-08-20-reading-a-balance-sheet %}). The Reserve Bank of India's
 [FAQ on NBFCs]({{ bj.rbi_faq_url }}) (updated as on {{ bj.rbi_faq_as_of }})
 lists the differences from banks plainly: NBFCs **cannot accept demand
 deposits**, they aren't part of the payment and settlement system (no
@@ -114,7 +114,7 @@ lower.
 3. Its yield on loans was about {{ d.yield_on_avg_auf_pct }}% —
    far above the bank's. That's what a lender without cheap deposits has to
    do: lend where rates are higher. The presentation splits its loans
-   (by AUM, assets under management) as {{ ot.lending_mix.urban }}% urban,
+   (by [AUM]({% post_url 2026-10-08-aum %}), assets under management) as {{ ot.lending_mix.urban }}% urban,
    {{ ot.lending_mix.rural }}% rural, {{ ot.lending_mix.msme }}% MSME
    (micro, small and medium enterprises), {{ ot.lending_mix.commercial }}%
    commercial and {{ ot.lending_mix.mortgages }}% mortgages.

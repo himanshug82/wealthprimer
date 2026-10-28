@@ -69,10 +69,10 @@ Britannia's net debt is *negative* — it holds more cash and liquid
 investments than it owes in borrowings. It's in a net cash position, not a
 net debt one — so read the negative ratio as "no net debt", not as a
 negative number of years. That rounds off what the last few posts have shown
-for Britannia: a current ratio and quick ratio that looked tight in
+for Britannia: a current ratio and [quick ratio]({% post_url 2026-09-14-quick-ratio %}) that looked tight in
 isolation, a low debt-to-equity, an equity multiplier explained by supplier
 financing rather than borrowing, comfortable interest coverage — and now,
-a balance sheet with more cash than debt on it. None of these ratios told
+a [balance sheet]({% post_url 2026-08-20-reading-a-balance-sheet %}) with more cash than debt on it. None of these ratios told
 the whole story alone; read together, they tell a much fuller one.
 
 ## Common mistakes

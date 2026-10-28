@@ -61,7 +61,7 @@ The answer is dividends.
   dividends are reinvested.
 
 A fund holding those fifty companies actually *receives* the dividends. They
-land in the fund and raise its NAV. So a fund measured against a price index
+land in the fund and raise its [NAV]({% post_url 2026-09-25-what-a-mutual-fund-is %}). So a fund measured against a price index
 gets credited with the entire
 [dividend yield]({% post_url 2026-09-28-dividend-yield %}) of the market as apparent
 outperformance — for doing nothing at all.

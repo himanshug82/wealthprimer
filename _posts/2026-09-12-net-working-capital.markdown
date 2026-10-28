@@ -17,7 +17,7 @@ term: "Net working capital"
 
 The last few posts looked at the individual pieces of a company's operating
 cycle — [inventory]({% post_url 2026-09-07-inventory-days %}), [receivables]({% post_url 2026-09-08-debtor-days %}), and [payables]({% post_url 2026-09-09-creditor-days %}). This post
-asks a different question about the same balance sheet: does the company
+asks a different question about the same [balance sheet]({% post_url 2026-08-20-reading-a-balance-sheet %}): does the company
 have enough short-term resources to comfortably cover its short-term
 obligations? **Net working capital (NWC)** is the starting point.
 
@@ -61,7 +61,7 @@ company than Desi Bites, yet its net working capital cushion
 (₹{% include inr.html n=site.data.real_company.ratios.FY25.net_working_capital %} crore) is proportionally much thinner relative to
 its current liabilities than Desi Bites' is. That's not a red flag on its
 own — it's the first clue in a story the next two posts (on the current
-ratio and the quick ratio) will unpack properly.
+ratio and the [quick ratio]({{ '/2026/09/14/quick-ratio/' | relative_url }})) will unpack properly.
 
 ## Common mistakes
 

@@ -31,7 +31,7 @@ it sits on top of a profit figure that the
 to be partly discretionary and strongly cyclical — the same bank can post
 half the profit in a bad credit year with no change in franchise.
 
-What a bank does have is a balance sheet where most assets are financial —
+What a bank does have is a [balance sheet]({% post_url 2026-08-20-reading-a-balance-sheet %}) where most assets are financial —
 loans, bonds, cash — carried at, or close to, what they are worth. A factory's
 book value is an accounting artefact of old purchase prices and depreciation
 schedules. A bank's book value is a reasonable first estimate of what the
@@ -63,7 +63,7 @@ One wrinkle first. HDFC Bank issued 1:1 bonus shares ([record date]({{ '/2026/10
 {{ mk.bonus_record_date }}), so price databases now show pre-bonus dates at
 half the price actually traded: Yahoo shows ₹{% include inr.html n=mk.price_adjusted_yahoo %}
 for 30 June 2025, when the share changed hands at about
-₹{% include inr.html n=mk.price %}. The FY25 EPS and book value are on the
+₹{% include inr.html n=mk.price %}. The FY25 [EPS]({% post_url 2026-09-23-eps %}) and book value are on the
 pre-bonus share count, so the *pre-bonus* price is the consistent one to pair
 with them. Mixing an adjusted price with unadjusted per-share figures would
 halve every multiple below.
@@ -193,7 +193,7 @@ cheap.
 
 Everything in this module comes from what a bank publishes, and some of the
 biggest risks barely show up there. The mismatch between long-dated loans
-and short-term deposits (asset-liability management) is disclosed only in
+and short-term deposits ([asset-liability]({{ '/2026/10/22/nbfcs-vs-banks-spread-borrowing-alm/' | relative_url }}) management) is disclosed only in
 coarse maturity buckets, and stress the bank hasn't yet recognised — loans
 still "standard" but quietly deteriorating — is invisible until it's
 classified, which is why bank crises so often start with a clean-looking

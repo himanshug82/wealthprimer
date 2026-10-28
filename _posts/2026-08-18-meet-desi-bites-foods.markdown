@@ -26,7 +26,7 @@ a small, fictional, packaged namkeen and snacks manufacturer. One
 manufacturing unit, one product line, nothing exotic. It sells to distributors
 on credit, buys raw material on credit, and took a loan to build out its
 plant — which is to say, it has exactly the moving parts you need to make
-sense of a real balance sheet, income statement, and cash flow statement,
+sense of a real [balance sheet]({{ '/2026/08/20/reading-a-balance-sheet/' | relative_url }}), income statement, and cash flow statement,
 without the complexity of a real company's subsidiaries, segments, and
 footnotes getting in the way first.
 

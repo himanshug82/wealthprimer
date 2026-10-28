@@ -87,8 +87,8 @@ multiple set at that price, using the FY25 figures from the
 
 Notice how differently the same company looks depending on which lens you
 pick. The P/E of {{ db_pe }}x reads as a fairly demanding growth valuation. The
-EV/EBITDA of {{ db_evebitda }}x looks far more modest — because enterprise value
-subtracts the ₹{% include inr.html n=listing.post_ipo_cash %} lakh of cash sitting on the post-IPO balance sheet, most
+EV/EBITDA of {{ db_evebitda }}x looks far more modest — because [enterprise value]({{ '/2026/10/13/enterprise-value/' | relative_url }})
+subtracts the ₹{% include inr.html n=listing.post_ipo_cash %} lakh of cash sitting on the post-IPO [balance sheet]({% post_url 2026-08-20-reading-a-balance-sheet %}), most
 of it the IPO proceeds themselves. Same company, same day, same price;
 two defensible-looking answers.
 
@@ -169,7 +169,7 @@ data providers will happily give you two different numbers for the same
 company.
 
 This post deliberately doesn't invent a peer table. Sourcing one properly
-means opening five annual reports, and a fabricated table would teach the
+means opening five [annual reports]({{ '/2026/10/03/reading-an-annual-report/' | relative_url }}), and a fabricated table would teach the
 method badly. If you're building one yourself, the peer test is worth
 stating plainly: a genuine peer sells to similar customers, faces similar
 input costs, needs a similar asset base, and grows at a broadly similar

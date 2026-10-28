@@ -78,7 +78,7 @@ in the parking fund won none of them. The pattern is not subtle.
 
 **Starting at the January 2008 top**, the lump sum was still *below* ₹12 lakh
 three years later. The STP, which bought most of its units during the 2008
-collapse at far lower NAVs, was worth ₹{% include inr.html n=s08.stp_12m_3y %} — about
+collapse at far lower [NAVs]({% post_url 2026-09-25-what-a-mutual-fund-is %}), was worth ₹{% include inr.html n=s08.stp_12m_3y %} — about
 ₹{{ s08.stp_12m_3y | minus: s08.lump_sum_3y | divided_by: 100000.0 | round: 2 }} lakh more. By March 2026 the gap had compounded: the lump sum
 was worth ₹{% include inr.html n=s08.lump_sum_to_2026 %}, the STP ₹{% include inr.html n=s08.stp_12m_to_2026 %}.
 

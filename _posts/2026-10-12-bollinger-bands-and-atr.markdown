@@ -171,7 +171,7 @@ For Britannia, ATR ranged from ₹{% include inr.html n=atr.atr_min %}
 ({{ atr.atr_max_date | date: "%-d %B %Y" }}), and the median was about
 **{{ atr.atr_pct_median }}%** of the price. So on an ordinary day this stock
 travelled roughly 2% of its value — a number worth knowing before deciding how
-far away a stop-loss belongs.
+far away a [stop-loss]({{ '/2026/10/22/stop-loss-placement/' | relative_url }}) belongs.
 
 ## What ATR is actually for: sizing a stop
 

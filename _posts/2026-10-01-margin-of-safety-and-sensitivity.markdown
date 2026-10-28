@@ -65,6 +65,11 @@ high 300s to low 400s if my central assumptions hold, and plausibly ₹{{ s_low 
 A range is less satisfying than a number. It's also true, which is the better
 property for something you're about to risk money on.
 
+The DCF calculator has the same WACC × terminal-growth grid, so you can move
+the central assumptions and watch the whole range shift.
+
+{% include tool.html id="dcf" %}
+
 ## Which assumptions actually matter
 
 Not every input deserves equal worry. Rough sense of what moves the Desi

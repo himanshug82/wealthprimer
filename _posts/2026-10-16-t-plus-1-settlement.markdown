@@ -96,7 +96,7 @@ for a limited list of stocks, in a separate session from 9:15 am to 1:30 pm
 with a band of ±1% around the regular market's price
 ([SEBI/HO/MRD/MRD-PoD-3/P/CIR/2024/20](https://www.sebi.gov.in/legal/circulars/mar-2024/introduction-of-beta-version-of-t-0-rolling-settlement-cycle-on-optional-basis-in-addition-to-the-existing-t-1-settlement-cycle-in-equity-cash-markets_82455.html)).
 It began with 25 stocks and, from 31 January 2025, SEBI extended it in
-monthly batches toward the top 500 by market cap
+monthly batches toward the top 500 by [market cap]({% post_url 2026-09-27-market-cap %})
 ([SEBI/HO/MRD/MRD-PoD-3/P/CIR/2024/172, 10 December 2024](https://www.sebi.gov.in/sebi_data/attachdocs/dec-2024/1733829354031.pdf)).
 Broker participation is optional, so many investors won't see it at all.
 SEBI's board papers shelved the earlier idea of optional *instant*

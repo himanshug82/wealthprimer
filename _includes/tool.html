@@ -1,0 +1,20 @@
+{%- comment -%}
+A callout linking one reader tool from inside a post:
+
+  {% include tool.html id="rolling-returns" %}
+  {% include tool.html id="dcf" note="It reproduces this post's figures on its checks tab." %}
+
+`id` is a key in _data/tools.yml; `note` (optional) is a post-specific line
+added after the tool's summary. Put the include on its own line with a blank
+line above and below, so kramdown treats it as a block. An unknown id renders
+nothing, so check the page after adding one.
+{%- endcomment -%}
+{%- assign _t = site.data.tools | where: "id", include.id | first -%}
+{%- if _t -%}
+<aside class="tool-callout" aria-label="{{ _t.kind | escape }}: {{ _t.name | escape }}">
+<span class="tool-kind">Tool · {{ _t.kind | escape }}</span>
+<a class="tool-name" href="{{ _t.url }}">{{ _t.name | escape }}</a>
+<p>{{ _t.summary | escape }}{% if include.note %} {{ include.note }}{% endif %}{% if _t.kind == "Google Sheet" %} It opens view-only; use File → Make a copy to change it.{% endif %}</p>
+<a class="tool-all" href="{{ '/tools/' | relative_url }}#{{ _t.id }}">All tools →</a>
+</aside>
+{%- endif -%}

@@ -20,7 +20,7 @@ term: "Liquid and overnight funds"
 
 ## What these funds are
 
-Overnight and liquid funds are debt funds that hold very short-dated paper, so that their NAV (net asset value, the price per unit) barely moves. Both are commonly described as places to hold cash for a short time.
+Overnight and liquid funds are debt funds that hold very short-dated paper, so that their [NAV]({% post_url 2026-09-25-what-a-mutual-fund-is %}) (net asset value, the price per unit) barely moves. Both are commonly described as places to hold cash for a short time.
 
 The category table of SEBI (the Securities and Exchange Board of India) sets the limits. As of its [Master Circular for Mutual Funds]({{ mc.url }}) dated {{ mc.date | date: "%-d %B %Y" }} (number {{ mc.number }}), paragraph 3.8.2 says:
 

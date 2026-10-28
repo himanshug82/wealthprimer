@@ -18,7 +18,7 @@ term: "Fixed deposit (FD)"
 
 A **fixed deposit (FD)** is money you lend to a bank for a set term at a rate fixed when you open it. The bank owes you the principal plus that interest at maturity. The rate is a promise, and it is made by the bank.
 
-A **debt fund** is a mutual fund that holds bonds and other interest-bearing securities. It promises no rate. Its **NAV** (net asset value, the price per unit) moves with two things: the interest its holdings pay, and the changing market price of those holdings. That is the whole difference, and the rest of this post follows from it. The mechanics are in [debt funds explained]({% post_url 2026-10-12-debt-funds-explained %}).
+A **debt fund** is a mutual fund that holds bonds and other interest-bearing securities. It promises no rate. Its **[NAV]({% post_url 2026-09-25-what-a-mutual-fund-is %})** (net asset value, the price per unit) moves with two things: the interest its holdings pay, and the changing market price of those holdings. That is the whole difference, and the rest of this post follows from it. The mechanics are in [debt funds explained]({% post_url 2026-10-12-debt-funds-explained %}).
 
 This is part of [Money Before Markets]({{ '/series/money-before-markets/' | relative_url }}). The [emergency fund post]({% post_url 2026-11-08-emergency-fund-sizing %}) was about holding a cash buffer. This one compares two of the places money can wait.
 

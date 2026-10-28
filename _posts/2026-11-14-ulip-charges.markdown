@@ -17,7 +17,7 @@ term: "ULIP (unit linked insurance plan)"
 
 ## What a ULIP is
 
-A **unit linked insurance plan (ULIP)** is a life insurance policy where part of each premium buys life cover and part is invested in funds you choose. The policy's **fund value** is the number of units you hold times the unit price, like a mutual fund's NAV (net asset value, the price per unit).
+A **unit linked insurance plan (ULIP)** is a life insurance policy where part of each premium buys life cover and part is invested in funds you choose. The policy's **fund value** is the number of units you hold times the unit price, like a mutual fund's [NAV]({% post_url 2026-09-25-what-a-mutual-fund-is %}) (net asset value, the price per unit).
 
 IRDAI, the Insurance Regulatory and Development Authority of India, draws the line this way in its [Master Circular on Life Insurance Products]({{ c.url }}) (reference {{ c.ref }}, dated {{ c.date | date: "%-d %B %Y" }}), paragraph 34: if every fund in a linked product tracks a publicly available index, it is an index-linked product; otherwise it is a ULIP. The circular is as of {{ c.date | date: "%-d %B %Y" }} and is reviewed every year, so check for a later version. This post is part of [Money Before Markets]({{ '/series/money-before-markets/' | relative_url }}). It is about the cost mechanics, not about whether to hold one. The earlier post on [insurance as risk transfer]({% post_url 2026-10-23-insurance-as-risk-transfer %}) covers why term cover is a different thing from a bundled plan.
 

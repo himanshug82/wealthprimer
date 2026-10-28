@@ -18,7 +18,7 @@ term: "Currency risk"
 
 ## Two returns, not one
 
-Buy a US index fund, a Nasdaq ETF (exchange-traded fund) or a few US shares
+Buy a US index fund, a Nasdaq [ETF]({% post_url 2026-10-13-index-funds-vs-etfs %}) (exchange-traded fund) or a few US shares
 from India, and the number that lands in your rupee account is the product of
 two separate returns: what the asset did in dollars, and what the dollar did
 against the rupee. You chose the first. The second came free with it.
@@ -140,7 +140,7 @@ It can also be hedged: a fund can use currency forwards to lock in an
 exchange rate. In textbook theory (covered interest parity) the cost of that
 hedge is roughly the gap between Indian and US interest rates, so a hedged
 dollar asset gives back much of the rupee's average drift. Whether a
-particular international fund hedges is stated in its scheme documents;
+particular [international fund]({{ '/2026/10/20/international-funds/' | relative_url }}) hedges is stated in its scheme documents;
 check rather than assume.
 
 ## Common mistakes
@@ -158,7 +158,7 @@ check rather than assume.
   [CAGR]({% post_url 2026-09-26-point-to-point-returns %}) (compound annual growth rate) into next year is
   the same mistake as extrapolating any other trend.
 - **Comparing a foreign fund's dollar return with an Indian fund's rupee
-  return.** An international fund's rupee NAV (net asset value) already includes the currency
+  return.** An international fund's rupee [NAV]({% post_url 2026-09-25-what-a-mutual-fund-is %}) (net asset value) already includes the currency
   move. Compare rupee with rupee.
 - **Forgetting liabilities.** A dollar goal funded with rupee savings carries
   currency risk even if you never buy a foreign asset.

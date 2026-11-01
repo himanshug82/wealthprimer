@@ -18,6 +18,8 @@ rules_as_of: "September 2026"
 
 ## A payout that isn't one thing
 
+This post covers how listed REIT and InvIT payouts and units are taxed in Tax Year 2026-27 (FY 2026-27, April 2026 to March 2027). How the structures work is in the [REIT structure post]({% post_url 2026-11-15-reit-structure %}).
+
 A **REIT — real estate investment trust** — owns rent-earning property such as
 office parks and malls. An **InvIT — infrastructure investment trust** — owns
 things like toll roads and power lines. Both are registered with SEBI (the
@@ -121,7 +123,7 @@ below ₹50 lakh, so no surcharge.
 | Repayment of debt | ₹{{ x.repay_pu }} | ₹{% include inr.html n=x.repay %} | Reduces cost | ₹0 now |
 | **Total** | **₹{{ x.total_pu }}** | **₹{% include inr.html n=x.total %}** | | **₹{% include inr.html n=x.interest_tax_with_cess %}** |
 
-- **TDS.** The trust deducts 10% on the interest part: ₹{% include inr.html n=x.interest_tds %}.
+- **TDS (tax deducted at source).** The trust deducts 10% on the interest part: ₹{% include inr.html n=x.interest_tds %}.
   There's no TDS on a dividend from an SPV that hasn't opted for the lower
   rate. So ₹{% include inr.html n=x.interest_balance_due %} is still due when you file.
 - **The dividend, had the SPV opted.** Then it would be taxed like the
@@ -193,11 +195,11 @@ holding period is counted, and the
 
 ## Surcharge and TDS, briefly
 
-Above ₹50 lakh of total income, a surcharge is added to the tax, as the
-[opening post of this series]({% post_url 2026-11-02-how-investment-income-is-taxed %})
-explained. The interest and rent components are ordinary income, so their
-surcharge can go higher. Capital gains on the units, and the taxable dividend
-component, are capped at 15%.
+Above ₹50 lakh of total income, a surcharge is added to the tax. The rates,
+the cap on capital-gains and dividend income, and their sources are in the
+[opening post of this series]({% post_url 2026-11-02-how-investment-income-is-taxed %});
+we do not restate them here. Interest and rent are ordinary income, which that
+post's surcharge paragraph does not cap in the same way, so check the current rule.
 
 The 10% TDS on the taxable components, like TDS on
 [dividends and interest]({% post_url 2026-11-06-dividends-and-interest %}), is an advance, not
@@ -212,20 +214,14 @@ the final tax. In the 30% slab you'll owe the difference.
   SPV didn't opt for the lower company tax rate. The statement tells you
   which.
 - **Forgetting that repayments reduce your cost.** The tax-free repayment
-  comes back as a bigger capital gain on sale. Your broker's capital gains
-  statement may not adjust for it, so check before you file.
+  comes back as a bigger capital gain on sale. In our view a broker's capital gains
+  statement may not reflect the adjustment; this is not something we have checked, so compare it with the trust's statement.
 - **Plugging your purchase price into the formula.** The repayment test uses
   the trust's *issue* price and every repayment since issue, including those
   paid to earlier holders. A long-lived trust can cross the line before you
   ever bought in.
-- **Using pre-2024 rules on a sale.** Listed units are long-term after
-  {{ r.equity_holding_months }} months now, not 36, at {{ r.equity_ltcg_pct }}%, and they share the equity exemption.
 
-**Takeaway:** A REIT or InvIT payout is several incomes in one credit:
-interest and rent are taxed at your slab, dividends are exempt unless the SPV
-chose the lower company tax rate, and "repayment of debt" is tax-free until
-repayments pass the issue price — while it lowers your cost. Read the trust's
-split, not the credit.
+**Takeaway:** A REIT or InvIT payout is several incomes in one credit, and the trust's statement of the split decides how each part is taxed. Interest and rent go to your slab, dividends are exempt unless the SPV chose the lower company rate, and repayment of debt lowers your cost.
 
 *The module's [data file](https://github.com/himanshug82/wealthprimer/blob/main/_data/tax3.yml)
 lists the sections of the Income-tax Act, 2025 behind every rule here, and

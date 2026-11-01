@@ -299,6 +299,7 @@ gifts:
   minor_exclusion: 1500
   minor_clubbed: 18500
   minor_tax_with_cess: 5772
+  minor_tax_no_exclusion_with_cess: 6240
   ls_buy_date: 1 April 2020
   ls_sell_date: 31 March 2026
   ls_invested: 500000

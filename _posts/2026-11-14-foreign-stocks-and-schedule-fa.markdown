@@ -19,6 +19,8 @@ rules_as_of: "September 2026"
 
 ## Three separate obligations
 
+This post describes the rules as we last checked them for Tax Year 2026-27 (FY 2026-27, the year from April 2026 to March 2027). Parts rest on secondary sources, and each is marked "check the current rule" where that applies.
+
 Buying a share of a US-listed company through an Indian app feels like buying
 any other share. For tax it creates three obligations that Indian shares
 don't:
@@ -27,13 +29,13 @@ don't:
    short-term tax, and no annual exemption.
 2. **Withholding abroad on dividends**, which you then credit against Indian
    tax with the right form filed at the right time.
-3. **Disclosure**: every foreign asset you held at any point in the calendar
-   year goes into **Schedule FA** of your return, whether or not it earned
+3. **Disclosure**: every foreign asset you held during the reporting period
+   goes into **Schedule FA** of your return, whether or not it earned
    anything, with no minimum value.
 
-The first two cost money. The third is the one that generates notices, and
-the penalty for getting it wrong is out of all proportion to the amounts
-most people invest.
+The first two cost money. The third is the one with a penalty attached, and
+the penalty can be large relative to the amounts some people invest. (It does
+not apply below a value threshold, covered below; the duty to disclose does.)
 
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
@@ -65,13 +67,13 @@ exchange rate is part of your gain (or loss) even if the dollar price never
 changed. And the rupee conversion uses a prescribed rate, not the rate your
 broker happened to give you. The Income-tax Act, 2025 defines the "rate of exchange"
 as the rate determined or recognised by the Central Government (section 2(24)); the
-specific rate is set in the Income-tax Rules, which this post has not read. The common approach converts each leg at the
+specific rate is set in the Income-tax Rules, which this post has not read, so
+we cannot state it as settled. A commonly described approach converts each leg at the
 **SBI TT buying rate** — the State Bank of India's telegraphic-transfer
-buying rate — **on the last day of the month before** the month of purchase,
-and likewise for the sale. Practice differs, though: some advisers read the
-rule as applying to the gain itself, computed in dollars and converted once.
-The difference can be material, so it's a point to settle with whoever
-prepares your return.
+buying rate — on a prescribed date, such as the last day of the month before
+the month of the transaction. Practice differs: some advisers apply the rate to
+the gain itself, computed in dollars and converted once. The difference can be
+material. Check the current rule in the Rules.
 
 ### Worked example
 
@@ -99,8 +101,9 @@ penalty is steeper.
 ## Dividends: withheld at 25%, then credited
 
 US companies pay dividends to Indian residents after withholding **25%** under
-the India–US tax treaty — assuming your broker has a W-8BEN form on file for
-you; without one, 30% is withheld. In India the *gross* dividend is added to your income
+the India–US tax treaty, as commonly described — assuming your broker has a W-8BEN form on file for
+you; without one, 30% is commonly withheld. We have not opened the treaty or
+US rules for this post: check the current rate. In India the *gross* dividend is added to your income
 at slab, exactly as in the
 [dividends post]({% post_url 2026-11-06-dividends-and-interest %}) — and the tax already
 paid in the US is credited against your Indian tax.
@@ -114,13 +117,12 @@ paid in the US is credited against your Indian tax.
 | − Credit for US tax (₹{% include inr.html n=x.dividend_us_withheld_inr %}) | |
 | **Further tax payable in India** | **₹{{ x.dividend_india_payable_after_credit }}** |
 
-The credit isn't automatic. It requires **Form 67** (being renumbered under
-the new Act). Filing it with or before your return is the safe route; since
-a 2022 amendment (Central Board of Direct Taxes Notification 100/2022), it
-can also be filed later, up to the end of the assessment year, as long as the
-return itself was filed in time. That's the old rules' wording; check how the
-renumbered form's deadline reads under the new Act before relying on the
-later date. The income and credit must also be reported consistently in **Schedule FSI** (foreign-source
+The credit isn't automatic. It is commonly described as requiring **Form 67**
+(a form name from the earlier Rules, which may be renumbered under the new Act).
+Filing it with or before your return is the usual description; a 2022 amendment
+is reported to allow filing later if the return itself was filed in time. We have
+not opened that notification or the current Rules, so check the current rule for
+the form's name and deadline. The income and credit must also be reported consistently in **Schedule FSI** (foreign-source
 income) and **Schedule TR** (tax relief). Miss the form and you pay Indian tax
 on the full ₹{% include inr.html n=x.dividend_inr_gross %} with no credit — a genuine double tax, entirely
 self-inflicted. Someone below the 25% effective rate in India gets no refund
@@ -135,21 +137,23 @@ Money sent abroad under the **LRS — Liberalised Remittance Scheme** — attrac
 medical remittances have lower rates). Remit ₹{% include inr.html n=x.lrs_remit_example %} to a foreign
 broker in a year and ₹{% include inr.html n=x.lrs_tcs_example %} is collected up front.
 
-It is not a tax on investing. Like TDS, it's an advance: it shows up in Form
-26AS and is adjusted against your tax when you file, or refunded. But it's
+It is not a tax on investing. Like TDS (tax deducted at source), it's an advance: it appears in your tax statements (AIS, the Annual Information Statement, and the older Form 26AS) and is adjusted against your tax when you file, or refunded. But it's
 cash out of your account for up to a year, and it makes the remittance
 visible to the department — which brings us to disclosure.
 
 ## Schedule FA: the part that actually bites
 
 If you are **resident and ordinarily resident** in India and held *any*
-foreign asset at *any* time in the year, you must report it in Schedule FA
-of ITR-2 or ITR-3. Four things about this catch people out:
+foreign asset at *any* time in the reporting period, you must report it in Schedule FA
+of your income-tax return (ITR-2 or ITR-3 under the earlier forms). The
+Income-tax Act, 2025 ties the duty to holding foreign assets "at any time during the tax year"
+(section 263(1)(a)(ix) as we read it). Four things about this catch people out:
 
-**It runs on the calendar year, not the financial year.** For the return
-covering FY 2025-26 you report assets held between 1 January and
-31 December 2025, not the April–March year the rest of the return uses.
-Check the period the current form asks for before you fill it in.
+**The period may not match the financial year.** For returns filed under the
+earlier Act (FY 2025-26), Schedule FA is commonly described as running on the
+calendar year, 1 January to 31 December 2025, not the April–March year the rest of the return
+uses. We have not confirmed the period for Tax Year 2026-27 returns, so check
+what the current form asks for before you fill it in.
 
 **There is no minimum.** One share, held for a week, then sold — reportable.
 A foreign brokerage account with a dormant $3 balance — reportable.
@@ -163,46 +167,37 @@ accounts, foreign insurance with a cash value.
 
 **It asks for values you have to reconstruct.** For each asset: the initial
 cost, the *peak* value during the calendar year, the closing value on 31
-December, and the income it produced — all in rupees at the SBI TT buying
+December, and the income it produced — all in rupees at the prescribed
 rate. Nobody sends you a statement in this format. You build it.
 
 The penalty framework is the **Black Money Act**, not ordinary income-tax
-law: a flat penalty of ₹{% include inr.html n=x.bma_penalty %} per year for non-disclosure or
+law. As commonly described, it carries a flat penalty of ₹{% include inr.html n=x.bma_penalty %} per year for non-disclosure or
 inaccurate disclosure, with prosecution possible in serious cases. Since
-1 October 2024 that penalty is not levied where the aggregate value of your
-foreign assets (excluding immovable property) is under
-₹{% include inr.html n=x.bma_penalty_exemption_threshold %} — a relief for small investors, but note carefully
-what it relieves: the *penalty*, not the *duty to disclose*. The schedule is
-still required, and the department has been matching foreign-remittance and
-exchange-of-information data against returns and issuing notices where the
-schedule is blank.
+1 October 2024 that penalty is described as not being levied where the aggregate value of your
+foreign assets (excluding immovable property) does not exceed
+₹{% include inr.html n=x.bma_penalty_exemption_threshold %}. We have only secondary sources for this, so check the
+current rule and whether the statute says "under" or "up to". Note what any such relief covers: the *penalty*, not the *duty to disclose*.
+The schedule is still required.
 
 ## Common mistakes
 
 - **Applying the ₹{% include inr.html n=r.ltcg_annual_exemption %} exemption to foreign shares.** It exists only for
   STT-paid Indian equity.
 - **Selling at 13 months and calling it long-term.** Foreign shares need 24.
-- **Using your broker's conversion rate.** The rules prescribe the SBI TT
-  buying rate on the last day of the preceding month. The common approach
-  applies it to both legs; some apply it to the gain instead — confirm
-  which with a professional.
-- **Skipping Form 67.** No form, no credit for the 25% already paid in the
-  US.
-- **Leaving Schedule FA blank because "it's tiny".** No minimum. The ₹20 lakh
-  relief applies to the penalty, not the disclosure.
-- **Reporting foreign assets by financial year.** Schedule FA runs
-  1 January – 31 December.
+- **Using your broker's conversion rate.** The Rules prescribe a rate (we have not read it). Practice differs between
+  converting each leg and converting the gain, so check the current rule.
+- **Skipping the foreign tax credit form.** No form, no credit for the 25% already paid in the
+  US, as the earlier Rules worked.
+- **Leaving Schedule FA blank because "it's tiny".** There is no minimum value for the duty to disclose. Any threshold relief
+  applies to the penalty, not the disclosure.
 - **Forgetting the foreign parent's RSUs.** The shares *and* the foreign
   brokerage account they sit in are both foreign assets.
-- **Treating TCS as a cost.** It's an advance, recoverable when you file —
-  but only if you file, and only if it's in your 26AS.
 
 **Takeaway:** Foreign shares are taxed like unlisted ones — long-term only
 after 24 months, short-term at your slab, {{ r.equity_ltcg_pct }}% beyond with no ₹{% include inr.html n=r.ltcg_annual_exemption %}
-exemption, and the rupee's fall counts as gain. US dividends lose 25% at source
-that you recover only by filing Form 67. But the obligation that actually
-hurts is Schedule FA: every foreign asset, every calendar year, no minimum —
-and a ₹{% include inr.html n=x.bma_penalty %} penalty regime waiting for the ones left blank.
+exemption, and the rupee's fall counts as gain. US dividends commonly lose 25% at source,
+with credit in India dependent on the foreign tax credit form. A separate obligation is Schedule FA: every foreign asset held in the reporting period, no minimum value for the duty to disclose —
+with a ₹{% include inr.html n=x.bma_penalty %} penalty regime that, as commonly described, applies above a value threshold.
 
 *The module's [data file](https://github.com/himanshug82/wealthprimer/blob/main/_data/tax2.yml)
 lists every source these rules were checked against, and the points a

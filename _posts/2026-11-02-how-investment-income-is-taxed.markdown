@@ -18,11 +18,12 @@ rules_as_of: "August 2026"
 The posts on this blog so far have been about what an investment is worth.
 None of them mentioned that you don't keep all of it.
 
-Tax is the largest, most predictable drag on long-term returns after fees —
-and unlike returns, it's substantially within your control. Not through
-anything clever or aggressive, but through knowing which rules apply to what,
-and when. A gain realised eleven months in and a gain realised thirteen
-months in are taxed differently for no reason except the calendar.
+Tax is one of the costs that sits between an investment's return and what you
+keep, alongside fees. This series is about **Tax Year 2026-27 (FY 2026-27)**,
+the year starting 1 April 2026 (FY is *financial year*). The rules differ by
+type of income, and by how long an asset was held: a gain realised eleven
+months in and a gain realised thirteen months in are taxed differently for no
+reason except the calendar.
 
 This series covers the mechanics. It won't tell you what to do.
 
@@ -59,10 +60,12 @@ your income. Capital gains have their own rates, their own holding-period
 rules, their own exemption, and their own loss rules — which is why most of
 the posts in this series are about them.
 
-**Nothing is taxed until you sell.** A holding that has quadrupled owes
-nothing while you hold it. Tax on capital gains is triggered by the
-*transaction*, not by the gain existing. That single fact does more work in
-practical tax outcomes than any technique.
+**A capital gain is taxed when you sell, not while you hold.** A holding that
+has quadrupled has no capital gains tax due while you hold it. Tax on capital
+gains is triggered by the *transaction*, not by the gain existing. (Dividends
+and interest are different: they can be taxed as they are received or accrue,
+and tax can be deducted at source before you sell anything. Later posts cover
+both.)
 
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
@@ -77,8 +80,8 @@ Imagine you collect trading cards.
   that's like a **dividend** — and it counts as income the moment it arrives,
   whether you wanted it or not.
 
-The big one people miss: the first case costs nothing, forever, until you
-sell. Holding isn't a taxable event. Selling is.
+The big one people miss: a card going up in value triggers no capital gains
+tax until you sell. Holding isn't a taxable event. Selling is.
 
 </details>
 
@@ -97,7 +100,7 @@ Where the line falls depends on the asset:
 | Asset | Long-term after |
 |---|---|
 | Listed shares, equity mutual funds | **{{ r.equity_holding_months }} months** |
-| Unlisted shares, property, gold, most other assets | **{{ r.other_holding_months }} months** |
+| Unlisted shares, property, physical gold and many other assets | **{{ r.other_holding_months }} months** (some listed instruments differ; check the asset) |
 
 And the rates for listed equity and equity funds:
 
@@ -108,47 +111,35 @@ And the rates for listed equity and equity funds:
 
 There is also a **{{ r.cess_pct }}% health and education cess** applied on top of the tax
 itself — not on the gain. It's small, it's easy to forget, and it makes a
-12.5% headline rate an effective 13%. Most published examples omit it; the
+{{ r.equity_ltcg_pct }}% headline rate an effective {{ r.equity_ltcg_pct | times: 1.04 | round: 2 }}%. Most published examples omit it; the
 worked examples in this series include it.
 
 Above ₹50 lakh of total income a **surcharge** is added to the tax too, before
-the cess. On equity capital gains (short- and long-term), other long-term
-gains and dividends it's capped at 15%; on other income it runs higher — up to 25% in the new regime
-(the cap the Finance Act 2023 set) and 37% in the old one. That's the position
-for {{ r.financial_year }}. The worked examples in this series assume income
-below ₹50 lakh, so no surcharge.
+the cess. The Memorandum to the Finance Bill, 2026 (listed under Sources) shows
+the surcharge on equity capital gains and dividends capped at 15%, and the
+highest surcharge rate on other income cut from 37% to 25% under the new
+regime. The Bill is not the enacted Act, and the old-regime position was not
+re-checked, so check the current rule. The worked examples in this series
+assume income below ₹50 lakh, so no surcharge.
 
 The next post is entirely about that
 holding-period line, because a day either side of it changes the rate by
 7.5 percentage points.
 
-## One trap worth knowing now
+## One thing that has changed
 
-Debt mutual funds no longer work the way most older articles describe. Units
-of specified debt funds bought **on or after 1 April 2023** are taxed at your
-slab rate regardless of how long you hold them — no long-term rate, no
-indexation benefit, no reward for patience. And indexation is gone for older
-units too, on any sale from 23 July 2024.
+Debt mutual funds no longer work the way many older articles describe. Gains
+on units of "specified" debt funds acquired on or after 1 April 2023 are taxed
+at the investor's slab rate whatever the holding period, and indexation is
+gone for sales from 23 July 2024. If you're reading an article that mentions
+indexation on debt funds, check its date and check the current rule. The debt
+funds post in this series covers the definition.
 
-If you're reading an article that mentions indexation on debt funds, check
-its date. The debt funds post later in this series covers it.
+## Where the rest of the series goes
 
-## What this series covers
-
-| Post | Covers |
-|---|---|
-| Short-term vs long-term | The holding-period line, and why the date matters |
-| Equity and equity funds | The {{ r.equity_stcg_pct }}%/{{ r.equity_ltcg_pct }}% rates, the exemption, grandfathering |
-| Debt, gold and the rest | Where the slab rate applies instead |
-| Dividends and interest | Slab rate, and TDS (tax deducted at source) arriving before you file |
-| Losses | Set-off, carry-forward, and harvesting |
-| SIPs and FIFO | Why one SIP (systematic investment plan) redemption is many separate tax lots, taken first in, first out (FIFO) |
-| ELSS and deductions | Tax-saving equity funds (equity-linked savings schemes), and what survived the move to the new regime |
-| Before you file | Reading a capital gains statement against your AIS (Annual Information Statement) |
-| ESOPs and RSUs | Why employee stock options and restricted stock units are taxed as salary first, then as a gain |
-| Buybacks | Three regimes in three years, and which one your buyback falls under |
-| F&O | Why futures and options (derivatives) trading is business income, not capital gains |
-| Foreign stocks | US shares, dividends withheld abroad, and Schedule FA disclosure |
+Later posts take each bucket in turn — gains on equity and on debt, dividends
+and interest, losses, SIPs, deductions, filing, and the special cases. The
+[series page]({{ '/series/tax/' | relative_url }}) lists them in order.
 
 The worked examples in the core posts of this series run on the real NAV (net asset
 value, a fund's per-unit price) history used in the
@@ -159,21 +150,19 @@ arithmetic sits on actual prices rather than round invented numbers.
 
 ## Common mistakes
 
-- **Thinking unrealised gains are taxed.** They aren't. Nothing is due until
-  you sell.
+- **Thinking unrealised gains are taxed.** Capital gains tax isn't due on a
+  gain you haven't realised by selling.
 - **Using one holding-period rule for everything.** Twelve months for listed
   equity, twenty-four for most other assets. Applying the equity rule to gold
   or property gets it wrong.
 - **Reading pre-2023 articles on debt funds.** Indexation on debt funds is
-  gone for any sale on or after 23 July 2024, whenever you bought; units
-  bought from April 2023 have no long-term rate at all.
+  gone for sales on or after 23 July 2024, and the rules for specified funds
+  changed; check the current rule.
 - **Forgetting the cess.** It's {{ r.cess_pct }}% on the tax, not on the gain — small, but it
-  makes 12.5% into 13%.
+  lifts a {{ r.equity_ltcg_pct }}% rate to an effective {{ r.equity_ltcg_pct | times: 1.04 | round: 2 }}%.
 - **Assuming the fund deducts tax for you.** For resident investors, mutual
   funds generally do not deduct tax on capital gains at redemption. The money
   arrives whole and the liability is yours.
-- **Trusting section numbers from older articles.** With the 2025 Act in
-  force, the numbering in anything written before 2026 no longer matches.
 
 ## Sources
 
@@ -181,8 +170,4 @@ arithmetic sits on actual prices rather than round invented numbers.
 - [Finance Act, 2026, Gazette of India](https://egazette.gov.in/WriteReadData/2026/271439.pdf): the Finance Act that made the 2026 changes.
 - [Memorandum explaining the provisions of the Finance Bill, 2026](https://www.indiabudget.gov.in/doc/memo.pdf): the government's explanation of those changes.
 
-**Takeaway:** Investment income splits into capital gains, dividends and
-interest, and only the first has rules of its own — its rate turns on what
-you held and for how long. Nothing is owed until you sell, which makes the
-decision to sell the single most consequential tax decision most investors
-make, usually without noticing they've made it.
+**Takeaway:** Investment income splits into capital gains, dividends and interest, and only the first has rules of its own, with a rate that turns on what you held and for how long. A capital gain is taxed when you sell; dividends and interest follow their own timing.

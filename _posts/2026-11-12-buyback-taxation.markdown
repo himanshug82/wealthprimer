@@ -19,23 +19,23 @@ rules_as_of: "September 2026"
 {% assign rc = b.regime_c %}
 {% assign r = site.data.tax.rates %}
 
-*Rules described here are date-specific: three regimes are shown, the current
-one applying from 1 April 2026.*
+*Rules described here are date-specific: three regimes are shown, the latest
+one applying from 1 April 2026. Tax Year 2026-27 (FY 2026-27), rules as at September 2026. The
+rates and the exemption that apply to Regime C gains are not confirmed from a primary source; see the note under Regime C.*
 
 ## What a buyback is, and why the tax kept changing
 
 In a **buyback**, a company uses its cash to purchase its own shares from
 shareholders and cancels them. Fewer shares remain, so each one owns a
 slightly larger slice of the same business — the
-[EPS post]({% post_url 2026-09-23-eps %}) flagged this as a reason EPS can rise
+[EPS (earnings per share) post]({% post_url 2026-09-23-eps %}) flagged this as a reason EPS can rise
 without profit rising.
 
 Economically a buyback is a way of returning cash to shareholders, like a
 dividend. Unlike a dividend, it's optional — you tender your shares or you
 don't — and the money comes back as a sale rather than as income. That
-difference is exactly why the tax treatment has been argued over for a
-decade: **is buyback money a dividend or a sale?** The law has given three
-different answers over the years, and the answer depends on the date the
+difference is why the tax treatment has changed: **is buyback money a dividend or a sale?** The law has given three
+different answers, and the answer depends on the date the
 buyback happened.
 
 <details markdown="1">
@@ -58,7 +58,7 @@ year.
 ## One example, three regimes
 
 Throughout, the same fictional shareholder: {{ b.shares }} shares of Desi Bites Foods
-bought in the [IPO](/case-study/) at ₹{{ b.cost_per_share }} on 15 June 2025, tendered in a
+bought in the [IPO (initial public offering)](/case-study/) at ₹{{ b.cost_per_share }} on 15 June 2025, tendered in a
 hypothetical buyback at ₹{{ b.buyback_price }}. Consideration
 ₹{% include inr.html n=b.consideration %}, cost ₹{% include inr.html n=b.cost_total %}, economic gain
 **₹{% include inr.html n=b.gain %}**. Illustrative 30% slab plus {{ r.cess_pct }}% cess, no
@@ -78,17 +78,16 @@ originally received for those shares — and the shareholder paid nothing.
 | Tax paid by the company | ₹{% include inr.html n=a.company_tax %} |
 | **Tax paid by the shareholder** | **₹0** |
 
-Simple, but it had a flaw the government disliked: the company-level rate
-was the same for everyone, so a promoter in the 30% slab and a small investor
-below the taxable limit bore the same effective tax. Buybacks became a way to
-extract cash at a flat rate.
+Under this regime the company-level rate was the same for every shareholder, so a
+promoter in the 30% slab and a small investor below the taxable limit bore the
+same effective tax.
 
 ### Regime B — {{ rb.period }}: the whole cheque was a dividend
 
 From 1 October 2024 the buyback tax was abolished and the **entire
 consideration** — not the gain, the whole amount — was treated as a dividend
 in the shareholder's hands, taxed at slab like any other
-[dividend]({% post_url 2026-11-06-dividends-and-interest %}), with 10% TDS. No deduction
+[dividend]({% post_url 2026-11-06-dividends-and-interest %}), with 10% TDS (tax deducted at source). No deduction
 of cost was allowed against it.
 
 Instead, the cost of the shares became a **capital loss**: for capital-gains
@@ -112,38 +111,37 @@ A retiree with no other gains simply paid slab-rate tax on their own capital
 coming back. The loss's holding period matters too: our shareholder bought
 in June 2025, so any Regime B buyback came within twelve months and the loss
 is short-term, usable against any capital gain. Shares held longer would have
-produced a long-term loss, usable only against long-term gains. For most
-individuals in higher slabs, this regime made tendering tax-expensive.
+produced a long-term loss, usable only against long-term gains. For an individual in a higher slab, the tax on the whole cheque was larger than the tax on the gain.
 
 ### Regime C — {{ rc.period }}: a sale, taxed on the gain
 
-The Finance Act, 2026 reversed course. From 1 April 2026 (the Act omits buybacks from
-the deemed-dividend definition, section 35 of the Finance Act, 2026) a buyback is taxed
-as what it economically is: a **sale of shares**, with the cost deductible
-and the gain taxed under the normal equity rules from the
-[equity post]({% post_url 2026-11-04-equity-and-equity-funds %}).
+From 1 April 2026, the Finance Bill 2026 memorandum states that a buyback is
+taxed as capital gains, with the cost deductible against the consideration. That is the Bill's
+memorandum, not the enacted Finance Act (not reachable when this post was last checked).
+**Which rates and exemption apply to a buyback gain is not confirmed:** the memorandum says only
+that the gain is chargeable under the head capital gains. The table below shows what the
+[equity post]({% post_url 2026-11-04-equity-and-equity-funds %}) rates would give *if* the
+listed-equity rates and the annual exemption apply. The exemption and the 20% rate for listed equity depend on conditions (such as securities transaction tax) that
+this post has not checked for buybacks.
 
 | | Held > {{ r.equity_holding_months }} months | Held ≤ {{ r.equity_holding_months }} months |
 |---|---:|---:|
 | Gain | ₹{% include inr.html n=rc.gain %} | ₹{% include inr.html n=rc.gain %} |
 | Rate | {{ r.equity_ltcg_pct }}% above the ₹{% include inr.html n=r.ltcg_annual_exemption %} annual exemption | {{ r.equity_stcg_pct }}% |
-| **Tax with cess** | **₹{{ rc.ltcg_tax_with_cess }}** (gain sits inside the exemption) | **₹{% include inr.html n=rc.stcg_tax_with_cess %}** |
+| **Tax with cess, if those rates and the exemption apply** | **₹{{ rc.ltcg_tax_with_cess }}** (gain sits inside the exemption) | **₹{% include inr.html n=rc.stcg_tax_with_cess %}** |
 
-For our shareholder the buyback in Regime C costs nothing if the shares were
-held over a year and other long-term gains haven't used up the exemption —
-against ₹{% include inr.html n=rb.tax_with_cess %} a few months earlier under Regime B, for the
-identical transaction.
+Under that assumption, taxing the gain rather than the whole cheque produces a much smaller bill for
+this example than Regime B's ₹{% include inr.html n=rb.tax_with_cess %}, for the
+identical transaction. If the listed-equity treatment does not apply to buybacks, the Regime C figure here would differ.
 
-**The promoter surcharge.** To stop buybacks becoming a low-tax route for
-controlling shareholders again, Regime C (section 69(2) and (3) of the Income-tax
-Act, 2025, as substituted by section 42 of the Finance Act, 2026) adds an *additional* tax when the
-tendering shareholder is a **promoter** (for a listed company, as defined in
-SEBI's buyback regulations; otherwise a Companies Act promoter or a holder of
-more than 10%). Their effective rate on the gain becomes about
+**The promoter add-on.** The Finance Bill 2026 memorandum describes an *additional* tax when the
+tendering shareholder is a **promoter**, giving an effective rate on the gain of about
 **{{ rc.promoter_effective_rate_corp_pct }}%** for a promoter that is a domestic company and
-**{{ rc.promoter_effective_rate_noncorp_pct }}%** for other promoters, regardless of holding period. On the
-same ₹{% include inr.html n=b.gain %} gain a non-corporate promoter would pay roughly
-₹{% include inr.html n=rc.promoter_tax_noncorp %}. Ordinary shareholders are unaffected by this part.
+**{{ rc.promoter_effective_rate_noncorp_pct }}%** for other promoters. Who counts as a promoter (SEBI, the Securities and Exchange Board of India,
+defines it for listed companies; the exact definition for this purpose is from a single secondary source) and whether those rates
+include surcharge and cess should be checked against the Act. If the {{ rc.promoter_effective_rate_noncorp_pct }}% is taken as the all-in rate, the same
+₹{% include inr.html n=b.gain %} gain would bear roughly
+₹{% include inr.html n=rc.promoter_tax_noncorp %}.
 
 ## The three regimes side by side
 
@@ -153,22 +151,21 @@ same ₹{% include inr.html n=b.gain %} gain a non-corporate promoter would pay 
 | Taxed as | Buyback tax on distributed income | **Dividend**, on the *whole* consideration | **Capital gain**, on consideration − cost |
 | Cost of shares | Irrelevant to you | Becomes a separate capital loss | Deducted directly |
 | Rate for an individual | 0% (company paid {{ a.company_tax_rate_pct }}%) | Slab | {{ r.equity_stcg_pct }}% / {{ r.equity_ltcg_pct }}% with exemption |
-| Our example's tax | ₹0 | ₹{% include inr.html n=rb.tax_with_cess %} (less loss value later) | ₹{{ rc.ltcg_tax_with_cess }} or ₹{% include inr.html n=rc.stcg_tax_with_cess %} |
-| Promoter add-on | — | — | Effective 22% / 30% |
+| Our example's tax | ₹0 | ₹{% include inr.html n=rb.tax_with_cess %} (less loss value later) | ₹{{ rc.ltcg_tax_with_cess }} or ₹{% include inr.html n=rc.stcg_tax_with_cess %}, if listed-equity rates and the exemption apply (unconfirmed) |
+| Promoter add-on | — | — | Effective 22% / 30% per the Bill's memorandum |
 
 ## Why the date matters for your return
 
-A buyback is taxed by the regime in force **on the date the shares were
-bought back**, which on the current reading is the date the company pays you
+A buyback is taxed by the regime in force on the date the shares were
+bought back. As at September 2026 the reading used here is the date the company pays you
 — not the date of the announcement, and not the date you tendered. On that
 reading, a buyback announced in March 2026 and settled in April 2026 is a
-Regime C event. For a buyback straddling the change, confirm the date with a
-professional.
+Regime C event. The date rule is not confirmed from the Act's text; check the current rule for a buyback that straddles the change.
 
 If you tendered shares in a Regime B buyback, your return for that year needs
 two entries that don't feel like they belong together: a dividend (the whole
-amount, with its TDS in Form 26AS) and a capital loss (your cost). Both must
-be reported; the [AIS]({% post_url 2026-11-10-before-you-file %}) will show the
+amount, with its TDS in the tax credit statement) and a capital loss (your cost). Both must
+be reported; the [AIS (Annual Information Statement)]({% post_url 2026-11-10-before-you-file %}) will show the
 company's payment and the department will expect to see it somewhere.
 
 ## Common mistakes
@@ -178,26 +175,18 @@ company's payment and the department will expect to see it somewhere.
 - **Forgetting to claim the Regime B capital loss.** It's real, it carries
   forward eight years, and it is easy to miss because the "sale" had nil
   consideration.
-- **Using the announcement date to pick the regime.** The payout date
-  decides, on the current reading.
-- **Assuming the ₹{% include inr.html n=r.ltcg_annual_exemption %} exemption always applies under Regime C.** It
-  applies to long-term gains on listed shares, once per year, across all your
-  equity gains — and the sources describe buyback gains as taxed "under the
-  capital gains head at normal rates" rather than stating the exemption
-  outright. Confirm with a professional before relying on it.
-- **Believing "buyback is more tax-efficient than a dividend" as a rule.**
-  True in Regime A, false in Regime B, and in Regime C true only when the
-  gain is small relative to the payout — as it was here.
-- **Promoters assuming the ordinary rates.** The additional tax applies to
-  them alone, and it changes the arithmetic of a buyback entirely.
+- **Assuming the ₹{% include inr.html n=r.ltcg_annual_exemption %} exemption and equity rates certainly apply under Regime C.** The sources describe buyback gains as taxed "under the
+  capital gains head" without stating the exemption or rates for buybacks. This is unconfirmed.
+- **Treating a buyback as always cheaper or dearer than a dividend.** In Regime C the comparison
+  is between a capital-gains rate on the gain and the slab rate on the whole payout. For a
+  taxpayer in the 30% slab the gain-only tax is lower at any gain size; for a taxpayer in a low slab, a dividend
+  can be taxed at a lower rate than the capital-gains rate, and the answer depends on the slab.
 
 **Takeaway:** How a buyback is taxed depends on the date it happened. Until
 September 2024 the company paid and you owed nothing; from October 2024 the
 whole cheque was a dividend at your slab, turning a ₹{% include inr.html n=b.gain %} gain into a
 ₹{% include inr.html n=rb.tax_with_cess %} bill in our example; from April 2026 it is a plain sale
-taxed on the gain, with a surcharge reserved for promoters. Check the payout
-date before you check anything else.
+taxed on the gain, with an additional tax for promoters. The payout date, not the announcement date, is the one the post reads as deciding the regime.
 
 *The module's [data file](https://github.com/himanshug82/wealthprimer/blob/main/_data/tax2.yml)
-lists every source these rules were checked against, and the points a
-professional should confirm before you rely on them.*
+lists the sources these rules were checked against; they are secondary sources and the Finance Bill 2026 memorandum. No professional has reviewed this post.*

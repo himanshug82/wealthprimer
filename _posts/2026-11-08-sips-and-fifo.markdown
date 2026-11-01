@@ -15,6 +15,8 @@ rules_as_of: "August 2026"
 {% assign r = t.rates %}
 {% assign s = t.example_sip %}
 
+*Tax Year 2026-27 (FY 2026-27) is the label for the rules below. The worked example redeems on 31 March 2026, which falls in FY 2025-26, so it illustrates the mechanics rather than a Tax Year 2026-27 return; the rates and exemption it uses are the ones shown in the table.*
+
 ## A SIP is not one investment
 
 A [SIP]({% post_url 2026-10-01-sips-xirr-and-timing-myths %}) — systematic investment plan, a fixed sum
@@ -36,20 +38,22 @@ costs and different holding periods.
 
 The answer in practice is **FIFO — first in, first out**. The units you
 bought earliest are treated as the units sold first. For shares and units held
-in demat (electronic) form, that's written into the law — the 1961 Act's
-section 45(2A), explained in Central Board of Direct Taxes (CBDT) Circular 768
-of 24 June 1998, which applies FIFO separately to each demat account. For mutual fund units held in a folio statement
+in demat (electronic) form, FIFO is written into the Income-tax Act, 2025 itself
+(the provision on determining the cost and holding period of securities held in
+a depository). For mutual fund units held in a folio statement
 rather than demat, the registrars apply FIFO as standard practice — and it's
-what your capital gains statement will use.
+what your capital gains statement will use. Check the current rule if your
+holding is in an unusual form.
 
 ```
 Redeem  ->  oldest units go first
         ->  their cost and their purchase date determine the gain
 ```
 
-FIFO is generally favourable for a long-running SIP, because the oldest units
-are the ones most likely to have crossed the twelve-month line and qualify
-for the long-term rate. But it also means your remaining holding is
+FIFO tends to put the oldest units first, and the oldest units are the ones most
+likely to have crossed the twelve-month line and qualify for the long-term
+rate. Whether that helps depends on the market path: if the oldest units sit on a
+loss, the first units out carry that loss. FIFO also means your remaining holding is
 progressively made up of *newer*, shorter-held units — so a second redemption
 soon after is more likely to be short-term.
 
@@ -96,9 +100,9 @@ Now the part a single "total gain" number hides. Of those {{ s.instalments_total
 | Short-term (held ≤ {{ r.equity_holding_months }} months) | {{ s.short_term_lots }} | a **loss** of ₹{% include inr.html n=s.short_term_loss_abs %} |
 
 One redemption, on one day, from one fund — producing a long-term gain and a
-short-term *loss* simultaneously. That isn't unusual; it's what a SIP
-redemption normally looks like when the recent market has been weak, as it
-was in early 2026.
+short-term *loss* simultaneously. That can happen whenever the recent
+instalments are priced above the redemption NAV; the table above shows it in this
+example.
 
 ## And the tax comes to nothing
 
@@ -115,10 +119,9 @@ Work it through:
 
 **Total tax on a ₹{% include inr.html n=s.total_gain %} gain: zero.** But notice what happened to the
 loss: it's used up, and nothing carries forward. The long-term gain was
-already under the exemption, so absorbing the loss saved no tax at all. Had
-that ₹{% include inr.html n=s.short_term_loss_abs %} loss landed in a year with no gains to absorb it, it would
-have carried forward to offset a future taxable gain. That's a quiet cost of
-redeeming both kinds of lot in the same year.
+already under the exemption, so absorbing the loss saved no tax at all. A short-term
+loss in a year with no gains to absorb it would instead carry forward, so the same
+lots can be taxed differently depending on what else lands in the same year.
 
 The zero is real, and it’s worth being careful about what it does and
 doesn't show. It isn't clever planning — nobody arranged it. It's the
@@ -129,10 +132,10 @@ headline gain without splitting it by lot.
 
 ## What follows practically
 
-**Redeeming the whole thing in one financial year concentrates the gain.**
-Everything lands in one year, against one ₹{% include inr.html n=r.ltcg_annual_exemption %} exemption. Splitting a large
-redemption across two financial years gets two exemptions — the difference is
-worth up to about ₹16,250 in tax, for nothing more than waiting until April.
+**The exemption is per financial year.** The ₹{% include inr.html n=r.ltcg_annual_exemption %} annual exemption applies to the long-term gains
+of one financial year, so the same total gain realised in one year or spread over
+two can produce different tax. This is a description of the mechanics, not a
+suggestion to time a redemption.
 
 **Stopping a SIP doesn't start any clock.** Holding periods run from each
 instalment's own purchase date, regardless of whether you're still investing.
@@ -154,12 +157,9 @@ purchase with a fresh date and its own clock.
 - **Assuming a long-running SIP is all long-term.** The most recent twelve
   months of instalments never are.
 - **Expecting to choose which units you sell.** FIFO decides, not you.
-- **Redeeming everything in one financial year without thinking.** One
-  exemption instead of two.
-- **Forgetting a switch is a sale.** Including regular-to-direct switches of
-  the same fund.
 - **Estimating tax from the total gain.** The split between long and short
   lots is what determines it, and the two can point in opposite directions.
+  A switch is also a sale, including a regular-to-direct switch of the same fund.
 
 ## Sources
 

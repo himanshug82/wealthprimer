@@ -16,14 +16,14 @@ rules_as_of: "August 2026"
 
 ## The question that changed
 
-For two decades, "how do I save tax?" had a standard answer in India: put
-₹1.5 lakh into something that qualifies for the deduction long known as 80C —
-ELSS (equity-linked savings scheme) funds, the PPF (Public Provident Fund),
-life insurance premiums, EPF (Employees' Provident Fund) contributions, home
-loan principal.
+This post describes the rules for Tax Year 2026-27 (FY 2026-27, the financial
+year from April 2026 to March 2027), as at August 2026. For two decades, the
+standard route to a tax deduction in India was the one long known as 80C: up to
+₹1.5 lakh in ELSS (equity-linked savings scheme) funds, the PPF (Public
+Provident Fund), life insurance premiums, EPF (Employees' Provident Fund)
+contributions, or home loan principal.
 
-That answer is now conditional, and for a growing number of people it's
-simply no longer available.
+Whether that deduction applies to you now depends on which tax regime you are in.
 
 ## Two regimes, one of them now the default
 
@@ -31,20 +31,18 @@ India runs two parallel personal tax systems, and you choose between them:
 
 | | Old regime | New regime |
 |---|---|---|
-| Slab rates | Higher | Lower |
+| Slab rates | Typically higher rates at a given income | Typically lower rates at a given income |
 | Deductions and exemptions | Available | **Mostly not** |
 | Status | Opt in | **Default** |
 
-The trade is explicit: the new regime gives lower rates in exchange for
-giving up most deductions. And because it is the **default**, the deduction
-disappears unless you actively choose the old regime.
-
-So the tax-saving investment that was reflexive for a generation of Indian
-investors now only helps if you've opted into the regime where it exists.
+The trade is explicit: the new regime has lower rates in exchange for
+giving up most deductions. Because it is the **default**, the deduction
+applies only to someone who has chosen the old regime. A deduction-linked
+investment therefore has a tax effect only in the regime where the deduction exists.
 
 **Note on section numbers.** The Income-tax Act, 2025 renumbered almost
 everything — what everyone called 80C is now a differently numbered provision.
-The deduction and the ₹1.5 lakh cap carried over unchanged. This series
+The Act's provision for the provident fund and life-insurance-premium deduction keeps the ₹1.5 lakh cap (as read in the ICAI copy of the Act). This series
 refers to it by what it does rather than by number, because the number is
 the part that changed.
 
@@ -58,12 +56,12 @@ of things — your case, your screen protector, your headphones.
 
 **Plan B** is cheaper every month, but you can't claim anything back.
 
-Neither is automatically better. It depends entirely on how much stuff you
-were actually going to claim. Someone who buys nothing is better off on Plan
-B; someone who claims a lot might do better on Plan A.
+Neither is automatically better. It depends on how much stuff you
+actually claim. Someone who buys nothing does better on Plan B; someone who
+claims a lot might do better on Plan A.
 
-The catch: if you don't choose, you're put on Plan B. And then keeping the
-receipts achieves nothing at all.
+The catch: if you don't choose, you're put on Plan B, and then the receipts
+count for nothing.
 
 </details>
 
@@ -77,9 +75,10 @@ distinguishing features:
 
 Two things about that lock-in are widely misunderstood.
 
-**It's the shortest lock-in among the traditional tax-saving options** —
-compare PPF at fifteen years, or tax-saving fixed deposits at five. That's a
-genuine advantage of ELSS within its category.
+**The lock-in is three years.** For comparison, PPF's term is fifteen years
+and tax-saving fixed deposits are typically locked for five years (those two
+figures come from the schemes' own rules, not from this post's sources; check the
+current terms).
 
 **It applies per instalment, not per investment.** A monthly SIP into an ELSS
 fund locks each instalment for three years from *its own* date. The
@@ -102,46 +101,33 @@ equity fund — covered in the
 The deduction reduces your taxable income when you invest. It does not make
 the eventual gain tax-free. Both facts get run together constantly.
 
-## Choosing a regime, briefly
+## How the two regimes differ, briefly
 
-This is a personal calculation and it genuinely varies. The shape of it:
+This post does not say which regime suits anyone; it describes what differs.
 
-- The old regime can win where you have **large, real deductions you'd have
-  incurred anyway** — substantial home loan interest, significant insurance
-  premiums, house rent allowance.
-- The new regime tends to win where deductions would be **manufactured** —
-  investments made only for the deduction, in products you wouldn't otherwise
-  want. From FY 2025-26 its rebate also means no tax on total income up to
-  ₹12 lakh (special-rate gains like equity capital gains aside).
-
-That second point is the one worth internalising. A deduction is worth your
-marginal rate — at 30%, ₹1.5 lakh deducted saves ₹45,000, or ₹46,800 with
-the {{ r.cess_pct }}% cess. That's real. But it
-is *not* a reason to buy a product with poor returns or a fifteen-year
-lock-in you didn't want. A bad investment with a tax break attached is
-usually still a bad investment; the break is a one-off saving against a
-commitment that runs for years.
-
-The genuinely useful move is to check both regimes against your actual
-numbers each year, rather than assuming the answer carries over. The tax
-department publishes a calculator for exactly this. Salaried filers can
-switch every year; anyone with business income can leave the new regime and
-come back to it only once.
+- The old regime allows deductions (home loan interest, insurance premiums,
+  house rent allowance and others) against higher slab rates.
+- The new regime allows few deductions against lower slab rates. It also has a
+  rebate that, in the ICAI copy of the Income-tax Act, 2025, removes tax on total
+  income up to ₹12 lakh for a resident individual, but not on tax on
+  special-rate gains such as equity capital gains. Check the current limit.
+- A deduction reduces tax by the taxpayer's marginal rate (plus the
+  {{ r.cess_pct }}% cess) on the amount deducted. The size of that saving depends
+  on the slab the income falls in and on which regime applies.
+- Whether a taxpayer can switch regimes from year to year depends on the type of
+  income (salary or business). The switching rules are not covered here; check the
+  current rule.
 
 ## Common mistakes
 
 - **Assuming the deduction is still available by default.** The new regime
   is the default and mostly doesn't have it.
-- **Investing for a deduction you can't claim.** Buying ELSS in December
-  while filing under the new regime achieves nothing tax-wise.
+- **Counting a deduction you can't claim.** Under the new regime the deduction
+  is not available, so an ELSS contribution has no deduction effect.
 - **Thinking the ELSS lock-in runs from when you started.** Three years per
   instalment, each on its own clock.
 - **Believing the deduction makes gains tax-free.** It reduces income now;
   the gains are taxed as equity later.
-- **Choosing a regime once and never revisiting.** Your deductions change as
-  loans are repaid and circumstances shift.
-- **Letting the tax break choose the product.** A 30% saving once doesn't
-  redeem fifteen years in something you didn't want.
 
 ## Sources
 
@@ -150,8 +136,6 @@ come back to it only once.
 - [Memorandum explaining the provisions of the Finance Bill, 2026](https://www.indiabudget.gov.in/doc/memo.pdf): the government's explanation of those changes.
 
 **Takeaway:** The ₹1.5 lakh deduction still exists, but only in the old
-regime — and since the new regime is the default, tax-saving investments now
-help only if you've actively chosen the system where they count. ELSS remains
-the shortest lock-in of the traditional options at three years per
-instalment, and its gains are taxed like any other equity fund regardless of
-which regime you file under.
+regime, and the new regime is the default. ELSS has a three-year lock-in per
+instalment, and its gains are taxed like any other equity fund whichever
+regime applies.

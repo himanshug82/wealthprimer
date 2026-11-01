@@ -19,7 +19,9 @@ rules_as_of: "August 2026"
 The [last post]({% post_url 2026-11-02-how-investment-income-is-taxed %}) said the holding
 period decides most of what happens to a capital gain. This post is about
 exactly where that line sits and how it's counted, because the difference
-either side of it is large and entirely mechanical.
+either side of it is large and entirely mechanical. Everything here is for
+**Tax Year 2026-27 (FY 2026-27)**; FY is *financial year*, and STCG and LTCG are
+short-term and long-term capital gains.
 
 For listed equity and equity mutual funds:
 
@@ -28,14 +30,9 @@ For listed equity and equity mutual funds:
 | {{ r.equity_holding_months }} months or less | Short-term | **{{ r.equity_stcg_pct }}%** |
 | More than {{ r.equity_holding_months }} months | Long-term | **{{ r.equity_ltcg_pct }}%** above ₹{% include inr.html n=r.ltcg_annual_exemption %} a year |
 
-Sell on day 365 and a ₹5,00,000 gain is taxed at {{ r.equity_stcg_pct }}% — ₹1,00,000. Sell on
-day 366 and the first ₹{% include inr.html n=r.ltcg_annual_exemption %} is exempt and the rest is taxed at {{ r.equity_ltcg_pct }}%, which
-comes to ₹46,875. Same investment, same gain, one day apart, and less than
-half the tax.
-
-That gap is the single largest piece of tax arithmetic available to an
-ordinary investor, and it requires nothing except knowing the date you
-bought.
+Sold at exactly 12 months, a ₹5,00,000 gain is short-term and taxed at {{ r.equity_stcg_pct }}% — ₹1,00,000. Sold just over 12 months, the first ₹{% include inr.html n=r.ltcg_annual_exemption %} is exempt and the rest is taxed at {{ r.equity_ltcg_pct }}%, which
+comes to ₹46,875. Same investment, same gain, a day or so apart, and less than
+half the tax. The rest of this post is about how that line is drawn.
 
 ## The two holding periods
 
@@ -43,32 +40,27 @@ The line isn't in the same place for everything:
 
 | Asset | Long-term after |
 |---|---|
-| Listed shares (NSE/BSE) | {{ r.equity_holding_months }} months |
-| Equity mutual funds (≥65% in Indian equity) | {{ r.equity_holding_months }} months |
-| Listed bonds and debentures | {{ r.equity_holding_months }} months |
+| Listed shares (NSE, the National Stock Exchange, or BSE) | {{ r.equity_holding_months }} months |
+| Equity mutual funds (the equity-oriented test below) | {{ r.equity_holding_months }} months |
+| Listed bonds and debentures (some instruments differ; check the asset) | {{ r.equity_holding_months }} months |
 | Unlisted shares | {{ r.other_holding_months }} months |
 | Property (land, buildings) | {{ r.other_holding_months }} months |
-| Listed gold ETFs (sold from 1 Apr 2025) | {{ r.equity_holding_months }} months |
-| Physical gold, jewellery; gold funds of funds sold from 1 Apr 2025 | {{ r.other_holding_months }} months |
+| Listed gold ETFs | {{ r.equity_holding_months }} months |
+| Physical gold, jewellery; gold funds of funds | {{ r.other_holding_months }} months |
 | Specified debt funds (more than 65% in debt) bought on/after 1 Apr 2023 | *No long-term rate at all — slab rate always* |
 
-The gold rows reflect a Finance Act 2025 change that applies from FY 2025-26
-onward: gold [ETFs]({% post_url 2026-10-13-index-funds-vs-etfs %}) and gold [funds of funds]({% post_url 2026-10-20-international-funds %}) are no longer lumped in with debt
-funds, so a listed gold ETF goes long-term after {{ r.equity_holding_months }} months and an unlisted
-gold fund of funds after {{ r.other_holding_months }}.
+The gold rows show listed gold [ETFs]({% post_url 2026-10-13-index-funds-vs-etfs %}) at {{ r.equity_holding_months }} months and gold [funds of funds]({% post_url 2026-10-20-international-funds %}) at {{ r.other_holding_months }}. How gold funds were classified changed in recent years, and this post doesn't trace that history, so check the current rule for the instrument you hold.
 
 Two things worth noting.
 
-**"Equity fund" has a definition.** A fund qualifies for equity treatment
-only if it holds at least 65% in Indian equity. Some funds you'd assume are
-equity funds — certain international funds, some hybrids, most funds of
-funds — don't clear that bar and are taxed under the other rules entirely. The
+**"Equity fund" has a definition.** For tax, a fund qualifies as equity-oriented
+only if it meets a minimum share of domestic listed equity, set out in the Act. Some funds you'd
+assume are equity funds — certain international funds, some hybrids, funds of
+funds — may not meet it and then fall under the other rules. The exact test, including how it treats a fund of funds, is not covered here; check the current rule. The
 factsheet tells you; [the post on reading one]({% post_url 2026-10-11-reading-a-factsheet %}) covers where
 to look.
 
-**That last row is not an oversight.** Debt funds bought from April 2023
-have no long-term category. Holding them for a decade earns no rate benefit.
-The debt funds post later in this series covers why.
+**That last row is not an oversight.** For specified debt funds the gain is taxed at the slab rate whatever the holding period. The debt funds post in this series covers the definition.
 
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
@@ -80,8 +72,8 @@ Buy something on day 364 of your membership and you pay full price. Buy the
 same thing on day 366 and you get the discount. Nothing about the item
 changed. Nothing about you changed. Only the date did.
 
-Tax on investments works the same way, and the discount is big. The only
-skill involved is checking your membership date before you buy.
+Tax on investments works the same way: the rate depends on a date, not on
+anything about the investment.
 
 </details>
 
@@ -90,20 +82,19 @@ skill involved is checking your membership date before you buy.
 Three rules that catch people out.
 
 **Count from the date of acquisition to the date of transfer.** Not from when
-the money left your account, and not from the financial year. The unit
-allotment date is what counts, which for a mutual fund purchase is the date
-units were allotted, not necessarily the date you clicked buy.
+the money left your account, and not from the financial year. For a mutual fund purchase the date that matters is generally the date units were
+allotted, which can differ from the date you placed the order; check your statement.
 
 **"More than 12 months" means more than.** Exactly twelve months is not
-long-term. If you bought on 15 March 2025, the gain becomes long-term on
-16 March 2026, not 15 March.
+long-term. Someone who bought on 15 March 2025 crosses the line only after
+15 March 2026.
 
 **Each purchase has its own clock.** This is the one that matters most in
 practice. Buy the same fund in five separate transactions and you hold five
 lots with five different acquisition dates. Redeeming "the fund" redeems
-specific lots, each classified on its own. That's the entire subject of
-the FIFO post later in this series, and it's why a single SIP
-redemption can produce both long-term and short-term gains at once.
+specific lots, each classified on its own. That's the subject of
+the FIFO (first in, first out) post in this series, and it's why a single SIP
+(systematic investment plan) redemption can produce both long-term and short-term gains at once.
 
 ## Worked example: one day either side
 
@@ -120,19 +111,11 @@ a clean doubling — and compare selling just before and just after the twelve-m
 | Rate | {{ r.equity_stcg_pct }}% | {{ r.equity_ltcg_pct }}% |
 | Tax | ₹1,00,000 | ₹46,875 |
 | Plus {{ r.cess_pct }}% cess | ₹1,04,000 | ₹48,750 |
-| **Difference** | | **₹55,250 saved** |
+| **Difference in tax** | | **₹55,250 lower** |
 
-A day's patience, on a single transaction, worth ₹55,250.
-
-Now the honest caveat, because this is where tax thinking goes wrong.
-Holding an investment you want to sell purely to cross a tax line is a bet
-that the price won't fall more than the tax you'd save. On equity the saving
-is 7.8 percentage points of the gain (20.8% with cess against 13%), plus up
-to ₹16,250 more if your annual exemption is unused — about 11% of the gain in
-this example. If the holding drops 15% while you wait, you've
-paid more for the tax saving than it was worth. The tax tail should not wag
-the investment dog — but when the decision is genuinely marginal, and the
-date is close, it's free money to check.
+The same gain carries ₹55,250 less tax on the right-hand side. That is a
+mechanical comparison, not a reason to hold or sell: the price can move
+between the two dates by far more than the tax difference, in either direction.
 
 ## Common mistakes
 
@@ -142,12 +125,8 @@ date is close, it's free money to check.
   Indian-equity test decides it, not the fund's name.
 - **Counting from the wrong date.** Allotment to transfer, not
   financial-year boundaries, and not the date you placed the order.
-- **Treating "12 months" as inclusive.** You need *more than* twelve months.
+- **Treating "12 months" as inclusive.** The test is *more than* twelve months.
 - **Forgetting each purchase has its own clock.** One holding is many lots.
-- **Holding a deteriorating investment for the tax rate.** The saving is
-  7.8 percentage points of the gain, plus up to ₹16,250 if your exemption is
-  unused — about 11% of the gain in this example. A larger price fall wipes
-  it out.
 
 ## Sources
 
@@ -155,10 +134,4 @@ date is close, it's free money to check.
 - [Finance Act, 2026, Gazette of India](https://egazette.gov.in/WriteReadData/2026/271439.pdf): the Finance Act that made the 2026 changes.
 - [Memorandum explaining the provisions of the Finance Bill, 2026](https://www.indiabudget.gov.in/doc/memo.pdf): the government's explanation of those changes.
 
-**Takeaway:** The holding period is the single most consequential fact about
-a capital gain — twelve months for listed equity and equity funds,
-twenty-four for most other assets, counted from allotment and needing to be
-*more than*, not equal to. On equity the difference is 7.8 percentage points
-of the gain plus up to ₹16,250 of unused exemption — about 11% in this
-example — which is worth a calendar check before you sell and never worth
-holding something you've decided to be rid of.
+**Takeaway:** For listed equity and equity funds the line between short-term and long-term gains is 12 months, and for most other assets 24, counted from allotment or purchase to transfer and needing to be *more than*, not equal to. Each purchase carries its own clock, so one holding can contain both kinds of lot.

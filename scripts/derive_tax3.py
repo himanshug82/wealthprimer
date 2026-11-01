@@ -341,6 +341,7 @@ minor_interest = 20_000
 minor_exclusion = 1_500          # Schedule III, Sl. No. 17
 minor_clubbed = minor_interest - minor_exclusion
 minor_tax = cess(minor_clubbed * SLAB)
+minor_tax_no_exclusion = cess(minor_interest * SLAB)   # new regime: Sl. No. 17 disallowed (s.202(2)(a)(i))
 
 # Real data: the same lump sum as _data/tax.yml example_lumpsum
 ls = TAX["example_lumpsum"]
@@ -373,6 +374,7 @@ gifts = {
     "minor_exclusion": minor_exclusion,
     "minor_clubbed": minor_clubbed,
     "minor_tax_with_cess": minor_tax,
+    "minor_tax_no_exclusion_with_cess": minor_tax_no_exclusion,
     "ls_buy_date": "1 April 2020",
     "ls_sell_date": "31 March 2026",
     "ls_invested": ls["invested"],

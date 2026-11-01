@@ -19,6 +19,8 @@ rules_as_of: "September 2026"
 
 ## What changes when you leave
 
+This post covers Tax Year 2026-27 (FY 2026-27, April 2026 to March 2027). TDS is tax deducted at source; UTI and AMFI (Association of Mutual Funds in India) appear as the fund house and data source.
+
 An **NRI — non-resident Indian** — is, for tax, simply an Indian citizen (or
 person of Indian origin) who isn't resident in India in the tax year. Broadly,
 under section 6 of the 2025 Act you're resident if you spend **{{ x.resident_days }} days or
@@ -28,8 +30,8 @@ second test is relaxed. Edge cases — the 120-day rule, "deemed residents",
 the "not ordinarily resident" middle status — are beyond this post. Settle
 your status first, because everything below depends on it.
 
-A non-resident is taxed in India only on income that arises, or is
-received, in India. For an
+In broad terms, a non-resident is taxed in India on income that arises, or is
+received, in India (the Act also has deeming rules, and we have not cited the section; check the current rule). For an
 investor that's the familiar list: capital gains on Indian shares and funds,
 dividends, and interest on Indian deposits and bonds. The **rates** are
 largely the ones earlier posts in this series used. What changes is
@@ -45,7 +47,7 @@ largely the ones earlier posts in this series used. What changes is
 
 When a non-resident sells or redeems, the payer (the fund house, or the
 broker for listed shares) deducts tax from the **gain** before paying out.
-The rates come from the Finance Act, 2026 (First Schedule, Part II), for a
+The rates below are per the Finance Bill, 2026 as introduced (First Schedule, Part II); we could not open the Finance Act, 2026, so check the Act. They are for a
 non-resident Indian:
 
 | Gain | TDS rate |
@@ -56,7 +58,8 @@ non-resident Indian:
 | Other income, including short-term gains on debt funds | {{ x.tds_other_pct }}% |
 
 Plus **{{ r.cess_pct }}% cess** on the TDS, and a **surcharge** once the amount paid
-crosses ₹50 lakh (capped at 15% on capital gains and dividends).
+crosses ₹50 lakh (the cap on capital-gains and dividend surcharge is covered in the
+[opening post]({% post_url 2026-11-02-how-investment-income-is-taxed %}); the surcharge on TDS is not verified here).
 
 The rates match what a resident would pay on the same gain, at a 30% slab.
 The differences are timing and a few resident-only reliefs: a resident with
@@ -72,8 +75,8 @@ holding the [equity post]({% post_url 2026-11-04-equity-and-equity-funds %}) use
 UTI Gilt Fund (regular plan, growth — the fund from the
 [debt funds post]({% post_url 2026-10-12-debt-funds-explained %})) on {{ x.gilt_buy_date }}. Both are
 redeemed on {{ x.gilt_sell_date }} (AMFI NAVs via mfapi.in, as of 31 March 2026,
-used for illustration only; we apply {{ v.financial_year }}'s rates, which
-are unchanged from the year before). Payments are well under ₹50 lakh, so no
+used for illustration only; we apply {{ v.financial_year }}'s capital-gains rates, which
+the Budget memorandum describes as unchanged from the year before; the TDS items are not covered by that statement). Payments are well under ₹50 lakh, so no
 surcharge.
 
 | | Equity index fund | Gilt fund |
@@ -125,10 +128,10 @@ given treaty says is in its own articles; this post doesn't summarise any.
 
 To claim a treaty benefit, you need a **TRC — tax residency certificate** —
 from the government of the country where you're resident, plus the prescribed
-documents and declaration (section 159(8)). No TRC, no treaty relief: the
-payer deducts at the Act's rate, and your return is assessed at it too. Give the TRC and
-declaration to the fund house or bank *before* the payment, and each year,
-since a TRC covers a period.
+documents and declaration (section 159(8)). The Act requires a certificate and prescribed documents for the treaty claim.
+Without them, the payer deducts at the Act's rate. Payers set their own deadlines
+for receiving the documents, and a certificate covers a stated period, so check the
+payer's current requirements.
 
 And tax paid in India usually has to be dealt with again in your country of
 residence, which may tax your worldwide income and give credit for India's
@@ -164,20 +167,15 @@ a lower-deduction certificate.
 - **Assuming the ₹{% include inr.html n=r.ltcg_annual_exemption %} exemption is lost abroad.** It isn't; TDS on equity
   long-term gains applies only above it. What an NRI loses is the resident-only
   basic-exemption adjustment and rebate.
-- **Claiming a treaty rate without a TRC.** The relief needs the certificate
-  and the prescribed declaration, on file with the payer in time.
+- **Claiming a treaty rate without a TRC.** The Act requires the certificate
+  and prescribed documents for the claim.
 - **Keeping an NRE account after moving back.** The exemption follows your
   FEMA status, not the account's name.
-- **Settling Indian tax and ignoring the other country.** The country you
-  live in may tax the same income, with a credit for India's tax — a separate
-  set of rules.
 
 ## What this series doesn't cover
 
 Being clear about the edges, as the
-[before-you-file post]({% post_url 2026-11-10-before-you-file %}) was. Since then this
-series has picked up some of that post's gaps — gifts and clubbing, and the
-basics of non-resident investment income — but these stay out:
+[before-you-file post]({% post_url 2026-11-10-before-you-file %}) was. Some of that post's gaps have since been covered in this series, but these stay out:
 
 - **Residence edge cases.** Deemed residents, "resident but not ordinarily
   resident" status, and the year you leave or return.
@@ -193,8 +191,7 @@ basics of non-resident investment income — but these stay out:
 
 And the standing caveat: this series was written for {{ v.financial_year }},
 the first year under the Income-tax Act, 2025. The rates and the rules will
-move with each Budget. Check the current position — and, where the amounts
-matter, pay someone who files professionally.
+move with each Budget. Check the current position.
 
 **Takeaway:** For an NRI, most Indian investment income is taxed at the same
 rates a resident would pay — the difference is that it's taken at source,

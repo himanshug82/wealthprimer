@@ -18,6 +18,8 @@ rules_as_of: "September 2026"
 
 ## Tax is due during the year, not when you file
 
+This post covers Tax Year 2026-27 (FY 2026-27, April 2026 to March 2027). TDS is tax deducted at source and TCS is tax collected at source; F&O is futures and options. All dates and amounts in the worked example are illustrative.
+
 Most salaried people never think about this, because their employer deducts
 tax from every pay slip. But the law's default is that you pay tax **during**
 the year in which you earn the income, not months later when you file. For
@@ -58,8 +60,8 @@ scheme pay the whole amount by 15 March in one go.
 
 ## What it costs to be late
 
-Two separate interest charges, both simple interest. The old Act called them
-234C and 234B; in the 2025 Act they are sections 425 and 424.
+Two separate interest charges, both simple interest, in sections 425 and 424
+of the 2025 Act.
 
 ```
 Section 425 (deferment — "missed an instalment"):
@@ -73,8 +75,7 @@ Section 424 (default — "paid too little overall"):
   from 1 April after the year, until you pay.
 ```
 
-The 3% at each of the first three dates is three months of 1%, covering the
-gap until the next instalment. Both charges are computed on the tax **after**
+Both charges are computed on the tax **after**
 TDS.
 
 ## Why capital gains get special treatment
@@ -88,8 +89,8 @@ carves it out:
 > the tax on that income is paid in full in the remaining instalments, or by
 > 31 March.
 
-That proviso is the whole game. Pay the gain's tax in the next instalment
-after the sale and the earlier shortfall is forgiven. Don't, and the
+That proviso is the key condition. If the gain's tax is paid in the next instalment
+after the sale, the earlier shortfall is forgiven. If it isn't, the
 exception doesn't apply at all: the shortfall is measured against the
 full-year tax, including the gain, right back to 15 June.
 
@@ -186,13 +187,11 @@ computing interest, so the portal's numbers can differ by a few rupees.
 - **Assuming TDS means you're done.** TDS on interest and dividends is 10%.
   In a higher slab the rest is due during the year, through advance tax.
 - **Waiting until filing to pay tax on a big redemption.** Residents get no
-  TDS on fund redemptions. The tax on a gain belongs in the first instalment
-  after the sale.
+  TDS on fund redemptions, so section 425(4) forgives the earlier shortfall only
+  if the gain's tax is paid in the instalments remaining after the sale, or by 31 March.
 - **Reading the capital-gains relief as "gains are exempt from advance tax".**
   They aren't. The relief only forgives the *earlier* instalments, and only
   if you pay in the ones that remain, or by 31 March.
-- **Forgetting that 31 March counts.** A gain realised after 15 March still
-  avoids interest if its tax is paid by 31 March.
 - **Senior citizens with a small trading habit assuming the 60+ exemption.**
   It's lost if there's any business income, and F&O trading is business
   income.

@@ -58,7 +58,7 @@ year.
 ## One example, three regimes
 
 Throughout, the same fictional shareholder: {{ b.shares }} shares of Desi Bites Foods
-bought in the [IPO (initial public offering)](/case-study/) at ₹{{ b.cost_per_share }} on 15 June 2025, tendered in a
+bought in the [IPO (initial public offering)](/case-study/) at ₹{{ b.cost_per_share }} on {{ b.purchase_date }}, tendered in a
 hypothetical buyback at ₹{{ b.buyback_price }}. Consideration
 ₹{% include inr.html n=b.consideration %}, cost ₹{% include inr.html n=b.cost_total %}, economic gain
 **₹{% include inr.html n=b.gain %}**. Illustrative 30% slab plus {{ r.cess_pct }}% cess, no

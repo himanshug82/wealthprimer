@@ -151,10 +151,11 @@ esop:
   rsu_sell_to_cover_shares: 156
   rsu_net_shares: 344
 buyback:
-  note: 'Fictional Desi Bites Foods shareholder: 100 shares bought in the IPO at Rs 640 (15 June 2025),
+  note: 'Fictional Desi Bites Foods shareholder: 100 shares bought in the IPO at Rs 640 (16 June 2025),
     tendered in a hypothetical buyback at Rs 700. Illustrative 30% slab + 4% cess.'
   shares: 100
   cost_per_share: 640
+  purchase_date: 16 June 2025
   buyback_price: 700
   consideration: 70000
   cost_total: 64000

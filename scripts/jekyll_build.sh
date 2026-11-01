@@ -14,6 +14,6 @@ cd "$(dirname "$0")/.."
 if command -v jekyll >/dev/null 2>&1; then
   exec jekyll build -d "$out" "$@"
 fi
-entry="$(ls "$(gem env gemdir)"/gems/jekyll-*/exe/jekyll 2>/dev/null | sort -V | tail -1)"
-[ -n "$entry" ] || { echo "jekyll gem not found (try: bundle install)" >&2; exit 1; }
+entry="$(ls "$(gem env gemdir)"/gems/jekyll-*/exe/jekyll 2>/dev/null | sort -V | tail -1 || true)"
+[ -n "$entry" ] || { echo "jekyll gem not found in $(gem env gemdir) (run: bundle install)" >&2; exit 1; }
 exec ruby "$entry" build -d "$out" "$@"

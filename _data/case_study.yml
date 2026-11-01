@@ -204,7 +204,7 @@ share_data:
 listing:
   company_name_post_listing: "Desi Bites Foods Ltd"
   exchange: "NSE and BSE (main board, illustrative)"
-  listing_date: "15 June 2025"
+  listing_date: "16 June 2025"          # a Monday (trading day); 15 June 2025 was a Sunday
   ipo_price: 640                       # Rs per share
   fresh_issue_shares_lakh: 2.5         # new shares issued, raising growth capital
   ipo_lot_size_shares: 23              # shares per bid lot (invented; the offer document sets the real figure); 23 x Rs 640 = Rs 14,720
@@ -258,7 +258,7 @@ dupont:
 #
 # Valuation date: 1 April 2025 (start of FY26), POST-IPO capital structure
 # from the `listing:` block above. Compared in the posts against the Rs 640
-# IPO price, ignoring the ~2.5-month gap to the 15 June 2025 listing date.
+# IPO price, ignoring the ~2.5-month gap to the 16 June 2025 listing date.
 # End-of-year discounting (no mid-year convention), for simplicity.
 #
 # Every assumption below is invented for teaching purposes, with one

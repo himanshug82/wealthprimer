@@ -10,3 +10,8 @@ tax:
   professional: "tax professional"
   advice: "tax advice"
   check: "Tax rules change, often with each Budget"
+regulation:
+  subject: "Market rules"
+  professional: "securities-law professional"
+  advice: "legal or investment advice"
+  check: "Market rules and circulars are revised from time to time"

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Writing options: capped gain, large loss, margin"
-description: "An option writer keeps the premium but takes the other side of the buyer's payoff. A hypothetical index shows the capped gain, the uncapped loss and margin."
+description: "An option writer keeps the premium but takes the other side of the buyer's payoff. A hypothetical index shows the capped gain, uncapped loss and margin."
 image: /assets/og/option-writing-and-margin.png
 date: 2026-11-08 09:00:00 +0530
 series: risk

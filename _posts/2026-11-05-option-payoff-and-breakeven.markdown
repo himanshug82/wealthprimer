@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Option payoff and breakeven, worked step by step"
-description: "How to work out an option's breakeven and payoff at expiry for a call and a put, and why a cheaper out-of-the-money option needs a bigger move. Hypothetical index."
+description: "How to work out an option's breakeven and payoff at expiry for a call and a put, and why a cheaper out-of-the-money option needs a bigger move."
 image: /assets/og/option-payoff-and-breakeven.png
 date: 2026-11-05 09:00:00 +0530
 series: risk

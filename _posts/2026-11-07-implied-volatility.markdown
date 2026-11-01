@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Implied volatility, plainly: what a price implies"
-description: "Implied volatility is the volatility that makes a pricing model return an option's price. How it is read from a price, and what it is not. Hypothetical index."
+description: "Implied volatility is the volatility that makes a pricing model return an option's price. How it is read back from a price, and what it is not and cannot tell you."
 image: /assets/og/implied-volatility.png
 date: 2026-11-07 09:00:00 +0530
 series: risk

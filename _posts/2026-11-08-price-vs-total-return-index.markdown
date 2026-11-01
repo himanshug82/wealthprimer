@@ -33,7 +33,7 @@ Indexed dividend = dividend payout ÷ base market capitalisation of the index
 Price return     = PR index today ÷ PR index previous day − 1
 ```
 
-PR means the price-return index. Dividends that are unusually large (the document treats a dividend of 2% or more of the share price at announcement as a "special dividend") are adjusted in the price index and left out of the total-return index, so the two series are not simply "price plus every rupee paid".
+PR means the price-return index. Dividends that are unusually large (the document treats a dividend of {{ tr.special_dividend_pct }}% or more of the share price at announcement as a "special dividend") are adjusted in the price index and left out of the total-return index, so the two series are not simply "price plus every rupee paid".
 
 An invented one-day illustration: the price index goes from {% include inr.html n=il.prev_pr %} to {% include inr.html n=il.today_pr %} ({{ il.pr_ret_pct }}%), and that day's dividends amount to {{ il.div_pts }} index points. A TR index that stood at {% include inr.html n=il.prev_tr %} becomes {% include inr.html n=il.today_tr %} ({{ il.tr_ret_pct }}%).
 
@@ -54,7 +54,7 @@ These are index figures. They are not what an investor would have received: nobo
 
 ## Why funds compare to the TRI
 
-A mutual fund that holds the shares receives the dividends. Comparing it with the price index would credit the index with less than the fund could have earned from the same stocks. SEBI requires funds to benchmark against the total-return version; the [tracking error vs tracking difference post]({% post_url 2026-10-04-tracking-error-and-tracking-difference %}) shows what happens when an index fund is measured against the wrong one, and the [benchmarks post]({% post_url 2026-10-02-benchmarks-and-comparing-like-with-like %}) covers the like-with-like rule more widely.
+A mutual fund that holds the shares receives the dividends. Comparing it with the price index would credit the index with less than the fund could have earned from the same stocks. Fund benchmarks are the total-return version (the [tracking error vs tracking difference post]({% post_url 2026-10-04-tracking-error-and-tracking-difference %}) shows cites the SEBI requirement and shows what happens when an index fund is measured against the wrong one), and the [benchmarks post]({% post_url 2026-10-02-benchmarks-and-comparing-like-with-like %}) covers the like-with-like rule more widely.
 
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
@@ -67,7 +67,7 @@ Say you have an orchard. The **price index** only tracks how much each tree is *
 
 - **Comparing a fund's return with the price index.** The fund earns dividends and the price index leaves them out, so the comparison understates the benchmark. Compare with the TRI (and say which one you used).
 - **Thinking the TRI is a different set of stocks.** It holds the same stocks in the same weights. The only difference is the dividends.
-- **Ignoring that the gap compounds.** The yearly gap looks small, but over ten years in the table above it is a difference of tens of thousands of rupees on ₹1,00,000.
+- **Ignoring that the gap compounds.** The yearly gap looks small, but over ten years in the table above it is a difference of ₹{% include inr.html n=diff %} on ₹1,00,000.
 - **Treating the TRI as what you would have earned.** It assumes full reinvestment with no taxes or costs. NSE Indices also publishes a net total-return version that deducts withholding tax on dividends (it states that NTR is computed for the Nifty 50, Nifty Midcap 50 and Nifty 500), so even "total return" has more than one flavour.
 
 **Takeaway:** The price index and the total-return index cover the same stocks; the TRI adds reinvested dividends. Over ten years of Nifty 50 history in our data the TRI ended ahead of the price index by more than one percentage point a year, which is why funds are compared with the TRI.

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Time value: why an option loses value near expiry"
-description: "An option's price is intrinsic value plus time value, and time value drains faster as expiry nears. Decay worked on a hypothetical index, with the model stated."
+description: "An option's price is intrinsic value plus time value, and time value drains faster near expiry. Decay worked on a hypothetical index, model stated."
 image: /assets/og/option-time-value.png
 date: 2026-11-06 09:00:00 +0530
 series: risk

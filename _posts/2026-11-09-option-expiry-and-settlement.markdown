@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Option expiry and settlement: the last day"
-description: "How index and stock options end: cash or delivery, which price settles an index option, and the VWAP rule from December 2026, as read on 1 November 2026."
+description: "How index and stock options end: cash or delivery, which price settles an index option, and the VWAP rule from December 2026, as read on 1 Nov 2026."
 image: /assets/og/option-expiry-and-settlement.png
 date: 2026-11-09 09:00:00 +0530
 series: risk

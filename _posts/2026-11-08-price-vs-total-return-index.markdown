@@ -57,7 +57,7 @@ These are index figures. They are not what an investor would have received: nobo
 
 ## Why funds compare to the TRI
 
-A mutual fund that holds the shares receives the dividends. Comparing it with the price index would credit the index with less than the fund could have earned from the same stocks. Fund benchmarks are the total-return version (the [tracking error vs tracking difference post]({% post_url 2026-10-04-tracking-error-and-tracking-difference %}) shows cites the SEBI requirement and shows what happens when an index fund is measured against the wrong one), and the [benchmarks post]({% post_url 2026-10-02-benchmarks-and-comparing-like-with-like %}) covers the like-with-like rule more widely.
+A mutual fund that holds the shares receives the dividends. Comparing it with the price index would credit the index with less than the fund could have earned from the same stocks. Fund benchmarks are the total-return version (the [tracking error vs tracking difference post]({% post_url 2026-10-04-tracking-error-and-tracking-difference %}) shows what happens when an index fund is measured against the wrong one; SEBI, the Securities and Exchange Board of India, requires fund benchmarks to be total-return indices; check the current rule), and the [benchmarks post]({% post_url 2026-10-02-benchmarks-and-comparing-like-with-like %}) covers the like-with-like rule more widely.
 
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>

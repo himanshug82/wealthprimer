@@ -79,8 +79,8 @@ Imagine a class fruit basket made of five kinds of fruit. If you decide each fru
 
 ## Common mistakes
 
-- **Assuming an index is an average of share prices.** A ₹5,000 share does not count more than a ₹50 share by price. Weights come from market value (or equal shares of the index), not from the price tag.
-- **Mixing full and free-float market cap.** A stock can be large by full market cap and have a modest index weight because a lot of its shares are held by promoters and others. The two columns in the table above rank the same companies differently.
+- **Assuming an index is an average of share prices.** A ₹5,000 share does not count more than a ₹50 share by price. Weights come from market value (or equal weights), not from the price tag.
+- **Mixing full and free-float market cap.** A stock can be large by full market cap and have a modest index weight because a lot of its shares are held by promoters and others. The two columns in the table above give different weights: the largest company's weight and the gap between the top two change, even where the order does not.
 - **Reading a weight as a quality score.** A big weight means a big tradable market value. It says nothing about whether the company is good, cheap or safe.
 - **Expecting the weights to stay put.** Between resets, weights move with prices, and the reset rules and dates differ between indices. Check the methodology document of the index you actually follow.
 

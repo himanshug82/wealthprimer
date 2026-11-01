@@ -34,7 +34,7 @@ This is a [Jargon, Decoded]({{ '/series/jargon/' | relative_url }}) post. Rules 
 | What triggers it | Day's total in a stock is more than {{ bk.threshold_pct }}% of listed shares | A single trade placed in a block window |
 | Where it trades | The normal market | A separate window: {{ bl.morning_window }} (morning) or {{ bl.afternoon_window }} (afternoon) |
 | Size | Measured in shares, as a share of the company | Minimum order size ₹{{ bl.min_order_cr }} crore |
-| Price | Whatever the market price was | Within {{ bl.band_pct }}% of a reference price (see below) |
+| Price | Whatever the market price was | "+{{ bl.band_pct }}%" of a reference price, subject to surveillance measures and applicable price bands (see below) |
 | Delivery | No separate delivery rule in the bulk-deal paragraph | Every trade must result in delivery; it cannot be squared off or reversed |
 | Disclosure | Brokers report the stock, client name, quantity and price immediately; the exchange publishes it the same day, after market hours | The exchange publishes the stock, client name, quantity and price the same day, after market hours |
 
@@ -48,13 +48,13 @@ Bulk deal test:   shares bought (or sold) in a stock in one day
 
 Block deal test:  one trade in a block window
                   order value  ≥  ₹{{ bl.min_order_cr }} crore
-                  price        within {{ bl.band_pct }}% of the reference price
+                  price        "+{{ bl.band_pct }}%" of the reference price (circular wording; see note below)
 
 Reference price:  morning window    =  previous day's closing price
                   afternoon window  =  VWAP (volume-weighted average price) of cash-market trades between {{ bl.afternoon_vwap_window }}
 ```
 
-VWAP counts each trade's price in proportion to its size (the [OBV and VWAP post]({% post_url 2026-10-21-obv-and-vwap %}) shows how it is built). The circular's text reads "+3%" in the copy I read; whether the range is one-sided or two-sided is worth confirming in the circular before you rely on it.
+VWAP counts each trade's price in proportion to its size (the [on-balance volume (OBV) and VWAP post]({% post_url 2026-10-21-obv-and-vwap %}) shows how it is built). The circular's text reads "+3%" in the copy I read; whether the range is one-sided or two-sided is worth confirming in the circular before you rely on it.
 
 ## Worked example: Desi Bites, hypothetical deals
 
@@ -70,7 +70,7 @@ Desi Bites is our [fictional case-study company]({{ '/case-study/' | relative_ur
 
 1. The minimum order is ₹{{ bl.min_order_cr }} crore. At ₹{% include inr.html n=ds.ref_price %} a share, that is {% include inr.html n=bl.min_shares_at_ref %} shares.
 2. That is {{ bl.min_pct_of_company }}% of the whole company. Desi Bites' entire market value at that price is only ₹{% include inr.html n=ds.market_cap_cr %} crore. A block deal is plainly meant for much larger companies; a company this small could hardly use the window at all.
-3. For a morning-window order, the price would have to sit within {{ bl.band_pct }}% of the reference price: from about ₹{% include inr.html n=bl.band_lo %} to ₹{% include inr.html n=bl.band_hi %}.
+3. The circular's band is written "+{{ bl.band_pct }}%" of the reference price. If it is a two-sided ±{{ bl.band_pct }}% band (unconfirmed, see the note under the formula), a morning-window order would have to sit between about ₹{% include inr.html n=bl.band_lo %} and ₹{% include inr.html n=bl.band_hi %}.
 
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>

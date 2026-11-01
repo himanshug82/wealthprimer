@@ -38,7 +38,7 @@ The rows above are the framework as restated in the 5 January 2024 circular. It 
 
 ## How the trade works
 
-Because the framework bans naked shorting, a short seller has two ways to meet the delivery obligation:
+Because the framework bans naked shorting, a short seller has two ways to meet the delivery obligation (the first applies to retail investors; the circular does not allow institutions to square off intraday and requires them to settle gross):
 
 - **Buy back before the day ends.** The sale and the purchase cancel out, and nothing is left to deliver. This is the simplest route.
 - **Borrow the shares.** To stay short beyond the day, the seller needs shares to deliver at settlement. The SLB scheme exists to let investors borrow shares from holders who lend them. Check the current terms, fees and eligibility with your broker or the exchange.
@@ -48,8 +48,8 @@ Either way the settlement cycle matters: shares sold today are due for delivery 
 ## The arithmetic
 
 ```
-Gain or loss on a short  =  (sale price − buy-back price) × shares
-Gain or loss on a buy    =  (sale price − buy price) × shares      (mirror image)
+Gain or loss on a short  =  (entry price − buy-back price) × shares
+Gain or loss on a buy    =  (exit price − entry price) × shares      (mirror image)
 
 Most a short can gain    =  sale proceeds   (the price cannot fall below zero)
 Most a buyer can lose    =  the amount paid (the price cannot fall below zero)

@@ -78,8 +78,7 @@ it can differ between SPVs of the same trust.
 
 ## The "repayment of debt" component
 
-Before the Finance Act 2023, this piece was taxed nowhere: the trust didn't pay tax on it and
-the unit holder didn't either. The Finance Act 2023 closed that gap, and the
+On the Finance Bill 2023 memorandum's description, this piece was previously not taxed in the unit holder's hands, and the Finance Act 2023 changed that; the
 2025 Act carries the rule forward (section 92(2)(k)). The formula:
 
 ```
@@ -164,11 +163,11 @@ Listed REIT and InvIT units are taxed almost exactly like listed shares:
 | | Listed REIT/InvIT units |
 |---|---|
 | Long-term after | {{ r.equity_holding_months }} months |
-| Short-term rate | {{ r.equity_stcg_pct }}% (sold on the exchange, STT paid) |
+| Short-term rate | {{ r.equity_stcg_pct }}% (sold on the exchange, with securities transaction tax, STT, paid) |
 | Long-term rate | {{ r.equity_ltcg_pct }}% above ₹{% include inr.html n=r.ltcg_annual_exemption %} a year |
 | Annual exemption | **Shared** with equity shares and equity funds — one ₹{% include inr.html n=r.ltcg_annual_exemption %} across all of them |
 
-**STT** is securities transaction tax, charged on exchange trades. This is
+STT is charged on exchange trades. This is
 the July 2024 position. Before 23 July 2024, units of a listed business trust
 needed **36 months** to become long-term, and the rates were 15% and 10%
 (per the Memorandum to the Finance (No. 2) Bill, 2024). Anything older you

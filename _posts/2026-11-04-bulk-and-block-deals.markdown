@@ -16,7 +16,7 @@ term: "Bulk deal and block deal"
 
 ## What bulk and block deals mean
 
-News headlines say things like "a fund bought ₹X crore of a company in a bulk deal". The words *bulk* and *block* sound like cousins. They are two different things, defined by two different rules from SEBI (the Securities and Exchange Board of India, the market regulator).
+News headlines say things like "a fund bought ₹X crore of a company in a bulk deal". The words *bulk* and *block* look like cousins. They are two different things, defined by two different rules from SEBI (the Securities and Exchange Board of India, the market regulator).
 
 A **bulk deal** is a count of a day's trading. It covers every transaction in one stock on an exchange where the total quantity bought (or sold) is more than {{ bk.threshold_pct }}% of the company's listed equity shares. The total can be reached through one trade or many, in the normal market, during the day.
 
@@ -50,14 +50,14 @@ Block deal test:  one trade in a block window
                   price        within {{ bl.band_pct }}% of the reference price
 
 Reference price:  morning window    =  previous day's closing price
-                  afternoon window  =  VWAP of cash-market trades between {{ bl.afternoon_vwap_window }}
+                  afternoon window  =  VWAP (volume-weighted average price) of cash-market trades between {{ bl.afternoon_vwap_window }}
 ```
 
-VWAP is the volume-weighted average price: each trade's price counts in proportion to its size (the [OBV and VWAP post]({% post_url 2026-10-21-obv-and-vwap %}) shows how it is built). The circular's text reads "+3%" in the copy I read; whether the range is one-sided or two-sided is worth confirming in the circular before you rely on it.
+VWAP counts each trade's price in proportion to its size (the [OBV and VWAP post]({% post_url 2026-10-21-obv-and-vwap %}) shows how it is built). The circular's text reads "+3%" in the copy I read; whether the range is one-sided or two-sided is worth confirming in the circular before you rely on it.
 
 ## Worked example: Desi Bites, hypothetical deals
 
-Desi Bites is our [fictional case-study company]({{ '/case-study/' | relative_url }}). It has {% include inr.html n=ds.total_shares %} shares. For the block-deal part we assume its previous close was ₹{% include inr.html n=ds.ref_price %}, the IPO price used as a stand-in. Every trade below is invented for illustration; no real market price is used.
+Desi Bites is our [fictional case-study company]({{ '/case-study/' | relative_url }}). It has {% include inr.html n=ds.total_shares %} shares. For the block-deal part we assume its previous close was ₹{% include inr.html n=ds.ref_price %}, the price of its initial public offering (IPO) used as a stand-in. Every trade below is invented, for illustration only; no real market price or date is used.
 
 **Bulk deal**
 

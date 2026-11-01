@@ -21,7 +21,7 @@ There are three common ways to set the weights:
 - **Full market-cap weight.** A stock counts in proportion to its [market cap]({% post_url 2026-09-27-market-cap %}): shares outstanding times price.
 - **Free-float market-cap weight.** A stock counts in proportion to the market cap of only the shares that are realistically available to trade. The [free float post]({% post_url 2026-10-18-free-float-and-promoter-holding %}) explains what is left out and why.
 
-NSE Indices (the index arm of the National Stock Exchange of India) builds many of its indices on the free-float method. This post shows the arithmetic on a made-up five-stock index. The idea ties to [index funds]({% post_url 2026-10-13-index-funds-vs-etfs %}) in the Mutual Funds series, which buy stocks in the index's proportions. It is part of [Jargon, Decoded]({{ '/series/jargon/' | relative_url }}).
+NSE Indices, the index arm of the National Stock Exchange of India (NSE), builds many of its indices on the free-float method. This post shows the arithmetic on a made-up five-stock index. The idea ties to [index funds]({% post_url 2026-10-13-index-funds-vs-etfs %}) in the Mutual Funds series, which buy stocks in the index's proportions. It is part of [Jargon, Decoded]({{ '/series/jargon/' | relative_url }}).
 
 ## The formula
 
@@ -32,7 +32,7 @@ Index value  =  Index market cap  ÷  Base free-float market cap  ×  Base index
 
 Index market cap  =  Σ  shares outstanding × IWF × capping factor × price
 
-  IWF (investible weight factor) = the free-float fraction of the shares
+  IWF = the investible weight factor: the free-float fraction of the shares
   IWF = 1 for an index built on full market cap
   Capping factor = 1 for an uncapped index
 ```
@@ -41,9 +41,9 @@ Some indices also cap a stock's weight at a maximum; the capping factor does tha
 
 ## Worked example: a five-stock index, invented
 
-All five companies are made up, and so are the prices. "Shares" are in crore and market caps in ₹ crore. The base index value is set to {% include inr.html n=iw.base_value %}.
+All five companies are made up, and so are the prices. "Shares" are in crore and market caps in ₹ crore. This is for illustration only; no real prices or dates are used. The base index value is set to {% include inr.html n=iw.base_value %}.
 
-| Company | Shares (cr) | Price | IWF | Full market cap | Free-float market cap | Weight: full | Weight: free float | Weight: equal |
+| Company | Shares (cr) | Price | IWF (free-float fraction) | Full market cap | Free-float market cap | Weight: full | Weight: free float | Weight: equal |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
 {% for r in iw.rows -%}
 | {{ r.name }} | {{ r.shares_cr }} | {{ r.price }} | {{ r.iwf }} | {{ r.full_mcap }} | {{ r.ff_mcap }} | {{ r.w_full }}% | {{ r.w_ff }}% | {{ r.w_equal }}% |

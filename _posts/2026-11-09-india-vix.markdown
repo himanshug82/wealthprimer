@@ -2,7 +2,7 @@
 layout: post
 title: "India VIX: what the number measures"
 seo_title: "What is India VIX? Meaning and how it's computed"
-description: "India VIX is NSE's volatility index, built from Nifty option prices and quoted as an annualised percentage. What it measures, a worked conversion, what it can't say."
+description: "India VIX is NSE's volatility index, built from Nifty option prices and quoted as an annualised %. What it measures, how to read a level, what it can't say."
 image: /assets/og/india-vix.png
 date: 2026-11-09 09:00:00 +0530
 series: jargon
@@ -13,7 +13,7 @@ term: "India VIX"
 
 ## What India VIX means
 
-**India VIX** is a volatility index published by NSE (the National Stock Exchange of India). It is computed from the prices of Nifty index options, using the best bid and ask quotes of out-of-the-money options in the near and mid-month contracts. NSE describes it as indicating "the investor's perception of the market's volatility in the near term": the **expected volatility over the next 30 calendar days**. Higher values mean higher expected volatility; lower values, lower.
+**India VIX** is a volatility index published by the National Stock Exchange of India (NSE). It is computed from the prices of Nifty index options, using the best bid and ask quotes of out-of-the-money options in the near and mid-month contracts. NSE describes it as indicating "the investor's perception of the market's volatility in the near term": the **expected volatility over the next 30 calendar days**. Higher values mean higher expected volatility; lower values, lower.
 
 Three things it is *not*: it is not the Nifty's price, it is not a measure of how much the market *has* moved, and it is not a signal about which way the market will go. It is a number backed out of option prices.
 
@@ -30,7 +30,7 @@ From NSE's [computation methodology](https://nsearchives.nseindia.com/web/sites/
 5. The two variances are interpolated to a single value for a constant 30 days to expiry.
 6. The square root of that variance is multiplied by 100.
 
-NSE says the method follows CBOE's, adapted to the Nifty options order book, and that the time to expiry is measured in minutes and the risk-free rate is the NSE MIBOR for the matching tenure.
+NSE says the method follows CBOE's, adapted to the Nifty options order book, and that the time to expiry is measured in minutes and the risk-free rate is the NSE MIBOR (a benchmark interbank interest rate) for the matching tenure.
 
 ## The formula
 
@@ -49,7 +49,7 @@ Implied one-standard-deviation move over 30 days  =  VIX × √(30 ÷ 365)   (in
 
 ## Worked example: converting illustrative VIX levels
 
-These VIX levels are **invented**; no live or historical reading is used. The index level of {% include inr.html n=vx.index_level %} is also made up. The conversion uses the standard one-standard-deviation convention, which assumes moves follow a bell curve.
+These VIX levels are **invented**, for illustration only; no live or historical reading is used. The index level of {% include inr.html n=vx.index_level %} is also made up. The conversion uses the standard one-standard-deviation convention, which assumes moves follow a bell curve.
 
 | Illustrative VIX | Implied 1-SD move, 30 days (%) | In points on a {% include inr.html n=vx.index_level %} index | Rough range |
 |---:|---:|---:|---|

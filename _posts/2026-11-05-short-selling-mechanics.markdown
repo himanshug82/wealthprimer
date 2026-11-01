@@ -34,7 +34,7 @@ SEBI's circular [SEBI/HO/MRD/MRD-PoD-3/P/CIR/2024/1, {{ ss.sebi_date }}, "Framew
 | Reporting | Brokers collect scrip-wise short positions and send them to the exchange before the next day's trading; exchanges publish them weekly |
 | Failure to deliver | Exchanges must frame deterrent provisions against brokers |
 
-Read as at 1 November 2026. The circular says SEBI may review the framework and the list of eligible stocks from time to time, so check the current text.
+The rows above are the framework as restated in the 5 January 2024 circular. It says SEBI may review the framework and the list of eligible stocks from time to time, so check the current text.
 
 ## How the trade works
 
@@ -58,7 +58,7 @@ Most a short can lose    =  no upper limit  (a price has no ceiling)
 
 ## Worked example: Desi Bites, hypothetical trade
 
-Desi Bites is our [fictional case-study company]({{ '/case-study/' | relative_url }}). Suppose someone sells {{ ss.qty }} shares short at ₹{% include inr.html n=ss.sell_price %}. That brings in ₹{% include inr.html n=ss.proceeds %}. The price later moves, and they buy back to close. Brokerage, taxes and any cost of borrowing are left out. All numbers are invented.
+Desi Bites is our [fictional case-study company]({{ '/case-study/' | relative_url }}). Suppose someone sells {{ ss.qty }} shares short at ₹{% include inr.html n=ss.sell_price %}. That brings in ₹{% include inr.html n=ss.proceeds %}. The price later moves, and they buy back to close. Brokerage, taxes and any cost of borrowing are left out. All numbers are invented, for illustration only.
 
 | Price change before buy-back | Buy-back price | Short seller's result | A buyer at the same entry |
 |---|---:|---:|---:|
@@ -73,7 +73,7 @@ The risk is also tied to [leverage and margin]({% post_url 2026-10-11-leverage-a
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
 
-Say your friend has a rare cricket card and you promise to give them one back next week. You *sell* your friend's card to a classmate today for ₹100. Next week you must find a card to hand back. If the card has become cheap, you buy one for ₹60 and keep ₹40. If everyone suddenly wants that card and it costs ₹300 now, you still have to hand one back, and you are ₹200 poorer. And there's no rule that says the price can't go to ₹1,000. That is why "you must deliver" matters, and why the rules ban selling a card you have no way to hand back.
+Say your friend has a rare cricket card and you promise to give them one back next week. You *sell* your friend's card to a classmate today for ₹100. Next week you must find a card to hand back. If the card has dropped in price, you buy one for ₹60 and keep ₹40. If everyone suddenly wants that card and it costs ₹300 now, you still have to hand one back, and you are ₹200 poorer. And there's no rule that says the price can't go to ₹1,000. That is why "you must deliver" matters, and why the rules ban selling a card you have no way to hand back.
 
 </details>
 

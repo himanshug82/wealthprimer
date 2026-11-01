@@ -2,7 +2,7 @@
 layout: post
 title: "Open interest: what it counts and what it can't say"
 seo_title: "Open interest meaning: what it counts, what it can't"
-description: "Open interest counts futures and options contracts still open; volume counts trades. A five-day worked example shows how they differ and what neither shows."
+description: "Open interest counts futures and options contracts still open; volume counts trades. A five-day example shows how they differ and what neither tells you."
 image: /assets/og/open-interest.png
 date: 2026-11-06 09:00:00 +0530
 series: jargon
@@ -33,7 +33,7 @@ The trade between a buyer and a seller has two participants, and each is either 
 
 ## Worked example: five days in one hypothetical contract
 
-This is an invented futures contract with made-up numbers, built only to show the counting. No real market is used.
+This is an invented futures contract with made-up numbers, built only to show the counting, for illustration only. No real market, price or date is used.
 
 | Day | What happened | Volume (contracts) | Change in OI | OI at the close |
 |---|---|---:|---:|---:|

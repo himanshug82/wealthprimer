@@ -203,6 +203,9 @@ writing:
   call_breakeven: 20343
   put_breakeven: 19657
   put_worst_case: 1474275
+  example_level: 22000
+  example_move_pct: 10
+  example_loss_pct_margin: 69.0
   loss_at_22000_call: 124275
   loss_at_22000_vs_gain_multiple: 4.8
   rows:

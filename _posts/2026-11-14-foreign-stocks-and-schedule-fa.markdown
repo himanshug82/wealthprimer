@@ -2,7 +2,7 @@
 layout: post
 title: "Foreign stocks and Schedule FA: the disclosure is the hard part"
 seo_title: "Foreign stocks and Schedule FA: the disclosure"
-description: "US-share gains are long-term only after 24 months, taxed at 12.5% with no exemption. Dividends face 25% withholding; every foreign asset is disclosed."
+description: "Foreign shares need 24 months to count as long-term, with no annual exemption. US dividends are commonly cut 25% at source; foreign assets are disclosed."
 image: /assets/og/foreign-stocks-and-schedule-fa.png
 date: 2026-11-14 09:00:00 +0530
 series: tax
@@ -19,7 +19,7 @@ rules_as_of: "September 2026"
 
 ## Three separate obligations
 
-This post describes the rules as we last checked them for Tax Year 2026-27 (FY 2026-27, the year from April 2026 to March 2027). Parts rest on secondary sources, and each is marked "check the current rule" where that applies.
+This post describes the rules as we last checked them for Tax Year 2026-27 (FY 2026-27, the year from April 2026 to March 2027). Parts rest on secondary sources, and each is marked "check the current rule" where that applies. In particular, the US withholding rates, Form 67, the Black Money Act penalty and the exchange-rate convention below come from secondary sources only (see the note at the end). From the Income-tax Act, 2025 itself we read only the holding periods, the definition of "rate of exchange" and the foreign-assets filing duty.
 
 Buying a share of a US-listed company through an Indian app feels like buying
 any other share. For tax it creates three obligations that Indian shares
@@ -50,7 +50,7 @@ punishment is much bigger than the coins.
 
 </details>
 
-## Capital gains: 24 months, slab, no exemption
+## Capital gains in Tax Year 2026-27: 24 months, slab, no exemption
 
 Foreign listed shares are treated like unlisted shares, not like Indian
 listed ones:
@@ -123,18 +123,16 @@ Filing it with or before your return is the usual description; a 2022 amendment
 is reported to allow filing later if the return itself was filed in time. We have
 not opened that notification or the current Rules, so check the current rule for
 the form's name and deadline. The income and credit must also be reported consistently in **Schedule FSI** (foreign-source
-income) and **Schedule TR** (tax relief). Miss the form and you pay Indian tax
-on the full ₹{% include inr.html n=x.dividend_inr_gross %} with no credit — a genuine double tax, entirely
-self-inflicted. Someone below the 25% effective rate in India gets no refund
-of the excess US withholding either; the credit is capped at the Indian tax
-on that income.
+income) and **Schedule TR** (tax relief). If the credit is not claimed, the same dividend can end up taxed in both countries: Indian tax on
+the full ₹{% include inr.html n=x.dividend_inr_gross %} with nothing set against it. Whether any excess US withholding can be
+recovered when the Indian tax is lower is not something we have confirmed; check the current rule.
 
 ## TCS on the way out
 
 Money sent abroad under the **LRS — Liberalised Remittance Scheme** — attracts
 **TCS (tax collected at source)** of **{{ x.lrs_tcs_rate_pct }}%** on the amount above
 ₹{% include inr.html n=x.lrs_tcs_threshold %} per financial year for investment purposes (education and
-medical remittances have lower rates). Remit ₹{% include inr.html n=x.lrs_remit_example %} to a foreign
+medical remittances have lower rates). That is the rate and threshold in the TCS table of the Income-tax Act, 2025 (ICAI copy) as we read it; Budget 2026 changes were not checked, so check the current rule. Remit ₹{% include inr.html n=x.lrs_remit_example %} to a foreign
 broker in a year and ₹{% include inr.html n=x.lrs_tcs_example %} is collected up front.
 
 It is not a tax on investing. Like TDS (tax deducted at source), it's an advance: it appears in your tax statements (AIS, the Annual Information Statement, and the older Form 26AS) and is adjusted against your tax when you file, or refunded. But it's
@@ -145,7 +143,7 @@ visible to the department — which brings us to disclosure.
 
 If you are **resident and ordinarily resident** in India and held *any*
 foreign asset at *any* time in the reporting period, you must report it in Schedule FA
-of your income-tax return (ITR-2 or ITR-3 under the earlier forms). The
+of your income-tax return (ITR, the income-tax return; ITR-2 or ITR-3 under the earlier forms). The
 Income-tax Act, 2025 ties the duty to holding foreign assets "at any time during the tax year"
 (section 263(1)(a)(ix) as we read it). Four things about this catch people out:
 
@@ -166,8 +164,9 @@ accounts, RSUs and ESOPs of a foreign employer (from the
 accounts, foreign insurance with a cash value.
 
 **It asks for values you have to reconstruct.** For each asset: the initial
-cost, the *peak* value during the calendar year, the closing value on 31
-December, and the income it produced — all in rupees at the prescribed
+cost, the *peak* value and the closing value for the reporting period (the
+earlier forms used the calendar year and 31 December; check the current form
+for Tax Year 2026-27), and the income it produced — all in rupees at the prescribed
 rate. Nobody sends you a statement in this format. You build it.
 
 The penalty framework is the **Black Money Act**, not ordinary income-tax
@@ -181,24 +180,24 @@ The schedule is still required.
 
 ## Common mistakes
 
-- **Applying the ₹{% include inr.html n=r.ltcg_annual_exemption %} exemption to foreign shares.** It exists only for
-  STT-paid Indian equity.
-- **Selling at 13 months and calling it long-term.** Foreign shares need 24.
+- **Applying Indian-equity treatment to foreign shares.** The ₹{% include inr.html n=r.ltcg_annual_exemption %} exemption exists only for
+  STT-paid Indian equity (STT is securities transaction tax), and foreign shares need 24 months, not 12, to be long-term.
 - **Using your broker's conversion rate.** The Rules prescribe a rate (we have not read it). Practice differs between
   converting each leg and converting the gain, so check the current rule.
 - **Skipping the foreign tax credit form.** No form, no credit for the 25% already paid in the
   US, as the earlier Rules worked.
 - **Leaving Schedule FA blank because "it's tiny".** There is no minimum value for the duty to disclose. Any threshold relief
-  applies to the penalty, not the disclosure.
-- **Forgetting the foreign parent's RSUs.** The shares *and* the foreign
-  brokerage account they sit in are both foreign assets.
+  applies to the penalty, not the disclosure. RSUs (restricted stock units) of a foreign parent count too: the shares *and*
+  the foreign brokerage account they sit in are both foreign assets.
 
 **Takeaway:** Foreign shares are taxed like unlisted ones — long-term only
 after 24 months, short-term at your slab, {{ r.equity_ltcg_pct }}% beyond with no ₹{% include inr.html n=r.ltcg_annual_exemption %}
 exemption, and the rupee's fall counts as gain. US dividends commonly lose 25% at source,
-with credit in India dependent on the foreign tax credit form. A separate obligation is Schedule FA: every foreign asset held in the reporting period, no minimum value for the duty to disclose —
+with credit in India dependent on the foreign tax credit form (check the current rule). A separate obligation is Schedule FA: every foreign asset held in the reporting period, no minimum value for the duty to disclose —
 with a ₹{% include inr.html n=x.bma_penalty %} penalty regime that, as commonly described, applies above a value threshold.
 
 *The module's [data file](https://github.com/himanshug82/wealthprimer/blob/main/_data/tax2.yml)
-lists every source these rules were checked against, and the points a
-professional should confirm before you rely on them.*
+lists the sources behind these rules. For this post they are mostly secondary
+(broker and adviser explainers); the Income-tax Act, 2025 was read only where
+stated above, and the treaty, the Rules and the Black Money Act were not opened.
+Treat the foreign-tax points as "check the current rule".*

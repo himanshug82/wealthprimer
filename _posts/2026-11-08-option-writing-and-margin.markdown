@@ -59,7 +59,7 @@ for the call, {{ w.put_breakeven }} for the put.
 
 Look at each column. For the short call the gain stops at
 ₹{% include inr.html n=mg %}; on the other side the loss grows with every point
-the index rises: at 22000 it is already ₹{% assign l22 = w.loss_at_22000_call %}{% include inr.html n=l22 %},
+the index rises: at {{ w.example_level }} it is already ₹{% assign l22 = w.loss_at_22000_call %}{% include inr.html n=l22 %},
 about {{ w.loss_at_22000_vs_gain_multiple }} times the best-case gain. The short put's loss is bounded by the
 index reaching zero, at ₹{% assign pwc = w.put_worst_case %}{% include inr.html n=pwc %}, a bound that is of little comfort in
 practice. In both cases the premium is the *whole* upside and a
@@ -79,8 +79,8 @@ Actual margin amounts are set by the exchange and the clearing corporation, and
 change with the market and the position. For the table above, this post
 *assumes* a round {{ w.margin_pct }}% of contract value: ₹{% assign am = w.assumed_margin %}{% include inr.html n=am %} per lot. That
 number is for illustration only. On it, the premium received is
-{{ w.gain_over_margin_pct }}% of margin, while an index move of 10% against
-a short call is a loss of about 69% of it, and a larger move takes the loss
+{{ w.gain_over_margin_pct }}% of margin, while an index move of {{ w.example_move_pct }}% against
+a short call is a loss of about {{ w.example_loss_pct_margin }}% of it, and a larger move takes the loss
 past the whole deposit. If it does, the position can be closed out by
 the broker, or the shortfall must be topped up. A 2% add-on for expiry day,
 on the same contract value, would be ₹{% assign ex = w.expiry_extra %}{% include inr.html n=ex %} more.

@@ -111,15 +111,17 @@ ORDERS = dict(
     note="HYPOTHETICAL order book around Desi Bites' fictional listing price; not market data.",
     asks=[dict(price=p, qty=q) for p, q in ASKS],
     buy_qty=BUY_QTY,
-    market=dict(fills=mk_fills, cost=mk_cost, qty=mk_qty, avg=round(mk_cost / mk_qty, 2),
-                best_ask=ASKS[0][0], slippage_rs=round(mk_cost / mk_qty - ASKS[0][0], 2)),
+    market=dict(fills=mk_fills, cost=mk_cost, qty=mk_qty, avg=round(mk_cost / mk_qty, 2), avg_fmt="%.2f" % (mk_cost / mk_qty),
+                best_ask=ASKS[0][0], slippage_rs=round(mk_cost / mk_qty - ASKS[0][0], 2),
+                slippage_fmt="%.2f" % (mk_cost / mk_qty - ASKS[0][0])),
     limit=dict(limit=LIMIT_PX, fills=lm_fills, cost=lm_cost, qty=lm_qty,
-               avg=round(lm_cost / lm_qty, 2), unfilled=BUY_QTY - lm_qty),
+               avg=round(lm_cost / lm_qty, 2), avg_fmt="%.2f" % (lm_cost / lm_qty), unfilled=BUY_QTY - lm_qty),
     stop_loss=SL,
     listing_price=LISTING_PRICE,
 )
 
 NSE = dict(
+    timings_url="https://www.nseindia.com/market-data/market-timings",
     trading_url="https://www.nseindia.com/static/products-services/equity-market-trading-system",
     preopen_url="https://www.nseindia.com/static/products-services/equity-market-pre-open",
     trading_page_updated="28 February 2024", preopen_page_updated="4 September 2026",

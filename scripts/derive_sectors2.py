@@ -88,6 +88,7 @@ def build_max():
     # OBD = beds x days x occupancy  =>  implied average-bed growth
     d["implied_avg_bed_growth_pct"] = r(100 * ((1 + m["obd_growth_pct"] / 100)
                                                / (m["occupancy_pct"]["FY26"] / m["occupancy_pct"]["FY25"]) - 1))
+    d["rev_gap_pts"] = r(abs(d["gross_rev_growth_pct"] - d["obd_times_arpob_pct"]))
     d["ebitda_margin_net_fy26"] = pct(m["ebitda_cr"]["FY26"], m["net_revenue_cr"]["FY26"])
     d["ebitda_margin_net_fy25"] = pct(m["ebitda_cr"]["FY25"], m["net_revenue_cr"]["FY25"])
     assert d["ebitda_margin_net_fy26"] == 26.2 and d["ebitda_margin_net_fy25"] == 26.8   # printed
@@ -167,6 +168,16 @@ def build_igo():
                                    FY25=pct(g["ebitdar_mn"]["FY25"], g["revenue_ops_mn"]["FY25"]))
     assert d["ebitdar_margin_pct"] == dict(FY26=17.8, FY25=26.3), d["ebitdar_margin_pct"]
     d["revenue_ops_cr"] = dict(FY26=cr(g["revenue_ops_mn"]["FY26"]), FY25=cr(g["revenue_ops_mn"]["FY25"]))
+    f2 = lambda x: ("%.2f" % x).replace("-", "\u2212")
+    d["fmt"] = dict(
+        rask26=f2(g["rask_inr"]["FY26"]), rask25=f2(g["rask_inr"]["FY25"]),
+        cask26=f2(g["cask_inr"]["FY26"]), cask25=f2(g["cask_inr"]["FY25"]),
+        gap26=f2(d["rask_minus_cask_fy26"]), gap25=f2(d["rask_minus_cask_fy25"]),
+        cxf26=f2(g["cask_ex_fuel_inr"]["FY26"]), cxf25=f2(g["cask_ex_fuel_inr"]["FY25"]),
+        cxx26=f2(g["cask_ex_fuel_ex_forex_inr"]["FY26"]), cxx25=f2(g["cask_ex_fuel_ex_forex_inr"]["FY25"]),
+        fuel26=f2(g["fuel_cask_inr"]["FY26"]), forex=f2(d["forex_in_cask_ex_fuel_fy26"]),
+        yld26=f2(g["yield_inr"]["FY26"]), yld25=f2(g["yield_inr"]["FY25"]))
+    d["loss_cr_abs"] = abs(cr(g["pat_mn"]["FY26"]))
     d["pat_cr"] = dict(FY26=cr(g["pat_mn"]["FY26"]), FY25=cr(g["pat_mn"]["FY25"]))
     d["profit_ex_cr"] = dict(FY26=cr(g["profit_ex_forex_exceptional_mn"]["FY26"]), FY25=cr(g["profit_ex_forex_exceptional_mn"]["FY25"]))
     d["fuel_cost_cr"] = dict(FY26=cr(g["fuel_cost_mn"]["FY26"]), FY25=cr(g["fuel_cost_mn"]["FY25"]))
@@ -211,6 +222,11 @@ def build_dm():
     d["area_growth_pct"] = growth(m["area_mn_sqft"]["FY26"], m["area_mn_sqft"]["FY25"])
     d["store_growth_pct"] = growth(m["stores"]["FY26"], m["stores"]["FY25"])
     assert m["stores"]["FY26"] - m["stores"]["FY25"] == m["stores_added"]["FY26"]
+    d["sales_per_sqft_recomputed"] = dict(
+        FY26=int(round(m["revenue_cr"]["FY26"] * 1e7 / (m["area_mn_sqft"]["FY26"] * 1e6))),
+        FY25=int(round(m["revenue_cr"]["FY25"] * 1e7 / (m["area_mn_sqft"]["FY25"] * 1e6))))
+    d["sales_per_sqft_recomputed_change_pct"] = growth(d["sales_per_sqft_recomputed"]["FY26"], d["sales_per_sqft_recomputed"]["FY25"])
+    d["sales_per_sqft_change_fmt"] = ("%.1f" % growth(m["sales_per_sqft"]["FY26"], m["sales_per_sqft"]["FY25"])).replace("-", "\u2212")
     d["sales_per_sqft_change_pct"] = growth(m["sales_per_sqft"]["FY26"], m["sales_per_sqft"]["FY25"])
     d["avg_store_size_sqft"] = int(round(m["area_mn_sqft"]["FY26"] * 1e6 / m["stores"]["FY26"], -2))
     d["bills_growth_pct"] = growth(m["bills_cr"]["FY26"], m["bills_cr"]["FY25"])
@@ -229,6 +245,7 @@ def build_dm():
 ET = dict(
     name="Eternal Ltd — food delivery segment",
     source_url="https://b.zmtcdn.com/investor-relations/Eternal_Limited_Shareholders_Letter_Q4FY26_Results.pdf",
+    q2_letter_url="https://b.zmtcdn.com/investor-relations/Eternal_Shareholders_Letter_Q2FY26_Results.pdf",
     fy25_letter_url="https://b.zmtcdn.com/investor-relations/d9c290cd23764a09789769c39682276a_1746094084.pdf",
     release_date="Q4 FY26 shareholder letter (filed May 2026)",
     nov=dict(FY26=[8967, 9423, 9846, 9757], FY25=[7928, 8281, 8443, 8210]),

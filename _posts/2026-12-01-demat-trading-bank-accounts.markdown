@@ -23,11 +23,13 @@ To buy a share on the Indian exchanges you use three accounts that do three diff
 
 "Demat" is short for dematerialised: physical share certificates converted into electronic records. In India the depository — the institution that keeps those records — is either NSDL (National Securities Depository Limited) or CDSL (Central Depository Services (India) Limited). You never deal with the depository directly. You open the account with a DP, which is often your broker or a bank.
 
-CDSL's own FAQ describes the arrangement this way: the depository becomes the registered owner in the company's books, and the investor is the "beneficial owner" who receives all the benefits of holding the securities. In plain terms: you own the shares; the depository keeps the record.
+CDSL's own FAQ (frequently asked questions) describes the arrangement this way: the depository becomes the "registered owner" in the company's books, and the investor is the "beneficial owner", who receives all the benefits of holding the securities. In plain terms: the depository is on the company's register and you hold the benefits.
 
 The point of the split is that your securities don't sit on your broker's books. For what happens when a broker fails, see [broker and counterparty risk]({% post_url 2026-10-21-broker-and-counterparty-risk %}).
 
 ## The flow of a trade
+
+Simplified (settlement runs through the exchange's clearing system):
 
 ```
 Bank account  --(cash)-->  broker  --(order)-->  exchange
@@ -38,7 +40,7 @@ The settlement cycle is covered in [T+1 settlement]({% post_url 2026-10-16-t-plu
 
 ## What a basic services demat account (BSDA) is
 
-A demat account normally carries an annual maintenance charge (AMC) set by the DP. SEBI (the Securities and Exchange Board of India) lets small investors opt for a lower-cost version, the basic services demat account.
+A demat account normally carries an annual maintenance charge (AMC) set by the DP. SEBI (the Securities and Exchange Board of India) has a lower-cost version, the basic services demat account. Under the rules below, a DP is meant to open a BSDA for an eligible holder unless the holder consents, through a verifiable channel, to a regular account.
 
 Rules as at {{ b.as_of }}, from SEBI circular {{ b.circular_2024 }} ([source]({{ b.url_2024 }})), as amended by circular {{ b.circular_2025 }} ([source]({{ b.url_2025 }})):
 
@@ -69,9 +71,9 @@ The cap is on the maintenance charge only. It says nothing about brokerage or ot
 
 ## Common mistakes
 
-- **Thinking the broker "has" your shares.** The shares are in your demat account at the depository. The broker has your trading permissions, not your holdings — unless you pledge them as margin.
-- **Assuming BSDA is automatic or permanent.** Eligibility depends on holdings and on having only one demat account as first holder, and the DP reassesses it quarterly.
-- **Mixing up the three accounts when something goes wrong.** A payment problem sits at the bank, an order problem at the broker, a holding problem at the DP.
+- **Thinking the broker "has" your shares.** The shares are in your demat account at the depository. The broker has your trading access, not your holdings. If you pledge shares as margin, they stay in your demat account under a pledge in the broker's favour; see [broker and counterparty risk]({% post_url 2026-10-21-broker-and-counterparty-risk %}).
+- **Assuming BSDA status is permanent.** Eligibility depends on holdings and on having only one demat account as first holder; the DP reassesses it every quarter, and crossing the limit ends it.
+- **Mixing up the three accounts when something goes wrong.** A payment problem starts at the bank, an order problem at the broker, a holding problem at the DP — and the DP is often the broker, so the names can overlap.
 - **Ignoring charges other than AMC.** The BSDA cap covers maintenance only.
 
 **Takeaway:** Your bank holds the cash, your broker places the order, and your demat account holds the shares — three accounts, three jobs. BSDA caps one charge, the annual maintenance fee, within limits that change, so check the circular and your DP's tariff.

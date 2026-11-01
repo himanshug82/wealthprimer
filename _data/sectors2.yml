@@ -50,6 +50,7 @@ max:
     occupancy_change_pts: 2
     obd_times_arpob_pct: 15.8
     implied_avg_bed_growth_pct: 7.1
+    rev_gap_pts: 0.4
     ebitda_margin_net_fy26: 26.2
     ebitda_margin_net_fy25: 26.8
     pat_growth_pct: 22.1
@@ -160,6 +161,22 @@ indigo:
     revenue_ops_cr:
       FY26: 84962
       FY25: 80803
+    fmt:
+      rask26: '4.99'
+      rask25: '5.14'
+      cask26: '5.00'
+      cask25: '4.66'
+      gap26: −0.01
+      gap25: '0.48'
+      cxf26: '3.52'
+      cxf25: '3.00'
+      cxx26: '3.00'
+      cxx25: '2.89'
+      fuel26: '1.47'
+      forex: '0.52'
+      yld26: '5.06'
+      yld25: '5.15'
+    loss_cr_abs: 2394
     pat_cr:
       FY26: -2394
       FY25: 7258
@@ -219,6 +236,11 @@ dmart:
     ebitda_margin_fy25: 7.9
     area_growth_pct: 19.8
     store_growth_pct: 20.5
+    sales_per_sqft_recomputed:
+      FY26: 32509
+      FY25: 33599
+    sales_per_sqft_recomputed_change_pct: -3.2
+    sales_per_sqft_change_fmt: −1.4
     sales_per_sqft_change_pct: -1.4
     avg_store_size_sqft: 41200
     bills_growth_pct: 12.7
@@ -229,6 +251,7 @@ dmart:
 eternal:
   name: Eternal Ltd — food delivery segment
   source_url: https://b.zmtcdn.com/investor-relations/Eternal_Limited_Shareholders_Letter_Q4FY26_Results.pdf
+  q2_letter_url: https://b.zmtcdn.com/investor-relations/Eternal_Shareholders_Letter_Q2FY26_Results.pdf
   fy25_letter_url: https://b.zmtcdn.com/investor-relations/d9c290cd23764a09789769c39682276a_1746094084.pdf
   release_date: Q4 FY26 shareholder letter (filed May 2026)
   nov:

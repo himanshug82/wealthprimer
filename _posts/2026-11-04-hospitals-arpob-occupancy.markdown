@@ -32,8 +32,6 @@ ARPOB                    =  gross revenue  /  occupied bed days
 
 Revenue                  =  OBD  ×  ARPOB
 Revenue growth           ≈  (1 + OBD growth)  ×  (1 + ARPOB growth)  −  1
-
-ALOS (average length of stay)  =  days patients spend in hospital per admission
 ```
 
 Max Healthcare's own definition, from the definitions page of its investor presentation: ARPOB is gross revenue divided by occupied bed days, excluding revenue from its diagnostics-lab operations. Gross revenue is the amount billed at contracted or rack rates.
@@ -49,7 +47,6 @@ From Max Healthcare's [press release and presentation]({{ m.source_url }}) filed
 | Operational beds at year end | {{ m.beds.FY26 }} | {{ m.beds.FY25 }} |
 | Occupancy | {{ m.occupancy_pct.FY26 }}% | {{ m.occupancy_pct.FY25 }}% |
 | ARPOB (₹ thousand per day) | {{ m.arpob_k.FY26 }} | {{ m.arpob_k.FY25 }} |
-| Average length of stay (days) | {{ m.alos_days.FY26 }} | {{ m.alos_days.FY25 }} |
 | Gross revenue (₹ crore) | {{ m.gross_revenue_cr.FY26 }} | {{ m.gross_revenue_cr.FY25 }} |
 
 1. Year-end beds rose by {{ d.net_beds_added }}, or {{ d.bed_growth_pct }}%. The release counts {{ m.beds_added_gross }} beds added in the year, less a {{ m.beds_divested }}-bed hospital divested — the difference is our arithmetic, not a printed line.
@@ -58,9 +55,9 @@ From Max Healthcare's [press release and presentation]({{ m.source_url }}) filed
 
 ### Step 2: put the levers together
 
-4. The release says occupied bed days grew {{ m.obd_growth_pct }}%. Combining that with ARPOB growth of {{ d.arpob_growth_pct }}% gives roughly {{ d.obd_times_arpob_pct }}% revenue growth. The reported gross revenue growth was {{ d.gross_rev_growth_pct }}%. They agree to within rounding, which is the point: the revenue line is two numbers multiplied.
+4. The release says occupied bed days grew {{ m.obd_growth_pct }}%. Combining that with ARPOB growth of {{ d.arpob_growth_pct }}% gives roughly {{ d.obd_times_arpob_pct }}% revenue growth. The reported gross revenue growth was {{ d.gross_rev_growth_pct }}%. They sit {{ d.rev_gap_pts }} points apart, because bed-day growth is printed in whole percentages. This is an identity, not a test: ARPOB is defined as revenue divided by bed days, so revenue is bed days times ARPOB by construction.
 5. Run the other formula backwards. Occupied bed days equal beds times days times occupancy, so {{ m.obd_growth_pct }}% growth in bed days, with occupancy up from {{ m.occupancy_pct.FY25 }}% to {{ m.occupancy_pct.FY26 }}%, implies average operational beds grew about {{ d.implied_avg_bed_growth_pct }}%. Year-end beds grew {{ d.bed_growth_pct }}%. These are different measures (average versus year end, and rounded occupancy), so treat the match as a sanity check, not a result.
-6. Network EBITDA — earnings before interest, tax, depreciation and amortisation — was ₹{% include inr.html n=m.ebitda_cr.FY26 %} crore, which is {{ d.ebitda_margin_net_fy26 }}% of net revenue against {{ d.ebitda_margin_net_fy25 }}% a year earlier. How fixed costs make margins move with occupancy is covered in [operating leverage]({% post_url 2026-10-09-operating-leverage %}); see also [EBITDA margin]({% post_url 2026-08-28-ebitda-margin %}) for how to read that.
+6. Network EBITDA — earnings before interest, tax, depreciation and amortisation — was ₹{% include inr.html n=m.ebitda_cr.FY26 %} crore, which is {{ d.ebitda_margin_net_fy26 }}% of net revenue against {{ d.ebitda_margin_net_fy25 }}% a year earlier. The margin slipped even though occupancy rose; the release doesn't give a breakdown of why, and new hospitals are one possibility it does not quantify. How fixed costs make margins move with occupancy is covered in [operating leverage]({% post_url 2026-10-09-operating-leverage %}); see also [EBITDA margin]({% post_url 2026-08-28-ebitda-margin %}) for how to read that.
 
 Max also reports that international patients brought in ₹{{ m.international_rev_cr }} crore, about {{ m.international_share_pct }}% of hospital revenue. That's a mix fact: it is one reason ARPOB can move without a price change.
 

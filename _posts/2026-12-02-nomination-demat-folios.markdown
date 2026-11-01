@@ -13,7 +13,7 @@ rules_as_of: "November 2026"
 
 ## What a nomination is
 
-A nominee is the person you name to receive your holdings if you die. It makes the transfer on death simpler for the family, because the depository participant (DP) or fund house has a named person to deal with.
+A nominee is the person you name for your DP or fund house to deal with first if you die. It makes the transfer on death simpler for the family, because the depository participant (DP) or fund house has a named person to deal with.
 
 This post explains the rules as written in SEBI (Securities and Exchange Board of India) circular {{ n.circular }} ([source]({{ n.url }})), as at {{ n.as_of }}. The circular came into effect on {{ n.effective }} and supersedes SEBI's earlier circulars on nomination for demat accounts and mutual fund folios. A folio is a mutual fund investor's account with a fund house.
 
@@ -27,7 +27,7 @@ This post explains the rules as written in SEBI (Securities and Exchange Board o
 | Several nominees | After the investor's death they may continue in the same account or folio, or open separate ones for their holdings |
 | Share not specified | Divided equally; any odd lot after division goes to the first nominee named |
 | Changing nominees | Allowed any number of times |
-| Existing accounts and folios | The forms, reminders and statement rules apply to them too ("mutatis mutandis", in the circular's words) |
+| Existing accounts and folios | The circular says its clauses apply "mutatis mutandis" to existing accounts and folios; it names the forms and the reminders explicitly |
 | How to give it | Online (with a digital signature, Aadhaar-based e-sign or another recognised e-sign, or two-factor authentication including a one-time password, OTP) or offline with a signature |
 
 If you opt out, the declaration you agree to says, in substance, that without a nomination your legal heirs may need extra legal or court documents, which can delay transmission of securities, and that if no claim is made for a prolonged period the holdings may be treated as unclaimed assets and transferred to the Investor Education and Protection Fund Authority.
@@ -53,9 +53,9 @@ Writing a name on the box means they know who to hand it to. You can change the 
 
 ## Common mistakes
 
-- **Treating nomination as a will.** A nominee is the person the holdings are transferred to under the process; this post doesn't say how that interacts with a will or succession law. For that, see a legal professional.
+- **Treating nomination as a will.** The circular says nomination helps transmission to legal heirs; this post doesn't say how that interacts with a will or succession law. For that, see a legal professional.
 - **Setting it once and forgetting it.** Investors can change nominees any number of times. A nominee named years ago may no longer be who you want.
 - **Forgetting that joint holders must agree.** Nomination is optional for joint holdings, but giving or changing one needs every joint holder's consent.
 - **Leaving percentages unstated and assuming a split that isn't equal.** The circular's default is an equal split.
 
-**Takeaway:** A nominee is the person your demat holdings or fund units pass to on your death, which spares your family a lot of paperwork. As of November 2026 SEBI's rules allow up to three nominees per account or folio and an opt-out; check the current circular.
+**Takeaway:** A nominee is the person your DP or fund house deals with first when you die, which can make transmission to your legal heirs faster and smoother. As of November 2026 SEBI's rules allow up to three nominees per account or folio and an opt-out; check the current circular.

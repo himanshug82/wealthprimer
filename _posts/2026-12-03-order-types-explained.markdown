@@ -43,7 +43,7 @@ Buy order  -->  matched against the lowest sell prices first (price priority)
 
 ## Worked example: one buy order, three ways
 
-A hypothetical order book for a stock trading around Desi Bites' fictional ₹{{ o.listing_price }} listing price. This is **made up for illustration**, not market data. Sellers are offering:
+A hypothetical order book for a stock trading around Desi Bites' fictional ₹{{ o.listing_price }} IPO price. This is **made up for illustration**, not market data. Sellers are offering:
 
 | Ask price (₹) | Quantity |
 |---:|---:|

@@ -21,9 +21,9 @@ To buy a share on the Indian exchanges you use three accounts that do three diff
 | **Trading account** | Lets you place buy and sell orders on the exchange | Your stockbroker (a member of the exchange) |
 | **Demat account** | Holds the securities themselves in electronic form | A depository participant (DP), registered with a depository |
 
-"Demat" is short for dematerialised: physical share certificates converted into electronic records. In India the depository — the institution that keeps those records — is either NSDL (National Securities Depository Limited) or CDSL (Central Depository Services (India) Limited). You never deal with the depository directly. You open the account with a DP, which is often your broker or a bank.
+"Demat" is short for dematerialised: physical share certificates converted into electronic records. In India the depository — the institution that keeps those records — is either NSDL (National Securities Depository Limited) or CDSL (Central Depository Services (India) Limited). You usually deal with the DP, not the depository directly. You open the account with a DP, which is often your broker or a bank.
 
-CDSL's own FAQ (frequently asked questions) describes the arrangement this way: the depository becomes the "registered owner" in the company's books, and the investor is the "beneficial owner", who receives all the benefits of holding the securities. In plain terms: the depository is on the company's register and you hold the benefits.
+[CDSL's own FAQ (frequently asked questions)](https://www.cdslindia.com/downloads/Investors/FAQs/01%20Demat%20CDSL%20Way%20-%20I%20-%20General%20%20-%202024.pdf) describes the arrangement this way: the depository becomes the "registered owner" in the company's books, and the investor is the "beneficial owner", who receives all the benefits of holding the securities. In plain terms: the depository is on the company's register and you hold the benefits.
 
 The point of the split is that your securities don't sit on your broker's books. For what happens when a broker fails, see [broker and counterparty risk]({% post_url 2026-10-21-broker-and-counterparty-risk %}).
 
@@ -71,7 +71,7 @@ The cap is on the maintenance charge only. It says nothing about brokerage or ot
 
 ## Common mistakes
 
-- **Thinking the broker "has" your shares.** The shares are in your demat account at the depository. The broker has your trading access, not your holdings. If you pledge shares as margin, they stay in your demat account under a pledge in the broker's favour; see [broker and counterparty risk]({% post_url 2026-10-21-broker-and-counterparty-risk %}).
+- **Thinking the broker "has" your shares.** The shares are in your demat account at the depository. The broker has your trading access, not your holdings. If you pledge shares as margin, they stay in your demat account under a pledge in the broker's favour (SEBI's margin-pledge framework: circular of 25 February 2020, as the linked post cites); see [broker and counterparty risk]({% post_url 2026-10-21-broker-and-counterparty-risk %}).
 - **Assuming BSDA status is permanent.** Eligibility depends on holdings and on having only one demat account as first holder; the DP reassesses it every quarter, and crossing the limit ends it.
 - **Mixing up the three accounts when something goes wrong.** A payment problem starts at the bank, an order problem at the broker, a holding problem at the DP — and the DP is often the broker, so the names can overlap.
 - **Ignoring charges other than AMC.** The BSDA cap covers maintenance only.

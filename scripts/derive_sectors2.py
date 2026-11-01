@@ -247,7 +247,7 @@ ET = dict(
     source_url="https://b.zmtcdn.com/investor-relations/Eternal_Limited_Shareholders_Letter_Q4FY26_Results.pdf",
     q2_letter_url="https://b.zmtcdn.com/investor-relations/Eternal_Shareholders_Letter_Q2FY26_Results.pdf",
     fy25_letter_url="https://b.zmtcdn.com/investor-relations/d9c290cd23764a09789769c39682276a_1746094084.pdf",
-    release_date="Q4 FY26 shareholder letter (filed May 2026)",
+    release_date="Q4 FY26 shareholder letter (PDF dated 28 April 2026)",
     nov=dict(FY26=[8967, 9423, 9846, 9757], FY25=[7928, 8281, 8443, 8210]),
     adj_rev=dict(FY26=[2657, 2863, 3053, 3125], FY25=[2256, 2340, 2413, 2409]),
     contribution=dict(FY26=[885, 976, 1023, 998], FY25=[673, 735, 843, 842]),

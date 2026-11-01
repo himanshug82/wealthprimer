@@ -22,8 +22,8 @@ The measure has a catch, and it's the main thing to learn here: the answer depen
 ## The formulas
 
 ```
-GOV  (gross order value)  =  order value before discounts (the company's definition adds delivery
-                             and platform fees and taxes)
+GOV  (gross order value)  =  order value before restaurant and platform discounts (the company's
+                             definition adds delivery and platform fees and taxes)
 NOV  (net order value)    =  GOV  −  all discounts (restaurant-, platform-, bank-funded)
 
 Take rate     =  adjusted revenue / order value      (which value? check)
@@ -36,7 +36,7 @@ Eternal's own definitions, from the glossary of its Q4 FY26 shareholder letter: 
 
 ## Worked example: Eternal's food delivery, FY26
 
-From Eternal's [Q4 FY26 shareholder letter]({{ e.source_url }}) (which includes audited results) and, for the older GOV basis, its [Q4 FY25 letter]({{ e.fy25_letter_url }}). Food delivery segment, ₹ crore. FY26 is the year ended 31 March 2026. The letter prints these by quarter; the annual totals below are **our sums of the four printed quarters**, not company-printed full-year figures. Historical, for illustration only.
+From Eternal's [Q4 FY26 shareholder letter]({{ e.source_url }}) (which includes audited results) and, for the older GOV basis, its [Q4 FY25 letter]({{ e.fy25_letter_url }}). Food delivery segment, ₹ crore. FY26 is the year ended 31 March 2026. The FY26 quarters and Q4 FY25 are printed in the Q4 FY26 letter and the earlier FY25 quarters in the Q4 FY25 letter; the annual totals below are **our sums of the four printed quarters**, not company-printed full-year figures. Historical, for illustration only.
 
 | ₹ crore | FY26 | FY25 |
 |---|---:|---:|

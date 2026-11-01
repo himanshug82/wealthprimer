@@ -35,7 +35,7 @@ CASK ex-fuel  =  (cost − fuel cost) / ASK        (fuel is the big cost the air
 RASK − CASK   =  result per seat-kilometre
 ```
 
-Each airline defines RASK and CASK its own way. IndiGo's per-kilometre figures are net of finance income, so you cannot reproduce them by dividing total income by ASK.
+Each airline defines RASK and CASK its own way. IndiGo's per-kilometre figures are net of finance income, so you reproduce RASK by dividing total income less finance income by ASK, not total income.
 
 ## Worked example: IndiGo, year to March 2026
 
@@ -71,7 +71,7 @@ The release states the reasons for the reported loss in its own words: sharp rup
 
 ### Step 3: why leases matter here
 
-6. EBITDAR (earnings before interest, tax, depreciation, amortisation and rentals, as the company defines it) was ₹{% include inr.html n=d.ebitdar_cr.FY26 %} crore, {{ d.ebitdar_margin_pct.FY26 }}% of revenue from operations, against {{ d.ebitdar_margin_pct.FY25 }}% a year earlier. The release doesn't spell out here which rentals the "R" adds back, so treat it as a company-defined line.
+6. EBITDAR (like [EBITDA]({% post_url 2026-08-28-ebitda-margin %}), earnings before interest, tax, depreciation, amortisation and rentals, as the company defines it) was ₹{% include inr.html n=d.ebitdar_cr.FY26 %} crore, {{ d.ebitdar_margin_pct.FY26 }}% of revenue from operations, against {{ d.ebitdar_margin_pct.FY25 }}% a year earlier. The release doesn't spell out here which rentals the "R" adds back, so treat it as a company-defined line.
 7. The company's own debt measure including capitalised operating leases was ₹{% include inr.html n=d.total_debt_cr %} crore, of which ₹{% include inr.html n=d.cap_op_lease_cr %} crore ({{ d.cap_lease_share_of_debt_pct }}%) was the capitalised operating lease liability. The audited balance sheet's total lease liabilities (current plus non-current, our sum) were ₹{% include inr.html n=d.audited_lease_liab_cr.FY26 %} crore. The sources we read don't reconcile the two figures, so don't mix them.
 
 Under the lease accounting standard (Ind AS 116 — Indian Accounting Standard 116), rentals move below EBITDA as depreciation and interest, as the [telecom post]({% post_url 2026-10-23-telecom-arpu-and-the-limits-of-sector-lenses %}) explains. Interest on lease liabilities was ₹{% include inr.html n=d.lease_interest_cr.FY26 %} crore in FY26. For leverage ratios, see [net debt/EBITDA]({% post_url 2026-09-18-net-debt-ebitda %}) and keep lease treatment consistent.
@@ -91,7 +91,7 @@ A school bus leaves at 8 a.m. whether it carries 20 kids or 40. The fuel, the dr
 
 - **Reading load factor alone.** A full plane at a low yield can earn less than a half-empty one at a higher yield. Look at load factor, yield and RASK together.
 - **Comparing CASK with the fuel in or out inconsistently.** Fuel prices and currency swing the headline CASK. CASK ex-fuel is a cleaner view of costs the airline controls — but ex-forex versions are company-defined and need the definition.
-- **Rebuilding RASK from total income.** The company's RASK is per ASK and net of finance income; total income divided by ASK gives a different number. Use the company's printed one or its stated method.
+- **Rebuilding RASK from total income.** The company's RASK is per ASK and net of finance income; total income divided by ASK gives a different number. Use the company's printed figure.
 - **Mixing lease treatments.** Debt that includes leases and earnings measured before lease costs belong together; debt without leases and earnings after lease costs belong together. A ratio that mixes the two isn't comparable.
 
 ## What this lens can't tell you

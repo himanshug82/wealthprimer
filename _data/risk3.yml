@@ -7,84 +7,84 @@ contract:
   sebi_min: 1500000
   sebi_max: 2000000
   strike: 20000
-  call_prem: 200
-  put_prem: 180
-  call_prem_rs: 15000
-  put_prem_rs: 13500
-  prem_share_pct: 1.0
+  call_prem: 343
+  put_prem: 343
+  call_prem_rs: 25725
+  put_prem_rs: 25725
+  prem_share_pct: 1.71
 buyer:
   table:
   - level: 19000
     move_pct: -5.0
     call_payoff: 0
-    call_pl: -15000
+    call_pl: -25725
     put_payoff: 75000
-    put_pl: 61500
+    put_pl: 49275
   - level: 19250
     move_pct: -3.75
     call_payoff: 0
-    call_pl: -15000
+    call_pl: -25725
     put_payoff: 56250
-    put_pl: 42750
+    put_pl: 30525
   - level: 19500
     move_pct: -2.5
     call_payoff: 0
-    call_pl: -15000
+    call_pl: -25725
     put_payoff: 37500
-    put_pl: 24000
+    put_pl: 11775
   - level: 19750
     move_pct: -1.25
     call_payoff: 0
-    call_pl: -15000
+    call_pl: -25725
     put_payoff: 18750
-    put_pl: 5250
+    put_pl: -6975
   - level: 20000
     move_pct: 0.0
     call_payoff: 0
-    call_pl: -15000
+    call_pl: -25725
     put_payoff: 0
-    put_pl: -13500
+    put_pl: -25725
   - level: 20250
     move_pct: 1.25
     call_payoff: 18750
-    call_pl: 3750
+    call_pl: -6975
     put_payoff: 0
-    put_pl: -13500
+    put_pl: -25725
   - level: 20500
     move_pct: 2.5
     call_payoff: 37500
-    call_pl: 22500
+    call_pl: 11775
     put_payoff: 0
-    put_pl: -13500
+    put_pl: -25725
   - level: 20750
     move_pct: 3.75
     call_payoff: 56250
-    call_pl: 41250
+    call_pl: 30525
     put_payoff: 0
-    put_pl: -13500
+    put_pl: -25725
   - level: 21000
     move_pct: 5.0
     call_payoff: 75000
-    call_pl: 60000
+    call_pl: 49275
     put_payoff: 0
-    put_pl: -13500
+    put_pl: -25725
 breakeven:
   atm:
-    call_be: 20200
-    put_be: 19820
-    call_be_move_pct: 1.0
-    put_be_move_pct: -0.9
+    call_be: 20343
+    put_be: 19657
+    call_be_move_pct: 1.71
+    put_be_move_pct: -1.71
   otm:
     call_strike: 20500
-    call_prem: 80
-    call_prem_rs: 6000
-    call_be: 20580
-    call_be_move_pct: 2.9
+    call_prem: 153
+    call_prem_rs: 11475
+    call_be: 20653
+    call_be_move_pct: 3.27
     put_strike: 19500
-    put_prem: 70
-    put_prem_rs: 5250
-    put_be: 19430
-    put_be_move_pct: -2.85
+    put_prem: 146
+    put_prem_rs: 10950
+    put_be: 19354
+    put_be_move_pct: -3.23
 time_value:
   vol_pct: 15
   rows:
@@ -193,85 +193,85 @@ implied_vol:
     gain_pts: 114.3
 writing:
   strike: 20000
-  prem: 200
-  max_gain: 15000
+  prem: 343
+  max_gain: 25725
   margin_pct: 12
   assumed_margin: 180000
   elm_pct: 2
   expiry_extra: 30000
-  gain_over_margin_pct: 8.3
-  call_breakeven: 20200
-  put_breakeven: 19800
-  put_worst_case: 1485000
-  loss_at_22000_call: 135000
-  loss_at_22000_vs_gain_multiple: 9.0
+  gain_over_margin_pct: 14.3
+  call_breakeven: 20343
+  put_breakeven: 19657
+  put_worst_case: 1474275
+  loss_at_22000_call: 124275
+  loss_at_22000_vs_gain_multiple: 4.8
   rows:
   - level: 18500
     move_pct: -7.5
-    call_pl: 15000
-    call_pl_margin_pct: 8.3
-    put_pl: -97500
-    put_pl_margin_pct: -54.2
+    call_pl: 25725
+    call_pl_margin_pct: 14.3
+    put_pl: -86775
+    put_pl_margin_pct: -48.2
   - level: 19000
     move_pct: -5.0
-    call_pl: 15000
-    call_pl_margin_pct: 8.3
-    put_pl: -60000
-    put_pl_margin_pct: -33.3
+    call_pl: 25725
+    call_pl_margin_pct: 14.3
+    put_pl: -49275
+    put_pl_margin_pct: -27.4
   - level: 19500
     move_pct: -2.5
-    call_pl: 15000
-    call_pl_margin_pct: 8.3
-    put_pl: -22500
-    put_pl_margin_pct: -12.5
+    call_pl: 25725
+    call_pl_margin_pct: 14.3
+    put_pl: -11775
+    put_pl_margin_pct: -6.5
   - level: 19800
     move_pct: -1.0
-    call_pl: 15000
-    call_pl_margin_pct: 8.3
-    put_pl: 0
-    put_pl_margin_pct: 0.0
+    call_pl: 25725
+    call_pl_margin_pct: 14.3
+    put_pl: 10725
+    put_pl_margin_pct: 6.0
   - level: 20000
     move_pct: 0.0
-    call_pl: 15000
-    call_pl_margin_pct: 8.3
-    put_pl: 15000
-    put_pl_margin_pct: 8.3
-  - level: 20200
-    move_pct: 1.0
-    call_pl: 0
-    call_pl_margin_pct: 0.0
-    put_pl: 15000
-    put_pl_margin_pct: 8.3
+    call_pl: 25725
+    call_pl_margin_pct: 14.3
+    put_pl: 25725
+    put_pl_margin_pct: 14.3
+  - level: 20350
+    move_pct: 1.75
+    call_pl: -525
+    call_pl_margin_pct: -0.3
+    put_pl: 25725
+    put_pl_margin_pct: 14.3
   - level: 20500
     move_pct: 2.5
-    call_pl: -22500
-    call_pl_margin_pct: -12.5
-    put_pl: 15000
-    put_pl_margin_pct: 8.3
+    call_pl: -11775
+    call_pl_margin_pct: -6.5
+    put_pl: 25725
+    put_pl_margin_pct: 14.3
   - level: 21000
     move_pct: 5.0
-    call_pl: -60000
-    call_pl_margin_pct: -33.3
-    put_pl: 15000
-    put_pl_margin_pct: 8.3
+    call_pl: -49275
+    call_pl_margin_pct: -27.4
+    put_pl: 25725
+    put_pl_margin_pct: 14.3
   - level: 21500
     move_pct: 7.5
-    call_pl: -97500
-    call_pl_margin_pct: -54.2
-    put_pl: 15000
-    put_pl_margin_pct: 8.3
+    call_pl: -86775
+    call_pl_margin_pct: -48.2
+    put_pl: 25725
+    put_pl_margin_pct: 14.3
   - level: 22000
     move_pct: 10.0
-    call_pl: -135000
-    call_pl_margin_pct: -75.0
-    put_pl: 15000
-    put_pl_margin_pct: 8.3
+    call_pl: -124275
+    call_pl_margin_pct: -69.0
+    put_pl: 25725
+    put_pl_margin_pct: 14.3
   - level: 23000
     move_pct: 15.0
-    call_pl: -210000
-    call_pl_margin_pct: -116.7
-    put_pl: 15000
-    put_pl_margin_pct: 8.3
+    call_pl: -199275
+    call_pl_margin_pct: -110.7
+    put_pl: 25725
+    put_pl_margin_pct: 14.3
 expiry:
   buckets:
   - window: 2:55-3:00 pm

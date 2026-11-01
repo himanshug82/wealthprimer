@@ -53,8 +53,6 @@ OUT = os.path.join(os.path.dirname(__file__), "..", "_data", "risk3.yml")
 LEVEL = 20000          # Sample Index level, points
 LOT = 75               # units per lot (hypothetical)
 STRIKE = 20000         # at-the-money strike
-CALL_PREM = 200        # points
-PUT_PREM = 180         # points
 SPECIFIED_MIN, SPECIFIED_MAX = 1500000, 2000000   # SEBI band, rupees
 
 contract_value = LEVEL * LOT
@@ -96,6 +94,12 @@ def implied_vol(kind, price, s, k, t_years):
 
 DAYS_IN_YEAR = 365.0
 
+# Premiums used in posts 1, 2 and 5 come from the same model as post 3 and 4:
+# 30 days to expiry, 15% annualised volatility, so the posts agree with each other.
+BASE_VOL, BASE_DAYS = 0.15, 30
+CALL_PREM = round(bs("call", LEVEL, STRIKE, BASE_DAYS / DAYS_IN_YEAR, BASE_VOL))
+PUT_PREM = round(bs("put", LEVEL, STRIKE, BASE_DAYS / DAYS_IN_YEAR, BASE_VOL))
+
 # --------------------------------------------------------------------- post 1/2
 levels = list(range(19000, 21001, 250))
 
@@ -128,8 +132,9 @@ assert min(call_pl(s) for s in levels) == -call_premium_rs
 assert min(put_pl(s) for s in levels) == -put_premium_rs
 
 # an out-of-the-money pair for the breakeven post
-OTM_STRIKE_CALL, OTM_PREM_CALL = 20500, 80
-OTM_STRIKE_PUT, OTM_PREM_PUT = 19500, 70
+OTM_STRIKE_CALL, OTM_STRIKE_PUT = 20500, 19500
+OTM_PREM_CALL = round(bs('call', LEVEL, OTM_STRIKE_CALL, BASE_DAYS / DAYS_IN_YEAR, BASE_VOL))
+OTM_PREM_PUT = round(bs('put', LEVEL, OTM_STRIKE_PUT, BASE_DAYS / DAYS_IN_YEAR, BASE_VOL))
 otm = {
     "call_strike": OTM_STRIKE_CALL, "call_prem": OTM_PREM_CALL,
     "call_prem_rs": OTM_PREM_CALL * LOT,
@@ -149,7 +154,7 @@ atm = {
 prem_share_pct = round(call_premium_rs / contract_value * 100, 2)
 
 # ----------------------------------------------------------------------- post 3
-TV_VOL = 0.15
+TV_VOL = BASE_VOL
 tv_days = [30, 20, 10, 5, 2, 1, 0]
 tv_rows = []
 for d in tv_days:
@@ -222,8 +227,8 @@ vol_up = {
 vol_up["gain_pts"] = round(vol_up["price_to"] - vol_up["price_from"], 1)
 
 # ----------------------------------------------------------------------- post 5
-W_STRIKE, W_PREM = 20000, 200
-w_levels = [18500, 19000, 19500, 19800, 20000, 20200, 20500, 21000, 21500, 22000, 23000]
+W_STRIKE, W_PREM = STRIKE, CALL_PREM
+w_levels = [18500, 19000, 19500, 19800, 20000, 20350, 20500, 21000, 21500, 22000, 23000]
 
 
 def short_call_pl(s):

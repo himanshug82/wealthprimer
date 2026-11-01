@@ -15,7 +15,7 @@ here rather than scattered across prose.
 CONVENTIONS
 - All examples are FICTIONAL and illustrative: a Desi Bites Foods employee
   and shareholder (the blog's fictional case-study company, IPO at Rs 640 on
-  15 June 2025 per _data/case_study.yml), a hypothetical F&O trader whose
+  the listing date in _data/case_study.yml), a hypothetical F&O trader whose
   loss equals SEBI's reported FY26 average (from _data/fno.yml), and a
   hypothetical US-stock purchase at stated illustrative exchange rates.
 - Slab rate: 30% used as the illustrative marginal slab throughout, with 4%
@@ -115,7 +115,11 @@ esop = {
 # TAX-11  Buybacks — three regimes on the same 100 shares
 # --------------------------------------------------------------------------
 bb_shares = 100
-bb_cost = 640            # IPO price, 15 June 2025
+CASE = yaml.safe_load((ROOT / "_data" / "case_study.yml").read_text(encoding="utf-8"))
+bb_cost = CASE["listing"]["ipo_price"]           # IPO price
+bb_date = CASE["listing"]["listing_date"]        # bought in the IPO; shares credited on listing
+assert bb_cost == 640, "buyback example prose assumes the Rs 640 IPO price; re-check the post"
+assert bb_date.endswith("June 2025"), "Regime B holding-period comment assumes a June 2025 purchase"
 bb_price = 700
 bb_consideration = bb_price * bb_shares
 bb_cost_total = bb_cost * bb_shares
@@ -144,9 +148,10 @@ regC_promoter_effective_noncorp = 0.30
 regC_promoter_tax_noncorp = r(bb_gain * regC_promoter_effective_noncorp)
 
 buyback = {
-    "note": "Fictional Desi Bites Foods shareholder: 100 shares bought in the IPO at Rs 640 (15 June 2025), tendered in a hypothetical buyback at Rs 700. Illustrative 30% slab + 4% cess.",
+    "note": f"Fictional Desi Bites Foods shareholder: 100 shares bought in the IPO at Rs {bb_cost} ({bb_date}), tendered in a hypothetical buyback at Rs 700. Illustrative 30% slab + 4% cess.",
     "shares": bb_shares,
     "cost_per_share": bb_cost,
+    "purchase_date": bb_date,
     "buyback_price": bb_price,
     "consideration": bb_consideration,
     "cost_total": bb_cost_total,

@@ -32,7 +32,7 @@ This is part of [Money Before Markets]({{ '/series/money-before-markets/' | rela
 | Early exit | The bank's terms apply; check the deposit's terms | Sell units at the applicable NAV; an exit load may apply |
 | What drives surprises | The rate on offer when you renew | Interest-rate moves and the quality of what the fund holds |
 
-The tax treatment of the two also differs, and it has changed in recent years, so check the current rule before comparing returns after tax.
+The tax treatment of the two also differs, and it has changed in recent years, so check the current rule before comparing returns after tax. FD interest is covered in the Tax series post on [dividends and interest]({% post_url 2026-11-06-dividends-and-interest %}).
 
 ## The formula
 

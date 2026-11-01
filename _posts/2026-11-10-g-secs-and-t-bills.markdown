@@ -70,7 +70,7 @@ What the table shows, and no more:
 
 RBI's [Retail Direct scheme]({{ rd.url }}) lets individuals open a gilt account with RBI and bid in primary auctions of T-bills, dated G-secs and State Development Loans (SDLs, bonds issued by state governments). Individuals bid on a non-competitive basis: "by only entering the desired amount of securities, without entering a price." The minimum investment was ₹{% include inr.html n=rd.min_bid_face %} as on {{ rd.as_on | date: "%-d %B %Y" }}, the date printed on the page. Check the current terms before relying on that figure.
 
-How the interest and gains are taxed is a separate question, covered in the Tax series. This post doesn't state a rule.
+How the interest and gains are taxed is a separate question, covered in the Tax series (interest in [dividends and interest]({% post_url 2026-11-06-dividends-and-interest %})). This post doesn't state a rule.
 
 ## Common mistakes
 

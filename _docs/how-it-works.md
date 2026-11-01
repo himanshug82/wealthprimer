@@ -124,7 +124,7 @@ three weeks of written backlog so a skipped week leaves no gap.
 - **Main-board NSE and BSE listing** (changed from NSE Emerge/SME on
   24 Sep 2026 so quarterly results, ICDR lock-ins and issue-object caps are
   consistent): DRHP December 2024, RHP June 2025 with FY25 accounts, listed
-  15 June 2025 at ₹640. Pre-issue vs post-issue EPS (never "diluted/undiluted"
+  16 June 2025 at ₹640. Pre-issue vs post-issue EPS (never "diluted/undiluted"
   — the data keys `eps_undiluted`/`eps_diluted` keep their old names).
 - Its size is below real main-board thresholds; fine for teaching.
 - Only Desi Bites (or a generic company/bank) gets a DCF, WACC, or justified

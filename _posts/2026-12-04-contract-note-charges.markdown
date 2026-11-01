@@ -29,13 +29,13 @@ This post covers a normal delivery trade in shares on the NSE (National Stock Ex
 | **Exchange transaction charge** | The exchange's fee for matching the trade | ₹{{ c.txn_per_lakh }} per lakh of traded value, each side ([NSE circular {{ c.txn_circular }}]({{ c.txn_url }})) | You, through the broker |
 | **SEBI turnover fee** | The regulator's fee on turnover | ₹{{ c.sebi_fee_per_crore }} per crore of traded value ([NSE page]({{ c.levies_url }}), updated {{ c.levies_updated }}) | You, through the broker |
 | **STT** (securities transaction tax) | A tax on the trade | {{ c.stt_delivery_pct }}% on the buy and {{ c.stt_delivery_pct }}% on the sell ([NSE circular {{ c.stt_circular }}]({{ c.stt_url }})) | Buyer on the buy; seller on the sell |
-| **Stamp duty** | A state-law duty on the transfer | {{ c.stamp_delivery_pct }}% of the value, on the buy only ([NSE page]({{ c.levies_url }})) | Buyer |
+| **Stamp duty** | A duty under the Indian Stamp Act on the transfer, collected by the clearing corporations | {{ c.stamp_delivery_pct }}% of the value, on the buy only ([NSE page]({{ c.levies_url }})) | Buyer |
 | **GST** (Goods and Services Tax) | Tax on the broker's services | {{ c.gst_pct }}% on stockbroker services ([NSE page]({{ c.levies_url }})) | You, through the broker |
 
 Three things to read carefully:
 
 - **The exchange fee is a flat rate since 1 October 2024.** NSE's circular says SEBI (Securities and Exchange Board of India) directed exchanges to charge one uniform rate rather than slabs that depended on a broker's volume, and to make brokers recover from you only what they pay the exchange ("true to label"). The circular is SEBI's {{ c.sebi_circular_charges }}, as NSE describes it.
-- **STT is not the same for every kind of trade.** The same NSE circular gives {{ c.stt_non_delivery_sell_pct }}% on the sell side when an equity share trade is settled without delivery (squared off within the day), and separate, higher rates on futures and options from 1 April 2026. This post does not work those through; the tax treatment of the profit is a different question, covered in the Tax series.
+- **STT is not the same for every kind of trade.** The same NSE circular gives {{ c.stt_non_delivery_sell_pct }}% on the sell side when an equity share trade is settled without delivery (for example, squared off within the day), and separate rates on futures and options, which were raised from 1 April 2026. This post does not work those through; the tax treatment of the profit is a different question, covered in the Tax series.
 - **GST applies to broker services.** NSE's page gives the 18% rate but does not say which of the lines above it is charged on. The worked example below applies it to brokerage only, as a stated assumption. Your contract note shows what your broker actually did.
 
 Depository charges (what your depository participant (DP) bills you for a sale) are separate and are not on this list. Your DP's price list has them.
@@ -76,7 +76,7 @@ The rounding is per line, to the paisa, and the totals add the rounded lines, so
 ## Common mistakes
 
 - **Reading only the brokerage.** A "zero brokerage" plan removes one line. The taxes and the exchange and SEBI fees remain, and the example shows STT is the biggest of them on a delivery trade.
-- **Comparing the price difference with the cost, not the net.** A move of ₹{{ c.sell_px | minus: c.buy_px }} a share can look comfortable until all lines are added. The effect is largest when the position is small or the price barely moves.
+- **Comparing the price difference with the cost, not the net.** A move of ₹{{ c.sell_px | minus: c.buy_px }} a share can look comfortable until all lines are added. The effect is largest when the price barely moves.
 - **Assuming every trade has the same STT.** The rate depends on the type of trade, as NSE's circular lists. A rate for delivery trades does not carry over to intraday or derivatives trades.
 - **Treating one broker's contract note as the rule.** Brokerage and the base used for GST are the broker's own; the exchange and government lines come from circulars. Read the note and the broker's price list together.
 

@@ -18,7 +18,7 @@ When something goes wrong with a broker, a fund house or a listed company, the e
 - **SCORES** (SEBI Complaints Redress System) is an online complaint platform. A complaint is passed to the entity, which must answer within a set number of days; SEBI and a designated body monitor it.
 - **SMART ODR** is online dispute resolution (ODR; SMART stands for Securities Market Approach for Resolution Through ODR): a conciliator, and then an arbitrator if conciliation fails, working on a platform instead of in a court.
 
-This post describes how both work as written in SEBI's own FAQ (frequently asked questions) for SCORES ([SEBI SCORES 2.0 FAQ]({{ s.faq_url }})) and SEBI's investor pages on [SCORES]({{ s.investor_url }}) and [SMART ODR]({{ s.odr_url }}), as at {{ s.as_of }}. SEBI introduced the upgraded SCORES 2.0 in April 2024. It is part of [Your first year in the market]({{ '/series/market-basics/' | relative_url }}); the plumbing it protects is in [how accounts work]({% post_url 2026-12-01-demat-trading-bank-accounts %}) and [broker and counterparty risk]({% post_url 2026-10-21-broker-and-counterparty-risk %}).
+This post describes how both work as written in SEBI's own FAQ (frequently asked questions) for SCORES (the October 2024 file: [SEBI SCORES 2.0 FAQ]({{ s.faq_url }})) and SEBI's investor pages on [SCORES]({{ s.investor_url }}) and [SMART ODR]({{ s.odr_url }}), as at {{ s.as_of }}. SEBI introduced the upgraded SCORES 2.0 in April 2024. It is part of [Your first year in the market]({{ '/series/market-basics/' | relative_url }}); the plumbing it protects is in [how accounts work]({% post_url 2026-12-01-demat-trading-bank-accounts %}) and [broker and counterparty risk]({% post_url 2026-10-21-broker-and-counterparty-risk %}).
 
 It explains how to use the process, not what any complaint's merits are, and it is not legal advice.
 
@@ -66,7 +66,7 @@ SEBI's investor page describes SMART ODR as a portal for disputes against regula
 
 The two routes are linked. SEBI's FAQ says you can withdraw a SCORES complaint by opting for ODR, and it lists a dispute pending in ODR as something SCORES will not take. So you generally pick a path rather than run both.
 
-Two details this post does not state, because the sources it opened do not settle them: the **time limits for each ODR stage**, and the **current fee schedule**, which SEBI's page says to confirm in the circulars. The ODR master circular is cited in SEBI's FAQ as {{ s.odr_circular }}; other reports give different circular numbers, so confirm the current reference on sebi.gov.in.
+Two details this post does not state, because the sources it opened do not settle them: the **time limits for each ODR stage**, and the **current fee schedule**, which SEBI's page says to confirm in the circulars. The ODR master circular is cited in SEBI's FAQ as {{ s.odr_circular }}; the sources we saw cite more than one circular number, so confirm the current reference on sebi.gov.in.
 
 ## Common mistakes
 

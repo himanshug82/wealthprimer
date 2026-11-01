@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Mergers and demergers: what happens to your shares"
-description: "In a merger you get shares at a set ratio; in a demerger you keep yours and receive new ones. The swap ratio worked through with invented companies, plus SEBI's steps."
+description: "In a merger you receive shares at a set ratio; in a demerger you keep yours and get new ones. The swap ratio worked through, with invented companies."
 image: /assets/og/mergers-and-demergers.png
 date: 2026-12-07 09:00:00 +0530
 series: market-basics
@@ -38,7 +38,7 @@ Whole shares go to your demat account; any fraction is handled as the scheme say
 
 You cannot hold 0.857 of a share, so the fraction needs a rule. SEBI's master circular on schemes of arrangement ({{ sc.master_circular }}; [source]({{ sc.master_url }}); as at {{ sc.as_of }}) says fractional entitlements are aggregated and held by a trust, which sells them in the market within {{ sc.fraction_trust_days }} days from the date of allotment, as the draft scheme says. The scheme document tells you how the proceeds reach you, so read it for that. **Check the current rule**: the circular was issued in June 2023 and can be amended.
 
-Read the direction of the ratio carefully. "{{ m.ratio_new }} for {{ m.ratio_old }}" means {{ m.ratio_new }} shares of the surviving company for {{ m.ratio_old }} of the one being absorbed, so your share count falls even though the ratio looks generous.
+Read the direction of the ratio carefully. "{{ m.ratio_new }} for {{ m.ratio_old }}" means {{ m.ratio_new }} shares of the surviving company for {{ m.ratio_old }} of the one being absorbed, so you end up with fewer shares than you started with. What each share is worth is a separate matter.
 
 ### Demerger: invented example
 

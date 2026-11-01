@@ -166,7 +166,7 @@ post isn't a disclaimer bolted on at the end. Technical analysis
 has real, well-documented weaknesses — hindsight bias, ambiguity about what
 counts as a signal, and the awkward fact that many published tests of
 indicators look much weaker once data snooping and trading costs are
-accounted for (Park and Irwin's 2007 survey in the *Journal of Economic
+accounted for (Park and Irwin's [2007 survey](https://doi.org/10.1111/j.1467-6419.2007.00519.x) in the *Journal of Economic
 Surveys* is the standard reference). A series that showed you eight indicators and
 skipped the reckoning would be selling something.
 

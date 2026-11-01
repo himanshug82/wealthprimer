@@ -33,8 +33,8 @@ arbitrage-funds:
 - liquid-and-overnight-funds
 - stp-and-swp
 - bid-ask-spread-and-liquidity
-- reading-a-factsheet
 - leverage-and-margin
+- reading-a-factsheet
 - the-riskometer
 asm-and-gsm-surveillance:
 - pump-and-dump-and-operator-stocks
@@ -85,9 +85,9 @@ benchmarks-and-comparing-like-with-like:
 - alpha
 - price-vs-total-return-index
 - tracking-error-and-tracking-difference
-- sortino-and-information-ratio
-- up-and-down-capture-ratios
 - survivorship-bias-in-fund-tables
+- up-and-down-capture-ratios
+- sortino-and-information-ratio
 - reading-a-factsheet
 - why-star-ratings-mislead
 beta:
@@ -98,7 +98,7 @@ beta:
 - margin-of-safety-and-sensitivity
 - relative-strength-vs-the-index
 - india-vix
-- momentum-vs-mean-reversion
+- up-and-down-capture-ratios
 bid-ask-spread-and-liquidity:
 - liquidity-risk
 - order-types-explained
@@ -151,8 +151,8 @@ budget-day-and-muhurat-trading:
 - bollinger-bands-and-atr
 - obv-and-vwap
 - reading-a-candlestick-chart
-- momentum-vs-mean-reversion
 - t-plus-1-settlement
+- momentum-vs-mean-reversion
 bulk-and-block-deals:
 - option-expiry-and-settlement
 - obv-and-vwap
@@ -301,8 +301,8 @@ currency-risk:
 - international-funds
 - it-services-constant-currency-utilisation-attrition
 - inflation-and-real-returns
-- sips-xirr-and-timing-myths
 - debt-funds-explained
+- sips-xirr-and-timing-myths
 - foreign-stocks-and-schedule-fa
 - arbitrage-funds
 - diversification-is-a-correlation-problem
@@ -404,12 +404,12 @@ dividends-and-interest:
 - advance-tax-for-investors
 - buyback-taxation
 - equity-and-equity-funds
-- reits-and-invits
+- debt-funds-gold-and-the-rest
 do-gaps-get-filled:
 - stop-loss-placement
 - stochastic-oscillator
-- momentum-vs-mean-reversion
 - bollinger-bands-and-atr
+- momentum-vs-mean-reversion
 - reading-a-candlestick-chart
 - position-sizing-and-the-one-percent-rule
 - obv-and-vwap
@@ -438,8 +438,8 @@ earnings-yield-and-fcf-yield:
 - dividend-yield
 - yield-to-maturity
 - ev-ebitda
-- eps
 - capstone-britannia-end-to-end
+- eps
 - g-secs-and-t-bills
 ebitda-margin:
 - reading-an-income-statement
@@ -453,9 +453,9 @@ ebitda-margin:
 elss-and-the-deduction-that-moved:
 - dividends-and-interest
 - equity-and-equity-funds
+- losses-set-off-and-harvesting
 - how-investment-income-is-taxed
 - sips-and-fifo
-- losses-set-off-and-harvesting
 - buyback-taxation
 - ppf-how-it-works
 - exit-load
@@ -475,8 +475,8 @@ enterprise-value:
 - roce
 - reading-a-balance-sheet
 - debt-to-equity
-- goodwill-exceptional-items-and-other-income
 - terminal-value-and-the-full-dcf
+- goodwill-exceptional-items-and-other-income
 eps:
 - price-to-earnings
 - book-value-per-share
@@ -528,8 +528,8 @@ exit-load:
 - stp-and-swp
 - what-a-mutual-fund-is
 - sips-xirr-and-timing-myths
+- losses-set-off-and-harvesting
 - nfos
-- step-up-sips
 - elss-and-the-deduction-that-moved
 expense-ratios-direct-vs-regular:
 - what-a-mutual-fund-is
@@ -644,8 +644,8 @@ gifts-and-clubbing:
 - buyback-taxation
 - advance-tax-for-investors
 - bonds-debentures-and-sgbs
-- dividends-and-interest
 - elss-and-the-deduction-that-moved
+- dividends-and-interest
 - reits-and-invits
 - how-investment-income-is-taxed
 gnpa-nnpa-and-provisions:
@@ -824,8 +824,8 @@ it-services-constant-currency-utilisation-attrition:
 - international-funds
 - airlines-load-factor-rask-cask
 - currency-risk
-- pharma-rd-intensity-us-generics-usfda
 - hospitals-arpob-occupancy
+- pharma-rd-intensity-us-generics-usfda
 - cement-ebitda-per-tonne-capacity-utilisation
 - goodwill-exceptional-items-and-other-income
 kelly-criterion-and-risk-of-ruin:
@@ -956,8 +956,8 @@ momentum-vs-mean-reversion:
 - macd
 moving-averages:
 - macd
-- what-technical-analysis-cannot-do
 - how-to-backtest-honestly
+- what-technical-analysis-cannot-do
 - multiple-timeframe-analysis
 - what-technical-analysis-is
 - rsi
@@ -1013,8 +1013,8 @@ nfos:
 - index-funds-vs-etfs
 - aum
 - expense-ratios-direct-vs-regular
-- reading-a-factsheet
 - tracking-error-and-tracking-difference
+- reading-a-factsheet
 - exit-load
 - liquidity-risk
 nim-and-the-spread:
@@ -1294,8 +1294,8 @@ reading-a-drhp:
 - rights-issues
 - offer-for-sale-and-delisting
 - desi-bites-cooks-the-books
-- eps
 - price-to-earnings
+- eps
 reading-a-factsheet:
 - what-fund-metrics-cant-tell-you
 - portfolio-turnover-ratio
@@ -1428,9 +1428,9 @@ rolling-returns:
 - volatility-and-sharpe
 - sips-xirr-and-timing-myths
 - why-star-ratings-mislead
-- step-up-sips
 - sell-in-may-and-month-of-year
 - arbitrage-funds
+- step-up-sips
 rsi:
 - stochastic-oscillator
 - macd
@@ -1508,24 +1508,24 @@ sips-and-fifo:
 - losses-set-off-and-harvesting
 - short-term-vs-long-term
 - equity-and-equity-funds
-- before-you-file
 - how-investment-income-is-taxed
+- before-you-file
 - stp-and-swp
-- debt-funds-gold-and-the-rest
+- sips-xirr-and-timing-myths
 sips-xirr-and-timing-myths:
 - step-up-sips
 - sequence-of-returns-risk
-- point-to-point-returns
 - stp-and-swp
+- point-to-point-returns
 - drawdown
 - sips-and-fifo
-- rolling-returns
 - exit-load
+- rolling-returns
 sortino-and-information-ratio:
 - up-and-down-capture-ratios
 - what-fund-metrics-cant-tell-you
-- volatility-and-sharpe
 - tracking-error-and-tracking-difference
+- volatility-and-sharpe
 - benchmarks-and-comparing-like-with-like
 - alpha
 - price-vs-total-return-index
@@ -1564,8 +1564,8 @@ stp-and-swp:
 - sips-and-fifo
 - nps-exit-rules
 - liquid-and-overnight-funds
-- step-up-sips
 - arbitrage-funds
+- what-a-mutual-fund-is
 support-and-resistance:
 - trend-lines
 - fibonacci-retracements
@@ -1630,9 +1630,9 @@ the-riskometer:
 - diversification-is-a-correlation-problem
 - arbitrage-funds
 tracking-error-and-tracking-difference:
+- sortino-and-information-ratio
 - benchmarks-and-comparing-like-with-like
 - price-vs-total-return-index
-- sortino-and-information-ratio
 - alpha
 - expense-ratios-direct-vs-regular
 - index-funds-vs-etfs
@@ -1654,8 +1654,8 @@ ulip-charges:
 - fixed-deposit-vs-debt-fund
 - exit-load
 - expense-ratios-direct-vs-regular
-- step-up-sips
 - sips-xirr-and-timing-myths
+- step-up-sips
 up-and-down-capture-ratios:
 - sortino-and-information-ratio
 - what-fund-metrics-cant-tell-you
@@ -1735,8 +1735,8 @@ what-technical-analysis-is:
 - rsi
 - obv-and-vwap
 - macd
-- capstone-britannia-end-to-end
 - moving-averages
+- capstone-britannia-end-to-end
 what-the-fo-numbers-actually-say:
 - behavioural-biases-indian-edition
 - fo-is-business-income
@@ -1766,8 +1766,8 @@ why-ratios-break-on-a-bank:
 - capstone-britannia-end-to-end
 why-star-ratings-mislead:
 - what-fund-metrics-cant-tell-you
-- benchmarks-and-comparing-like-with-like
 - survivorship-bias-in-fund-tables
+- benchmarks-and-comparing-like-with-like
 - sebi-fund-categories-decoded
 - reading-a-factsheet
 - rolling-returns

@@ -65,7 +65,7 @@ portfolio — from their top tens alone. Extend the comparison to all forty or
 fifty holdings and the figure for two real large-cap funds can easily exceed
 half.
 
-Notice also the top-ten concentration: {{ o.top10_weight_a }}% of Fund A and {{ o.top10_weight_b }}% of
+Notice also the top-ten [concentration]({{ '/2026/10/18/concentration-risk/' | relative_url }}): {{ o.top10_weight_a }}% of Fund A and {{ o.top10_weight_b }}% of
 Fund B sit in just ten names. Large-cap funds are concentrated by
 construction, because the index they're measured against is — the Nifty 50's
 ten largest constituents make up more than half of it (check the current

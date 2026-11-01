@@ -225,10 +225,10 @@ Being clear about why is the point of the exercise:
 
 None of these are fixable in a blog post. They are fixable in a serious
 research process, and when people have done that work at scale, the results
-have been modest. Park and Irwin's 2007 survey (*Journal of Economic
+have been modest. Park and Irwin's [2007 survey](https://doi.org/10.1111/j.1467-6419.2007.00519.x) (*Journal of Economic
 Surveys*) found that many studies reporting profitable technical rules were
 weakened by data snooping, rules picked after the fact, or understated costs.
-Sullivan, Timmermann and White (1999) found that the best moving-average rules
+Sullivan, Timmermann and White ([1999](https://doi.org/10.1111/0022-1082.00163)) found that the best moving-average rules
 from a century of Dow Jones data stopped working in the decade that followed.
 In our reading, simple trend rules have shown uneven, cost-sensitive edges in
 some markets and periods — nothing like the reliability the tutorials imply. Which is roughly what the

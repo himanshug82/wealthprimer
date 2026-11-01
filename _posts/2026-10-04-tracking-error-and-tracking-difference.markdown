@@ -29,7 +29,9 @@ frequency and annualised. It answers: *how tightly does the fund hug the index
 day to day?* A fund can have a large tracking difference with tiny tracking
 error (it lags the index by exactly its expense ratio, like clockwork), or a
 small difference with large error (it wobbles around the index and happens to
-end up close).
+end up close). Tracking error is also the denominator of the
+[information ratio]({{ '/2026/10/28/sortino-and-information-ratio/' | relative_url }}),
+which divides a fund's return above its benchmark by it.
 
 Both numbers are now published. SEBI's
 [passive funds circular of 23 May 2022](https://www.sebi.gov.in/legal/circulars/may-2022/circular-on-development-of-passive-funds_59098.html)

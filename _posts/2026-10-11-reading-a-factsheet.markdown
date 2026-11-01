@@ -64,7 +64,7 @@ if you might need the money early.
 - **Portfolio turnover.** How much was traded. High turnover means more
   trading costs: brokerage and transaction charges are inside the expense
   ratio, but the price impact of the fund's own trading isn't itemised as an
-  expense. A later post in this series covers the ratio in full.
+  expense. The [portfolio turnover ratio]({{ '/2026/10/30/portfolio-turnover-ratio/' | relative_url }}) post covers the ratio in full.
 
 **The [overlap check]({{ '/2026/10/15/portfolio-overlap/' | relative_url }})** is worth doing once: if you own four large-cap funds,
 compare their top-10 lists. Owning the same twelve companies four times over

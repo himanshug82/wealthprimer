@@ -136,9 +136,9 @@ version of this question needs thousands of crossovers across many stocks and
 decades. When researchers have done that work, the results are much less
 exciting than the name suggests. Brock, Lakonishok and LeBaron (1992) found
 simple moving-average rules had some predictive power over a century of Dow
-Jones data — but Sullivan, Timmermann and White (1999) found that edge didn't
-hold up in the decade after the original sample, and Park and Irwin's 2007
-survey of the literature (*Journal of Economic Surveys*) concluded that many
+Jones data — but Sullivan, Timmermann and White ([1999](https://doi.org/10.1111/0022-1082.00163)) found that edge didn't
+hold up in the decade after the original sample, and Park and Irwin's [2007
+survey](https://doi.org/10.1111/j.1467-6419.2007.00519.x) of the literature (*Journal of Economic Surveys*) concluded that many
 positive results were weakened by data snooping and understated trading costs.
 
 ## Which N should you use?

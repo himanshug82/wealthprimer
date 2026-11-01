@@ -124,10 +124,10 @@ of it works.
 Real evidence would need thousands of instances across many stocks, sectors,
 market conditions and decades, with trading costs included and the rules
 fixed in advance. Where that work exists, the results are modest. Park and
-Irwin's 2007 survey of the research (*Journal of Economic Surveys*) found
+Irwin's [2007 survey](https://doi.org/10.1111/j.1467-6419.2007.00519.x) of the research (*Journal of Economic Surveys*) found
 that many studies reporting profitable technical rules were weakened by data
 snooping, rules picked after the fact, or understated costs. And Sullivan,
-Timmermann and White (1999) found that the best moving-average rules from an
+Timmermann and White ([1999](https://doi.org/10.1111/0022-1082.00163)) found that the best moving-average rules from an
 earlier century-long study stopped working in the decade after it.
 
 Be suspicious of anyone who shows you one chart. Including this one.
@@ -146,7 +146,7 @@ of the argument. If a simple chart rule reliably made money, traders would
 pile into it — buying a little earlier, selling a little earlier — and in
 doing so trade the edge away. So the rule printed in every textbook is the
 one least likely to still work. That doesn't settle the debate; some effects,
-like momentum (Jegadeesh and Titman, 1993), have been studied for decades and
+like momentum (Jegadeesh and Titman, [1993](https://doi.org/10.1111/j.1540-6261.1993.tb04702.x); one index is tested in [momentum vs mean reversion]({{ '/2026/10/23/momentum-vs-mean-reversion/' | relative_url }})), have been studied for decades and
 are still argued over. But it explains why the edges researchers do find tend
 to be small, short-lived and eaten by costs.
 

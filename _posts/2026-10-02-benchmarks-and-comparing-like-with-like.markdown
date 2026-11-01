@@ -146,6 +146,8 @@ among flexi-cap funds." Useful, with one serious caveat.
 disappear from the category. Compare today's surviving funds and you're
 comparing against a group with the failures deleted. The surviving average is
 flattered by exactly the funds that no longer exist.
+[Survivorship bias in fund tables]({{ '/2026/11/01/survivorship-bias-in-fund-tables/' | relative_url }})
+shows, in a simulation, how big the effect can be.
 
 This applies to almost every "average category return" you'll see, and it
 biases in one direction — always upward.

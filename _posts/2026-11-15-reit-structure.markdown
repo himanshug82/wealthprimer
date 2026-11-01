@@ -65,7 +65,7 @@ At the legal minimum at each step, unit holders receive {{ po.floor_share_pct }}
 ## Common mistakes
 
 - **Treating "90%" as a yield.** The rule is a share of cash flows, not a return on the unit price or on the money you invested. A [dividend yield]({% post_url 2026-09-28-dividend-yield %}) is a different calculation.
-- **Reading the payout as profit.** It is a share of distributable cash, so a payout can differ from accounting profit. How each part of a payout is taxed is a separate question, covered in the Tax series.
+- **Reading the payout as profit.** It is a share of distributable cash, so a payout can differ from accounting profit. How each part of a payout is taxed is a separate question, covered in the Tax series post on [REITs and InvITs]({% post_url 2026-11-15-reits-and-invits %}).
 - **Ignoring the layers.** The 90% rule applies at the SPV and again at the REIT, so a chain of SPVs and holdcos changes what reaches you.
 - **Assuming a unit's price follows the property's value.** The regulations define a REIT's **[net asset value]({% post_url 2026-09-25-what-a-mutual-fund-is %}) (NAV)** as the value of its assets reduced by external debt, divided by units outstanding. The listed price is set by trading and can differ from that figure, much as an exchange-traded fund's (ETF's) price can differ from its NAV, as the [index funds vs ETFs post]({% post_url 2026-10-13-index-funds-vs-etfs %}) explained.
 

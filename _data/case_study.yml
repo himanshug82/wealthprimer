@@ -207,6 +207,7 @@ listing:
   listing_date: "15 June 2025"
   ipo_price: 640                       # Rs per share
   fresh_issue_shares_lakh: 2.5         # new shares issued, raising growth capital
+  ipo_lot_size_shares: 23              # shares per bid lot (invented; the offer document sets the real figure); 23 x Rs 640 = Rs 14,720
   pre_ipo_shares_lakh: 10              # unchanged from share_data above
   post_ipo_shares_lakh: 12.5           # pre_ipo + fresh_issue
   ipo_proceeds: 1600                   # Rs Lakh = fresh_issue_shares_lakh * ipo_price / 100, ignoring issue expenses for simplicity

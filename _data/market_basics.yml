@@ -93,3 +93,125 @@ nse:
   preopen_window: 9:00 am to 9:15 am
   normal_close: 3:30 pm
   normal_open: 9:15 am
+charges:
+  as_of: November 2026
+  stt_circular: NSE/FATAX/73524, 31 March 2026
+  stt_url: https://nsearchives.nseindia.com/content/circulars/FATAX73524.pdf
+  txn_circular: NSE/FA/64232, 27 September 2024 (effective 1 October 2024)
+  txn_url: https://nsearchives.nseindia.com/content/circulars/FA64232.pdf
+  levies_url: https://www.nseindia.com/static/invest/first-time-investor-sebi-turnover-fees-stt-other-levies
+  levies_updated: 17 April 2026
+  sebi_circular_charges: SEBI/HO/MRD/TPD-1/P/CIR/2024/92, 1 July 2024
+  stt_delivery_pct: 0.1
+  stt_non_delivery_sell_pct: 0.025
+  txn_per_lakh: 2.97
+  sebi_fee_per_crore: 10
+  stamp_delivery_pct: 0.015
+  gst_pct: 18
+  qty: 100
+  buy_px: 642
+  sell_px: 655
+  brokerage_each: 20
+  buy:
+    value: 64200
+    brokerage: 20
+    txn: 1.91
+    sebi: 0.06
+    stt: 64.2
+    stamp: 9.63
+    gst: 3.6
+    total: 99.4
+  sell:
+    value: 65500
+    brokerage: 20
+    txn: 1.95
+    sebi: 0.07
+    stt: 65.5
+    stamp: 0.0
+    gst: 3.6
+    total: 91.12
+  gross_gain: 1300
+  total_charges: 190.52
+  net_after_charges: 1109.48
+  charges_pct_of_gross: 14.7
+  stt_total: 129.7
+ipo:
+  as_of: November 2026
+  master_circular: HO/49/14/14(2)2026-CFD-POD2/I/4518/2026 (last updated 9 February 2026)
+  master_url: https://www.sebi.gov.in/sebi_data/attachdocs/feb-2026/1770636136785.pdf
+  upi_limit_lakh: 5
+  retail_cap_rs: 200000
+  upi_mandate_cutoff: 5 pm on T
+  unblock_by: T+2
+  listing_on: T+3
+  unblock_sponsor: Sponsor Banks execute the online mandate revoke file for non-allottees and partial
+    allottees on T+2
+  comp_per_day: 100
+  comp_rate_pct: 15
+  comp_basis_days: 365
+  price: 640
+  lot: 23
+  lot_amt: 14720
+  fresh_shares_lakh: 2.5
+  fresh_proceeds_lakh: 1600
+  max_lots: 13
+  max_amt: 191360
+  over_cap_lots: 14
+  over_cap_amt: 206080
+  two_lot_amt: 29440
+  comp_rows:
+  - amount: 14720
+    pct_per_day: 6.05
+    per_day: 100
+  - amount: 191360
+    pct_per_day: 78.64
+    per_day: 100
+  - amount: 500000
+    pct_per_day: 205.48
+    per_day: 205.48
+  delay_days: 5
+  comp_breakeven: 243333
+scores:
+  as_of: November 2026
+  faq_url: https://www.sebi.gov.in/sebi_data/faqfiles/oct-2024/1730356475310.pdf
+  investor_url: https://investor.sebi.gov.in/sebi_scores.html
+  odr_url: https://investor.sebi.gov.in/smart_orr.html
+  scores_circular: SEBI/HO/OIAE/IGRD/CIR/P/2023/156 (as cited in SEBI's own SCORES FAQ)
+  odr_circular: SEBI/HO/OIAE/OIAE_IAD-1/P/CIR/2023/145, 31 July 2023 (as cited in SEBI's own SCORES FAQ)
+  limitation_years: 1
+  atr_days: 21
+  review_request_days: 15
+  designated_days: 10
+  second_review_days: 15
+  conciliation_ok_rs: 4800
+  conciliation_fail_rs: 3240
+  example_atr_day: 21
+  example_review_last_day: 36
+  example_complaint: your broker has not credited funds that should be back in your trading account
+scheme:
+  as_of: November 2026
+  master_circular: SEBI/HO/CFD/POD-2/P/CIR/2023/93, 20 June 2023
+  master_url: https://nsearchives.nseindia.com/s3fs-public/inline-files/Master%20Circular%20on%20Scheme%20of%20Arrangement_2.pdf
+  fraction_trust_days: 90
+  merge:
+    a_name: Alpha Foods Ltd
+    b_name: Beta Snacks Ltd
+    ratio_new: 3
+    ratio_old: 7
+    holding: 100
+    entitled: 42.857
+    whole: 42
+    fraction: 0.857
+    fraction_num: 6
+  demerge:
+    parent: Alpha Foods Ltd
+    child: Gamma Beverages Ltd
+    per_old: 4
+    holding: 100
+    pre_px: 800
+    post_parent_px: 620
+    post_child_px: 720
+    child_shares: 25
+    value_before: 80000
+    value_after: 80000
+    parent_drop: 180

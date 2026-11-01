@@ -3,7 +3,7 @@ layout: post
 title: "Capital gains tax on shares and equity funds: LTCG and STCG"
 description: "Listed shares and equity funds: the short-term and long-term rates, the annual exemption, cess and grandfathering, with worked examples on real fund NAVs."
 image: /assets/og/equity-and-equity-funds.png
-date: 2026-11-19 09:00:00 +0530
+date: 2026-11-04 09:00:00 +0530
 series: tax
 needs_review: tax
 rules_for: "Tax Year 2026-27 (FY 2026-27)"
@@ -17,19 +17,19 @@ rules_as_of: "August 2026"
 
 ## The rules in full
 
-These rules cover listed shares and equity mutual funds — the assets most
+This post covers **Tax Year 2026-27 (FY 2026-27)**; FY is *financial year*. These rules cover listed shares and equity mutual funds — the assets most
 retail investors actually hold — where securities transaction tax (STT) was paid on the sale.
 That's automatic on any sale through a stock exchange and on an equity-fund
 redemption. For long-term gains on shares, STT on the purchase is needed too,
 with notified exceptions such as shares allotted in an IPO (initial public
 offering). Short-term capital gains (STCG) and long-term capital gains (LTCG)
 split at the line explained in the
-[holding-period post]({% post_url 2026-11-18-short-term-vs-long-term %}):
+[holding-period post]({% post_url 2026-11-03-short-term-vs-long-term %}):
 
 ```
 Held {{ r.equity_holding_months }} months or less   ->  STCG at {{ r.equity_stcg_pct }}%
 Held more than {{ r.equity_holding_months }} months  ->  LTCG at {{ r.equity_ltcg_pct }}%, but the first
-                              Rs {{ r.ltcg_annual_exemption }} of long-term gains
+                              Rs {% include inr.html n=r.ltcg_annual_exemption %} of long-term gains
                               each financial year is exempt
 
 Plus {{ r.cess_pct }}% health and education cess, applied on the TAX.
@@ -43,9 +43,7 @@ sell in the year, not per fund and not per sale.
 
 **It's per person.** Two adults each get their own.
 
-**It doesn't carry forward.** Unused, it's gone on 31 March. This is the
-entire basis of the harvesting idea in
-the losses post later in this series.
+**It doesn't carry forward.** Unused, it's gone on 31 March. The losses post in this series looks at what that means for a sale and repurchase.
 
 ## Worked example: a real gain, and real tax
 
@@ -69,9 +67,13 @@ comfortably past the long-term line:
 | Tax at {{ r.equity_ltcg_pct }}% | ₹{% include inr.html n=a.tax_before_cess %} |
 | **Tax including {{ r.cess_pct }}% cess** | **₹{% include inr.html n=a.tax_with_cess %}** |
 
-A gain of about ₹9.2 lakh, tax of about ₹1.03 lakh — an effective rate of
-roughly 11% on the whole gain, because the exemption absorbs the first
-₹1.25 lakh and the cess adds a little back.
+A gain of ₹{% include inr.html n=a.gain %}, tax of ₹{% include inr.html n=a.tax_with_cess %} — an effective rate of
+{{ a.tax_with_cess | times: 100.0 | divided_by: a.gain | round: 1 }}% on the whole gain, because the exemption absorbs the first
+₹{% include inr.html n=r.ltcg_annual_exemption %} and the cess adds a little back.
+
+The buy date in this example (April 2020) sits near the March 2020 market low,
+so the gain is larger than a typical holding would show. It was picked so that
+tax is actually payable, to show the mechanics.
 
 Note what the effective rate is *not*: it isn't 12.5%, and it isn't 13%. The
 exemption means the effective rate rises toward 13% as the gain grows and is
@@ -88,13 +90,12 @@ part can be set against short-term and long-term equity gains before the
 {{ r.equity_stcg_pct }}% or {{ r.equity_ltcg_pct }}% applies. A student or a retiree with little other income can
 owe less than the headline rate suggests.
 
-**The new-regime rebate doesn't cover them.** The new regime's rebate — up to
-₹60,000, for income up to ₹12 lakh, from FY 2025-26 — can't be used against
-tax on these special-rate gains; the Finance Act 2025 made that explicit after
-disputes over earlier years. So someone under ₹12 lakh can owe nothing on
-salary and still owe tax on an equity gain. How the ₹12 lakh limit itself
-counts such gains has been argued over; check the current rules, or a
-professional, if you're near it.
+**The new-regime rebate doesn't cover long-term gains.** The new regime's rebate — up to
+₹60,000, for income up to ₹12 lakh in Tax Year 2026-27 (check the current limit) — is not allowed against
+the tax on long-term capital gains taxed at the special rate (the Income-tax Act, 2025 says so for long-term gains; we did not
+check the equivalent clause for short-term gains, so check the current rule for those). So someone under ₹12 lakh can owe nothing on
+salary and still owe tax on a long-term equity gain. How the ₹12 lakh limit itself
+counts such gains is not covered here.
 
 ## Grandfathering: the 31 January 2018 rule
 
@@ -125,8 +126,8 @@ Worked through, on the same fund:
 | Gain, without it | ₹{% include inr.html n=g.gain_without %} |
 | **Gain excluded from tax** | **₹{% include inr.html n=g.gain_excluded %}** |
 
-₹{% include inr.html n=g.gain_excluded %} of gain simply doesn't count, because it accrued before the tax
-existed. On this example that's worth roughly ₹9,300 in tax.
+₹{% include inr.html n=g.gain_excluded %} of gain doesn't count, because it accrued before the tax
+existed. {% assign ge = g.gain_excluded | times: r.equity_ltcg_pct | divided_by: 100.0 | times: 1.04 | round %}Taxed at {{ r.equity_ltcg_pct }}% plus cess, with the exemption already used elsewhere, it would have cost about ₹{% include inr.html n=ge %}.
 
 The cap matters too, and it applies only to the 31 January 2018 leg: if the
 asset is now worth *less* than its 31 January 2018 value, that value is
@@ -151,13 +152,11 @@ already gained by then doesn't count. Only growth after that day is taxed.
 
 ## What about buying and selling costs?
 
-Brokerage, exchange fees and GST on them are part of your cost of
-acquisition or reduce your sale proceeds, so they reduce the gain.
+Whether brokerage, exchange fees and GST on them reduce the gain was not checked against the Act text for this post; check the current rule and your contract note.
 
-**STT is the exception** — it is specifically
-not allowed as a deduction when computing capital gains. You pay it, and you
+**STT is the exception we did confirm** — the Income-tax Act, 2025 does not allow it as a deduction when computing capital gains. You pay it, and you
 can't net it off. Worth knowing because broker statements list it alongside
-charges that *are* deductible.
+other charges.
 
 ## Common mistakes
 
@@ -167,20 +166,13 @@ charges that *are* deductible.
 - **Quoting {{ r.equity_ltcg_pct }}% as the effective rate.** With the exemption and the cess,
   the effective rate is lower on small gains and approaches 13% on large ones.
 - **Forgetting grandfathering on old holdings.** On anything bought before
-  February 2018, using actual cost overstates the gain, sometimes by a lot.
-- **Deducting STT.** Deductible costs yes; STT no.
-- **Assuming the fund withholds the tax.** For residents it generally
-  doesn't. The full redemption arrives and the liability is yours to settle.
+  February 2018, using actual cost can overstate the gain.
+- **Deducting STT.** The Act does not allow STT as a deduction.
 
 ## Sources
 
-- [Income-tax Act, 2025 (a copy hosted by ICAI)](https://resource.cdn.icai.org/87647dtc-aps2139-inceome-tax-act-2025.pdf): the Act itself.
-- [Finance Act, 2026, Gazette of India](https://egazette.gov.in/WriteReadData/2026/271439.pdf): the Finance Act that made the 2026 changes.
-- [Memorandum explaining the provisions of the Finance Bill, 2026](https://www.indiabudget.gov.in/doc/memo.pdf): the government's explanation of those changes.
+- [Income-tax Act, 2025 (a copy hosted by ICAI)](https://resource.cdn.icai.org/87647dtc-aps2139-inceome-tax-act-2025.pdf): the Act itself; opened on 1 November 2026 to check the provisions this post describes. Points not found there are marked "check the current rule".
+- Finance Act, 2026 (Gazette of India): **not opened for this post** (the gazette copy could not be reached), so points that depend on the 2026 changes rest on the Bill's memorandum below and are flagged where they appear.
+- [Memorandum explaining the provisions of the Finance Bill, 2026](https://www.indiabudget.gov.in/doc/memo.pdf): the government's explanation of the Bill as introduced (the Bill, not the enacted Act).
 
-**Takeaway:** Equity and equity funds are taxed at {{ r.equity_stcg_pct }}% short-term and {{ r.equity_ltcg_pct }}%
-long-term, with the first ₹{% include inr.html n=r.ltcg_annual_exemption %} of long-term gains each year exempt — an
-allowance that is per person, per year, and gone if unused. On anything held
-since before February 2018, check the grandfathered cost before computing
-the gain: on the example here it excluded ₹{% include inr.html n=g.gain_excluded %} that would otherwise have
-been taxed.
+**Takeaway:** Equity and equity funds are taxed at {{ r.equity_stcg_pct }}% short-term and {{ r.equity_ltcg_pct }}% long-term, with the first ₹{% include inr.html n=r.ltcg_annual_exemption %} of long-term gains each year exempt. The allowance is per person, per year, and expires unused. For holdings bought before February 2018, the grandfathered cost can change the gain.

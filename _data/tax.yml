@@ -113,6 +113,6 @@ example_grandfathering:
   sell_date: "2026-03-31"
   sale_value: 590062
   grandfathered_cost: 271728
-  gain_with_grandfathering: 318335
+  gain_with_grandfathering: 318334
   gain_without: 390062
   gain_excluded: 71728

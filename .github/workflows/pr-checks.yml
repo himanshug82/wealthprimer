@@ -22,7 +22,7 @@ jobs:
         run: python3 scripts/check_posts.py
       - name: Lint changed posts
         run: |
-          files=$(git diff --name-only origin/${{ github.base_ref }}...HEAD -- '_posts/*.markdown' '_posts/*.md' | tr '\n' ' ')
+          files=$(git diff --name-only --diff-filter=ACMR origin/${{ github.base_ref }}...HEAD -- '_posts/*.markdown' '_posts/*.md' | tr '\n' ' ')
           if [ -n "$files" ]; then python3 .claude/skills/write-post/scripts/lint_post.py $files; else echo "no changed posts"; fi
       - name: OG cards current
         run: python3 scripts/make_og_cards.py --check

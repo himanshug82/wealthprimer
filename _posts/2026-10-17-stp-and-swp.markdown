@@ -162,14 +162,14 @@ Both tools create taxable events every month:
   creates a fresh **tax lot** with its own holding period every month.
 - An **SWP** is a monthly redemption; each one is generally matched to your oldest
   units first under FIFO — first in, first out (the
-  FIFO post in the Tax series<!-- RELINK 2026-11-02-sips-and-fifo --> walks through it). So
+  FIFO post in the Tax series<!-- RELINK 2026-11-08-sips-and-fifo --> walks through it). So
   in a fund you've held for years, or built up through a SIP, the oldest (and usually
   cheapest) units go first, so the withdrawals are gain-heavy from the very
   first month. The opposite pattern — mostly your own capital back early on,
   more gain later — only applies to a lump sum invested just before the SWP
   starts, because those units haven't had time to grow.
 
-The tax series<!-- RELINK 2026-10-27-how-investment-income-is-taxed --> has
+The tax series<!-- RELINK 2026-11-02-how-investment-income-is-taxed --> has
 the rates; the mechanics are the same as any redemption, just twelve times a
 year.
 

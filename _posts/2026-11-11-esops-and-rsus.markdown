@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "ESOPs and RSUs: taxed twice, on purpose"
+title: "ESOPs and RSUs: two taxes on two different amounts"
 description: "Stock options are taxed as salary when you exercise and as capital gains when you sell. Why the first bill comes before any cash, on a fictional ESOP."
 image: /assets/og/esops-and-rsus.png
-date: 2026-11-26 09:00:00 +0530
+date: 2026-11-11 09:00:00 +0530
 series: tax
 term: "ESOP and RSU taxation"
 needs_review: tax
@@ -18,12 +18,14 @@ rules_as_of: "September 2026"
 
 ## Two events, two heads of income
 
+This post describes the rules for Tax Year 2026-27 (FY 2026-27, April 2026 to March 2027). Its worked example exercises options on {{ e.exercise_date }} and sells on {{ e.sale_date_long }}; those dates are illustrative scenario dates, and the exercise falls in FY 2025-26, taxed under the earlier Act. The mechanics are what the example teaches.
+
 An **ESOP — employee stock option plan** — gives you the right to buy your
 employer's shares at a fixed price (the *exercise price*) after a waiting
 period (*vesting*). An **RSU — restricted stock unit** — is a promise of the
 shares themselves, delivered when they vest, for nothing.
 
-Both are pay. The tax system treats them exactly that way, and then treats
+Both are pay. As described in secondary sources (check the current rule for the perquisite, cost and holding-period details below), the tax system treats them that way, and then treats
 the shares you end up holding exactly like any other shares. That gives two
 taxing events, under two different heads:
 
@@ -37,10 +39,11 @@ Event 2  Sale of the shares
          → taxed as CAPITAL GAINS, by holding period and share type
 ```
 
-**FMV** is fair market value — for listed shares, the market price on the
-exercise date (the rules use the average of that day's opening and closing
-price on the exchange with the higher trading volume; for unlisted shares a
-merchant banker's valuation). The single most important line above is the second one in event
+**FMV** is fair market value — for listed shares, broadly the market price on the
+exercise date, and for unlisted shares a valuation by a merchant banker. The
+exact valuation method is set in the Income-tax Rules, which this post has not
+read, so check the current rule. **TDS** (tax deducted at source) is tax your employer withholds
+from pay. The key line above is the second one in event
 2: your cost of acquisition for capital gains is *not* what you paid. It's the
 FMV that was already taxed as salary. That is what stops the same rupee being
 taxed twice — and it is also what people get wrong.
@@ -65,10 +68,10 @@ there are two different taxes. Not one tax charged twice.
 ## Worked example: a Desi Bites Foods employee
 
 Take an employee of Desi Bites Foods, the fictional company from the
-[case study](/case-study/), which listed at ₹640 in June 2025. She holds
+[case study](/case-study/), whose IPO (initial public offering) was priced at ₹640 in June 2025 (a fictional company and price). She holds
 {% include inr.html n=e.shares %} vested options with an exercise price of ₹{{ e.exercise_price }}, and
 exercises them on {{ e.exercise_date }} when the share trades at ₹{{ e.fmv_at_exercise }}.
-Illustrative 30% slab plus {{ r.cess_pct }}% cess, no surcharge.
+Illustrative 30% slab plus {{ r.cess_pct }}% cess, no surcharge; this assumes her other salary already puts the perquisite in the 30% slab, and no other long-term gains this year, so the full ₹{% include inr.html n=e.ltcg_exempt %} exemption is available.
 {% assign paper_value = e.perquisite | plus: e.cash_to_exercise %}
 
 **Event 1 — exercise:**
@@ -106,19 +109,19 @@ smaller salary credits to show for it.
 
 Had she sold inside twelve months instead, the same ₹{% include inr.html n=e.capital_gain %} would be a
 short-term gain at {{ r.equity_stcg_pct }}%: ₹{% include inr.html n=e.stcg_tax_with_cess_if_sold_within_12m %}. The
-[holding-period post]({% post_url 2026-11-18-short-term-vs-long-term %}) has the rules; the
+[holding-period post]({% post_url 2026-11-03-short-term-vs-long-term %}) has the rules; the
 clock starts on the exercise date, not the grant date and not the vesting
 date.
 
 **Putting it together.** Her economic gain was ₹{% include inr.html n=e.economic_gain %} (bought at ₹{{ e.exercise_price }}, sold
 at ₹{{ e.sale_price }}). Total tax: ₹{% include inr.html n=e.perquisite_tax_with_cess %} + ₹{% include inr.html n=e.ltcg_tax_with_cess %} =
 **₹{% include inr.html n=e.total_tax_long_route %}**, an effective {{ e.effective_rate_pct }}%. Most of it was
-salary tax on the discount, paid a year before she saw any money.
+salary tax on the discount, paid {{ e.months_held_long }} months before the sale brought in any money.
 
 The beginner's answer — "I made ₹{% include inr.html n=e.economic_gain %} on shares, so it's long-term
 capital gains" — would have come to ₹{% include inr.html n=e.wrong_answer_tax %}. It's wrong, and the
-employer's Form 16 makes it obviously wrong, because the perquisite is
-already sitting in the salary figure.
+employer's salary certificate (Form 16, check the current form name) shows why: the perquisite is
+already in the salary figure.
 
 ## RSUs: the same thing with a zero exercise price
 
@@ -151,6 +154,8 @@ ones:
 | Long-term rate | {{ r.equity_ltcg_pct }}% | {{ r.equity_ltcg_pct }}% (no indexation) |
 | ₹{% include inr.html n=r.ltcg_annual_exemption %} exemption | Yes | **No** |
 
+The foreign-or-unlisted column comes from secondary sources (see the VERIFY list); check the current rule.
+
 Foreign shares also bring **Schedule FA** — the foreign-asset disclosure in
 the return — and a foreign brokerage account to report. That is the subject
 of the foreign-stocks post later in this module.
@@ -160,7 +165,7 @@ of the foreign-stocks post later in this module.
 Employees of eligible startups get one concession, and it's narrower than it
 sounds. If the employer is recognised by DPIIT (the Department for Promotion
 of Industry and Internal Trade) **and** holds the Inter-Ministerial Board
-(IMB) certificate (the old section 80-IAC startups — DPIIT recognition alone is not
+(IMB) certificate (startups under the earlier section 80-IAC; DPIIT recognition alone is not
 enough), the tax on the perquisite is *computed* in the year of exercise but
 *paid* later: within 14 days of the earliest of
 
@@ -172,8 +177,7 @@ Older articles say "48 months from the end of the assessment year". That was
 the 1961 Act's wording, and it points to the same date: the assessment year
 ended a year after the year of allotment, and the Income-tax Act, 2025, which
 replaced it with a single Tax Year, counts 60 months from the end of the tax
-year itself (per the Act's text as published in September 2026 — worth
-confirming against the current version).
+year itself (Income-tax Act, 2025, section 289(3), as read in the ICAI copy of the Act).
 
 It's a payment deferral, not a reduction. The rate is the rate of the year
 you exercised. And for most private-company employees it doesn't apply at
@@ -188,22 +192,20 @@ about cash, not just about the company.
 - **Using the exercise price as your cost.** Cost is the FMV that was taxed
   as perquisite. Using ₹{{ e.exercise_price }} instead of ₹{{ e.fmv_at_exercise }} taxes the same ₹{{ e.perquisite_per_share }} twice.
 - **Starting the holding clock at grant or vesting.** It starts at exercise
-  (allotment). Options you've held for years can still produce a short-term
-  gain if you exercise and sell within twelve months.
+  (allotment). Options held for years can still produce a short-term
+  gain if exercised and sold within twelve months.
 - **Forgetting the sell-to-cover sale.** Those shares were sold and belong in
   the capital-gains schedule, even at a near-zero gain.
-- **Exercising without the cash for the TDS.** The tax is deducted from
-  salary, usually in the month of exercise. A large exercise can take most of
-  that month's pay.
 - **Assuming "startup" means deferral.** Only IMB-certified startups qualify,
-  and the deferral ends the day you resign.
+  and the deferral ends the day the employee leaves the company.
 
-**Takeaway:** Stock options are taxed twice by design — the discount you got is
-salary, taxed at your slab the month you exercise, and only the *further* rise
-after that is a capital gain when you sell. On a ₹{% include inr.html n=e.economic_gain %} gain in our
-example, ₹{% include inr.html n=e.perquisite_tax_with_cess %} of the ₹{% include inr.html n=e.total_tax_long_route %} total was due a year before any
-share was sold. Plan the exercise around the cash, not just the price.
+**Takeaway:** Stock options meet two taxes on two different amounts: the discount at exercise is salary, taxed at the slab rate in the month of exercise, and only the *further* rise after that is a capital gain when the shares are sold. On a ₹{% include inr.html n=e.economic_gain %} gain in our
+example, ₹{% include inr.html n=e.perquisite_tax_with_cess %} of the ₹{% include inr.html n=e.total_tax_long_route %} total fell due before any
+share was sold, so the tax on exercise arrives before any sale proceeds.
 
-*The module's [data file](https://github.com/himanshug82/wealthprimer/blob/main/_data/tax2.yml)
-lists every source these rules were checked against, and the points a
-professional should confirm before you rely on them.*
+## Sources
+
+- Income-tax Act, 2025 (ICAI copy of the Gazette text): the start-up deferral in s.289(3) (14 days after the earliest of 60 months from the end of the tax year, sale, or leaving the employer), which also refers to the perquisite provision (section 17(1)(d)).
+- Secondary sources, listed in the module's [data file](https://github.com/himanshug82/wealthprimer/blob/main/_data/tax2.yml): the perquisite formula, the cost of acquisition, the holding period from exercise, and the foreign or unlisted share column. Check the current rule. The FMV valuation method sits in the Income-tax Rules, which were not opened.
+
+*No professional has reviewed this post.*

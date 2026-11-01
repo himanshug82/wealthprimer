@@ -3,7 +3,7 @@ layout: post
 title: "Bonds, debentures and SGBs: listed or not decides the tax"
 description: "Bond interest is taxed at your slab; the gain depends on listing. Listed bonds can be long-term; unlisted ones and MLDs never are. SGBs differ again."
 image: /assets/og/bonds-debentures-and-sgbs.png
-date: 2026-12-01 09:00:00 +0530
+date: 2026-11-16 09:00:00 +0530
 series: tax
 term: "Bond and SGB taxation"
 needs_review: tax
@@ -20,10 +20,12 @@ rules_as_of: "September 2026"
 
 ## Two kinds of return, taxed separately
 
+This post describes Tax Year 2026-27 (FY 2026-27, April 2026 to March 2027). YTM (yield to maturity), REIT (real estate investment trust) and InvIT (infrastructure investment trust) are the terms used below.
+
 A bond pays you in two ways. There's the **coupon** — the interest it pays
 each year — and there's whatever you make or lose on the price, if you sell
 before maturity or bought away from face value. The
-[YTM post]({% post_url 2026-10-05-yield-to-maturity %}) folded both into one yield.
+[YTM (yield to maturity) post]({% post_url 2026-10-05-yield-to-maturity %}) folded both into one yield.
 Tax pulls them apart again:
 
 ```
@@ -44,11 +46,11 @@ usually meet in a public issue.
 
 Interest on bonds and debentures is added to your income and taxed at your
 slab rate, exactly like the deposit interest in the
-[dividends and interest post]({% post_url 2026-11-21-dividends-and-interest %}).
+[dividends and interest post]({% post_url 2026-11-06-dividends-and-interest %}).
 
-TDS (tax deducted at source) on "interest on securities" is 10% for a
-resident, once the year's interest from a payer crosses
-₹{% include inr.html n=x.ncd_tds_threshold %}. Listed demat debentures used to be exempt from TDS; that
+TDS (tax deducted at source) on "interest on securities" is described as 10% for a
+resident (check the current rate), once the year's interest from a payer crosses
+₹{% include inr.html n=x.ncd_tds_threshold %} (the threshold is in the TDS table of the Income-tax Act, 2025, ICAI copy; check the current rule). Listed demat debentures used to be exempt from TDS; that
 exemption was removed from 1 April 2023 (Memorandum to the Finance Bill,
 2023), because the interest was being under-reported. Most Central and
 State government securities still have no TDS.
@@ -72,7 +74,7 @@ plus {{ r.cess_pct }}% cess (income below ₹50 lakh, so no surcharge):
 | **Market-linked debenture** (listed or not) | *Never* — always short-term | Slab | — |
 | **Sovereign Gold Bond** | See below | | |
 
-A few notes on where these come from, because each one surprises someone.
+A few notes on where these come from, because each one surprises someone. Two things are out of scope here: zero-coupon bonds (a 12-month asset in the Act) and accrued interest paid when buying on the secondary market.
 
 **Listed bonds** count as a "security listed in a recognised stock exchange",
 so they share listed shares' 12-month line (section 2(101) of the 2025 Act).
@@ -87,10 +89,10 @@ Finance (No. 2) Bill, 2024: they are debt instruments, so their gains should
 be taxed at the applicable rate, like interest.
 
 **MLDs — market-linked debentures** — are debentures whose return is linked
-to a market index or other securities rather than a fixed coupon. They have
-been always-short-term since 1 April 2023, listed or not, by the same
-section. The same section also catches debt mutual fund units bought from
-April 2023, as the [debt funds tax post]({% post_url 2026-11-20-debt-funds-gold-and-the-rest %})
+to a market index or other securities rather than a fixed coupon. Their gains are
+always short-term, listed or not, by the same section. The Finance Bill 2023
+memorandum places the change in FY 2023-24 (Finance Act 2023); check the current rule for the exact date. The same section also catches debt mutual fund units bought from
+April 2023, as the [debt funds tax post]({% post_url 2026-11-05-debt-funds-gold-and-the-rest %})
 explained: the tax law groups them together deliberately.
 
 **Worked example.** The same ₹{% include inr.html n=x.same_gain %} gain, taxed four ways (30% slab,
@@ -103,9 +105,8 @@ explained: the tax law groups them together deliberately.
 | Unlisted bond, any holding period | ₹{% include inr.html n=x.gain_tax_slab_with_cess %} |
 | Market-linked debenture, any holding period | ₹{% include inr.html n=x.gain_tax_slab_with_cess %} |
 
-₹{% include inr.html n=x.gain_tax_difference %} separates the best case from the rest, on the same gain. For
-someone in a low slab the gap narrows or reverses, which is why "long-term
-is always better" isn't a rule.
+The tax differs by ₹{% include inr.html n=x.gain_tax_difference %} between the first row and the others, on the same gain. The size
+of the gap depends on the slab rate that applies to you.
 
 Where do bond gains come from, if you hold to maturity? Mostly from buying
 below face value. The YTM post's bond bought at ₹{% include inr.html n=bd.buy_price %} and repaid at
@@ -133,7 +134,8 @@ in disguise" — and tax it the same as the ₹8s.
 ## Sovereign Gold Bonds
 
 **SGBs** are issued by the RBI (Reserve Bank of India) on the government's
-behalf, priced in grams of gold. Per the RBI's FAQ they pay **{{ x.sgb_coupon_pct }}% a
+behalf, priced in grams of gold. Per [the RBI's FAQ](https://www.rbi.org.in/Scripts/FAQView.aspx?Id=1658) (a page headed "Updated as on February 4, 2019", so
+check the current scheme terms) they pay **{{ x.sgb_coupon_pct }}% a
 year** on the issue value, run **eight years**, and allow early redemption
 with the RBI after the fifth year.
 
@@ -141,11 +143,11 @@ with the RBI after the fifth year.
 TDS** is deducted — so it's easy to forget, and it's taxable all the same.
 
 **The gain at redemption** is where Budget 2026 changed things, as
-[the debt funds and gold post]({% post_url 2026-11-20-debt-funds-gold-and-the-rest %}) noted.
+[the debt funds and gold post]({% post_url 2026-11-05-debt-funds-gold-and-the-rest %}) noted.
 From 1 April 2026, redemption is not treated as a transfer — so no capital
 gain arises — only if the bond was **held by an individual from the date of
-original issue till maturity** (section 70(1)(x) of the 2025 Act, as
-substituted by the Finance Act, 2026).
+original issue till maturity** (section 70(1)(x) of the 2025 Act, in the wording of the Finance Bill, 2026 as
+introduced; we could not open the Finance Act, 2026 itself, so check the Act).
 
 | How you got in and out | Gain at the end |
 |---|---|
@@ -157,7 +159,7 @@ substituted by the Finance Act, 2026).
 That last row deserves care. The old wording, which the 2025 Act first
 carried over, covered any redemption by an individual. The new wording says "till maturity", and we
 found no official clarification of how an early redemption with the RBI is
-treated. If you're considering one, ask someone who files professionally.
+treated. Check the current rule before relying on either reading.
 
 **Worked example.** {{ x.sgb_grams }} units (grams) subscribed at issue at
 ₹{% include inr.html n=x.sgb_issue_price %}, redeemed at maturity at ₹{% include inr.html n=x.sgb_maturity_price %}. Round, hypothetical prices.
@@ -176,34 +178,32 @@ covers the gold price gain, not the coupon.
 ## Surcharge
 
 All of the above assumes income under ₹50 lakh. Above it, a surcharge is
-added before cess. On bond interest, and on gains taxed at slab, it follows
-the ordinary scale (up to 25% in the new regime). On long-term gains from
-listed bonds and SGBs taxed at {{ r.equity_ltcg_pct }}%, it's capped at 15%. The
-[opening post]({% post_url 2026-11-17-how-investment-income-is-taxed %}) has the thresholds.
+added before cess. Bond interest, and gains taxed at slab, follow the ordinary
+scale. Which gains get a lower surcharge cap is set out, with its source and
+hedge, in the
+[opening post]({% post_url 2026-11-02-how-investment-income-is-taxed %}); we have not confirmed that any such cap extends to bond or SGB gains, so check the current rule.
 
 ## Common mistakes
 
 - **Assuming bond gains get the ₹{% include inr.html n=r.ltcg_annual_exemption %} exemption.** It's for equity, equity
   funds and REIT/InvIT units, as in the
-  [REITs and InvITs post]({% post_url 2026-11-30-reits-and-invits %}). Listed bonds pay
+  [REITs and InvITs post]({% post_url 2026-11-15-reits-and-invits %}). Listed bonds pay
   {{ r.equity_ltcg_pct }}% on the whole long-term gain.
 - **Holding an unlisted bond "for the long-term rate".** There isn't one any
   more. Since 23 July 2024 every gain on an unlisted bond or debenture is
   taxed at slab, however long you hold it.
-- **Treating an MLD like an equity product because its return tracks an
-  index.** It's a debenture, and its gain is always taxed at slab.
 - **Forgetting SGB interest because no TDS was deducted.** It's taxable every
   year, at your slab.
-- **Buying SGBs on the exchange expecting the maturity exemption.** From
+- **Buying SGBs on the exchange expecting the maturity exemption.** On the Bill's wording, from
   1 April 2026 it needs the original subscription and continuous holding till
   maturity.
 
 **Takeaway:** Bond interest is taxed at your slab every year; the gain
 depends on the wrapper. Listed bonds become long-term after {{ r.equity_holding_months }} months at
 {{ r.equity_ltcg_pct }}% with no exemption, unlisted bonds and market-linked debentures are
-always taxed at slab, and an SGB's gain is tax-free only if you subscribed at
+always taxed at slab, and, on the Finance Bill 2026's wording (check the Act), an SGB's gain is tax-free only if you subscribed at
 issue and held to maturity.
 
 *The module's [data file](https://github.com/himanshug82/wealthprimer/blob/main/_data/tax3.yml)
-lists the sections of the Income-tax Act, 2025 behind every rule here, and
-the points a professional should confirm before you rely on them.*
+lists the sections of the Income-tax Act, 2025 behind the rules here, and
+the points still to be confirmed (the Finance Act 2026 was not opened).*

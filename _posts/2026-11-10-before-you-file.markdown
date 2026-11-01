@@ -4,11 +4,11 @@ title: "Before you file: the statement, the AIS, and what to reconcile"
 seo_title: "Before you file: the AIS and what to reconcile"
 description: "The department already holds most of your numbers. Reconciling a capital gains statement against the AIS, and the checks worth doing before you submit."
 image: /assets/og/before-you-file.png
-date: 2026-11-25 09:00:00 +0530
+date: 2026-11-10 09:00:00 +0530
 series: tax
 needs_review: tax
 rules_for: "Tax Year 2026-27 (FY 2026-27)"
-rules_as_of: "August 2026"
+rules_as_of: "November 2026"
 ---
 
 {% assign t = site.data.tax %}
@@ -16,27 +16,27 @@ rules_as_of: "August 2026"
 
 ## The documents, and why reconciliation matters
 
-The earlier posts in this series covered the rules. This one is about the practical end: the papers you
-work from, and the checks worth doing before anything is submitted.
+The earlier posts in this series covered the rules for Tax Year 2026-27 (FY 2026-27), as at November 2026. This one is about the practical end: the papers you
+work from, and the checks that reconciliation involves before anything is submitted.
 
 The premise is simple and worth stating bluntly. **The tax department already
 has most of this data.** Mutual funds, brokers, banks and registrars report
 transactions against your PAN (permanent account number). Filing isn't
-telling them what happened; it's agreeing with a record they already hold. Notices most commonly arise from
-mismatches, not from honest arithmetic errors.
+telling them what happened; it's agreeing with a record they already hold. In our view, a mismatch between what you report and what
+the department holds is a likelier source of a query than an arithmetic slip.
 
 ## The three documents
 
 | Document | What it holds | Where it comes from |
 |---|---|---|
-| **Capital gains statement** | Every redemption, matched to purchase lots, with gains split long/short | Your fund house, registrar (CAMS/KFintech) or broker |
-| **Form 26AS** | Tax deducted and deposited against your PAN | The income tax portal |
+| **Capital gains statement** | Every redemption, matched to purchase lots, with gains split long/short | Your fund house, registrar (CAMS, Computer Age Management Services, or KFintech) or broker |
+| **Tax credit statement (historically Form 26AS)** | Tax deducted and deposited against your PAN. Check the current form names under the new Rules. | The income tax portal |
 | **Annual Information Statement (AIS)** | Broader: dividends, interest, securities transactions, deposits | The income tax portal |
 
 The capital gains statement is the one that saves the most work. A
-consolidated statement from CAMS or KFintech covers most fund houses at once
+consolidated statement from CAMS or KFintech (the two main registrars) covers most fund houses at once
 and does the FIFO matching for you — which, as
-[the SIP post]({% post_url 2026-11-23-sips-and-fifo %}) showed, is genuinely tedious by
+[the SIP post]({% post_url 2026-11-08-sips-and-fifo %}) showed, is genuinely tedious by
 hand when a single redemption touches sixty lots.
 
 ## Reading a capital gains statement
@@ -51,17 +51,17 @@ Expect columns roughly like these, per redemption:
 | Short-term gain | Taxed at {{ r.equity_stcg_pct }}% for equity |
 | Long-term gain | {{ r.equity_ltcg_pct }}% above the ₹{% include inr.html n=r.ltcg_annual_exemption %} annual exemption |
 
-Four things worth verifying rather than assuming:
+Four things to verify rather than assume:
 
 **Grandfathering has been applied.** For equity bought on or before 31
 January 2018, the cost should be the higher of actual cost and the 31 January
 2018 value (that value capped at the sale price). Some statements handle this cleanly; check rather than assume, as
-[the equity post]({% post_url 2026-11-19-equity-and-equity-funds %}) showed it can exclude
+[the equity post]({% post_url 2026-11-04-equity-and-equity-funds %}) showed it can exclude
 a substantial slice of gain.
 
 **Debt units are split by purchase date.** Units bought before and on/after
 1 April 2023 follow different rules, per
-[the debt post]({% post_url 2026-11-20-debt-funds-gold-and-the-rest %}). If the statement
+[the debt post]({% post_url 2026-11-05-debt-funds-gold-and-the-rest %}). If the statement
 doesn't distinguish them, chase it.
 
 **The exemption is applied once, across everything.** A statement from one
@@ -74,7 +74,7 @@ computation even though no money reached your bank.
 
 ## Checking the AIS
 
-Open the AIS and compare it against your own records. What you're looking for
+Open the AIS (Annual Information Statement) and compare it against your own records. What you're looking for
 is anything in one and not the other, in either direction.
 
 - **Dividends** reported by companies and funds
@@ -88,30 +88,34 @@ things and occasionally double-count. It is a cross-check, not the truth.
 Where your records and the AIS disagree, work out which is right instead of
 deferring to either automatically.
 
-## The checklist
+## What reconciliation involves
 
-1. **Download the consolidated capital gains statement** for the full
-   financial year, from every registrar and broker you used.
-2. **Aggregate long-term gains across all sources**, then apply the
-   ₹{% include inr.html n=r.ltcg_annual_exemption %} exemption once.
-3. **Check grandfathering** on anything bought before February 2018.
-4. **Separate pre- and post-April-2023 debt units.**
-5. **Include switches** as redemptions.
-6. **Apply losses** — this year's, then anything carried forward, respecting
-   [the set-off rules]({% post_url 2026-11-22-losses-set-off-and-harvesting %}).
-7. **Reconcile against the AIS**, and file feedback on anything wrong.
-8. **Check TDS (tax deducted at source) in Form 26AS** and claim credit for it.
-9. **Check whether surcharge applies.** Above ₹50 lakh of total income a
-   surcharge is added to the tax — capped at 15% on equity gains, other
-   long-term gains and dividends, higher on other income (up to 25% in the new regime), as of
-   {{ r.financial_year }}.
-10. **Add {{ r.cess_pct }}% cess** on the computed tax (after any surcharge).
-11. **File by the due date** — non-negotiable if you have losses to carry
-    forward, since late filing destroys them.
-12. **Keep the records.** Purchase dates and costs matter for as long as you
+The list below describes the steps reconciliation typically involves; it is a description of the process, not a prescription.
+
+1. **The consolidated capital gains statement** for the full
+   financial year, from every registrar and broker used.
+2. **Long-term gains aggregated across all sources**, with the
+   ₹{% include inr.html n=r.ltcg_annual_exemption %} exemption applied once.
+3. **Grandfathering** on anything bought before February 2018.
+4. **Pre- and post-April-2023 debt units** kept separate.
+5. **Switches** counted as redemptions.
+6. **Losses applied** — this year's, then anything carried forward, respecting
+   [the set-off rules]({% post_url 2026-11-07-losses-set-off-and-harvesting %}).
+7. **Reconciliation against the AIS**, with feedback filed on anything wrong.
+8. **TDS (tax deducted at source) in the tax credit statement**, checked so that credit can be claimed for it.
+9. **Whether surcharge applies.** Above ₹50 lakh of total income a
+   surcharge is added to the tax. The Finance Bill 2026 memorandum
+   (indiabudget.gov.in) describes a 15% cap on the surcharge for dividends and the
+   special-rate capital gains, and a highest surcharge rate of 25% under the new regime. That is the Bill, not the
+   enacted Finance Act, so check the current rule for {{ r.financial_year }}.
+10. **{{ r.cess_pct }}% cess** added on the computed tax (after any surcharge).
+11. **Filing by the due date.** In the Income-tax Act, 2025, carrying forward most
+    capital losses requires a return filed by the due date; the rules differ by
+    type of loss (house property losses, for instance), so check the current rule for yours.
+12. **Records kept.** Purchase dates and costs matter for as long as you
     hold the asset, which may be decades.
 
-That last point is quietly the most important. The single most common
+That last point is quietly the most important. In our view, a common
 practical problem in Indian investment tax isn't a misunderstood rule — it's
 someone unable to establish what they paid for shares bought fifteen years
 ago, through a broker that no longer exists.
@@ -122,12 +126,7 @@ Being clear about the edges, in the spirit of the honest closing posts in the
 [technical analysis]({% post_url 2026-10-11-what-technical-analysis-cannot-do %}) and
 [mutual funds]({% post_url 2026-10-11-reading-a-factsheet %}) series.
 
-Later posts in this series pick up topics this post leaves out: ESOPs and
-RSUs (employee stock options and restricted stock units), buybacks, F&O
-(futures and options) as business income, foreign stocks and their
-disclosure rules, REITs and InvITs, bonds and SGBs, advance tax, gifts and
-clubbing, and the basics of investment income for NRIs (non-resident
-Indians). Beyond those, some edges stay uncovered:
+Later posts in this series cover other topics. Some edges stay uncovered:
 
 - **Property in detail.** Reinvestment reliefs, the transitional rate option,
   and strict deadlines. Large amounts and real complexity.
@@ -146,12 +145,9 @@ checking against the current position.
 ## Sources
 
 - [Income-tax Act, 2025 (a copy hosted by ICAI)](https://resource.cdn.icai.org/87647dtc-aps2139-inceome-tax-act-2025.pdf): the Act itself.
-- [Finance Act, 2026, Gazette of India](https://egazette.gov.in/WriteReadData/2026/271439.pdf): the Finance Act that made the 2026 changes.
+- [Memorandum explaining the provisions of the Finance Bill, 2026](https://www.indiabudget.gov.in/doc/memo.pdf): the government's explanation of the proposed surcharge change. It is the Bill, not the enacted Finance Act, which was not opened for this post.
 
 **Takeaway:** Filing is mostly reconciliation — the department already holds
-the data, so the work is making your records agree with it, and mismatches
-are what generate notices. Aggregate long-term gains across every source
-before applying the single annual exemption, check grandfathering on old
-holdings, treat switches as sales, and file on time so your losses survive.
-Then keep the purchase records, because you will need them long after you've
-forgotten this post.
+the data, so the work is making your records agree with it, and, in our view,
+mismatches are a likelier source of queries than arithmetic slips. The single annual exemption applies to long-term gains aggregated across every source, grandfathering matters on old holdings, and switches count as sales.
+Purchase records matter for as long as you hold the asset.

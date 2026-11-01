@@ -71,7 +71,7 @@ paper while only 15% to 40% of its assets are *net long* — actually exposed to
 the market going up or down. (The 15–40% band is in the current text; the
 fund history below was run under the earlier rules, which asked only that the
 minimum hedged and unhedged shares be stated in the scheme document.) The
-arbitrage funds post<!-- RELINK 2026-10-19-arbitrage-funds --> later in this
+[arbitrage funds post]({{ '/2026/10/19/arbitrage-funds/' | relative_url }}) in this
 series shows how the hedge works.
 
 ## The formula: what a mix actually does
@@ -138,7 +138,7 @@ Reading it row by row:
    different question, and the category rule doesn't answer it.
 4. **The arbitrage fund rose in every window.** It isn't really a mixed fund
    at all, in the sense that matters: its equity is hedged. The arbitrage
-   funds post<!-- RELINK 2026-10-19-arbitrage-funds --> takes it apart.
+   [funds post]({{ '/2026/10/19/arbitrage-funds/' | relative_url }}) takes it apart.
 
 And the full common-window picture — each fund's worst peak-to-trough fall
 ([drawdown]({% post_url 2026-09-29-drawdown %})) and annualised
@@ -203,7 +203,7 @@ whether the helper got it right today.
 
 The tax treatment of a hybrid fund depends on how much of it is in domestic
 listed shares, which is why two hybrid funds can be taxed completely
-differently. The tax series covers that<!-- RELINK 2026-10-29-equity-and-equity-funds -->;
+differently. The tax series covers that<!-- RELINK 2026-11-04-equity-and-equity-funds -->;
 check the fund's classification before assuming.
 
 **Takeaway:** A hybrid fund's name describes a mix, and the only promise is

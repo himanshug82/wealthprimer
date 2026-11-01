@@ -161,7 +161,7 @@ So a fund whose returns look like a debt fund's gets equity-fund tax treatment,
 which can be lighter than the slab-rate treatment of debt-fund gains.
 
 The rates and holding periods are in the tax series (the equity funds
-post<!-- RELINK 2026-10-29-equity-and-equity-funds -->), which starts later.
+post<!-- RELINK 2026-11-04-equity-and-equity-funds -->).
 This is also why the comparison table above is pre-tax only: after tax the
 gap between the two can be much wider than
 {{ a.rolling_1y_median_gap_pp }} percentage points, in either fund's favour

@@ -3,7 +3,7 @@ layout: post
 title: "Advance tax for investors: pay as you earn, gains included"
 description: "If TDS doesn't cover your tax, you pay it in four instalments. Capital gains get a special rule, and missing it costs interest. With a worked example."
 image: /assets/og/advance-tax-for-investors.png
-date: 2026-12-02 09:00:00 +0530
+date: 2026-11-17 09:00:00 +0530
 series: tax
 term: "Advance tax"
 needs_review: tax
@@ -18,6 +18,8 @@ rules_as_of: "September 2026"
 
 ## Tax is due during the year, not when you file
 
+This post covers Tax Year 2026-27 (FY 2026-27, April 2026 to March 2027). TDS is tax deducted at source and TCS is tax collected at source; F&O is futures and options. All dates and amounts in the worked example are illustrative.
+
 Most salaried people never think about this, because their employer deducts
 tax from every pay slip. But the law's default is that you pay tax **during**
 the year in which you earn the income, not months later when you file. For
@@ -28,7 +30,7 @@ That's **advance tax**.
 
 Investors are the classic case. A salaried person who redeems a large fund
 holding in August has a capital gain with no TDS on it at all (for a resident,
-[funds don't deduct tax on redemptions]({% post_url 2026-11-17-how-investment-income-is-taxed %})).
+[funds don't deduct tax on redemptions]({% post_url 2026-11-02-how-investment-income-is-taxed %})).
 The tax on that gain was due during the year. Pay it only at filing and you
 pay interest on top.
 
@@ -42,7 +44,7 @@ Under the Income-tax Act, 2025:
 - **Except** resident individuals aged **60 or more** with no business or
   professional income (section 403(3)). They can pay it all when they file.
 - F&O traders count as having business income, as the
-  [F&O post]({% post_url 2026-11-28-fo-is-business-income %}) explained, so the senior-citizen
+  [F&O post]({% post_url 2026-11-13-fo-is-business-income %}) explained, so the senior-citizen
   exemption doesn't help them.
 
 ## The four instalments
@@ -58,8 +60,8 @@ scheme pay the whole amount by 15 March in one go.
 
 ## What it costs to be late
 
-Two separate interest charges, both simple interest. The old Act called them
-234C and 234B; in the 2025 Act they are sections 425 and 424.
+Two separate interest charges, both simple interest, in sections 425 and 424
+of the 2025 Act.
 
 ```
 Section 425 (deferment — "missed an instalment"):
@@ -73,23 +75,17 @@ Section 424 (default — "paid too little overall"):
   from 1 April after the year, until you pay.
 ```
 
-The 3% at each of the first three dates is three months of 1%, covering the
-gap until the next instalment. Both charges are computed on the tax **after**
+Both charges are computed on the tax **after**
 TDS.
 
-## Why capital gains get special treatment
+## Why capital gains get special treatment in Tax Year 2026-27
 
 The instalment schedule assumes income arrives evenly. A capital gain doesn't:
 you can't pay 15% of the tax on an August sale by 15 June. So section 425(4)
-carves it out:
+carves it out. In our paraphrase (not the statute's words, and it omits some detail such as which dividends count), no interest is charged for a shortfall caused by capital gains, dividends, lottery-type winnings or the first year's business income, provided the tax on that income is paid in full in the remaining instalments, or by 31 March.
 
-> No interest for a shortfall caused by **capital gains**, **dividends**,
-> lottery-type winnings, or the first year's business income — **provided**
-> the tax on that income is paid in full in the remaining instalments, or by
-> 31 March.
-
-That proviso is the whole game. Pay the gain's tax in the next instalment
-after the sale and the earlier shortfall is forgiven. Don't, and the
+That proviso is the key condition. If the gain's tax is paid in the next instalment
+after the sale, the earlier shortfall is forgiven. If it isn't, the
 exception doesn't apply at all: the shortfall is measured against the
 full-year tax, including the gain, right back to 15 June.
 
@@ -150,7 +146,7 @@ On 15 June the investor is ₹{% include inr.html n=x.june_shortfall_a %} short 
 shortfall is entirely due to a gain that didn't exist yet, and its tax was
 paid in the next instalment, so section 425(4) forgives it. **Interest: ₹0.**
 
-### B: pays nothing until filing on 31 July 2027
+### B: pays nothing until filing (illustrative date: 31 July 2027)
 
 | Date | Shortfall | Rate | Interest (section 425) |
 |---|---:|---:|---:|
@@ -183,16 +179,14 @@ computing interest, so the portal's numbers can differ by a few rupees.
 
 ## Common mistakes
 
-- **Assuming TDS means you're done.** TDS on interest and dividends is 10%.
+- **Assuming TDS means you're done.** TDS on interest and dividends is described as 10% in this example (check the current rate and threshold), and it may not cover the tax due.
   In a higher slab the rest is due during the year, through advance tax.
 - **Waiting until filing to pay tax on a big redemption.** Residents get no
-  TDS on fund redemptions. The tax on a gain belongs in the first instalment
-  after the sale.
+  TDS on fund redemptions, so section 425(4) forgives the earlier shortfall only
+  if the gain's tax is paid in the instalments remaining after the sale, or by 31 March.
 - **Reading the capital-gains relief as "gains are exempt from advance tax".**
   They aren't. The relief only forgives the *earlier* instalments, and only
   if you pay in the ones that remain, or by 31 March.
-- **Forgetting that 31 March counts.** A gain realised after 15 March still
-  avoids interest if its tax is paid by 31 March.
 - **Senior citizens with a small trading habit assuming the 60+ exemption.**
   It's lost if there's any business income, and F&O trading is business
   income.
@@ -204,4 +198,4 @@ interest runs as if you'd known about the gain in June.
 
 *The module's [data file](https://github.com/himanshug82/wealthprimer/blob/main/_data/tax3.yml)
 lists the sections of the Income-tax Act, 2025 behind every rule here, and
-the points a professional should confirm before you rely on them.*
+the points still to be confirmed.*

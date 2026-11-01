@@ -301,7 +301,7 @@ verification = {
             "https://www.patronaccounting.com/blog/esop-tax-deferral-startup-employees-dpiit-section-80-iac",
             "https://www.equitylist.co/blog-post/perquisite-tax-deferral-startups",
         ],
-        "disagreements": "One source phrases the deferral as 'five years from the end of the assessment year'. The 1961 Act (s.192(1C)) said 48 months from the end of the relevant assessment year; the 2025 Act (s.289(3), checked on eztax.in and indiankanoon.org in September 2026) says 60 months from the end of the relevant tax year. The post uses the 2025 Act wording and notes the old one.",
+        "disagreements": "One source phrases the deferral as 'five years from the end of the assessment year'. The 1961 Act (s.192(1C)) said 48 months from the end of the relevant assessment year; the 2025 Act (s.289(3), read in the ICAI copy of the Act in November 2026) says 60 months from the end of the relevant tax year. The post uses the 2025 Act wording and notes the old one.",
     },
     "buyback": {
         "rules": [
@@ -316,7 +316,7 @@ verification = {
             "https://vinodkothari.com/2026/02/from-bye-backs-to-buy-backs-how-new-taxation-rules-impact-equity-extraction/",
             "https://taxguru.in/income-tax/buyback-tax-shifted-shareholders-deemed-dividend-october-2024.html",
         ],
-        "disagreements": "Whether the Rs 1.25 lakh LTCG exemption applies to buyback gains of listed shares from 1 Apr 2026: the sources describe the gain as taxed 'under the capital gains head at normal rates', which would include the exemption; none states it explicitly. The post says so and flags it for professional confirmation. Promoter definition for unlisted companies (Companies Act promoter or >10% holder) taken from one source.",
+        "disagreements": "Whether the Rs 1.25 lakh LTCG exemption applies to buyback gains of listed shares from 1 Apr 2026: the sources describe the gain as taxed 'under the capital gains head at normal rates', which would include the exemption; none states it explicitly. The post says so and marks the point unconfirmed (no professional review is planned). Promoter definition for unlisted companies (Companies Act promoter or >10% holder) taken from one source.",
     },
     "fno": {
         "rules": [
@@ -366,8 +366,9 @@ header = """# The Tax Side of Investing — add-on module (TAX-10..13) worked ex
 # 1 April 2026, so the posts teach mechanics and avoid section numbers.
 # Buybacks are the exception where DATES matter: three regimes are shown.
 #
-# STILL OPEN: have a professional confirm the `verification.*.disagreements`
-# items before these posts go out (first publish date 2026-12-14).
+# NOTE: no professional review is planned (owner decision, 26 Oct 2026). The
+# `verification.*.disagreements` items are unresolved and the sources are mostly
+# secondary; the posts hedge accordingly (see TODO.md VERIFY rows).
 """
 
 data = {

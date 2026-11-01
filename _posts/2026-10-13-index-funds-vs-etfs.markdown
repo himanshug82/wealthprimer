@@ -181,7 +181,7 @@ Not a recommendation — a checklist of which *frictions* apply to you:
   NAV download.
 - **Forgetting an ETF may pay out.** The cash arrives in your bank account and
   is generally taxed as dividend income in the year received — see the
-  dividends and interest post in the Tax series<!-- RELINK 2026-10-31-dividends-and-interest -->.
+  dividends and interest post in the Tax series<!-- RELINK 2026-11-06-dividends-and-interest -->.
   A growth-plan index fund defers all of that until you sell.
 - **Assuming "ETF" means "Nifty 50".** SEBI's category rules make an index
   ETF hold at least 95% in its index's securities, so the wrapper is passive —

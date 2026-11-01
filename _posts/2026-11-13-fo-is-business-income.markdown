@@ -19,8 +19,10 @@ rules_as_of: "September 2026"
 
 ## A different head of income altogether
 
+This post describes the rules for Tax Year 2026-27 (FY 2026-27, April 2026 to March 2027), as at September 2026. Its examples use illustrative figures, and its tax amounts assume a 30% marginal rate: that is the old regime's rate at the example salary. Under the new regime the marginal rate at that salary is lower, so the tax figures would be smaller. The mechanics are the same.
+
 Everything in the tax series so far — holding periods, the {{ r.equity_ltcg_pct }}% rate, the
-₹{% include inr.html n=r.ltcg_annual_exemption %} exemption, FIFO — belongs to **capital gains**. None of it applies
+₹{% include inr.html n=r.ltcg_annual_exemption %} exemption, FIFO (first in, first out) — belongs to **capital gains**. None of it applies
 to futures and options.
 
 Trading in **F&O — futures and options** — is treated as a **business**. Your
@@ -32,14 +34,13 @@ nearly everyone.
 
 Specifically, F&O is *non-speculative* business income. That word matters:
 **intraday equity trading** (buying and selling the same shares within a day
-without delivery) is *speculative* business, with far harsher rules — its
-losses can only be set against speculative gains and carry forward four
-years. F&O losses are treated much more generously, as below.
+without delivery) is *speculative* business, with narrower set-off rules — as
+generally understood, its losses can be set only against speculative gains and carry forward four
+years (not confirmed in a primary source here; check the current rule). F&O losses have wider set-off, as below.
 
 Why this post follows the [F&O reality check]({% post_url 2026-10-08-what-the-fo-numbers-actually-say %})
-is obvious once you look at the numbers there: most individuals who trade
-derivatives lose money, and the *tax* treatment of that loss is the one part
-of the outcome they can still do something about.
+follows from the numbers there: SEBI's data show most individuals who trade
+derivatives lose money, and this post describes how that loss is treated for tax.
 
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
@@ -60,16 +61,16 @@ you earned — but not from your pocket money (salary).
 
 For a business, "turnover" usually means sales. For F&O the tax rules — via
 the guidance note on tax audits from ICAI (the Institute of Chartered
-Accountants of India) — define it as:
+Accountants of India), as summarised in secondary sources — define it as (check the Guidance Note itself, which this post has not opened):
 
 ```
 F&O turnover = sum of the ABSOLUTE profit or loss on each closed trade
 ```
 
 Not the contract value, not the margin, not the premium. A trade that made
-₹60,000 adds ₹60,000; a trade that *lost* ₹95,000 also adds ₹95,000. The
-premium received on options you sold is *not* added separately — it's already
-inside the trade's profit or loss.
+₹60,000 adds ₹60,000; a trade that *lost* ₹95,000 also adds ₹95,000. On the secondary sources read, the
+premium received on options you sold is not added separately; it is already
+inside the trade's profit or loss. Check the Guidance Note on this point.
 
 Turnover matters for one reason only: thresholds. It decides whether you need
 a **tax audit** and whether you can use the **presumptive** scheme. It is not
@@ -78,7 +79,7 @@ your income and it is not taxed.
 ## Worked example: a trader with the average loss
 
 Take a trader whose net result for the year equals the average individual
-loss SEBI (the Securities and Exchange Board of India) reported for FY 2025-26 —
+loss SEBI (the Securities and Exchange Board of India) reported for FY 2025-26 (a research statistic, not a worked-example price, so the 3-month lag does not apply) —
 **₹{% include inr.html n=f.avg_loss %}**, from its
 [study of individual traders' profitability]({{ sebi.url }}) published
 {{ sebi.date }} — made up of five trades:
@@ -89,11 +90,10 @@ loss SEBI (the Securities and Exchange Board of India) reported for FY 2025-26 �
 | **Net result (business loss)** | **−₹{% include inr.html n=f.avg_loss %}** | |
 | **Turnover** | | **₹{% include inr.html n=f.turnover %}** |
 
-The audit threshold for a fully digital business — which F&O always is,
-since nothing settles in cash — is **₹{% include inr.html n=f.audit_threshold %}** of turnover. Our
+The audit threshold for a business with almost all receipts and payments digital — which F&O typically
+is, since nothing settles in cash — is **₹{% include inr.html n=f.audit_threshold %}** of turnover (Income-tax Act, 2025, as read in the ICAI copy; the cash-share condition is tested over the whole business). Our
 trader would need to repeat this year's activity about {{ f.trades_to_reach_audit_threshold }} times over to
-reach it. For most individuals the turnover-based audit rule simply never
-binds; what does bind is the presumptive-scheme trap below.
+reach it. For a trader with these numbers the turnover-based audit rule does not bind; the presumptive scheme below works differently.
 
 ## What the loss can and cannot offset
 
@@ -116,27 +116,23 @@ Tax saved this year by the set-off, at a 30% slab on the interest and
 can only be set against *business* income (including future F&O profits),
 not against interest or capital gains.
 
-Two conditions, both absolute:
+Two conditions apply:
 
-1. **File ITR-3.** Business income needs the business return form (ITR
-   stands for income tax return), not the ITR-2 you'd use for capital gains
-   alone. Salary plus F&O means ITR-3.
-2. **File it by the due date.** A loss reported in a late return cannot be
-   carried forward. The set-off in the same year survives; the
-   ₹{% include inr.html n=f.carried_forward %} for future years is lost.
+1. **The return form.** Business income needs the business return form (ITR
+   stands for income tax return; ITR-3 under the forms in use at the time of writing), not the ITR-2 used for capital gains
+   alone. Check the current form names.
+2. **The due date.** In the Income-tax Act, 2025, a loss generally can be carried forward only if the return is filed by the due date. The set-off in the same year survives; the
+   ₹{% include inr.html n=f.carried_forward %} for future years would not carry forward. Check the current rule for your type of loss.
 
-One more consequence of having business income: the choice of tax regime
-gets stickier. A salaried filer can pick the old or new regime each year;
-someone with business income can leave the new regime and return to it only
-once (the [ELSS post]({% post_url 2026-11-09-elss-and-the-deduction-that-moved %}) covers the two regimes).
+One more consequence of having business income: the rules on switching between the old and new regimes differ from those for a salaried filer. Check the current rule (the [ELSS post]({% post_url 2026-11-09-elss-and-the-deduction-that-moved %}) describes the two regimes).
 
-## The presumptive trap
+## The presumptive scheme
 
 There is a simplified scheme for small businesses: declare **{{ f.presumptive_rate_pct }}% of your
 digital turnover** as profit, skip the books, skip the audit. It's available
 up to ₹{% include inr.html n=f.presumptive_turnover_limit %} of turnover.
 
-It sounds convenient. For a losing trader it's a trap:
+Here is how it compares for a trader with a loss:
 
 | | Actual result | Presumptive |
 |---|---:|---:|
@@ -145,15 +141,11 @@ It sounds convenient. For a losing trader it's a trap:
 | Tax at 30% + cess | ₹0 | ₹{% include inr.html n=f.presumptive_tax_with_cess %} |
 | Loss available for set-off / carry-forward | ₹{% include inr.html n=f.avg_loss %} | none |
 
-The scheme cannot declare a loss. Opting in means paying tax on a profit you
-didn't make and forfeiting a loss you did. And opting *out* within five years
-of opting in locks you out for the next five and, if your total income is
-above the basic exemption, makes an audit compulsory in the exit year.
+The scheme deems a profit; it does not allow a loss to be declared. Under it, tax is computed on the deemed profit and the actual loss is not
+carried forward. The conditions for leaving the scheme (the audit and lock-out rules for opting out within five years) are described in secondary sources only; check the current rule.
 
-The flip side is the good news: if you have **never** used the presumptive
-scheme, you can report an F&O loss without an audit as long as turnover is
-under the threshold. You do need to keep books — a broker's P&L statement
-and ledger are the core of them.
+Without the scheme, a trader whose turnover is under the audit threshold can report the actual loss,
+subject to keeping books of account; a broker's P&L statement and ledger are the core of them.
 
 ## What you can deduct
 
@@ -161,42 +153,29 @@ Because it's a business, the costs of running it reduce the income (or
 deepen the loss): brokerage, exchange and clearing charges, **STT (securities
 transaction tax)**, stamp duty, GST on brokerage, charting and analytics
 subscriptions, data feeds, internet, depreciation on a laptop used for
-trading. Fees to a SEBI-registered adviser may also be claimable, but that's
-arguable — confirm with a professional. Keep invoices. None of this is
+trading. Whether fees to a SEBI-registered adviser are deductible is arguable; this post does not say. Keep invoices. None of this is
 available against capital gains, which is one of the few respects in which
 the business classification helps.
 
-Worth knowing: STT on futures and options sales rose from 1 April 2026, a
-Budget 2026 change — futures from 0.02% to 0.05% of the traded price, and
-options premium from 0.1% to 0.15%. It's a deductible cost, and it's also the
+Worth knowing: the Finance Bill 2026 memorandum (indiabudget.gov.in) proposed raising STT from 1 April 2026 — futures from 0.02% to 0.05% of the traded price, and
+options premium from 0.1% to 0.15%. (This post has not opened the enacted Finance Act.) STT is a cost of trading, and it's also the
 "house's cut" the [F&O post]({% post_url 2026-10-08-what-the-fo-numbers-actually-say %}) described —
 paid on every trade, win or lose.
 
 ## Common mistakes
 
 - **Reporting F&O under capital gains.** Wrong head, wrong form, and the
-  loss rules you're relying on don't exist there.
-- **Filing late and expecting to carry the loss forward.** The carry-forward
-  dies with the deadline.
+  loss rules above don't exist there.
 - **Setting the loss against salary.** Not permitted. Interest, rent,
   capital gains and other business income, yes; salary, never.
-- **Computing turnover from contract values.** It's the sum of absolute
-  profits and losses. Contract-value turnover would push nearly everyone
-  over the audit threshold; the correct method pushes almost nobody.
-- **Opting for presumptive tax "to keep it simple".** For a loss year it
-  converts a deductible loss into a taxable phantom profit and locks you in.
-- **Ignoring intraday equity.** It's a separate, *speculative* business with
-  its own, much tighter, loss rules. Don't net it against F&O.
-- **Not keeping the broker's tax P&L.** It's the book of accounts you'll be
-  asked for, and the source for every figure above.
+- **Computing turnover from contract values.** On the secondary sources read, it's the sum of absolute
+  profits and losses, not contract value.
+- **Netting intraday equity against F&O.** Intraday equity is a separate, *speculative* business with
+  its own loss rules.
 
 **Takeaway:** F&O results are business income at your slab, not capital
-gains — so they go in ITR-3, losses can offset interest and gains but never
-salary, and a loss carries forward eight years only if you file on time.
-"Turnover" is the sum of every trade's absolute result, which is why the
-audit threshold rarely binds; the presumptive scheme, which can't declare a
-loss, is the trap to avoid.
+gains. Losses can offset interest and gains but never
+salary, and carry forward eight years if the return is filed on time. On the sources read, "turnover" is the sum of every trade's absolute result, and the presumptive scheme, which deems a profit, cannot declare a loss.
 
 *The module's [data file](https://github.com/himanshug82/wealthprimer/blob/main/_data/tax2.yml)
-lists every source these rules were checked against, and the points a
-professional should confirm before you rely on them.*
+lists the sources these rules were checked against; most are secondary sources, and no professional has reviewed this post.*

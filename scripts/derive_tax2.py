@@ -366,8 +366,9 @@ header = """# The Tax Side of Investing — add-on module (TAX-10..13) worked ex
 # 1 April 2026, so the posts teach mechanics and avoid section numbers.
 # Buybacks are the exception where DATES matter: three regimes are shown.
 #
-# STILL OPEN: have a professional confirm the `verification.*.disagreements`
-# items before these posts go out (first publish date 2026-12-14).
+# NOTE: no professional review is planned (owner decision, 26 Oct 2026). The
+# `verification.*.disagreements` items are unresolved and the sources are mostly
+# secondary; the posts hedge accordingly (see TODO.md VERIFY rows).
 """
 
 data = {

@@ -120,7 +120,7 @@ between the two dates by far more than the tax difference, in either direction.
 ## Common mistakes
 
 - **Applying the 12-month rule to everything.** Physical gold and property
-  need {{ r.other_holding_months }} months. Getting this wrong on a property sale is expensive.
+  need {{ r.other_holding_months }} months. Getting this wrong on a property sale changes the tax.
 - **Assuming any equity-sounding fund gets equity treatment.** The 65%
   Indian-equity test decides it, not the fund's name.
 - **Counting from the wrong date.** Allotment to transfer, not

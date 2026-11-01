@@ -15,7 +15,7 @@ rules_as_of: "November 2026"
 
 When you apply for shares in an IPO (initial public offering), you do not send the money to the company. Your bank **blocks** the amount in your own account. The money stays yours until the shares are allotted; only then does the bank debit the part that was allotted and release the rest. This is called **ASBA**, short for Application Supported by Block Amount.
 
-For small investors, the blocking can happen through **UPI** (Unified Payments Interface), the same payment system you use for everyday transfers. You enter a UPI ID, and you approve a "mandate" on your UPI app that blocks the amount. SEBI (the Securities and Exchange Board of India) describes the setup in Chapter 10 of its master circular for the ICDR (Issue of Capital and Disclosure Requirements) Regulations, {{ i.master_circular }} ([source]({{ i.master_url }})), as at {{ i.as_of }}.
+For small investors, the blocking can happen through **UPI** (Unified Payments Interface), the same payment system you use for everyday transfers. You enter a UPI ID (your payment address in the UPI app), and you approve a "mandate" on your UPI app that blocks the amount. SEBI (the Securities and Exchange Board of India) describes the setup in Chapter 10 of its master circular for the ICDR (Issue of Capital and Disclosure Requirements) Regulations, {{ i.master_circular }} ([source]({{ i.master_url }})), as at {{ i.as_of }}.
 
 This post explains the mechanics only. It does not say whether any IPO is worth applying for. To read what an offer document says, see [reading a DRHP (draft red herring prospectus)]({% post_url 2026-10-09-reading-a-drhp %}); after listing, trading follows the same [rules as any other share]({% post_url 2026-12-03-order-types-explained %}). It is part of [Your first year in the market]({{ '/series/market-basics/' | relative_url }}).
 
@@ -39,9 +39,9 @@ SEBI's wording of the ₹5 lakh UPI figure is "presently", which tells you it is
 
 | Day | What happens (as printed) |
 |---|---|
-| T | Applications accepted; UPI mandates accepted up to 5 pm; issue closes at 5 pm for the retail category |
+| T | Applications accepted; UPI mandates accepted up to 5 pm; online 3-in-1 ASBA applications close at 5 pm, while other channels (bank ASBA through online channels, physical bank ASBA) have earlier cut-offs, and the non-retail categories close earlier too |
 | T+1 | Third-party checks on UPI applications completed before 9:30 am; rejections finalised before 6 pm; basis of allotment approved by the exchange before 9 pm |
-| T+2 | Debit and unblock instructions issued from 9:30 am; fund transfers complete before 2 pm and unblocking before 4 pm; shares are credited to demat accounts before 6 pm (see [how a demat account works]({% post_url 2026-12-01-demat-trading-bank-accounts %})) |
+| T+2 | Debit and unblock instructions initiated by 9:30 am; fund transfers complete before 2 pm and unblocking before 4 pm; shares are credited to demat accounts before 6 pm (see [how a demat account works]({% post_url 2026-12-01-demat-trading-bank-accounts %})) |
 | T+3 | Trading starts |
 
 (Times are those in the annexure as at {{ i.as_of }}. "Indicative" is SEBI's word.)
@@ -72,7 +72,7 @@ If the 15% a year is spread evenly over {{ i.comp_basis_days }} days (an assumpt
 | {{ r.amount }} | {{ r.pct_per_day }} | {{ r.per_day }} |
 {% endfor %}
 
-The two are equal at about ₹{% include inr.html n=i.comp_breakeven %}. Below that the flat ₹{{ i.comp_per_day }} a day is the higher figure, which covers most retail applications. If your money is late, the route to claiming is a complaint to the intermediary or bank; SEBI's complaint system, SCORES (SEBI Complaints Redress System), is the usual next step, and a later post in this series covers it.
+The two are equal at about ₹{% include inr.html n=i.comp_breakeven %}. Below that the flat ₹{{ i.comp_per_day }} a day is the higher figure, which covers every application under the ₹{% include inr.html n=i.retail_cap_rs %} retail line. If your money is late, one route is a complaint to the intermediary or bank, and the circular names the post-issue lead manager as another; SEBI's complaint system, SCORES (SEBI Complaints Redress System), is a further route, and a later post in this series covers it.
 
 ## Common mistakes
 
@@ -81,4 +81,4 @@ The two are equal at about ₹{% include inr.html n=i.comp_breakeven %}. Below t
 - **Using someone else's account or UPI ID.** Applications from a third party's account or UPI ID are liable for rejection under the circular.
 - **Expecting money and shares on the same day as listing.** Unblocking is due by T+2 and trading starts on T+3; the credit of shares is on T+2.
 
-**Takeaway:** In an IPO your bank blocks the money and releases it by T+2 if you are not allotted; shares arrive on T+2 and trading starts on T+3. Use only your own account, approve the UPI mandate in time, and check the current rule, as SEBI's figures such as the ₹5 lakh UPI limit are revised.
+**Takeaway:** In an IPO your bank blocks the money and releases it by T+2 if you are not allotted; shares arrive on T+2 and trading starts on T+3. The circular says to use your own account's UPI ID and puts mandate acceptance at 5 pm on T; its figures, such as the ₹5 lakh UPI limit, are described as "presently", so check the current rule.

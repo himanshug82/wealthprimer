@@ -36,7 +36,7 @@ Whole shares go to your demat account; any fraction is handled as the scheme say
 | Whole shares credited | Whole part of {{ m.entitled }} | {{ m.whole }} |
 | Left over | The fraction | {{ m.fraction_num }}/{{ m.ratio_old }} of a share ({{ m.fraction }}) |
 
-You cannot hold 0.857 of a share, so the fraction needs a rule. SEBI's master circular on schemes of arrangement ({{ sc.master_circular }}; [source]({{ sc.master_url }}); as at {{ sc.as_of }}) says fractional entitlements are aggregated and held by a trust, which sells them in the market within {{ sc.fraction_trust_days }} days from the date of allotment, as the draft scheme says. The scheme document tells you how the proceeds reach you, so read it for that. **Check the current rule**: the circular was issued in June 2023 and can be amended.
+You cannot hold 0.857 of a share, so the fraction needs a rule. SEBI's master circular on schemes of arrangement ({{ sc.master_circular }}; [source]({{ sc.master_url }}); as at {{ sc.as_of }}) (as printed in the NSE-hosted copy we read; SEBI's own page for it could not be opened) says fractional entitlements are aggregated and held by a trust, which sells them in the market within {{ sc.fraction_trust_days }} days from the date of allotment, as the draft scheme says. The scheme document tells you how the proceeds reach you, so read it for that. **Check the current rule**: the steps are as described in the circular of 20 June 2023 (NSE-hosted copy); later amendments were not checked.
 
 Read the direction of the ratio carefully. "{{ m.ratio_new }} for {{ m.ratio_old }}" means {{ m.ratio_new }} shares of the surviving company for {{ m.ratio_old }} of the one being absorbed, so you end up with fewer shares than you started with. What each share is worth is a separate matter.
 
@@ -59,7 +59,7 @@ For the date that decides who gets the new shares, see [record date and ex-date]
 The same master circular sets out the steps for a listed company. As written in the text we opened:
 
 1. **Documents to the exchanges.** The company files the draft scheme with the stock exchanges, along with a valuation report from a registered valuer that shows the "fair share exchange ratio", a report from its audit committee, and a fairness opinion from a SEBI-registered merchant banker.
-2. **Exchanges and SEBI review it.** SEBI (the Securities and Exchange Board of India) forwards comments from the public to the designated stock exchange for resolution.
+2. **Exchange and regulator review.** The text we read says SEBI (the Securities and Exchange Board of India) forwards comments from the public to the designated stock exchange for resolution. The full sequence of the exchange's review and any observation letter is not described here: check the current rule.
 3. **Shareholder vote.** The scheme sent to the NCLT (National Company Law Tribunal) for sanction must provide for e-voting by public shareholders. In some cases, for example where additional shares go to the promoter group, the scheme proceeds only if the public shareholders' votes in favour are more than those against.
 4. **Sanction and allotment.** After sanction, shares are allotted and credited under the scheme.
 
@@ -72,6 +72,6 @@ How the new shares are taxed, and how the cost of your old shares is split, are 
 - **Reading a demerger-day price fall as a loss.** In the example the parent's price dropped ₹{{ d.parent_drop }} a share, but the holding's value did not change. Compare your total holding, not one price.
 - **Reading the ratio backwards.** "{{ m.ratio_new }} for {{ m.ratio_old }}" and "{{ m.ratio_old }} for {{ m.ratio_new }}" give very different share counts.
 - **Forgetting the fraction.** A holding that does not divide evenly leaves a fraction, and the scheme sets how it is paid out. {{ m.fraction_num }}/{{ m.ratio_old }} of a share is small, but it is not zero.
-- **Treating an announced scheme as done.** A scheme needs the exchange review, the public-shareholder vote and sanction before shares move. The ratio you read in the announcement is the draft's.
+- **Treating an announced scheme as done.** A scheme needs the exchange review, the shareholder approvals the circular requires (for some schemes, more public votes in favour than against) and sanction before shares move. The ratio you read in the announcement is the draft's.
 
 **Takeaway:** In a merger or demerger the scheme's ratio decides how many new shares you get, whole shares are credited and fractions follow the scheme's rule. A price fall on a demerger date is not by itself a loss. Read the ratio's direction and the scheme document, and check the current SEBI rules.

@@ -152,7 +152,9 @@ CHARGES = dict(
     txn_url="https://nsearchives.nseindia.com/content/circulars/FA64232.pdf",
     levies_url="https://www.nseindia.com/static/invest/first-time-investor-sebi-turnover-fees-stt-other-levies",
     levies_updated="17 April 2026",
-    sebi_circular_charges="SEBI/HO/MRD/TPD-1/P/CIR/2024/92, 1 July 2024",
+    txn_flat_since="1 October 2024",
+    stt_fno_raised_from="1 April 2026",
+    # Rates below are as described on NSE's pages/circulars; NOT re-confirmed from the PDFs by the auditor (NSE host unreachable).
     stt_delivery_pct=0.1,          # purchaser and seller, delivery-based equity share
     stt_non_delivery_sell_pct=0.025,
     txn_per_lakh=2.97,             # cash market, each side, per lakh of traded value
@@ -229,7 +231,7 @@ SCORES = dict(
     investor_url="https://investor.sebi.gov.in/sebi_scores.html",
     odr_url="https://investor.sebi.gov.in/smart_orr.html",
     scores_circular="SEBI/HO/OIAE/IGRD/CIR/P/2023/156 (as cited in SEBI's own SCORES FAQ)",
-    odr_circular="SEBI/HO/OIAE/OIAE_IAD-1/P/CIR/2023/145, 31 July 2023 (as cited in SEBI's own SCORES FAQ)",
+    odr_circular="SEBI/HO/OIAE/OIAE_IAD-1/P/CIR/2023/145, 31 July 2023",
     limitation_years=1, atr_days=21, review_request_days=15, designated_days=10, second_review_days=15,
     conciliation_ok_rs=4800, conciliation_fail_rs=3240,
     example_atr_day=21, example_review_last_day=21 + 15,
@@ -252,7 +254,7 @@ assert DEMERGE["value_before"] == DEMERGE["value_after"] == 80000 and DEMERGE["h
 assert (MERGE["whole"], MERGE["fraction_num"]) == (42, 6)
 SCHEME = dict(
     as_of="November 2026",
-    master_circular="SEBI/HO/CFD/POD-2/P/CIR/2023/93, 20 June 2023",
+    master_circular="SEBI/HO/CFD/POD-2/P/CIR/2023/93, 20 June 2023 (NSE-hosted copy; later amendments not checked)",
     master_url="https://nsearchives.nseindia.com/s3fs-public/inline-files/Master%20Circular%20on%20Scheme%20of%20Arrangement_2.pdf",
     fraction_trust_days=90, merge=MERGE, demerge=DEMERGE,
 )

@@ -30,14 +30,15 @@ This series covers the mechanics. It won't tell you what to do.
 ## A note on how this series is written
 
 Indian tax law was rewritten recently. The **Income-tax Act, 2025** replaced
-the 1961 Act with effect from 1 April 2026, and while the rates and slabs
-carried over unchanged, almost every section was renumbered — the old section
-80C became section 123 — and the twin concepts of "Previous Year" and "Assessment
-Year" were collapsed into a single **Tax Year**.
+the 1961 Act with effect from 1 April 2026. Almost every section was
+renumbered — the old section 80C became section 123 — and the twin concepts of
+"Previous Year" and "Assessment Year" were collapsed into a single **Tax Year**.
+The capital-gains rates used in this series are the ones in that Act; we did
+not compare the income-tax slab tables with the 1961 slabs.
 
-So this series teaches *mechanics* rather than citations. Holding periods,
-rates, set-off rules and the FIFO convention are stable; section numbers are
-not, and a post built around them would be stale before it was useful. Where
+So this series teaches *mechanics* rather than citations. Rules change, so
+each post states the date its rules were last checked, and section numbers move
+even more; a post built around them would be stale before it was useful. Where
 you need to cite chapter and verse — filing, disputes, anything contested —
 that's a job for a professional and the current text of the Act.
 
@@ -117,8 +118,7 @@ worked examples in this series include it.
 Above ₹50 lakh of total income a **surcharge** is added to the tax too, before
 the cess. The Memorandum to the Finance Bill, 2026 (listed under Sources) shows
 the surcharge on equity capital gains and dividends capped at 15%, and the
-highest surcharge rate on other income cut from 37% to 25% under the new
-regime. The Bill is not the enacted Act, and the old-regime position was not
+highest surcharge rate under the new regime capped at 25%. The Bill is not the enacted Act, and the old-regime position was not
 re-checked, so check the current rule. The worked examples in this series
 assume income below ₹50 lakh, so no surcharge.
 
@@ -166,8 +166,8 @@ arithmetic sits on actual prices rather than round invented numbers.
 
 ## Sources
 
-- [Income-tax Act, 2025 (a copy hosted by ICAI)](https://resource.cdn.icai.org/87647dtc-aps2139-inceome-tax-act-2025.pdf): the Act itself.
-- [Finance Act, 2026, Gazette of India](https://egazette.gov.in/WriteReadData/2026/271439.pdf): the Finance Act that made the 2026 changes.
-- [Memorandum explaining the provisions of the Finance Bill, 2026](https://www.indiabudget.gov.in/doc/memo.pdf): the government's explanation of those changes.
+- [Income-tax Act, 2025 (a copy hosted by ICAI)](https://resource.cdn.icai.org/87647dtc-aps2139-inceome-tax-act-2025.pdf): the Act itself; opened on 1 November 2026 to check the provisions this post describes. Points not found there are marked "check the current rule".
+- Finance Act, 2026 (Gazette of India): **not opened for this post** (the gazette copy could not be reached), so points that depend on the 2026 changes rest on the Bill's memorandum below and are flagged where they appear.
+- [Memorandum explaining the provisions of the Finance Bill, 2026](https://www.indiabudget.gov.in/doc/memo.pdf): the government's explanation of the Bill as introduced (the Bill, not the enacted Act).
 
-**Takeaway:** Investment income splits into capital gains, dividends and interest, and only the first has rules of its own, with a rate that turns on what you held and for how long. A capital gain is taxed when you sell; dividends and interest follow their own timing.
+**Takeaway:** Investment income splits into capital gains, dividends and interest, and only the first has its own rates and holding periods, which turn on what you held and for how long. A capital gain is taxed when you sell; dividends and interest follow their own timing.

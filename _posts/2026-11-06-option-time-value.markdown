@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Time value: why an option loses value near expiry"
-description: "An option's price is intrinsic value plus time value, and the time part drains faster as expiry nears. Decay worked out on a hypothetical index, with the model stated."
+description: "An option's price is intrinsic value plus time value, and time value drains faster as expiry nears. Decay worked on a hypothetical index, with the model stated."
 image: /assets/og/option-time-value.png
 date: 2026-11-06 09:00:00 +0530
 series: risk
@@ -69,8 +69,7 @@ The in-the-money call has {{ c.level | minus: 19500 }} points of intrinsic value
    {{ tv.note.last_day }} points in the last day, from day 1 to expiry.
 3. **It is not a straight line.** Thirty days out, the at-the-money call's time value is
    {{ tv.note.tv_30_over_tv_5_ratio }} times its time value five days out, although
-   the time left is six times as long. In this model time value for a
-   given strike is proportional to the square root of time left, not to time
+   the time left is six times as long. In this model the time value of an at-the-money option is proportional to the square root of the time left, not to the time
    left, which is why the last days are steep.
 
 The same arithmetic runs against the seller of the option: whatever time value

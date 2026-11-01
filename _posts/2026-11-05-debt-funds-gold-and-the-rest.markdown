@@ -40,7 +40,7 @@ interest are both taxed at the slab rate. The *timing* differs: see below.
 
 | | Debt fund bought before 1 Apr 2023 | Debt fund bought on/after 1 Apr 2023 |
 |---|---|---|
-| Long-term category | Yes, after 24 months (12 if listed, e.g. a debt ETF) | **None** |
+| Long-term category | Yes, after 24 months (12 if listed, e.g. a debt ETF); check the current rule | **None** |
 | Long-term rate | 12.5%, as we read the current rules; check the current rule | **Your slab rate** |
 | Indexation | **No** — gone for sales on or after 23 July 2024 | **No** |
 
@@ -49,7 +49,7 @@ category, and a holding can contain both kinds. Your capital gains statement
 should distinguish them.
 
 **Timing.** A debt fund's gain is taxed when you redeem, while fixed deposit
-interest is generally taxed as it accrues each year. The rate on the two can be
+interest is generally taxed as it accrues each year (check the current rule). The rate on the two can be
 the same slab rate; the year in which the tax falls is not. That is a
 description of mechanics, not a comparison of which product suits anyone.
 
@@ -130,7 +130,7 @@ fund full of foreign shares can miss the definition completely.
 |---|---|---|
 | Listed shares, equity funds | {{ r.equity_holding_months }} months | {{ r.equity_ltcg_pct }}% above ₹{% include inr.html n=r.ltcg_annual_exemption %} |
 | Debt funds bought from Apr 2023 | *No long-term category* | Slab rate |
-| Debt funds bought before Apr 2023 | {{ r.other_holding_months }} months ({{ r.equity_holding_months }} if listed) | Flat rate, no indexation |
+| Debt funds bought before Apr 2023 | {{ r.other_holding_months }} months ({{ r.equity_holding_months }} if listed); check the current rule | Flat rate, no indexation |
 | Gold ETFs, international ETFs (listed) | {{ r.equity_holding_months }} months | Long-term rate; check the current rule |
 | Gold and international funds of funds | {{ r.other_holding_months }} months | Flat rate |
 | Physical gold | {{ r.other_holding_months }} months | Flat rate, no indexation |
@@ -155,9 +155,9 @@ Plus {{ r.cess_pct }}% cess on the tax throughout.
 
 ## Sources
 
-- [Income-tax Act, 2025 (a copy hosted by ICAI)](https://resource.cdn.icai.org/87647dtc-aps2139-inceome-tax-act-2025.pdf): the Act itself.
-- [Finance Act, 2026, Gazette of India](https://egazette.gov.in/WriteReadData/2026/271439.pdf): the Finance Act that made the 2026 changes.
-- [Memorandum explaining the provisions of the Finance Bill, 2026](https://www.indiabudget.gov.in/doc/memo.pdf): the government's explanation of those changes.
+- [Income-tax Act, 2025 (a copy hosted by ICAI)](https://resource.cdn.icai.org/87647dtc-aps2139-inceome-tax-act-2025.pdf): the Act itself; opened on 1 November 2026 to check the provisions this post describes. Points not found there are marked "check the current rule".
+- Finance Act, 2026 (Gazette of India): **not opened for this post** (the gazette copy could not be reached), so points that depend on the 2026 changes rest on the Bill's memorandum below and are flagged where they appear.
+- [Memorandum explaining the provisions of the Finance Bill, 2026](https://www.indiabudget.gov.in/doc/memo.pdf): the government's explanation of the Bill as introduced (the Bill, not the enacted Act).
 - [RBI, FAQs on Sovereign Gold Bonds](https://www.rbi.org.in/commonman/English/Scripts/FAQs.aspx?Id=1658): RBI's FAQs on Sovereign Gold Bonds.
 
 **Takeaway:** Outside listed equity and equity funds, the equity rates and exemption don't apply, and gains on specified debt fund units acquired from April 2023 are taxed at the slab rate however long they are held. Check the purchase date on debt units and whether a fund counts as "equity" for tax.

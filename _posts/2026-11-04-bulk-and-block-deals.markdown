@@ -87,4 +87,4 @@ A **block deal** is different. A teacher walks in and says, "I'll take 60 samosa
 - **Forgetting the denominator.** "Bulk" is relative to the company's shares ({{ bk.threshold_pct }}% of them), not to a rupee amount. The same ₹{{ bl.min_order_cr }} crore can be a rounding error in a giant company and a third of a small one, as the Desi Bites numbers show.
 - **Quoting old limits.** SEBI revised the block-deal framework in October 2025. A rule that an older article calls "the minimum" may no longer be the minimum.
 
-**Takeaway:** a bulk deal is a day's trading above {{ bk.threshold_pct }}% of a company's shares, counted afterwards; a block deal is one large trade executed in its own window. Both are published after market hours, and neither tells you why the buyer or seller traded.
+**Takeaway:** A bulk deal is a day's trading above {{ bk.threshold_pct }}% of a company's shares, counted afterwards; a block deal is one large trade executed in its own window. Both are published after market hours, and neither tells you why the buyer or seller traded.

@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Call and put options: what the buyer pays and risks"
-description: "A call gives the right to buy, a put the right to sell, for a premium paid upfront. Worked on a hypothetical index: lot, premium, payoff table and the most a buyer can lose."
+title: "Call and put options: what a buyer pays and risks"
+description: "A call is the right to buy, a put the right to sell, for a premium paid upfront. Worked on a hypothetical index: lot, premium, payoffs and the buyer's maximum loss."
 image: /assets/og/call-and-put-options.png
 date: 2026-11-04 09:00:00 +0530
 series: risk

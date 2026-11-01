@@ -19,7 +19,7 @@ rules_as_of: "September 2026"
 
 ## A different head of income altogether
 
-This post describes the rules for Tax Year 2026-27 (FY 2026-27, April 2026 to March 2027), as at September 2026. Its examples use illustrative figures, and its tax amounts assume a 30% marginal rate: that is the old regime's rate at the example salary. Under the new regime the marginal rate at that salary is lower, so the tax figures would be smaller. The mechanics are the same.
+This post describes the rules for Tax Year 2026-27 (FY 2026-27, April 2026 to March 2027), as at September 2026. Its examples use illustrative figures, and its tax amounts assume a 30% marginal rate. That 30% is an assumed, illustrative old-regime rate: the old-regime slab table was not opened for this post. The new-regime slab table in the Income-tax Act, 2025 (ICAI copy) gives lower rates at the salary used below, so under the new regime the tax figures would be smaller. The mechanics are the same.
 
 Everything in the tax series so far — holding periods, the {{ r.equity_ltcg_pct }}% rate, the
 ₹{% include inr.html n=r.ltcg_annual_exemption %} exemption, FIFO (first in, first out) — belongs to **capital gains**. None of it applies
@@ -34,13 +34,13 @@ nearly everyone.
 
 Specifically, F&O is *non-speculative* business income. That word matters:
 **intraday equity trading** (buying and selling the same shares within a day
-without delivery) is *speculative* business, with narrower set-off rules — as
-generally understood, its losses can be set only against speculative gains and carry forward four
-years (not confirmed in a primary source here; check the current rule). F&O losses have wider set-off, as below.
+without delivery) is *speculative* business, with narrower set-off rules — its
+losses can be set only against speculative gains and carry forward four
+years (Income-tax Act, 2025, s.113, as read in the ICAI copy; check the current rule). F&O losses have wider set-off, as below.
 
-Why this post follows the [F&O reality check]({% post_url 2026-10-08-what-the-fo-numbers-actually-say %})
-follows from the numbers there: SEBI's data show most individuals who trade
-derivatives lose money, and this post describes how that loss is treated for tax.
+This post picks up where the [F&O reality check]({% post_url 2026-10-08-what-the-fo-numbers-actually-say %})
+left off. SEBI's data in that post show most individuals who trade
+derivatives lose money; here we describe how such a loss is treated for tax.
 
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
@@ -144,13 +144,14 @@ Here is how it compares for a trader with a loss:
 The scheme deems a profit; it does not allow a loss to be declared. Under it, tax is computed on the deemed profit and the actual loss is not
 carried forward. The conditions for leaving the scheme (the audit and lock-out rules for opting out within five years) are described in secondary sources only; check the current rule.
 
-Without the scheme, a trader whose turnover is under the audit threshold can report the actual loss,
-subject to keeping books of account; a broker's P&L statement and ledger are the core of them.
+Outside the scheme, a trader whose turnover is under the audit threshold can report the actual result,
+subject to keeping books of account; a broker's P&L statement and ledger are the core of them. Declaring less than the deemed profit when total income is above the basic exemption generally brings an audit requirement (Income-tax Act, 2025, s.63, as read in the ICAI copy; check the current rule).
 
 ## What you can deduct
 
-Because it's a business, the costs of running it reduce the income (or
-deepen the loss): brokerage, exchange and clearing charges, **STT (securities
+Because it's a business, the costs of running it can reduce the income (or
+deepen the loss). The list below is as generally described in secondary sources, not
+checked against the Act; check the current rule: brokerage, exchange and clearing charges, **STT (securities
 transaction tax)**, stamp duty, GST on brokerage, charting and analytics
 subscriptions, data feeds, internet, depreciation on a laptop used for
 trading. Whether fees to a SEBI-registered adviser are deductible is arguable; this post does not say. Keep invoices. None of this is
@@ -160,7 +161,7 @@ the business classification helps.
 Worth knowing: the Finance Bill 2026 memorandum (indiabudget.gov.in) proposed raising STT from 1 April 2026 — futures from 0.02% to 0.05% of the traded price, and
 options premium from 0.1% to 0.15%. (This post has not opened the enacted Finance Act.) STT is a cost of trading, and it's also the
 "house's cut" the [F&O post]({% post_url 2026-10-08-what-the-fo-numbers-actually-say %}) described —
-paid on every trade, win or lose.
+paid on each sale (per the memorandum), win or lose.
 
 ## Common mistakes
 
@@ -175,7 +176,13 @@ paid on every trade, win or lose.
 
 **Takeaway:** F&O results are business income at your slab, not capital
 gains. Losses can offset interest and gains but never
-salary, and carry forward eight years if the return is filed on time. On the sources read, "turnover" is the sum of every trade's absolute result, and the presumptive scheme, which deems a profit, cannot declare a loss.
+salary, and generally carry forward eight years if the return is filed on time. On the sources read, "turnover" is the sum of every trade's absolute result, and the presumptive scheme, which deems a profit, cannot declare a loss.
 
-*The module's [data file](https://github.com/himanshug82/wealthprimer/blob/main/_data/tax2.yml)
-lists the sources these rules were checked against; most are secondary sources, and no professional has reviewed this post.*
+## Sources
+
+- Income-tax Act, 2025 (ICAI copy of the Gazette text): audit threshold and presumptive scheme (ss.63 and 58), set-off and carry-forward of business losses (ss.109, 112), speculation loss (s.113), the new-regime slab table (s.202(1)).
+- Finance Bill, 2026, Memorandum explaining the provisions (indiabudget.gov.in/doc/memo.pdf): the STT rates from 1 April 2026 as proposed. The Bill's memorandum is not the enacted Finance Act.
+- SEBI study on individual traders' profitability (linked above): the average loss used in the example.
+- Not opened: the ICAI Guidance Note on tax audit (the turnover definition), the old-regime slab table, and the list of deductible costs (secondary sources in the module's [data file](https://github.com/himanshug82/wealthprimer/blob/main/_data/tax2.yml)).
+
+*No professional has reviewed this post.*

@@ -21,7 +21,7 @@ rules_as_of: "September 2026"
 
 *Rules described here are date-specific: three regimes are shown, the latest
 one applying from 1 April 2026. Tax Year 2026-27 (FY 2026-27), rules as at September 2026. The
-rates and the exemption that apply to Regime C gains are not confirmed from a primary source; see the note under Regime C.*
+rates and the exemption that apply to Regime C gains are not confirmed from a primary source; see the note under Regime C. The descriptions of Regimes A and B, including their dates, come from secondary sources (listed at the end), not from the Act: check the current rule.*
 
 ## What a buyback is, and why the tax kept changing
 
@@ -68,8 +68,7 @@ surcharge, no other capital gains in the year unless stated.
 
 Our shareholder bought in June 2025, after this regime ended, so this one is
 hypothetical — as if the same shares had been tendered under the old rule.
-The company paid a **buyback tax of {{ a.company_tax_rate_pct }}%** (20% plus surcharge and
-cess) on the *distributed income* — what it paid out minus what it had
+As described in secondary sources (check the current rule), the company paid a **buyback tax of {{ a.company_tax_rate_pct }}%** — 20% × 1.12 (a 12% surcharge) × 1.04 (4% cess) = 23.296% — on the *distributed income* — what it paid out minus what it had
 originally received for those shares — and the shareholder paid nothing.
 
 | | |
@@ -84,7 +83,7 @@ same effective tax.
 
 ### Regime B — {{ rb.period }}: the whole cheque was a dividend
 
-From 1 October 2024 the buyback tax was abolished and the **entire
+As described in secondary sources (check the current rule), from 1 October 2024 the buyback tax was abolished and the **entire
 consideration** — not the gain, the whole amount — was treated as a dividend
 in the shareholder's hands, taxed at slab like any other
 [dividend]({% post_url 2026-11-06-dividends-and-interest %}), with 10% TDS (tax deducted at source). No deduction
@@ -156,11 +155,9 @@ include surcharge and cess should be checked against the Act. If the {{ rc.promo
 
 ## Why the date matters for your return
 
-A buyback is taxed by the regime in force on the date the shares were
-bought back. As at September 2026 the reading used here is the date the company pays you
-— not the date of the announcement, and not the date you tendered. On that
-reading, a buyback announced in March 2026 and settled in April 2026 is a
-Regime C event. The date rule is not confirmed from the Act's text; check the current rule for a buyback that straddles the change.
+Which date fixes the regime is not confirmed from the Act's text. The reading used here, as at September 2026, is the date the company pays you
+— not the date of the announcement, and not the date you tendered — which would make a buyback announced in March 2026 and settled in April 2026 a
+Regime C event. Check the current rule for a buyback that straddles the change.
 
 If you tendered shares in a Regime B buyback, your return for that year needs
 two entries that don't feel like they belong together: a dividend (the whole
@@ -182,11 +179,14 @@ company's payment and the department will expect to see it somewhere.
   taxpayer in the 30% slab the gain-only tax is lower at any gain size; for a taxpayer in a low slab, a dividend
   can be taxed at a lower rate than the capital-gains rate, and the answer depends on the slab.
 
-**Takeaway:** How a buyback is taxed depends on the date it happened. Until
-September 2024 the company paid and you owed nothing; from October 2024 the
+**Takeaway:** How a buyback is taxed has depended on the date it happened. As described in secondary sources, the company paid until September 2024; from October 2024 the
 whole cheque was a dividend at your slab, turning a ₹{% include inr.html n=b.gain %} gain into a
-₹{% include inr.html n=rb.tax_with_cess %} bill in our example; from April 2026 it is a plain sale
-taxed on the gain, with an additional tax for promoters. The payout date, not the announcement date, is the one the post reads as deciding the regime.
+₹{% include inr.html n=rb.tax_with_cess %} bill in our example, before any loss offset. From April 2026 the Finance Bill 2026 memorandum describes a sale taxed as capital gains, with an additional tax for promoters; the rates are unconfirmed.
 
-*The module's [data file](https://github.com/himanshug82/wealthprimer/blob/main/_data/tax2.yml)
-lists the sources these rules were checked against; they are secondary sources and the Finance Bill 2026 memorandum. No professional has reviewed this post.*
+## Sources
+
+- Finance Bill, 2026, Memorandum explaining the provisions (indiabudget.gov.in/doc/memo.pdf): buyback taxed as capital gains from 1 April 2026; effective promoter rates of 30% and 22%; existing law treats a buyback as a dividend with the cost as a capital loss. This is the Bill's memorandum, not the enacted Finance Act.
+- Income-tax Act, 2025 (ICAI copy of the Gazette text): opened for the capital-gains and carry-forward provisions generally; it was not used to confirm Regimes A or B or the Regime C rates.
+- Regimes A and B (dates, the 23.296% build, 10% TDS, nil consideration): secondary sources only, listed in the module's [data file](https://github.com/himanshug82/wealthprimer/blob/main/_data/tax2.yml). Check the current rule.
+
+*No professional has reviewed this post.*

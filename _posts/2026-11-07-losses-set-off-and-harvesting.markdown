@@ -46,10 +46,10 @@ Whatever you can't use this year carries forward for **{{ r.carry_forward_years 
 its character — a long-term loss stays a long-term loss and remains
 restricted to long-term gains.
 
-There is one condition, and it is near-absolute:
+There is one condition that matters:
 
-> **You must file your return by the due date.** File late, and the
-> carry-forward is lost permanently.
+> **The return has to be filed by the due date.** A late return can lose the
+> carry-forward; check the current rule.
 
 The Income-tax Act, 2025 ties carry-forward of losses to a return filed within
 the due-date provision, so a return filed late can lose the carry-forward. Someone with a
@@ -69,11 +69,10 @@ There are two kinds. The blue voucher works on any bill. The red one only
 works on one specific type of bill.
 
 They're valid for eight years — but only if you **register them before the
-deadline**. Forget to register and the voucher is just a piece of paper, no
-matter how much it was worth.
+deadline**. Forget to register and the voucher may stop counting.
 
 Registering is filing your return on time. It takes an afternoon and it's the
-only thing keeping the voucher alive.
+what keeps the voucher valid.
 
 </details>
 
@@ -122,16 +121,7 @@ anti-avoidance rule (GAAR) exists in Chapter XI of the Income-tax Act, 2025,
 covering arrangements whose main purpose is a tax benefit. Whether and when it
 could apply to a sale and repurchase is not covered here; check the current rule.
 
-**Harvesting gains** is the mirror image. Recall from the
-[equity post]({% post_url 2026-11-04-equity-and-equity-funds %}) that the first
-₹{% include inr.html n=r.ltcg_annual_exemption %} of long-term gains each financial year is exempt, and that the
-allowance does not carry forward: unused, it expires on 31 March. Selling and
-repurchasing a holding realises the gain, so that year's exempt amount applies
-to it, and the repurchase gives the new units a new acquisition date and a
-higher cost. The new units' holding period starts again, so a later sale within
-twelve months would be short-term. The sale and the repurchase also carry transaction
-costs. This is a description of the mechanics; whether it suits a particular
-portfolio is outside this blog's scope.
+**Harvesting gains** is the mirror image: selling and repurchasing realises the gain, gives the new units a new acquisition date and cost (which restarts the holding period), and carries transaction costs on both legs, while the ₹{% include inr.html n=r.ltcg_annual_exemption %} exemption from the [equity post]({% post_url 2026-11-04-equity-and-equity-funds %}) does not carry forward.
 
 ## Common mistakes
 
@@ -144,8 +134,8 @@ portfolio is outside this blog's scope.
 
 ## Sources
 
-- [Income-tax Act, 2025 (a copy hosted by ICAI)](https://resource.cdn.icai.org/87647dtc-aps2139-inceome-tax-act-2025.pdf): the Act itself.
-- [Finance Act, 2026, Gazette of India](https://egazette.gov.in/WriteReadData/2026/271439.pdf): the Finance Act that made the 2026 changes.
-- [Memorandum explaining the provisions of the Finance Bill, 2026](https://www.indiabudget.gov.in/doc/memo.pdf): the government's explanation of those changes.
+- [Income-tax Act, 2025 (a copy hosted by ICAI)](https://resource.cdn.icai.org/87647dtc-aps2139-inceome-tax-act-2025.pdf): the Act itself; opened on 1 November 2026 to check the provisions this post describes. Points not found there are marked "check the current rule".
+- Finance Act, 2026 (Gazette of India): **not opened for this post** (the gazette copy could not be reached), so points that depend on the 2026 changes rest on the Bill's memorandum below and are flagged where they appear.
+- [Memorandum explaining the provisions of the Finance Bill, 2026](https://www.indiabudget.gov.in/doc/memo.pdf): the government's explanation of the Bill as introduced (the Bill, not the enacted Act).
 
-**Takeaway:** Short-term capital losses can be set off against any capital gain, long-term losses only against long-term gains, and what is unused carries forward {{ r.carry_forward_years }} years if the return is filed on time. The ₹{% include inr.html n=r.ltcg_annual_exemption %} annual long-term exemption expires each 31 March.
+**Takeaway:** Short-term capital losses can be set off against any capital gain, long-term losses only against long-term gains, and what is unused carries forward {{ r.carry_forward_years }} years, generally only if the return is filed on time (check the current rule). The ₹{% include inr.html n=r.ltcg_annual_exemption %} annual long-term exemption expires each 31 March.

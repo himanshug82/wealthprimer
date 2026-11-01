@@ -25,7 +25,7 @@ employer's shares at a fixed price (the *exercise price*) after a waiting
 period (*vesting*). An **RSU — restricted stock unit** — is a promise of the
 shares themselves, delivered when they vest, for nothing.
 
-Both are pay. The tax system treats them exactly that way, and then treats
+Both are pay. As described in secondary sources (check the current rule for the perquisite, cost and holding-period details below), the tax system treats them that way, and then treats
 the shares you end up holding exactly like any other shares. That gives two
 taxing events, under two different heads:
 
@@ -68,7 +68,7 @@ there are two different taxes. Not one tax charged twice.
 ## Worked example: a Desi Bites Foods employee
 
 Take an employee of Desi Bites Foods, the fictional company from the
-[case study](/case-study/), whose IPO (initial public offering) was priced at ₹640 in June 2025. She holds
+[case study](/case-study/), whose IPO (initial public offering) was priced at ₹640 in June 2025 (a fictional company and price). She holds
 {% include inr.html n=e.shares %} vested options with an exercise price of ₹{{ e.exercise_price }}, and
 exercises them on {{ e.exercise_date }} when the share trades at ₹{{ e.fmv_at_exercise }}.
 Illustrative 30% slab plus {{ r.cess_pct }}% cess, no surcharge; this assumes her other salary already puts the perquisite in the 30% slab, and no other long-term gains this year, so the full ₹{% include inr.html n=e.ltcg_exempt %} exemption is available.
@@ -116,7 +116,7 @@ date.
 **Putting it together.** Her economic gain was ₹{% include inr.html n=e.economic_gain %} (bought at ₹{{ e.exercise_price }}, sold
 at ₹{{ e.sale_price }}). Total tax: ₹{% include inr.html n=e.perquisite_tax_with_cess %} + ₹{% include inr.html n=e.ltcg_tax_with_cess %} =
 **₹{% include inr.html n=e.total_tax_long_route %}**, an effective {{ e.effective_rate_pct }}%. Most of it was
-salary tax on the discount, paid a year before she saw any money.
+salary tax on the discount, paid {{ e.months_held_long }} months before the sale brought in any money.
 
 The beginner's answer — "I made ₹{% include inr.html n=e.economic_gain %} on shares, so it's long-term
 capital gains" — would have come to ₹{% include inr.html n=e.wrong_answer_tax %}. It's wrong, and the
@@ -203,6 +203,9 @@ about cash, not just about the company.
 example, ₹{% include inr.html n=e.perquisite_tax_with_cess %} of the ₹{% include inr.html n=e.total_tax_long_route %} total fell due before any
 share was sold, so the tax on exercise arrives before any sale proceeds.
 
-*The module's [data file](https://github.com/himanshug82/wealthprimer/blob/main/_data/tax2.yml)
-lists the sources these rules were checked against. For the valuation rule and the foreign/unlisted-share
-treatment they are secondary sources; no professional has reviewed this post.*
+## Sources
+
+- Income-tax Act, 2025 (ICAI copy of the Gazette text): the start-up deferral in s.289(3) (14 days after the earliest of 60 months from the end of the tax year, sale, or leaving the employer), which also refers to the perquisite provision (section 17(1)(d)).
+- Secondary sources, listed in the module's [data file](https://github.com/himanshug82/wealthprimer/blob/main/_data/tax2.yml): the perquisite formula, the cost of acquisition, the holding period from exercise, and the foreign or unlisted share column. Check the current rule. The FMV valuation method sits in the Income-tax Rules, which were not opened.
+
+*No professional has reviewed this post.*

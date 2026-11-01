@@ -130,8 +130,8 @@ between the two dates by far more than the tax difference, in either direction.
 
 ## Sources
 
-- [Income-tax Act, 2025 (a copy hosted by ICAI)](https://resource.cdn.icai.org/87647dtc-aps2139-inceome-tax-act-2025.pdf): the Act itself.
-- [Finance Act, 2026, Gazette of India](https://egazette.gov.in/WriteReadData/2026/271439.pdf): the Finance Act that made the 2026 changes.
-- [Memorandum explaining the provisions of the Finance Bill, 2026](https://www.indiabudget.gov.in/doc/memo.pdf): the government's explanation of those changes.
+- [Income-tax Act, 2025 (a copy hosted by ICAI)](https://resource.cdn.icai.org/87647dtc-aps2139-inceome-tax-act-2025.pdf): the Act itself; opened on 1 November 2026 to check the provisions this post describes. Points not found there are marked "check the current rule".
+- Finance Act, 2026 (Gazette of India): **not opened for this post** (the gazette copy could not be reached), so points that depend on the 2026 changes rest on the Bill's memorandum below and are flagged where they appear.
+- [Memorandum explaining the provisions of the Finance Bill, 2026](https://www.indiabudget.gov.in/doc/memo.pdf): the government's explanation of the Bill as introduced (the Bill, not the enacted Act).
 
 **Takeaway:** For listed equity and equity funds the line between short-term and long-term gains is 12 months, and for most other assets 24, counted from allotment or purchase to transfer and needing to be *more than*, not equal to. Each purchase carries its own clock, so one holding can contain both kinds of lot.

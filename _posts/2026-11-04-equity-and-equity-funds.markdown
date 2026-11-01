@@ -29,7 +29,7 @@ split at the line explained in the
 ```
 Held {{ r.equity_holding_months }} months or less   ->  STCG at {{ r.equity_stcg_pct }}%
 Held more than {{ r.equity_holding_months }} months  ->  LTCG at {{ r.equity_ltcg_pct }}%, but the first
-                              Rs {{ r.ltcg_annual_exemption }} of long-term gains
+                              Rs {% include inr.html n=r.ltcg_annual_exemption %} of long-term gains
                               each financial year is exempt
 
 Plus {{ r.cess_pct }}% health and education cess, applied on the TAX.
@@ -90,12 +90,12 @@ part can be set against short-term and long-term equity gains before the
 {{ r.equity_stcg_pct }}% or {{ r.equity_ltcg_pct }}% applies. A student or a retiree with little other income can
 owe less than the headline rate suggests.
 
-**The new-regime rebate doesn't cover them.** The new regime's rebate — up to
-₹60,000, for income up to ₹12 lakh, from FY 2025-26 — is not allowed against
-tax on these special-rate capital gains (the Income-tax Act, 2025 says so in its rebate provisions). So someone under ₹12 lakh can owe nothing on
-salary and still owe tax on an equity gain. How the ₹12 lakh limit itself
-counts such gains has been argued over; check the current rules, or a
-professional, if you're near it.
+**The new-regime rebate doesn't cover long-term gains.** The new regime's rebate — up to
+₹60,000, for income up to ₹12 lakh in Tax Year 2026-27 (check the current limit) — is not allowed against
+the tax on long-term capital gains taxed at the special rate (the Income-tax Act, 2025 says so for long-term gains; we did not
+check the equivalent clause for short-term gains, so check the current rule for those). So someone under ₹12 lakh can owe nothing on
+salary and still owe tax on a long-term equity gain. How the ₹12 lakh limit itself
+counts such gains is not covered here.
 
 ## Grandfathering: the 31 January 2018 rule
 
@@ -171,8 +171,8 @@ other charges.
 
 ## Sources
 
-- [Income-tax Act, 2025 (a copy hosted by ICAI)](https://resource.cdn.icai.org/87647dtc-aps2139-inceome-tax-act-2025.pdf): the Act itself.
-- [Finance Act, 2026, Gazette of India](https://egazette.gov.in/WriteReadData/2026/271439.pdf): the Finance Act that made the 2026 changes.
-- [Memorandum explaining the provisions of the Finance Bill, 2026](https://www.indiabudget.gov.in/doc/memo.pdf): the government's explanation of those changes.
+- [Income-tax Act, 2025 (a copy hosted by ICAI)](https://resource.cdn.icai.org/87647dtc-aps2139-inceome-tax-act-2025.pdf): the Act itself; opened on 1 November 2026 to check the provisions this post describes. Points not found there are marked "check the current rule".
+- Finance Act, 2026 (Gazette of India): **not opened for this post** (the gazette copy could not be reached), so points that depend on the 2026 changes rest on the Bill's memorandum below and are flagged where they appear.
+- [Memorandum explaining the provisions of the Finance Bill, 2026](https://www.indiabudget.gov.in/doc/memo.pdf): the government's explanation of the Bill as introduced (the Bill, not the enacted Act).
 
 **Takeaway:** Equity and equity funds are taxed at {{ r.equity_stcg_pct }}% short-term and {{ r.equity_ltcg_pct }}% long-term, with the first ₹{% include inr.html n=r.ltcg_annual_exemption %} of long-term gains each year exempt. The allowance is per person, per year, and expires unused. For holdings bought before February 2018, the grandfathered cost can change the gain.

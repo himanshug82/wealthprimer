@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Option payoff and breakeven, worked step by step"
-description: "How to compute an option's breakeven and its payoff at expiry for a call and a put, and why a cheaper out-of-the-money option needs a bigger move. Hypothetical index."
+description: "How to work out an option's breakeven and payoff at expiry for a call and a put, and why a cheaper out-of-the-money option needs a bigger move. Hypothetical index."
 image: /assets/og/option-payoff-and-breakeven.png
 date: 2026-11-05 09:00:00 +0530
 series: risk
@@ -63,8 +63,8 @@ The steps for the at-the-money call:
 
 Two things stand out in the table. The out-of-the-money options cost less per
 lot, but their breakevens are further away; "cheaper" and "closer to
-paying off" are different things. And the break-even *distance* on the call
-side and the put side is almost the same here only because the model has no
+paying off" are different things. And the distance to breakeven on the call
+side and the put side is nearly symmetrical here only because the model has no
 interest or dividends; real quotes differ.
 
 For each lot, the loss if the option expires with no payoff is the whole
@@ -78,9 +78,8 @@ out-of-the-money one.
   the premium.
 - **Reading a lower premium as a lower risk.** The out-of-the-money option
   risks less money per lot, but needs a bigger move to break even, so a loss
-  of the entire premium covers more of the possible outcomes. A smaller
-  amount at risk is not a smaller chance of losing it; this post gives no
-  probabilities, because the table is arithmetic, not a forecast.
+  of the entire premium covers more of the possible index levels. The table
+  is arithmetic, not a forecast, and gives no probabilities.
 - **Computing breakeven on the premium alone.** Brokerage, exchange charges
   and tax are real costs and move the true breakeven further out. They are
   left out here to keep the arithmetic clean; check a contract note for the

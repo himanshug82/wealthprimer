@@ -8,7 +8,7 @@ series: tax
 term: "ELSS"
 needs_review: tax
 rules_for: "Tax Year 2026-27 (FY 2026-27)"
-rules_as_of: "August 2026"
+rules_as_of: "November 2026"
 ---
 
 {% assign t = site.data.tax %}
@@ -17,7 +17,7 @@ rules_as_of: "August 2026"
 ## The question that changed
 
 This post describes the rules for Tax Year 2026-27 (FY 2026-27, the financial
-year from April 2026 to March 2027), as at August 2026. For two decades, the
+year from April 2026 to March 2027), as at November 2026. For two decades, the
 standard route to a tax deduction in India was the one long known as 80C: up to
 ₹1.5 lakh in ELSS (equity-linked savings scheme) funds, the PPF (Public
 Provident Fund), life insurance premiums, EPF (Employees' Provident Fund)
@@ -71,11 +71,11 @@ count for nothing.
 distinguishing features:
 
 - Contributions qualify for the ₹1.5 lakh deduction **in the old regime**
-- A **three-year lock-in** on every contribution
+- A **three-year lock-in** on every contribution (as ELSS schemes are generally described; the Act text read for this series refers only to notified mutual fund schemes, so check the current scheme terms)
 
 Two things about that lock-in are widely misunderstood.
 
-**The lock-in is three years.** For comparison, PPF's term is fifteen years
+**The lock-in is three years, as generally described; check the current scheme terms.** For comparison, PPF's term is fifteen years
 and tax-saving fixed deposits are typically locked for five years (those two
 figures come from the schemes' own rules, not from this post's sources; check the
 current terms).

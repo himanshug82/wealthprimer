@@ -8,7 +8,7 @@ series: tax
 term: "FIFO (tax lots)"
 needs_review: tax
 rules_for: "Tax Year 2026-27 (FY 2026-27)"
-rules_as_of: "August 2026"
+rules_as_of: "November 2026"
 ---
 
 {% assign t = site.data.tax %}
@@ -133,19 +133,15 @@ headline gain without splitting it by lot.
 ## What follows practically
 
 **The exemption is per financial year.** The ₹{% include inr.html n=r.ltcg_annual_exemption %} annual exemption applies to the long-term gains
-of one financial year, so the same total gain realised in one year or spread over
-two can produce different tax. This is a description of the mechanics, not a
-suggestion to time a redemption.
+of one financial year; it does not carry over to the next.
 
 **Stopping a SIP doesn't start any clock.** Holding periods run from each
 instalment's own purchase date, regardless of whether you're still investing.
 
 **Switching between funds is a redemption.** A switch — even within the same
-fund house — is a sale of one scheme and a purchase of another. It's a
-taxable event. So is moving from regular to direct plans of the same fund,
-which is worth knowing before acting on the
-[expense ratio post]({% post_url 2026-09-28-expense-ratios-direct-vs-regular %}): the ongoing saving is real, but
-the switch itself may trigger tax now.
+fund house — is generally treated as a sale of one scheme and a purchase of another, and so as a
+taxable event; no rule text for this was opened for this post, so check the current rule. The same generally applies to moving from regular to direct plans of the same fund
+(see the [expense ratio post]({% post_url 2026-09-28-expense-ratios-direct-vs-regular %})): the switch itself may be a taxable event, separate from the ongoing cost difference.
 
 **Dividend reinvestment creates new lots.** Each reinvested payout is a fresh
 purchase with a fresh date and its own clock.

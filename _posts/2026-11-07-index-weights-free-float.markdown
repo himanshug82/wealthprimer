@@ -10,6 +10,7 @@ term: "Index weighting (free-float market cap)"
 ---
 
 {% assign iw = site.data.jargon_m8.index_weights %}
+{% assign charlie_full = iw.rows[2].full_mcap %}
 
 ## What index weighting means
 
@@ -48,7 +49,7 @@ All five companies are made up, and so are the prices. "Shares" are in crore and
 {% for r in iw.rows -%}
 | {{ r.name }} | {{ r.shares_cr }} | {{ r.price }} | {{ r.iwf }} | {{ r.full_mcap }} | {{ r.ff_mcap }} | {{ r.w_full }}% | {{ r.w_ff }}% | {{ r.w_equal }}% |
 {% endfor %}
-The five companies together have a full market cap of ₹{% include inr.html n=iw.tot_full %} crore, but only ₹{% include inr.html n=iw.tot_ff %} crore of it is free float: {{ iw.ff_share_of_full_pct }}% of the total. Charlie and Echo have the same full market cap (₹{% include inr.html n=iw.rows[2].full_mcap %} crore each), yet Charlie's free-float weight ({{ iw.rows[2].w_ff }}%) is well above Echo's ({{ iw.rows[4].w_ff }}%), because {{ iw.rows[2].iwf }} of Charlie's shares float against {{ iw.rows[4].iwf }} of Echo's.
+The five companies together have a full market cap of ₹{% include inr.html n=iw.tot_full %} crore, but only ₹{% include inr.html n=iw.tot_ff %} crore of it is free float: {{ iw.ff_share_of_full_pct }}% of the total. Charlie and Echo have the same full market cap (₹{% include inr.html n=charlie_full %} crore each), yet Charlie's free-float weight ({{ iw.rows[2].w_ff }}%) is well above Echo's ({{ iw.rows[4].w_ff }}%), because {{ iw.rows[2].iwf }} of Charlie's shares float against {{ iw.rows[4].iwf }} of Echo's.
 
 ### One day later
 

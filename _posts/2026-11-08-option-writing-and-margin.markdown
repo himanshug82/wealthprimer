@@ -15,7 +15,7 @@ term: "Option writing"
 
 ## What writing an option means
 
-**Writing** (or *selling*) an option means taking the other side of the buyer's
+**Option writing** (also called *selling* an option) means taking the other side of the buyer's
 contract. The writer receives the premium on day one and, in exchange,
 accepts an obligation: if the buyer uses the option, the writer must pay the
 payoff. Where the
@@ -67,12 +67,12 @@ small part of the downside.
 
 ### Margin: why the deposit exists
 
-SEBI's circular of 1 October 2024 (SEBI/HO/MRD/TPD-1/P/CIR/2024/132, as read on
+The Securities and Exchange Board of India (SEBI) circular of 1 October 2024 (SEBI/HO/MRD/TPD-1/P/CIR/2024/132, as read on
 1 November 2026) reflects the structure: exchanges require brokers to collect
 margin upfront, and for short options on the day of expiry it adds an
-**additional extreme loss margin (ELM) of {{ w.elm_pct }}%** on all open short
-options and those initiated that day (paragraph 5.6, effective 20 November
-2024). It also removed the offset benefit of calendar spreads on expiry day
+**additional extreme loss margin (ELM) of {{ w.elm_pct }}%** on short options due to expire
+that day, whether open at the start of the day or initiated during it
+(paragraph 5.6, effective 20 November 2024). It also removed the offset benefit of calendar spreads on expiry day
 (paragraph 5.2, effective 1 February 2025).
 
 Actual margin amounts are set by the exchange and the clearing corporation, and
@@ -81,13 +81,18 @@ change with the market and the position. For the table above, this post
 number is for illustration only. On it, the premium received is
 {{ w.gain_over_margin_pct }}% of margin, while an index move of {{ w.example_move_pct }}% against
 a short call is a loss of about {{ w.example_loss_pct_margin }}% of it, and a larger move takes the loss
-past the whole deposit. If it does, the position can be closed out by
-the broker, or the shortfall must be topped up. A 2% add-on for expiry day,
+past the whole deposit. What happens to a shortfall is set by the broker's and the exchange's rules, so check
+them before relying on a figure like this one. A 2% add-on for expiry day,
 on the same contract value, would be ₹{% assign ex = w.expiry_extra %}{% include inr.html n=ex %} more.
+
+The number of option positions still outstanding at any time is called
+[open interest]({% post_url 2026-11-06-open-interest %}); for every written
+option there is a bought one, so open interest counts contracts, not
+people on one side.
 
 ### What SEBI's studies show about this side
 
-SEBI's August 2026 behaviour study found that, in FY 2025-26, about
+SEBI's August 2026 behaviour study found that, in FY 2025-26 (the financial year to March 2026), about
 {{ f.options_sellers_pct }}% of individual F&O traders were mainly option
 sellers, against about {{ f.options_buyers_pct }}% who were mainly buyers; its
 profitability study found that options accounted for about

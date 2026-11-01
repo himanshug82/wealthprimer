@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Option payoff and breakeven, worked step by step"
-description: "How to work out an option's breakeven and payoff at expiry for a call and a put, and why a cheaper out-of-the-money option needs a bigger move."
+description: "How to work out an option's breakeven and payoff at expiry for a call and a put, and why a lower-premium out-of-the-money option needs a bigger move."
 image: /assets/og/option-payoff-and-breakeven.png
 date: 2026-11-05 09:00:00 +0530
 series: risk
@@ -62,7 +62,7 @@ The steps for the at-the-money call:
    {{ c.call_prem }} points, equal to the premium, so profit or loss is zero.
 
 Two things stand out in the table. The out-of-the-money options cost less per
-lot, but their breakevens are further away; "cheaper" and "closer to
+lot, but their breakevens are further away; "lower-priced" and "closer to
 paying off" are different things. And the distance to breakeven on the call
 side and the put side is nearly symmetrical here only because the model has no
 interest or dividends; real quotes differ.
@@ -85,4 +85,4 @@ out-of-the-money one.
   left out here to keep the arithmetic clean; check a contract note for the
   actual figures.
 
-**Takeaway:** An option's breakeven is its strike plus the premium for a call, or its strike minus the premium for a put, and it is the level the index must pass before the buyer is ahead. A cheaper out-of-the-money option has a lower premium but a more distant breakeven, so the amount at risk is smaller while the move needed is larger.
+**Takeaway:** An option's breakeven is its strike plus the premium for a call, or its strike minus the premium for a put, and it is the level the index must pass before the buyer is ahead. A lower-premium out-of-the-money option has a lower premium but a more distant breakeven, so the amount at risk is smaller while the move needed is larger.

@@ -38,6 +38,9 @@ from any exchange quote.
 | Premium | The price of the option, quoted in index points, paid per unit |
 | Expiry | The date the contract ends. Past it, the option is worthless |
 
+Premiums are quoted like any traded price, with a gap between the best buying
+and selling quote; the [bid-ask spread post]({% post_url 2026-10-14-bid-ask-spread-and-liquidity %}) shows what that gap costs. The worked example below ignores it.
+
 ## The formula
 
 At expiry, with `S` the index level on the day and `K` the strike:
@@ -102,6 +105,10 @@ circular SEBI/HO/MRD/TPD-1/P/CIR/2024/132 dated 1 October 2024, as read on
   The circular's stated reason is that option prices move in a non-linear way
   and carry "very high implicit leverage".
 
+How income and losses from derivatives are taxed is a separate subject, covered in
+the [Tax series]({{ '/2026/11/13/fo-is-business-income/' | relative_url }}); this
+module states no tax rules.
+
 ## Common mistakes
 
 - **Reading "the most I can lose is the premium" as "the loss is small".**
@@ -123,8 +130,3 @@ circular SEBI/HO/MRD/TPD-1/P/CIR/2024/132 dated 1 October 2024, as read on
   are the evidence on how buyers actually fared.
 
 **Takeaway:** An option buyer pays a premium upfront for the right to buy (call) or sell (put) at a fixed strike, and the most the buyer can lose is that premium (the quoted points times the lot size). The premium is spent on day one, whether or not the option ends up worth anything.
-
-*Educational only: the Sample Index and its premiums are hypothetical, and
-nothing here is a recommendation to buy or sell any option. How income and
-losses from derivatives are taxed is in the
-[Tax series]({{ '/2026/11/13/fo-is-business-income/' | relative_url }}).*

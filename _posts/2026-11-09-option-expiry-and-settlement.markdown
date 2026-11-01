@@ -63,11 +63,11 @@ post say, in order:
 
 | Document (date) | Rule for the settlement price of an expiring index contract |
 |---|---|
-| Master Circular, Chapter 5 (30 Dec 2024) | The closing value of the index, based on the **last half hour VWAP** of the constituents |
-| SEBI circular on the Closing Auction Session, CAS (16 Jan 2026) | The closing value of the index, based on the **closing prices** of the constituents, with the CAS to be implemented from {{ e.sebi_jan2026.cas_start }} |
+| Master Circular, Chapter 5 (30 Dec 2024) | The closing value of the index, based on the **last half hour VWAP** (volume-weighted average price) of the constituents |
+| SEBI circular on the Closing Auction Session (CAS), a separate closing session in the cash market (16 Jan 2026) | The closing value of the index, based on the **closing prices** of the constituents, with the CAS to be implemented from {{ e.sebi_jan2026.cas_start }} |
 | SEBI circular {{ e.sebi_oct2026.number }} ({{ e.sebi_oct2026.date }}) | From **{{ e.sebi_oct2026.effective }}**: the index value calculated using the **VWAP of the constituents during the last {{ e.sebi_oct2026.window_min }} minutes** of the continuous trading session (CTS) |
 
-VWAP is the volume-weighted average price, as in the
+VWAP is explained in the
 [OBV and VWAP post]({% post_url 2026-10-21-obv-and-vwap %}). Stock derivatives
 expiring on that day follow the matching rule: from {{ e.sebi_oct2026.effective }},
 their settlement price is the VWAP of the underlying over the last
@@ -93,7 +93,7 @@ On expiry day SEBI's circular of 1 October 2024 (SEBI/HO/MRD/TPD-1/P/CIR/2024/13
 also removed the calendar-spread margin offset and added 2% extra margin for
 short options, as the [writing post]({{ '/2026/11/08/option-writing-and-margin/' | relative_url }})
 described, and limited each exchange to one benchmark index with weekly
-expiries. NSE's contract-specification page, updated {{ e.nse.page_date }}, lists
+expiries. The National Stock Exchange (NSE) contract-specification page, updated {{ e.nse.page_date }}, lists
 {{ e.nse.expiry_day }} as the expiry day for its listed index contracts; the expiry
 calendar changes, so check the current one.
 
@@ -143,7 +143,7 @@ one-stock index is a simplification.
 - **Treating the first rows of the table as today's rule.** The December 2024
   and January 2026 rules were superseded, in part, by the October 2026
   circular, effective {{ e.sebi_oct2026.effective }}. Part of that circular (the
-  treatment of unexecuted iceberg orders) applies later, from
+  treatment of unexecuted limit and iceberg orders carried into the closing session) applies later, from
   {{ e.sebi_oct2026.iceberg_effective }}.
 - **Reading a rules summary as a trading note.** The facts here are as of
   1 November 2026 and come from the circulars named. Exchanges publish the

@@ -121,6 +121,14 @@ charges:
     stamp: 9.63
     gst: 3.6
     total: 99.4
+    fmt:
+      brokerage: '20.00'
+      txn: '1.91'
+      sebi: '0.06'
+      stt: '64.20'
+      stamp: '9.63'
+      gst: '3.60'
+      total: '99.40'
   sell:
     value: 65500
     brokerage: 20
@@ -130,11 +138,22 @@ charges:
     stamp: 0.0
     gst: 3.6
     total: 91.12
+    fmt:
+      brokerage: '20.00'
+      txn: '1.95'
+      sebi: '0.07'
+      stt: '65.50'
+      stamp: none
+      gst: '3.60'
+      total: '91.12'
   gross_gain: 1300
   total_charges: 190.52
   net_after_charges: 1109.48
   charges_pct_of_gross: 14.7
   stt_total: 129.7
+  total_fmt: '190.52'
+  net_fmt: 1,109.48
+  stt_total_fmt: '129.70'
 ipo:
   as_of: November 2026
   master_circular: HO/49/14/14(2)2026-CFD-POD2/I/4518/2026 (last updated 9 February 2026)

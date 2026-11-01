@@ -19,7 +19,7 @@ Every derivatives contract has two sides: someone who is long and someone who is
 
 That makes OI different from **[volume]({% post_url 2026-10-07-volume %})**, which counts how many contracts *changed hands* during the day, however many times. Volume is a flow, and it resets each day. Open interest carries over: it is whatever is left open at the close.
 
-If you are new to the contracts themselves, the [call and put options post]({{ '/2026/11/04/call-and-put-options/' | relative_url }}) in the Risk series explains what is being counted. This post is part of [Jargon, Decoded]({{ '/series/jargon/' | relative_url }}). Exchanges publish open interest for each contract; the definition here is stated in our own words as a counting convention, not quoted from a rule.
+If you are new to the contracts themselves, the [call and put options post]({% post_url 2026-11-04-call-and-put-options %}) in the Risk series explains what is being counted. This post is part of [Jargon, Decoded]({{ '/series/jargon/' | relative_url }}). Exchanges publish open interest for each contract; the definition here is stated in our own words as a counting convention, not quoted from a rule.
 
 ## The rule of thumb
 

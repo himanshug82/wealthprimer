@@ -72,7 +72,7 @@ If the 15% a year is spread evenly over {{ i.comp_basis_days }} days (an assumpt
 | {{ r.amount }} | {{ r.pct_per_day }} | {{ r.per_day }} |
 {% endfor %}
 
-The two are equal at about ₹{% include inr.html n=i.comp_breakeven %}. Below that the flat ₹{{ i.comp_per_day }} a day is the higher figure, which covers most retail applications. If your money is late, the route to claiming is a complaint to the intermediary or bank; SEBI's complaint system, SCORES (SEBI Complaints Redress System), is the usual next step, and the next post in this series covers it.
+The two are equal at about ₹{% include inr.html n=i.comp_breakeven %}. Below that the flat ₹{{ i.comp_per_day }} a day is the higher figure, which covers most retail applications. If your money is late, the route to claiming is a complaint to the intermediary or bank; SEBI's complaint system, SCORES (SEBI Complaints Redress System), is the usual next step, and a later post in this series covers it.
 
 ## Common mistakes
 

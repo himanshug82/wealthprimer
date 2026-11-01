@@ -19,7 +19,7 @@ rules_as_of: "September 2026"
 
 ## What changes when you leave
 
-This post covers Tax Year 2026-27 (FY 2026-27, April 2026 to March 2027). TDS is tax deducted at source; UTI and AMFI (Association of Mutual Funds in India) appear as the fund house and data source.
+This post covers Tax Year 2026-27 (FY 2026-27, April 2026 to March 2027). TDS is tax deducted at source. UTI (the fund house), AMFI (Association of Mutual Funds in India, the data source), NAV (net asset value, a fund's per-unit price), IDCW (income distribution cum capital withdrawal, a fund's payout option), STT (securities transaction tax), NRE (non-resident external) and NRO (non-resident ordinary) are the terms used below.
 
 An **NRI — non-resident Indian** — is, for tax, simply an Indian citizen (or
 person of Indian origin) who isn't resident in India in the tax year. Broadly,
@@ -40,10 +40,10 @@ largely the ones earlier posts in this series used. What changes is
 | | Resident | Non-resident |
 |---|---|---|
 | Mutual fund redemption | No TDS; you pay at filing (or through [advance tax]({% post_url 2026-11-17-advance-tax-for-investors %})) | **TDS on the gain** at the applicable rate |
-| Fund IDCW, share dividends | 10% TDS above a threshold | 20% TDS, or the treaty rate if lower |
-| Bank interest | 10% TDS above a threshold | **NRO: 30% TDS** plus cess · **NRE: exempt** |
+| Fund IDCW, share dividends | TDS at a rate and threshold set by the Act (check the current rule) | Described as 20% TDS, or the treaty rate if lower (per the Finance Bill, 2026 as introduced; check the Act) |
+| Bank interest | TDS above a threshold (check the current rule) | **NRO: described as 30% TDS** plus cess · **NRE: exempt** (check the current rule) |
 
-## TDS on capital gains
+## TDS on capital gains in Tax Year 2026-27
 
 When a non-resident sells or redeems, the payer (the fund house, or the
 broker for listed shares) deducts tax from the **gain** before paying out.
@@ -52,7 +52,7 @@ non-resident Indian:
 
 | Gain | TDS rate |
 |---|---:|
-| Long-term, equity shares and equity funds (above ₹{% include inr.html n=r.ltcg_annual_exemption %} a year) | {{ x.tds_eq_ltcg_pct }}% |
+| Long-term, equity shares and equity funds | {{ x.tds_eq_ltcg_pct }}% (whether the payer applies the ₹{% include inr.html n=r.ltcg_annual_exemption %} exemption at source is not established here; see the worked example) |
 | Short-term, equity shares and equity funds (STT paid) | {{ x.tds_eq_stcg_pct }}% |
 | Other long-term gains | {{ x.tds_eq_ltcg_pct }}% |
 | Other income, including short-term gains on debt funds | {{ x.tds_other_pct }}% |
@@ -85,13 +85,14 @@ surcharge.
 | Redemption value | ₹{% include inr.html n=x.eq_value %} | ₹{% include inr.html n=x.gilt_value %} |
 | Gain | ₹{% include inr.html n=x.eq_gain %} | ₹{% include inr.html n=x.gilt_gain %} |
 | Treated as | Long-term, equity | Short-term, whatever the holding period (debt fund bought after 1 April 2023) |
-| Taxable | ₹{% include inr.html n=x.eq_taxable %} (after the ₹{% include inr.html n=r.ltcg_annual_exemption %} exemption) | ₹{% include inr.html n=x.gilt_gain %} |
-| TDS rate | {{ x.tds_eq_ltcg_pct }}% + cess | {{ x.tds_other_pct }}% + cess |
-| **Deducted at source** | **₹{% include inr.html n=x.eq_tds_with_cess %}** | **₹{% include inr.html n=x.gilt_tds_with_cess %}** |
+| Taxable | ₹{% include inr.html n=x.eq_taxable %} after the ₹{% include inr.html n=r.ltcg_annual_exemption %} exemption (for the tax itself) | ₹{% include inr.html n=x.gilt_gain %} |
+| Rate | {{ x.tds_eq_ltcg_pct }}% + cess | {{ x.tds_other_pct }}% + cess |
+| Tax on the gain | ₹{% include inr.html n=x.eq_tax_after_exemption_with_cess %} | ₹{% include inr.html n=x.gilt_tds_with_cess %} |
+| **If the payer deducts on the whole gain** | **₹{% include inr.html n=x.eq_tds_whole_gain_with_cess %}** | **₹{% include inr.html n=x.gilt_tds_with_cess %}** |
 
-A resident in the 30% slab would owe exactly the same on each: ₹{% include inr.html n=x.eq_tds_with_cess %} and
-₹{% include inr.html n=x.gilt_resident_tax_with_cess %}. The difference is that the resident gets the full redemption
-and pays later; the NRI receives the money with the tax already gone. The
+A resident in the 30% slab would owe ₹{% include inr.html n=x.eq_tax_after_exemption_with_cess %} on the equity fund and
+₹{% include inr.html n=x.gilt_resident_tax_with_cess %} on the gilt fund. The difference is that the resident gets the full redemption
+and pays later; the NRI receives the money with the tax already deducted. Whether the equity-fund deduction is ₹{% include inr.html n=x.eq_tax_after_exemption_with_cess %} (exemption applied at source) or ₹{% include inr.html n=x.eq_tds_whole_gain_with_cess %} (deduction on the whole gain, with the exemption claimed on filing) depends on how the payer applies the rules; we have not confirmed which, so check with the payer. The
 gilt fund's treatment is the debt-fund rule from the
 [debt funds tax post]({% post_url 2026-11-05-debt-funds-gold-and-the-rest %}): no long-term category for units
 bought from April 2023.
@@ -100,7 +101,7 @@ Two consequences follow. **TDS can overshoot.** The payer doesn't know your
 other losses or your treaty position, so if your actual liability is lower,
 you get the difference back only by filing a return. And if you expect a
 lower liability in advance, you can apply for a **lower or nil TDS
-certificate** (section 395).
+certificate** (section 395 of the 2025 Act as we read it).
 
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
@@ -152,20 +153,20 @@ The NRE exemption (Schedule IV of the 2025 Act) is for an individual who is a
 "person resident outside India" **under FEMA** — the Foreign Exchange
 Management Act — which has its own residence test, separate from the tax
 one. When you move back and become resident under FEMA, the exemption stops;
-the account should be redesignated, and interest from then on is taxable.
+interest from then on is taxable. What the bank requires of the account itself (redesignation, for instance) is an RBI and FEMA matter we have not checked; ask the bank.
 
 The NRO TDS rate is steep because it's the Act's rate for "other income". If
 your total Indian income is modest, the TDS may exceed your actual liability,
-and you recover it by filing — or head it off with a treaty rate and TRC, or
-a lower-deduction certificate.
+and you recover it by filing. A treaty rate with a TRC, or a lower-deduction
+certificate, are the routes the Act provides for a lower deduction.
 
 ## Common mistakes
 
 - **Treating TDS as the final tax.** It's a deduction on account, like a
   resident's. If it's more than you owe, the refund comes only through a
   return.
-- **Assuming the ₹{% include inr.html n=r.ltcg_annual_exemption %} exemption is lost abroad.** It isn't; TDS on equity
-  long-term gains applies only above it. What an NRI loses is the resident-only
+- **Assuming the ₹{% include inr.html n=r.ltcg_annual_exemption %} exemption is lost abroad.** The exemption is part of the
+  tax computation; whether it is applied at source on TDS is not established here, so check with the payer. What an NRI loses is the resident-only
   basic-exemption adjustment and rebate.
 - **Claiming a treaty rate without a TRC.** The Act requires the certificate
   and prescribed documents for the claim.
@@ -199,5 +200,5 @@ rates a resident would pay — the difference is that it's taken at source,
 treaty rate needs a TRC, and any excess TDS comes back only if you file.
 
 *The module's [data file](https://github.com/himanshug82/wealthprimer/blob/main/_data/tax3.yml)
-lists the sections of the Income-tax Act, 2025 behind every rule here, and
-the points a professional should confirm before you rely on them.*
+lists the sections of the Income-tax Act, 2025 behind the rules here, and
+the points still to be confirmed (the Finance Act 2026 was not opened).*

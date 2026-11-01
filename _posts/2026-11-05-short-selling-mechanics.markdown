@@ -41,7 +41,7 @@ The rows above are the framework as restated in the 5 January 2024 circular. It 
 Because the framework bans naked shorting, a short seller has two ways to meet the delivery obligation:
 
 - **Buy back before the day ends.** The sale and the purchase cancel out, and nothing is left to deliver. This is the simplest route.
-- **Borrow the shares.** To stay short beyond the day, the seller needs shares to deliver at settlement. The SLB scheme exists to let investors borrow shares from holders who lend them. Terms, fees and eligibility are set by the exchanges, so check them with your broker.
+- **Borrow the shares.** To stay short beyond the day, the seller needs shares to deliver at settlement. The SLB scheme exists to let investors borrow shares from holders who lend them. Check the current terms, fees and eligibility with your broker or the exchange.
 
 Either way the settlement cycle matters: shares sold today are due for delivery on the next trading day under [T+1 settlement]({% post_url 2026-10-16-t-plus-1-settlement %}).
 
@@ -60,7 +60,7 @@ Most a short can lose    =  no upper limit  (a price has no ceiling)
 
 Desi Bites is our [fictional case-study company]({{ '/case-study/' | relative_url }}). Suppose someone sells {{ ss.qty }} shares short at ₹{% include inr.html n=ss.sell_price %}. That brings in ₹{% include inr.html n=ss.proceeds %}. The price later moves, and they buy back to close. Brokerage, taxes and any cost of borrowing are left out. All numbers are invented, for illustration only.
 
-| Price change before buy-back | Buy-back price | Short seller's result | A buyer at the same entry |
+| Price change before buy-back | Buy-back price | Short seller's gain (+) or loss (−) | A buyer at the same entry |
 |---|---:|---:|---:|
 {% for r in ss.rows -%}
 {% assign sp = r.short_pl -%}{% assign lp = r.long_pl -%}

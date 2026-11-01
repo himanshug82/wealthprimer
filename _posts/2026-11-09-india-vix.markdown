@@ -2,7 +2,7 @@
 layout: post
 title: "India VIX: what the number measures"
 seo_title: "What is India VIX? Meaning and how it's computed"
-description: "India VIX is NSE's volatility index, built from Nifty option prices and quoted as an annualised %. What it measures, how to read a level, what it can't say."
+description: "India VIX is NSE's volatility index, built from Nifty option prices and quoted as an annualised %. What it measures, how to read it, what it can't say."
 image: /assets/og/india-vix.png
 date: 2026-11-09 09:00:00 +0530
 series: jargon
@@ -58,7 +58,7 @@ These VIX levels are **invented**, for illustration only; no live or historical 
 {% endfor %}
 Read the table as a statement about *option prices*, not about the future: "at these option prices, the market's pricing is consistent with a typical 30-day swing of about this size". Moves can, and do, exceed one standard deviation fairly often; it is a typical size, not a limit.
 
-The idea is the same one the Risk series develops for individual options in [implied volatility]({{ '/2026/11/07/implied-volatility/' | relative_url }}); here it is applied to the whole index. For how an individual stock's swings compare with the market's, see [beta]({% post_url 2026-10-02-beta %}); for volatility measured from past returns, see [volatility and Sharpe]({% post_url 2026-09-30-volatility-and-sharpe %}).
+The idea is the same one the Risk series develops for individual options in [implied volatility]({% post_url 2026-11-07-implied-volatility %}); here it is applied to the whole index. For how an individual stock's swings compare with the market's, see [beta]({% post_url 2026-10-02-beta %}); for volatility measured from past returns, see [volatility and Sharpe]({% post_url 2026-09-30-volatility-and-sharpe %}).
 
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>

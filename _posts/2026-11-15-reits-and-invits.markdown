@@ -224,4 +224,4 @@ the final tax. In the 30% slab you'll owe the difference.
 
 *The module's [data file](https://github.com/himanshug82/wealthprimer/blob/main/_data/tax3.yml)
 lists the sections of the Income-tax Act, 2025 behind every rule here, and
-the points a professional should confirm before you rely on them.*
+the points still to be confirmed.*

@@ -78,16 +78,11 @@ Section 424 (default — "paid too little overall"):
 Both charges are computed on the tax **after**
 TDS.
 
-## Why capital gains get special treatment
+## Why capital gains get special treatment in Tax Year 2026-27
 
 The instalment schedule assumes income arrives evenly. A capital gain doesn't:
 you can't pay 15% of the tax on an August sale by 15 June. So section 425(4)
-carves it out:
-
-> No interest for a shortfall caused by **capital gains**, **dividends**,
-> lottery-type winnings, or the first year's business income — **provided**
-> the tax on that income is paid in full in the remaining instalments, or by
-> 31 March.
+carves it out. In our paraphrase (not the statute's words, and it omits some detail such as which dividends count), no interest is charged for a shortfall caused by capital gains, dividends, lottery-type winnings or the first year's business income, provided the tax on that income is paid in full in the remaining instalments, or by 31 March.
 
 That proviso is the key condition. If the gain's tax is paid in the next instalment
 after the sale, the earlier shortfall is forgiven. If it isn't, the
@@ -151,7 +146,7 @@ On 15 June the investor is ₹{% include inr.html n=x.june_shortfall_a %} short 
 shortfall is entirely due to a gain that didn't exist yet, and its tax was
 paid in the next instalment, so section 425(4) forgives it. **Interest: ₹0.**
 
-### B: pays nothing until filing on 31 July 2027
+### B: pays nothing until filing (illustrative date: 31 July 2027)
 
 | Date | Shortfall | Rate | Interest (section 425) |
 |---|---:|---:|---:|
@@ -184,7 +179,7 @@ computing interest, so the portal's numbers can differ by a few rupees.
 
 ## Common mistakes
 
-- **Assuming TDS means you're done.** TDS on interest and dividends is 10%.
+- **Assuming TDS means you're done.** TDS on interest and dividends is described as 10% in this example (check the current rate and threshold), and it may not cover the tax due.
   In a higher slab the rest is due during the year, through advance tax.
 - **Waiting until filing to pay tax on a big redemption.** Residents get no
   TDS on fund redemptions, so section 425(4) forgives the earlier shortfall only
@@ -203,4 +198,4 @@ interest runs as if you'd known about the gain in June.
 
 *The module's [data file](https://github.com/himanshug82/wealthprimer/blob/main/_data/tax3.yml)
 lists the sections of the Income-tax Act, 2025 behind every rule here, and
-the points a professional should confirm before you rely on them.*
+the points still to be confirmed.*

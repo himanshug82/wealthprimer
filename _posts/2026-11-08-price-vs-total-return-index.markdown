@@ -11,6 +11,7 @@ term: "Total-return index (TRI)"
 
 {% assign tr = site.data.jargon_m8.price_vs_tr %}
 {% assign il = tr.illustration %}
+{% assign long = tr.rows[2] %}
 
 ## What a total-return index means
 
@@ -50,7 +51,7 @@ Both series run to {{ tr.data_end | date: "%-d %B %Y" }}. The price index is Yah
 {% endfor %}
 CAGR is the compound annual growth rate: the steady yearly rate that would take the starting level to the ending level over the window. The table is historical, for illustration only.
 
-Put in rupees, ₹1,00,000 invested at the start of the longest window ({{ tr.rows[2].label }}) would have grown to ₹{% include inr.html n=tr.rows[2].pr_100k %} on the price index and ₹{% include inr.html n=tr.rows[2].tr_100k %} on the TRI. The ₹{% assign diff = tr.rows[2].tr_100k | minus: tr.rows[2].pr_100k %}{% include inr.html n=diff %} difference is the reinvested dividends. In the one-year window both series fell, and the TRI fell a little less, because the dividends partly offset the price loss.
+Put in rupees, ₹1,00,000 invested at the start of the longest window ({{ long.label }}) would have grown to ₹{% include inr.html n=long.pr_100k %} on the price index and ₹{% include inr.html n=long.tr_100k %} on the TRI. The ₹{% assign diff = long.tr_100k | minus: long.pr_100k %}{% include inr.html n=diff %} difference is the reinvested dividends. In the one-year window both series fell, and the TRI fell a little less, because the dividends partly offset the price loss.
 
 These are index figures. They are not what an investor would have received: nobody earns an index return, and the TRI assumes dividends are reinvested in full with no tax or cost.
 

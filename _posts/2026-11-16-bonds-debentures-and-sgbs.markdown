@@ -20,7 +20,7 @@ rules_as_of: "September 2026"
 
 ## Two kinds of return, taxed separately
 
-This post describes Tax Year 2026-27 (FY 2026-27, April 2026 to March 2027). YTM, REIT and InvIT are expanded where first used below.
+This post describes Tax Year 2026-27 (FY 2026-27, April 2026 to March 2027). YTM (yield to maturity), REIT (real estate investment trust) and InvIT (infrastructure investment trust) are the terms used below.
 
 A bond pays you in two ways. There's the **coupon** — the interest it pays
 each year — and there's whatever you make or lose on the price, if you sell
@@ -50,7 +50,7 @@ slab rate, exactly like the deposit interest in the
 
 TDS (tax deducted at source) on "interest on securities" is described as 10% for a
 resident (check the current rate), once the year's interest from a payer crosses
-₹{% include inr.html n=x.ncd_tds_threshold %}. Listed demat debentures used to be exempt from TDS; that
+₹{% include inr.html n=x.ncd_tds_threshold %} (the threshold is in the TDS table of the Income-tax Act, 2025, ICAI copy; check the current rule). Listed demat debentures used to be exempt from TDS; that
 exemption was removed from 1 April 2023 (Memorandum to the Finance Bill,
 2023), because the interest was being under-reported. Most Central and
 State government securities still have no TDS.
@@ -178,10 +178,10 @@ covers the gold price gain, not the coupon.
 ## Surcharge
 
 All of the above assumes income under ₹50 lakh. Above it, a surcharge is
-added before cess. On bond interest, and on gains taxed at slab, it follows
-the ordinary scale (up to 25% in the new regime). On long-term gains from
-listed bonds and SGBs taxed at {{ r.equity_ltcg_pct }}%, it's capped at 15%. The
-[opening post]({% post_url 2026-11-02-how-investment-income-is-taxed %}) has the thresholds.
+added before cess. Bond interest, and gains taxed at slab, follow the ordinary
+scale. Which gains get a lower surcharge cap is set out, with its source and
+hedge, in the
+[opening post]({% post_url 2026-11-02-how-investment-income-is-taxed %}); we have not confirmed that any such cap extends to bond or SGB gains, so check the current rule.
 
 ## Common mistakes
 
@@ -201,9 +201,9 @@ listed bonds and SGBs taxed at {{ r.equity_ltcg_pct }}%, it's capped at 15%. The
 **Takeaway:** Bond interest is taxed at your slab every year; the gain
 depends on the wrapper. Listed bonds become long-term after {{ r.equity_holding_months }} months at
 {{ r.equity_ltcg_pct }}% with no exemption, unlisted bonds and market-linked debentures are
-always taxed at slab, and an SGB's gain is tax-free only if you subscribed at
+always taxed at slab, and, on the Finance Bill 2026's wording (check the Act), an SGB's gain is tax-free only if you subscribed at
 issue and held to maturity.
 
 *The module's [data file](https://github.com/himanshug82/wealthprimer/blob/main/_data/tax3.yml)
-lists the sections of the Income-tax Act, 2025 behind every rule here, and
-the points a professional should confirm before you rely on them.*
+lists the sections of the Income-tax Act, 2025 behind the rules here, and
+the points still to be confirmed (the Finance Act 2026 was not opened).*

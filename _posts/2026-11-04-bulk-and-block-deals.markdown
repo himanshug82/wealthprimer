@@ -13,6 +13,7 @@ term: "Bulk deal and block deal"
 {% assign bk = bb.bulk %}
 {% assign bl = bb.block %}
 {% assign ds = bb.desi %}
+{% assign t1 = bk.day_trades[0] %}{% assign t2 = bk.day_trades[1] %}{% assign t3 = bk.day_trades[2] %}
 
 ## What bulk and block deals mean
 
@@ -34,10 +35,10 @@ This is a [Jargon, Decoded]({{ '/series/jargon/' | relative_url }}) post. Rules 
 | Where it trades | The normal market | A separate window: {{ bl.morning_window }} (morning) or {{ bl.afternoon_window }} (afternoon) |
 | Size | Measured in shares, as a share of the company | Minimum order size ₹{{ bl.min_order_cr }} crore |
 | Price | Whatever the market price was | Within {{ bl.band_pct }}% of a reference price (see below) |
-| Delivery | Normal settlement | Every trade must result in delivery; it cannot be squared off or reversed |
+| Delivery | No separate delivery rule in the bulk-deal paragraph | Every trade must result in delivery; it cannot be squared off or reversed |
 | Disclosure | Brokers report the stock, client name, quantity and price immediately; the exchange publishes it the same day, after market hours | The exchange publishes the stock, client name, quantity and price the same day, after market hours |
 
-Sources: the bulk-deal rule is paragraph 1.1 of Chapter 1 of SEBI's [Master Circular for Stock Exchanges and Clearing Corporations](https://www.sebi.gov.in/sebi_data/commondocs/dec-2024/RE_Chapter%201%20-%20Trading%20-%20NEW_p.pdf) (SEBI/HO/MRD-PoD2/CIR/P/2024/00181, 30 December 2024). The block-deal rules are in SEBI's circular [SEBI/HO/MRD/POD-III/CIR/P/2025/134, {{ bl.circular_date }}, "Review of Block Deal Framework"](https://www.sebi.gov.in/legal/circulars/oct-2025/review-of-block-deal-framework_97145.html), applicable from the 60th day after issue ({{ bl.applicable_from }} by our count). The October 2025 circular revised the earlier block-deal framework, so articles written before it may quote older limits.
+Sources: the bulk-deal rule is paragraph 1.1 of Chapter 1 of SEBI's [Master Circular for Stock Exchanges and Clearing Corporations](https://www.sebi.gov.in/sebi_data/commondocs/dec-2024/RE_Chapter%201%20-%20Trading%20-%20NEW_p.pdf) (SEBI/HO/MRD-PoD2/CIR/P/2024/00181, 30 December 2024). The block-deal rules are in SEBI's circular [SEBI/HO/MRD/POD-III/CIR/P/2025/134, {{ bl.circular_date }}, "Review of Block Deal Framework"](https://www.sebi.gov.in/legal/circulars/oct-2025/review-of-block-deal-framework_97145.html), applicable from the 60th day after issue ({{ bl.applicable_from }} by our count). The October 2025 circular revised the earlier block-deal framework, so articles written before it may quote older limits. The master circular I read is dated 30 December 2024; a later master circular may carry updated text, so check the current one.
 
 ## The tests
 
@@ -62,7 +63,7 @@ Desi Bites is our [fictional case-study company]({{ '/case-study/' | relative_ur
 **Bulk deal**
 
 1. {{ bk.threshold_pct }}% of {% include inr.html n=ds.total_shares %} shares is {% include inr.html n=bk.threshold_shares %} shares. A day's trading above that is a bulk deal.
-2. A fund buys {% include inr.html n=bk.day_trades[0] %}, then {% include inr.html n=bk.day_trades[1] %}, then {% include inr.html n=bk.day_trades[2] %} shares in three separate trades. The total is {% include inr.html n=bk.day_total %} shares, or {{ bk.day_total_pct }}% of the company. No single trade is large, but the day's total crosses the line, so it is reported as a bulk deal.
+2. A fund buys {% include inr.html n=t1 %}, then {% include inr.html n=t2 %}, then {% include inr.html n=t3 %} shares in three separate trades. The total is {% include inr.html n=bk.day_total %} shares, or {{ bk.day_total_pct }}% of the company. No single trade is large, but the day's total crosses the line, so it is reported as a bulk deal.
 3. Had the fund bought exactly {% include inr.html n=bk.edge_total %} shares ({{ bk.edge_pct }}%), the total would *not* be "more than" {{ bk.threshold_pct }}%, and the rule would not apply.
 
 **Block deal**

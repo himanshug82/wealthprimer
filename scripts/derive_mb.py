@@ -174,8 +174,11 @@ def side(value, buy):
     r = lambda x: round(x, 2)
     parts = [r(brokerage), r(txn), r(sebi), r(stt), r(stamp), r(gst)]
     total = r(sum(parts))              # total of the rounded lines, so the table reproduces
+    f = lambda x: "{:,.2f}".format(x)          # paise shown, thousands grouped later by the table include
     return dict(value=value, brokerage=parts[0], txn=parts[1], sebi=parts[2], stt=parts[3], stamp=parts[4],
-                gst=parts[5], total=total)
+                gst=parts[5], total=total,
+                fmt=dict(brokerage=f(parts[0]), txn=f(parts[1]), sebi=f(parts[2]), stt=f(parts[3]),
+                         stamp=f(parts[4]) if parts[4] else "none", gst=f(parts[5]), total=f(total)))
 
 
 buy_v, sell_v = CH_QTY * CH_BUY_PX, CH_QTY * CH_SELL_PX
@@ -189,6 +192,8 @@ CHARGES.update(
     charges_pct_of_gross=round(total_ch / gross * 100, 1),
     stt_total=round(BUY["stt"] + SELL["stt"], 2),
 )
+CHARGES.update(total_fmt="{:,.2f}".format(CHARGES["total_charges"]), net_fmt="{:,.2f}".format(CHARGES["net_after_charges"]),
+               stt_total_fmt="{:,.2f}".format(CHARGES["stt_total"]))
 assert gross == 1300
 
 # ---- IPO application (ICDR master circular, 9 Feb 2026; read 1 Nov 2026) ----

@@ -61,15 +61,15 @@ You buy {{ c.qty }} shares at ₹{{ c.buy_px }} (₹{% include inr.html n=b.valu
 | Line | Buy side (₹) | Sell side (₹) |
 |---|---:|---:|
 | Traded value | {{ b.value }} | {{ s.value }} |
-| Brokerage | {{ b.brokerage }} | {{ s.brokerage }} |
-| Exchange transaction charge | {{ b.txn }} | {{ s.txn }} |
-| SEBI turnover fee | {{ b.sebi }} | {{ s.sebi }} |
-| STT | {{ b.stt }} | {{ s.stt }} |
-| Stamp duty | {{ b.stamp }} | {{ s.stamp }} |
-| GST on brokerage (assumed base) | {{ b.gst }} | {{ s.gst }} |
-| **Total charges** | **{{ b.total }}** | **{{ s.total }}** |
+| Brokerage | {{ b.fmt.brokerage }} | {{ s.fmt.brokerage }} |
+| Exchange transaction charge | {{ b.fmt.txn }} | {{ s.fmt.txn }} |
+| SEBI turnover fee | {{ b.fmt.sebi }} | {{ s.fmt.sebi }} |
+| STT | {{ b.fmt.stt }} | {{ s.fmt.stt }} |
+| Stamp duty | {{ b.fmt.stamp }} | {{ s.fmt.stamp }} |
+| GST on brokerage (assumed base) | {{ b.fmt.gst }} | {{ s.fmt.gst }} |
+| **Total charges** | **{{ b.fmt.total }}** | **{{ s.fmt.total }}** |
 
-Add the two sides: ₹{{ c.total_charges }} of charges against a ₹{% include inr.html n=c.gross_gain %} price difference. That leaves ₹{{ c.net_after_charges }} before depository charges and before any income tax on the gain, and the charges took {{ c.charges_pct_of_gross }}% of the price difference. STT alone was ₹{{ c.stt_total }}, more than half of the total.
+Add the two sides: ₹{{ c.total_fmt }} of charges against a ₹{% include inr.html n=c.gross_gain %} price difference. That leaves ₹{{ c.net_fmt }} before depository charges and before any income tax on the gain, and the charges took {{ c.charges_pct_of_gross }}% of the price difference. STT alone was ₹{{ c.stt_total_fmt }}, more than half of the total.
 
 The rounding is per line, to the paisa, and the totals add the rounded lines, so you can recompute every cell. Real contract notes may round differently.
 

@@ -2,7 +2,7 @@
 layout: post
 title: "Gifts and clubbing: why moving money to family rarely moves the tax"
 seo_title: "Gifts and clubbing of income, explained"
-description: "Gifts from relatives are tax-free, others above Rs 50,000 aren't. But income on money gifted to a spouse or minor child is still taxed in your hands."
+description: "Gifts from relatives are tax-free; from others, money above ₹50,000 in a year is taxed. Income on gifts to a spouse or minor child is clubbed into yours."
 image: /assets/og/gifts-and-clubbing.png
 date: 2026-11-18 09:00:00 +0530
 series: tax
@@ -19,7 +19,7 @@ rules_as_of: "September 2026"
 
 ## Two questions, two sets of rules
 
-This post covers Tax Year 2026-27 (FY 2026-27, April 2026 to March 2027). Terms such as NAV (net asset value) and AIS (Annual Information Statement) are expanded where used.
+This post covers Tax Year 2026-27 (FY 2026-27, April 2026 to March 2027). NAV means net asset value, the per-unit price of a mutual fund.
 
 When money or investments move within a family, two separate tax questions
 come up, and people tend to blur them:
@@ -31,18 +31,17 @@ come up, and people tend to blur them:
    back into the giver's return.
 
 The first question is about the gift. The second is about everything the
-gift earns afterwards, and it's the one that decides whether spreading money
-around the family changes anyone's tax.
+gift earns afterwards, and it's the one that decides whose return the income
+appears in.
 
-## Gifts: tax-free from relatives, taxable above ₹{% include inr.html n=x.limit %} from others
+## Gifts in Tax Year 2026-27: tax-free from relatives, taxable above ₹{% include inr.html n=x.limit %} from others
 
 Under section 92(2)(m) of the 2025 Act, if you receive money, or certain
 property, **without paying for it**, and the total from non-relatives in the
 tax year exceeds ₹{% include inr.html n=x.limit %}, the **whole amount** is taxed as your income at your
 slab rate. "Property" here means shares and securities, jewellery, bullion,
-land and buildings, art, and virtual digital assets, among others. Receive
-them for well below their value and the shortfall is taxed on similar
-terms.
+land and buildings, art, and virtual digital assets, among others. Property received for less than its value is tested under separate
+limbs of the same section (different tests for money, land and buildings, and other property). This post's worked example covers **money only**.
 
 The rule doesn't apply — whatever the amount — to gifts:
 
@@ -74,7 +73,7 @@ Friends, cousins, and a nephew or niece giving to you are **not** on it.
 | Any amount from a parent or sibling | ₹0 | ₹0 |
 
 The ₹{% include inr.html n=x.limit %} is a cliff, not an allowance: one rupee over and the entire
-sum is taxed. And it is counted across all non-relatives for the year, not
+sum is taxed. And for money it is counted across all non-relatives for the year, not
 per giver.
 
 **What the recipient inherits along with the gift.** Giving shares or fund
@@ -117,11 +116,11 @@ siblings. Gifts to them are tax-free when made
 
 Your mum's piggy bank is in the "big savings" jar, where the tax collector
 takes a bigger slice of any interest. Your dad's is in the "small savings" jar, where
-the slice is smaller. So mum thinks: I'll just move my coins into dad's jar.
+the slice is smaller.
 
-The rule says: fine, you can move them — but any interest those coins earn
-still counts as yours, and gets your slice taken. Same if mum moves coins
-into *your* jar while you're a kid.
+The rule says: if mum gives coins to dad, any interest those coins earn
+still counts as mum's, and gets mum's slice taken. Same if mum gives coins
+to *you* while you're a kid.
 
 Once you're grown up, your jar is counted as your own.
 
@@ -165,10 +164,8 @@ same holding as the
 | Rahul's, if still unused this year | ₹{% include inr.html n=x.ls_tax_own_exemption_with_cess %} |
 | None — Rahul already used his on other gains | ₹{% include inr.html n=x.ls_tax_exemption_used_with_cess %} |
 
-The gift didn't give the household a second ₹{% include inr.html n=r.ltcg_annual_exemption %} exemption. Had Priya
-bought the units with her own money, her exemption would have been available;
-because the money was Rahul's, clubbing puts the gain back with him. If his
-exemption was already used, that costs ₹{% include inr.html n=x.ls_clubbing_cost %}.
+Because the gain is clubbed, it is assessed with Rahul, and the ₹{% include inr.html n=r.ltcg_annual_exemption %} exemption that applies is his. If his
+exemption was already used, the clubbed gain costs ₹{% include inr.html n=x.ls_clubbing_cost %}.
 
 ## What "adequate consideration" means, and the grey areas
 
@@ -176,15 +173,7 @@ The Act doesn't define **adequate consideration**. In ordinary reading it
 means the spouse paid something close to what the asset was worth. A gift
 fails that test by definition; so does a sale at a token price.
 
-Two points are described in practice as resting on court rulings, not on
-the Act's text. We have not read the rulings, so check the current rule:
-
-- **Income on clubbed income.** If Priya reinvests the interest from Rahul's
-  gift, the income *on that reinvested interest* is described as generally treated as her
-  own (unverified here).
-- **Loans versus gifts.** A genuine, documented loan to a spouse at a fair
-  interest rate is treated differently from a gift. How differently, and
-  what counts as genuine, is a question for someone who files professionally.
+Two further questions — the tax on income earned by reinvested clubbed income, and how a genuine, documented loan to a spouse differs from a gift — are described as turning on court rulings rather than the Act's text. We have not read those rulings and do not cover them here: the Act is silent on them as we read it, so ask a professional.
 
 ## Common mistakes
 
@@ -203,5 +192,5 @@ gift to your spouse or minor child earns is clubbed back into your return,
 so moving money to them does not by itself change whose tax it is.
 
 *The module's [data file](https://github.com/himanshug82/wealthprimer/blob/main/_data/tax3.yml)
-lists the sections of the Income-tax Act, 2025 behind every rule here, and
-the points a professional should confirm before you rely on them.*
+lists the sections of the Income-tax Act, 2025 behind the rules here, and
+the points still to be confirmed.*

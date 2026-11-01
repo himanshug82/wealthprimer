@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Implied volatility, plainly: what a price implies"
-description: "Implied volatility is the volatility that makes a pricing model return an option's price. How it is read back from a price, and what it is not and cannot tell you."
+description: "Implied volatility is the volatility that makes a pricing model return an option's price. How it is read back from a price, and what it is not."
 image: /assets/og/implied-volatility.png
 date: 2026-11-07 09:00:00 +0530
 series: risk
@@ -25,7 +25,8 @@ needs* to justify that price.
 
 Two things IV is not. It is not a forecast the market has certified: it is a
 number that depends on the model used to read it, and on option prices that
-also reflect demand and supply. And it says nothing about direction. A high
+also reflect demand and supply. It is also unlike [beta]({% post_url 2026-10-02-beta %}), which measures how a stock
+moves relative to the market and says nothing about option prices. And it says nothing about direction. A high
 IV means a price that implies large moves up *or* down, not a move in a
 chosen direction. This post is part of the options module in
 [Risk, Leverage and Your Own Brain]({{ '/series/risk/' | relative_url }}).
@@ -102,13 +103,12 @@ as an annual percentage whatever the option's remaining life.
   same price.
 - **Comparing IV with realised volatility and calling the gap a verdict.**
   The two measure different things over different periods, and the gap is not,
-  by itself, a mispricing. This post draws no conclusion from any real IV
+  by itself, show that either is wrong. This post draws no conclusion from any real IV
   level, and uses none.
 - **Treating a rising IV as news about the index.** In the first table the
   price rises by {{ iv.vol_up.gain_pts }} points with the index frozen. An
-  option can gain or lose value from a change in IV alone. India's published
-  volatility index, covered in the
-  [India VIX post]({{ '/2026/11/09/india-vix/' | relative_url }}), is built from
-  such prices.
+  option can gain or lose value from a change in IV alone. The
+  [India VIX post]({{ '/2026/11/09/india-vix/' | relative_url }}) covers a
+  published volatility index that is based on option prices.
 
 **Takeaway:** Implied volatility is the volatility that makes a pricing model return an option's quoted price; it is read back from the price and depends on the model. A higher IV means a dearer option, whichever way the index goes, so the price can change even when the index does not.

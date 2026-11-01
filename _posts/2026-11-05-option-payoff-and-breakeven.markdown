@@ -24,7 +24,7 @@ specific level.
 This post uses the same hypothetical Sample Index as the
 [call and put post]({{ '/2026/11/04/call-and-put-options/' | relative_url }}): a
 level of {{ c.level }}, a lot of {{ c.lot }} units, and premiums priced from a
-simple teaching model (30 days to expiry, 15% annual volatility; see the
+simple teaching model ({{ r.time_value.days }} days to expiry, {{ r.time_value.vol_pct }}% annual volatility; see the
 [time value post]({{ '/2026/11/06/option-time-value/' | relative_url }})). Nothing
 here is a market quote. It sits in
 [Risk, Leverage and Your Own Brain]({{ '/series/risk/' | relative_url }}).
@@ -43,9 +43,12 @@ Profit or loss at expiry  =  ( payoff  −  premium )  ×  lot size
 
 ## Worked example: an at-the-money pair and an out-of-the-money pair
 
-An option whose strike equals the current level is **at the money**. One
-whose strike is further away than that, so that it would have no payoff if
-expiry were today, is **out of the money**. Premiums are in index points.
+An option whose strike equals the current level is **at the money**. A call
+whose strike is *above* the current level, or a put whose strike is *below*
+it, would have no payoff if expiry were today: it is **out of the money**.
+Premiums are in index points and are rounded to whole points in this post
+(the time value and implied volatility posts show one decimal, so a premium of
+{{ c.call_prem }} here is {{ r.time_value.rows[0].atm_price }} there).
 
 | Option | Strike | Premium (points) | Premium per lot (₹) | Breakeven | Move needed from {{ c.level }} |
 |---|---:|---:|---:|---:|---:|
@@ -63,9 +66,12 @@ The steps for the at-the-money call:
 
 Two things stand out in the table. The out-of-the-money options cost less per
 lot, but their breakevens are further away; "lower-priced" and "closer to
-paying off" are different things. And the distance to breakeven on the call
-side and the put side is nearly symmetrical here only because the model has no
-interest or dividends; real quotes differ.
+paying off" are different things. And the at-the-money call and put are
+exactly symmetrical here (a {{ be.atm.call_be_move_pct }}% move either way) because the model has zero
+interest and dividends, which makes their premiums equal. The out-of-the-money
+pair is only nearly symmetrical ({{ be.otm.call_be_move_pct }}% and {{ be.otm.put_be_move_pct }}%): the model's prices are
+not evenly spread around the current level, so the two premiums differ
+({{ be.otm.call_prem }} and {{ be.otm.put_prem }} points). Real quotes differ again.
 
 For each lot, the loss if the option expires with no payoff is the whole
 premium: ₹{% assign p1 = c.call_prem_rs %}{% include inr.html n=p1 %} for the at-the-money call, ₹{% assign p2 = be.otm.call_prem_rs %}{% include inr.html n=p2 %} for the

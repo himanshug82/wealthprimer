@@ -11,59 +11,59 @@ contract:
   put_prem: 343
   call_prem_rs: 25725
   put_prem_rs: 25725
-  prem_share_pct: 1.71
+  prem_share_pct: '1.7'
 buyer:
   table:
   - level: 19000
-    move_pct: -5.0
+    move_pct: −5
     call_payoff: 0
     call_pl: -25725
     put_payoff: 75000
     put_pl: 49275
   - level: 19250
-    move_pct: -3.75
+    move_pct: −3.75
     call_payoff: 0
     call_pl: -25725
     put_payoff: 56250
     put_pl: 30525
   - level: 19500
-    move_pct: -2.5
+    move_pct: −2.5
     call_payoff: 0
     call_pl: -25725
     put_payoff: 37500
     put_pl: 11775
   - level: 19750
-    move_pct: -1.25
+    move_pct: −1.25
     call_payoff: 0
     call_pl: -25725
     put_payoff: 18750
     put_pl: -6975
   - level: 20000
-    move_pct: 0.0
+    move_pct: '0'
     call_payoff: 0
     call_pl: -25725
     put_payoff: 0
     put_pl: -25725
   - level: 20250
-    move_pct: 1.25
+    move_pct: '1.25'
     call_payoff: 18750
     call_pl: -6975
     put_payoff: 0
     put_pl: -25725
   - level: 20500
-    move_pct: 2.5
+    move_pct: '2.5'
     call_payoff: 37500
     call_pl: 11775
     put_payoff: 0
     put_pl: -25725
   - level: 20750
-    move_pct: 3.75
+    move_pct: '3.75'
     call_payoff: 56250
     call_pl: 30525
     put_payoff: 0
     put_pl: -25725
   - level: 21000
-    move_pct: 5.0
+    move_pct: '5'
     call_payoff: 75000
     call_pl: 49275
     put_payoff: 0
@@ -72,78 +72,72 @@ breakeven:
   atm:
     call_be: 20343
     put_be: 19657
-    call_be_move_pct: 1.71
-    put_be_move_pct: -1.71
+    call_be_move_pct: '1.7'
+    put_be_move_pct: −1.7
   otm:
     call_strike: 20500
     call_prem: 153
     call_prem_rs: 11475
     call_be: 20653
-    call_be_move_pct: 3.27
+    call_be_move_pct: '3.3'
     put_strike: 19500
     put_prem: 146
     put_prem_rs: 10950
     put_be: 19354
-    put_be_move_pct: -3.23
+    put_be_move_pct: −3.2
 time_value:
   vol_pct: 15
+  days: 30
   rows:
   - days: 30
-    atm_price: 343.1
-    atm_tv: 343.1
-    itm_price: 645.9
-    itm_tv: 145.9
-    otm_price: 153.1
-    otm_tv: 153.1
-    atm_decay_per_day: 6.3
+    atm_price: '343.1'
+    atm_tv: '343.1'
+    itm_price: '645.9'
+    itm_tv: '145.9'
+    otm_price: '153.1'
+    otm_tv: '153.1'
   - days: 20
-    atm_price: 280.1
-    atm_tv: 280.1
-    itm_price: 595.6
-    itm_tv: 95.6
-    otm_price: 101.0
-    otm_tv: 101.0
-    atm_decay_per_day: 8.2
+    atm_price: '280.1'
+    atm_tv: '280.1'
+    itm_price: '595.6'
+    itm_tv: '95.6'
+    otm_price: '101.0'
+    otm_tv: '101.0'
   - days: 10
-    atm_price: 198.1
-    atm_tv: 198.1
-    itm_price: 539.3
-    itm_tv: 39.3
-    otm_price: 42.3
-    otm_tv: 42.3
-    atm_decay_per_day: 11.6
+    atm_price: '198.1'
+    atm_tv: '198.1'
+    itm_price: '539.3'
+    itm_tv: '39.3'
+    otm_price: '42.3'
+    otm_tv: '42.3'
   - days: 5
-    atm_price: 140.1
-    atm_tv: 140.1
-    itm_price: 511.6
-    itm_tv: 11.6
-    otm_price: 12.8
-    otm_tv: 12.8
-    atm_decay_per_day: 17.2
+    atm_price: '140.1'
+    atm_tv: '140.1'
+    itm_price: '511.6'
+    itm_tv: '11.6'
+    otm_price: '12.8'
+    otm_tv: '12.8'
   - days: 2
-    atm_price: 88.6
-    atm_tv: 88.6
-    itm_price: 500.9
-    itm_tv: 0.9
-    otm_price: 1.0
-    otm_tv: 1.0
-    atm_decay_per_day: 26.0
+    atm_price: '88.6'
+    atm_tv: '88.6'
+    itm_price: '500.9'
+    itm_tv: '0.9'
+    otm_price: '1.0'
+    otm_tv: '1.0'
   - days: 1
-    atm_price: 62.6
-    atm_tv: 62.6
-    itm_price: 500.0
-    itm_tv: 0.0
-    otm_price: 0.0
-    otm_tv: 0.0
-    atm_decay_per_day: 62.6
+    atm_price: '62.6'
+    atm_tv: '62.6'
+    itm_price: '500.0'
+    itm_tv: '0.0'
+    otm_price: '0.0'
+    otm_tv: '0.0'
   - days: 0
-    atm_price: 0.0
-    atm_tv: 0.0
-    itm_price: 500.0
-    itm_tv: 0.0
-    otm_price: 0.0
-    otm_tv: 0.0
-    atm_decay_per_day: null
+    atm_price: '0.0'
+    atm_tv: '0.0'
+    itm_price: '500.0'
+    itm_tv: '0.0'
+    otm_price: '0.0'
+    otm_tv: '0.0'
   note:
     vol_pct: 15
     first_leg_per_day: 6.3
@@ -154,32 +148,44 @@ implied_vol:
   vol_rows:
   - vol_pct: 10
     atm_call: 228.7
+    atm_call_whole: 229
+    lot_rs: 17175
   - vol_pct: 15
     atm_call: 343.1
+    atm_call_whole: 343
+    lot_rs: 25725
   - vol_pct: 20
     atm_call: 457.4
+    atm_call_whole: 457
+    lot_rs: 34275
   - vol_pct: 25
     atm_call: 571.7
+    atm_call_whole: 572
+    lot_rs: 42900
   - vol_pct: 30
     atm_call: 686.0
+    atm_call_whole: 686
+    lot_rs: 51450
   - vol_pct: 40
     atm_call: 914.5
+    atm_call_whole: 914
+    lot_rs: 68550
   iv_rows:
-  - strike: 20000
-    price: 150
-    iv_pct: 6.6
-  - strike: 20000
-    price: 250
-    iv_pct: 10.9
+  - strike: 19000
+    price: 1040
+    iv_pct: '14.3'
+  - strike: 19500
+    price: 590
+    iv_pct: '11.9'
   - strike: 20000
     price: 350
-    iv_pct: 15.3
+    iv_pct: '15.3'
   - strike: 20500
-    price: 120
-    iv_pct: 13.3
-  - strike: 19500
-    price: 560
-    iv_pct: 10.1
+    price: 140
+    iv_pct: '14.3'
+  - strike: 21000
+    price: 40
+    iv_pct: '13.6'
   sqrt:
     price_30d: 343.1
     price_120d: 686.0
@@ -199,105 +205,107 @@ writing:
   assumed_margin: 180000
   elm_pct: 2
   expiry_extra: 30000
-  gain_over_margin_pct: 14.3
+  gain_over_margin_pct: '14.3'
   call_breakeven: 20343
   put_breakeven: 19657
   put_worst_case: 1474275
   example_level: 22000
   example_move_pct: 10
-  example_loss_pct_margin: 69.0
+  example_loss_pct_margin: '69'
   loss_at_22000_call: 124275
-  loss_at_22000_vs_gain_multiple: 4.8
+  loss_at_22000_vs_gain_multiple: '4.8'
   rows:
   - level: 18500
-    move_pct: -7.5
+    move_pct: −7.5
     call_pl: 25725
-    call_pl_margin_pct: 14.3
+    call_pl_margin_pct: '14.3'
     put_pl: -86775
-    put_pl_margin_pct: -48.2
+    put_pl_margin_pct: −48.2
   - level: 19000
-    move_pct: -5.0
+    move_pct: −5
     call_pl: 25725
-    call_pl_margin_pct: 14.3
+    call_pl_margin_pct: '14.3'
     put_pl: -49275
-    put_pl_margin_pct: -27.4
+    put_pl_margin_pct: −27.4
   - level: 19500
-    move_pct: -2.5
+    move_pct: −2.5
     call_pl: 25725
-    call_pl_margin_pct: 14.3
+    call_pl_margin_pct: '14.3'
     put_pl: -11775
-    put_pl_margin_pct: -6.5
+    put_pl_margin_pct: −6.5
   - level: 19800
-    move_pct: -1.0
+    move_pct: −1
     call_pl: 25725
-    call_pl_margin_pct: 14.3
+    call_pl_margin_pct: '14.3'
     put_pl: 10725
-    put_pl_margin_pct: 6.0
+    put_pl_margin_pct: '6'
   - level: 20000
-    move_pct: 0.0
+    move_pct: '0'
     call_pl: 25725
-    call_pl_margin_pct: 14.3
+    call_pl_margin_pct: '14.3'
     put_pl: 25725
-    put_pl_margin_pct: 14.3
+    put_pl_margin_pct: '14.3'
   - level: 20350
-    move_pct: 1.75
+    move_pct: '1.75'
     call_pl: -525
-    call_pl_margin_pct: -0.3
+    call_pl_margin_pct: −0.3
     put_pl: 25725
-    put_pl_margin_pct: 14.3
+    put_pl_margin_pct: '14.3'
   - level: 20500
-    move_pct: 2.5
+    move_pct: '2.5'
     call_pl: -11775
-    call_pl_margin_pct: -6.5
+    call_pl_margin_pct: −6.5
     put_pl: 25725
-    put_pl_margin_pct: 14.3
+    put_pl_margin_pct: '14.3'
   - level: 21000
-    move_pct: 5.0
+    move_pct: '5'
     call_pl: -49275
-    call_pl_margin_pct: -27.4
+    call_pl_margin_pct: −27.4
     put_pl: 25725
-    put_pl_margin_pct: 14.3
+    put_pl_margin_pct: '14.3'
   - level: 21500
-    move_pct: 7.5
+    move_pct: '7.5'
     call_pl: -86775
-    call_pl_margin_pct: -48.2
+    call_pl_margin_pct: −48.2
     put_pl: 25725
-    put_pl_margin_pct: 14.3
+    put_pl_margin_pct: '14.3'
   - level: 22000
-    move_pct: 10.0
+    move_pct: '10'
     call_pl: -124275
-    call_pl_margin_pct: -69.0
+    call_pl_margin_pct: −69
     put_pl: 25725
-    put_pl_margin_pct: 14.3
+    put_pl_margin_pct: '14.3'
   - level: 23000
-    move_pct: 15.0
+    move_pct: '15'
     call_pl: -199275
-    call_pl_margin_pct: -110.7
+    call_pl_margin_pct: −110.7
     put_pl: 25725
-    put_pl_margin_pct: 14.3
+    put_pl_margin_pct: '14.3'
+  levels_over_margin:
+  - 23000
 expiry:
   buckets:
-  - window: 2:55-3:00 pm
+  - window: 3:00-3:05 pm
     price: 20190
     volume: 40
     pv: 807600
-  - window: 3:00-3:05 pm
+  - window: 3:05-3:10 pm
     price: 20195
     volume: 55
     pv: 1110725
-  - window: 3:05-3:10 pm
+  - window: 3:10-3:15 pm
     price: 20210
     volume: 90
     pv: 1818900
-  - window: 3:10-3:15 pm
+  - window: 3:15-3:20 pm
     price: 20205
     volume: 60
     pv: 1212300
-  - window: 3:15-3:20 pm
+  - window: 3:20-3:25 pm
     price: 20190
     volume: 120
     pv: 2422800
-  - window: 3:20-3:25 pm
+  - window: 3:25-3:30 pm
     price: 20170
     volume: 150
     pv: 3025500
@@ -309,22 +317,58 @@ expiry:
   payoff_vwap: 0
   payoff_last: 1125
   diff_pts: 25.05
-  sebi_oct2026:
-    number: HO/47/11/11(3)2025-MRD-POD2/I/23843/2026
-    date: 15 October 2026
-    effective: 7 December 2026
-    cas_start: 3:30 p.m.
-    cas_end: 3:40 p.m.
-    index_expiry_stop: 3:30 p.m.
-    derivs_stop: 3:45 p.m.
-    window_min: 30
-    iceberg_effective: 8 February 2027
-  sebi_jan2026:
-    date: 16 January 2026
-    cas_start: 3 August 2026
-  sebi_oct2024:
+sources:
+  master_circular:
+    name: SEBI Master Circular for Stock Exchanges and Clearing Corporations, Chapter
+      5 (Exchange Traded Derivatives)
+    date: 30 December 2024
+    read: 1 November 2026
+    status: confirmed
+  circular_2024:
     number: SEBI/HO/MRD/TPD-1/P/CIR/2024/132
     date: 1 October 2024
-  nse:
+    status: confirmed (as restated in the master circular)
+  contract_size:
+    para: 1.1.4
+    min_lakh: 15
+    band_lakh: 15 to 20
+    effective: contracts introduced after 20 November 2024
+  upfront_margin:
+    para: 1.2.14
+    premium_para: 14.4.2
+    premium_from: 1 February 2025
+  no_calendar_spread_on_expiry:
+    para: 1.2.7
+    effective: 1 February 2025
+  expiry_extra_elm:
+    para: 2.2.4
+    pct: 2
+    effective: 20 November 2024
+  one_weekly_benchmark:
+    para: 2.1.7.2
+    effective: 20 November 2024
+  index_options_style:
+    para: 2.1.8
+    text: premium style
+  settlement_price:
+    para: '1.1.9 (index futures); 2.1.9 (index options: same)'
+    rule: closing price of the underlying index, based on the last half hour VWAP
+      of the constituents
+  premium_settlement:
+    para: 2.2.2.5
+    text: premium paid in by buyers and paid out to sellers in cash on T+1
+  stock_derivs:
+    para: 3.1.10
+    text: physical settlement is mandatory for all stock derivatives
+  closing_auction_2026:
+    circular_jan_2026: 16 January 2026
+    circular_oct_2026: 15 October 2026
+    oct_2026_title: Review of certain aspects of the Closing Auction Session, market
+      timings and settlement methodology for derivatives contracts
+    status: not_confirmed
+    note: title and date as listed on SEBI's site; operative terms, effective dates
+      and timings not opened here
+  nse_expiry:
     page_date: 11 August 2026
     expiry_day: Tuesday
+    status: not re-opened

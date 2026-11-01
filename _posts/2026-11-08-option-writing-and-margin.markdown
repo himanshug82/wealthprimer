@@ -6,11 +6,14 @@ image: /assets/og/option-writing-and-margin.png
 date: 2026-11-08 09:00:00 +0530
 series: risk
 term: "Option writing"
+needs_review: regulation
+rules_as_of: "November 2026"
 ---
 
 {% assign r = site.data.risk3 %}
 {% assign c = r.contract %}
 {% assign w = r.writing %}
+{% assign s = r.sources %}
 {% assign f = site.data.fno.fy26_unverified %}
 
 ## What writing an option means
@@ -67,13 +70,14 @@ small part of the downside.
 
 ### Margin: why the deposit exists
 
-The Securities and Exchange Board of India (SEBI) circular of 1 October 2024 (SEBI/HO/MRD/TPD-1/P/CIR/2024/132, as read on
-1 November 2026) reflects the structure: exchanges require brokers to collect
-margin upfront, and for short options on the day of expiry it adds an
-**additional extreme loss margin (ELM) of {{ w.elm_pct }}%** on short options due to expire
+The Securities and Exchange Board of India (SEBI) circular {{ s.circular_2024.number }} of
+{{ s.circular_2024.date }}, as restated in its {{ s.master_circular.name }}
+({{ s.master_circular.date }}, read on {{ s.master_circular.read }}), says applicable upfront margins must be collected from the
+client in advance of the trade (master circular paragraph {{ s.upfront_margin.para }}). For short options on the day of expiry it
+adds an **additional extreme loss margin (ELM) of {{ w.elm_pct }}%** on short options due to expire
 that day, whether open at the start of the day or initiated during it
-(paragraph 5.6, effective 20 November 2024). It also removed the offset benefit of calendar spreads on expiry day
-(paragraph 5.2, effective 1 February 2025).
+(paragraph {{ s.expiry_extra_elm.para }}, effective {{ s.expiry_extra_elm.effective }}). It also removed the offset benefit of
+calendar spreads on expiry day (paragraph {{ s.no_calendar_spread_on_expiry.para }}, effective {{ s.no_calendar_spread_on_expiry.effective }}). Rules change, so check the current rule.
 
 Actual margin amounts are set by the exchange and the clearing corporation, and
 change with the market and the position. For the table above, this post
@@ -82,8 +86,9 @@ number is for illustration only. On it, the premium received is
 {{ w.gain_over_margin_pct }}% of margin, while an index move of {{ w.example_move_pct }}% against
 a short call is a loss of about {{ w.example_loss_pct_margin }}% of it, and a larger move takes the loss
 past the whole deposit. What happens to a shortfall is set by the broker's and the exchange's rules, so check
-them before relying on a figure like this one. A 2% add-on for expiry day,
-on the same contract value, would be ₹{% assign ex = w.expiry_extra %}{% include inr.html n=ex %} more.
+them before relying on a figure like this one. If the {{ w.elm_pct }}% expiry-day add-on were applied to the contract value (the
+paragraph quoted above does not say which value it applies to, so this is an
+assumption), it would be ₹{% assign ex = w.expiry_extra %}{% include inr.html n=ex %} more.
 
 The number of option positions still outstanding at any time is called
 [open interest]({% post_url 2026-11-06-open-interest %}); for every written
@@ -93,10 +98,10 @@ people on one side.
 ### What SEBI's studies show about this side
 
 SEBI's August 2026 behaviour study found that, in FY 2025-26 (the financial year to March 2026), about
-{{ f.options_sellers_pct }}% of individual F&O traders were mainly option
-sellers, against about {{ f.options_buyers_pct }}% who were mainly buyers; its
+{{ f.options_sellers_pct }}% of the individual traders it classified by how they traded options were mainly option
+sellers, against about {{ f.options_buyers_pct }}% who were mainly buyers (the study's page 17; check it for the exact group counted); its
 profitability study found that options accounted for about
-{{ site.data.fno.fy26.options_share_of_losses_pct }}% of the segment's aggregate
+{{ site.data.fno.fy26.options_share_of_losses_pct }}% of the futures and options (F&O) segment's aggregate
 losses that year. These are SEBI's figures from the studies discussed in the
 [F&O numbers post]({% post_url 2026-10-08-what-the-fo-numbers-actually-say %}),
 quoted here and not recomputed; they are research statistics, and they do not
@@ -113,11 +118,11 @@ taxed is a separate matter in the
   index at zero. The practical question is how much margin and capital stand
   behind a position, and a bounded loss can still be larger than the account.
 - **Treating margin as the most you can lose.** Margin is a deposit set by the
-  exchange's risk model. The last rows of the table show a loss larger than
+  exchange's risk model. The last row of the table shows a loss larger than
   the assumed margin.
-- **Ignoring expiry-day rules.** The 2% add-on and the end of the
+- **Ignoring expiry-day rules.** The {{ w.elm_pct }}% add-on and the end of the
   calendar-spread offset (both above) apply on the day of expiry, when moves
   can be quickest. The [expiry post]({{ '/2026/11/09/option-expiry-and-settlement/' | relative_url }})
   covers the day itself.
 
-**Takeaway:** An option writer's gain is capped at the premium received, while the loss on a short call has no cap and on a short put stops only when the index reaches zero. Margin is a deposit against that asymmetry, not a ceiling on the loss, as the table's last rows show.
+**Takeaway:** An option writer's gain is capped at the premium received, while the loss on a short call has no cap and on a short put stops only when the index reaches zero. Margin is a deposit against that asymmetry, not a ceiling on the loss, as the table's last row shows.

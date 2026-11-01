@@ -16,7 +16,7 @@ term: "Time value"
 
 An option's price has two parts. **Intrinsic value** is what the option would
 pay if it expired right now: for a call, the index minus the strike, if that
-is positive, otherwise zero. **Time value** is everything else in the price:
+is positive, otherwise zero (for a put, the strike minus the index, if positive). **Time value** is everything else in the price:
 what buyers pay for the chance that the index moves in their favour before
 expiry. So:
 
@@ -51,7 +51,8 @@ volatility; that is the subject of the [next post]({{ '/2026/11/07/implied-volat
 
 Three call options on the hypothetical Sample Index, all priced with the model
 above and the index unchanged at {{ c.level }}. Prices are in index points
-per unit.
+per unit, shown to one decimal ({{ r.time_value.days }} days out, the at-the-money call is {{ tv.rows[0].atm_price }};
+the module's other posts round that to whole points).
 
 | Days to expiry | At-the-money call (strike 20000): price | ...of which time value | In-the-money call (strike 19500): price | ...of which time value | Out-of-the-money call (strike 20500): price (all time value) |
 |---:|---:|---:|---:|---:|---:|
@@ -72,19 +73,20 @@ The in-the-money call has {{ c.level | minus: 19500 }} points of intrinsic value
    the time left is six times as long. In this model the time value of an at-the-money option is proportional to the square root of the time left, not to the time
    left, which is why the last days are steep.
 
-The same arithmetic runs against the seller of the option: whatever time value
+The seller of the option sits on the other side of the same arithmetic: whatever time value
 the buyer loses, the seller (see [the writing post]({{ '/2026/11/08/option-writing-and-margin/' | relative_url }}))
-keeps, if the index does not move to change the picture.
+keeps only if the index does not move, and the seller pays out whatever payoff the buyer's
+option finishes with, which the writing post shows has no upper limit on a short call.
 
 <details markdown="1">
 <summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
 
-Imagine a ticket to a cricket match that has a *chance* of being very
-valuable, say if a famous player is playing. The longer before the match,
-the more things could happen, so the ticket is worth more. As match day
-gets closer, the surprises run out. On match day, the ticket is only worth
-what that day's game is actually worth. The "maybe something exciting will
-happen" part of the price melts away, slowly at first and then very fast.
+Imagine an ice lolly on a hot day. When it comes out of the freezer it is
+all lolly. Every minute it sits in the sun, a little more of it melts, and the
+last bit goes fastest. An option is like that: the "maybe something big will
+happen before the deadline" part of its price is the lolly, and it melts away
+as the deadline gets closer, slowly at first and then very fast. When the
+deadline arrives only what is really left, the intrinsic value, remains.
 
 </details>
 
@@ -99,4 +101,4 @@ happen" part of the price melts away, slowly at first and then very fast.
   any model, and the volatility input is itself a judgement; the next post
   turns the model around to read that judgement from a price.
 
-**Takeaway:** An option's price is intrinsic value plus time value, and time value drains to zero by expiry, slowly at first and then quickly. If the index stands still, a buyer's option loses value every day that passes, while the same time value is what an option seller collects.
+**Takeaway:** An option's price is intrinsic value plus time value, and time value drains to zero by expiry, slowly at first and then quickly. If the index stands still, a buyer's option loses value every day that passes; whoever is on the other side of that contract carries the payoff risk the writing post describes.

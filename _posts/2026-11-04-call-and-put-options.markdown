@@ -6,10 +6,13 @@ image: /assets/og/call-and-put-options.png
 date: 2026-11-04 09:00:00 +0530
 series: risk
 term: "Option (call and put)"
+needs_review: regulation
+rules_as_of: "November 2026"
 ---
 
 {% assign r = site.data.risk3 %}
 {% assign c = r.contract %}
+{% assign s = r.sources %}
 
 ## What a call option and a put option are
 
@@ -89,21 +92,23 @@ that point.
 
 ### What the rules say about size and payment
 
-Two rules from SEBI (the Securities and Exchange Board of India), both from its
-circular SEBI/HO/MRD/TPD-1/P/CIR/2024/132 dated 1 October 2024, as read on
-1 November 2026:
+Two rules from SEBI (the Securities and Exchange Board of India), set by its
+circular {{ s.circular_2024.number }} dated {{ s.circular_2024.date }} and
+restated in its {{ s.master_circular.name }} ({{ s.master_circular.date }}), which
+is the text read for this post on {{ s.master_circular.read }}. Rules change,
+so check the current rule before relying on either:
 
-- **Contract size.** A new index derivative contract must have a value of at
-  least ₹{% assign mn = c.sebi_min %}{% include inr.html n=mn %} when it is introduced, and its lot size is to be fixed so that the
-  contract value on the review day falls between ₹{% include inr.html n=mn %}
-  and ₹{% assign mx = c.sebi_max %}{% include inr.html n=mx %} (paragraph 5.4.1; effective for new contracts after 20 November
-  2024). The hypothetical lot above is built to sit inside that band. The
-  actual lot size of any real contract is set by the exchange, so check the
-  exchange's current contract specification.
-- **Upfront premium.** Trading members must collect the option premium
-  upfront from the option buyer (paragraph 5.1; effective 1 February 2025).
-  The circular's stated reason is that option prices move in a non-linear way
-  and carry "very high implicit leverage".
+- **Contract size.** A derivative contract must have a value of at least
+  ₹{% assign mn = c.sebi_min %}{% include inr.html n=mn %} when it is introduced, and the lot size for index
+  derivatives is to be fixed so that the contract value on the review day
+  falls between ₹{% include inr.html n=mn %} and
+  ₹{% assign mx = c.sebi_max %}{% include inr.html n=mx %} (master circular paragraph {{ s.contract_size.para }};
+  effective for {{ s.contract_size.effective }}). The hypothetical lot above is built to sit
+  inside that band. The actual lot size of any real contract is set by the
+  exchange, so check the exchange's current contract specification.
+- **Upfront premium.** The margin that trading members must collect from
+  clients upfront includes the net option premium payable at the client level,
+  from {{ s.upfront_margin.premium_from }} (master circular paragraph {{ s.upfront_margin.premium_para }}).
 
 How income and losses from derivatives are taxed is a separate subject, covered in
 the [Tax series]({{ '/2026/11/13/fo-is-business-income/' | relative_url }}); this
@@ -125,7 +130,7 @@ module states no tax rules.
   the payoff and the profit side by side for exactly this reason.
 - **Treating the table as odds.** A payoff table shows what happens at each
   level, not how likely each level is. SEBI's studies of individual traders
-  in this segment, covered in the
+  in the futures and options (F&O) segment, covered in the
   [F&O numbers post]({% post_url 2026-10-08-what-the-fo-numbers-actually-say %}),
   are the evidence on how buyers actually fared.
 

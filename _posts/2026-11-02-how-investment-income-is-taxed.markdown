@@ -3,7 +3,7 @@ layout: post
 title: "How investment income is taxed in India: the map"
 description: "Capital gains, dividends and interest are taxed under genuinely different rules. The map of how investment income is taxed in India, mechanics first."
 image: /assets/og/how-investment-income-is-taxed.png
-date: 2026-11-17 09:00:00 +0530
+date: 2026-11-02 09:00:00 +0530
 series: tax
 needs_review: tax
 rules_for: "Tax Year 2026-27 (FY 2026-27)"

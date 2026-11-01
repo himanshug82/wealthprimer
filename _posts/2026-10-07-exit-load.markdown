@@ -73,7 +73,7 @@ than the headline 1%, more than the zero a lump-sum investor a year in would
 pay.
 
 Notice this is the same lot-by-lot logic the tax series used in the
-SIPs and FIFO post in the Tax series<!-- RELINK 2026-11-02-sips-and-fifo -->: every SIP
+SIPs and FIFO post in the Tax series<!-- RELINK 2026-11-08-sips-and-fifo -->: every SIP
 instalment is its own purchase with its own date, for tax *and* for load.
 Funds apply the same first-in-first-out order, so a partial redemption sells
 the oldest — load-free — units first.

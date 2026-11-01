@@ -176,7 +176,7 @@ showed how a percentage point compounds.
 
 For tax, an international fund or FoF isn't an "equity-oriented fund" in the
 Indian tax sense even if it holds only shares, because the tax test counts
-*domestic* listed shares. How such funds are taxed is in the tax series<!-- RELINK 2026-10-30-debt-funds-gold-and-the-rest -->;
+*domestic* listed shares. How such funds are taxed is in the tax series<!-- RELINK 2026-11-05-debt-funds-gold-and-the-rest -->;
 check the current rule before assuming equity treatment.
 
 ## Common mistakes

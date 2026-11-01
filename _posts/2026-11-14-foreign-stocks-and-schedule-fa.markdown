@@ -4,7 +4,7 @@ title: "Foreign stocks and Schedule FA: the disclosure is the hard part"
 seo_title: "Foreign stocks and Schedule FA: the disclosure"
 description: "US-share gains are long-term only after 24 months, taxed at 12.5% with no exemption. Dividends face 25% withholding; every foreign asset is disclosed."
 image: /assets/og/foreign-stocks-and-schedule-fa.png
-date: 2026-11-29 09:00:00 +0530
+date: 2026-11-14 09:00:00 +0530
 series: tax
 term: "Schedule FA (foreign assets)"
 needs_review: tax
@@ -92,7 +92,7 @@ The same ₹{% include inr.html n=x.gain_inr %} gain on Indian listed shares wou
 ₹{% include inr.html n=x.same_gain_indian_listed_tax_with_cess %}, because ₹{% include inr.html n=r.ltcg_annual_exemption %} of it would have been
 exempt. And had the shares been sold inside 24 months, the whole gain would
 sit in the slab: ₹{% include inr.html n=x.stcg_tax_with_cess_if_within_24m %} at 30% plus cess. The
-[holding-period post]({% post_url 2026-11-18-short-term-vs-long-term %}) explained why the
+[holding-period post]({% post_url 2026-11-03-short-term-vs-long-term %}) explained why the
 clock matters; for foreign shares it runs twice as long and the short-term
 penalty is steeper.
 
@@ -102,7 +102,7 @@ US companies pay dividends to Indian residents after withholding **25%** under
 the India–US tax treaty — assuming your broker has a W-8BEN form on file for
 you; without one, 30% is withheld. In India the *gross* dividend is added to your income
 at slab, exactly as in the
-[dividends post]({% post_url 2026-11-21-dividends-and-interest %}) — and the tax already
+[dividends post]({% post_url 2026-11-06-dividends-and-interest %}) — and the tax already
 paid in the US is credited against your Indian tax.
 
 | | |
@@ -158,7 +158,7 @@ reportable.
 
 **It covers more than shares.** Foreign brokerage accounts, foreign bank
 accounts, RSUs and ESOPs of a foreign employer (from the
-[ESOPs and RSUs post]({% post_url 2026-11-26-esops-and-rsus %})), foreign retirement
+[ESOPs and RSUs post]({% post_url 2026-11-11-esops-and-rsus %})), foreign retirement
 accounts, foreign insurance with a cash value.
 
 **It asks for values you have to reconstruct.** For each asset: the initial

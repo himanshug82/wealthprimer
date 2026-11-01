@@ -202,9 +202,9 @@ not to individuals.
   doesn't, and the counterparty is usually a machine.
 - **Forgetting F&O is taxed differently.** F&O gains and losses are generally
   treated as **business income**, not capital gains — so the
-  holding-period rules in the Tax series<!-- RELINK 2026-10-28-short-term-vs-long-term -->
+  holding-period rules in the Tax series<!-- RELINK 2026-11-03-short-term-vs-long-term -->
   and the
-  ₹1.25 lakh exemption in the Tax series<!-- RELINK 2026-10-29-equity-and-equity-funds -->
+  ₹1.25 lakh exemption in the Tax series<!-- RELINK 2026-11-04-equity-and-equity-funds -->
   that this blog's tax series covers do not apply to them. Different return
   form, different rules, sometimes an audit requirement (above the
   tax-audit turnover limits). That's covered later in the tax series.

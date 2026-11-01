@@ -83,7 +83,9 @@ this blog — UTI Nifty 50 Index Fund (regular plan, growth), NAVs from AMFI
 (the Association of Mutual Funds in India), as of 31 March 2026, used for
 illustration only — contains an actual loss. A ₹{% include inr.html n=l.monthly_amount %} monthly
 [SIP]({% post_url 2026-10-01-sips-xirr-and-timing-myths %}) (systematic investment plan) started {{ l.start | date: "%-d %B %Y" }} and redeemed on {{ l.redemption_date | date: "%-d %B %Y" }} — {{ l.instalments }}
-instalments, with the redemption date chosen as the last date in the data, for illustration:
+instalments, with the redemption date chosen as the last date in the data, for illustration. Each instalment
+buys at {{ t.example_sip.nav_rule }}. A real SIP that falls on a holiday is allotted at the next
+business day's NAV, which would make the loss ₹{% include inr.html n=l.next_business_day_loss_abs %}. The figures below use the first rule:
 
 | | |
 |---|---:|

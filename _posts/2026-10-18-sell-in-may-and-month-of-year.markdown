@@ -30,7 +30,7 @@ perfect material for the method from the
 claim is a fixed-horizon claim (one month, six months), and the data is easy
 to get.
 
-The research behind the saying is real. Bouman and Jacobsen's 2002 paper in
+The research behind the saying is real. Bouman and Jacobsen's [2002 paper](https://doi.org/10.1257/000282802762024683) in
 the *American Economic Review* reported a "Halloween effect" — better
 November–April returns — in most of the markets they studied. The question
 here is narrower: what did the Nifty do?

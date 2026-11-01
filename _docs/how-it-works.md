@@ -153,5 +153,20 @@ three weeks of written backlog so a skipped week leaves no gap.
   config keys that enable the feature.
 - **Nav:** Series · Glossary · Case study · Methodology · About
   (`header_pages`); Privacy lives in the footer. Pages can set `nav_title:`.
+- **Links between posts:** a post links an *earlier* post with `{% post_url %}`;
+  it links a *later* post only once that post is live, with a plain relative
+  link (`{{ '/YYYY/MM/DD/slug/' | relative_url }}`). Until then, write the
+  mention as plain text with an HTML marker `<!-- RELINK YYYY-MM-DD-slug -->`
+  and sweep with `grep -rn "RELINK" _posts` after the target's date. Sweep for
+  stale forward references with
+  `grep -rn "later in this series\|covered later\|coming up" _posts`.
+- **Tools:** `/tools/` lists the calculators in `_data/tools.yml`; each has a
+  page at `/tools/<id>/` (`_tools/<id>.md`, `_layouts/tool.html`), and posts
+  link one with `{% include tool.html id="..." %}`. On-page calculators
+  (`kind: Calculator`, `calc:`) live in `_includes/calc/<id>.html` and
+  `assets/js/calc.js`; their defaults come from
+  `scripts/derive_tool_defaults.py` → `_data/tool_defaults.json` (re-run after
+  `_data/risk.yml`, `_data/risk2.yml` or the Parag Parikh NAV CSV changes), and
+  `node scripts/check_tools.mjs` checks the JavaScript reproduces each post.
 
 Details of any change: `git log`.

@@ -21,7 +21,7 @@ intervals, usually monthly. It's the default recommendation for Indian retail
 investors, and the reasoning behind it is genuinely sound: it automates the
 habit, it removes the need to decide when to invest, and buying a fixed rupee
 amount means you get more units when prices are low and fewer when they're
-high.
+high. (A SIP whose amount rises each year is covered in [step-up SIPs]({{ '/2026/10/25/step-up-sips/' | relative_url }}).)
 
 That last effect is called **rupee cost averaging**, and it's real.
 

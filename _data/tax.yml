@@ -58,7 +58,7 @@ example_lumpsum:
 # Note the outcome: a real Rs 88,376 gain on which NO tax is payable, because
 # the long-term gain sits under the annual exemption and the short-term lots
 # are at a loss that can be set off.
-example_sip:
+example_sip:   # checked by scripts/derive_tax.py
   monthly_amount: 10000
   start: "2021-04-01"
   last_instalment: "2026-03-01"
@@ -73,6 +73,8 @@ example_sip:
   long_term_gain: 100905
   short_term_gain: -12529
   short_term_loss_abs: 12529   # same figure as a positive number, for display
+  nav_rule: "the latest NAV on or before the 1st of each month"   # see scripts/derive_tax.py
+  next_business_day_gain: 88165 # same SIP if each instalment is allotted at the next business day's NAV
   tax_payable: 0
   why_zero: >-
     The long-term gain is below the Rs 1,25,000 annual exemption, and the
@@ -98,6 +100,7 @@ example_loss:
   short_term_loss_abs: 12529
   long_term_lots: 12
   short_term_lots: 12
+  next_business_day_loss_abs: 18364   # same SIP, next-business-day NAV rule (scripts/derive_tax.py)
 
 # Example D — grandfathering. Equity bought on or before 31 Jan 2018 takes
 # the HIGHER of actual cost and the 31 Jan 2018 value as its cost, capped at

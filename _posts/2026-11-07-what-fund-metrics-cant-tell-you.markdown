@@ -78,7 +78,7 @@ Fund numbers are scorecards. They record what happened. They don't know what com
 - **Stacking metrics as if more numbers meant more evidence.** Sharpe, Sortino, capture ratios and drawdown are all computed from the same return history. Five numbers from one history are not five pieces of independent evidence.
 - **Looking for the one metric that picks the winner.** Each metric answers a narrow question. No combination of them predicts which fund will do well, and this series has not claimed one does.
 - **Taking a precise-looking figure at face value.** A Sharpe of {{ r.sharpe }} quoted to two decimals carries every assumption behind it: the dates, the risk-free rate, the data frequency. Ask for them.
-- **Treating the metrics as a substitute for reading the documents.** The factsheet, the scheme documents and the category rules tell you what the fund is allowed to do. The numbers only tell you what it did.
+- **Treating the metrics as a substitute for reading the documents.** The factsheet, the scheme documents and the [category rules]({% post_url 2026-10-14-sebi-fund-categories-decoded %}) tell you what the fund is allowed to do. The numbers only tell you what it did.
 
 ## Sources
 

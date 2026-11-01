@@ -122,7 +122,8 @@ a fund's future success more reliably than its star rating did.
 **Survivorship.** Funds that do badly get merged into siblings or wound up.
 Their records vanish from the category. The peer group a five-star fund is
 ranked against is therefore missing its worst members — every survivor's
-rank is flattered a little by the ghosts.
+rank is flattered a little by the ghosts. (More in
+[survivorship bias in fund tables]({{ '/2026/11/01/survivorship-bias-in-fund-tables/' | relative_url }}).)
 
 **The category itself.** A rating tells you a fund ranked well *within* its
 category. It says nothing about whether that category — small cap, credit

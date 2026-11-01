@@ -183,7 +183,7 @@ Not a recommendation — a checklist of which *frictions* apply to you:
   is generally taxed as dividend income in the year received — see the
   dividends and interest post in the Tax series<!-- RELINK 2026-11-06-dividends-and-interest -->.
   A growth-plan index fund defers all of that until you sell.
-- **Assuming "ETF" means "Nifty 50".** SEBI's category rules make an index
+- **Assuming "ETF" means "Nifty 50".** SEBI's [category rules]({{ '/2026/10/14/sebi-fund-categories-decoded/' | relative_url }}) make an index
   ETF hold at least 95% in its index's securities, so the wrapper is passive —
   but the index can be anything from the Nifty 50 to a narrow sector or theme.
   Read the scheme document.

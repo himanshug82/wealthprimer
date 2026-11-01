@@ -231,9 +231,10 @@ and the sensitivity grid.
 - **Getting the net debt sign wrong.** Subtract net debt from enterprise
   value. When the company holds net cash, net debt is negative and you're
   subtracting a negative — which adds. Sanity-check the direction every time.
-- **Using the wrong share count.** Use the diluted, post-issue count, as the
+{% assign _wrong_vps = r.equity_value | divided_by: listing.pre_ipo_shares_lakh | round %}{% assign _wrong_pct = listing.post_ipo_shares_lakh | divided_by: listing.pre_ipo_shares_lakh | minus: 1 | times: 100 | round %}
+- **Using the wrong share count.** Use the post-issue count, as the
   [EPS post]({% post_url 2026-09-23-eps %}) covered. Dividing by the pre-IPO count here would have
-  produced ₹497 a share instead of ₹{% include inr.html n=r.value_per_share %} — a 25% error from one wrong cell.
+  produced ₹{% include inr.html n=_wrong_vps %} a share instead of ₹{% include inr.html n=r.value_per_share %} — a {{ _wrong_pct }}% error from one wrong cell.
 - **Presenting the output as a precise number.** ₹{% include inr.html n=r.value_per_share %} is the arithmetic
   consequence of a stack of estimates. It is not what the share is worth to
   two decimal places, and the next post is entirely about why.

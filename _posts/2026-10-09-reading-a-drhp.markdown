@@ -198,7 +198,7 @@ the correct division of labour.
   it's worried about.
 - **Reading the P/E the company chose.** Recompute it on post-issue EPS and
   on your own peer set.
-- **Anchoring on the last year.** Companies list after a strong year. Read
+- **[Anchoring]({{ '/2026/10/14/behavioural-biases-indian-edition/' | relative_url }}) on the last year.** Companies list after a strong year. Read
   three, and read cash conversion.
 - **Ignoring the related-party section because it's dull.** It's the map
   of every channel through which value can leave the company.

@@ -82,7 +82,9 @@ A ₹{% include inr.html n=s.monthly_amount %} monthly SIP into the fund used th
 Nifty 50 Index Fund (regular plan, growth), [NAVs]({% post_url 2026-09-25-what-a-mutual-fund-is %}) (net asset values, the
 per-unit prices) from AMFI (the Association of Mutual Funds in India), as of
 31 March 2026, used for illustration only — running from
-{{ s.start | date: "%-d %B %Y" }} to {{ s.last_instalment | date: "%-d %B %Y" }}, redeemed in full on {{ s.redemption_date | date: "%-d %B %Y" }}:
+{{ s.start | date: "%-d %B %Y" }} to {{ s.last_instalment | date: "%-d %B %Y" }}, redeemed in full on {{ s.redemption_date | date: "%-d %B %Y" }}. Each instalment
+buys at {{ s.nav_rule }}, as in the [SIP post]({% post_url 2026-10-01-sips-xirr-and-timing-myths %}). A real SIP that falls on a
+holiday is allotted at the next business day's NAV, which would make the gain ₹{% include inr.html n=s.next_business_day_gain %}. The figures below use the first rule:
 
 | | |
 |---|---:|

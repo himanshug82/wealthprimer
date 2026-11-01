@@ -61,7 +61,7 @@ double," "sell everything before Monday." Measured, hedged content is
 correct more often and watched far less. This is the mildest incentive on
 the list and still bends everything toward hype.
 
-**5. The pump.** Buy a thinly traded small-cap, talk it up to a large
+**5. The [pump]({{ '/2026/10/22/pump-and-dump-and-operator-stocks/' | relative_url }}).** Buy a thinly traded small-cap, talk it up to a large
 audience, sell into the buying you created. Illegal under SEBI's fraudulent
 and unfair trade practices regulations, and regularly the subject of SEBI
 orders. It's rarer than the other four and far more damaging when it

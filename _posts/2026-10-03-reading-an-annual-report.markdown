@@ -162,7 +162,7 @@ building. A balance sheet can balance and omit a ₹120 lakh tax demand
 because it's "contingent." The notes are where the statements confess.
 
 The next few posts in this module each take one of those notes and work
-through it on Desi Bites: the forensic checks, the quarterly rhythm,
+through it on Desi Bites: the forensic checks, the [quarterly rhythm]({{ '/2026/10/05/reading-quarterly-results/' | relative_url }}),
 contingent liabilities and pledges, and goodwill.
 
 ## Steps 5 to 8: the persuasive pages

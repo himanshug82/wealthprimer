@@ -84,7 +84,8 @@ deliberately doesn't answer that question.
   produces a different P/E for the same price.
 - **Comparing P/E across industries or growth profiles without context.** A
   slow-growing utility and a fast-growing FMCG (fast-moving consumer goods) brand can both have
-  "reasonable" P/Es that mean completely different things.
+  "reasonable" P/Es that mean completely different things. (More in
+  [why one set of ratios doesn't fit every business]({{ '/2026/10/16/why-one-set-of-ratios-doesnt-fit/' | relative_url }}).)
 - **Ignoring earnings quality behind the E.** A great P/E on paper means
   little if the earnings themselves aren't backed by real cash — worth
   checking [OCF/PAT]({% post_url 2026-09-20-ocf-pat %}) before trusting a P/E at face value.

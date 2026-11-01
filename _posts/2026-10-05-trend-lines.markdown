@@ -9,6 +9,7 @@ term: "Trend lines"
 ---
 
 {% assign ta = site.data.ta %}
+{% assign tl = site.data.ta_trendlines %}
 
 ## Trends are structure, not vibes
 
@@ -80,34 +81,34 @@ Britannia (NSE: BRITANNIA), daily, September 2024 to March 2026. Source:
 [Yahoo Finance]({{ ta.dataset.source_url }}). Historical data, for illustration only.
 
 **The downtrend line.** Connect the {{ ta.major_decline.peak_date | date: "%-d %B %Y" }} high of ₹{% include inr.html n=ta.major_decline.peak_high %} to the
-11 November 2024 high of ₹5,902.1 and extend. That line describes a fall of
-about ₹14.6 a day.
+{{ tl.down.anchor2_date | date: "%-d %B %Y" }} high of ₹{% include inr.html n=tl.down.anchor2_high %} and extend. That line describes a fall of
+about ₹{{ tl.down.slope_per_day }} a day.
 
-It broke on **20 January 2025**, when the stock closed at ₹4,885.4 against a
-line sitting at ₹4,883.0. A margin of ₹2.4 — which tells you something
+It broke on **{{ tl.down.break_date | date: "%-d %B %Y" }}**, when the stock closed at ₹{% include inr.html n=tl.down.break_close %} against a
+line sitting at ₹{% include inr.html n=tl.down.break_line %}. A margin of ₹{{ tl.down.break_margin }} — which tells you something
 important about how unclean these signals are in practice. On the day, that
 break would have looked like nothing at all.
 
 **The uptrend line.** Connect the {{ ta.major_decline.trough_date | date: "%-d %B %Y" }} low of ₹{% include inr.html n=ta.major_decline.trough_low %} to the
-7 April 2025 low of ₹4,605.1 and extend. That line rises about ₹2.9 a day.
+{{ tl.up.anchor2_date | date: "%-d %B %Y" }} low of ₹{% include inr.html n=tl.up.anchor2_low %} and extend. That line rises about ₹{{ tl.up.slope_per_day }} a day.
 
 It then held — every dip through the rest of 2025 found support at or above
-it — for **384 days** counted from the first anchor, or 350 from the second,
-the day the line could first be drawn, before finally breaking on 23 March 2026, right at
+it — for **{{ tl.up.days_from_anchor1 }} days** counted from the first anchor, or {{ tl.up.days_from_anchor2 }} from the second,
+the day the line could first be drawn, before finally breaking on {{ tl.up.break_date | date: "%-d %B %Y" }}, right at
 the end of this dataset.
 
 ## What the two lines actually teach
 
 Put side by side, they make a point no textbook diagram does.
 
-The downtrend line broke by ₹2.40 on a single close. If your rule was "a
+The downtrend line broke by ₹{{ tl.down.break_margin }} on a single close. If your rule was "a
 daily close beyond the line," you had a signal. If your rule was "two
 consecutive closes," or "a close 1% beyond," you didn't — not that day. Same
 chart, same line, different answer, entirely because of a threshold you chose
 before you started. Or worse, after.
 
 The uptrend line is the opposite story: it did real work for nearly a year, and
-a line that survives 350 days and multiple tests is describing something
+a line that survives {{ tl.up.days_from_anchor2 }} days and multiple tests is describing something
 genuine about who was buying the dips.
 
 Both are true at once. Trend lines are neither useless nor precise. They're
@@ -149,7 +150,7 @@ impossible to hide from.
   The third touch is the first real evidence.
 - **Forcing a trend line onto a range.** If price is oscillating sideways,
   the trend line you draw will look convincing and mean nothing.
-- **Not defining "broken" in advance.** As the ₹2.40 break above shows, the
+- **Not defining "broken" in advance.** As the ₹{{ tl.down.break_margin }} break above shows, the
   threshold decides the signal. Pick it first.
 - **Drawing on a linear scale for long periods.** Over multiple years a
   constant *percentage* trend curves upward on a linear axis. For long
@@ -162,4 +163,4 @@ impossible to hide from.
 extended forward, and its value is that it can be violated — an uptrend is
 higher highs and higher lows, not a feeling. Draw it once, define what
 "broken" means before you need the answer, and remember that a line breaking
-by ₹2.40 on one close is technically a signal and practically a coin toss.
+by ₹{{ tl.down.break_margin }} on one close is technically a signal and practically a coin toss.

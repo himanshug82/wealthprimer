@@ -135,11 +135,11 @@ make the numbers concrete, not as views on the companies.
 
 | Sector | What the business really sells | Metrics the lens adds | Anchor filing |
 |---|---|---|---|
-| IT services | People's time, billed in dollars | Constant-currency growth, utilisation, attrition, deal wins | Infosys, FY26 |
+| [IT services]({{ '/2026/10/17/it-services-constant-currency-utilisation-attrition/' | relative_url }}) | People's time, billed in dollars | Constant-currency growth, utilisation, attrition, deal wins | Infosys, FY26 |
 | FMCG (fast-moving consumer goods) | Packs on shelves | Volume growth vs price growth | Marico, FY26 |
 | Cement | Tonnes from a fixed plant | EBITDA per tonne, capacity utilisation | UltraTech, FY26 |
-| Pharma | Molecules, patents and approvals | R&D (research and development) intensity, US generics vs India mix, US FDA (Food and Drug Administration) inspections | Dr. Reddy's, FY26 |
-| Life insurance | Long contracts priced today, paid out over decades | Embedded value, VNB margin, persistency | HDFC Life, FY26 |
+| [Pharma]({{ '/2026/10/20/pharma-rd-intensity-us-generics-usfda/' | relative_url }}) | Molecules, patents and approvals | R&D (research and development) intensity, US generics vs India mix, US FDA (Food and Drug Administration) inspections | Dr. Reddy's, FY26 |
+| [Life insurance]({{ '/2026/10/21/life-insurers-embedded-value-vnb-margin/' | relative_url }}) | Long contracts priced today, paid out over decades | Embedded value, VNB margin, persistency | HDFC Life, FY26 |
 | NBFCs (non-banking financial companies) | Credit, funded without current and savings accounts | Cost of borrowing, spread, asset-liability matching | Bajaj Finance, FY26 |
 | Telecom | Network capacity, rented monthly | ARPU, EBITDA after leases, capex | Bharti Airtel, FY26 |
 

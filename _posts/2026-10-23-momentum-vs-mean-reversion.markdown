@@ -151,10 +151,10 @@ This test is narrow, and it's worth being exact about how narrow.
 - **It's time-series momentum on one index.** The best-known momentum
   research is about something else: *cross-sectional* momentum, comparing
   stocks with each other and holding the recent winners against the recent
-  losers (Jegadeesh and Titman, *Journal of Finance*, 1993). One index can't
+  losers (Jegadeesh and Titman, *Journal of Finance*, [1993](https://doi.org/10.1111/j.1540-6261.1993.tb04702.x)). One index can't
   test that at all.
 - **Time-series momentum has been studied across many markets at once.**
-  Moskowitz, Ooi and Pedersen (*Journal of Financial Economics*, 2012) looked
+  Moskowitz, Ooi and Pedersen (*Journal of Financial Economics*, [2012](https://doi.org/10.1016/j.jfineco.2011.11.003)) looked
   at dozens of futures markets together. A single index over 18 years is one
   small slice of that kind of evidence. It doesn't overturn it, and it
   doesn't confirm it.
@@ -204,8 +204,8 @@ for name, r in [("daily", s.pct_change()), ("monthly", me.pct_change())]:
 Put the tests from this run side by side and a consistent picture emerges. Gaps filled about as often as
 nearby prices get revisited anyway. [Fibonacci levels]({% post_url 2026-10-17-fibonacci-retracements %}) caught no more pullbacks
 than lines nobody draws. The calendar looked like a pattern until the month
-labels were shuffled. Budget days were volatile but not directional.
-Oscillators and [OBV]({% post_url 2026-10-21-obv-and-vwap %}) divergences often came before the opposite of what their
+labels were shuffled. [Budget days]({% post_url 2026-10-19-budget-day-and-muhurat-trading %}) were volatile but not directional.
+[Oscillators]({% post_url 2026-10-20-stochastic-oscillator %}) and [OBV]({% post_url 2026-10-21-obv-and-vwap %}) divergences often came before the opposite of what their
 names say. Stops capped the worst loss but didn't improve the average. And the
 trend on the index pointed the wrong way.
 

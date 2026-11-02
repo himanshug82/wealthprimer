@@ -1,0 +1,33 @@
+{%- comment -%}
+Position size calculator. Defaults are the position sizing post's calmest-day
+example, from _data/tool_defaults.json (scripts/derive_tool_defaults.py).
+Formulas and wiring: assets/js/calc.js.
+{%- endcomment -%}
+{%- assign d = site.data.tool_defaults["position-size"].defaults -%}
+<form class="calc" data-calc="position-size" data-defaults='{{ d | jsonify }}' novalidate>
+<fieldset>
+<legend>Shares from a risk budget</legend>
+<div class="calc-inputs">
+<label>Capital <span class="calc-unit">₹</span><input name="capital" type="text" inputmode="decimal" autocomplete="off" value="{{ d.capital }}"></label>
+<label>Risk per position <span class="calc-unit">% of capital</span><input name="risk_pct" type="text" inputmode="decimal" autocomplete="off" value="{{ d.risk_pct }}"></label>
+<label>Price per share <span class="calc-unit">₹</span><input name="close" type="text" inputmode="decimal" autocomplete="off" value="{{ d.close }}"></label>
+<label>ATR (average true range) <span class="calc-unit">₹ a share</span><input name="atr" type="text" inputmode="decimal" autocomplete="off" value="{{ d.atr }}"></label>
+<label>Stop distance <span class="calc-unit">× ATR</span><input name="atr_multiple" type="text" inputmode="decimal" autocomplete="off" value="{{ d.atr_multiple }}"></label>
+</div>
+<div class="calc-result" aria-live="polite">
+<dl class="calc-table">
+<dt>Rupees at risk if the stop is hit</dt><dd><output data-out="risk_rupees"></output></dd>
+<dt>Stop distance per share</dt><dd><output data-out="stop_distance"></output></dd>
+<dt>Stop price</dt><dd><output data-out="stop_price"></output></dd>
+<dt>Shares (rounded down)</dt><dd><output class="calc-key" data-out="shares"></output></dd>
+<dt>Position value</dt><dd><output data-out="position_value"></output></dd>
+<dt>Position as a share of capital</dt><dd><output data-out="position_pct"></output></dd>
+</dl>
+</div>
+<p class="calc-error" role="alert"></p>
+<p class="calc-note">The 1% risk and the 2× ATR stop are conventions from the trading literature, not recommended settings, and the starting figures are a historical day from the post. A stop is an order, not a guarantee: a gap through it loses more than the budget. Brokerage, taxes and price slippage are not modelled.</p>
+</fieldset>
+<div class="calc-actions"><button type="button" class="calc-reset">Reset to the post's example</button></div>
+<noscript><p class="calc-note">This calculator needs JavaScript. The tables in the post show the same arithmetic.</p></noscript>
+<script src="{{ '/assets/js/calc.js' | relative_url }}" defer></script>
+</form>

@@ -434,7 +434,7 @@ assert scen["gross_8"]["fund_value"] > scen["gross_4"]["fund_value"] > 0
 ulip = {
     "circular": {"ref": "IRDAI/ACTL/MSTCIR/MISC/89/6/2024", "date": "2024-06-12", "title": "Master Circular on Life Insurance Products",
                  "url": "https://irdai.gov.in/documents/37343/365525/Master+Circular+on+Life+Insurance+Products.pdf/d7ca89f3-b894-8c93-3e53-d8caf67a8ba6?version=1.1&t=1718190178836",
-                 "read": "2026-10-25", "lock_in_years": 5, "illus_floor_pct": 90, "illus_floor_gross_pct": 4, "discontinued_fund_min_pct": 4},
+                 "read": "2026-11-02", "lock_in_years": 5, "illus_floor_pct": 90, "illus_floor_gross_pct": 4, "discontinued_fund_min_pct": 4},
     "inputs": {"premium": ULIP_PREMIUM, "years": ULIP_YEARS, "total_premium": total_prem, "admin": ADMIN_PA, "fmc_pct": FMC * 100,
                "alloc": [{"year": k, "pct": v * 100} for k, v in ALLOC.items()]},
     "low": scen["gross_4"], "high": scen["gross_8"],

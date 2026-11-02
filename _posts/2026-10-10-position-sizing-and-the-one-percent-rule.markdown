@@ -142,6 +142,8 @@ aren't. On the wildest day they're risking {{ wild.fixed_50_risk_pct }}% of
 capital without having decided to — nearly double the calm-day figure, and
 right when the market is at its least forgiving.
 
+{% include tool.html id="position-size" embed=true note="It starts from the calmest day above." %}
+
 ## Why 1–2%
 
 The number isn't sacred; the logic behind it is. Recall the

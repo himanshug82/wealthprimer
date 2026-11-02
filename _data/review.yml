@@ -15,3 +15,8 @@ regulation:
   professional: "securities-law professional"
   advice: "legal or investment advice"
   check: "Market rules and circulars are revised from time to time"
+insurance:
+  subject: "Insurance rules"
+  professional: "life-insurance professional"
+  advice: "insurance or investment advice"
+  check: "Insurance regulations and IRDAI circulars are revised from time to time"

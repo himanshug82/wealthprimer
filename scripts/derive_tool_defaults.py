@@ -70,7 +70,42 @@ def real_return(amount, years, rate_pct, inflation_pct):
             "approx_pct": (n - i) * 100, "needed": amount * (1 + i) ** years}
 
 
-MIRROR = {"recovery": recovery, "leverage": leverage, "costDrag": cost_drag, "realReturn": real_return}
+def _bond_price(face, coupon_pct, years, r):
+    c = face * coupon_pct / 100
+    return sum(c / (1 + r) ** t for t in range(1, years + 1)) + face / (1 + r) ** years
+
+
+def bond(face, coupon_pct, years, ytm_pct):
+    y, c = ytm_pct / 100, face * coupon_pct / 100
+    p0 = _bond_price(face, coupon_pct, years, y)
+    mac = (sum(t * c / (1 + y) ** t for t in range(1, years + 1)) + years * face / (1 + y) ** years) / p0
+    up, dn = _bond_price(face, coupon_pct, years, y + 0.01), _bond_price(face, coupon_pct, years, y - 0.01)
+    return {"price": p0, "current_yield_pct": c / p0 * 100, "macaulay": mac, "modified": mac / (1 + y),
+            "price_up": up, "pct_up": (up / p0 - 1) * 100, "price_dn": dn, "pct_dn": (dn / p0 - 1) * 100,
+            "est_pct": mac / (1 + y)}
+
+
+def ytm(face, coupon_pct, years, price):
+    lo, hi = -0.9, 5.0
+    for _ in range(200):
+        mid = (lo + hi) / 2
+        if _bond_price(face, coupon_pct, years, mid) > price:
+            lo = mid
+        else:
+            hi = mid
+    return {"ytm_pct": (lo + hi) / 2 * 100, "current_yield_pct": face * coupon_pct / 100 / price * 100}
+
+
+def position_size(capital, risk_pct, atr, atr_multiple, close):
+    import math
+    risk, stop = capital * risk_pct / 100, atr_multiple * atr
+    shares = math.floor(risk / stop + 1e-9)
+    return {"risk_rupees": risk, "stop_distance": stop, "stop_price": close - stop, "shares": shares,
+            "position_value": shares * close, "position_pct": shares * close / capital * 100}
+
+
+MIRROR = {"recovery": recovery, "leverage": leverage, "costDrag": cost_drag, "realReturn": real_return,
+          "bond": bond, "ytm": ytm, "positionSize": position_size}
 
 
 def matches(calc, inputs, expect):
@@ -153,9 +188,51 @@ for k in ("fd", "idx", "gilt"):  # fd first: it is the default
 rr_default, rr_cases = fewest_decimals("realReturn", cases[0][0], cases)
 out["real-return"] = {"defaults": rr_default, "cases": rr_cases}
 
+# ---- bond price, YTM and duration (YTM; Modified duration) ---------------------------
+bd = load("jargon_m6.yml")["bond"]
+base = {"face": int(bd["face"]), "coupon_pct": int(bd["coupon_pct"]), "years": bd["years"]}
+y8 = {**base, "ytm_pct": int(bd["ytm_pct"])}
+cases = [("bond", y8, {"price": [bd["price_at_ytm"], 2], "current_yield_pct": [bd["current_yield_pct"], 2],
+                       "macaulay": [bd["macaulay_duration"], 2], "modified": [bd["modified_duration"], 2],
+                       "price_up": [bd["price_if_ytm_plus_1pct"], 2], "pct_up": [bd["pct_change_plus_1"], 2],
+                       "pct_dn": [bd["pct_change_minus_1"], 2]})]
+for p in bd["price_ladder"]:
+    cases.append(("bond", {**base, "ytm_pct": int(p["ytm_pct"])}, {"price": [p["price"], 2]}))
+# the modified-duration post's comparison table: 7% yield, bonds of different maturity and coupon
+for c in bd["comparison"]:
+    n = int(c["bond"].split("-")[0])
+    cpn = 0 if "zero" in c["bond"] else 7
+    cases.append(("bond", {"face": 1000, "coupon_pct": cpn, "years": n, "ytm_pct": 7},
+                  {"macaulay": [c["macaulay"], 2], "modified": [c["modified"], 2],
+                   "pct_up": [c["price_change_actual_plus_1pct"], 1]}))
+cases.append(("ytm", {**base, "price": int(bd["buy_price"])}, {"ytm_pct": [bd["ytm_exact_pct"], 3],
+                                                               "current_yield_pct": [bd["current_yield_pct"], 2]}))
+for calc, inp, exp in cases:
+    assert matches(calc, inp, exp), (calc, inp, exp, MIRROR[calc](**inp))
+out["bond-yield"] = {"defaults": {**y8, "price": int(bd["buy_price"])},
+                     "cases": [{"calc": c, "inputs": i, "expect": e} for c, i, e in cases]}
+
+# ---- position sizing (Position sizing and the one percent rule) ----------------------
+ps = load("risk.yml")["position_sizing"]
+pbase = {"capital": ps["capital"], "risk_pct": int(ps["risk_pct"]), "atr_multiple": int(ps["atr_multiple"])}
+cases = []
+for k in ("example_calm", "example_mid", "example_wild"):
+    ex = ps[k]
+    # ATR and close are shown rounded in the post, which computes from unrounded values:
+    # stop distance / price can be 0.1 off, so only the whole-share count and the
+    # share of capital (which the post prints) are checked.
+    cases.append(("positionSize", {**pbase, "atr": ex["atr"], "close": ex["close"]},
+                  {"shares": [ex["shares"], 0], "risk_rupees": [ex["risk_rupees"], 0],
+                   "position_pct": [ex["position_pct_of_capital"], 1]}))
+for calc, inp, exp in cases:
+    assert matches(calc, inp, exp), (calc, inp, exp, MIRROR[calc](**inp))
+c0 = ps["example_calm"]
+out["position-size"] = {"defaults": {**pbase, "atr": c0["atr"], "close": c0["close"]},
+                        "cases": [{"calc": c, "inputs": i, "expect": e} for c, i, e in cases]}
+
 with open(OUT, "w", encoding="utf-8") as fh:
     json.dump(out, fh, ensure_ascii=False, indent=2)
     fh.write("\n")
 print("wrote", os.path.relpath(OUT, ROOT))
-for k in ("loss-recovery", "cost-drag", "real-return"):
+for k in ("loss-recovery", "cost-drag", "real-return", "bond-yield", "position-size"):
     print(" ", k, json.dumps(out[k]["defaults"]), f"({len(out[k]['cases'])} cases)")

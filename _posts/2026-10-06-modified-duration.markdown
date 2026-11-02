@@ -90,12 +90,14 @@ A one-year bond barely notices a rate move. A ten-year bond loses about 7% —
 seven times as much — on the identical change in yields. And the ten-year
 zero coupon, which pays nothing until the end, loses nearly 9%.
 
+{% include tool.html id="bond-yield" note="Change the maturity or coupon to see the table's pattern." %}
+
 This table is the whole reason debt funds are not "safe" in the way a fixed
 deposit is. A fund holding ten-year gilts carries essentially zero risk of not
 being repaid and very real risk of losing 7% in a year when yields rise a
 point. A liquid fund, holding paper with a duration measured in weeks, carries
 almost none of that. Both are "debt funds". The
-debt funds tax post<!-- RELINK 2026-11-05-debt-funds-gold-and-the-rest --> treats
+debt funds tax post<!-- RELINK 2026-12-04-debt-funds-gold-and-the-rest --> treats
 them alike; the market does not.
 
 Every debt fund factsheet quotes its portfolio's modified duration for exactly

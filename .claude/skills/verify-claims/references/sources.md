@@ -11,6 +11,8 @@ Reachability was tested from the cloud sandbox (egress proxy). Re-test if someth
 | niftyindices.com | Index methodology, TRI series | POST endpoint works for data; methodology PDFs via `get` | ≤1 year per request for TRI |
 | mfapi.in | Scheme NAV history | Yes | Not a regulator; use for data, not rules |
 | nseindia.com | Market data, circulars | Often blocks scripted access | Use niftyindices for index data |
+| egazette.gov.in | Finance Act 2026 (`WriteReadData/2026/271439.pdf`), Income-tax Rules 2026 (`.../271092.pdf`) | Yes with plain `curl`; `fetch_source.py get` fails its TLS check | Save the PDF, then `pdftotext -layout` into the cache |
+| incometaxindia.gov.in, spglobal.com | Rule pages, SPIVA | 403 from this machine (2 Nov 2026) | Use the gazette for Rules; SPIVA stays VERIFY |
 
 ## Citation format
 

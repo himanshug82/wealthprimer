@@ -152,6 +152,13 @@ charges:
   net_after_charges: 1109.48
   charges_pct_of_gross: 14.7
   stt_total: 129.7
+  alt_gst_extra: 0.72
+  alt_total_charges: 191.24
+  alt_net_after_charges: 1108.76
+  alt_charges_pct_of_gross: 14.7
+  alt_total_fmt: '191.24'
+  alt_net_fmt: 1,108.76
+  alt_gst_extra_fmt: '0.72'
   total_fmt: '190.52'
   net_fmt: 1,109.48
   stt_total_fmt: '129.70'

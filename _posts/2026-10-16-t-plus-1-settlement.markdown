@@ -7,6 +7,7 @@ image: /assets/og/t-plus-1-settlement.png
 date: 2026-10-16 09:00:00 +0530
 series: jargon
 term: "T+1 settlement"
+last_modified_at: 2026-11-02
 ---
 
 {% assign st = site.data.jargon_m7.settlement %}
@@ -98,7 +99,11 @@ with a band of ±1% around the regular market's price
 It began with 25 stocks and, from 31 January 2025, SEBI extended it in
 monthly batches toward the top 500 by [market cap]({% post_url 2026-09-27-market-cap %})
 ([SEBI/HO/MRD/MRD-PoD-3/P/CIR/2024/172, 10 December 2024](https://www.sebi.gov.in/sebi_data/attachdocs/dec-2024/1733829354031.pdf)).
-Broker participation is optional, so many investors won't see it at all.
+All brokers are allowed to offer it. That circular also told the larger
+"qualified" stock brokers to build the systems for it, but SEBI has since
+extended that deadline twice, most recently with no new date
+([HO/47/11/12(1)2025-MRD-POD3, 30 October 2025](https://www.sebi.gov.in/sebi_data/attachdocs/oct-2025/1761825190101.pdf)).
+We didn't find a later date as of November 2026, so many investors may not see it at all.
 SEBI's board papers shelved the earlier idea of optional *instant*
 settlement "for now"
 ([board memorandum, November 2024](https://www.sebi.gov.in/sebi_data/meetingfiles/nov-2024/1731577464307_1.pdf)).

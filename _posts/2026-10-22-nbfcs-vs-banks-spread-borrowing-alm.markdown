@@ -151,7 +151,10 @@ example), not only by contract dates. ₹ crore:
    cumulatively. The company shows the limits it's held to for the first
    three buckets as permissible *negative* gaps of
    {{ bj.alm_permissible[0] }}, {{ bj.alm_permissible[1] }} and
-   {{ bj.alm_permissible[2] }}; its gaps there were positive.
+   {{ bj.alm_permissible[2] }}; its gaps there were positive. Those match the
+   limits for the 1–7, 8–14 and 15–30 day buckets in the RBI's
+   [liquidity framework of 4 November 2019](https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=11719)
+   (RBI/2019-20/88); we didn't trace later RBI consolidations of that text.
 7. The last bucket closes the table: shareholders' capital sits in "over 5
    years" as an outflow that never actually comes due, so the cumulative gap
    ends at zero by construction.

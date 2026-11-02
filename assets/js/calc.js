@@ -59,6 +59,53 @@
         approx_pct: (n - inf) * 100,
         needed: i.amount * Math.pow(1 + inf, i.years)
       };
+    },
+
+    // Bond from its yield: annual coupons, whole years. Macaulay duration is the
+    // present-value-weighted average time to the cash flows; modified = Macaulay / (1 + y).
+    bond: function (i) {
+      var y = i.ytm_pct / 100, c = i.face * i.coupon_pct / 100;
+      function price(r) {
+        var p = i.face / Math.pow(1 + r, i.years);
+        for (var t = 1; t <= i.years; t++) p += c / Math.pow(1 + r, t);
+        return p;
+      }
+      var p0 = price(y), w = i.years * i.face / Math.pow(1 + y, i.years);
+      for (var t = 1; t <= i.years; t++) w += t * c / Math.pow(1 + y, t);
+      var mac = w / p0, mod = mac / (1 + y);
+      var up = price(y + 0.01), dn = price(y - 0.01);
+      return {
+        price: p0, current_yield_pct: c / p0 * 100, macaulay: mac, modified: mod,
+        price_up: up, pct_up: (up / p0 - 1) * 100,
+        price_dn: dn, pct_dn: (dn / p0 - 1) * 100, est_pct: mod
+      };
+    },
+
+    // Yield to maturity from a price: the rate that makes the discounted cash flows equal it (bisection).
+    ytm: function (i) {
+      var c = i.face * i.coupon_pct / 100;
+      function price(r) {
+        var p = i.face / Math.pow(1 + r, i.years);
+        for (var t = 1; t <= i.years; t++) p += c / Math.pow(1 + r, t);
+        return p;
+      }
+      var lo = -0.9, hi = 5;
+      for (var k = 0; k < 200; k++) {
+        var mid = (lo + hi) / 2;
+        if (price(mid) > i.price) lo = mid; else hi = mid;
+      }
+      return { ytm_pct: (lo + hi) / 2 * 100, current_yield_pct: c / i.price * 100 };
+    },
+
+    // Position sizing: rupees at risk / stop distance (k x ATR), rounded down to whole shares.
+    positionSize: function (i) {
+      var risk = i.capital * i.risk_pct / 100, stop = i.atr_multiple * i.atr;
+      var shares = Math.floor(risk / stop + 1e-9);
+      return {
+        risk_rupees: risk, stop_distance: stop, stop_price: i.close - stop,
+        shares: shares, position_value: shares * i.close,
+        position_pct: shares * i.close / i.capital * 100
+      };
     }
   };
 
@@ -75,7 +122,10 @@
     return sign(r, Math.abs(r) + "%");
   }
   function times(x) { return Number(x.toFixed(2)) + "×"; }
-  var FMT = { inr: inr, pct: pct, times: times, int: function (x) { return grp.format(Math.round(x)); } };
+  function inr2(x) { var r = Number(x.toFixed(2)); return sign(r, "₹" + new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(Math.abs(r))); }
+  function yrs(x) { return Number(x.toFixed(2)) + " years"; }
+  function pct2(x) { return pct(x, 2); }
+  var FMT = { inr: inr, inr2: inr2, yrs: yrs, pct2: pct2, pct: pct, times: times, int: function (x) { return grp.format(Math.round(x)); } };
 
   // What each calculator shows. `check` returns a message when the inputs make no sense.
   var VIEWS = {
@@ -111,6 +161,36 @@
         if (!(i.rate_pct > -100 && i.inflation_pct > -100)) return "Rates must be above −100% a year.";
       },
       show: { nominal: "inr", real: "inr", real_rate_pct: "pct", approx_pct: "pct", gap_pp: "pp", needed: "inr" }
+    }],
+    "bond-yield": [
+      {
+        calc: "bond", inputs: ["face", "coupon_pct", "years", "ytm_pct"],
+        check: function (i) {
+          if (!(i.face > 0)) return "Enter a face value above ₹0.";
+          if (!(i.coupon_pct >= 0)) return "The coupon can't be negative (use 0 for a zero-coupon bond).";
+          if (!(i.years >= 1 && i.years <= 50 && Number.isInteger(i.years))) return "Enter whole years to maturity, from 1 to 50.";
+          if (!(i.ytm_pct > -50)) return "Enter a yield above −50%.";
+        },
+        show: { price: "inr2", current_yield_pct: "pct2", macaulay: "yrs", modified: "yrs", price_up: "inr2", pct_up: "pct2", price_dn: "inr2", pct_dn: "pct2", est_pct: "pct2" }
+      },
+      {
+        calc: "ytm", inputs: ["face", "coupon_pct", "years", "price"],
+        check: function (i) {
+          if (!(i.face > 0 && i.price > 0)) return "Enter a face value and a price above ₹0.";
+          if (!(i.coupon_pct >= 0)) return "The coupon can't be negative.";
+          if (!(i.years >= 1 && i.years <= 50 && Number.isInteger(i.years))) return "Enter whole years to maturity, from 1 to 50.";
+        },
+        show: { ytm_pct: "pct2" }
+      }
+    ],
+    "position-size": [{
+      calc: "positionSize", inputs: ["capital", "risk_pct", "atr", "atr_multiple", "close"],
+      check: function (i) {
+        if (!(i.capital > 0 && i.close > 0 && i.atr > 0)) return "Capital, price and ATR must be above zero.";
+        if (!(i.risk_pct > 0 && i.risk_pct <= 100)) return "Enter a risk percentage between 0 and 100.";
+        if (!(i.atr_multiple > 0)) return "Enter a stop multiple above zero.";
+      },
+      show: { risk_rupees: "inr", stop_distance: "inr2", stop_price: "inr2", shares: "int", position_value: "inr", position_pct: "pct" }
     }]
   };
 

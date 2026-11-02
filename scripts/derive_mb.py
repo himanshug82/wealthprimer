@@ -194,6 +194,14 @@ CHARGES.update(
     charges_pct_of_gross=round(total_ch / gross * 100, 1),
     stt_total=round(BUY["stt"] + SELL["stt"], 2),
 )
+# ALTERNATIVE GST BASE (unconfirmed): GST also on the exchange transaction charge and the SEBI fee.
+# The NSE page read does not say which lines GST applies to; the post shows both totals.
+gst_extra = round(sum((x["txn"] + x["sebi"]) for x in (BUY, SELL)) * CHARGES["gst_pct"] / 100, 2)
+alt_total = round(total_ch + gst_extra, 2)
+CHARGES.update(alt_gst_extra=gst_extra, alt_total_charges=alt_total, alt_net_after_charges=round(gross - alt_total, 2),
+               alt_charges_pct_of_gross=round(alt_total / gross * 100, 1),
+               alt_total_fmt="{:,.2f}".format(alt_total), alt_net_fmt="{:,.2f}".format(gross - alt_total),
+               alt_gst_extra_fmt="{:,.2f}".format(gst_extra))
 CHARGES.update(total_fmt="{:,.2f}".format(CHARGES["total_charges"]), net_fmt="{:,.2f}".format(CHARGES["net_after_charges"]),
                stt_total_fmt="{:,.2f}".format(CHARGES["stt_total"]))
 assert gross == 1300

@@ -5,19 +5,17 @@
 # and re-run it. Every rupee figure in the five posts renders from here.
 #
 # Rules are Tax Year 2026-27. Opened: the Income-tax Act, 2025 (ICAI copy) and
-# the Finance Bill 2026 memorandum (see the `verification` block). NOT opened:
-# the Finance Act, 2026 gazette. Open points are under `verification.*.disagreements`.
+# the Finance Act, 2026 gazette, opened 2 Nov 2026 (see the `verification` block). Open points are under `verification.*.disagreements`.
 
 verification:
   financial_year: Tax Year 2026-27 (FY 2026-27)
-  verified_on: September 2026 (partly re-read 1 November 2026; see how)
+  verified_on: September 2026 (partly re-read 2 November 2026; see how)
   how: 'What was actually opened: the Income-tax Act, 2025 (No. 30 of 2025, ICAI copy of the Gazette text),
     the Finance Bill 2026 and its memorandum, and the Memoranda to the Finance Bills of 2023 and 2024
-    on indiabudget.gov.in (audit reads of 1 November 2026). The Finance Act, 2026 gazette (egazette.gov.in)
-    was NOT opened (TLS failure), and incometaxindia.gov.in returned 403/302, so anything resting on the
-    enacted Finance Act 2026 (NRI TDS rates, the SGB wording in s.70(1)(x), surcharge caps) is per the
-    Bill as introduced and must be checked against the Act. The Income-tax Rules, the treaties, FEMA/RBI
-    rules and the Black Money Act were not opened.'
+    on indiabudget.gov.in (audit reads of 1 November 2026). The Finance Act, 2026 gazette and the Income-tax
+    Rules, 2026 were opened 2 November 2026 for the NRI TDS rates, the SGB wording in s.70(1)(x) and surcharge
+    caps. The treaties and FEMA/RBI rules were not opened; the Black Money Act was read only as amended
+    by section 160.'
   sources:
     income_tax_act_2025: https://resource.cdn.icai.org/87647dtc-aps2139-inceome-tax-act-2025.pdf
     finance_act_2026: https://egazette.gov.in/WriteReadData/2026/271439.pdf
@@ -312,13 +310,12 @@ gifts:
 nri:
   note: Equity example = the UTI Nifty 50 Index Fund lump sum from _data/tax.yml; gilt example = UTI Gilt
     Fund (regular, growth), AMFI NAVs via mfapi.in; NRO/NRE interest are round numbers. TDS rates per
-    the Finance Bill, 2026 as introduced (the Act was not opened); payments below Rs 50 lakh, so no surcharge
-    on the TDS.
+    the Finance Act, 2026, First Schedule, Part II; payments below Rs 50 lakh, so no surcharge on the
+    TDS.
   eq_gain: 919901
   eq_value: 1419901
   eq_taxable: 794901
   eq_tax_after_exemption_with_cess: 103337
-  eq_tds_whole_gain_with_cess: 119587
   tds_eq_ltcg_pct: 12.5
   tds_eq_stcg_pct: 20
   tds_other_pct: 30

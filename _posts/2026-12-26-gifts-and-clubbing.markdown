@@ -1,0 +1,195 @@
+---
+layout: post
+title: "Gifts and clubbing: who pays tax on what a gift earns"
+seo_title: "Gifts and clubbing of income, explained"
+description: "Gifts from relatives are tax-free; from others, above ₹50,000 a year is taxed. A spouse's income on your gift is clubbed into yours; a minor's, a parent's."
+image: /assets/og/gifts-and-clubbing.png
+date: 2026-12-26 09:00:00 +0530
+series: tax
+term: "Clubbing of income"
+needs_review: tax
+rules_for: "Tax Year 2026-27 (FY 2026-27)"
+rules_as_of: "November 2026"
+---
+
+{% assign t3 = site.data.tax3 %}
+{% assign v = t3.verification %}
+{% assign x = t3.gifts %}
+{% assign r = site.data.tax.rates %}
+
+## Two questions, two sets of rules
+
+This post covers Tax Year 2026-27 (FY 2026-27, April 2026 to March 2027). NAV means net asset value, the per-unit price of a mutual fund; UTI is the fund house, and AMFI is the Association of Mutual Funds in India, the data source. The worked example redeems on 31 March 2026, which falls in FY (financial year) 2025-26, so it illustrates the mechanics under the rates described for Tax Year 2026-27 and not a 2026-27 return.
+
+When money or investments move within a family, two separate tax questions
+come up, and people tend to blur them:
+
+1. **Is the gift itself taxed in the hands of the person receiving it?**
+   Usually not, if it's from a relative.
+2. **Once it's invested, whose income is the return?** Often not the
+   recipient's. For a spouse or a minor child, the law **clubs** the income
+   back into another person's return: the giver's for a spouse, and the parent's with the higher income for a minor child.
+
+The first question is about the gift. The second is about everything the
+gift earns afterwards, and it's the one that decides whose return the income
+appears in.
+
+## Gifts in Tax Year 2026-27: tax-free from relatives, taxable above ₹{% include inr.html n=x.limit %} from others
+
+Under section 92(2)(m) of the 2025 Act, if you receive money, or certain
+property, **without paying for it**, and the total from non-relatives in the
+tax year exceeds ₹{% include inr.html n=x.limit %}, the **whole amount** is taxed as your income at your
+slab rate. "Property" here means shares and securities, jewellery, bullion,
+land and buildings, art, and virtual digital assets, among others. Property received for less than its value is tested under separate
+limbs of the same section (different tests for money, land and buildings, and other property). This post's worked example covers **money only**.
+
+The rule doesn't apply — whatever the amount — to gifts:
+
+- **from a relative**;
+- on the occasion of **your marriage**;
+- under a **will or inheritance**, or in contemplation of the giver's death;
+- and a few institutional cases (local authorities, registered charities).
+
+"Relative" has a precise, closed list (section 92(5)(g)):
+
+| Relative of an individual | Examples |
+|---|---|
+| Spouse | Husband, wife |
+| Brother or sister | Your siblings |
+| Brother or sister of your spouse | Brother-in-law, sister-in-law (spouse's side) |
+| Brother or sister of either parent | Uncles and aunts |
+| Any lineal ascendant or descendant — yours or your spouse's | Parents, grandparents, children, grandchildren, parents-in-law |
+| The spouse of anyone above | Sister's husband, uncle's wife, son's wife |
+
+Friends, cousins, and a nephew or niece giving to you are **not** on it.
+
+**Worked example.** At a 30% slab plus {{ r.cess_pct }}% cess:
+
+| Gift received in the year | Taxable | Tax with cess |
+|---|---:|---:|
+| ₹{% include inr.html n=x.limit %} from a friend | ₹0 | ₹0 |
+| ₹{% include inr.html n=x.single %} from a friend | ₹{% include inr.html n=x.single %} — the whole amount | ₹{% include inr.html n=x.single_tax_with_cess %} |
+| ₹{% include inr.html n=x.two_a %} + ₹{% include inr.html n=x.two_b %} from two friends | ₹{% include inr.html n=x.two_total %} — the total crosses ₹{% include inr.html n=x.limit %} | ₹{% include inr.html n=x.two_tax_with_cess %} |
+| Any amount from a parent or sibling | ₹0 | ₹0 |
+
+The ₹{% include inr.html n=x.limit %} is a cliff, not an allowance: one rupee over and the entire
+sum is taxed. And for money it is counted across all non-relatives for the year, not
+per giver.
+
+**What the recipient inherits along with the gift.** Giving shares or fund
+units away isn't a sale, so the giver owes no capital gains tax
+(section 70(1)(b)). The recipient takes over the **giver's cost** and the
+**giver's holding period** (sections 73 and 2(101)). When they eventually
+sell, the gain is measured from what the giver originally paid.
+
+## Clubbing: whose income is it?
+
+Section 99, as we read it, says your income includes income that arises to, among other cases (this list is not exhaustive):
+
+- **your spouse**, from assets you transferred to them "otherwise than for
+  adequate consideration" — that is, without being paid a fair price for
+  them;
+- **your son's wife**, from assets you transferred to her on the same terms;
+- **your minor child** — *all* of the child's income, not only from what you
+  gave, except income from the child's own work or skill, or where the child
+  has a specified disability.
+
+Section 99 has further limbs this post does not cover. Examples we saw in the Act's text are a spouse's
+remuneration from a concern in which you have a substantial interest, assets transferred to any person for the
+benefit of your spouse or son's wife, and conversion of individual property into HUF (Hindu undivided family) property.
+Read section 99 in full, or check the current rule, before assuming a transfer is outside it.
+
+A gift to your spouse is tax-free when it's made. But the interest, dividends
+and capital gains it earns come back into **your** return, at **your** slab.
+A loss is clubbed too: section 99 says "income" includes loss.
+
+A minor child's income is added to the income of the parent whose total income is greater
+where the parents are married to each other, or of the parent who maintains the child
+where they are not (as we read section 99), after excluding ₹{% include inr.html n=x.minor_exclusion %} per child a year. As we read it, that exclusion is available only in the old regime and not under the new regime, which this series treats as the default (section 202(2) excludes it).
+
+**Not clubbed under the limbs above**: income on gifts to an **adult child**, to your parents, or to
+siblings. Gifts to them are tax-free when made
+(they're relatives), and income on them is not clubbed under these limbs, though the further limbs of section 99 may still apply.
+
+<details markdown="1">
+<summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
+
+Your mum's piggy bank is in the "big savings" jar, where the tax collector
+takes a bigger slice of any interest. Your dad's is in the "small savings" jar, where
+the slice is smaller.
+
+The rule says: if mum gives coins to dad, any interest those coins earn
+still counts as mum's, and gets mum's slice taken. If you're still a kid, the interest on your own jar gets counted in whichever parent earns more.
+
+Once you're grown up, your jar is counted as your own.
+
+</details>
+
+## Worked example: three ways money moves in one family
+
+At a 30% slab plus {{ r.cess_pct }}% cess, no surcharge.
+
+**A spouse's fixed deposit.** Rahul gifts ₹{% include inr.html n=x.spouse_gift %} to his wife Priya.
+She puts it in a {{ x.spouse_fd_pct }}% fixed deposit. The gift is tax-free (spouse is a
+relative). The ₹{% include inr.html n=x.spouse_interest %} of interest is clubbed into Rahul's income:
+₹{% include inr.html n=x.spouse_interest_tax_with_cess %} of tax, at his slab — exactly what it would have cost had he kept
+the deposit himself.
+
+**A minor child's deposit.** Interest of ₹{% include inr.html n=x.minor_interest %} on a deposit in a minor
+child's name, shown under both regimes:
+
+| | Old regime | New regime (default) |
+|---|---:|---:|
+| Child's interest | ₹{% include inr.html n=x.minor_interest %} | ₹{% include inr.html n=x.minor_interest %} |
+| − Exclusion per child | ₹{% include inr.html n=x.minor_exclusion %} | none |
+| Clubbed into the higher-earning parent's income | ₹{% include inr.html n=x.minor_clubbed %} | ₹{% include inr.html n=x.minor_interest %} |
+| Tax at 30% + cess | ₹{% include inr.html n=x.minor_tax_with_cess %} | ₹{% include inr.html n=x.minor_tax_no_exclusion_with_cess %} |
+
+**Fund units given to a spouse — real prices.** Rahul bought ₹{% include inr.html n=x.ls_invested %} of
+UTI Nifty 50 Index Fund (regular plan, growth) on {{ x.ls_buy_date }} at a [NAV]({% post_url 2026-09-25-what-a-mutual-fund-is %}) of
+₹{{ x.ls_buy_nav }}, and later gave the units to Priya. She redeems them on
+{{ x.ls_sell_date }} at ₹{{ x.ls_sell_nav }} (NAVs from AMFI, as of 31 March 2026,
+used for illustration only; we apply the rules for {{ v.financial_year }}). This is the
+same holding as the
+[equity post's lump sum]({% post_url 2026-11-08-equity-and-equity-funds %}).
+
+- Cost and holding period are Rahul's: ₹{% include inr.html n=x.ls_invested %}, held since {{ x.ls_buy_date | date: "%Y" }} — so
+  the gain of ₹{% include inr.html n=x.ls_gain %} is long-term.
+- The gain arises from an asset Rahul transferred to his spouse for nothing,
+  so it's **clubbed into Rahul's income**.
+
+| Whose exemption absorbs the first ₹{% include inr.html n=r.ltcg_annual_exemption %}? | Tax with cess |
+|---|---:|
+| Rahul's, if still unused this year | ₹{% include inr.html n=x.ls_tax_own_exemption_with_cess %} |
+| None — Rahul already used his on other gains | ₹{% include inr.html n=x.ls_tax_exemption_used_with_cess %} |
+
+Because the gain is clubbed, it is assessed with Rahul, and on our reading the ₹{% include inr.html n=r.ltcg_annual_exemption %} exemption that applies is his. If his
+exemption was already used, the clubbed gain costs ₹{% include inr.html n=x.ls_clubbing_cost %}.
+
+## What "adequate consideration" means, and the grey areas
+
+The Act doesn't define **adequate consideration**. In ordinary reading it
+means the spouse paid something close to what the asset was worth. A gift
+fails that test by definition; so does a sale at a token price.
+
+Two further questions — the tax on income earned by reinvested clubbed income, and how a genuine, documented loan to a spouse differs from a gift — are described as turning on court rulings rather than the Act's text. We have not read those rulings and do not cover them here: the Act is silent on them as we read it, so ask a professional.
+
+## Common mistakes
+
+- **Treating the ₹{% include inr.html n=x.limit %} as a free allowance.** Cross it and the *whole*
+  amount from non-relatives is taxable, not just the excess.
+- **Assuming cousins, friends or a nephew count as relatives.** They don't.
+  The list is closed.
+- **Assuming income in a spouse's or minor child's name is taxed at their slab.**
+  The clubbing rules add a spouse's income from your gift to your income, and a minor child's income to the parent the Act names, whoever made the gift.
+- **Resetting the holding period on a gifted asset.** The recipient inherits
+  the giver's purchase date and cost, as described above.
+
+**Takeaway:** A gift from a relative isn't taxed; from anyone else, the
+whole amount is taxed once the year's total passes ₹{% include inr.html n=x.limit %}, unless an exception applies. But whatever a
+gift to your spouse earns is clubbed back into your return (and a minor child's income into the parent's with the higher income),
+so moving money to them does not by itself change whose tax it is.
+
+*The module's [data file](https://github.com/himanshug82/wealthprimer/blob/main/_data/tax3.yml)
+lists the sections of the Income-tax Act, 2025 behind the rules here, and
+the points still to be confirmed.*

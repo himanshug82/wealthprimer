@@ -1,0 +1,50 @@
+{%- comment -%}
+Bond price, yield and duration calculator. Defaults are the YTM post's
+fictional 7% five-year bond, from _data/tool_defaults.json
+(scripts/derive_tool_defaults.py). Formulas and wiring: assets/js/calc.js.
+{%- endcomment -%}
+{%- assign d = site.data.tool_defaults["bond-yield"].defaults -%}
+<form class="calc" data-calc="bond-yield" data-defaults='{{ d | jsonify }}' novalidate>
+<fieldset>
+<legend>The bond</legend>
+<div class="calc-inputs">
+<label>Face value <span class="calc-unit">₹, repaid at maturity</span><input name="face" type="text" inputmode="decimal" autocomplete="off" value="{{ d.face }}"></label>
+<label>Coupon <span class="calc-unit">% of face value a year</span><input name="coupon_pct" type="text" inputmode="decimal" autocomplete="off" value="{{ d.coupon_pct }}"></label>
+<label>Years to maturity <span class="calc-unit">whole years</span><input name="years" type="text" inputmode="decimal" autocomplete="off" value="{{ d.years }}"></label>
+</div>
+</fieldset>
+<fieldset data-part="0">
+<legend>From a yield to a price and a duration</legend>
+<div class="calc-inputs">
+<label>Yield to maturity <span class="calc-unit">% a year</span><input name="ytm_pct" type="text" inputmode="decimal" autocomplete="off" value="{{ d.ytm_pct }}"></label>
+</div>
+<div class="calc-result" aria-live="polite">
+<dl class="calc-table">
+<dt>Price</dt><dd><output class="calc-key" data-out="price"></output></dd>
+<dt>Current yield (coupon ÷ price)</dt><dd><output data-out="current_yield_pct"></output></dd>
+<dt>Macaulay duration</dt><dd><output data-out="macaulay"></output></dd>
+<dt>Modified duration</dt><dd><output data-out="modified"></output></dd>
+<dt>Duration's estimate for a 1-point rise in yield</dt><dd>−<output data-out="est_pct"></output></dd>
+<dt>Price if the yield rises 1 point</dt><dd><output data-out="price_up"></output> (<output data-out="pct_up"></output>)</dd>
+<dt>Price if the yield falls 1 point</dt><dd><output data-out="price_dn"></output> (<output data-out="pct_dn"></output>)</dd>
+</dl>
+</div>
+<p class="calc-error" role="alert"></p>
+</fieldset>
+<fieldset data-part="1">
+<legend>From a price to a yield</legend>
+<div class="calc-inputs">
+<label>Price you pay <span class="calc-unit">₹</span><input name="price" type="text" inputmode="decimal" autocomplete="off" value="{{ d.price }}"></label>
+</div>
+<div class="calc-result" aria-live="polite">
+<dl class="calc-table">
+<dt>Yield to maturity</dt><dd><output class="calc-key" data-out="ytm_pct"></output></dd>
+</dl>
+</div>
+<p class="calc-error" role="alert"></p>
+<p class="calc-note">One annual coupon, whole years, held to maturity; the posts use the same simplification. Indian government bonds usually pay half-yearly, so a real bond's figures differ a little. The price excludes accrued interest, tax and charges. This is arithmetic on a fictional bond, not a view on any real one.</p>
+</fieldset>
+<div class="calc-actions"><button type="button" class="calc-reset">Reset to the post's example</button></div>
+<noscript><p class="calc-note">This calculator needs JavaScript. The tables in the posts show the same arithmetic.</p></noscript>
+<script src="{{ '/assets/js/calc.js' | relative_url }}" defer></script>
+</form>

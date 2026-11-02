@@ -1,0 +1,77 @@
+---
+layout: post
+title: "India VIX: what the number measures"
+seo_title: "What is India VIX? Meaning and how it's computed"
+description: "India VIX is NSE's volatility index, built from Nifty option prices and quoted as an annualised %. What it measures, how to read it, what it can't say."
+image: /assets/og/india-vix.png
+date: 2026-12-02 09:00:00 +0530
+series: jargon
+term: "India VIX"
+---
+
+{% assign vx = site.data.jargon_m8.india_vix %}
+
+## What India VIX means
+
+**India VIX** is a volatility index published by the National Stock Exchange of India (NSE). It is computed from the prices of Nifty index options, using the best bid and ask quotes of out-of-the-money options in the near and mid-month contracts. NSE describes it as indicating "the investor's perception of the market's volatility in the near term": the **expected volatility over the next 30 calendar days**. Higher values mean higher expected volatility; lower values, lower.
+
+Three things it is *not*: it is not the Nifty's price, it is not a measure of how much the market *has* moved, and it is not a signal about which way the market will go. It is a number backed out of option prices.
+
+"VIX" is short for volatility index, and the name is a CBOE (Chicago Board Options Exchange) trademark licensed to NSE. This post is part of [Jargon, Decoded]({{ '/series/jargon/' | relative_url }}). It describes the index and does not give a live reading or suggest acting on one.
+
+## How it is built, in plain steps
+
+From NSE's [computation methodology](https://nsearchives.nseindia.com/web/sites/default/files/inline-files/India_VIX_comp_meth.pdf) and [white paper](https://nsearchives.nseindia.com/web/sites/default/files/inline-files/white_paper_IndiaVIX.pdf) (both undated NSE documents, read on 1 November 2026):
+
+1. NSE takes the latest price of the Nifty futures contract for each expiry as the forward index level.
+2. The strike just below that level is the at-the-money strike. Out-of-the-money calls (strikes above it) and puts (strikes below it) are used; their best bid and ask quotes feed the calculation.
+3. Where quotes are missing, values are filled in by a statistical method called a natural cubic spline.
+4. Variance (volatility squared) is computed separately for the near and mid-month expiry, giving each option a weight that rises with its average bid-ask quote and falls with its strike price.
+5. The two variances are interpolated to a single value for a constant 30 days to expiry.
+6. The square root of that variance is multiplied by 100.
+
+NSE says the method follows CBOE's, adapted to the Nifty options order book, and that the time to expiry is measured in minutes and the risk-free rate is the NSE MIBOR (a benchmark interbank interest rate) for the matching tenure.
+
+## The formula
+
+```
+India VIX  =  σ × 100        (σ is the 30-day expected volatility,
+                                expressed as an annual rate)
+
+σ  =  √( interpolated variance of near-month and mid-month option prices )
+```
+
+The white paper says the index "is denoted as an annualised percentage". So a VIX of 16 means σ = 0.16 *per year*, not a 16% move in a month. To get the implied size of a typical move over 30 days you scale by the square root of time:
+
+```
+Implied one-standard-deviation move over 30 days  =  VIX × √(30 ÷ 365)   (in % of the index level)
+```
+
+## Worked example: converting illustrative VIX levels
+
+These VIX levels are **invented**, for illustration only; no live or historical reading is used. The index level of {% include inr.html n=vx.index_level %} is also made up. The conversion uses the standard one-standard-deviation convention, which assumes moves follow a bell curve.
+
+| Illustrative VIX | Implied 1-SD move, 30 days (%) | In points on a {% include inr.html n=vx.index_level %} index | Rough range |
+|---:|---:|---:|---|
+{% for r in vx.rows -%}
+| {{ r.vix }} | ±{{ r.sd_30d_pct }}% | ±{% include inr.html n=r.sd_30d_points %} | {% include inr.html n=r.lo %} to {% include inr.html n=r.hi %} |
+{% endfor %}
+Read the table as a statement about *option prices*, not about the future: "at these option prices, the market's pricing is consistent with a typical 30-day swing of about this size". Moves can, and do, exceed one standard deviation fairly often; it is a typical size, not a limit.
+
+The idea is the same one the Risk series develops for individual options in [implied volatility]({% post_url 2026-11-30-implied-volatility %}); here it is applied to the whole index. For how an individual stock's swings compare with the market's, see [beta]({% post_url 2026-10-02-beta %}); for volatility measured from past returns, see [volatility and Sharpe]({% post_url 2026-09-30-volatility-and-sharpe %}).
+
+<details markdown="1">
+<summary>🧒 Explain it like I'm 10 <em>(optional — skip if this is already clear)</em></summary>
+
+Think of the weather forecast saying "very stormy week ahead" or "calm week ahead". The forecast isn't the rain itself; it's what the forecasters *expect*. India VIX is like that for the market's ups and downs: it is how bumpy the people trading options *expect* the next month to be, worked out from the prices they're willing to pay. A high number means they expect a bumpy ride. It doesn't say whether the bumps go up or down, and the forecast can be wrong.
+
+</details>
+
+## Common mistakes
+
+- **Reading it as a direction signal.** A high VIX means options are priced for large moves, in either direction. Phrases like "the VIX says buy" or "the VIX says sell" read a direction into a number that has none.
+- **Reading it as a forecast of what will happen.** It reflects option prices today. Actual moves can be calmer or wilder than the number implies.
+- **Forgetting it is annualised.** A VIX of 16 is not a 16% swing in the next month; scale it by the square root of time, as above.
+- **Confusing it with realised volatility.** Realised volatility is measured from past returns (the Sharpe post's σ). India VIX is implied by option prices and looks forward. The two can differ for long stretches.
+
+**Takeaway:** India VIX is NSE's index of expected Nifty volatility over the next 30 calendar days, backed out of option prices and quoted as an annualised percentage. A higher number means bigger expected swings in either direction, and nothing about which way.

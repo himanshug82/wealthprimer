@@ -209,7 +209,7 @@ the series used here were spliced.
 - **Forgetting tax.** As at the date above, gains on "specified" debt-fund units bought on or after 1 April
   2023 are generally taxed at your slab rate whatever the holding period; which funds count as
   "specified" has changed, so check the current rule — see the
-  tax series post on debt funds<!-- RELINK 2026-11-05-debt-funds-gold-and-the-rest -->.
+  tax series post on debt funds<!-- RELINK 2026-12-04-debt-funds-gold-and-the-rest -->.
 
 ## Sources
 

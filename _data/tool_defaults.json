@@ -648,5 +648,324 @@
         }
       }
     ]
+  },
+  "bond-yield": {
+    "defaults": {
+      "face": 1000,
+      "coupon_pct": 7,
+      "years": 5,
+      "ytm_pct": 8,
+      "price": 960
+    },
+    "cases": [
+      {
+        "calc": "bond",
+        "inputs": {
+          "face": 1000,
+          "coupon_pct": 7,
+          "years": 5,
+          "ytm_pct": 8
+        },
+        "expect": {
+          "price": [
+            960.07,
+            2
+          ],
+          "current_yield_pct": [
+            7.29,
+            2
+          ],
+          "macaulay": [
+            4.37,
+            2
+          ],
+          "modified": [
+            4.05,
+            2
+          ],
+          "price_up": [
+            922.21,
+            2
+          ],
+          "pct_up": [
+            -3.94,
+            2
+          ],
+          "pct_dn": [
+            4.16,
+            2
+          ]
+        }
+      },
+      {
+        "calc": "bond",
+        "inputs": {
+          "face": 1000,
+          "coupon_pct": 7,
+          "years": 5,
+          "ytm_pct": 5
+        },
+        "expect": {
+          "price": [
+            1086.59,
+            2
+          ]
+        }
+      },
+      {
+        "calc": "bond",
+        "inputs": {
+          "face": 1000,
+          "coupon_pct": 7,
+          "years": 5,
+          "ytm_pct": 6
+        },
+        "expect": {
+          "price": [
+            1042.12,
+            2
+          ]
+        }
+      },
+      {
+        "calc": "bond",
+        "inputs": {
+          "face": 1000,
+          "coupon_pct": 7,
+          "years": 5,
+          "ytm_pct": 7
+        },
+        "expect": {
+          "price": [
+            1000.0,
+            2
+          ]
+        }
+      },
+      {
+        "calc": "bond",
+        "inputs": {
+          "face": 1000,
+          "coupon_pct": 7,
+          "years": 5,
+          "ytm_pct": 8
+        },
+        "expect": {
+          "price": [
+            960.07,
+            2
+          ]
+        }
+      },
+      {
+        "calc": "bond",
+        "inputs": {
+          "face": 1000,
+          "coupon_pct": 7,
+          "years": 5,
+          "ytm_pct": 9
+        },
+        "expect": {
+          "price": [
+            922.21,
+            2
+          ]
+        }
+      },
+      {
+        "calc": "bond",
+        "inputs": {
+          "face": 1000,
+          "coupon_pct": 7,
+          "years": 1,
+          "ytm_pct": 7
+        },
+        "expect": {
+          "macaulay": [
+            1.0,
+            2
+          ],
+          "modified": [
+            0.93,
+            2
+          ],
+          "pct_up": [
+            -0.9,
+            1
+          ]
+        }
+      },
+      {
+        "calc": "bond",
+        "inputs": {
+          "face": 1000,
+          "coupon_pct": 7,
+          "years": 5,
+          "ytm_pct": 7
+        },
+        "expect": {
+          "macaulay": [
+            4.39,
+            2
+          ],
+          "modified": [
+            4.1,
+            2
+          ],
+          "pct_up": [
+            -4.0,
+            1
+          ]
+        }
+      },
+      {
+        "calc": "bond",
+        "inputs": {
+          "face": 1000,
+          "coupon_pct": 7,
+          "years": 10,
+          "ytm_pct": 7
+        },
+        "expect": {
+          "macaulay": [
+            7.52,
+            2
+          ],
+          "modified": [
+            7.02,
+            2
+          ],
+          "pct_up": [
+            -6.7,
+            1
+          ]
+        }
+      },
+      {
+        "calc": "bond",
+        "inputs": {
+          "face": 1000,
+          "coupon_pct": 0,
+          "years": 10,
+          "ytm_pct": 7
+        },
+        "expect": {
+          "macaulay": [
+            10.0,
+            2
+          ],
+          "modified": [
+            9.35,
+            2
+          ],
+          "pct_up": [
+            -8.9,
+            1
+          ]
+        }
+      },
+      {
+        "calc": "ytm",
+        "inputs": {
+          "face": 1000,
+          "coupon_pct": 7,
+          "years": 5,
+          "price": 960
+        },
+        "expect": {
+          "ytm_pct": [
+            8.002,
+            3
+          ],
+          "current_yield_pct": [
+            7.29,
+            2
+          ]
+        }
+      }
+    ]
+  },
+  "position-size": {
+    "defaults": {
+      "capital": 1000000,
+      "risk_pct": 1,
+      "atr_multiple": 2,
+      "atr": 92.7,
+      "close": 6009.5
+    },
+    "cases": [
+      {
+        "calc": "positionSize",
+        "inputs": {
+          "capital": 1000000,
+          "risk_pct": 1,
+          "atr_multiple": 2,
+          "atr": 92.7,
+          "close": 6009.5
+        },
+        "expect": {
+          "shares": [
+            53,
+            0
+          ],
+          "risk_rupees": [
+            10000,
+            0
+          ],
+          "position_pct": [
+            31.9,
+            1
+          ]
+        }
+      },
+      {
+        "calc": "positionSize",
+        "inputs": {
+          "capital": 1000000,
+          "risk_pct": 1,
+          "atr_multiple": 2,
+          "atr": 104.7,
+          "close": 5851.0
+        },
+        "expect": {
+          "shares": [
+            47,
+            0
+          ],
+          "risk_rupees": [
+            10000,
+            0
+          ],
+          "position_pct": [
+            27.5,
+            1
+          ]
+        }
+      },
+      {
+        "calc": "positionSize",
+        "inputs": {
+          "capital": 1000000,
+          "risk_pct": 1,
+          "atr_multiple": 2,
+          "atr": 167.5,
+          "close": 4911.4
+        },
+        "expect": {
+          "shares": [
+            29,
+            0
+          ],
+          "risk_rupees": [
+            10000,
+            0
+          ],
+          "position_pct": [
+            14.2,
+            1
+          ]
+        }
+      }
+    ]
   }
 }

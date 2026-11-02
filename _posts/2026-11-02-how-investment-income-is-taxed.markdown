@@ -7,7 +7,7 @@ date: 2026-11-02 09:00:00 +0530
 series: tax
 needs_review: tax
 rules_for: "Tax Year 2026-27 (FY 2026-27)"
-rules_as_of: "August 2026"
+rules_as_of: "November 2026"
 ---
 
 {% assign t = site.data.tax %}
@@ -42,7 +42,7 @@ even more; a post built around them would be stale before it was useful. Where
 you need to cite chapter and verse — filing, disputes, anything contested —
 that's a job for a professional and the current text of the Act.
 
-## Three kinds of investment income
+## Three kinds of investment income, Tax Year 2026-27
 
 Almost everything an investment pays you falls into one of three buckets, and
 they are taxed under genuinely different rules. Getting the bucket right is
@@ -116,11 +116,12 @@ itself — not on the gain. It's small, it's easy to forget, and it makes a
 worked examples in this series include it.
 
 Above ₹50 lakh of total income a **surcharge** is added to the tax too, before
-the cess. The Memorandum to the Finance Bill, 2026 (listed under Sources) shows
-the surcharge on equity capital gains and dividends capped at 15%, and the
-highest surcharge rate under the new regime capped at 25%. The Bill is not the enacted Act, and the old-regime position was not
-re-checked, so check the current rule. The worked examples in this series
-assume income below ₹50 lakh, so no surcharge.
+the cess. Under the Finance Act, 2026 (section 3(4)(b) for the new regime; First Schedule, Part I-B, Paragraph F for the old),
+the surcharge on dividends and on gains under sections 196 to 198 of the Act
+(equity short-term gains and long-term gains) is capped at 15%. The top rate is
+25% under the new regime and 37% under the old one, on income above ₹2 crore and
+₹5 crore respectively, counted without those dividends and gains. The worked
+examples in this series assume income below ₹50 lakh, so no surcharge.
 
 The next post is entirely about that
 holding-period line, because a day either side of it changes the rate by
@@ -132,7 +133,7 @@ Debt mutual funds no longer work the way many older articles describe. Gains
 on units of "specified" debt funds acquired on or after 1 April 2023 are taxed
 at the investor's slab rate whatever the holding period, and indexation is
 gone for sales from 23 July 2024. If you're reading an article that mentions
-indexation on debt funds, check its date and check the current rule. The debt
+indexation on debt funds, check its date. The debt
 funds post in this series covers the definition.
 
 ## Where the rest of the series goes
@@ -156,8 +157,8 @@ arithmetic sits on actual prices rather than round invented numbers.
   equity, twenty-four for most other assets. Applying the equity rule to gold
   or property gets it wrong.
 - **Reading pre-2023 articles on debt funds.** Indexation on debt funds is
-  gone for sales on or after 23 July 2024, and the rules for specified funds
-  changed; check the current rule.
+  gone for sales on or after 23 July 2024, and units of specified funds bought
+  on or after 1 April 2023 are always taxed at the slab rate.
 - **Forgetting the cess.** It's {{ r.cess_pct }}% on the tax, not on the gain — small, but it
   lifts a {{ r.equity_ltcg_pct }}% rate to an effective {{ r.equity_ltcg_pct | times: 1.04 | round: 2 }}%.
 - **Assuming the fund deducts tax for you.** For resident investors, mutual
@@ -167,7 +168,6 @@ arithmetic sits on actual prices rather than round invented numbers.
 ## Sources
 
 - [Income-tax Act, 2025 (a copy hosted by ICAI)](https://resource.cdn.icai.org/87647dtc-aps2139-inceome-tax-act-2025.pdf): the Act itself; opened on 1 November 2026 to check the provisions this post describes. Points not found there are marked "check the current rule".
-- Finance Act, 2026 (Gazette of India): **not opened for this post** (the gazette copy could not be reached), so points that depend on the 2026 changes rest on the Bill's memorandum below and are flagged where they appear.
-- [Memorandum explaining the provisions of the Finance Bill, 2026](https://www.indiabudget.gov.in/doc/memo.pdf): the government's explanation of the Bill as introduced (the Bill, not the enacted Act).
+- [Finance Act, 2026 (No. 4 of 2026)](https://egazette.gov.in/WriteReadData/2026/271439.pdf), Gazette of India, 30 March 2026: opened 2 November 2026 for the amendments and the rates for Tax Year 2026-27.
 
 **Takeaway:** Investment income splits into capital gains, dividends and interest, and only the first has its own rates and holding periods, which turn on what you held and for how long. A capital gain is taxed when you sell; dividends and interest follow their own timing.

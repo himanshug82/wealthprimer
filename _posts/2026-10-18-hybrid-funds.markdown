@@ -203,7 +203,7 @@ whether the helper got it right today.
 
 The tax treatment of a hybrid fund depends on how much of it is in domestic
 listed shares, which is why two hybrid funds can be taxed completely
-differently. The tax series covers that<!-- RELINK 2026-11-04-equity-and-equity-funds -->;
+differently. The tax series covers that<!-- RELINK 2026-11-08-equity-and-equity-funds -->;
 check the fund's classification before assuming.
 
 **Takeaway:** A hybrid fund's name describes a mix, and the only promise is

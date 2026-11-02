@@ -1,0 +1,87 @@
+---
+layout: post
+title: "Fat tails: why 'once in a lifetime' days keep happening"
+seo_title: "Fat tails in stock returns: the Nifty's extreme days"
+description: "Fat tails mean extreme days happen far more often than a bell curve predicts. Counted on 18 years of Nifty data: the worst days and the bell-curve odds."
+image: /assets/og/fat-tails.png
+date: 2027-02-08 09:00:00 +0530
+series: risk
+term: "Fat tails"
+---
+
+{% assign r4 = site.data.risk4 %}
+{% assign ds = r4.dataset %}
+{% assign t = r4.tails %}
+
+## What are fat tails?
+
+Picture a histogram of daily returns. Most days sit near the middle: small gains, small losses. The **tails** are the two ends, the extreme days. A **fat tail** means those extreme days are more common than the standard bell curve (the **normal distribution**) predicts. If returns were normal, very large moves would be so rare you could ignore them. In real markets you can't.
+
+The usual yardstick is the **standard deviation (SD)**, a measure of how far a typical day strays from the average. Under a bell curve, about 99.7% of days land within 3 SDs of the average, so a move beyond 3 SDs should happen on roughly 1 day in 370. Counting how often it really happens is the test. This post belongs to the [Risk, Leverage and Your Own Brain]({{ '/series/risk/' | relative_url }}) series, and uses the volatility ideas from the [volatility and Sharpe post]({% post_url 2026-09-30-volatility-and-sharpe %}).
+
+## The formula
+
+```
+z   = (daily return − average daily return) / SD of daily returns
+P(|z| > k) under a normal curve = 2 × (1 − Φ(k))      (Φ = the normal cumulative distribution)
+
+Expected days beyond k SDs  =  P(|z| > k) × number of days
+Excess kurtosis             =  a single number for tail fatness; 0 for a normal curve
+```
+
+## Worked example: the Nifty 50, daily
+
+Nifty 50 price index, {{ ds.index_start | date: "%-d %B %Y" }} to {{ ds.index_end | date: "%-d %B %Y" }}, {{ t.days }} daily returns, from [Yahoo Finance]({{ ds.index_source_url }}). It is a price index, so dividends are left out. Historical data, for illustration only. The average daily return was {{ t.mean_daily_pct }}% and the SD {{ t.sd_daily_pct }}%.
+
+| Move of more than… | Days it happened | Days a normal curve expects | Share of days, actual | Share of days, normal |
+|---|---:|---:|---:|---:|
+{% for k in t.rows %}| {{ k.k }} SDs (up or down) | {{ k.actual_days }} | {{ k.expected_days }} | {{ k.actual_share_pct }}% | {{ k.normal_share_pct }}% |
+{% endfor %}
+Beyond 3 SDs, the index did it {{ t.rows[0].actual_days }} times where a bell curve says about {{ t.rows[0].expected_days }}. Beyond 4 SDs, the count was {{ t.rows[1].actual_days }} against a bell-curve expectation of well under one day in the whole period. The excess kurtosis of the daily returns was {{ t.excess_kurtosis }}, where a normal curve scores 0.
+
+The five worst days:
+
+| Date | Return | In SDs |
+|---|---:|---:|
+{% for w in t.worst %}| {{ w.date }} | {% assign x = w.return_pct %}{% include inr.html n=x %}% | {% assign y = w.sds %}{% include inr.html n=y %} |
+{% endfor %}
+On a bell curve, a move of {% assign y = t.worst[0].sds %}{% include inr.html n=y %} SDs has a probability of about {{ t.worst_day_normal_prob }} on any given day. The model that treats it as possible would also say it should not have happened in the history of the universe, and it happened on {{ t.worst[0].date | date: "%-d %B %Y" }}.
+
+## The extreme days come in clumps
+
+The extremes weren't spread evenly. Of the days beyond 3 SDs, {{ t.days_beyond_3sd_in_2008_2009_share_pct }}% fell in 2008 and 2009 and {{ t.days_beyond_3sd_in_2020_share_pct }}% in 2020. That is the other half of the story: tails are fat, and the fat is concentrated in crisis stretches. A volatility estimate taken from a calm stretch would miss them entirely. The mirror image is true as well: the best day in the data was {{ t.best[0].date | date: "%-d %B %Y" }}, up {{ t.best[0].return_pct }}%, so the tails are fat on the upside too.
+
+## Why it matters
+
+- **Position sizes and stop distances based on "normal" volatility understate the bad days.** The [position sizing post]({% post_url 2026-10-10-position-sizing-and-the-one-percent-rule %}) used ATR-based stops. A gap through a stop on a fat-tail day is a loss bigger than the budget.
+- **Leverage turns a rare day into an exit.** A 5% fall is survivable unlevered and ruinous at 20× ([leverage and margin]({% post_url 2026-10-11-leverage-and-margin %})).
+- **"It's a six-sigma event" is a claim about the model, not about the market.** If a model says a day should essentially never happen and it happens, the model is what is wrong.
+
+## Common mistakes
+
+- **Assuming a bell curve because the average day looks like one.** Fatness is in the tails, and it is invisible on a chart of ordinary days.
+- **Treating one period's volatility as permanent.** Most of the extremes here come from three calendar years.
+- **Calling extreme days "outliers" and removing them.** For a risk question, they are the data.
+- **Concluding the market is always dangerous.** The same data say most days are quiet. The point is the shape: rare, large and clustered.
+
+## Doing it in Python
+
+```python
+import numpy as np
+import pandas as pd
+from math import erfc, sqrt
+
+s = pd.read_csv("nifty50-price-index.csv", parse_dates=["date"]
+                ).set_index("date").nifty50_pri_close
+r = s.pct_change().dropna()
+z = (r - r.mean()) / r.std()
+
+for k in (3, 4, 5):
+    actual = int((z.abs() > k).sum())
+    expected = erfc(k / sqrt(2)) * len(r)       # two-tailed normal probability
+    print(k, actual, round(expected, 1))
+print("excess kurtosis:", round(r.kurt(), 1))
+print(r.nsmallest(5).round(3))
+```
+
+**Takeaway:** Extreme market days happen far more often than a bell curve says, and they arrive in clusters during crises. On 18 years of Nifty data, moves beyond 4 SDs happened dozens of times where the bell curve expects almost none, so any plan that assumes normal behaviour is built for a market that hasn't existed.

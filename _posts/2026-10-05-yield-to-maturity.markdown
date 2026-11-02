@@ -74,6 +74,8 @@ rises, the price falls — and by *less* each time (₹44, ₹42, ₹40, ₹38 h
 which is a property called convexity you don't need yet. The next post, on
 modified duration, puts a number on how much.
 
+{% include tool.html id="bond-yield" embed=true note="It starts from the fictional bond above." %}
+
 ## What YTM means on a debt fund factsheet
 
 Every debt fund factsheet quotes a **portfolio YTM** — the weighted average
@@ -89,7 +91,7 @@ YTM of the bonds it holds. Three reasons it isn't the return you'll get:
 
 So portfolio YTM is a good description of what the fund currently owns and a
 poor forecast of what you'll earn. The
-debt funds post in the Tax series<!-- RELINK 2026-11-05-debt-funds-gold-and-the-rest -->
+debt funds post in the Tax series<!-- RELINK 2026-12-04-debt-funds-gold-and-the-rest -->
 covered how the gains are taxed.
 
 <details markdown="1">

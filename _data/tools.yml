@@ -113,3 +113,31 @@
   series: risk
   used_in: [inflation-and-real-returns, fixed-deposit-vs-debt-fund]
   built: 2026-10-28
+
+- id: bond-yield
+  name: Bond price, yield and duration calculator
+  kind: Calculator
+  calc: bond-yield
+  summary: >-
+    Enter a bond's face value, coupon and years to maturity. Turn a yield into
+    a price, Macaulay and modified duration and the price after a one-point
+    move, or turn a price into the yield to maturity.
+  data: "the YTM post's fictional 7% five-year bond bought at ₹960 (no real bond)"
+  post: yield-to-maturity
+  series: jargon
+  used_in: [yield-to-maturity, modified-duration]
+  built: 2026-11-02
+
+- id: position-size
+  name: Position size calculator
+  kind: Calculator
+  calc: position-size
+  summary: >-
+    Turn a risk budget into a number of shares: capital, the percentage you
+    would lose if the stop is hit, and a stop set a multiple of ATR (average
+    true range) away. The 1% and 2× ATR are conventions, not recommendations.
+  data: "Britannia on 1 January 2026, the calmest day in the position sizing post's window (historical, for illustration)"
+  post: position-sizing-and-the-one-percent-rule
+  series: risk
+  used_in: [position-sizing-and-the-one-percent-rule]
+  built: 2026-11-02

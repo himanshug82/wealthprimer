@@ -47,8 +47,8 @@ giscus:
 # https://buttondown.com/api/emails/embed-subscribe/USERNAME, honeypot to "".
 # Full setup notes live in _includes/newsletter.html.
 newsletter:
-  provider: mailchimp
-  action: ""
+  provider: buttondown
+  action: "https://buttondown.com/api/emails/embed-subscribe/wealthprimer"
   honeypot: ""
   heading: "One email a week"
   blurb: >-

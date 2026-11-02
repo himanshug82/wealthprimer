@@ -7,6 +7,7 @@ image: /assets/og/pharma-rd-intensity-us-generics-usfda.png
 date: 2026-10-20 09:00:00 +0530
 series: fundamental-analysis
 term: "R&D intensity"
+last_modified_at: 2026-11-02
 ---
 
 {% assign r = site.data.sectors.drreddy %}
@@ -124,20 +125,28 @@ of rounding.)
 ### Step 3: USFDA inspections — the mechanism
 
 A plant that makes medicines for the US has to pass USFDA inspections. At
-the end of an inspection, observations may be written up on a Form FDA 483.
+the end of an inspection, objectionable conditions may be written up on a
+[Form FDA 483](https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/inspection-references/fda-form-483-frequently-asked-questions),
+which the USFDA says isn't its final determination of a violation.
 The USFDA then gives the inspection a final classification, which it
-publishes in its [inspections data dashboard](https://datadashboard.fda.gov/oii/cd/inspections.htm):
+publishes in its [inspections data dashboard](https://datadashboard.fda.gov/oii/cd/inspections.htm).
+Its [database page](https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/inspection-classification-database)
+says the list isn't complete: pre-approval inspections, for one, are left out.
 
-| Classification | What it broadly means |
+| Classification | What the USFDA says it means |
 |---|---|
-| NAI — No Action Indicated | No objectionable conditions requiring action |
-| VAI — Voluntary Action Indicated | Objectionable conditions found, but the company is left to correct them; no regulatory action recommended |
-| OAI — Official Action Indicated | Regulatory action recommended |
+| NAI — No Action Indicated | Acceptable state of compliance; usually no Form 483 was issued |
+| VAI — Voluntary Action Indicated | Objectionable conditions found, but the facility can correct them voluntarily and the agency won't recommend action; usually a Form 483 was issued |
+| OAI — Official Action Indicated | Unacceptable state of compliance; a Form 483 may or may not have been issued |
 
-Why investors watch this: an OAI outcome can lead to a warning letter, and
-new product approvals that depend on that plant can be delayed until it's
-resolved. For a company whose growth depends on US launches, one plant's
-status can matter more than a quarter's profit.
+Why investors watch this: the USFDA's
+[2023 inspections webinar](https://www.fda.gov/media/172786/download) says an
+OAI facility may face regulatory or enforcement action and that pending
+applications may not be approved, while NAI and VAI don't generally affect
+them. A warning letter is one such action, and its
+[procedures manual](https://www.fda.gov/media/71878/download) has an inspection
+classified OAI whenever one is issued. For a company whose growth depends on US
+launches, one plant's status can matter more than a quarter's profit.
 
 8. Dr. Reddy's release for the year reports that a formulations plant at
    Srikakulam, Andhra Pradesh, received a **VAI** classification after a

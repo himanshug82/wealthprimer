@@ -119,8 +119,9 @@ below.
 The same three funds through five interest-rate episodes. A blank cell means
 the fund did not yet carry its present mandate for that window (the
 overnight scheme became an overnight fund around May 2018, during SEBI's
-recategorisation — that's where its NAV series changes character — and its
-earlier history reflects a different portfolio).
+recategorisation: [UTI's categorisation note of that month](https://d50le8fqeqn06.cloudfront.net/s3fs-public/2023-01/Single%20Pager_Categorisation%20of%20UTI%20Mutual%20Fund%20Schemes_May_201820180528-091917.pdf)
+lists it as previously UTI G Sec Fund STP but gives no effective date, and May 2018 is
+where its NAV series changes character. Its earlier history reflects a different portfolio).
 
 | Episode | Window | Overnight | Money market | Gilt |
 |---|---|---:|---:|---:|{% for e in dbt.episodes %}

@@ -18,7 +18,7 @@ rules_as_of: "November 2026"
 
 ## Two events, two heads of income
 
-This post describes the rules for Tax Year 2026-27 (FY 2026-27, April 2026 to March 2027). Its worked example exercises options on {{ e.exercise_date }} and sells on {{ e.sale_date_long }}; those dates are illustrative scenario dates, and the exercise falls in FY (financial year) 2025-26, which the earlier Act governed. Event 1 below therefore uses that Act's treatment as we understand it (not checked here), while the sale is described under the rules for Tax Year 2026-27. The mechanics are what the example teaches.
+This post describes the rules for Tax Year 2026-27 (FY 2026-27, April 2026 to March 2027). Its worked example exercises options on {{ e.exercise_date }} and sells on {{ e.sale_date_long }}; those dates are illustrative scenario dates, and the exercise falls in FY (financial year) 2025-26, which the earlier Act governed. Event 1 below therefore uses that Act's treatment as we understand it (we read the 2025 Act and Rules, not the 1961 text), while the sale is described under the rules for Tax Year 2026-27. The mechanics are what the example teaches.
 
 An **ESOP — employee stock option plan** — gives you the right to buy your
 employer's shares at a fixed price (the *exercise price*) after a waiting
@@ -66,7 +66,7 @@ there are two different taxes. Not one tax charged twice.
 ## Worked example: a Desi Bites Foods employee
 
 Take an employee of Desi Bites Foods, the fictional company from the
-[case study](/case-study/), whose IPO (initial public offering) was priced at ₹640 in June 2025 (a fictional company and price). She holds
+[case study](/case-study/), whose IPO (initial public offering) was priced at ₹{{ site.data.case_study.listing.ipo_price }} in June 2025 (a fictional company and price). She holds
 {% include inr.html n=e.shares %} vested options with an exercise price of ₹{{ e.exercise_price }}, and
 exercises them on {{ e.exercise_date }} when the share trades at ₹{{ e.fmv_at_exercise }}.
 Illustrative 30% slab plus {{ r.cess_pct }}% cess, no surcharge; this assumes her other salary already puts the perquisite in the 30% slab, and no other long-term gains this year, so the full ₹{% include inr.html n=e.ltcg_exempt %} exemption is available.
@@ -140,7 +140,7 @@ delivered. Two consequences people miss:
 ## When the shares are foreign or unlisted (Tax Year 2026-27)
 
 Many RSUs in India come from a foreign parent (the US-listed employer of an
-Indian subsidiary). The perquisite half is identical. The capital-gains half
+Indian subsidiary). The perquisite formula is identical, but the FMV method may not be: rule 15 of the Income-tax Rules, 2026 gives a share not listed on a recognised stock exchange a merchant banker's value, and as we read it that may include a share listed only abroad, so check. The capital-gains half
 follows the rules for foreign or unlisted shares instead of Indian listed
 ones:
 
@@ -151,7 +151,7 @@ ones:
 | Long-term rate | {{ r.equity_ltcg_pct }}% | {{ r.equity_ltcg_pct }}% (no indexation) |
 | ₹{% include inr.html n=r.ltcg_annual_exemption %} exemption | Yes | **No** |
 
-The foreign-or-unlisted column follows from the Act: the twelve-month line and sections 196 and 198 need a listing on a recognised exchange in India, and section 197 sets the 12.5%.
+The foreign-or-unlisted column follows from the Act: the twelve-month line needs a listing on a recognised exchange in India, the rates in sections 196 and 198 need securities transaction tax (STT), and section 197 sets the 12.5%.
 
 Foreign shares also bring **Schedule FA** — the foreign-asset disclosure in
 the return — and a foreign brokerage account to report. That is the subject
@@ -170,14 +170,13 @@ enough), the tax on the perquisite is *computed* in the year of exercise but
 2. the date you sell the shares, or
 3. the date you leave the company.
 
-Older articles say "48 months from the end of the assessment year", the wording of the earlier Act as those articles describe it (not checked here). It would point to the same date: the assessment year
+Older articles say "48 months from the end of the assessment year", the wording of the earlier Act as those articles describe it. It would point to the same date: the assessment year
 ended a year after the year of allotment, and the Income-tax Act, 2025, which
 replaced it with a single Tax Year, counts 60 months from the end of the tax
 year itself (section 289 of the Income-tax Act, 2025).
 
-It's a payment deferral, not a reduction. The rate is the rate of the year
-you exercised. And for most private-company employees it doesn't apply at
-all, which means the tax on exercise falls due before any sale proceeds.
+It's a payment deferral, not a reduction: section 289 moves when the tax is paid. The tax is described in secondary sources as staying at the rate of the year
+you exercised. In our view it won't apply to most private-company employees, which means the tax on exercise falls due before any sale proceeds.
 
 ## Common mistakes
 
@@ -192,7 +191,7 @@ all, which means the tax on exercise falls due before any sale proceeds.
 - **Forgetting the sell-to-cover sale.** Those shares were sold and belong in
   the capital-gains schedule, even at a near-zero gain.
 - **Assuming "startup" means deferral.** Only IMB-certified startups qualify,
-  and the deferral ends the day the employee leaves the company.
+  and tax falls due within 14 days of the employee leaving the company.
 
 **Takeaway:** Stock options meet two taxes on two different amounts: the discount at exercise is salary, taxed at the slab rate through the payroll (typically around the time of exercise), and only the *further* rise after that is a capital gain when the shares are sold. On a ₹{% include inr.html n=e.economic_gain %} gain in our
 example, ₹{% include inr.html n=e.perquisite_tax_with_cess %} of the ₹{% include inr.html n=e.total_tax_long_route %} total fell due before any

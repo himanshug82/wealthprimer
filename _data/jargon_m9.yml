@@ -123,6 +123,9 @@ depreciation:
     slm_book_end: 50
     wdv_dep: 8.19
     wdv_book_end: 32.77
+  ten_year_wdv_total: 89.26
+  ten_year_wdv_left: 10.74
+  ten_year_slm_total: 100
   five_year_slm_total: 50
   five_year_wdv_total: 67.23
   db:
@@ -134,6 +137,8 @@ depreciation:
     dep_pct_of_opening_nfa: 16.7
     pat: 209
     interest: 47
+    pbt: 279
+    tax: 70
   intangible:
     cost: 30
     life: 5
@@ -163,6 +168,20 @@ etr:
     current_tax: 48.75
     deferred_tax_charge: 1.25
     total_tax: 50
+  permanent:
+    pbt: 200.0
+    rate_pct: 25.0
+    exempt_income: 20.0
+    disallowed: 10.0
+    tax_with_exempt: 45
+    etr_with_exempt_pct: 22.5
+    tax_with_disallowed: 52.5
+    etr_with_disallowed_pct: 26.25
+  surcharge_cess:
+    headline_pct: 25.0
+    surcharge_pct: 7.0
+    cess_pct: 4.0
+    all_in_pct: 27.82
 futures:
   spot: 1000.0
   rate_pct: 6.0
@@ -186,7 +205,6 @@ futures:
   dividend: 8.0
   fair_with_dividend: 996.93
   basis_with_dividend: -3.07
-  annualised_30d_basis_pct: 5.96
   back_example:
     spot: 1000
     futures: 996

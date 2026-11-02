@@ -2,7 +2,7 @@
 layout: post
 title: "Bulk and block deals, explained"
 seo_title: "Bulk deal vs block deal: what each one means"
-description: "A bulk deal is a day's trading above 0.5% of a company's shares; a block deal is one big trade in a special window. How they differ, on Desi Bites."
+description: "A bulk deal is one client's day of trading above 0.5% of a company's shares; a block deal is one big trade in a special window. On Desi Bites."
 image: /assets/og/bulk-and-block-deals.png
 date: 2027-01-15 09:00:00 +0530
 series: jargon
@@ -21,7 +21,7 @@ term: "Bulk deal and block deal"
 
 News headlines say things like "a fund bought ₹X crore of a company in a bulk deal". The words *bulk* and *block* look like cousins. They are two different things, defined by two different rules from SEBI (the Securities and Exchange Board of India, the market regulator).
 
-A **bulk deal** is a count of a day's trading. It covers every transaction in one stock on an exchange where the total quantity bought (or sold) is more than {{ bk.threshold_pct }}% of the company's listed equity shares. The total can be reached through one trade or many, in the normal market, during the day.
+A **bulk deal** is a count of a day's trading. It covers every transaction in one stock on an exchange where the total quantity bought (or sold) is more than {{ bk.threshold_pct }}% of the company's listed equity shares. The circular's paragraph doesn't say "by one client" in terms, but its disclosure names the client, so we read it per client. The total can be reached through one trade or many, in the normal market, during the day.
 
 A **block deal** is a single large trade done in a separate trading window set aside for such trades, so that neither the buyer nor the seller is put at a disadvantage. In the circular's words, it is "execution of large trades through a single transaction".
 
@@ -33,7 +33,7 @@ This is a [Jargon, Decoded]({{ '/series/jargon/' | relative_url }}) post. Rules 
 
 | | Bulk deal | Block deal |
 |---|---|---|
-| What triggers it | Day's total in a stock is more than {{ bk.threshold_pct }}% of listed shares | A single trade placed in a block window |
+| What triggers it | One client's day total in a stock is more than {{ bk.threshold_pct }}% of listed shares | A single trade placed in a block window |
 | Where it trades | The normal market | A separate window: {{ bl.morning_window }} (morning) or {{ bl.afternoon_window }} (afternoon) |
 | Size | Measured in shares, as a share of the company | Minimum order size ₹{{ bl.min_order_cr }} crore |
 | Price | Whatever the market price was | ±{{ bl.band_pct }}% of a reference price, subject to surveillance measures and applicable price bands (see below) |
@@ -45,7 +45,7 @@ Sources: the bulk-deal rule is paragraph 1.1 of Chapter 1 of SEBI's [Master Circ
 ## The tests
 
 ```
-Bulk deal test:   shares bought (or sold) in a stock in one day
+Bulk deal test:   shares bought (or sold) in a stock in one day by one client
                   >  {{ bk.threshold_pct }}% × the company's listed equity shares
 
 Block deal test:  one trade in a block window
@@ -90,4 +90,4 @@ A **block deal** is different. A teacher walks in and says, "I'll take 60 samosa
 - **Forgetting the denominator.** "Bulk" is relative to the company's shares ({{ bk.threshold_pct }}% of them), not to a rupee amount. The same ₹{{ bl.min_order_cr }} crore can be a rounding error in a giant company and a third of a small one, as the Desi Bites numbers show.
 - **Quoting old limits.** SEBI revised the block-deal framework in October 2025. A rule that an older article calls "the minimum" may no longer be the minimum.
 
-**Takeaway:** A bulk deal is a day's trading above {{ bk.threshold_pct }}% of a company's shares, counted afterwards; a block deal is one large trade executed in its own window. Both are published after market hours, and neither tells you why the buyer or seller traded.
+**Takeaway:** A bulk deal is one client's day of trading above {{ bk.threshold_pct }}% of a company's shares, counted afterwards; a block deal is one large trade executed in its own window. Both are published after market hours, and neither tells you why the buyer or seller traded.

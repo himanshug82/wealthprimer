@@ -15,7 +15,7 @@ rules_as_of: "November 2026"
 {% assign r = t.rates %}
 {% assign s = t.example_sip %}
 
-*Tax Year 2026-27 (FY 2026-27) is the label for the rules below. The worked example redeems on 31 March 2026, which falls in FY (financial year) 2025-26, when the earlier Income-tax Act, 1961 applied. It uses the rates and exemption described for Tax Year 2026-27 (listed in the table) to illustrate the mechanics, and it has not been checked against the 1961 Act's rules for that year. It is not a Tax Year 2026-27 return.*
+*Tax Year 2026-27 (FY 2026-27) is the label for the rules below. The worked example redeems on 31 March 2026, which falls in FY (financial year) 2025-26, when the earlier Income-tax Act, 1961 applied. It uses the rates and exemption described for Tax Year 2026-27 to illustrate the mechanics, and it has not been checked against the 1961 Act's rules for that year. It is not a Tax Year 2026-27 return.*
 
 ## A SIP is not one investment
 
@@ -152,7 +152,7 @@ purchase with a fresh date and its own clock.
   instalment stands alone.
 - **Assuming a long-running SIP is all long-term.** The most recent twelve
   months of instalments never are.
-- **Expecting to choose which units you sell.** FIFO decides, not you.
+- **Expecting to choose which units you sell.** FIFO decides for demat holdings, and it's what capital gains statements generally use for folios.
 - **Estimating tax from the total gain.** The split between long and short
   lots is what determines it, and the two can point in opposite directions.
 - **Forgetting that a switch is generally a sale.** That includes a regular-to-direct switch of the same fund.

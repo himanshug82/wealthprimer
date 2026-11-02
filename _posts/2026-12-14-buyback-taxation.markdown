@@ -100,7 +100,7 @@ of shares for nothing.
 | Capital loss created (cost, sold for "nil") — short-term, since the shares were held under 12 months | ₹{% include inr.html n=rb.capital_loss %} |
 | Worth of that loss if set off against short-term gains at {{ r.equity_stcg_pct }}% + cess | ₹{% include inr.html n=rb.loss_worth_against_stcg %} |
 | Worth if set off against long-term gains at {{ r.equity_ltcg_pct }}% + cess | ₹{% include inr.html n=rb.loss_worth_against_ltcg %} |
-| **Net cost, if the loss could be fully used against STCG** | **₹{% include inr.html n=rb.net_cost_if_loss_used_against_stcg %}** |
+| **Net cost, if the loss could be fully used against short-term capital gains (STCG)** | **₹{% include inr.html n=rb.net_cost_if_loss_used_against_stcg %}** |
 
 Read that again: a ₹{% include inr.html n=b.gain %} gain, and a ₹{% include inr.html n=rb.tax_with_cess %} tax bill
 up front. The capital loss softens it only if you *have* capital gains to set
@@ -128,9 +128,9 @@ this example than Regime B's ₹{% include inr.html n=rb.tax_with_cess %}, for t
 identical transaction. Without STT, the Regime C figure here would differ.
 
 **The promoter add-on.** Section 42 of the Finance Act, 2026 adds an *additional* income-tax when the
-tendering shareholder is a **promoter**: 2% on a short-term gain under section 196 and 9.5% on a long-term gain, if the promoter is a domestic company, and 10% and 17.5% otherwise. On top of the 20% or 12.5% that gives
-**{{ rc.promoter_effective_rate_corp_pct }}%** and
-**{{ rc.promoter_effective_rate_noncorp_pct }}%**. For a listed company, a promoter is as defined in regulation 2(k) of SEBI's (the Securities and Exchange Board of India's) buy-back regulations of 2018. Those rates are before surcharge and cess. At {{ rc.promoter_effective_rate_noncorp_pct }}%, the same
+tendering shareholder is a **promoter**: 2% on a short-term gain under section 196 and 9.5% on a long-term gain, if the promoter is a domestic company, and 10% and 17.5% otherwise. On top of the 20% or 12.5% that totals
+**{{ rc.promoter_effective_rate_corp_pct }}%** for a domestic-company promoter and
+**{{ rc.promoter_effective_rate_noncorp_pct }}%** for others, on either kind of gain. For a listed company, a promoter is as defined in regulation 2(k) of SEBI's (the Securities and Exchange Board of India's) buy-back regulations of 2018. Those rates are before surcharge and cess. At {{ rc.promoter_effective_rate_noncorp_pct }}%, the same
 ₹{% include inr.html n=b.gain %} gain would bear
 ₹{% include inr.html n=rc.promoter_tax_noncorp %} before them.
 
@@ -143,7 +143,7 @@ tendering shareholder is a **promoter**: 2% on a short-term gain under section 1
 | Cost of shares | Irrelevant to you | Becomes a separate capital loss | Deducted directly |
 | Rate for an individual | 0% (company paid {{ a.company_tax_rate_pct }}%) | Slab | {{ r.equity_stcg_pct }}% / {{ r.equity_ltcg_pct }}% with exemption, if STT applies |
 | Our example's tax | ₹0 | ₹{% include inr.html n=rb.tax_with_cess %} (less loss value later) | ₹{{ rc.ltcg_tax_with_cess }} or ₹{% include inr.html n=rc.stcg_tax_with_cess %}, if STT applies |
-| Promoter add-on | — | — | 22% / 30% before surcharge and cess |
+| Promoter total rate | — | — | 22% (domestic-company promoter) / 30% (others), short- or long-term, before surcharge and cess |
 
 ## Why the date matters for your return
 

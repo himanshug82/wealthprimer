@@ -13,9 +13,9 @@ term: "Yield curve"
 
 ## What is a yield curve?
 
-A **yield curve** is a line that plots the yield on bonds of the same credit quality (usually government bonds) against how long until they mature. Short bonds on the left, long bonds on the right. The height at each point is the [YTM (yield to maturity)]({% post_url 2026-10-05-yield-to-maturity %}) for that maturity. Its **shape** is what people read: whether longer bonds pay more than shorter ones, the same, or less.
+A **yield curve** is a line that plots the yield on bonds of the same credit quality (usually [government bonds]({% post_url 2027-01-31-g-secs-and-t-bills %})) against how long until they mature. Short bonds on the left, long bonds on the right. The height at each point is the [YTM (yield to maturity)]({% post_url 2026-10-05-yield-to-maturity %}) for that maturity. Its **shape** is what people read: whether longer bonds pay more than shorter ones, the same, or less.
 
-The **repo rate** is the rate at which the RBI (Reserve Bank of India) lends to banks against government securities. It is set by the RBI's Monetary Policy Committee and is its main policy rate. The textbook account is that short-term yields stay close to the policy rate and what markets expect it to do, while long-term yields also reflect expected inflation and the supply of and demand for bonds. This post uses an **illustrative** curve: the numbers are invented to show shapes, and are not a quote for any date. It is part of the [Jargon, Decoded]({{ '/series/jargon/' | relative_url }}) series.
+The **repo rate** is the rate at which the RBI (Reserve Bank of India) lends to banks against government securities. It is the RBI's main policy rate, and its [Monetary Policy Committee](https://www.rbi.org.in/Scripts/FS_Overview.aspx?fn=2752) determines it to meet the inflation target (RBI's overview, read November 2026; check RBI's site for the current rate). The textbook account is that short-term yields stay close to the policy rate and what markets expect it to do, while long-term yields also reflect expected inflation and the supply of and demand for bonds. This post uses an **illustrative** curve: the numbers are invented to show shapes, and are not a quote for any date. It is part of the [Jargon, Decoded]({{ '/series/jargon/' | relative_url }}) series.
 
 ## The formula
 
@@ -32,7 +32,7 @@ Price of a zero-coupon bond  =  Face value / (1 + yield)^years
 |---|---:|---:|---:|---:|---:|---:|
 {% for s in c.curves %}{% assign sp = s.term_spread_10y_1y_pp %}| {{ s.shape | capitalize }} | {{ s.y1 }}% | {{ s.y2 }}% | {{ s.y3 }}% | {{ s.y5 }}% | {{ s.y10 }}% | {% include inr.html n=sp %} points |
 {% endfor %}
-- **Normal (upward-sloping):** longer bonds yield more. The usual compensation for tying money up longer and carrying more price risk.
+- **Normal (upward-sloping):** longer bonds yield more. The usual explanation is compensation for tying money up longer and carrying more price risk, or expectations of higher rates.
 - **Flat:** the same yield at every maturity.
 - **Inverted:** short bonds yield *more* than long ones. This happens when markets expect the policy rate to fall, among other reasons. Inversions are often discussed as a warning sign, but the link to what follows is a matter of history, not a rule, and this post doesn't claim one.
 

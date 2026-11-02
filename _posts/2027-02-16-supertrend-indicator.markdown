@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Supertrend explained: an ATR line that flips with the trend"
-seo_title: "Supertrend indicator explained: formula and test"
+seo_title: "Supertrend indicator explained: formula and settings"
 description: "Supertrend is a trailing line set a multiple of ATR from the price. How it is built, and how its settings changed the result on two years of Britannia."
 image: /assets/og/supertrend-indicator.png
 date: 2027-02-16 09:00:00 +0530
@@ -39,19 +39,19 @@ Two settings: the ATR **period** and the **multiplier**. A period of 10 and a mu
 
 ## Worked example: Britannia, two years
 
-Britannia Industries (NSE: BRITANNIA), daily bars from {{ st.dates.start | date: "%-d %B %Y" }} to {{ st.dates.end | date: "%-d %B %Y" }}, {{ st.bars_used }} bars once the first ATR is available, from [Yahoo Finance]({{ ds.stock_source_url }}). It is one stock over two years, so this is a demonstration of the mechanics, not evidence about Supertrend in general. Historical data, for illustration only.
+Britannia Industries (NSE, the National Stock Exchange: BRITANNIA), daily bars from {{ st.dates.start | date: "%-d %B %Y" }} to {{ st.dates.end | date: "%-d %B %Y" }}, {{ st.bars_used }} bars after dropping the first {{ st.warmup_dropped }} while the ATR settles, from [Yahoo Finance]({{ ds.stock_source_url }}). It is one stock over two years, so this is a demonstration of the mechanics, not evidence about Supertrend in general. Historical data, for illustration only.
 
 With a period of {{ ch.period }} and a multiplier of {{ ch.multiplier }}, the line flipped {{ ch.flips }} times. The first six flips:
 
-| Date | Flipped to | Close (₹) | Line (₹) |
-|---|---|---:|---:|
-{% for f in st.first_flips %}| {{ f.date }} | {{ f.to }} | {{ f.close }} | {{ f.line }} |
+| Date | Flipped to | Close (₹) | Level crossed (₹) | New line after the flip (₹) |
+|---|---|---:|---:|---:|
+{% for f in st.first_flips %}| {{ f.date }} | {{ f.to }} | {{ f.close }} | {{ f.level_crossed }} | {{ f.line }} |
 {% endfor %}
-The "line" column is the level the close crossed. {% assign f2 = st.first_flips[2] %}{% assign f3 = st.first_flips[3] %}On {{ f2.date }} the close (₹{{ f2.close }}) fell below the line (₹{{ f2.line }}) and the line flipped to down. By the next flip, on {{ f3.date }}, the close was ₹{{ f3.close }}. The flip to down came only after the close was already under the line, and the flip back to up came only after the close was already above it. That lag is the price of not flipping on every wobble.
+{% assign f2 = st.example_down %}{% assign f3 = st.example_next %}On {{ f2.date | date: "%-d %B %Y" }} the close (₹{% include inr.html n=f2.close %}) fell below the line then in force (₹{% include inr.html n=f2.level_crossed %}), so the line jumped above the price, to ₹{% include inr.html n=f2.line %}. By the next flip, on {{ f3.date | date: "%-d %B %Y" }}, the close was ₹{% include inr.html n=f3.close %}. The flip to down came only after the close was already under the old line, and the flip back to up came only after the close was already above the upper one. That lag is the price of not flipping on every wobble.
 
 ## What do the settings change?
 
-Every row below is the same stock and the same two years. The "long" columns follow a simple rule: be long the stock while the line is below the price (uptrend), hold cash otherwise (assumed to earn nothing), trade at the next session's close, and pay 0.1% a side.
+Every row below is the same stock over the same dates, {{ st.dates.start | date: "%-d %B %Y" }} to {{ st.dates.end | date: "%-d %B %Y" }}. These are price returns, so dividends are left out. The "long" columns follow a simple rule: be long the stock while the line is below the price (uptrend), hold cash otherwise (assumed to earn nothing), trade at the next session's close, and pay an illustrative {{ ds.cost_per_side_pct }}% a side. "Runs" leaves out the cut-off first and last runs.
 
 | Period, multiplier | Flips | Median run (sessions) | Runs under 10 sessions | Share of time long | Return, long-only rule | Return, buy and hold | Deepest fall, rule | Deepest fall, buy and hold |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -59,18 +59,20 @@ Every row below is the same stock and the same two years. The "long" columns fol
 {% endfor %}
 Read the table down the columns:
 
-- **A smaller multiplier flips more often.** At a multiplier of 1.5 the line flipped {{ st.grid[3].flips }} times against {{ ch.flips }} at 3, and {{ st.grid[3].runs_under_10_pct }}% of its runs lasted under 10 sessions. Those are the whipsaws.
-- **The returns jump around with the settings.** The long-only rule returned anywhere from {{ st.grid[4].strategy_return_pct }}% to {{ st.grid[3].strategy_return_pct }}% across five settings, against {{ ch.buy_hold_return_pct }}% for buy and hold. With one stock and a stretch of only {{ st.bars_used }} bars, which setting "won" is a feature of this particular two years. Picking the best row after seeing it would be exactly the mistake the [backtesting post]({% post_url 2026-10-15-how-to-backtest-honestly %}) warns about.
-- **The deepest fall was smaller for the rule in every row**, because a rule that sits in cash when the line is above the price avoids some of the fall. That is the one consistent pattern, and it is a property of any trend-following exit, not evidence that this one is better.
+- **A smaller multiplier flips more often.** At a multiplier of 1.5 the line flipped {{ st.grid[3].flips }} times against {{ ch.flips }} at 3, and {{ st.grid[3].runs_under_10_pct }}% of its runs lasted under 10 sessions. Those short runs are the whipsaws. Whipsaws didn't sink the result here, though: the two settings with the most flips had the two highest returns. That is one stock, so it doesn't show flipping more helps.
+- **The returns jump around with the settings.** The long-only rule returned anywhere from {{ st.return_min_pct }}% to {{ st.return_max_pct }}% across five settings, against {% assign bh = ch.buy_hold_return_pct %}{% include inr.html n=bh %}% for buy and hold. With one stock and a stretch of only {{ st.bars_used }} bars, which setting "won" is a feature of these particular dates. Picking the best row after seeing it would be exactly the mistake the [backtesting post]({% post_url 2026-10-15-how-to-backtest-honestly %}) warns about.
+- **The deepest fall was smaller for the rule in every row**, and the rule was in cash for roughly a third to a half of the time, so a smaller fall is close to mechanical here. It doesn't show the exit itself helped.
 
 ## Common mistakes
 
 - **Treating the flip as a signal to act.** A flip is a rule's way of labelling what has already happened. Whether anything useful follows depends on the stock and the period, and one stock over two years can't tell you.
 - **Tuning the settings to the chart.** Every setting looks good on some stretch. Fix the parameters first, then look.
-- **Forgetting the whipsaws.** The tighter the line, the more flips, and each flip in a sideways market costs money in this test and in real trading.
+- **Forgetting the whipsaws.** The tighter the line, the more flips, and each flip pays costs in this test and in real trading, whatever the table above happened to show on one stock.
 - **Confusing it with a stop order.** Supertrend is a line on a chart. A stop is an order with a price, and a gap can fill it well beyond the line.
 
 ## Doing it in Python
+
+The data is [this CSV]({{ ds.stock_csv_path | relative_url }}). 
 
 ```python
 import numpy as np
@@ -96,7 +98,7 @@ for i in range(1, len(c)):
 
 df["supertrend"] = np.where(up, flb, fub)
 flips = pd.Series(up).ne(pd.Series(up).shift())
-print(flips.iloc[period:].sum(), "flips")      # skip the first bars, as the post's table does
+print(flips.iloc[60:].sum(), "flips")      # skip the first 60 bars, as the post's table does
 ```
 
-**Takeaway:** Supertrend is an ATR-based trailing line that flips when the close crosses it, so it labels a trend after the fact. Changing its two settings changed the number of flips and the result several-fold on the same stock, which is a good reason to distrust any single "best setting".
+**Takeaway:** Supertrend is an ATR-based trailing line that flips when the close crosses it, so it labels a trend after the fact. Changing its two settings moved the flips from {{ st.flips_min }} to {{ st.flips_max }} and the return from {{ st.return_min_pct }}% to {{ st.return_max_pct }}% on the same stock, which is a good reason to distrust any single "best setting".

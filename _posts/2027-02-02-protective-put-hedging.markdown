@@ -14,7 +14,7 @@ term: "Protective put (hedging)"
 
 ## What is a protective put?
 
-A **hedge** is a position taken to reduce the damage from another one. A **protective put** is the simplest: you hold something that can fall, and you also buy a [put option]({% post_url 2026-11-06-call-and-put-options %}) on it. If the price falls below the put's strike, the put gains and offsets some of the loss. If the price rises, the put expires worthless, and you are out its premium.
+A **hedge** is a position taken to reduce the damage from another one. A **protective put** is the simplest: you hold something that can fall, and you also buy a [put option]({% post_url 2026-11-06-call-and-put-options %}) on it. If the price falls below the put's strike, the put gains and offsets some of the loss. If the price ends at or above the strike, the put expires worthless, and you are out its premium.
 
 That is insurance, and it behaves like insurance: you pay a premium for protection you hope not to use, the protection has a deductible, and the cover runs out on a date. This post works the arithmetic on a hypothetical index. It describes how the instrument works and what it costs; it isn't a suggestion to hedge or to buy any option. It builds on the [payoff and breakeven post]({% post_url 2026-11-10-option-payoff-and-breakeven %}) and the [time value post]({% post_url 2026-11-14-option-time-value %}), and belongs to the [Risk, Leverage and Your Own Brain]({{ '/series/risk/' | relative_url }}) series.
 
@@ -62,9 +62,9 @@ Three things show up in the columns:
 
 ## The cost of renewing the cover
 
-Puts expire. To keep the protection on, you buy a new one each period. On the same assumptions, a month of at-the-money cover costs {{ p.atm.cost_pct }}% of the holding. Twelve of them, added up and not compounded, come to roughly {{ p.atm.rolled_12x_pct }}% of the holding in a year. The out-of-the-money version comes to roughly {{ p.otm.rolled_12x_pct }}%. These are model numbers for an assumed volatility, and real option prices move with volatility ([implied volatility]({% post_url 2026-11-30-implied-volatility %}) is the market's price for it), but the pattern is general: continuous insurance on a risky holding is a recurring expense, and it is paid for by the same holding.
+Puts expire. To keep the protection on, you buy a new one each period. On the same assumptions, a month of at-the-money cover costs {{ p.atm.cost_pct }}% of the holding. Twelve of them, added up and not compounded, come to roughly {{ p.atm.rolled_12x_pct }}% of the holding in a year. The out-of-the-money version comes to roughly {{ p.otm.rolled_12x_pct }}%. These are model numbers for an assumed volatility, and real option prices move with volatility ([implied volatility]({% post_url 2026-11-30-implied-volatility %}) is the market's price for it), and this is premium outlay, not net cost: months with a fall pay some of it back through the put. Under the model used for these prices, with a zero interest rate, the premium equals the put's expected payoff, so the real net drag depends on how the market actually moves and on what options really cost, neither of which this post measures.
 
-That is why hedging with options is usually described as a trade-off between a smaller maximum loss and a lower expected return, not as something free. Whether the trade-off suits anyone is a personal question this post doesn't answer.
+In our view, hedging with options is best described as a trade-off: a smaller maximum loss, paid for with a certain premium each period. Whether the trade-off suits anyone is a personal question this post doesn't answer.
 
 ## Common mistakes
 
@@ -87,4 +87,4 @@ for s in (18000, 19000, 20000, 21000, 22000):
     print(s, (s - start) * lot, hedged_pl(s))    # holding alone vs hedged
 ```
 
-**Takeaway:** A protective put caps the loss on something you own in exchange for a premium that you pay whether or not the fall comes. On a hypothetical index, renewing at-the-money cover every month cost a large share of the holding's value over a year, so protection is a trade-off, not a free option.
+**Takeaway:** A protective put caps the loss on something you own in exchange for a premium that you pay whether or not the fall comes. On a hypothetical index, renewing at-the-money cover every month meant premium outlay of a large share of the holding's value over a year, before anything the puts paid back, so protection is a trade-off, not a free option.

@@ -52,7 +52,7 @@ punishment is much bigger than the coins.
 ## Capital gains in Tax Year 2026-27: 24 months, slab, no exemption
 
 Foreign listed shares are treated like unlisted shares, not like Indian
-listed ones, because the Act's twelve-month line and its equity rates need a listing on a recognised exchange in India:
+listed ones, because the Act's twelve-month line needs a listing on a recognised exchange in India, and its equity rates need securities transaction tax:
 
 | | Indian listed shares | Foreign shares |
 |---|---|---|
@@ -129,7 +129,7 @@ visible to the department — which brings us to disclosure.
 
 If you are **resident and ordinarily resident** in India and held *any*
 foreign asset at *any* time in the reporting period, you must report it in Schedule FA
-of your income-tax return (ITR, the income-tax return; ITR-2 or ITR-3 under the earlier forms). The
+of your income-tax return (ITR-2 or ITR-3 under the earlier forms). The
 Income-tax Act, 2025 ties the duty to holding foreign assets "at any time during the tax year"
 (section 263(1)(a)(ix) as we read it). Four things about this catch people out:
 
@@ -166,7 +166,7 @@ The schedule is still required.
 ## Common mistakes
 
 - **Applying Indian-equity treatment to foreign shares.** The ₹{% include inr.html n=r.ltcg_annual_exemption %} exemption exists only for
-  STT-paid Indian equity (STT is securities transaction tax), and foreign shares need 24 months, not 12, to be long-term.
+  STT-paid Indian equity shares, equity funds and business trusts (STT is securities transaction tax), and foreign shares need 24 months, not 12, to be long-term.
 - **Using your broker's conversion rate.** Rule 206 prescribes the State Bank of India rate, not your broker's. Practice differs between
   converting each leg and converting the gain.
 - **Skipping the foreign tax credit form.** Rule 76 makes the credit depend on Form No. 44, so without it the 25% already paid in the

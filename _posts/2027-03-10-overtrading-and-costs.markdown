@@ -41,27 +41,27 @@ With zero round trips, the gross return is untouched. At roughly one a month, co
 
 ## What SEBI's studies show
 
-SEBI's studies of individual traders in the equity derivatives segment are the best public evidence on what active trading does in practice. The figures below come from SEBI's August 2026 studies (profitability and behaviour), as recorded in the blog's F&O data file, where each was checked against the PDFs:
+In our view, SEBI's (the Securities and Exchange Board of India's) studies of individual traders in the equity derivatives segment are the most useful public evidence on what active trading in that segment does. The figures below come from its [profitability]({{ fno.sources.fy25_fy26_study.pdf }}) and [trading behaviour]({{ fno.sources.fy25_fy26_behaviour_study.pdf }}) studies, both dated {{ fno.sources.fy25_fy26_study.date }}:
 
-| Measure (FY26 unless stated) | Figure |
+| Measure (FY26, financial year 2025-26, unless stated) | Figure |
 |---|---:|
 | Share of individual F&O traders who lost money | {{ sb.loss_pct_fy26 }}% |
-| Their aggregate net loss | ₹{% assign x = sb.aggregate_loss_cr %}{% include inr.html n=x %} crore |
+| Individual traders' aggregate net loss (SEBI's top-15-broker sample) | ₹{% assign x = sb.aggregate_loss_cr %}{% include inr.html n=x %} crore |
 | Transaction costs, about, per year (FY25 and FY26) | ₹{% assign x = sb.costs_cr_per_year %}{% include inr.html n=x %} crore |
 | Costs as a share of the aggregate loss, about | {{ sb.costs_share_of_loss_pct }}% |
 | Share of index-options turnover in contracts on their expiry day | {{ sb.zero_dte_share_pct }}% |
 
-Costs were a sizeable fraction of the traders' aggregate loss, roughly {{ sb.costs_share_of_loss_pct }}% by this rough comparison (the studies give "about ₹25,000 crore" for costs, so the ratio is approximate). That does not mean cutting costs would have turned a loss into a profit: most of the loss is on the trades themselves.
+Costs were a sizeable fraction of the traders' aggregate loss, roughly {{ sb.costs_share_of_loss_pct }}% by this rough comparison (the studies give "about ₹25,000 crore" for costs, so the ratio is approximate, and we couldn't confirm the two figures share a base: the loss is a sample figure, and SEBI says the full population's would be about 1.11 times it). That doesn't mean cutting costs would have turned a loss into a profit: 82.1% of traders lost even before costs, against 87.7% after.
 
-SEBI also reports that about {{ sb.repeat_loser_pct }}% of those who lost money in each of the two preceding years lost again. That figure needs its base rate beside it: {{ sb.loss_pct_fy26 }}% of *all* traders lost money in FY26. A repeat-loser rate of {{ sb.repeat_loser_pct }}% against an overall rate of {{ sb.loss_pct_fy26 }}% is only a little worse than the average trader, so repetition by itself isn't the striking part. What is striking is how high the base rate is.
+SEBI also reports that 90–92% of those who lost money in each of the two preceding years lost again. That figure needs its base rate beside it: {{ sb.loss_pct_fy26 }}% of *all* traders lost money in FY26. A repeat-loser rate of about {{ sb.repeat_loser_pct }}% against an overall rate of {{ sb.loss_pct_fy26 }}% is only a little worse than the average trader, so repetition by itself isn't the striking part. What is striking is how high the base rate is.
 
 The studies don't establish that trading frequency *caused* the losses. They show the combination: a high loss rate, costs that run into tens of thousands of crores a year, and much activity concentrated on very short-dated contracts. The cost arithmetic above explains why high frequency makes the break-even harder.
 
 ## Common mistakes
 
 - **Counting costs per trade instead of per year.** A cost that looks negligible per round trip, multiplied by a trade a day, is a large share of the year's capital.
-- **Treating activity as effort.** More trades feel like more work, but there is no reason for returns to rise with the count.
-- **Ignoring the costs that aren't brokerage.** Taxes and the bid-ask gap are costs too; the first depends on your holding period and category, the second on how liquid the instrument is.
+- **Treating activity as effort.** More trades feel like more work, but in our view there is no reason for returns to rise with the count.
+- **Ignoring the costs that aren't brokerage.** Taxes and the bid-ask gap are costs too; the [contract note post]({% post_url 2027-01-03-contract-note-charges %}) shows the first, and the second depends on how liquid the instrument is.
 - **Taking a repeat-loser statistic at face value.** Compare it with the share of all traders who lost, as above.
 
 ## Doing it in Python

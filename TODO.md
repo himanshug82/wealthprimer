@@ -66,4 +66,3 @@ Each claim is in a post, worded cautiously, but rests on a secondary source or m
 - **SIP NAV convention:** the MF and Tax SIP examples buy at the latest NAV on or before the 1st; a real holiday SIP is allotted at the next business day's NAV (5-year gain ₹88,165 vs ₹88,376). The Tax posts state both (`scripts/derive_tax.py`); switching the blog-wide convention would change the live SIP/XIRR post too.
 - **Company analysis series** (parked 26 Oct): conflicts with the no-verdicts rule.
 - **Newsletter:** `newsletter.action` in `_config.yml` is empty, so the signup box renders nothing. Mailchimp or Buttondown — notes in `_includes/newsletter.html`.
-- **Comments / giscus** (moderating "should I buy X" is a compliance load): `giscus.repo_id` and `giscus.category_id` empty. Notes in `_includes/comments.html`.

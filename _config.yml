@@ -47,13 +47,13 @@ giscus:
 # https://buttondown.com/api/emails/embed-subscribe/USERNAME, honeypot to "".
 # Full setup notes live in _includes/newsletter.html.
 newsletter:
-  provider: mailchimp
-  action: ""
+  provider: buttondown
+  action: "https://buttondown.com/api/emails/embed-subscribe/wealthprimer"
   honeypot: ""
-  heading: "Get each post when it lands"
+  heading: "One email a week"
   blurb: >-
-    One concept at a time, every day. No tips, no calls, no hype —
-    just the explainers. Unsubscribe whenever.
+    The week's explainers in one email. No tips, no calls, no hype.
+    Unsubscribe whenever.
 
 # --- theme ---
 theme: minima

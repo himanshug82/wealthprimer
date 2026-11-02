@@ -57,6 +57,8 @@ Each claim is in a post, worded cautiously, but rests on a secondary source or m
 
 ## Open — content and tooling
 
+- **Newsletter (live 2 Nov 2026, Buttondown `wealthprimer`, weekly digest).** Owner: sign up once on the live site to confirm the form reaches Buttondown (buttondown.com/wealthprimer returned 404 on 2 Nov, so the account couldn't be checked from outside); set up the weekly RSS-to-email automation from `/feed.xml`; keep double opt-in on. Delete this item once a test signup has arrived.
+
 - **SEO:** *margin of safety and sensitivity* (1 Oct) and *capital allocation* (8 Oct) still have no external link; add a primary source only if one genuinely fits (Graham's book has no authoritative online text).
 - **Calculators still to build** (approved plan): ratio calculator (phase 3); bond YTM/duration, position-size arithmetic, Colab notebooks (phase 4). Add each to `_data/tools.yml` and link it from the posts a reader would use it in.
 
@@ -65,4 +67,3 @@ Each claim is in a post, worded cautiously, but rests on a secondary source or m
 - **Module 4 judgement calls:** (1) the ETF payout of 25 Feb 2021 (₹40.89/unit) is an estimate from the NAV gap (`mf2.yml`; the post says so); (2) capture ratios use the Nifty 50 TRI for a hybrid fund — a hybrid-category TRI would be like-with-like; (3) the survivorship simulation's closing rule (worst 10% by trailing 3-year return, years 3–9) is an assumption; (4) market-impact assumptions (0.05/0.10/0.20% a side) are illustrative.
 - **SIP NAV convention:** the MF and Tax SIP examples buy at the latest NAV on or before the 1st; a real holiday SIP is allotted at the next business day's NAV (5-year gain ₹88,165 vs ₹88,376). The Tax posts state both (`scripts/derive_tax.py`); switching the blog-wide convention would change the live SIP/XIRR post too.
 - **Company analysis series** (parked 26 Oct): conflicts with the no-verdicts rule.
-- **Newsletter:** `newsletter.action` in `_config.yml` is empty, so the signup box renders nothing. Mailchimp or Buttondown — notes in `_includes/newsletter.html`.

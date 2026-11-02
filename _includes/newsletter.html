@@ -30,9 +30,9 @@ Switching providers is these three keys — no template change.
   {%- assign email_field = 'EMAIL' -%}
 {%- endif -%}
 <aside class="newsletter" aria-labelledby="newsletter-heading">
-  <h2 id="newsletter-heading">{{ nl.heading | default: "Get each post when it lands" }}</h2>
+  <h2 id="newsletter-heading">{{ nl.heading | default: "One email a week" }}</h2>
   <p class="newsletter-blurb">
-    {{ nl.blurb | default: "One concept at a time, every day. No tips, no calls, no hype — just the explainers. Unsubscribe whenever." }}
+    {{ nl.blurb | default: "The week's explainers in one email. No tips, no calls, no hype. Unsubscribe whenever." }}
   </p>
   <form class="newsletter-form" action="{{ nl.action }}" method="post" target="_blank" novalidate>
     <label class="visually-hidden" for="newsletter-email">Email address</label>

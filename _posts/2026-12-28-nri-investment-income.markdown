@@ -185,7 +185,7 @@ the first year under the Income-tax Act, 2025. The rates and the rules will
 move with each Budget. Check the current position.
 
 **Takeaway:** For an NRI, most Indian investment income is taxed at broadly similar
-rates to a resident's — a main difference is collection at source — roughly {{ x.tds_other_pct }}% on NRO interest and on debt-fund gains, under the Finance Act, 2026 — plus some reliefs that apply only to residents. NRE interest is described as exempt, a
+rates to a resident's. A main difference is collection at source (roughly {{ x.tds_other_pct }}% on NRO interest and on debt-fund gains), plus some reliefs that apply only to residents. NRE interest is exempt, a
 treaty rate needs a TRC, and any excess TDS comes back only if you file.
 
 *The module's [data file](https://github.com/himanshug82/wealthprimer/blob/main/_data/tax3.yml)

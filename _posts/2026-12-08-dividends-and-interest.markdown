@@ -124,7 +124,7 @@ in this series covers reading these statements.
 ## Common mistakes
 
 - **Believing dividends are still tax-free.** Older articles describe a system
-  in which they mostly were in the investor's hands; check when that system
+  in which they mostly were in the investor's hands; that system
   ended.
 - **Treating TDS as the final tax.** It's an advance against a liability that
   may be larger or smaller.

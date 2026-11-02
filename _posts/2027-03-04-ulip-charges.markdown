@@ -53,7 +53,7 @@ Fund at the end of a year  =  (fund at start + premium × (1 − allocation %) �
 Reduction in yield  =  gross yield on the fund  −  yield you earn on the premiums you paid
 ```
 
-The yield on premiums paid is an internal rate of return, the same idea as the [XIRR (extended internal rate of return)]({% post_url 2026-10-01-sips-xirr-and-timing-myths %}) used for SIPs (systematic investment plans). The second line is the number that sums up all charges: how far the yield you earned falls short of the fund's own return. Mortality charges are left out below, so the example shows the cost of the investment part only.
+The yield on premiums paid is an internal rate of return, the same idea as the [XIRR (extended internal rate of return)]({% post_url 2026-10-01-sips-xirr-and-timing-myths %}) used for SIPs (systematic investment plans). The second line is the number that sums up all charges: how far the yield you earned falls short of the gross yield on the fund. Mortality charges are left out below, so the example shows the cost of the investment part only.
 
 ## Worked example: a made-up plan
 
@@ -80,15 +80,15 @@ The result at the end of year {{ inp.years }}, and the same plan at a lower gros
 
 The yield on premiums paid treats each year's premium as paid at the start of the year and the fund as received at the end of year {{ inp.years }}. The lower case mirrors the circular's test of {{ c.illus_floor_gross_pct }}% gross. But the circular counts all deductions, including mortality charges, and this model leaves those out. Without them, the made-up plan's fund value is {% assign x = lo.pct_of_premiums %}{% include inr.html n=x %}% of premiums paid, above the {{ c.illus_floor_pct }}% floor of ₹{% include inr.html n=u.floor_amount %}. With a mortality charge it would be lower, so this doesn't show that the plan would pass.
 
-What the table shows: the allocation charge falls only in the first five years, while the fund management charge and the administration charge recur every year, so the gap between the fund's return and your return is not one number but a fee that applies all through the term. What it doesn't show: the mortality charge, any guarantee, or what the same premiums would have earned elsewhere.
+What the table shows: the allocation charge falls only in the first five years, while the fund management charge and the administration charge recur every year, so the early-year and the recurring charges both feed into the one reduction-in-yield number. What it doesn't show: the mortality charge, any guarantee, or what the same premiums would have earned elsewhere.
 
 {% include tool.html id="cost-drag" note="A ULIP's charges are built differently, so this shows only what a single annual % cost does over time, not a ULIP's full drag." %}
 
 ## Common mistakes
 
-- **Comparing the fund's return with a policy's return.** The fund's return is before charges. What you earned on premiums paid is lower, by the reduction in yield.
+- **Comparing a fund's published return with a policy's return.** A published unit-price return is already net of the fund management charge, because that charge is taken through the NAV. What you earned on premiums paid is lower still, because of the other charges.
 - **Ignoring the lock-in.** Proceeds are not paid out during the first {{ c.lock_in_years }} years even if you stop paying. The fund value moves to a discontinued policy fund, after discontinuance charges, and is paid out later, on the terms in the table above.
 - **Reading an illustrated return as a forecast.** An illustration at any gross yield is an assumption about the fund, not a promise, and the [real return]({% post_url 2026-10-20-inflation-and-real-returns %}) after inflation is lower again.
 - **Taking a made-up example as typical.** The charges above were chosen for the arithmetic. The plan in front of you states its own.
 
-**Takeaway:** A ULIP's charges are taken before and during growth, so the return you earn on premiums paid is lower than the fund's own return by the combined effect of every charge. The plan's own benefit illustration is where to read that reduction in yield, and it is worth checking which charges fall in the early years.
+**Takeaway:** A ULIP's charges are taken before and during growth, so the return you earn on premiums paid is lower than the gross yield by the combined effect of every charge. The plan's own benefit illustration, which states the net yield at the circular's stipulated gross rate, is where to read that reduction in yield, and it is worth checking which charges fall in the early years.

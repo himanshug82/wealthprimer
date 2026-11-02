@@ -45,7 +45,7 @@ The five worst days:
 |---|---:|---:|
 {% for w in t.worst %}| {{ w.date }} | {% assign x = w.return_pct %}{% include inr.html n=x %}% | {% assign y = w.sds %}{% include inr.html n=y %} |
 {% endfor %}
-On a bell curve, a move of {% assign y = t.worst[0].sds %}{% include inr.html n=y %} SDs has a probability of about {{ t.worst_day_normal_prob }} on any given day. The model that treats it as possible would also say it should not have happened in the history of the universe, and it happened on {{ t.worst[0].date | date: "%-d %B %Y" }}.
+On a bell curve, a move that large in either direction ({% assign y = t.worst[0].sds %}{% include inr.html n=y %} SDs on the downside here) has a probability of about {{ t.worst_day_normal_prob }} on any given day, which means it shouldn't have happened in the history of the universe. It happened on {{ t.worst[0].date | date: "%-d %B %Y" }}.
 
 ## The extreme days come in clumps
 
@@ -53,7 +53,7 @@ The extremes weren't spread evenly. Of the days beyond 3 SDs, {{ t.days_beyond_3
 
 ## Why it matters
 
-- **Position sizes and stop distances based on "normal" volatility understate the bad days.** The [position sizing post]({% post_url 2026-10-10-position-sizing-and-the-one-percent-rule %}) used ATR-based stops. A gap through a stop on a fat-tail day is a loss bigger than the budget.
+- **Position sizes and stop distances based on "normal" volatility understate the bad days.** The [position sizing post]({% post_url 2026-10-10-position-sizing-and-the-one-percent-rule %}) used stops based on ATR (average true range). A gap through a stop on a fat-tail day is a loss bigger than the budget.
 - **Leverage turns a rare day into an exit.** A 5% fall is survivable unlevered and ruinous at 20× ([leverage and margin]({% post_url 2026-10-11-leverage-and-margin %})).
 - **"It's a six-sigma event" is a claim about the model, not about the market.** If a model says a day should essentially never happen and it happens, the model is what is wrong.
 

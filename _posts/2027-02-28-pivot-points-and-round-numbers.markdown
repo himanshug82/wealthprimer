@@ -33,7 +33,7 @@ R2 = P + (H − L)        S2 = P − (H − L)
 
 ## Worked example: one day of Britannia
 
-Britannia Industries (NSE: BRITANNIA), from [Yahoo Finance]({{ ds.stock_source_url }}), {{ ds.stock_bars }} daily bars from {{ ds.stock_start | date: "%-d %B %Y" }} to {{ ds.stock_end | date: "%-d %B %Y" }}. Historical data, for illustration only. Take the session of {{ ex.date | date: "%-d %B %Y" }}: high ₹{{ ex.high }}, low ₹{{ ex.low }}, close ₹{{ ex.close }}.
+Britannia Industries (NSE, the National Stock Exchange: BRITANNIA), from [Yahoo Finance]({{ ds.stock_source_url }}), {{ ds.stock_bars }} daily bars from {{ ds.stock_start | date: "%-d %B %Y" }} to {{ ds.stock_end | date: "%-d %B %Y" }}. Historical data, for illustration only. Take the session of {{ ex.date | date: "%-d %B %Y" }}: high ₹{% include inr.html n=ex.high %}, low ₹{% include inr.html n=ex.low %}, close ₹{% include inr.html n=ex.close %}.
 
 | Level | Working | ₹ |
 |---|---|---:|
@@ -43,7 +43,7 @@ Britannia Industries (NSE: BRITANNIA), from [Yahoo Finance]({{ ds.stock_source_u
 | R2 | P + (high − low) | {{ ex.r2 }} |
 | S2 | P − (high − low) | {{ ex.s2 }} |
 
-These would be the day-traders' levels for the *next* session. Figures are computed from unrounded prices, so a hand calculation from the rounded values can be a paisa off.
+These would be the day-traders' levels for the *next* session.
 
 ## The test: touch and reject, against placebo levels
 
@@ -52,21 +52,26 @@ For each of the {{ pv.sessions }} sessions with a next day, we computed R1, R2, 
 - **Touched:** did the next day's high reach the resistance level (or its low reach the support level)?
 - **Rejected:** having touched it, did the day then *close* on the near side of it (below a resistance level, above a support level)?
 
-A level that matters should be rejected more often than a level that doesn't. To get a fair comparison we built a **placebo**: the same distances from the close, but reshuffled across days, so each day got another day's distance. That keeps the typical size of the distances and removes any link to that day's actual high and low. The table averages {{ pv.placebo_reps }} reshuffles.
+A level that matters should be rejected more often than a level that doesn't. To get a fair comparison we built a **placebo**: the same distances from the close, but reshuffled across days, so each day got another day's distance. That keeps the typical size of the distances and removes any link to that day's actual high and low. The table averages {{ pv.placebo_reps }} reshuffles, and shows the range that held 95% of them.
 
-| Level | Touched | Touch rate | Placebo touch rate | Rejected after touch | Placebo rejected |
+| Level | Touched | Touch rate | Placebo touch rate (95% range) | Rejected after touch | Placebo rejected (95% range) |
 |---|---:|---:|---:|---:|---:|
-{% for p in pv.rows %}| {{ p.level }} | {{ p.touched }} | {{ p.touch_share_pct }}% | {{ p.placebo_touch_share_pct }}% | {{ p.reject_share_pct }}% | {{ p.placebo_reject_share_pct }}% |
+{% for p in pv.rows %}| {{ p.level }} | {{ p.touched }} | {{ p.touch_share_pct }}% | {{ p.placebo_touch_share_pct }}% ({{ p.placebo_touch_lo }}–{{ p.placebo_touch_hi }}%) | {{ p.reject_share_pct }}% | {{ p.placebo_reject_share_pct }}% ({{ p.placebo_reject_lo }}–{{ p.placebo_reject_hi }}%) |
 {% endfor %}
-The pivot levels and the placebo levels look the same. The touch rates are within a couple of percentage points of each other. The rejection rates are within about five points, with the support levels a little higher, and sit a little above half for both real and placebo levels: after touching a level, closing back on the near side is slightly more likely than not, most likely because a day's close lands between its high and low. On this stock over these two years, the formula's levels did nothing the random ones didn't.
+The pivot levels and the placebo levels are hard to tell apart: every pivot rate falls inside or at the edge of its placebo's 95% range. The rejection rates sit a little above half for both real and placebo levels: after touching a level, closing back on the near side is slightly more likely than not, most likely because a day's close lands between its high and low. On this stock over these two years, the formula's levels did nothing we could tell apart from the random ones.
 
 That is one stock and {{ pv.sessions }} days. It does not show that pivots never work, and it doesn't show they do. It shows the measuring stick: a claim about levels needs a placebo.
 
 ## Round numbers
 
-The same idea applies to round numbers such as Nifty 22,000. Traders say index levels cluster near them. A quick check on the Nifty 50 price index, {{ t4.dataset.index_start | date: "%-d %B %Y" }} to {{ t4.dataset.index_end | date: "%-d %B %Y" }}: the share of daily closes within ±{{ rn.tolerance_pct }}% of a multiple of {{ rn.step }} points was {{ rn.round_grid_share_pct }}%. The share within the same distance of a grid shifted by half a step (250, 750, 1,250…) was {{ rn.shifted_grid_share_pct }}%.
+The same idea applies to round numbers such as Nifty 22,000. It's a common claim that index levels cluster near them. A quick check on the Nifty 50 price index, {{ t4.dataset.index_start | date: "%-d %B %Y" }} to {{ t4.dataset.index_end | date: "%-d %B %Y" }}: the share of daily closes near a round multiple, against a grid shifted by half a step (such as 250, 750, 1,250…).
 
-If round numbers attracted the index, the first number would be clearly bigger than the second. It isn't; it is slightly smaller. The Nifty's closes did not pile up around multiples of 500. Round numbers may still matter psychologically for individual orders, but in the daily closes there is no visible clustering.
+| Multiple of | Within | Share near round numbers | Share near the shifted grid |
+|---:|---:|---:|---:|
+{% for g in rn.grid %}| {{ g.step }} | ±{{ g.tolerance_pct }}% | {{ g.round_share_pct }}% | {{ g.shifted_share_pct }}% |
+{% endfor %}
+
+If round numbers attracted the index, the round column would be clearly bigger than the shifted one. It isn't: the gaps are small and don't all run the same way. Closes didn't pile up around these multiples. This looks only at where closes landed, not at how the price reacted near a round number, which we didn't test. Round numbers may still matter for individual orders, in our view.
 
 ## Common mistakes
 
@@ -76,6 +81,8 @@ If round numbers attracted the index, the first number would be clearly bigger t
 - **Mixing up pivot points with the pivot in a swing high or low.** Same word, different thing: here "pivot" is a formula output.
 
 ## Doing it in Python
+
+The data is [this CSV]({{ ds.stock_csv_path | relative_url }}). 
 
 ```python
 import numpy as np

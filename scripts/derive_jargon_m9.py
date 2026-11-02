@@ -96,10 +96,12 @@ assert IS[fy]["ebitda"] - IS[fy]["depreciation"] == IS[fy]["ebit"]
 dep_pct_open_nfa = IS[fy]["depreciation"] / BS["FY24"]["net_fixed_assets"] * 100
 out["depreciation"] = {
     "cost": COST, "life": LIFE, "wdv_rate_pct": WDV_RATE, "schedule": sched,
+    "ten_year_wdv_total": r(COST * (1 - (1 - WDV_RATE / 100) ** LIFE), 2), "ten_year_wdv_left": r(COST * (1 - WDV_RATE / 100) ** LIFE, 2),
+    "ten_year_slm_total": r(slm * LIFE, 1),
     "five_year_slm_total": r(slm * 5, 1), "five_year_wdv_total": r(sum(s["wdv_dep"] for s in sched), 2),
     "db": {"fy": fy, "ebitda": IS[fy]["ebitda"], "depreciation": IS[fy]["depreciation"], "ebit": IS[fy]["ebit"],
            "dep_share_of_ebitda_pct": r(dep_share_ebitda, 1), "dep_pct_of_opening_nfa": r(dep_pct_open_nfa, 1),
-           "pat": IS[fy]["pat"], "interest": IS[fy]["interest"]},
+           "pat": IS[fy]["pat"], "interest": IS[fy]["interest"], "pbt": IS[fy]["pbt"], "tax": IS[fy]["tax"]},
     # a small intangible example: software bought for Rs 30 lakh, amortised straight-line over 5 years
     "intangible": {"cost": 30, "life": 5, "per_year": r(30 / 5, 1)},
 }
@@ -108,7 +110,8 @@ out["depreciation"] = {
 rows = []
 for y in ("FY23", "FY24", "FY25"):
     rows.append({"fy": y, "pbt": IS[y]["pbt"], "tax": IS[y]["tax"], "etr_pct": r(IS[y]["tax"] / IS[y]["pbt"] * 100, 1)})
-STAT = cs["ratios"]["FY25"]["tax_rate"] if "tax_rate" in cs["ratios"]["FY25"] else 25.0
+STAT = cs["dcf"]["assumptions"]["tax_rate"]
+STAT = STAT * 100 if STAT < 1 else STAT
 # deferred tax illustration: asset of Rs 100 lakh; book SLM over 10 years (10 a year); tax depreciation faster (15 in year 1)
 BOOK_DEP, TAX_DEP, RATE = 10.0, 15.0, 25.0
 timing = TAX_DEP - BOOK_DEP
@@ -118,6 +121,16 @@ out["etr"] = {"rows": rows, "statutory_rate_pct": STAT,
                            "pbt": 200.0, "current_tax": r((200.0 + BOOK_DEP - TAX_DEP) * RATE / 100, 2),
                            "deferred_tax_charge": r(timing * RATE / 100, 2),
                            "total_tax": r(200.0 * RATE / 100, 2)}}
+# a permanent difference moves the rate; surcharge and cess also lift it above the headline
+EXEMPT, DISALLOWED = 20.0, 10.0
+out["etr"]["permanent"] = {"pbt": 200.0, "rate_pct": RATE, "exempt_income": EXEMPT, "disallowed": DISALLOWED,
+                           "tax_with_exempt": r((200.0 - EXEMPT) * RATE / 100, 2),
+                           "etr_with_exempt_pct": r((200.0 - EXEMPT) * RATE / 200.0, 2),
+                           "tax_with_disallowed": r((200.0 + DISALLOWED) * RATE / 100, 2),
+                           "etr_with_disallowed_pct": r((200.0 + DISALLOWED) * RATE / 200.0, 2)}
+# Finance Act 2026: 25% up to Rs 400 crore turnover, 7% surcharge in the Rs 1-10 crore income band, 4% cess
+out["etr"]["surcharge_cess"] = {"headline_pct": 25.0, "surcharge_pct": 7.0, "cess_pct": 4.0,
+                                "all_in_pct": r(25.0 * 1.07 * 1.04, 2)}
 d_ = out["etr"]["deferred"]
 assert d_["current_tax"] + d_["dtl_created"] == d_["total_tax"]       # total tax charge = rate x accounting profit
 
@@ -133,7 +146,6 @@ DIVAMT = 8.0
 fair_div = SPOT * (1 + RATE_PA / 100 * 30 / 365) - DIVAMT
 out["futures"] = {"spot": SPOT, "rate_pct": RATE_PA, "rows": rows, "dividend": DIVAMT,
                   "fair_with_dividend": r(fair_div, 2), "basis_with_dividend": r(fair_div - SPOT, 2),
-                  "annualised_30d_basis_pct": r(rows[0]["basis_pct"] * 365 / 30, 2),
                   # an inverted (backwardation) example: futures below spot
                   "back_example": {"spot": 1000, "futures": 996, "basis": -4}}
 assert rows[-1]["basis"] == 0

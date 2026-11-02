@@ -27,11 +27,11 @@ Trade to rebalance   =  (target weight − current weight) × total value
                         (positive: buy; negative: sell)
 ```
 
-A one-step example. Start at 60% equity and 40% gilt. Equity rises {{ a.equity_up_pct }}% and gilt {{ a.gilt_up_pct }}% in a year. The equity weight becomes 60 × 1.{{ a.equity_up_pct }} / (60 × 1.{{ a.equity_up_pct }} + 40 × 1.0{{ a.gilt_up_pct }}) = {{ a.new_equity_weight_pct }}%. To return to 60%, you would sell {{ a.sell_to_reset_pct_of_portfolio }}% of the portfolio's value in equity and put it into gilt. In a single year the drift is small. Its effect builds over years.
+A one-step example. Start at 60% equity and 40% gilt. Equity rises {{ a.equity_up_pct }}% and gilt {{ a.gilt_up_pct }}% in a year. The equity weight becomes 60 × 1.{{ a.equity_up_pct }} / (60 × 1.{{ a.equity_up_pct }} + 40 × 1.0{{ a.gilt_up_pct }}) = {{ a.new_equity_weight_pct }}%. To return to 60%, you would sell {{ a.sell_to_reset_pct_of_portfolio }}% of the portfolio's value in equity and put it into gilt. In this one-year example the drift is small. Its effect builds over years, and a year like 2008 can move it far more.
 
 ## Worked example: 60/40 with the Nifty 50 TRI and a gilt fund
 
-Equity is the Nifty 50 Total Returns Index (TRI, which includes dividends) from [NSE Indices](https://www.niftyindices.com/). The bond leg is the UTI Gilt Fund, regular plan, growth option, NAV (net asset value) from AMFI via mfapi.in. Neither is a recommendation; they are two long public series. Both end 30 March 2026. Past data, for illustration only; fund costs are already in the NAV, and tax and trading costs are ignored. Two rules, both starting at 60/40:
+Equity is the Nifty 50 Total Returns Index (TRI, which includes dividends) from [NSE Indices](https://www.niftyindices.com/). The bond leg is the UTI Gilt Fund, regular plan, growth option, NAV (net asset value) from AMFI (the Association of Mutual Funds in India) via mfapi.in. Neither is a recommendation; they are two long public series. Both end 30 March 2026. Past data, for illustration only; this fund's costs are in its NAV, the index carries no fund cost, so the two legs aren't treated alike, and tax and trading costs are ignored. Two rules, both starting at 60/40:
 
 - **Never rebalance:** let the weights drift.
 - **Annual rebalance:** at the first trading day of each calendar year, reset to 60/40.
@@ -46,18 +46,18 @@ Equity is the Nifty 50 Total Returns Index (TRI, which includes dividends) from 
 
 For reference, the equity series alone compounded at {{ f.equity_cagr_pct }}% and the gilt fund at {{ f.gilt_cagr_pct }}% over the longer window ({{ g.equity_cagr_pct }}% and {{ g.gilt_cagr_pct }}% from {{ g.start | date: "%B %Y" }}).
 
-Three honest observations:
+Three observations:
 
 1. **Drift is real.** Never rebalancing left the portfolio {{ f.none.end_equity_weight_pct }}% in equity by the end of the longer window, a very different risk from the 60% it started with. Across the years the year-end equity weight ranged from {{ f.min_equity_weight_pct }}% to {{ f.max_equity_weight_pct }}% without rebalancing.
-2. **Rebalancing mainly changed the risk.** In both windows the deepest fall was smaller for the annually rebalanced version, because it held less equity going into falls.
-3. **The return gain depends on the window.** From {{ f.start | date: "%B %Y" }}, annual rebalancing beat never rebalancing by about a percentage point a year. From {{ g.start | date: "%B %Y" }}, the two were within a fraction of a point. The longer window includes 2008, when equity fell and gilts rose. Rebalancing then meant buying equity near the low, and the likeliest reason for the gap is the rebound that followed (we didn't isolate it). That is one episode, and it won't recur on schedule. Don't read the longer-window gap as a property of rebalancing.
+2. **The deepest fall was smaller, by very different amounts.** Annual rebalancing's fall was {{ f.annual.max_drawdown_pct | abs }}% against {{ f.none.max_drawdown_pct | abs }}% over the longer window, and {{ g.annual.max_drawdown_pct | abs }}% against {{ g.none.max_drawdown_pct | abs }}% from {{ g.start | date: "%Y" }}. Each window offers essentially one fall, and the long-window gap is the 2008 episode. Of the {{ rb.drawdown_scan_starts }} start years from 2010 to 2021, annual's fall was shallower or tied in {{ rb.drawdown_scan_annual_shallower_or_tied }}, by up to about {{ rb.drawdown_scan_max_gap_pp }} points; the {{ rb.drawdown_scan_exception.start_year }} start was the exception, by a fraction of a point.
+3. **The return difference changes sign with the start year.** Of {{ rb.start_years_total }} start years from 2007 to 2021, ending at the same date, annual rebalancing was behind in {{ rb.start_years_negative }}. The longer window's lead comes from two resets: the one at the start of 2008 sold equity just before its peak, and the one at the start of 2009 bought equity into this gilt fund's weak year and equity's strong one. The actual lead is {{ rb.full_lead_pp }} points a year. With only those two resets it is {{ rb.isolate_2008_2009_only_pp }}, and with every reset except those two, {% assign x = rb.isolate_all_but_2008_2009_pp %}{% include inr.html n=x %}. Alone, the 2009 reset gives {{ rb.isolate_2009_only_pp }} and the 2008 reset {% assign x = rb.isolate_2008_only_pp %}{% include inr.html n=x %}: the 2008 one paid off only together with 2009's, and these effects don't simply add up. That calendar luck won't recur on schedule, so don't read the gap as a property of rebalancing.
 
 ## Common mistakes
 
-- **Treating rebalancing as a return booster.** Its main job is to hold the risk you chose. Any return gain here came from a particular stretch of history.
+- **Treating rebalancing as a return booster.** Any return gain here came from a particular stretch of history. What it does mechanically is pull the mix back toward the target.
 - **Rebalancing too often without counting costs.** This example ignores brokerage, taxes and exit loads. Each sale can trigger tax; the Tax series covers how gains are taxed.
 - **Calling a drifted portfolio "the same portfolio".** A 60/40 mix that has drifted to {{ f.none.end_equity_weight_pct }}/{{ f.none.end_equity_weight_pct | minus: 100 | abs }} behaves differently in a fall.
-- **Reading one backtest as a rule.** Two windows already disagree on the size of the gap.
+- **Reading one backtest as a rule.** The start year already changes the sign of the gap.
 
 ## Doing it in Python
 
@@ -87,4 +87,4 @@ for flag in (False, True):
     print("rebalance" if flag else "never", round(s.iloc[-1] ** (1 / yrs) - 1, 3), round(w, 2))
 ```
 
-**Takeaway:** Rebalancing resets a portfolio to the risk level you chose after the winners have pulled it away. On a 60/40 Nifty and gilt mix it mainly reduced the depth of the falls, while the return difference depended on which years you looked at.
+**Takeaway:** Rebalancing resets a portfolio to the risk level you chose after the winners have pulled it away. On a 60/40 Nifty and gilt mix, both the smaller fall and the return lead leaned heavily on 2008, and the return difference changed sign with the start year.

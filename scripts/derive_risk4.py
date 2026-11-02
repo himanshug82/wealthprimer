@@ -120,8 +120,7 @@ for k in (3, 4, 5):
 worst = ret.nsmallest(5)
 best = ret.nlargest(3)
 out["tails"] = {
-    "days": int(n), "mean_daily_pct": r(mu * 100, 3), "sd_daily_pct": r(sd * 100, 2),
-    "excess_kurtosis": r(ret.kurt(), 1), "rows": tails,
+    "days": int(n), "mean_daily_pct": r(mu * 100, 3), "sd_daily_pct": r(sd * 100, 2), "excess_kurtosis": r(ret.kurt(), 1), "rows": tails,
     "worst": [{"date": d(t), "return_pct": r(v * 100, 1), "sds": r((v - mu) / sd, 1)} for t, v in worst.items()],
     "best": [{"date": d(t), "return_pct": r(v * 100, 1), "sds": r((v - mu) / sd, 1)} for t, v in best.items()],
     "worst_day_normal_odds_text": "once in more than the age of the universe" if normal_two_tail(abs((worst.iloc[0] - mu) / sd)) < 1e-18 else "very rarely",
@@ -143,14 +142,29 @@ roll_sd = ret.rolling(W).std().shift()
 roll_mu = ret.rolling(W).mean().shift()
 var_line = -(roll_mu - Z99 * roll_sd)           # a positive loss threshold, as a fraction
 test = pd.DataFrame({"ret": ret, "var": var_line}).dropna()
+_px = (1 + ret).cumprod()
+_peak_before = _px.loc[:test.index[0]].iloc[:-1].max()
+_prior = _px.loc[:test.index[0]].iloc[-2]
+fall_before_test_pct = (_prior / _peak_before - 1) * 100
 breach = test["ret"] < -test["var"]
 by_year = breach.groupby(test.index.year).sum()
 top_year = int(by_year.idxmax())
+crisis = test.index.year.isin([2008, 2009, 2020])
+hist_line = (-ret.rolling(W).quantile(0.01)).shift()
+_t2 = pd.DataFrame({"ret": ret, "v": hist_line}).dropna()
+full_line = Z99 * sd - mu
+n_months = len(set(zip(test.index.year, test.index.month)))
 out["var"] = {
     "position": POS, "window": W, "days_tested": int(len(test)),
     "hist_95": int(round(hist95, -2)), "hist_99": int(round(hist99, -2)),
     "par_95": int(round(par95, -2)), "par_99": int(round(par99, -2)),
-    "sd_daily_pct": r(sd * 100, 2),
+    "sd_daily_pct": r(sd * 100, 3), "mean_daily_pct": r(mu * 100, 3), "sd_daily_pct": r(sd * 100, 3), "mean_daily_pct": r(mu * 100, 3),
+    "fall_before_test_pct": r(fall_before_test_pct, 0), "test_start": d(test.index[0]), "test_end": d(test.index[-1]), "months_tested": n_months,
+    "breaches_crisis_years": int(breach[crisis].sum()), "breach_share_crisis_pct": r(breach[crisis].mean() * 100, 2),
+    "breaches_other_years": int(breach[~crisis].sum()), "breach_share_other_pct": r(breach[~crisis].mean() * 100, 2),
+    "breach_share_rolling_historical_pct": r((_t2["ret"] < -_t2["v"]).mean() * 100, 2),
+    "breach_share_full_sample_normal_pct": r((test["ret"] < -full_line).mean() * 100, 2),
+    "by_year": [{"year": int(y), "breaches": int(n)} for y, n in by_year.items()],
     "breaches": int(breach.sum()), "breach_share_pct": r(breach.mean() * 100, 2), "expected_share_pct": 1,
     "expected_days": r(0.01 * len(test), 0),
     "months_with_breach": int(breach[breach].groupby([breach[breach].index.year, breach[breach].index.month]).size().shape[0]),
@@ -179,10 +193,10 @@ for lab, mv, mp in path:
         val += loss
     req = val * mp / 100
     equity = FUNDS + cum_loss
-    rows_m.append({"label": lab, "move_pct": mv, "position_value": int(round(val)), "margin_pct": mp,
+    rows_m.append({"label": lab, "move_pct": mv, "position_value": int(round(val)), "margin_pct": r(mp),
                    "required": int(round(req)), "equity": int(round(equity)),
                    "shortfall": int(round(max(req - equity, 0)))})
-peak = {"morning_required": 180000, "spike_required": 230000, "close_required": 190000, "funds": FUNDS}
+peak = {"morning_required": 180000, "spike_required": 230000, "close_required": 180000, "funds": FUNDS}
 assert peak["spike_required"] > FUNDS >= peak["close_required"]
 out["margin"] = {"contract": CONTRACT, "funds": FUNDS, "rows": rows_m, "peak": peak,
                  "first_shortfall_label": next(x["label"] for x in rows_m if x["shortfall"] > 0)}
@@ -236,8 +250,56 @@ def rebalance_window(start_ts):
     }
 
 
+# start-year scan: annual minus never, in CAGR points, to the same end date; and what the 2008 and 2009 resets did
+def _scan(start_ts, skip=(), only=None):
+    st = max(tri.index[0], gilt.index[0], pd.Timestamp(start_ts))
+    idx = tri.loc[st:].index.intersection(gilt.loc[st:].index)
+    a_, b_ = tri.reindex(idx).pct_change().fillna(0), gilt.reindex(idx).pct_change().fillna(0)
+    we, wg, n1, n2, last = W_E, 1 - W_E, W_E, 1 - W_E, idx[0].year
+    for t, x, y in zip(idx, a_, b_):
+        if t.year != last and t.year not in skip and (only is None or t.year in only):
+            tot = we + wg
+            we, wg = tot * W_E, tot * (1 - W_E)
+        last = t.year
+        we, wg, n1, n2 = we * (1 + x), wg * (1 + y), n1 * (1 + x), n2 * (1 + y)
+    yrs_ = (idx[-1] - idx[0]).days / 365.25
+    return ((we + wg) ** (1 / yrs_) - (n1 + n2) ** (1 / yrs_)) * 100
+
+
+_scan_rows = [{"start_year": y, "annual_minus_never_pp": r(_scan(f"{y}-01-01"), 2)} for y in range(2007, 2022)]
+_scan_neg = sum(1 for x in _scan_rows if x["annual_minus_never_pp"] < 0)
+
+
+def _dd2(start_ts, reb):
+    st = max(tri.index[0], gilt.index[0], pd.Timestamp(start_ts))
+    idx = tri.loc[st:].index.intersection(gilt.loc[st:].index)
+    a_, b_ = tri.reindex(idx).pct_change().fillna(0), gilt.reindex(idx).pct_change().fillna(0)
+    we, wg, last, p_ = W_E, 1 - W_E, idx[0].year, []
+    for t, x, y in zip(idx, a_, b_):
+        if reb and t.year != last:
+            tot = we + wg
+            we, wg = tot * W_E, tot * (1 - W_E)
+        last = t.year
+        we, wg = we * (1 + x), wg * (1 + y)
+        p_.append(we + wg)
+    z = pd.Series(p_)
+    return float((z / z.cummax() - 1).min()) * 100
+
+
+_dd_scan = [{"start_year": y, "never_pct": r(_dd2(f"{y}-01-01", False), 2), "annual_pct": r(_dd2(f"{y}-01-01", True), 2)} for y in range(2010, 2022)]
+
 out["rebalance"] = {
     "target_equity_pct": 60,
+    "start_year_scan": _scan_rows, "start_years_negative": _scan_neg, "start_years_total": len(_scan_rows),
+    "isolate_2008_2009_only_pp": r(_scan("2006-04-03", only=(2008, 2009)), 2),
+    "isolate_all_but_2008_2009_pp": r(_scan("2006-04-03", skip=(2008, 2009)), 2),
+    "isolate_2008_only_pp": r(_scan("2006-04-03", only=(2008,)), 2),
+    "isolate_2009_only_pp": r(_scan("2006-04-03", only=(2009,)), 2),
+    "full_lead_pp": r(_scan("2006-04-03"), 2),
+    "drawdown_scan": _dd_scan, "drawdown_scan_starts": len(_dd_scan),
+    "drawdown_scan_annual_shallower_or_tied": sum(1 for x in _dd_scan if x["annual_pct"] >= x["never_pct"]),
+    "drawdown_scan_max_gap_pp": r(max(x["annual_pct"] - x["never_pct"] for x in _dd_scan), 1),
+    "drawdown_scan_exception": next((x for x in _dd_scan if x["annual_pct"] < x["never_pct"]), None),
     "full": rebalance_window("2006-04-03"),
     "from_2010": rebalance_window("2010-01-01"),
     # the textbook arithmetic: 60/40, equity +20%, gilt +5%
@@ -247,7 +309,7 @@ out["rebalance"] = {
 }
 
 # ================================================================ 6. overtrading
-GROSS = 12.0
+GROSS = 12
 COST_SIDE = 0.1
 grid = []
 for ntr in (0, 12, 52, 250):

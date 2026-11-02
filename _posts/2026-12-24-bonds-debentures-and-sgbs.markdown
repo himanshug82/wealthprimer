@@ -60,7 +60,7 @@ plus {{ r.cess_pct }}% cess (income below ₹50 lakh, so no surcharge):
 | | |
 |---|---:|
 | Interest for the year | ₹{% include inr.html n=x.ncd_interest %} |
-| TDS at 10% (above the ₹{% include inr.html n=x.ncd_tds_threshold %} threshold) | ₹{% include inr.html n=x.ncd_tds %} |
+| TDS at 10% on the whole amount (once interest crosses ₹{% include inr.html n=x.ncd_tds_threshold %}) | ₹{% include inr.html n=x.ncd_tds %} |
 | Tax at 30% + cess | ₹{% include inr.html n=x.ncd_tax_with_cess %} |
 | **Still due when you file** | **₹{% include inr.html n=x.ncd_balance_due %}** |
 
@@ -148,7 +148,7 @@ original issue till maturity** (section 70(1)(x) of the 2025 Act, as substituted
 |---|---|
 | Subscribed at issue, held to maturity | **Exempt** |
 | Bought on the exchange, held to maturity (and over {{ r.equity_holding_months }} months) | Taxable: long-term after {{ r.equity_holding_months }} months (it's a listed security), {{ r.equity_ltcg_pct }}%, no ₹{% include inr.html n=r.ltcg_annual_exemption %} exemption |
-| Sold on the exchange before maturity | Normal capital gains, same rates |
+| Sold on the exchange before maturity | Normal capital gains: slab within {{ r.equity_holding_months }} months, then {{ r.equity_ltcg_pct }}% |
 | Redeemed early with the RBI after year five | **Check first** — on the new wording this isn't "maturity" |
 
 That last row deserves care. The old wording, which the 2025 Act first

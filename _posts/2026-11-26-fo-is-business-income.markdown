@@ -116,13 +116,11 @@ not against interest or capital gains.
 
 Two conditions apply:
 
-1. **The return form.** Business income needs the business return form (ITR
-   stands for income tax return; ITR-3 under the forms in use at the time of writing), not the ITR-2 used for capital gains (ITR-4 may be available under the presumptive scheme; check)
-   alone. Check the current form names.
+1. **The return form.** Business income needs the business return form, not the one used for capital gains alone. Under the forms we last saw, that's ITR-3 rather than ITR-2 (ITR is income tax return), with ITR-4 possibly available under the presumptive scheme. Check the current form names.
 2. **The due date.** Under section 121 of the Income-tax Act, 2025, a business loss can be carried forward only if it was determined on a return filed under section 263(1), which sets the due date. The set-off in the same year survives; the
    ₹{% include inr.html n=f.carried_forward %} for future years would not carry forward.
 
-One more consequence of having business income: the rules on switching regimes differ. Under section 202(4), someone with business income opts out of the new regime by the due date; that choice carries forward, can be withdrawn only once, and after that the option is gone unless the business income ends. A person without business income chooses year by year with the return (the [ELSS post]({% post_url 2026-11-22-elss-and-the-deduction-that-moved %}) describes the two regimes).
+One more consequence of having business income: the rules on switching regimes differ. Under section 202(4), someone with business income opts out of the new regime by the due date; that choice carries forward, can be withdrawn only once, and after that the option is gone unless the business income ends. A person without business income chooses year by year with the return (the [post on ELSS, equity linked savings schemes,]({% post_url 2026-11-22-elss-and-the-deduction-that-moved %}) describes the two regimes).
 
 ## The presumptive scheme
 
@@ -142,7 +140,7 @@ The scheme deems a profit; it does not allow a loss to be declared. Under it, ta
 carried forward. Leaving the scheme has a cost: under section 58(7) and (8), someone who uses it and then declares otherwise in any of the next five years can't return for five years, and needs books and an audit if total income is above the basic exemption.
 
 Outside the scheme, a trader whose turnover is under the audit threshold can generally report the actual result,
-subject to keeping books of account (a broker's P&L statement and ledger are the core of them) and to the audit condition in the next sentence. Declaring less than the deemed profit when total income is above the basic exemption brings a requirement to keep books and get audited, under section 58(3) of the Act, for someone eligible for the scheme. On that reading, a trader like the one in this example, who reports a loss and has a salary, would need an audit even though turnover is far below the threshold, if eligible.
+subject to keeping books of account (section 62 of the Act) and to the audit condition in the next sentence. Declaring less than the deemed profit when total income is above the basic exemption brings a requirement to keep books and get audited, under section 58(3) of the Act, for someone eligible for the scheme. On that reading, a trader like the one in this example, who reports a loss and has a salary, would need an audit even though turnover is far below the threshold, if eligible.
 
 ## What you can deduct
 
@@ -155,8 +153,7 @@ trading. Whether any other cost is deductible, such as fees to an adviser, is no
 available against capital gains, which is one of the few respects in which
 the business classification helps.
 
-Worth knowing: section 159 of the Finance Act, 2026 raised STT — futures from 0.02% to 0.05% of the traded price, and
-options premium from 0.1% to 0.15%, and from 0.125% to 0.15% on the sale of an option that is exercised (the section gives rates, not the base for that last one). STT is a cost of trading, and it's also the
+Worth knowing: section 159 of the Finance Act, 2026 raised STT, from 1 April 2026 according to the [Budget memorandum](https://www.indiabudget.gov.in/doc/memo.pdf): futures from 0.02% to 0.05% of the traded price, options from 0.1% to 0.15% of the premium, and options that are exercised from 0.125% to 0.15% of the intrinsic price. STT is a cost of trading, and it's also the
 "house's cut" the [F&O post]({% post_url 2026-10-08-what-the-fo-numbers-actually-say %}) described —
 paid on each sale, win or lose.
 
@@ -172,7 +169,7 @@ paid on each sale, win or lose.
 
 **Takeaway:** F&O results are business income at your slab, not capital
 gains. Losses can offset interest and gains but never
-salary, and generally carry forward eight years if the return is filed on time (a loss return may also carry an audit requirement; see above). On the sources read, "turnover" is built from every trade's absolute result, and the presumptive scheme, which deems a profit, cannot declare a loss.
+salary, and generally carry forward eight years if the return is filed on time (a loss return may also carry an audit requirement; see above). On the sources read, "turnover" is built from every trade's absolute result, and a loss can't be declared under the presumptive scheme, which deems a profit.
 
 ## Sources
 

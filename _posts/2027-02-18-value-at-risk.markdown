@@ -7,6 +7,8 @@ image: /assets/og/value-at-risk.png
 date: 2027-02-18 09:00:00 +0530
 series: risk
 term: "Value at Risk (VaR)"
+needs_review: regulation
+rules_as_of: "November 2026"
 ---
 
 {% assign r4 = site.data.risk4 %}
@@ -18,7 +20,7 @@ term: "Value at Risk (VaR)"
 
 **Value at Risk (VaR)** answers a specific question: *over a given period, what is the loss that will not be exceeded with a given confidence?* "One-day 99% VaR of ₹{% assign x = v.hist_99 %}{% include inr.html n=x %} on a ₹{% assign y = v.position %}{% include inr.html n=y %} holding" means: on 99 days out of 100, the loss should be smaller than that figure. It says nothing about the 100th day. That blind spot is the main thing to understand about VaR, and this post tests it on real data. It is part of the [Risk, Leverage and Your Own Brain]({{ '/series/risk/' | relative_url }}) series and builds on [fat tails]({% post_url 2027-02-08-fat-tails %}).
 
-VaR is widely used in the finance industry as a reporting number. It is a description of a risk profile, and the post doesn't suggest using it as a decision rule.
+VaR also sits behind margins: SEBI's (the Securities and Exchange Board of India's) master circular SEBI/HO/MRD-PoD2/CIR/P/2024/00181 of 30 December 2024 bases the initial margin in derivatives on a 99% one-day VaR (Chapter 5, para 1.2.5.1). SEBI announced a review of that circular in June 2026, so check the current text. In this post it is a description of a risk profile, and the post doesn't suggest using it as a decision rule.
 
 ## The formula
 
@@ -28,7 +30,7 @@ Two common ways to estimate it, for a holding of value V:
 Historical VaR(c)  =  V × (−1) × the (1 − c) percentile of past daily returns
                       e.g. 99% VaR = V × the loss that was exceeded on only 1% of past days
 
-Parametric VaR(c)  =  V × (z × SD − average return)
+Parametric VaR(c)  =  V × (z × SD − average return)      (SD is standard deviation)
                       with z = 1.645 for 95% and 2.326 for 99% (normal curve)
 ```
 
@@ -47,14 +49,21 @@ At 99%, the parametric number (₹{% assign x = v.par_99 %}{% include inr.html n
 
 ## Does the 99% VaR hold 99% of the time?
 
-The proper test of a VaR number is out of sample: estimate it from the past, then count how often the next day's loss exceeded it. For each day we computed a 99% parametric VaR from the previous {{ v.window }} sessions and checked the next day's return. That left {{ v.days_tested }} days to test.
+The proper test of a VaR number is out of sample: estimate it from the past, then count how often the next day's loss exceeded it. For each day we computed a 99% bell-curve VaR from the previous {{ v.window }} sessions and checked the next day's return. That left {% assign x = v.days_tested %}{% include inr.html n=x %} days, from {{ v.test_start | date: "%-d %B %Y" }} to {{ v.test_end | date: "%-d %B %Y" }}, so the test misses the first {{ v.fall_before_test_pct | abs }}% of the 2008 fall but includes October 2008.
 
 | | Days | Share |
 |---|---:|---:|
 | Expected breaches (1% of days) | {{ v.expected_days }} | {{ v.expected_share_pct }}% |
 | Actual breaches | {{ v.breaches }} | {{ v.breach_share_pct }}% |
 
-The 99% VaR was breached about {{ v.breach_share_pct }}% of the time, not 1%. The worst year for breaches was {{ v.worst_year }}, with {{ v.worst_year_breaches }} of them. Breaches tend to bunch, most likely because the number is estimated from the calm stretch before a storm: when volatility jumps, it is out of date. (The test needs {{ v.window }} sessions of history, so it starts about a year into the data.)
+That rolling bell-curve VaR was breached about {{ v.breach_share_pct }}% of the time, not 1%, and not just in crises:
+
+| | Breaches | Share of those days |
+|---|---:|---:|
+| 2008, 2009 and 2020 | {{ v.breaches_crisis_years }} | {{ v.breach_share_crisis_pct }}% |
+| All other years | {{ v.breaches_other_years }} | {{ v.breach_share_other_pct }}% |
+
+The highest count was {{ v.worst_year_breaches }} in {{ v.worst_year }}, but 2009 had none. Breaches came in short runs, though: the {{ v.breaches }} of them fell in {{ v.months_with_breach }} of {{ v.months_tested }} months, in ordinary years as well as crisis years. Two causes plausibly contribute, and this test doesn't separate them: the number goes stale when volatility jumps, and the bell curve understates tails. A rolling historical VaR, with no bell curve, was breached {{ v.breach_share_rolling_historical_pct }}% of the time; a bell-curve line fixed on the whole sample, which can't go stale but uses hindsight, {{ v.breach_share_full_sample_normal_pct }}%.
 
 The worst single day in the data cost ₹{% assign x = v.worst_day_loss %}{% include inr.html n=x %} on the holding, about {{ v.worst_day_vs_hist99_x }} times the historical 99% VaR. VaR told you nothing about how much worse than the threshold the bad days could be.
 
@@ -66,12 +75,12 @@ The worst single day in the data cost ₹{% assign x = v.worst_day_loss %}{% inc
 | A single number comparable across holdings | Whether the past volatility will repeat |
 | A scale for ordinary bad days | Anything about crises |
 
-A related measure, **expected shortfall** (the average loss on the days beyond the VaR line), addresses the first row and is why many risk teams look at both. We don't compute it here.
+A related measure, **expected shortfall** (the average loss on the days beyond the VaR line), addresses the first row. We don't compute it here.
 
 ## Common mistakes
 
 - **Reading "99% VaR" as the worst case.** It is the threshold for the best 99 of 100 days, and the 100th day isn't bounded.
-- **Trusting a VaR taken from a calm window.** A number estimated from a quiet year says little about a volatile one. Breaches here bunched into the worst years.
+- **Trusting a VaR taken from a calm window.** A number estimated from a quiet year says little about a volatile one. Breaches here came in short runs, and in ordinary years too.
 - **Applying a one-day number to a longer holding without care.** Scaling by the square root of time assumes returns are independent from day to day; we didn't test that here.
 - **Using VaR as a position-sizing rule.** It is a description of a risk profile. The [position sizing post]({% post_url 2026-10-10-position-sizing-and-the-one-percent-rule %}) shows one conventional approach, with its own limits.
 
@@ -95,4 +104,4 @@ test = pd.DataFrame({"r": r, "var": var}).dropna()
 print("breach share:", round((test.r < -test["var"]).mean(), 4))
 ```
 
-**Takeaway:** Value at Risk gives the loss that should not be exceeded on 99 days out of 100, and says nothing about the 100th. On 18 years of Nifty data the 99% number was breached more often than 1% of the time, mostly in crisis years, so it describes ordinary bad days and not the worst ones.
+**Takeaway:** Value at Risk gives the loss that should not be exceeded on 99 days out of 100, and says nothing about the 100th. On Nifty data since 2008, a 99% bell-curve VaR re-estimated daily was breached more than 1% of the time, in crisis years and, less often, in ordinary ones, so it is an estimate and says nothing about the worst days.

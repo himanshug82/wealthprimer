@@ -33,9 +33,9 @@ goatcounter: ""
 # moderation note live in _includes/comments.html.
 giscus:
   repo: "himanshug82/wealthprimer"
-  repo_id: ""
+  repo_id: "R_kgDOT8LCnQ"            # from giscus.app/api/discussions/categories, 2 Nov 2026
   category: "Comments"
-  category_id: ""
+  category_id: "DIC_kwDOT8LCnc4DKL7c"
 
 # --- email list ---
 # Renders _includes/newsletter.html on every post and the homepage. Nothing is

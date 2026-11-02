@@ -50,10 +50,10 @@ newsletter:
   provider: mailchimp
   action: ""
   honeypot: ""
-  heading: "Get each post when it lands"
+  heading: "One email a week"
   blurb: >-
-    One concept at a time, every day. No tips, no calls, no hype —
-    just the explainers. Unsubscribe whenever.
+    The week's explainers in one email. No tips, no calls, no hype.
+    Unsubscribe whenever.
 
 # --- theme ---
 theme: minima

@@ -11,6 +11,7 @@ figure going into `scripts/derive_sectors*.py` → `_data/`.
 | `real-estate-presales-vs-revenue` (8 Dec) | Godrej Properties FY26 (Q4) press release + investor presentation; Ind AS 115 text (MCA) for the revenue-recognition point |
 | `capital-goods-order-book-book-to-bill` (9 Dec) | Larsen & Toubro Q4 FY26 press release + investor presentation |
 | `general-insurers-combined-ratio-solvency` (10 Dec) | ICICI Lombard 15 Apr 2026 filing `ICICIGI_15042026193418_IP.pdf` (NSE); IRDAI regulation that sets the minimum solvency ratio (Assets, Liabilities and Solvency Margin regulations, current text) |
+| `consolidated-vs-standalone`, `segment-reporting`, `leases-ind-as-116`, `diluted-eps-and-dilution` (FA M5, from 20 Mar 2027) | Text of Ind AS 110 and Ind AS 27 (consolidated and separate statements), Ind AS 108, Ind AS 116 and Ind AS 33 as notified under the Companies (Indian Accounting Standards) Rules, 2015 (MCA). `mca.gov.in/Ministry/pdf/INDAS*.pdf` returned 403 on 8 Nov 2026 and no ICAI copy was reachable |
 | `epf-how-it-works` (MBM, 12 Nov slot) | EPF Scheme, 1952 (contributions, para 60 interest, withdrawals); EPFO circular notifying the FY 2025-26 rate; EPFO table of declared rates |
 
 PDFs here are working sources, not site content: `_review/` starts with an underscore, so Jekyll does not publish it.

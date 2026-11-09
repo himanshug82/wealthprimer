@@ -17,6 +17,8 @@ Current state (1 Nov 2026): **198 posts written** (Jargon 59 · FA 29 · TA 22 �
   - **[Approved, drafted 2 Nov]** TA M4 "Trend tools, tested", 10–15 Nov: ADX, golden/death cross, Supertrend, breakouts, pivot points, indicator confluence. Needs Nifty data ending ≥3 months before publication (`refresh-data`).
   - **[Approved, drafted 2 Nov]** Risk M4 "Measuring and managing exposure", 10–15 Nov: protective put, fat tails, VaR, margin calls/peak margin (`regulation`; open the SEBI circular first, owner may hold until after 7 Dec), rebalancing, overtrading.
   - **[Approved]** FA M5 "Reading the statements closer", 17–22 Nov: consolidated vs standalone, segment reporting, leases (Ind AS 116, needs MCA text), diluted EPS, normalised earnings, sum of the parts.
+  - **[Proposed]** tax — Cost basis and filing mechanics: 6 posts, 2026-12-29 → 2027-01-03 (one a day). Roadmap: _review/roadmaps/2026-11-06-tax.md. Brief: _review/research/2026-11-06.md.
+  - **[Proposed]** mutual-funds — Newer fund rules and wrappers: 6 posts, 2027-01-22 → 2027-01-27 (one a day). Roadmap: _review/roadmaps/2026-11-06-mutual-funds.md. Brief: _review/research/2026-11-06.md.
   The Sunday drafting routine caps at 8 posts a week, so the 10 Nov dates will slip unless drafted by hand; check `planned:` in `_data/series.yml` (already bumped) against written counts and move dates if needed.
 - **Search Console (monthly).** Export queries at position 8–20 and refresh those posts (`refresh-post`; `last_modified_at` only for substantive changes). Watch Pages indexed, Sitemaps (Success), Breadcrumbs (≈ number of posts) and Core Web Vitals (no CLS issues). Don't rename dated URLs — there is no redirect plugin.
 

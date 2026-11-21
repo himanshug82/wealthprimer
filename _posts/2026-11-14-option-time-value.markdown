@@ -45,7 +45,7 @@ dividends, and a constant annual volatility of {{ tv.vol_pct }}%**
 standard deviation of annual returns). The index is held flat at
 {{ c.level }} while the days pass, to isolate the effect of time alone. Real
 option prices also move with the index and with the market's changing view of
-volatility; that is the subject of the next post<!-- RELINK 2026-11-30-implied-volatility -->.
+volatility; that is the subject of the next post<!-- RELINK 2026-11-26-implied-volatility -->.
 
 ## Worked example: three calls, same index, shrinking time
 

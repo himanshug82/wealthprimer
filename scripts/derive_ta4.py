@@ -20,7 +20,8 @@ peak"; an event whose forward window runs past the data is dropped and counted;
 every conditional result sits beside its base rate and n; parameters fixed
 before looking; where a threshold is arbitrary the whole grid is reported.
 
-LAG: the first Module 4 post publishes 29 January 2027; cut-off 29 October 2026.
+LAG: the first Module 4 post publishes 26 December 2026 (moved from 29 January 2027 when the
+schedule went daily, 21 Nov 2026); cut-off 26 September 2026. Both price series end March 2026.
 
 Needs pandas, numpy, pyyaml.
 """
@@ -42,7 +43,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PX_CSV = ROOT / "assets/data/britannia-ohlcv-2024-04-to-2026-03.csv"
 NIFTY_CSV = ROOT / "assets/data/nifty50-price-index.csv"
 OUT = ROOT / "_data/ta4.yml"
-FIRST_POST = pd.Timestamp("2027-01-29")
+FIRST_POST = pd.Timestamp("2026-12-26")
 COST = 0.001            # per side, illustrative all-in (same as ta2/ta3)
 H63 = 63                # forward horizon, sessions
 RNG = np.random.default_rng(20261110)

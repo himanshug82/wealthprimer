@@ -111,7 +111,7 @@ so check the current rule before relying on either:
   from {{ s.upfront_margin.premium_from }} (master circular paragraph {{ s.upfront_margin.premium_para }}).
 
 How income and losses from derivatives are taxed is a separate subject, covered in
-the Tax series<!-- RELINK 2026-11-26-fo-is-business-income -->; this
+the Tax series<!-- RELINK 2026-11-24-fo-is-business-income -->; this
 module states no tax rules.
 
 ## Common mistakes

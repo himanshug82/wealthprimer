@@ -50,7 +50,7 @@ Details and sources: `_review/sprint-1/`.
 
 | Area | Baseline |
 |---|---|
-| Content | 216 posts written: 157 published (18 Aug – 20 Nov 2026), 59 scheduled to 18 Mar 2027. 8 series. 101 posts published in October 2026 alone |
+| Content | 216 posts written: 157 published (18 Aug – 20 Nov 2026), 59 scheduled to 18 Mar 2027 (one every two days; moved to one a day, to 19 Jan 2027, on 21 Nov). 8 series. 101 posts published in October 2026 alone |
 | Tools | 8 calculators: 3 Google Sheets (rolling returns, SIP/XIRR, DCF), 5 on-page JavaScript. 103 calculator figures match their posts |
 | Technical SEO | Strong: titles, descriptions, canonicals, one H1, JSON-LD (BlogPosting, BreadcrumbList), custom sitemap, Lighthouse 100 on mobile and desktop |
 | Indexing | 53 pages indexed, of which 49 posts (of 157). 101 "crawled – currently not indexed", 20 "discovered – not indexed" |
@@ -105,7 +105,7 @@ At least two wireframe alternatives before any implementation.
 
 ## 6. Content strategy
 
-- **Improve before adding.** Until indexing recovers, the weekly routine improves and interlinks existing posts rather than drafting new ones.
+- **Publish daily, improve in parallel.** The owner set one post a day (D1, 21 Nov 2026): the written backlog runs out on 19 Jan 2027, after which the site needs seven new posts a week. Improving and interlinking existing posts (hubs, refreshes) runs alongside, and the indexed share of published posts is the check on whether the pace is hurting.
 - **Every published post has a proposed action** in `_review/sprint-1/content-inventory.csv`: KEEP 58 · IMPROVE 62 · CONSOLIDATE 37 · REDIRECT 0 · RETIRE 0 (59 scheduled posts not yet labelled). Proposals only, pending D5.
 - **CONSOLIDATE** means connect overlapping posts under a hub and choose which one owns the head term. It does not mean merge or redirect.
 - **Priority clusters** (from Search Console): rolling returns (14 query variants, the only calculator demand); exit load / expense ratio / NAV; ex-date vs record date; trend lines; banking ratios.
@@ -157,7 +157,7 @@ Full register: `_review/sprint-1/technical-risk-register.md`.
 
 | Risk | Mitigation |
 |---|---|
-| Google judges the site low-value (fast volume, new YMYL domain) | Slow publishing, improve and interlink, hubs, visible editorial standards |
+| Google judges the site low-value (fast volume, new YMYL domain) | Daily pace chosen (D1); offset with improving and interlinking, hubs, visible editorial standards; monthly indexed-share check |
 | "Decision support" drifts into advice | Scope rule D3 in `CLAUDE.md` before building evaluation tools |
 | ~~Production and CI build differently~~ | **Resolved 21 Nov 2026**: workflow builds with the Gemfile; Pages source is GitHub Actions |
 | Rule/tax accuracy without professional review | Existing `needs_review` safeguards; post-Budget re-check |
@@ -172,7 +172,7 @@ Full register: `_review/sprint-1/technical-risk-register.md`.
 | — | Production builds only through the Actions workflow with the Gemfile; Pages source set to "GitHub Actions" | **Decided** (owner) | 21 Nov 2026 | PR #36 and settings change; ends the race with GitHub's Jekyll 3.10 builder |
 | — | No URL changes, deletions or redirects without approval | **Decided** (brief) | 21 Nov 2026 | |
 | — | No professional tax review; process safeguards instead | **Decided** (owner) | 26 Oct 2026 | See `CLAUDE.md` → Professional review |
-| D1 | Publishing pace for the 59 scheduled posts | **Pending** | — | Recommended: keep time-sensitive posts, others at 1–2 a week for 4 weeks |
+| D1 | Publishing pace for the 59 scheduled posts | **Decided** (owner): one post a day | 21 Nov 2026 | 22 Nov 2026 – 19 Jan 2027, same order (`_review/schedule-2026-11-21.md`). Sprint 1 had recommended slowing down; watch the indexed share monthly and revisit if it falls |
 | D2 | Navigation labels | **Pending** | — | Recommended: Learn · Analyse · Portfolio · Risk & Tax · Tools · About |
 | D3 | Scope rule for decision-support tools | **Pending** | — | Generic inputs, mechanics only, no ranking/scoring of securities or holdings review |
 | D4 | AdSense timing | **Pending** | — | Recommended: defer until organic traffic is meaningful |
@@ -185,11 +185,11 @@ Add each new decision as a row; never delete a row — mark it superseded.
 - Resubmit `sitemap.xml` in Search Console.
 - Add a GA4 internal-traffic filter; list the current key events.
 - Supply the Buttondown subscriber count and the AdSense application status.
-- Decide D1–D5.
+- Decide D2–D5 (D1 decided 21 Nov 2026).
 
 ## 13. Sprint record
 
 | Sprint | Dates | Output | Evidence |
 |---|---|---|---|
 | 1 | 21 Nov 2026 | Assessment: repository, inventory, SEO, UX, risks, Sprint 2 recommendations, analytics baseline | `_review/sprint-1/`, PR #34 |
-| 2 (in progress) | from 21 Nov 2026 | Hygiene: plain links to unpublished posts now checked (6 fixed, 6 RELINK markers swept); production builds with the Gemfile and Pages source is GitHub Actions | PRs #35, #36 |
+| 2 (in progress) | from 21 Nov 2026 | D1 decided: one post a day to 19 Jan 2027. Hygiene: plain links to unpublished posts now checked (6 fixed, 6 RELINK markers swept); production builds with the Gemfile and Pages source is GitHub Actions | PRs #35, #36 |

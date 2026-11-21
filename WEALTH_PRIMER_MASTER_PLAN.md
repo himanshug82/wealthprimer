@@ -1,0 +1,193 @@
+# Wealth Primer 2.0 — master plan
+
+The single, permanent reference for the Wealth Primer 2.0 transformation: what we are building, the rules it must respect, where it stands, and what has been decided. Keep it current. When a sprint ends or a decision is made, update the **Status** and **Decision log** sections here and link the evidence.
+
+- **Started:** 21 November 2026
+- **Last updated:** 21 November 2026 (end of Sprint 1)
+- **House rules for writing:** `CLAUDE.md` (they take precedence over anything here)
+- **How the site builds and publishes:** `_docs/how-it-works.md`
+- **Open editorial tasks:** `TODO.md`
+- **Sprint evidence:** `_review/sprint-<n>/`
+
+---
+
+## 1. Vision
+
+Turn Wealth Primer from a concept-by-concept finance blog into **an independent investor education and decision-support platform for India**.
+
+> **Understand your money. Evaluate your investments. Make informed decisions.**
+
+**Audience:** Indian self-directed investors who want to make better decisions by understanding investments, evaluating risk and managing portfolios. Default reader: an intelligent beginner; depth layered in.
+
+**What "decision support" means here.** Frameworks, checklists, worked examples and calculators that run on the reader's own generic inputs and show the mechanics. It never means ranking, screening or scoring real securities, reviewing a reader's holdings, or telling anyone what to do. (Proposed scope rule, pending decision D3.)
+
+## 2. Business objectives, in order
+
+1. Increase organic search traffic.
+2. Improve content quality and differentiation.
+3. Improve engagement and returning readership.
+4. Build a newsletter audience.
+5. Establish a credible financial education brand.
+6. Generate AdSense revenue.
+7. Later: premium educational resources and investor tools.
+
+Objectives 1–5 come before 6 and 7. A finance site earns ads and paid products only after it has earned trust and traffic.
+
+## 3. Non-negotiables
+
+1. **Education, not advice.** No buy/sell calls, targets, verdicts on a real company's valuation or management, or fair values for listed companies. The legal position is no SEBI RA/IA registration; the brand is credibility-first. Full rules in `CLAUDE.md` → Compliance guardrails.
+2. **Lagged, dated data.** Worked-example prices and figures are at least 3 months old, with the as-of date stated.
+3. **Rules from primary sources.** Tax and regulation posts carry `needs_review` and `rules_as_of`; no rule from memory.
+4. **URL continuity.** No permalink changes, deletions or redirects without explicit owner approval.
+5. **No unnecessary rebuild.** Stay on Jekyll, GitHub Pages, Markdown/YAML and the existing calculators. No React, Next.js, CMS, database or paid infrastructure without a demonstrated need.
+6. **No bulk AI rewriting** of existing posts. Improve one post or cluster at a time, through the existing skills and the `post-auditor`.
+7. **Evidence before decisions.** Use real analytics; separate verified findings from hypotheses; document major decisions here.
+8. **Small, reviewable changes.** One concern per pull request; production changes only with owner approval.
+
+## 4. Where we started (baseline, 21 Nov 2026)
+
+Details and sources: `_review/sprint-1/`.
+
+| Area | Baseline |
+|---|---|
+| Content | 216 posts written: 157 published (18 Aug – 20 Nov 2026), 59 scheduled to 18 Mar 2027. 8 series. 101 posts published in October 2026 alone |
+| Tools | 8 calculators: 3 Google Sheets (rolling returns, SIP/XIRR, DCF), 5 on-page JavaScript. 103 calculator figures match their posts |
+| Technical SEO | Strong: titles, descriptions, canonicals, one H1, JSON-LD (BlogPosting, BreadcrumbList), custom sitemap, Lighthouse 100 on mobile and desktop |
+| Indexing | 53 pages indexed, of which 49 posts (of 157). 101 "crawled – currently not indexed", 20 "discovered – not indexed" |
+| Search | 30 Sep – 19 Nov 2026: 2 clicks, 692 impressions, average position 24.1, 91 queries |
+| GA4 | 1 Aug – 20 Nov 2026: 217 sessions, 190 users, 0 returning; mostly bot traffic; 21 organic sessions |
+| Sitemap | Last read by Google 25 Oct 2026 |
+
+**Diagnosis.** The binding constraint is **indexing and trust**, not templates or page speed. Structure is organised by how the site was written (series of concepts), not by what a reader comes to do. The strongest assets — generated numbers, the Desi Bites case study, methodology, calculators — are under-exposed.
+
+## 5. Product architecture
+
+### Reader journeys
+
+| Journey | Scope | Main sources today |
+|---|---|---|
+| **Learn** | Concepts, jargon, market mechanics | Jargon, Decoded; Market basics |
+| **Analyse** | Stocks, funds, ETFs, bonds, valuation | Fundamental analysis; Technical analysis; Mutual funds |
+| **Portfolio** | Allocation, diversification, rebalancing, cash and safe money | Money Before Markets; portfolio posts from Risk and MF — thinnest journey |
+| **Risk & Tax** | Drawdowns, leverage, behaviour, taxation | Risk; Tax |
+| **Tools** | Calculators, worksheets, checklists | `/tools/` |
+
+Series stay as they are (they drive Part N of M and prev/next). Journeys are a second, reader-facing layer of hub pages that curate existing posts. A post can appear in more than one journey.
+
+### Navigation (proposed, pending D2)
+
+**Learn · Analyse · Portfolio · Risk & Tax · Tools · About** — six items, which is the most the header fits on one line. "Insights" is dropped: it implies market commentary, at odds with the lag and no-calls rules. Methodology and the case study move under About and into the homepage and footer.
+
+### Flagship guides
+
+Each is a hub page in one shared template: an ordered path through existing posts with a line on why to read each, the relevant tools, the related Desi Bites chapter, and one clear next step. New writing is connective only.
+
+| # | Guide | Built from | Status |
+|---|---|---|---|
+| 1 | The Indian Investor's Guide to Mutual Funds | Mutual funds series (27 published), rolling-returns and SIP tools | First to build (search demand for rolling returns) |
+| 2 | How to Analyse Stocks | The three statement posts (now in Jargon), FA series, case study, DCF sheet | Not started |
+| 3 | Building Your Investment Portfolio | Money Before Markets, diversification, rebalancing, overlap | Not started; content gap |
+| 4 | Understanding Investment Risk | Risk series, drawdown, volatility, behaviour | Not started |
+| 5 | Indian Investor's Taxation Handbook | Tax series (18 written) | Not started; re-check after Union Budget 2027 |
+
+### Homepage (direction, wireframes pending)
+
+1. Problem-first hero that leaves entry points visible on a phone.
+2. "What are you trying to do?" — journey cards.
+3. Featured guides.
+4. Calculators.
+5. The Desi Bites case study and real-world examples.
+6. How we work: lagged data, scripted numbers, no tips, no paid promotions (links Methodology).
+7. Latest posts (short list).
+8. Newsletter.
+
+At least two wireframe alternatives before any implementation.
+
+## 6. Content strategy
+
+- **Improve before adding.** Until indexing recovers, the weekly routine improves and interlinks existing posts rather than drafting new ones.
+- **Every published post has a proposed action** in `_review/sprint-1/content-inventory.csv`: KEEP 58 · IMPROVE 62 · CONSOLIDATE 37 · REDIRECT 0 · RETIRE 0 (59 scheduled posts not yet labelled). Proposals only, pending D5.
+- **CONSOLIDATE** means connect overlapping posts under a hub and choose which one owns the head term. It does not mean merge or redirect.
+- **Priority clusters** (from Search Console): rolling returns (14 query variants, the only calculator demand); exit load / expense ratio / NAV; ex-date vs record date; trend lines; banking ratios.
+- **Tax content** stays mechanics-only with primary sources, and is re-checked after each Union Budget.
+
+## 7. Technical strategy
+
+Keep the stack. Improve, in this order:
+
+1. Build production with the Gemfile (today the live site builds with GitHub's `jekyll-build-pages` image, a different Jekyll and minima).
+2. Check plain links to future-dated posts in `check_posts.py` (they 404 on the live site until the target publishes).
+3. Add `jekyll-redirect-from`, with no redirects configured, so consolidation is possible later.
+4. Design tokens extracted from `assets/main.scss`, then the hub/guide layout and homepage.
+5. Client-side search over a generated JSON index.
+6. An on-page rolling-returns calculator (and possibly SIP/XIRR), keeping the Sheets as "make a copy" downloads.
+7. GA4 events: calculator use, Sheet opens, newsletter sign-ups, outbound source clicks.
+8. Editorial standards and corrections page; author page.
+
+Not planned: generator migration, permalink changes, CMS, database, AMP.
+
+## 8. Roadmap (12 weeks from 21 Nov 2026)
+
+| Phase | Weeks | Focus | Status |
+|---|---|---|---|
+| 1 | 1–2 | Repository assessment, analytics baseline, content inventory, SEO audit | **Done** (21 Nov 2026, PR #34) |
+| 2 | 3–4 | Owner decisions D1–D5; hygiene fixes; information architecture; homepage and hub wireframes; design tokens | Next |
+| 3 | 5–6 | Homepage, navigation, hub and post templates | Not started |
+| 4 | 7–8 | Content consolidation, internal linking, first flagship guides | Not started |
+| 5 | 9–10 | Calculator experience, newsletter offer, analytics events | Not started |
+| 6 | 11–12 | SEO validation, distribution process, monitoring, next-quarter backlog | Not started |
+
+Sprint 2 backlog: `_review/sprint-1/sprint-2-recommendations.md`.
+
+## 9. Measures
+
+Leading indicators until the baseline is large enough to set honest targets. Refresh monthly into `_review/sprint-<n>/analytics-baseline-<date>.md`.
+
+| Measure | 21 Nov 2026 | Direction |
+|---|---|---|
+| Published posts indexed | 49 / 157 | Up, as a share |
+| Search impressions (28 days) | To read at Sprint 2 start | Up |
+| Organic sessions | 21 since 1 Aug (all countries) | Up |
+| Returning users | 0 | Above 0, then up |
+| Newsletter subscribers | Unknown (owner to supply) | Up |
+
+## 10. Top risks
+
+Full register: `_review/sprint-1/technical-risk-register.md`.
+
+| Risk | Mitigation |
+|---|---|
+| Google judges the site low-value (fast volume, new YMYL domain) | Slow publishing, improve and interlink, hubs, visible editorial standards |
+| "Decision support" drifts into advice | Scope rule D3 in `CLAUDE.md` before building evaluation tools |
+| Production and CI build differently | Build with the Gemfile |
+| Rule/tax accuracy without professional review | Existing `needs_review` safeguards; post-Budget re-check |
+| Analytics not decision-grade | Internal-traffic filter, bot awareness, event design |
+| Ads conflict with "no paid promotions" | Defer ads; block trading/crypto/betting categories when enabled |
+
+## 11. Decision log
+
+| ID | Decision | Status | Date | Notes |
+|---|---|---|---|---|
+| — | Keep Jekyll, GitHub Pages, Markdown/YAML and existing calculators | **Decided** (brief) | 21 Nov 2026 | Revisit only with demonstrated need |
+| — | No URL changes, deletions or redirects without approval | **Decided** (brief) | 21 Nov 2026 | |
+| — | No professional tax review; process safeguards instead | **Decided** (owner) | 26 Oct 2026 | See `CLAUDE.md` → Professional review |
+| D1 | Publishing pace for the 59 scheduled posts | **Pending** | — | Recommended: keep time-sensitive posts, others at 1–2 a week for 4 weeks |
+| D2 | Navigation labels | **Pending** | — | Recommended: Learn · Analyse · Portfolio · Risk & Tax · Tools · About |
+| D3 | Scope rule for decision-support tools | **Pending** | — | Generic inputs, mechanics only, no ranking/scoring of securities or holdings review |
+| D4 | AdSense timing | **Pending** | — | Recommended: defer until organic traffic is meaningful |
+| D5 | Inventory actions | **Pending** | — | Approve or amend `content-inventory.csv` proposals |
+
+Add each new decision as a row; never delete a row — mark it superseded.
+
+## 12. Owner actions outstanding
+
+- Resubmit `sitemap.xml` in Search Console.
+- Add a GA4 internal-traffic filter; list the current key events.
+- Supply the Buttondown subscriber count and the AdSense application status.
+- Decide D1–D5.
+
+## 13. Sprint record
+
+| Sprint | Dates | Output | Evidence |
+|---|---|---|---|
+| 1 | 21 Nov 2026 | Assessment: repository, inventory, SEO, UX, risks, Sprint 2 recommendations, analytics baseline | `_review/sprint-1/`, PR #34 |

@@ -147,6 +147,11 @@ collections:
   tools:
     output: true
     permalink: /tools/:name/
+  # Flagship guides (master plan §5): one page per guide at /guides/<id>/, drawn by
+  # _layouts/guide.html from the guide's front matter (questions, stages, next steps).
+  guides:
+    output: true
+    permalink: /guides/:name/
 
 # --- front matter defaults ---
 # jekyll-seo-tag's og:image/twitter:image only reads `image:` from a page's own
@@ -164,6 +169,13 @@ defaults:
       layout: tool
       # Without this, jekyll-seo-tag calls every dated page a BlogPosting. Tool pages are
       # calculators, not articles; their date comes from `date:` in each _tools/<id>.md.
+      seo:
+        type: WebPage
+  - scope:
+      path: ""
+      type: guides
+    values:
+      layout: guide
       seo:
         type: WebPage
 

@@ -23,6 +23,10 @@ of mistake only surface then:
 Also checks the reader tools: every _data/tools.yml entry has a _tools/<id>.md
 page, every tool.html id exists, and each tool's used_in list names real posts.
 
+And the guides (_guides/*.md): every `post:` key names a file in _posts/ (a reschedule
+that renames a post must update its guide), every `tool:` is in _data/tools.yml, every
+question's post is also in the guide's stages, and the guide has a date and journey.
+
 Also warns (not fails) on: missing `term:` (glossary), two posts from the same series on one date,
 a `{{ site.data.X }}` reference to a data file that doesn't exist, and any
 Liquid variable of the form `{{ foo.bar }}` whose root `foo` was never
@@ -249,6 +253,41 @@ def main():
             elif slug not in used_in[tid]:
                 print(f"WARN  {name}: links tool '{tid}' but isn't in its used_in list in _data/tools.yml")
                 warnings += 1
+
+    # --- guides: _guides/<id>.md (see _layouts/guide.html) -----------------
+    tool_ids = set(re.findall(r"^- id:\s*(\S+)", open(tools_path, encoding="utf-8").read(), re.M)) if os.path.exists(tools_path) else set()
+    journeys_path = os.path.join(ROOT, "_data", "journeys.yml")
+    journey_slugs = set(re.findall(r"^- slug:\s*(\S+)", open(journeys_path, encoding="utf-8").read(), re.M)) if os.path.exists(journeys_path) else set()
+    for gpath in sorted(glob.glob(os.path.join(ROOT, "_guides", "*.md"))):
+        gname = "_guides/" + os.path.basename(gpath)
+        gtext = open(gpath, encoding="utf-8").read()
+        gfm, _ = front_matter(gtext)
+        head = gtext[3:gtext.find("\n---", 3)] if gtext.startswith("---") else ""
+        for k in ("title", "description", "date", "journey"):
+            if not gfm.get(k):
+                print(f"ERROR {gname}: front matter missing '{k}'")
+                errors += 1
+        if gfm.get("journey") and gfm["journey"] not in journey_slugs:
+            print(f"ERROR {gname}: journey '{gfm['journey']}' is not in _data/journeys.yml")
+            errors += 1
+        desc = gfm.get("description", "")
+        if desc and not (140 <= len(desc) <= 155):
+            print(f"WARN  {gname}: description is {len(desc)} chars (aim 140–155)")
+            warnings += 1
+        question_part, _, stage_part = head.partition("\nstages:")
+        stage_keys = re.findall(r"^\s+- post:\s*(\S+)", stage_part.split("\nafter:")[0], re.M)
+        for key in sorted(set(re.findall(r"^\s+-? ?post:\s*(\S+)", head, re.M))):
+            if key not in posts:
+                print(f"ERROR {gname}: post '{key}' is not a file in _posts/ (renamed or rescheduled?)")
+                errors += 1
+        for key in re.findall(r"^\s+post:\s*(\S+)", question_part, re.M):
+            if key not in stage_keys:
+                print(f"WARN  {gname}: question post '{key}' is not in the guide's stages")
+                warnings += 1
+        for tid in re.findall(r"^\s+tool:\s*(\S+)", head, re.M):
+            if tid not in tool_ids:
+                print(f"ERROR {gname}: tool '{tid}' is not in _data/tools.yml")
+                errors += 1
 
     for (d, ser), names in sorted(by_date.items()):
         if len(names) > 1:

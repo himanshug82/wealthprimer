@@ -1,0 +1,149 @@
+---
+layout: default
+---
+{%- comment -%}
+A flagship guide (master plan §5; design: guide option A with option B's question cards, chosen
+21 Nov 2026). Everything comes from the guide's front matter in _guides/<id>.md:
+
+  journey     the journey slug (_data/journeys.yml) it sits under: breadcrumb and header section
+  questions   [{q, post}]: reader questions, each answered by one post
+  stages      [{title, posts: [{post, why, tool}]}]: the reading order
+  after       [{post} or {url, title}]: where to go after the guide (not `next`, which
+              Jekyll reserves for the next document in the collection)
+  data_note   one sentence on what the worked examples use
+
+`post` is the post's file name without extension (2026-09-27-rolling-returns), as in post_url,
+so a reschedule that renames the file must update it (check_posts.py checks every key). A post
+that hasn't published yet shows its date instead of a link and is hidden from the questions.
+`tool` is an id in _data/tools.yml.
+{%- endcomment -%}
+{%- assign j = site.data.journeys | where: "slug", page.journey | first -%}
+{%- assign journey_page = site.pages | where: "journey", page.journey | first -%}
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":{{ '/' | absolute_url | jsonify }}},
+{"@type":"ListItem","position":2,"name":{{ j.title | jsonify }},"item":{{ journey_page.url | absolute_url | jsonify }}},
+{"@type":"ListItem","position":3,"name":{{ page.title | jsonify }},"item":{{ page.url | absolute_url | jsonify }}}
+]}
+</script>
+
+{%- assign n_posts = 0 -%}
+{%- assign tool_ids = "" | split: "" -%}
+{%- for stage in page.stages -%}
+  {%- for item in stage.posts -%}
+    {%- assign n_posts = n_posts | plus: 1 -%}
+    {%- if item.tool -%}{%- assign tool_ids = tool_ids | push: item.tool -%}{%- endif -%}
+  {%- endfor -%}
+{%- endfor -%}
+{%- assign tool_ids = tool_ids | uniq -%}
+
+<article class="guide">
+  <header class="guide-header">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="{{ '/' | relative_url }}">Home</a> <span aria-hidden="true">›</span>
+      <a href="{{ journey_page.url | relative_url }}">{{ j.title }}</a> <span aria-hidden="true">›</span>
+      <span aria-current="page">Guide</span>
+    </nav>
+    <p class="guide-eyebrow">Guide &middot; {{ page.stages.size }} stages &middot; {{ n_posts }} explainers{% if tool_ids.size > 0 %} &middot; {{ tool_ids.size }} calculator{% if tool_ids.size != 1 %}s{% endif %}{% endif %}</p>
+    <h1 class="guide-title">{{ page.title | escape }}</h1>
+    <div class="guide-intro">{{ content }}</div>
+  </header>
+
+  {%- capture question_cards -%}
+  {%- for qa in page.questions -%}
+    {%- assign qpath = "_posts/" | append: qa.post | append: ".markdown" -%}
+    {%- assign qp = site.posts | where: "relative_path", qpath | first -%}
+    {%- if qp %}
+    <a class="guide-question" href="{{ qp.url | relative_url }}">
+      <strong>{{ qa.q | escape }}</strong>
+      <span>{{ qp.title | split: ":" | first | escape }}</span>
+    </a>
+    {%- endif -%}
+  {%- endfor -%}
+  {%- endcapture -%}
+  {%- if question_cards != "" %}
+  <section class="guide-questions" aria-labelledby="guide-q-heading">
+    <h2 id="guide-q-heading">Start from your question</h2>
+    <div class="guide-question-grid">{{ question_cards }}
+    </div>
+  </section>
+  {%- endif %}
+
+  <div class="guide-body">
+    <div class="guide-path">
+      <h2>Or read it in order</h2>
+      {%- for stage in page.stages %}
+      <section class="guide-stage">
+        <h3><span class="guide-stage-num">{{ forloop.index }}</span> {{ stage.title | escape }}</h3>
+        <ol class="guide-steps">
+          {%- for item in stage.posts -%}
+          {%- assign ppath = "_posts/" | append: item.post | append: ".markdown" -%}
+          {%- assign p = site.posts | where: "relative_path", ppath | first -%}
+          {%- if p %}
+          <li class="guide-step">
+            <a class="guide-step-title" href="{{ p.url | relative_url }}">{{ p.title | escape }}</a>
+            {%- if item.why %}<span class="guide-step-why">{{ item.why | escape }}</span>{% endif -%}
+            {%- if item.tool -%}
+            {%- assign t = site.data.tools | where: "id", item.tool | first -%}
+            {%- if t %}<a class="guide-step-tool" href="{{ '/tools/' | append: t.id | append: '/' | relative_url }}">Try it: {{ t.name | escape }}</a>{% endif -%}
+            {%- endif %}
+          </li>
+          {%- else %}
+          <li class="guide-step guide-step-upcoming">
+            <span class="guide-step-title">{{ item.title | default: "Coming soon" | escape }}</span>
+            <span class="guide-step-why">Publishes {{ item.post | slice: 0, 10 | date: "%-d %B %Y" }}</span>
+          </li>
+          {%- endif -%}
+          {%- endfor %}
+        </ol>
+      </section>
+      {%- endfor %}
+
+      {%- if page.after.size > 0 %}
+      <section class="guide-next">
+        <h2>After this guide</h2>
+        <ul>
+          {%- for n in page.after -%}
+          {%- if n.post -%}
+          {%- assign npath = "_posts/" | append: n.post | append: ".markdown" -%}
+          {%- assign np = site.posts | where: "relative_path", npath | first -%}
+          {%- if np %}<li><a href="{{ np.url | relative_url }}">{{ np.title | escape }}</a></li>{% endif -%}
+          {%- else %}
+          <li><a href="{{ n.url | relative_url }}">{{ n.title | escape }}</a></li>
+          {%- endif -%}
+          {%- endfor %}
+        </ul>
+      </section>
+      {%- endif %}
+    </div>
+
+    <aside class="guide-aside" aria-label="About this guide">
+      {%- if tool_ids.size > 0 %}
+      <section class="guide-box">
+        <h2>Calculators in this guide</h2>
+        <ul>
+          {%- for id in tool_ids -%}
+          {%- assign t = site.data.tools | where: "id", id | first -%}
+          {%- if t %}<li><a href="{{ '/tools/' | append: t.id | append: '/' | relative_url }}">{{ t.name | escape }}</a></li>{% endif -%}
+          {%- endfor %}
+        </ul>
+      </section>
+      {%- endif -%}
+      {%- if page.data_note %}
+      <section class="guide-box guide-box-warm">
+        <h2>About the worked examples</h2>
+        <p>{{ page.data_note | escape }}</p>
+      </section>
+      {%- endif %}
+      <section class="guide-box">
+        <h2>More in {{ j.title }}</h2>
+        <p><a href="{{ journey_page.url | relative_url }}">{{ journey_page.title | escape }}</a></p>
+      </section>
+    </aside>
+  </div>
+
+  {%- include newsletter.html -%}
+
+  {%- include disclaimer.html -%}
+</article>

@@ -84,7 +84,7 @@ Each is a hub page in one shared template, **guide option A with question cards*
 
 | # | Guide | Built from | Status |
 |---|---|---|---|
-| 1 | The Indian Investor's Guide to Mutual Funds | Mutual funds series (27 published), rolling-returns and SIP tools | First to build (search demand for rolling returns) |
+| 1 | The Indian Investor's Guide to Mutual Funds | Mutual funds series (27 published), rolling-returns and SIP tools | **Built 21 Nov 2026** at `/guides/mutual-funds/`: 8 questions, 17 posts in 6 stages, 4 calculators |
 | 2 | How to Analyse Stocks | The three statement posts (now in Jargon), FA series, case study, DCF sheet | Not started |
 | 3 | Building Your Investment Portfolio | Money Before Markets, diversification, rebalancing, overlap | Not started; content gap |
 | 4 | Understanding Investment Risk | Risk series, drawdown, volatility, behaviour | Not started |
@@ -132,7 +132,7 @@ Not planned: generator migration, permalink changes, CMS, database, AMP.
 |---|---|---|---|
 | 1 | 1–2 | Repository assessment, analytics baseline, content inventory, SEO audit | **Done** (21 Nov 2026, PR #34) |
 | 2 | 3–4 | Owner decisions D1–D5; hygiene fixes (done: A1–A3); information architecture; homepage and hub wireframes (done; options chosen); design tokens | **In progress** |
-| 3 | 5–6 | Build, in order: (1) navigation and site search; (2) the guide template; (3) the mutual funds guide; (4) the new homepage, last, so its goal cards link to real guides | Not started |
+| 3 | 5–6 | Build, in order: (1) navigation and site search (**done**, PR #43); (2) the guide template and (3) the mutual funds guide (**done**, one PR); (4) the new homepage, last, so its goal cards link to real guides | **In progress** |
 | 4 | 7–8 | Content consolidation, internal linking, first flagship guides | Not started |
 | 5 | 9–10 | Calculator experience, newsletter offer, analytics events | Not started |
 | 6 | 11–12 | SEO validation, distribution process, monitoring, next-quarter backlog | Not started |

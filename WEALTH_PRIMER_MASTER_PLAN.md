@@ -132,7 +132,7 @@ Not planned: generator migration, permalink changes, CMS, database, AMP.
 |---|---|---|---|
 | 1 | 1–2 | Repository assessment, analytics baseline, content inventory, SEO audit | **Done** (21 Nov 2026, PR #34) |
 | 2 | 3–4 | Owner decisions D1–D5; hygiene fixes (done: A1–A3); information architecture; homepage and hub wireframes (done; options chosen); design tokens | **In progress** |
-| 3 | 5–6 | Build, in order: (1) navigation and site search (**done**, PR #43); (2) the guide template and (3) the mutual funds guide (**done**, one PR); (4) the new homepage, last, so its goal cards link to real guides | **In progress** |
+| 3 | 5–6 | Build, in order: (1) navigation and site search (**done**, PR #43); (2) the guide template and (3) the mutual funds guide (**done**, PR #44); (4) the new homepage (**done**; goal cards and featured calculators edited in `index.markdown`) | **Done** 21 Nov 2026 |
 | 4 | 7–8 | Content consolidation, internal linking, first flagship guides | Not started |
 | 5 | 9–10 | Calculator experience, newsletter offer, analytics events | Not started |
 | 6 | 11–12 | SEO validation, distribution process, monitoring, next-quarter backlog | Not started |
@@ -195,3 +195,4 @@ Add each new decision as a row; never delete a row — mark it superseded.
 |---|---|---|---|
 | 1 | 21 Nov 2026 | Assessment: repository, inventory, SEO, UX, risks, Sprint 2 recommendations, analytics baseline | `_review/sprint-1/`, PR #34 |
 | 2 (in progress) | from 21 Nov 2026 | D1 decided: one post a day to 19 Jan 2027. D2 decided; homepage option A and guide option A (with question cards) chosen from the wireframes. Hygiene: plain links to unpublished posts now checked (6 fixed, 6 RELINK markers swept); production builds with the Gemfile and Pages source is GitHub Actions; `jekyll-redirect-from` added | PRs #35, #36 |
+| 3 (Phase 3 build) | 21 Nov 2026 | New navigation (Learn · Analyse · Portfolio · Risk & Tax · Tools · About), four journey pages and client-side search; guide template and the mutual funds guide; homepage option A | PRs #43, #44 and the homepage PR |

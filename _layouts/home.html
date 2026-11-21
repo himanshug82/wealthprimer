@@ -2,99 +2,110 @@
 layout: default
 ---
 {%- comment -%}
-Overrides minima's home layout, which was a bare reverse-chronological list of
-every post title.
+Homepage, option A "problem-first" (decided 21 Nov 2026; wireframes linked from
+WEALTH_PRIMER_MASTER_PLAN.md §5). Order: hero and trust points, "What are you trying to do?"
+goal cards, featured calculators, the case study and how we work, latest explainers,
+newsletter.
 
-Two problems that fixed: a first-time reader landed on whatever ratio happened
-to publish last (with no way to tell that it was post 21 of a 33-part series),
-and minima's `show_excerpts` silently rendered NOTHING, because 68 of 69 posts
-open with a {% raw %}{% assign %}{% endraw %} block — which is what Jekyll took as the first
-paragraph, and it renders to an empty string. Rather than fight the auto-excerpt,
-this layout uses each post's explicit `description:` front matter, which is the
-same one-line summary that feeds the meta description and the RSS summary. One
-sentence per post, written once, used in three places.
+The goal cards and featured calculators come from index.markdown's front matter (`goals`,
+`featured_tools`), so they change there. Post summaries use each post's `description:`, not
+the auto-excerpt, which is empty for posts that open with an {% raw %}{% assign %}{% endraw %} block.
 {%- endcomment -%}
 
 <div class="home">
 
   <section class="hero">
     <p class="hero-eyebrow">Financial education for Indian investors</p>
-    <h1 class="hero-title">Financial concepts, <span class="hero-accent">one at a time.</span></h1>
+    <h1 class="hero-title">Become a more informed investor.</h1>
     <p class="hero-sub">
-      Wealth Primer explains how to read a company, a chart, a fund and a tax
-      rule — in plain language, with worked examples on real Indian numbers.
-      It teaches concepts. It never tells you what to buy.
+      Learn how to read a company, judge a mutual fund, size up risk and see how
+      tax applies, with worked examples on real Indian numbers. We teach the
+      method. We never tell you what to buy.
     </p>
-    <div class="hero-actions">
-      <a class="button button-primary" href="{{ '/series/jargon/' | relative_url }}">Start with the basics</a>
-      <a class="button button-ghost" href="{{ '/glossary/' | relative_url }}">Browse the glossary</a>
-    </div>
     <ul class="hero-promises">
-      <li><strong>Worked examples</strong> on audited filings and AMFI data</li>
-      <li><strong>Lagged data</strong> — every figure is at least 3 months old</li>
-      <li><strong>No tips, no calls</strong> — concepts only, ever</li>
+      <li><strong>Worked examples</strong> on real filings and AMFI data</li>
+      <li><strong>Every market figure</strong> at least 3 months old, with its date</li>
+      <li><strong>Rules cited</strong> to SEBI, RBI and the Income-tax Act</li>
+      <li><strong>No stock tips</strong> and no paid promotions</li>
     </ul>
   </section>
 
-  {%- comment -%}
-    Series first, because these are learning tracks meant to be read in order,
-    not a feed. Counts come from the same _data/series.yml + `series:` front
-    matter that drives /series/, so this can never go stale.
-  {%- endcomment -%}
-  <section class="start-here">
-    <h2 class="section-heading">Start here</h2>
-    <div class="series-cards">
-      {%- comment -%}
-        Series with no published posts yet are left out entirely — a wall of
-        "Publishing soon" cards read as an empty site. A series appears here on
-        the day its first post goes live. `card_n` numbers only the cards shown.
-      {%- endcomment -%}
-      {%- assign card_n = 0 -%}
-      {%- for s in site.data.series -%}
-      {%- assign in_series = site.posts | where: "series", s.slug | sort: "date" -%}
-      {%- if in_series.size == 0 -%}{%- continue -%}{%- endif -%}
-      {%- assign card_n = card_n | plus: 1 -%}
-      {%- assign first_post = in_series | first -%}
-      <a class="series-card" href="{{ '/series/' | append: s.slug | append: '/' | relative_url }}">
-        <span class="series-card-num" aria-hidden="true">{{ card_n | prepend: '0' | slice: -2, 2 }}</span>
-        <h3 class="series-card-title">{{ s.title }}</h3>
-        <p class="series-card-desc">{{ s.description }}</p>
-        <p class="series-card-meta">
-          {{ in_series.size }} post{% if in_series.size != 1 %}s{% endif %} &middot; start with
-          &ldquo;{{ first_post.title | split: ":" | first | escape | truncatewords: 9 }}&rdquo;
-        </p>
+  {%- if page.goals.size > 0 %}
+  <section class="home-goals" aria-labelledby="home-goals-heading">
+    <h2 class="section-heading" id="home-goals-heading">What are you trying to do?</h2>
+    <div class="goal-cards">
+      {%- for g in page.goals %}
+      <a class="goal-card" href="{{ g.url | relative_url }}">
+        <span class="goal-card-section">{{ g.section | escape }}</span>
+        <strong class="goal-card-title">{{ g.title | escape }}</strong>
+        <span class="goal-card-examples">{{ g.examples | escape }}</span>
+        <span class="goal-card-cta">{{ g.cta | escape }} <span aria-hidden="true">&rarr;</span></span>
       </a>
-      {%- endfor -%}
+      {%- endfor %}
+    </div>
+  </section>
+  {%- endif %}
+
+  {%- if page.featured_tools.size > 0 %}
+  <section class="home-tools" aria-labelledby="home-tools-heading">
+    <div class="home-section-head">
+      <h2 class="section-heading" id="home-tools-heading">Do the maths yourself</h2>
+      <a class="home-section-link" href="{{ '/tools/' | relative_url }}">All {{ site.data.tools.size }} calculators &rarr;</a>
+    </div>
+    <div class="home-tool-cards">
+      {%- for f in page.featured_tools -%}
+      {%- assign t = site.data.tools | where: "id", f.id | first -%}
+      {%- if t %}
+      <a class="home-tool-card" href="{{ '/tools/' | append: t.id | append: '/' | relative_url }}">
+        <strong>{{ t.name | remove: " calculator" | escape }}</strong>
+        <span>{{ f.blurb | escape }}</span>
+        <span class="home-tool-kind{% if t.kind != 'Calculator' %} home-tool-kind-sheet{% endif %}">{% if t.kind == 'Calculator' %}Works on the page{% else %}{{ t.kind | escape }} &middot; make a copy{% endif %}</span>
+      </a>
+      {%- endif -%}
+      {%- endfor %}
+    </div>
+  </section>
+  {%- endif %}
+
+  <section class="home-duo">
+    <div class="home-panel home-panel-warm">
+      <p class="home-panel-label">Case study</p>
+      <h2>One company, every ratio</h2>
+      <p>Desi Bites Foods is a fictional snacks company with one consistent set of books, so every ratio, from gross margin to a full DCF, is worked on the same numbers.</p>
+      <a href="{{ '/case-study/' | relative_url }}">Meet Desi Bites Foods &rarr;</a>
+    </div>
+    <div class="home-panel home-panel-brand">
+      <p class="home-panel-label">How we work</p>
+      <h2>Numbers you can check</h2>
+      <ul>
+        <li>Worked examples use dated source data: company filings, AMFI NAVs, NSE index history</li>
+        <li>Rules are read in the primary source and carry an as-of date</li>
+        <li>Education only: nothing here is a recommendation to buy or sell</li>
+      </ul>
+      <a href="{{ '/methodology/' | relative_url }}">Data and methodology &rarr;</a>
     </div>
   </section>
 
   {{ content }}
 
-  {%- assign recent = site.posts | slice: 0, 8 -%}
-  {%- if recent.size > 0 -%}
-  <section class="latest">
-    <h2 class="section-heading">Latest posts</h2>
-    <ul class="post-list">
+  {%- assign recent = site.posts | slice: 0, 4 -%}
+  {%- if recent.size > 0 %}
+  <section class="home-latest" aria-labelledby="home-latest-heading">
+    <div class="home-section-head">
+      <h2 class="section-heading" id="home-latest-heading">Latest explainers</h2>
+      <a class="home-section-link" href="{{ '/series/' | relative_url }}">All {{ site.posts.size }} by series &rarr;</a>
+    </div>
+    <ul class="home-latest-list">
       {%- for post in recent -%}
-      {%- assign meta = site.data.series | where: "slug", post.series | first -%}
+      {%- assign meta = site.data.series | where: "slug", post.series | first %}
       <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">
-          {{ post.date | date: date_format }}
-          {%- if meta %} &middot; <a class="post-series-tag" href="{{ '/series/' | append: post.series | append: '/' | relative_url }}">{{ meta.title }}</a>{% endif -%}
-        </span>
-        <h3><a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
-        {%- if post.description -%}
-        <p class="post-summary">{{ post.description | escape }}</p>
-        {%- endif -%}
+        <span class="home-latest-meta">{{ post.date | date: "%-d %b" }}{% if meta %} &middot; {{ meta.title | split: " — " | first | split: "," | first }}{% endif %}</span>
+        <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
       </li>
-      {%- endfor -%}
+      {%- endfor %}
     </ul>
-    {%- if site.posts.size > recent.size -%}
-    <p class="all-posts-link"><a href="{{ '/series/' | relative_url }}">Browse all {{ site.posts.size }} posts by series &rarr;</a></p>
-    {%- endif -%}
   </section>
-  {%- endif -%}
+  {%- endif %}
 
   {%- include newsletter.html -%}
 

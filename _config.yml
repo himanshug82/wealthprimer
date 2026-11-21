@@ -59,6 +59,7 @@ newsletter:
 theme: minima
 sass:
   style: compressed   # main.css 42 KB -> smaller; same rules
+  sourcemap: never    # Jekyll 4's Sass converter would otherwise publish main.css.map
 minima:
   skin: classic
   # show_excerpts REMOVED — it was a no-op. minima's home layout prints
@@ -109,8 +110,8 @@ social:
     - "https://twitter.com/wealthprimer_in"
 logo: /assets/icon.png  # square mark, used for schema.org/JSON-LD logo
 
-# --- plugins (all run fine here since Pages deploys via GitHub Actions, not the legacy
-#     restricted Pages builder — any plugin in the Gemfile's jekyll_plugins group works) ---
+# --- plugins (Pages deploys via GitHub Actions with `bundle exec jekyll build`, so the
+#     Gemfile's versions are what ships, and any plugin in its jekyll_plugins group works) ---
 plugins:
   - jekyll-feed
   - jekyll-seo-tag

@@ -172,3 +172,4 @@ exclude:
   - Gemfile.lock
   - README.md
   - vendor
+  - scripts   # build/data/check scripts; were served publicly at /scripts/ until 21 Nov 2026

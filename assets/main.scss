@@ -112,6 +112,8 @@ $bp-search:    1000px;  // min-width: header search box appears
   --code-bg:      #111821;
   --code-rule:    #253041;
 
+  --on-brand:     #0b1a2e;   // dark text on the lighter dark-mode brand blue
+
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 8px 24px -8px rgba(0, 0, 0, 0.6);
 
@@ -922,9 +924,6 @@ div.language-python {
 .button-ghost:visited { background: var(--surface); color: var(--ink); border-color: var(--rule-strong); }
 .button-ghost:hover { border-color: var(--brand); color: var(--brand); }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .button-primary { color: #0b1a2e; }
-}
 
 .pill {
   display: inline-block;

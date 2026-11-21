@@ -17,6 +17,12 @@ term: "Bollinger Bands"
 
 ## A different question
 
+**In short:** Bollinger Bands are a 20-day moving average with lines two
+standard deviations above and below it, so the bands widen when prices swing
+more. ATR, the average true range, averages each day's full range, gaps
+included, over 14 sessions. Both measure how much a stock moves, not which
+way, and this post tests the common readings on two years of Britannia.
+
 Everything in the [first ten posts]({% post_url 2026-10-02-what-technical-analysis-is %})
 of this series asked some version of *which way?* Trend lines, moving
 averages, RSI, MACD — all of them are, at bottom, attempts to read direction.

@@ -17,6 +17,12 @@ term: "Fibonacci retracement"
 
 ## The most decorative lines in charting
 
+**In short:** Fibonacci retracement levels mark 23.6%, 38.2%, 50%, 61.8% and
+78.6% of a price move, on the claim that pullbacks tend to stop near them.
+This post explains where the ratios come from, how the levels are drawn,
+and what a test on 18 years of the Nifty 50 found: pullbacks ended near the
+famous levels no more often than near lines nobody draws.
+
 Open almost any chart shared online and you'll find a ladder of horizontal
 lines labelled 23.6%, 38.2%, 50%, 61.8% and 78.6%. These are **Fibonacci
 retracement levels**. The claim behind them: after a big move, price tends to

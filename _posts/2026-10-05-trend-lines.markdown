@@ -13,6 +13,12 @@ term: "Trend lines"
 
 ## Trends are structure, not vibes
 
+**In short:** a trend line is a straight line drawn through two or more
+swing lows of an uptrend (or swing highs of a downtrend) and extended
+forward. An uptrend is a run of higher highs and higher lows; a downtrend,
+lower highs and lower lows. The line is useful because it can be broken,
+and this post shows why "broken" needs defining before it happens.
+
 "The stock is in an uptrend" gets said as though it were a mood. It isn't —
 it has a definition, and the definition is about structure:
 

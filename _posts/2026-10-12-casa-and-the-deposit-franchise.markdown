@@ -17,6 +17,12 @@ term: "CASA ratio"
 
 ## The raw material has a price list
 
+**In short:** the CASA ratio is a bank's current-account and savings-account
+deposits as a share of its total deposits. These are the cheapest money a
+bank raises, so the ratio is a large part of why two banks lending at the
+same rate can earn different margins. This post works it out on HDFC Bank's
+figures and reads it beside the credit-deposit ratio.
+
 The [NIM post]({% post_url 2026-10-11-nim-and-the-spread %}) found HDFC
 Bank's cost of funds at about {{ d.cost_of_funds_pct }}% for FY25. That is a
 blend. Underneath it, a bank pays wildly different rates for different kinds

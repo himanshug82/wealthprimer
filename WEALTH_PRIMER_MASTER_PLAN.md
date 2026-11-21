@@ -86,7 +86,7 @@ Each is a hub page in one shared template, **guide option A with question cards*
 |---|---|---|---|
 | 1 | The Indian Investor's Guide to Mutual Funds | Mutual funds series (27 published), rolling-returns and SIP tools | **Built 21 Nov 2026** at `/guides/mutual-funds/`: 8 questions, 17 posts in 6 stages, 4 calculators |
 | 2 | How to Analyse Stocks | The three statement posts (now in Jargon), FA series, case study, DCF sheet | **Built 21 Nov 2026** at `/guides/stocks/`: 8 questions, 24 posts in 7 stages, the DCF sheet; homepage "Read a company's financial statements" card now points here |
-| 3 | Building Your Investment Portfolio | Money Before Markets, diversification, rebalancing, overlap | Content gap planned 21 Nov 2026: Money Before Markets module 2, 8 posts from 20 Jan 2027 (`_review/roadmaps/2026-11-21-money-before-markets-m2.md`); guide built once they're drafted |
+| 3 | Building Your Investment Portfolio | Money Before Markets, diversification, rebalancing, overlap | **Built 21 Nov 2026** at `/guides/portfolio/`: 8 questions, 20 posts in 6 stages (11 scheduled, shown by date until they publish; 4 of the 8 question cards show now, the rest as their posts go live), 2 calculators (real return, goal). The content gap was filled by Money Before Markets module 2 (PR #49); homepage "Build and look after a portfolio" card now points here |
 | 4 | Understanding Investment Risk | Risk series, drawdown, volatility, behaviour | **Built 21 Nov 2026** at `/guides/risk/`: 8 questions, 18 posts in 5 stages (4 scheduled, shown by date), 2 calculators. Diversification, rebalancing and sequence risk left for the portfolio guide |
 | 5 | Indian Investor's Taxation Handbook | Tax series (18 written) | Not started; re-check after Union Budget 2027 |
 

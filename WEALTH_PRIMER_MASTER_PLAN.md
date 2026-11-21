@@ -176,7 +176,7 @@ Full register: `_review/sprint-1/technical-risk-register.md`.
 | D2 | Navigation labels | **Decided** (owner): Learn · Analyse · Portfolio · Risk & Tax · Tools · About, plus search | 21 Nov 2026 | Series, Glossary, Case study, Methodology leave the top bar (see §5) |
 | — | Homepage direction | **Decided** (owner): option A, problem-first | 21 Nov 2026 | [Wireframes](https://claude.ai/artifact/HxbMJTyDtRPqJsMAVf2VQV); option B (tools-first) set aside |
 | — | Guide page template | **Decided** (owner): option A (ordered path) with option B's question cards | 21 Nov 2026 | First built for the mutual funds guide |
-| D3 | Scope rule for decision-support tools | **Pending** | — | Generic inputs, mechanics only, no ranking/scoring of securities or holdings review |
+| D3 | Scope rule for decision-support tools | **Pending** (one case approved) | 21 Nov 2026 | Generic inputs, mechanics only, no ranking/scoring of securities or holdings review. The owner approved an on-page goal-based investing calculator (generic assumptions in, lump sum and SIP out) for the 24 Jan 2027 post; the general rule is still to be decided |
 | D4 | AdSense timing | **Pending** | — | Recommended: defer until organic traffic is meaningful |
 | D5 | Inventory actions | **Pending** | — | Approve or amend `content-inventory.csv` proposals |
 

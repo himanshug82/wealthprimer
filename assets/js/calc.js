@@ -106,6 +106,35 @@
         shares: shares, position_value: shares * i.close,
         position_pct: shares * i.close / i.capital * 100
       };
+    },
+    // Goal-based investing: inflate a cost, then work back at an assumed return.
+    // Monthly instalments at the start of each month; m = (1 + r)^(1/12) − 1.
+    // A step-up raises the instalment once a year by step_up_pct.
+    goal: function (i) {
+      var n = Math.round(i.years) * 12, r = i.return_pct / 100;
+      var m = Math.pow(1 + r, 1 / 12) - 1;
+      var future = i.cost_today * Math.pow(1 + i.inflation_pct / 100, i.years);
+      function fv(step) {
+        var total = 0;
+        for (var k = 0; k < n; k++) total = (total + Math.pow(1 + step, Math.floor(k / 12))) * (1 + m);
+        return total;
+      }
+      function paid(step) {
+        var t = 0;
+        for (var k = 0; k < n; k++) t += Math.pow(1 + step, Math.floor(k / 12));
+        return t;
+      }
+      var s = i.step_up_pct / 100;
+      var monthly = future / fv(0), first = future / fv(s);
+      return {
+        future_cost: future,
+        lump_today: future / Math.pow(1 + r, i.years),
+        monthly: monthly,
+        flat_paid: monthly * paid(0),
+        step_first: first,
+        step_last: first * Math.pow(1 + s, Math.round(i.years) - 1),
+        step_paid: first * paid(s)
+      };
     }
   };
 
@@ -183,6 +212,16 @@
         show: { ytm_pct: "pct2" }
       }
     ],
+    "goal": [{
+      calc: "goal", inputs: ["cost_today", "years", "inflation_pct", "return_pct", "step_up_pct"],
+      check: function (i) {
+        if (!(i.cost_today > 0)) return "Enter today's cost of the goal (more than ₹0).";
+        if (!(i.years >= 1 && i.years <= 50 && Number.isInteger(i.years))) return "Enter whole years to the goal, from 1 to 50.";
+        if (!(i.inflation_pct > -50 && i.return_pct > -50)) return "Enter inflation and return above −50% a year.";
+        if (!(i.step_up_pct >= 0 && i.step_up_pct <= 50)) return "Enter a yearly step-up from 0% to 50%.";
+      },
+      show: { future_cost: "inr", lump_today: "inr", monthly: "inr", flat_paid: "inr", step_first: "inr", step_last: "inr", step_paid: "inr" }
+    }],
     "position-size": [{
       calc: "positionSize", inputs: ["capital", "risk_pct", "atr", "atr_multiple", "close"],
       check: function (i) {

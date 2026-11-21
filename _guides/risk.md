@@ -33,10 +33,10 @@ stages:
         why: "How far it fell, and how long the recovery took"
       - post: 2026-09-30-volatility-and-sharpe
         why: "Measuring the bumpiness, and its limits"
-      - post: 2026-12-31-fat-tails
+      - post: 2027-01-25-fat-tails
         title: "Fat tails: why 'once in a lifetime' days keep happening"
         why: "Extreme days, counted against the bell curve"
-      - post: 2027-01-05-value-at-risk
+      - post: 2027-02-05-value-at-risk
         title: "Value at Risk (VaR): the number that hides the worst days"
         why: "A loss limit that says nothing about the days beyond it"
   - title: "Leverage and derivatives"
@@ -45,10 +45,10 @@ stages:
         why: "Borrowed money multiplies returns both ways"
       - post: 2026-10-08-what-the-fo-numbers-actually-say
         why: "What SEBI's studies of individual F&O traders found"
-      - post: 2027-01-07-margin-calls-and-peak-margin
+      - post: 2027-02-10-margin-calls-and-peak-margin
         title: "Margin calls and peak margin: how a position gets closed"
         why: "How a margin call arrives, step by step"
-      - post: 2027-01-15-overtrading-and-costs
+      - post: 2027-03-01-overtrading-and-costs
         title: "Overtrading: what every extra trade costs, in arithmetic"
         why: "What costs do as the number of trades grows"
   - title: "How much is at stake"

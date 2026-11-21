@@ -203,8 +203,8 @@ bulk-and-block-deals:
 - obv-and-vwap
 - short-selling-mechanics
 - t-plus-1-settlement
-- pre-open-session-closing-price
 - offer-for-sale-and-delisting
+- pre-open-session-closing-price
 - circuit-limits-and-price-bands
 - broker-and-counterparty-risk
 buyback-taxation:
@@ -1354,8 +1354,8 @@ obv-and-vwap:
 - volume
 - do-gaps-get-filled
 - what-technical-analysis-is
-- pre-open-session-closing-price
 - bollinger-bands-and-atr
+- pre-open-session-closing-price
 - rsi
 - option-expiry-and-settlement
 - bulk-and-block-deals
@@ -1547,7 +1547,7 @@ pre-open-session-closing-price:
 - obv-and-vwap
 - bulk-and-block-deals
 - bid-ask-spread-and-liquidity
-- stop-loss-placement
+- short-selling-mechanics
 price-to-book:
 - price-to-earnings
 - valuing-a-bank-price-to-book

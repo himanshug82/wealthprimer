@@ -107,7 +107,7 @@ losses that year. These are SEBI's figures from the studies discussed in the
 quoted here and not recomputed; they are research statistics, and they do not
 say that either side does better. How income and losses from this activity are
 taxed is a separate matter in the
-[Tax series]({{ '/2026/11/26/fo-is-business-income/' | relative_url }}).
+Tax series<!-- RELINK 2026-11-26-fo-is-business-income -->.
 
 ## Common mistakes
 
@@ -122,7 +122,7 @@ taxed is a separate matter in the
   the assumed margin.
 - **Ignoring expiry-day rules.** The {{ w.elm_pct }}% add-on and the end of the
   calendar-spread offset (both above) apply on the day of expiry, when moves
-  can be quickest. The [expiry post]({{ '/2026/11/24/option-expiry-and-settlement/' | relative_url }})
+  can be quickest. The expiry post<!-- RELINK 2026-11-24-option-expiry-and-settlement -->
   covers the day itself.
 
 **Takeaway:** An option writer's gain is capped at the premium received, while the loss on a short call has no cap and on a short put stops only when the index reaches zero. Margin is a deposit against that asymmetry, not a ceiling on the loss, as the table's last row shows.

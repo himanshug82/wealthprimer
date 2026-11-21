@@ -109,7 +109,7 @@ as an annual percentage whatever the option's remaining life.
 - **Treating a rising IV as news about the index.** In the first table the
   price rises by {{ iv.vol_up.gain_pts }} points with the index frozen. An
   option can gain or lose value from a change in IV alone. The
-  [India VIX post]({{ '/2026/12/02/india-vix/' | relative_url }}) covers a
+  India VIX post<!-- RELINK 2026-12-02-india-vix --> covers a
   published volatility index (VIX, the volatility index) that is based on option prices.
 
 **Takeaway:** Implied volatility is the volatility that makes a pricing model return an option's quoted price; it is read back from the price and depends on the model. A higher IV means a dearer option, whichever way the index goes, so the price can change even when the index does not.

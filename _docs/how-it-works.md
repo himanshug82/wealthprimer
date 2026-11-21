@@ -157,7 +157,10 @@ three weeks of written backlog so a skipped week leaves no gap.
   it links a *later* post only once that post is live, with a plain relative
   link (`{{ '/YYYY/MM/DD/slug/' | relative_url }}`). Until then, write the
   mention as plain text with an HTML marker `<!-- RELINK YYYY-MM-DD-slug -->`
-  and sweep with `grep -rn "RELINK" _posts` after the target's date. Sweep for
+  and sweep with `grep -rn "RELINK" _posts` after the target's date.
+  `scripts/check_posts.py` enforces this: a plain link to a post that isn't
+  live yet is an error (it would be a silent 404, not a build failure), and a
+  marker whose target is live is a warning. Sweep for
   stale forward references with
   `grep -rn "later in this series\|covered later\|coming up" _posts`.
 - **Tools:** `/tools/` lists the calculators in `_data/tools.yml`; each has a

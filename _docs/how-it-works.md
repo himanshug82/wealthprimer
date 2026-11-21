@@ -209,3 +209,7 @@ three weeks of written backlog so a skipped week leaves no gap.
   `node scripts/check_tools.mjs` checks the JavaScript reproduces each post.
 
 Details of any change: `git log`.
+
+## Styles and design tokens
+
+Colours, type, radii, weights and breakpoints are named tokens at the top of `assets/main.scss`; dark mode is one block of token overrides. The reference, including what is still literal, is `_docs/design-tokens.md`.

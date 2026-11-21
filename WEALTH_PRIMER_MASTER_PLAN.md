@@ -3,7 +3,7 @@
 The single, permanent reference for the Wealth Primer 2.0 transformation: what we are building, the rules it must respect, where it stands, and what has been decided. Keep it current. When a sprint ends or a decision is made, update the **Status** and **Decision log** sections here and link the evidence.
 
 - **Started:** 21 November 2026
-- **Last updated:** 21 November 2026 (end of Sprint 1)
+- **Last updated:** 21 November 2026 (Sprint 1 done; first Sprint 2 hygiene fixes shipped)
 - **House rules for writing:** `CLAUDE.md` (they take precedence over anything here)
 - **How the site builds and publishes:** `_docs/how-it-works.md`
 - **Open editorial tasks:** `TODO.md`
@@ -115,8 +115,8 @@ At least two wireframe alternatives before any implementation.
 
 Keep the stack. Improve, in this order:
 
-1. Build production with the Gemfile (today the live site builds with GitHub's `jekyll-build-pages` image, a different Jekyll and minima).
-2. Check plain links to future-dated posts in `check_posts.py` (they 404 on the live site until the target publishes).
+1. ~~Build production with the Gemfile.~~ **Done 21 Nov 2026** (PR #36; Pages source switched from "Deploy from a branch" to "GitHub Actions"). Live site now reports Jekyll 4.4.1.
+2. ~~Check plain links to future-dated posts in `check_posts.py`.~~ **Done 21 Nov 2026** (PR #35).
 3. Add `jekyll-redirect-from`, with no redirects configured, so consolidation is possible later.
 4. Design tokens extracted from `assets/main.scss`, then the hub/guide layout and homepage.
 5. Client-side search over a generated JSON index.
@@ -131,7 +131,7 @@ Not planned: generator migration, permalink changes, CMS, database, AMP.
 | Phase | Weeks | Focus | Status |
 |---|---|---|---|
 | 1 | 1–2 | Repository assessment, analytics baseline, content inventory, SEO audit | **Done** (21 Nov 2026, PR #34) |
-| 2 | 3–4 | Owner decisions D1–D5; hygiene fixes; information architecture; homepage and hub wireframes; design tokens | Next |
+| 2 | 3–4 | Owner decisions D1–D5; hygiene fixes (2 of 3 done: A1, A2); information architecture; homepage and hub wireframes; design tokens | **In progress** |
 | 3 | 5–6 | Homepage, navigation, hub and post templates | Not started |
 | 4 | 7–8 | Content consolidation, internal linking, first flagship guides | Not started |
 | 5 | 9–10 | Calculator experience, newsletter offer, analytics events | Not started |
@@ -159,7 +159,7 @@ Full register: `_review/sprint-1/technical-risk-register.md`.
 |---|---|
 | Google judges the site low-value (fast volume, new YMYL domain) | Slow publishing, improve and interlink, hubs, visible editorial standards |
 | "Decision support" drifts into advice | Scope rule D3 in `CLAUDE.md` before building evaluation tools |
-| Production and CI build differently | Build with the Gemfile |
+| ~~Production and CI build differently~~ | **Resolved 21 Nov 2026**: workflow builds with the Gemfile; Pages source is GitHub Actions |
 | Rule/tax accuracy without professional review | Existing `needs_review` safeguards; post-Budget re-check |
 | Analytics not decision-grade | Internal-traffic filter, bot awareness, event design |
 | Ads conflict with "no paid promotions" | Defer ads; block trading/crypto/betting categories when enabled |
@@ -169,6 +169,7 @@ Full register: `_review/sprint-1/technical-risk-register.md`.
 | ID | Decision | Status | Date | Notes |
 |---|---|---|---|---|
 | — | Keep Jekyll, GitHub Pages, Markdown/YAML and existing calculators | **Decided** (brief) | 21 Nov 2026 | Revisit only with demonstrated need |
+| — | Production builds only through the Actions workflow with the Gemfile; Pages source set to "GitHub Actions" | **Decided** (owner) | 21 Nov 2026 | PR #36 and settings change; ends the race with GitHub's Jekyll 3.10 builder |
 | — | No URL changes, deletions or redirects without approval | **Decided** (brief) | 21 Nov 2026 | |
 | — | No professional tax review; process safeguards instead | **Decided** (owner) | 26 Oct 2026 | See `CLAUDE.md` → Professional review |
 | D1 | Publishing pace for the 59 scheduled posts | **Pending** | — | Recommended: keep time-sensitive posts, others at 1–2 a week for 4 weeks |
@@ -191,3 +192,4 @@ Add each new decision as a row; never delete a row — mark it superseded.
 | Sprint | Dates | Output | Evidence |
 |---|---|---|---|
 | 1 | 21 Nov 2026 | Assessment: repository, inventory, SEO, UX, risks, Sprint 2 recommendations, analytics baseline | `_review/sprint-1/`, PR #34 |
+| 2 (in progress) | from 21 Nov 2026 | Hygiene: plain links to unpublished posts now checked (6 fixed, 6 RELINK markers swept); production builds with the Gemfile and Pages source is GitHub Actions | PRs #35, #36 |

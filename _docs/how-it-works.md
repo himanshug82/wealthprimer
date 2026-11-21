@@ -11,6 +11,12 @@ Moved out of `TODO.md` on 25 Oct 2026. `CLAUDE.md` is the writing rulebook; this
   09:00 IST. Keep post times at or before `09:00:00 +0530`, and never add a
   schedule earlier than 03:30 UTC: that build would run before the post's time
   and skip it.
+- **Pages source must stay "GitHub Actions"** (Settings → Pages → Build and
+  deployment; `gh api repos/himanshug82/wealthprimer/pages --jq .build_type`
+  should say `workflow`). Until 21 Nov 2026 it was "Deploy from a branch", so
+  GitHub's own builder (Jekyll 3.10) also rebuilt main on every push and raced
+  the workflow: whichever finished last was live. The workflow builds with
+  `bundle exec jekyll build`, the Gemfile's versions, same as local and PR checks.
 - **Cadence: one post per series per day.** Several posts share a date (one
   per series); `check_posts.py` only warns when two posts from the SAME
   series share one. A series skips a day when its next post links to a post

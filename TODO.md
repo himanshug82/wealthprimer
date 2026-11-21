@@ -27,6 +27,7 @@ Current state (1 Nov 2026): **198 posts written** (Jargon 59 · FA 29 · TA 22 �
 Rule and sweep commands: `_docs/how-it-works.md` → Links between posts.
 
 - **`RELINK` markers (12, in 9 posts dated October)** → Tax posts `short-term-vs-long-term` 4 Nov, `equity-and-equity-funds` 8 Nov, `sips-and-fifo` 20 Nov, `fo-is-business-income` 26 Nov, `debt-funds-gold-and-the-rest` 4 Dec, `dividends-and-interest` 8 Dec (all targets exist). Sweep after each of those dates: plain relative links, never `post_url` (each linking post is dated earlier). The `how-investment-income-is-taxed` link in STP and SWP was made 2 Nov.
+- **`RELINK` markers added 21 Nov 2026 (6, replacing links that were live 404s or would have been):** option posts → *option expiry and settlement* 24 Nov, *F&O is business income* 26 Nov (two posts), *implied volatility* 30 Nov; *implied volatility* → *India VIX* 2 Dec; *REIT structure* → *REITs and InvITs* 22 Dec. `check_posts.py` now errors on a plain link to a not-yet-live post and warns when a marker's target is live, so the warnings list is the sweep list.
 - **After 13 Jan 2027:** STP and SWP (17 Oct) → *liquid and overnight funds* (was 3 Nov).
 - **After 8 Dec:** *growth vs IDCW* (6 Dec) → Tax *dividends and interest* (8 Dec).
 - **MBM *G-secs and T-bills* (31 Jan 2027)** can now use `post_url` to Tax *bonds, debentures and SGBs* (24 Dec precedes it): replace any plain-link placeholder when editing.

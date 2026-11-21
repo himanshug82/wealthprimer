@@ -11,6 +11,11 @@ of mistake only surface then:
      linking post's. That isn't a 404 — it fails the ENTIRE Jekyll build
      ("Could not find post ... in tag 'post_url'"), because unpublished posts
      are not in site.posts. See the build rule in _docs/how-it-works.md.
+     A plain link (`{{ '/YYYY/MM/DD/slug/' | relative_url }}`) to a post
+     that isn't live yet doesn't fail the build — it is a silent 404 on the
+     live site until the target's date — so that is an error here too. Use
+     plain text + <!-- RELINK YYYY-MM-DD-slug --> instead; a marker whose
+     target is live is a warning (sweep it into a link).
   2. Front matter that the layouts/SEO depend on: a `description` of the
      length Google shows, an `image` that exists in assets/og/, a `series`
      slug that exists in _data/series.yml, a valid date.
@@ -38,6 +43,9 @@ from datetime import date
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 POST_RE = re.compile(r"^(\d{4}-\d{2}-\d{2})-(.+)\.(markdown|md)$")
 POST_URL_RE = re.compile(r"{%-?\s*post_url\s+([^\s%]+)\s*-?%}")
+# A plain link to a post, e.g. {{ '/2026/11/26/slug/' | relative_url }} or ](/2026/11/26/slug/)
+PLAIN_LINK_RE = re.compile(r"(?<![\w/])/(\d{4})/(\d{2})/(\d{2})/([a-z0-9][a-z0-9-]*)/")
+RELINK_RE = re.compile(r"<!--\s*RELINK\s+(\d{4}-\d{2}-\d{2}-[a-z0-9-]+)\s*-->")
 ASSIGN_RE = re.compile(r"{%-?\s*assign\s+([A-Za-z_][A-Za-z0-9_]*)\s*=")
 FOR_RE = re.compile(r"{%-?\s*for\s+([A-Za-z_][A-Za-z0-9_]*)\s+in\s+")
 CAPTURE_RE = re.compile(r"{%-?\s*capture\s+([A-Za-z_][A-Za-z0-9_]*)")
@@ -87,6 +95,7 @@ def main():
         posts[m.group(1) + "-" + m.group(2)] = (path, date.fromisoformat(m.group(1)))
 
     errors = warnings = 0
+    today = date.today()
     by_date = {}
     tool_refs = []
     # _data/related.yml is generated (scripts/build_related.py); a post missing from it
@@ -109,6 +118,28 @@ def main():
             elif posts[target][1] > d:
                 print(f"ERROR {name}: post_url '{target}' is dated {posts[target][1]} — AFTER this post ({d}); the build breaks on {d}")
                 errors += 1
+
+        # --- plain links to posts -----------------------------------------
+        # These never break the build, so they fail silently: a link to a post
+        # that isn't live yet is a 404 on the live site from the day the linking
+        # post publishes (or today, if it already has) until the target's date.
+        # Use plain text + <!-- RELINK YYYY-MM-DD-slug --> instead.
+        for y, mo, dd, slug in sorted(set(PLAIN_LINK_RE.findall(body))):
+            target = f"{y}-{mo}-{dd}-{slug}"
+            if target not in posts:
+                print(f"ERROR {name}: link /{y}/{mo}/{dd}/{slug}/ is not a post (wrong date or slug)")
+                errors += 1
+            elif posts[target][1] > max(d, today):
+                print(f"ERROR {name}: links /{y}/{mo}/{dd}/{slug}/, which publishes {posts[target][1]} — a live 404 from {max(d, today)}; "
+                      f"use plain text + <!-- RELINK {target} --> until then")
+                errors += 1
+        for target in RELINK_RE.findall(body):
+            if target not in posts:
+                print(f"ERROR {name}: RELINK marker names '{target}', which is not a post")
+                errors += 1
+            elif posts[target][1] <= today and d <= today:
+                print(f"WARN  {name}: RELINK {target} is live now — replace the marker with a link")
+                warnings += 1
 
         # --- front matter -------------------------------------------------
         for k in ("title", "description", "date", "layout"):

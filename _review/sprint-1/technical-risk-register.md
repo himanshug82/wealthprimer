@@ -1,0 +1,27 @@
+# Technical and delivery risk register — Sprint 1
+
+21 November 2026. Likelihood and impact: H / M / L. **[V]** verified, **[H]** hypothesis. Owner = who acts.
+
+| ID | Risk | Evidence | L | I | Mitigation | Owner |
+|---|---|---|---|---|---|---|
+| R1 | **Production builds with different software from CI and local.** `pages.yml` uses `actions/jekyll-build-pages@v1`, which ignores the Gemfile (GitHub's `github-pages` set; Jekyll 3.10 [H]). A change that passes PR checks on Jekyll 4.4 can render differently or fail on deploy. | Deploy log 20 Nov: theme from `minima-2.5.1` in the action image while bundler installed 2.5.2 [V] | M | H | Replace the build step with `bundle exec jekyll build` after `ruby/setup-ruby` (already in the workflow). Compare the two outputs once before switching | Engineering, Sprint 2 |
+| R2 | **Live 404s from plain links to scheduled posts.** `check_posts.py` blocks `post_url` to future posts but not `/2026/11/26/...` style links. | 4 broken links on live posts today; `curl` returns 404 for `/2026/11/26/fo-is-business-income/` [V] | H | M | Add a check for plain links to dated-later posts; keep the RELINK marker practice | Engineering, Sprint 2 |
+| R3 | **Site-level quality judgement by Google.** Fast publication (101 posts in Oct 2026) on a new finance domain; 101 pages crawled but not indexed; posts that had impressions are now out of the index. | Search Console 21 Nov [V]; cause [H] | H | H | Slow publishing; improve and interlink existing posts; hub pages; visible author/editorial standards; monitor the indexed count monthly | Owner + content |
+| R4 | **No redirect capability.** Dated permalinks and no `jekyll-redirect-from`; consolidation that moves a URL would 404. | `_config.yml`, Gemfile [V] | M | M | Add the plugin before any CONSOLIDATE/REDIRECT decision; default to cross-linking instead of moving | Engineering |
+| R5 | **"Decision-support" positioning drifts into advice.** Tools or copy that evaluate a reader's own portfolio, rank funds or score stocks can read as personalised advice under SEBI's RA/IA rules. | Brief §3; `CLAUDE.md` compliance rules [V] | M | H | Write a scope rule for tools (generic inputs, mechanics, no ranking of securities) into `CLAUDE.md` before building any "evaluate your investments" feature | Owner |
+| R6 | **Rule and tax accuracy without professional review.** 18 tax posts and several regulation posts; owner decision of 26 Oct 2026 that no professional review is planned. Budget 2027 (1 Feb) will change rules. | `CLAUDE.md`, `TODO.md` VERIFY table [V] | M | H | Existing safeguards (`needs_review`, `rules_as_of`, primary sources, `post-auditor`); schedule the post-Budget re-check; keep the VERIFY table short | Owner + content |
+| R7 | **Analytics is not decision-grade.** Most GA4 users are bots ("(not set)", US, 0–1 s); no returning users recorded; key-event set not reviewed; owner's own visits may be counted. | GA4 1 Aug – 20 Nov [V] | H | M | Define internal-traffic filter, review key events, add events for calculator use, Sheet opens, newsletter sign-up, outbound clicks; report organic/India segments | Owner (GA4 admin) + engineering |
+| R8 | **AdSense readiness and brand conflict.** Verification meta tag present; no `ads.txt`; privacy page describes GA cookies only; Google's policy requires a certified consent tool for EEA/UK/Swiss visitors (from memory; re-check before enabling); ads may show brokers or trading apps against the "no paid promotions" promise. | `_includes/head.html`, `privacy.markdown` [V]; ad content [H] | M | M | Defer ads until traffic justifies them; when enabled: `ads.txt`, consent tool, privacy update, category blocking (trading/crypto/betting) | Owner |
+| R9 | **Sitemap not being re-read.** Last read 25 Oct 2026. | Search Console [V] | M | L | Resubmit; check monthly | Owner |
+| R10 | **Calculator dependence on Google Sheets.** Three tools live in the owner's Google Drive; sharing changes or account issues break them, and their use is invisible to GA4. | `_data/tools.yml` [V] | L | M | Consider on-page versions for rolling returns and SIP/XIRR (search demand exists); keep the Sheets as "make a copy" downloads | Engineering |
+| R11 | **Scheduled-publish timing.** Daily cron runs were delayed by hours in Oct 2026; four schedules now cover it. | `pages.yml` comments, `TODO.md` [V] | L | L | Keep; watch the daily go-live | Owner |
+| R12 | **Theme and Sass deprecation.** minima 2.5 uses `lighten()`; a future Dart Sass major will fail the local build. | Build warnings [V] | L | L | Vendor and modernise the few minima partials during the design-system work | Engineering |
+| R13 | **Local tooling gaps.** `make_og_cards.py --check` needs Pillow, not installed on the owner's Mac; runs in CI only. | Local run [V] | L | L | `pip install pillow` locally or rely on CI | Owner |
+| R14 | **Volume-driven content pipeline.** The weekly drafting routine caps at 8 posts a week; 59 scheduled. Throughput, not demand, sets the plan. | `TODO.md` [V] | M | H | Move the routine from "draft new posts" to "improve and interlink existing posts" until indexing recovers | Owner |
+
+## Not risks (checked)
+
+- Page weight and Core Web Vitals: Lighthouse 100 locally, CLS 0 [V].
+- Broken templates or Liquid errors: both builds pass; 0 errors in `check_posts.py` [V].
+- Calculator arithmetic: 103 figures match the posts [V].
+- Repository size: assets ~13 MB total; fine for GitHub Pages [V].

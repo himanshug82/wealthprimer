@@ -116,6 +116,17 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-redirect-from
+
+# --- redirects ---
+# jekyll-redirect-from: a page or post can list old URLs in front matter
+#   redirect_from:
+#     - /2026/10/05/old-slug/
+# and each old URL becomes a small HTML page that points to the new one (meta refresh +
+# canonical; GitHub Pages can't send real 301s). None are configured yet: this is here so a
+# consolidation can move a URL without a 404. `json: false` stops it publishing /redirects.json.
+redirect_from:
+  json: false
 
 # --- publishing pipeline ---
 # false (the default, made explicit here) means a post whose `date:` is still in the

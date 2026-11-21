@@ -117,7 +117,7 @@ Keep the stack. Improve, in this order:
 
 1. ~~Build production with the Gemfile.~~ **Done 21 Nov 2026** (PR #36; Pages source switched from "Deploy from a branch" to "GitHub Actions"). Live site now reports Jekyll 4.4.1.
 2. ~~Check plain links to future-dated posts in `check_posts.py`.~~ **Done 21 Nov 2026** (PR #35).
-3. Add `jekyll-redirect-from`, with no redirects configured, so consolidation is possible later.
+3. ~~Add `jekyll-redirect-from`, with no redirects configured.~~ **Done 21 Nov 2026** (v0.17; `redirect_from:` in front matter; still owner approval for any URL change).
 4. Design tokens extracted from `assets/main.scss`, then the hub/guide layout and homepage.
 5. Client-side search over a generated JSON index.
 6. An on-page rolling-returns calculator (and possibly SIP/XIRR), keeping the Sheets as "make a copy" downloads.
@@ -131,7 +131,7 @@ Not planned: generator migration, permalink changes, CMS, database, AMP.
 | Phase | Weeks | Focus | Status |
 |---|---|---|---|
 | 1 | 1–2 | Repository assessment, analytics baseline, content inventory, SEO audit | **Done** (21 Nov 2026, PR #34) |
-| 2 | 3–4 | Owner decisions D1–D5; hygiene fixes (2 of 3 done: A1, A2); information architecture; homepage and hub wireframes; design tokens | **In progress** |
+| 2 | 3–4 | Owner decisions D1–D5; hygiene fixes (done: A1–A3); information architecture; homepage and hub wireframes; design tokens | **In progress** |
 | 3 | 5–6 | Homepage, navigation, hub and post templates | Not started |
 | 4 | 7–8 | Content consolidation, internal linking, first flagship guides | Not started |
 | 5 | 9–10 | Calculator experience, newsletter offer, analytics events | Not started |
@@ -192,4 +192,4 @@ Add each new decision as a row; never delete a row — mark it superseded.
 | Sprint | Dates | Output | Evidence |
 |---|---|---|---|
 | 1 | 21 Nov 2026 | Assessment: repository, inventory, SEO, UX, risks, Sprint 2 recommendations, analytics baseline | `_review/sprint-1/`, PR #34 |
-| 2 (in progress) | from 21 Nov 2026 | D1 decided: one post a day to 19 Jan 2027. Hygiene: plain links to unpublished posts now checked (6 fixed, 6 RELINK markers swept); production builds with the Gemfile and Pages source is GitHub Actions | PRs #35, #36 |
+| 2 (in progress) | from 21 Nov 2026 | D1 decided: one post a day to 19 Jan 2027. Hygiene: plain links to unpublished posts now checked (6 fixed, 6 RELINK markers swept); production builds with the Gemfile and Pages source is GitHub Actions; `jekyll-redirect-from` added | PRs #35, #36 |

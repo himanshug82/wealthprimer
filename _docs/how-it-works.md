@@ -25,7 +25,13 @@ Moved out of `TODO.md` on 25 Oct 2026. `CLAUDE.md` is the writing rulebook; this
 - **Rescheduling:** rename the file (`YYYY-MM-DD-slug.markdown`), change
   `date:` to match, and rewrite every `{% post_url old-name %}` that points at
   it (`grep -rn "post_url OLD" _posts`). Then run `check_posts.py`. URLs of
-  already-live posts must never change. Two posts compute their data lag from
+  already-live posts must never change without the owner's approval. If one
+  must move (a consolidation, say), add the old URL to the post's front matter:
+  `redirect_from: [/YYYY/MM/DD/old-slug/]` (`jekyll-redirect-from`, added
+  21 Nov 2026). The old URL then serves a noindexed page with a canonical link
+  and an instant redirect — GitHub Pages can't send a real 301 — and stays out
+  of the sitemap. Update internal links to the new URL as well; don't rely on
+  the redirect. Two posts compute their data lag from
   `page.date` (TA 1, Bollinger), so moving posts doesn't break them. Production builds
   with `bundle exec jekyll build` (Gemfile versions, since 21 Nov 2026; it used
   `actions/jekyll-build-pages`, Jekyll 3.10 in safe mode, before). Number

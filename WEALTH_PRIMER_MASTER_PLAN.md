@@ -74,13 +74,13 @@ Details and sources: `_review/sprint-1/`.
 
 Series stay as they are (they drive Part N of M and prev/next). Journeys are a second, reader-facing layer of hub pages that curate existing posts. A post can appear in more than one journey.
 
-### Navigation (proposed, pending D2)
+### Navigation (decided 21 Nov 2026, D2)
 
-**Learn · Analyse · Portfolio · Risk & Tax · Tools · About** — six items, which is the most the header fits on one line. "Insights" is dropped: it implies market commentary, at odds with the lag and no-calls rules. Methodology and the case study move under About and into the homepage and footer.
+**Learn · Analyse · Portfolio · Risk & Tax · Tools · About**, plus a site search box. Six items, which is the most the header fits on one line. "Insights" is dropped: it implies market commentary, at odds with the lag and no-calls rules. Series, Glossary, Case study and Methodology leave the top bar: the glossary sits under Learn, the case study under Analyse, Methodology under About and in the footer. The series pages stay (they drive Part N of M and prev/next) and are linked from the journey pages.
 
 ### Flagship guides
 
-Each is a hub page in one shared template: an ordered path through existing posts with a line on why to read each, the relevant tools, the related Desi Bites chapter, and one clear next step. New writing is connective only.
+Each is a hub page in one shared template, **guide option A with question cards** (decided 21 Nov 2026; [wireframes](https://claude.ai/artifact/HxbMJTyDtRPqJsMAVf2VQV#artboard-HubA)): a block of reader questions near the top, each answered by one explainer (from option B), then an ordered path in stages with a line on why to read each, calculator buttons beside the posts that have one, a sidebar with progress (optional, browser-only), the guide's tools, a note on the worked-example data and its key terms, and one clear next step. A post not yet published shows its date, not a link. New writing is connective only.
 
 | # | Guide | Built from | Status |
 |---|---|---|---|
@@ -90,7 +90,7 @@ Each is a hub page in one shared template: an ordered path through existing post
 | 4 | Understanding Investment Risk | Risk series, drawdown, volatility, behaviour | Not started |
 | 5 | Indian Investor's Taxation Handbook | Tax series (18 written) | Not started; re-check after Union Budget 2027 |
 
-### Homepage (direction, wireframes pending)
+### Homepage (decided 21 Nov 2026: option A, problem-first; [wireframes](https://claude.ai/artifact/HxbMJTyDtRPqJsMAVf2VQV#artboard-Main))
 
 1. Problem-first hero that leaves entry points visible on a phone.
 2. "What are you trying to do?" — journey cards.
@@ -101,7 +101,7 @@ Each is a hub page in one shared template: an ordered path through existing post
 7. Latest posts (short list).
 8. Newsletter.
 
-At least two wireframe alternatives before any implementation.
+Option B (tools-first) was not chosen: its hero needs an on-page rolling-returns calculator, three of the eight tools are Google Sheets, and it promises more than the tools deliver today. Until a guide exists, its goal card links to the matching series page.
 
 ## 6. Content strategy
 
@@ -131,8 +131,8 @@ Not planned: generator migration, permalink changes, CMS, database, AMP.
 | Phase | Weeks | Focus | Status |
 |---|---|---|---|
 | 1 | 1–2 | Repository assessment, analytics baseline, content inventory, SEO audit | **Done** (21 Nov 2026, PR #34) |
-| 2 | 3–4 | Owner decisions D1–D5; hygiene fixes (done: A1–A3); information architecture; homepage and hub wireframes; design tokens | **In progress** |
-| 3 | 5–6 | Homepage, navigation, hub and post templates | Not started |
+| 2 | 3–4 | Owner decisions D1–D5; hygiene fixes (done: A1–A3); information architecture; homepage and hub wireframes (done; options chosen); design tokens | **In progress** |
+| 3 | 5–6 | Build, in order: (1) navigation and site search; (2) the guide template; (3) the mutual funds guide; (4) the new homepage, last, so its goal cards link to real guides | Not started |
 | 4 | 7–8 | Content consolidation, internal linking, first flagship guides | Not started |
 | 5 | 9–10 | Calculator experience, newsletter offer, analytics events | Not started |
 | 6 | 11–12 | SEO validation, distribution process, monitoring, next-quarter backlog | Not started |
@@ -173,7 +173,9 @@ Full register: `_review/sprint-1/technical-risk-register.md`.
 | — | No URL changes, deletions or redirects without approval | **Decided** (brief) | 21 Nov 2026 | |
 | — | No professional tax review; process safeguards instead | **Decided** (owner) | 26 Oct 2026 | See `CLAUDE.md` → Professional review |
 | D1 | Publishing pace for the 59 scheduled posts | **Decided** (owner): one post a day | 21 Nov 2026 | 22 Nov 2026 – 19 Jan 2027, same order (`_review/schedule-2026-11-21.md`). Sprint 1 had recommended slowing down; watch the indexed share monthly and revisit if it falls |
-| D2 | Navigation labels | **Pending** | — | Recommended: Learn · Analyse · Portfolio · Risk & Tax · Tools · About |
+| D2 | Navigation labels | **Decided** (owner): Learn · Analyse · Portfolio · Risk & Tax · Tools · About, plus search | 21 Nov 2026 | Series, Glossary, Case study, Methodology leave the top bar (see §5) |
+| — | Homepage direction | **Decided** (owner): option A, problem-first | 21 Nov 2026 | [Wireframes](https://claude.ai/artifact/HxbMJTyDtRPqJsMAVf2VQV); option B (tools-first) set aside |
+| — | Guide page template | **Decided** (owner): option A (ordered path) with option B's question cards | 21 Nov 2026 | First built for the mutual funds guide |
 | D3 | Scope rule for decision-support tools | **Pending** | — | Generic inputs, mechanics only, no ranking/scoring of securities or holdings review |
 | D4 | AdSense timing | **Pending** | — | Recommended: defer until organic traffic is meaningful |
 | D5 | Inventory actions | **Pending** | — | Approve or amend `content-inventory.csv` proposals |
@@ -185,11 +187,11 @@ Add each new decision as a row; never delete a row — mark it superseded.
 - Resubmit `sitemap.xml` in Search Console.
 - Add a GA4 internal-traffic filter; list the current key events.
 - Supply the Buttondown subscriber count and the AdSense application status.
-- Decide D2–D5 (D1 decided 21 Nov 2026).
+- Decide D3–D5 (D1 and D2 decided 21 Nov 2026).
 
 ## 13. Sprint record
 
 | Sprint | Dates | Output | Evidence |
 |---|---|---|---|
 | 1 | 21 Nov 2026 | Assessment: repository, inventory, SEO, UX, risks, Sprint 2 recommendations, analytics baseline | `_review/sprint-1/`, PR #34 |
-| 2 (in progress) | from 21 Nov 2026 | D1 decided: one post a day to 19 Jan 2027. Hygiene: plain links to unpublished posts now checked (6 fixed, 6 RELINK markers swept); production builds with the Gemfile and Pages source is GitHub Actions; `jekyll-redirect-from` added | PRs #35, #36 |
+| 2 (in progress) | from 21 Nov 2026 | D1 decided: one post a day to 19 Jan 2027. D2 decided; homepage option A and guide option A (with question cards) chosen from the wireframes. Hygiene: plain links to unpublished posts now checked (6 fixed, 6 RELINK markers swept); production builds with the Gemfile and Pages source is GitHub Actions; `jekyll-redirect-from` added | PRs #35, #36 |

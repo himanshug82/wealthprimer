@@ -1,6 +1,6 @@
 # TODO
 
-Current state (1 Nov 2026): **198 posts written** (Jargon 59 · FA 29 · TA 22 · MF 30 · Tax 18 · Risk 22 · Money Before Markets 7 · Market basics 7 — counts per `_data/series.yml`). **Scheduled (set 2 Nov 2026): 68 pending posts, one every 2 days, 4 Nov 2026 to 18 Mar 2027** — time-sensitive first (options expiry before the 7 Dec rule changes, advance tax before 15 Dec), then every tax-flagged post before the Union Budget of 1 Feb 2027; full list in `_review/schedule-2026-11-02.md`. **Nothing is written after 18 Mar 2027; FA M5 (6 posts) and the four blocked FA sector lenses are not yet drafted, so new drafts take slots from 20 Mar 2027 unless one is urgent.** House rules: `CLAUDE.md`. How the repo builds, schedules, links and handles data: `_docs/how-it-works.md`. This file lists only what is still open.
+Current state (1 Nov 2026): **198 posts written** (Jargon 59 · FA 29 · TA 22 · MF 30 · Tax 18 · Risk 22 · Money Before Markets 7 · Market basics 7 — counts per `_data/series.yml`). **Scheduled (reset 21 Nov 2026, owner decision D1): one post a day, 22 Nov 2026 to 19 Jan 2027 (59 posts)**, same order as the 2 Nov schedule (time-sensitive first, then every tax-flagged post well before the Union Budget of 1 Feb 2027); full list in `_review/schedule-2026-11-21.md` (the 2 Nov list is kept for history). **Nothing is written after 19 Jan 2027; at one a day the site needs seven new posts a week from 20 Jan. FA M5 (6 posts) and the four blocked FA sector lenses are not yet drafted.** House rules: `CLAUDE.md`. How the repo builds, schedules, links and handles data: `_docs/how-it-works.md`. This file lists only what is still open.
 
 ---
 
@@ -26,13 +26,15 @@ Current state (1 Nov 2026): **198 posts written** (Jargon 59 · FA 29 · TA 22 �
 
 Rule and sweep commands: `_docs/how-it-works.md` → Links between posts.
 
-- **`RELINK` markers in October posts (6 left)** → Tax posts `fo-is-business-income` 26 Nov, `debt-funds-gold-and-the-rest` 4 Dec, `dividends-and-interest` 8 Dec (all targets exist). Sweep after each of those dates: plain relative links, never `post_url` (each linking post is dated earlier). Swept 21 Nov 2026: the 6 markers to `short-term-vs-long-term`, `equity-and-equity-funds` and `sips-and-fifo` (exit load, F&O numbers, STP and SWP, hybrid funds, arbitrage funds). The `how-investment-income-is-taxed` link in STP and SWP was made 2 Nov.
-- **`RELINK` markers added 21 Nov 2026 (6, replacing links that were live 404s or would have been):** option posts → *option expiry and settlement* 24 Nov, *F&O is business income* 26 Nov (two posts), *implied volatility* 30 Nov; *implied volatility* → *India VIX* 2 Dec; *REIT structure* → *REITs and InvITs* 22 Dec. `check_posts.py` now errors on a plain link to a not-yet-live post and warns when a marker's target is live, so the warnings list is the sweep list.
-- **After 13 Jan 2027:** STP and SWP (17 Oct) → *liquid and overnight funds* (was 3 Nov).
-- **After 8 Dec:** *growth vs IDCW* (6 Dec) → Tax *dividends and interest* (8 Dec).
-- **MBM *G-secs and T-bills* (31 Jan 2027)** can now use `post_url` to Tax *bonds, debentures and SGBs* (24 Dec precedes it): replace any plain-link placeholder when editing.
+- **`RELINK` markers in October posts (6 left)** → Tax posts `fo-is-business-income` 24 Nov, `debt-funds-gold-and-the-rest` 28 Nov, `dividends-and-interest` 30 Nov (all targets exist; dates as rescheduled 21 Nov). Sweep after each of those dates: plain relative links, never `post_url` (each linking post is dated earlier). Swept 21 Nov 2026: the 6 markers to `short-term-vs-long-term`, `equity-and-equity-funds` and `sips-and-fifo` (exit load, F&O numbers, STP and SWP, hybrid funds, arbitrage funds). The `how-investment-income-is-taxed` link in STP and SWP was made 2 Nov.
+- **`RELINK` markers added 21 Nov 2026 (6, replacing links that were live 404s or would have been):** option posts → *option expiry and settlement* 23 Nov, *F&O is business income* 24 Nov (two posts), *implied volatility* 26 Nov; *implied volatility* → *India VIX* 27 Nov; *REIT structure* → *REITs and InvITs* 7 Dec (dates as rescheduled 21 Nov). `check_posts.py` now errors on a plain link to a not-yet-live post and warns when a marker's target is live, so the warnings list is the sweep list.
+- **After 18 Dec 2026:** STP and SWP (17 Oct) → *liquid and overnight funds*.
+- **After 30 Nov:** *growth vs IDCW* (29 Nov) → Tax *dividends and interest* (30 Nov).
+- **MBM *G-secs and T-bills* (27 Dec 2026)** can now use `post_url` to Tax *bonds, debentures and SGBs* (8 Dec precedes it): replace any plain-link placeholder when editing.
 
 ## Open — verify claims
+
+The "Publishes" dates below predate the 21 Nov 2026 reschedule; the current date of each post is in `_review/schedule-2026-11-21.md`.
 
 Each claim is in a post, worded cautiously, but rests on a secondary source or memory. Confirm from the primary source (`verify-claims`), then tighten or correct the wording and delete the row.
 

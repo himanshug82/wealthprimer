@@ -97,7 +97,7 @@ deposit is. A fund holding ten-year gilts carries essentially zero risk of not
 being repaid and very real risk of losing 7% in a year when yields rise a
 point. A liquid fund, holding paper with a duration measured in weeks, carries
 almost none of that. Both are "debt funds". The
-debt funds tax post<!-- RELINK 2026-12-04-debt-funds-gold-and-the-rest --> treats
+debt funds tax post<!-- RELINK 2026-11-28-debt-funds-gold-and-the-rest --> treats
 them alike; the market does not.
 
 Every debt fund factsheet quotes its portfolio's modified duration for exactly

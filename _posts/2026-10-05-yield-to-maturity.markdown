@@ -91,7 +91,7 @@ YTM of the bonds it holds. Three reasons it isn't the return you'll get:
 
 So portfolio YTM is a good description of what the fund currently owns and a
 poor forecast of what you'll earn. The
-debt funds post in the Tax series<!-- RELINK 2026-12-04-debt-funds-gold-and-the-rest -->
+debt funds post in the Tax series<!-- RELINK 2026-11-28-debt-funds-gold-and-the-rest -->
 covered how the gains are taxed.
 
 <details markdown="1">

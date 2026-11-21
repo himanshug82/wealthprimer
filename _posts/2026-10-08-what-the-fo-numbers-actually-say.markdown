@@ -207,7 +207,7 @@ not to individuals.
   [₹1.25 lakh exemption]({{ '/2026/11/08/equity-and-equity-funds/' | relative_url }}) in the Tax series
   that this blog's tax series covers do not apply to them. Different return
   form, different rules, sometimes an audit requirement (above the
-  tax-audit turnover limits). That's covered in the tax series<!-- RELINK 2026-11-26-fo-is-business-income -->.
+  tax-audit turnover limits). That's covered in the tax series<!-- RELINK 2026-11-24-fo-is-business-income -->.
 
 ## If you're going to do it anyway
 

@@ -21,8 +21,8 @@ goals:
   - section: "Analyse"
     title: "Read a company's financial statements"
     examples: "Balance sheet, P&L, cash flow, ratios, valuation"
-    cta: "Start with the statements"
-    url: /analyse/
+    cta: "Guide to analysing stocks"
+    url: /guides/stocks/
   - section: "Portfolio"
     title: "Build and look after a portfolio"
     examples: "Diversification, overlap, real returns, rebalancing"

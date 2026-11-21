@@ -141,3 +141,17 @@
   series: risk
   used_in: [position-sizing-and-the-one-percent-rule]
   built: 2026-11-02
+
+- id: goal
+  name: Goal-based investing calculator
+  kind: Calculator
+  calc: goal
+  summary: >-
+    Turn a cost today into what it may cost when the goal falls due, then
+    into a lump sum or a monthly amount, flat or stepped up, at a return you
+    assume. Every input is an assumption, not a forecast.
+  data: "the goal-based investing post's illustrative goal: ₹10 lakh today, 12 years away, 6% inflation, 10% return and a 10% yearly step-up (assumptions, not forecasts)"
+  post: goal-based-investing
+  series: money-before-markets
+  used_in: [goal-based-investing]
+  built: 2026-11-21

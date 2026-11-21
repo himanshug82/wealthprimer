@@ -230,9 +230,49 @@ c0 = ps["example_calm"]
 out["position-size"] = {"defaults": {**pbase, "atr": c0["atr"], "close": c0["close"]},
                         "cases": [{"calc": c, "inputs": i, "expect": e} for c, i, e in cases]}
 
+# ---- goal-based investing (_data/mbm2.yml, scripts/derive_mbm2.py) ----------
+# The post's inputs are whole numbers (assumptions), so no precision search is
+# needed; the cases check the Python mirror against every figure the post shows.
+def goal_calc(cost_today, years, inflation_pct, return_pct, step_up_pct):
+    n, m = int(round(years)) * 12, (1 + return_pct / 100) ** (1 / 12) - 1
+    fut = cost_today * (1 + inflation_pct / 100) ** years
+    def fv(step):
+        t = 0.0
+        for k in range(n):
+            t = (t + (1 + step) ** (k // 12)) * (1 + m)
+        return t
+    def paid(step):
+        return sum((1 + step) ** (k // 12) for k in range(n))
+    st = step_up_pct / 100
+    mo, first = fut / fv(0), fut / fv(st)
+    return {"future_cost": fut, "lump_today": fut / (1 + return_pct / 100) ** years, "monthly": mo,
+            "flat_paid": mo * paid(0), "step_first": first,
+            "step_last": first * (1 + st) ** (int(round(years)) - 1), "step_paid": first * paid(st)}
+
+
+gd = load("mbm2.yml")["goal"]
+g_base = {"cost_today": gd["cost_today"], "years": gd["years"], "inflation_pct": gd["inflation_pct"],
+          "return_pct": gd["base_return_pct"], "step_up_pct": gd["step_up_pct"]}
+g_cases = [("goal", dict(g_base), {"future_cost": [gd["future_cost"], 0], "monthly": [gd["base_monthly"], 0],
+                                   "flat_paid": [gd["flat_paid"], 0], "step_first": [gd["step_first"], 0],
+                                   "step_last": [gd["step_last"], 0], "step_paid": [gd["step_paid"], 0]})]
+for row in gd["by_return"]:
+    g_cases.append(("goal", {**g_base, "return_pct": row["return_pct"]},
+                    {"lump_today": [row["lump_today"], 0], "monthly": [row["monthly"], 0],
+                     "step_first": [row["monthly_stepup"], 0]}))
+for srow in gd["sensitivity"]:
+    for r_pct, mo in zip(gd["returns_pct"], srow["monthly"]):
+        g_cases.append(("goal", {**g_base, "inflation_pct": srow["inflation_pct"], "return_pct": r_pct},
+                        {"monthly": [mo, 0], "future_cost": [srow["future_cost"], 0]}))
+for calc, inp, exp in g_cases:
+    got = goal_calc(**inp)
+    for key, (want, d) in exp.items():
+        assert round(got[key], d) == round(want, d), (inp, key, got[key], want)
+out["goal"] = {"defaults": g_base, "cases": [{"calc": c, "inputs": i, "expect": e} for c, i, e in g_cases]}
+
 with open(OUT, "w", encoding="utf-8") as fh:
     json.dump(out, fh, ensure_ascii=False, indent=2)
     fh.write("\n")
 print("wrote", os.path.relpath(OUT, ROOT))
-for k in ("loss-recovery", "cost-drag", "real-return", "bond-yield", "position-size"):
+for k in ("loss-recovery", "cost-drag", "real-return", "bond-yield", "position-size", "goal"):
     print(" ", k, json.dumps(out[k]["defaults"]), f"({len(out[k]['cases'])} cases)")

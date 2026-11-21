@@ -1,0 +1,35 @@
+{%- comment -%}
+Goal-based investing calculator. Defaults are the goal-based investing post's
+illustrative goal (assumptions, not forecasts), from _data/tool_defaults.json
+(scripts/derive_tool_defaults.py, which reads _data/mbm2.yml). Formulas and
+wiring: assets/js/calc.js.
+{%- endcomment -%}
+{%- assign d = site.data.tool_defaults["goal"].defaults -%}
+<form class="calc" data-calc="goal" data-defaults='{{ d | jsonify }}' novalidate>
+<fieldset>
+<legend>From a future cost to a monthly amount</legend>
+<div class="calc-inputs">
+<label>Cost today <span class="calc-unit">₹</span><input name="cost_today" type="text" inputmode="decimal" autocomplete="off" value="{{ d.cost_today }}"></label>
+<label>Years to the goal<input name="years" type="text" inputmode="numeric" autocomplete="off" value="{{ d.years }}"></label>
+<label>Inflation <span class="calc-unit">% a year, assumed</span><input name="inflation_pct" type="text" inputmode="decimal" autocomplete="off" value="{{ d.inflation_pct }}"></label>
+<label>Return <span class="calc-unit">% a year, assumed</span><input name="return_pct" type="text" inputmode="decimal" autocomplete="off" value="{{ d.return_pct }}"></label>
+<label>Step-up <span class="calc-unit">% a year</span><input name="step_up_pct" type="text" inputmode="decimal" autocomplete="off" value="{{ d.step_up_pct }}"></label>
+</div>
+<div class="calc-result" aria-live="polite">
+<dl class="calc-table">
+<dt>The goal's cost when it falls due</dt><dd><output class="calc-key" data-out="future_cost"></output></dd>
+<dt>Lump sum today that would grow to it</dt><dd><output data-out="lump_today"></output></dd>
+<dt>Or a flat monthly amount</dt><dd><output class="calc-key" data-out="monthly"></output></dd>
+<dt>…putting in, in total</dt><dd><output data-out="flat_paid"></output></dd>
+<dt>Or a stepped-up monthly amount, starting at</dt><dd><output data-out="step_first"></output></dd>
+<dt>…and reaching, in the final year</dt><dd><output data-out="step_last"></output></dd>
+<dt>…putting in, in total</dt><dd><output data-out="step_paid"></output></dd>
+</dl>
+</div>
+<p class="calc-error" role="alert"></p>
+<p class="calc-note">Every input is an assumption. The return is a steady rate the calculator assumes, not what any investment will earn; real returns vary year to year and their order matters. Monthly amounts are paid at the start of each month. Before tax and costs.</p>
+</fieldset>
+<div class="calc-actions"><button type="button" class="calc-reset">Reset to the post's example</button></div>
+<noscript><p class="calc-note">This calculator needs JavaScript. The post's tables show the same arithmetic.</p></noscript>
+<script src="{{ '/assets/js/calc.js' | relative_url }}" defer></script>
+</form>

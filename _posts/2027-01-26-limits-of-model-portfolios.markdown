@@ -11,6 +11,7 @@ series: money-before-markets
 {% assign ds = m.dataset %}
 {% assign l1 = m.limits.first %}
 {% assign l2 = m.limits.second %}
+{% assign l = m.limits %}
 {% assign ac = m.asset_classes %}
 
 ## The problem with a neat table
@@ -46,8 +47,8 @@ values) from AMFI, the Association of Mutual Funds in India. Past data to
 | Gold (UTI Gold ETF) | {{ l1.gold }}% | {{ l2.gold }}% |
 | 60/40 equity and bonds, reset yearly | {{ l1.mix60 }}% | {{ l2.mix60 }}% |
 | Ranking, highest first | {{ l1.rank | join: ", " }} | {{ l2.rank | join: ", " }} |
-| Correlation of yearly returns, equity and bonds | {{ l1.corr_equity_gilt }} | {{ l2.corr_equity_gilt }} |
-| Correlation of yearly returns, equity and gold | {{ l1.corr_equity_gold }} | {{ l2.corr_equity_gold }} |
+| Correlation of yearly returns, equity and bonds | {{ l1.corr_equity_gilt | replace: "-", "−" }} | {{ l2.corr_equity_gilt | replace: "-", "−" }} |
+| Correlation of yearly returns, equity and gold | {{ l1.corr_equity_gold | replace: "-", "−" }} | {{ l2.corr_equity_gold | replace: "-", "−" }} |
 
 What it shows:
 
@@ -60,12 +61,26 @@ What it shows:
    {{ l1.mix60 }}% in the first half and {{ l2.mix60 }}% in the second,
    while equity and bonds each moved by more. That's one period's result,
    not a rule, but it's the kind of thing a mix is for.
-3. **Correlations shifted too.** Equity and gold's yearly correlation was
-   {{ l1.corr_equity_gold }} in one half and {{ l2.corr_equity_gold }} in the
-   other. With {{ l1.years }} yearly points each, these are rough
-   descriptions, not stable constants; the
+3. **Correlations are too noisy to read much into.** Equity and bonds'
+   yearly correlation barely moved ({{ l1.corr_equity_gilt | replace: "-", "−" }} and
+   {{ l2.corr_equity_gilt | replace: "-", "−" }}). Equity and gold's went from
+   {{ l1.corr_equity_gold | replace: "-", "−" }} to {{ l2.corr_equity_gold | replace: "-", "−" }}, but with
+   {{ l1.years }} yearly points in each half that change can't be told apart
+   from noise. These are rough descriptions, not constants; the
    [correlation post]({% post_url 2026-10-12-diversification-is-a-correlation-problem %})
    explains why a correlation estimate needs plenty of data.
+
+### The endpoints this module chose
+
+Every table in these posts starts on {{ m.dataset.start }}, because that's
+when all four series have a full year behind them, the gold ETF being the
+youngest. That start sits just before equity's {{ l.start_dd_pct }}% fall
+from {{ l.start_peak }} to {{ l.start_trough }}, which sets every mix's worst
+drawdown and pulls down equity's whole-period CAGR. At the other end, gold's
+final year returned {{ l.gold_last_fy_pct }}%: its CAGR to the end of FY25
+was {{ l.gold_cagr_to_fy25_pct }}%, against {{ l.gold_cagr_pct }}% with FY26
+included. Neither endpoint was chosen to flatter anything, but both shape
+the answers.
 
 ## What no allocation table can settle
 
@@ -73,17 +88,17 @@ What it shows:
    The next stretch will have its own order of returns, its own interest-rate
    path and its own crises.
 2. **Your behaviour in the bad year.** A table says a mix fell
-   {{ m.allocation.rows.m60_40.max_dd_pct }}% and recovered. It can't say
+   {{ m.allocation.rows.m60_40.max_dd_pct | replace: "-", "−" }}% and recovered. It can't say
    whether the person holding it stayed put. A mix abandoned at the bottom
    doesn't deliver the table's return; the
    [behavioural biases post]({% post_url 2026-10-14-behavioural-biases-indian-edition %})
    covers why that's common.
 3. **Tax and costs.** These backtests ignore tax and, for the index, fund
-   costs. Rebalancing in real life can trigger tax, so its benefit is
-   smaller than shown.
+   costs. Rebalancing in real life can trigger tax, so after-tax results
+   would be lower than shown.
 4. **Which funds survive.** The three funds used here are still running,
    which is why their histories are long. Funds that closed don't appear in
-   anyone's backtest; the
+   backtests built from today's fund list; the
    [survivorship bias post]({% post_url 2026-11-01-survivorship-bias-in-fund-tables %})
    shows how that flatters tables.
 5. **Your own situation.** Income stability, other assets, dependants,
@@ -105,5 +120,5 @@ What it shows:
 
 **Takeaway:** A model portfolio is the past arranged neatly, and the
 neatness hides how much the dates decide. Use backtests to understand how a
-mix behaves in falls and recoveries, not to predict its return, and expect
-the next period to rank things differently.
+mix behaved in one period's falls and recoveries, not to predict its
+return, and don't assume the next period ranks things the same way.

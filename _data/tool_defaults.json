@@ -967,5 +967,388 @@
         }
       }
     ]
+  },
+  "goal": {
+    "defaults": {
+      "cost_today": 1000000,
+      "years": 12,
+      "inflation_pct": 6,
+      "return_pct": 10,
+      "step_up_pct": 10
+    },
+    "cases": [
+      {
+        "calc": "goal",
+        "inputs": {
+          "cost_today": 1000000,
+          "years": 12,
+          "inflation_pct": 6,
+          "return_pct": 10,
+          "step_up_pct": 10
+        },
+        "expect": {
+          "future_cost": [
+            2012196,
+            0
+          ],
+          "monthly": [
+            7444,
+            0
+          ],
+          "flat_paid": [
+            1071945,
+            0
+          ],
+          "step_first": [
+            4649,
+            0
+          ],
+          "step_last": [
+            13266,
+            0
+          ],
+          "step_paid": [
+            1193109,
+            0
+          ]
+        }
+      },
+      {
+        "calc": "goal",
+        "inputs": {
+          "cost_today": 1000000,
+          "years": 12,
+          "inflation_pct": 6,
+          "return_pct": 6,
+          "step_up_pct": 10
+        },
+        "expect": {
+          "lump_today": [
+            1000000,
+            0
+          ],
+          "monthly": [
+            9630,
+            0
+          ],
+          "step_first": [
+            5770,
+            0
+          ]
+        }
+      },
+      {
+        "calc": "goal",
+        "inputs": {
+          "cost_today": 1000000,
+          "years": 12,
+          "inflation_pct": 6,
+          "return_pct": 8,
+          "step_up_pct": 10
+        },
+        "expect": {
+          "lump_today": [
+            799071,
+            0
+          ],
+          "monthly": [
+            8473,
+            0
+          ],
+          "step_first": [
+            5185,
+            0
+          ]
+        }
+      },
+      {
+        "calc": "goal",
+        "inputs": {
+          "cost_today": 1000000,
+          "years": 12,
+          "inflation_pct": 6,
+          "return_pct": 10,
+          "step_up_pct": 10
+        },
+        "expect": {
+          "lump_today": [
+            641148,
+            0
+          ],
+          "monthly": [
+            7444,
+            0
+          ],
+          "step_first": [
+            4649,
+            0
+          ]
+        }
+      },
+      {
+        "calc": "goal",
+        "inputs": {
+          "cost_today": 1000000,
+          "years": 12,
+          "inflation_pct": 6,
+          "return_pct": 12,
+          "step_up_pct": 10
+        },
+        "expect": {
+          "lump_today": [
+            516481,
+            0
+          ],
+          "monthly": [
+            6531,
+            0
+          ],
+          "step_first": [
+            4161,
+            0
+          ]
+        }
+      },
+      {
+        "calc": "goal",
+        "inputs": {
+          "cost_today": 1000000,
+          "years": 12,
+          "inflation_pct": 5,
+          "return_pct": 6,
+          "step_up_pct": 10
+        },
+        "expect": {
+          "monthly": [
+            8594,
+            0
+          ],
+          "future_cost": [
+            1795856,
+            0
+          ]
+        }
+      },
+      {
+        "calc": "goal",
+        "inputs": {
+          "cost_today": 1000000,
+          "years": 12,
+          "inflation_pct": 5,
+          "return_pct": 8,
+          "step_up_pct": 10
+        },
+        "expect": {
+          "monthly": [
+            7562,
+            0
+          ],
+          "future_cost": [
+            1795856,
+            0
+          ]
+        }
+      },
+      {
+        "calc": "goal",
+        "inputs": {
+          "cost_today": 1000000,
+          "years": 12,
+          "inflation_pct": 5,
+          "return_pct": 10,
+          "step_up_pct": 10
+        },
+        "expect": {
+          "monthly": [
+            6644,
+            0
+          ],
+          "future_cost": [
+            1795856,
+            0
+          ]
+        }
+      },
+      {
+        "calc": "goal",
+        "inputs": {
+          "cost_today": 1000000,
+          "years": 12,
+          "inflation_pct": 5,
+          "return_pct": 12,
+          "step_up_pct": 10
+        },
+        "expect": {
+          "monthly": [
+            5829,
+            0
+          ],
+          "future_cost": [
+            1795856,
+            0
+          ]
+        }
+      },
+      {
+        "calc": "goal",
+        "inputs": {
+          "cost_today": 1000000,
+          "years": 12,
+          "inflation_pct": 6,
+          "return_pct": 6,
+          "step_up_pct": 10
+        },
+        "expect": {
+          "monthly": [
+            9630,
+            0
+          ],
+          "future_cost": [
+            2012196,
+            0
+          ]
+        }
+      },
+      {
+        "calc": "goal",
+        "inputs": {
+          "cost_today": 1000000,
+          "years": 12,
+          "inflation_pct": 6,
+          "return_pct": 8,
+          "step_up_pct": 10
+        },
+        "expect": {
+          "monthly": [
+            8473,
+            0
+          ],
+          "future_cost": [
+            2012196,
+            0
+          ]
+        }
+      },
+      {
+        "calc": "goal",
+        "inputs": {
+          "cost_today": 1000000,
+          "years": 12,
+          "inflation_pct": 6,
+          "return_pct": 10,
+          "step_up_pct": 10
+        },
+        "expect": {
+          "monthly": [
+            7444,
+            0
+          ],
+          "future_cost": [
+            2012196,
+            0
+          ]
+        }
+      },
+      {
+        "calc": "goal",
+        "inputs": {
+          "cost_today": 1000000,
+          "years": 12,
+          "inflation_pct": 6,
+          "return_pct": 12,
+          "step_up_pct": 10
+        },
+        "expect": {
+          "monthly": [
+            6531,
+            0
+          ],
+          "future_cost": [
+            2012196,
+            0
+          ]
+        }
+      },
+      {
+        "calc": "goal",
+        "inputs": {
+          "cost_today": 1000000,
+          "years": 12,
+          "inflation_pct": 7,
+          "return_pct": 6,
+          "step_up_pct": 10
+        },
+        "expect": {
+          "monthly": [
+            10778,
+            0
+          ],
+          "future_cost": [
+            2252192,
+            0
+          ]
+        }
+      },
+      {
+        "calc": "goal",
+        "inputs": {
+          "cost_today": 1000000,
+          "years": 12,
+          "inflation_pct": 7,
+          "return_pct": 8,
+          "step_up_pct": 10
+        },
+        "expect": {
+          "monthly": [
+            9484,
+            0
+          ],
+          "future_cost": [
+            2252192,
+            0
+          ]
+        }
+      },
+      {
+        "calc": "goal",
+        "inputs": {
+          "cost_today": 1000000,
+          "years": 12,
+          "inflation_pct": 7,
+          "return_pct": 10,
+          "step_up_pct": 10
+        },
+        "expect": {
+          "monthly": [
+            8332,
+            0
+          ],
+          "future_cost": [
+            2252192,
+            0
+          ]
+        }
+      },
+      {
+        "calc": "goal",
+        "inputs": {
+          "cost_today": 1000000,
+          "years": 12,
+          "inflation_pct": 7,
+          "return_pct": 12,
+          "step_up_pct": 10
+        },
+        "expect": {
+          "monthly": [
+            7310,
+            0
+          ],
+          "future_cost": [
+            2252192,
+            0
+          ]
+        }
+      }
+    ]
   }
 }

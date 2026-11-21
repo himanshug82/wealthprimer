@@ -1,6 +1,6 @@
 # Money Before Markets, module 2 "Putting a portfolio together" (approved 21 Nov 2026)
 
-Status: **[Approved]** by the owner on 21 Nov 2026, as module 2 of Money Before Markets (not a new series). 8 posts, one a day from the first free day after the written backlog (20 Jan 2027). The dates are provisional: other series need slots from 20 Jan too, so set the final dates when the posts are scheduled. Written to complete the flagship guide "Building Your Investment Portfolio" (`WEALTH_PRIMER_MASTER_PLAN.md` §5, guide 3). No post owned these terms on 21 Nov 2026 (checked against every `term:`).
+Status: **[Approved]** by the owner on 21 Nov 2026 and **drafted** the same day (7 posts, 20–26 Jan 2027; #7 gold dropped because the 8 Dec Tax post already owns SGB structure; #5 has the on-page goal calculator the owner asked for), as module 2 of Money Before Markets (not a new series). 8 posts, one a day from the first free day after the written backlog (20 Jan 2027). The dates are provisional: other series need slots from 20 Jan too, so set the final dates when the posts are scheduled. Written to complete the flagship guide "Building Your Investment Portfolio" (`WEALTH_PRIMER_MASTER_PLAN.md` §5, guide 3). No post owned these terms on 21 Nov 2026 (checked against every `term:`).
 
 | # | Date | Working title | Slug | Owned term / intent | Primary keyword (reasoned, no SERP run) | Prerequisite posts | Cross-series link | Data or script | Real company? | Risk / review |
 |---|---|---|---|---|---|---|---|---|---|---|

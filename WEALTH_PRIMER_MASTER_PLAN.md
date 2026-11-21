@@ -85,7 +85,7 @@ Each is a hub page in one shared template, **guide option A with question cards*
 | # | Guide | Built from | Status |
 |---|---|---|---|
 | 1 | The Indian Investor's Guide to Mutual Funds | Mutual funds series (27 published), rolling-returns and SIP tools | **Built 21 Nov 2026** at `/guides/mutual-funds/`: 8 questions, 17 posts in 6 stages, 4 calculators |
-| 2 | How to Analyse Stocks | The three statement posts (now in Jargon), FA series, case study, DCF sheet | Not started |
+| 2 | How to Analyse Stocks | The three statement posts (now in Jargon), FA series, case study, DCF sheet | **Built 21 Nov 2026** at `/guides/stocks/`: 8 questions, 24 posts in 7 stages, the DCF sheet; homepage "Read a company's financial statements" card now points here |
 | 3 | Building Your Investment Portfolio | Money Before Markets, diversification, rebalancing, overlap | Not started; content gap |
 | 4 | Understanding Investment Risk | Risk series, drawdown, volatility, behaviour | Not started |
 | 5 | Indian Investor's Taxation Handbook | Tax series (18 written) | Not started; re-check after Union Budget 2027 |

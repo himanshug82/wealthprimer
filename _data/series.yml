@@ -17,7 +17,7 @@
   title: "Jargon, Decoded"
   description: "One financial term or ratio at a time — P/E, ROCE, P/B, and the rest, explained with a worked example."
   about: "Start here when a term in a report or a news story stops you. Each post takes one word or ratio: what it measures, the formula, a worked example on Desi Bites Foods or a real filing, and the ways people misread it. Posts are short and stand alone, so dip in by term."
-  planned: 65   # M0-M5 (33) + M6 terms the other series lean on (12) + M7 market mechanics (8) + M8 market terms (6) + M9 finance building blocks (6)
+  planned: 71   # M0-M5 (33) + M6 terms the other series lean on (12) + M7 market mechanics (8) + M8 market terms (6) + M9 finance building blocks (6) + M10 ratios and lines readers look up (6)
 - slug: fundamental-analysis
   title: "Fundamental Analysis — Beginner to Expert"
   description: "Reading financial statements, key ratios, and valuation basics, from first principles to DCF."

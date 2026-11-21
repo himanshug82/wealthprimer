@@ -47,7 +47,7 @@
   title: "Money Before Markets"
   description: "The money decisions underneath investing: emergency funds, FDs, G-secs, PPF, NPS, ULIPs and REITs, then compounding, asset classes and allocation."
   about: "For the money decisions that sit underneath investing: how big a cash buffer is and where it waits, how a fixed deposit differs from a debt fund, how government securities, PPF and NPS exit rules work, what a ULIP's charges take and how a REIT is built. Later posts cover putting a portfolio together: compounding, asset classes, horizon, asset allocation and goal arithmetic. Rates and rules are dated and sourced to the issuing body, and nothing here tells you what to choose."
-  planned: 7   # Module 1: emergency fund, FD vs debt fund, G-secs, PPF, NPS exit rules, ULIP charges, REIT structure written; EPF (12 Nov slot) pending its primary sources, then bump to 8
+  planned: 14   # Module 2 (7, drafted 21 Nov 2026) + Module 1: emergency fund, FD vs debt fund, G-secs, PPF, NPS exit rules, ULIP charges, REIT structure written; EPF (12 Nov slot) pending its primary sources, then bump to 8
 - slug: market-basics
   title: "Your first year in the market"
   description: "What actually happens when you open a demat account, nominate someone, place an order, apply for an IPO, or file a complaint in India."

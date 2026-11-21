@@ -1,5 +1,6 @@
 ---
 tool: real-return
+date: 2026-10-28
 title: "Real return calculator: returns after inflation"
 description: "Free real return calculator: see what a return bought after inflation, the real rate a year, and how far off the return-minus-inflation shortcut is."
 image: /assets/og/tool-real-return.png

@@ -158,6 +158,10 @@ defaults:
       type: tools
     values:
       layout: tool
+      # Without this, jekyll-seo-tag calls every dated page a BlogPosting. Tool pages are
+      # calculators, not articles; their date comes from `date:` in each _tools/<id>.md.
+      seo:
+        type: WebPage
 
 # --- don't ship repo/editorial files as public pages ---
 exclude:

@@ -206,11 +206,14 @@ def main():
     tools_path = os.path.join(ROOT, "_data", "tools.yml")
     if os.path.exists(tools_path):
         used_in = {}
+        built = {}
         for block in re.split(r"^(?=- id:)", open(tools_path, encoding="utf-8").read(), flags=re.M):
             m = re.match(r"- id:\s*(\S+)", block)
             if m:
                 u = re.search(r"^\s+used_in:\s*\[(.*)\]", block, re.M)
                 used_in[m.group(1)] = {x.strip() for x in u.group(1).split(",") if x.strip()} if u else set()
+                b = re.search(r"^\s+built:\s*(\d{4}-\d{2}-\d{2})", block, re.M)
+                built[m.group(1)] = b.group(1) if b else None
         slugs = {k[11:] for k in posts}
         for tid, users in used_in.items():
             stub = os.path.join(ROOT, "_tools", tid + ".md")
@@ -219,6 +222,11 @@ def main():
                 errors += 1
             else:
                 fm, _ = front_matter(open(stub, encoding="utf-8").read())
+                # A tool page with no date gets the BUILD time as its published date
+                # (Jekyll gives every collection document one), which changes daily.
+                if built.get(tid) and fm.get("date", "")[:10] != built[tid]:
+                    print(f"ERROR _tools/{tid}.md: date '{fm.get('date', '')}' should equal built: {built[tid]} in _data/tools.yml")
+                    errors += 1
                 desc = fm.get("description", "")
                 if not (140 <= len(desc) <= 155):
                     print(f"WARN  _tools/{tid}.md: description is {len(desc)} chars (aim 140–155)")

@@ -1,5 +1,6 @@
 ---
 tool: loss-recovery
+date: 2026-10-28
 title: "Loss recovery and leverage calculator"
 description: "Free calculator: the gain needed to recover from any fall, and what borrowed money and interest do to the return on your own money, in Indian rupees."
 image: /assets/og/tool-loss-recovery.png

@@ -1,5 +1,6 @@
 ---
 tool: rolling-returns
+date: 2026-10-25
 title: "Rolling returns calculator for mutual funds and indices"
 description: "A free rolling returns calculator: paste any fund's daily NAV or an index and see the worst, median and best N-year CAGR across every start date."
 image: /assets/og/tool-rolling-returns.png

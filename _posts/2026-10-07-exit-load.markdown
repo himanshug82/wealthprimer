@@ -72,8 +72,8 @@ loaded, so the effective charge on the whole redemption is {{ x.load_as_pct_of_g
 than the headline 1%, more than the zero a lump-sum investor a year in would
 pay.
 
-Notice this is the same lot-by-lot logic the tax series used in the
-SIPs and FIFO post in the Tax series<!-- RELINK 2026-11-20-sips-and-fifo -->: every SIP
+Notice this is the same lot-by-lot logic as the
+[SIPs and FIFO post]({{ '/2026/11/20/sips-and-fifo/' | relative_url }}) in the Tax series: every SIP
 instalment is its own purchase with its own date, for tax *and* for load.
 Funds apply the same first-in-first-out order, so a partial redemption sells
 the oldest — load-free — units first.

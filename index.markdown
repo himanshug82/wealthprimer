@@ -26,8 +26,8 @@ goals:
   - section: "Portfolio"
     title: "Build and look after a portfolio"
     examples: "Diversification, overlap, real returns, rebalancing"
-    cta: "Portfolio basics"
-    url: /portfolio/
+    cta: "Guide to building a portfolio"
+    url: /guides/portfolio/
   - section: "Risk & Tax"
     title: "Know the risk, and the tax, before I act"
     examples: "Losses, leverage, F&O data, capital gains"

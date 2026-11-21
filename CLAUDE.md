@@ -93,6 +93,8 @@ Google Sheet calculators and Python/pandas snippets are woven in **where the top
 - Use a Python/pandas snippet or notebook when the point is showing *how* the calculation works, not just letting readers plug in numbers (e.g. the TA charting series).
 - Keep code snippets short and copy-pasteable; a reader should be able to lift 10–20 lines and run them, not clone a repo.
 
+**Scope rule for tools (owner decision D3, 21 Nov 2026).** Every calculator, sheet or other reader tool runs on the reader's own generic inputs (amounts, rates, years, assumptions) and shows the mechanics. A tool never ranks, screens or scores real securities or funds, never reviews a reader's holdings, never loads real-fund or real-company data for the reader to pick from, and never says what to do. Defaults may reproduce a post's worked example, labelled as such. The goal-based investing calculator is the model case.
+
 ## Twitter
 
 Twitter is a distribution channel, not a second content stream. Don't write threads that duplicate a post's content — write a short hook (often the post's takeaway line) plus a link. This is also why the "takeaway" section of every post should be able to stand alone as a tweet.

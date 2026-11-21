@@ -7,6 +7,8 @@ description: Specify (and, only when the owner asks, build) a reader calculator 
 
 CLAUDE.md: calculators go where the topic naturally needs one (DCF, rolling returns, SIP/XIRR), not on every post. View-only Google Sheet with "make a copy to use"; Python/pandas when the point is *how* the calculation works (10–20 liftable lines).
 
+**Scope rule (D3, decided 21 Nov 2026; full text in CLAUDE.md → Calculators and code):** generic reader inputs only, mechanics shown. No ranking, screening or scoring of real securities or funds, no review of a reader's holdings, no real-fund or real-company data for the reader to pick from, no "what to do". A spec that needs any of these stops and goes to the owner. On-page calculators follow the goal-based investing calculator's pattern (`assets/js/calc.js`, `_includes/calc/`, defaults and cases from `scripts/derive_tool_defaults.py`, checked by `scripts/check_tools.mjs`).
+
 ## Spec first (always)
 
 Write a short spec and show it before building anything:

@@ -8,7 +8,7 @@ advance-tax-for-investors:
 - fo-is-business-income
 - esops-and-rsus
 - bonds-debentures-and-sgbs
-- equity-and-equity-funds
+- losses-set-off-and-harvesting
 adx-trend-strength:
 - rsi
 - bollinger-bands-and-atr
@@ -19,6 +19,7 @@ adx-trend-strength:
 - relative-strength-vs-the-index
 - what-technical-analysis-cannot-do
 airlines-load-factor-rask-cask:
+- leases-ind-as-116
 - hospitals-arpob-occupancy
 - telecom-arpu-and-the-limits-of-sector-lenses
 - cement-ebitda-per-tonne-capacity-utilisation
@@ -26,7 +27,6 @@ airlines-load-factor-rask-cask:
 - it-services-constant-currency-utilisation-attrition
 - food-delivery-take-rate-contribution
 - enterprise-value
-- why-one-set-of-ratios-doesnt-fit
 alpha:
 - benchmarks-and-comparing-like-with-like
 - tracking-error-and-tracking-difference
@@ -50,10 +50,10 @@ asm-and-gsm-surveillance:
 - circuit-limits-and-price-bands
 - short-selling-mechanics
 - option-expiry-and-settlement
-- scores-and-smart-odr
 - bulk-and-block-deals
+- scores-and-smart-odr
 - t-plus-1-settlement
-- contract-note-charges
+- call-and-put-options
 asset-allocation:
 - asset-classes
 - limits-of-model-portfolios
@@ -62,7 +62,7 @@ asset-allocation:
 - glide-path
 - hybrid-funds
 - volatility-and-sharpe
-- index-funds-vs-etfs
+- diversification-is-a-correlation-problem
 asset-classes:
 - asset-allocation
 - investment-horizon
@@ -94,10 +94,10 @@ authorised-issued-paid-up-capital:
 - face-value-splits-and-bonuses
 - book-value-per-share
 - rights-issues
+- diluted-eps-and-dilution
 - capital-allocation
 - eps
 - enterprise-value
-- offer-for-sale-and-delisting
 - goodwill-exceptional-items-and-other-income
 before-you-file:
 - dividends-and-interest
@@ -160,8 +160,8 @@ bonds-debentures-and-sgbs:
 - how-investment-income-is-taxed
 - nri-investment-income
 - dividends-and-interest
-- equity-and-equity-funds
 - buyback-taxation
+- equity-and-equity-funds
 book-value-per-share:
 - relative-valuation-comparables
 - price-to-book
@@ -170,7 +170,7 @@ book-value-per-share:
 - price-to-earnings
 - authorised-issued-paid-up-capital
 - roe
-- offer-for-sale-and-delisting
+- valuing-a-bank-price-to-book
 breakouts-and-false-breakouts:
 - golden-and-death-cross
 - stochastic-oscillator
@@ -211,8 +211,8 @@ buyback-taxation:
 - dividends-and-interest
 - fo-is-business-income
 - esops-and-rsus
-- equity-and-equity-funds
 - how-investment-income-is-taxed
+- equity-and-equity-funds
 - reits-and-invits
 - foreign-stocks-and-schedule-fa
 - bonds-debentures-and-sgbs
@@ -233,7 +233,7 @@ capex-intensity:
 - why-one-set-of-ratios-doesnt-fit
 - earnings-yield-and-fcf-yield
 - inventory-days
-- desi-bites-cooks-the-books
+- capstone-britannia-end-to-end
 capital-adequacy:
 - why-ratios-break-on-a-bank
 - gnpa-nnpa-and-provisions
@@ -241,8 +241,8 @@ capital-adequacy:
 - nbfcs-vs-banks-spread-borrowing-alm
 - valuing-a-bank-price-to-book
 - casa-and-the-deposit-franchise
-- interest-coverage
 - life-insurers-embedded-value-vnb-margin
+- interest-coverage
 capital-allocation:
 - goodwill-exceptional-items-and-other-income
 - roce
@@ -250,8 +250,8 @@ capital-allocation:
 - payout-ratio
 - wacc-cost-of-capital
 - reading-an-annual-report
-- forecasting-free-cash-flow
 - reading-a-cash-flow-statement
+- forecasting-free-cash-flow
 capstone-britannia-end-to-end:
 - dupont-roe-decomposition
 - relative-valuation-comparables
@@ -260,7 +260,7 @@ capstone-britannia-end-to-end:
 - peg-ratio
 - roce
 - current-ratio
-- quick-ratio
+- asset-turnover
 casa-and-the-deposit-franchise:
 - nim-and-the-spread
 - why-ratios-break-on-a-bank
@@ -282,8 +282,8 @@ cash-conversion-cycle:
 cement-ebitda-per-tonne-capacity-utilisation:
 - why-one-set-of-ratios-doesnt-fit
 - fmcg-volume-growth-vs-price-growth
-- airlines-load-factor-rask-cask
 - retail-sssg-revenue-per-sq-ft
+- airlines-load-factor-rask-cask
 - reading-quarterly-results
 - hospitals-arpob-occupancy
 - it-services-constant-currency-utilisation-attrition
@@ -317,13 +317,22 @@ compounding-and-time:
 - asset-allocation
 concentration-risk:
 - diversification-is-a-correlation-problem
-- esops-and-rsus
 - beta
+- esops-and-rsus
 - portfolio-overlap
 - relative-strength-vs-the-index
 - what-the-fo-numbers-actually-say
 - drawdown
 - position-sizing-and-the-one-percent-rule
+consolidated-vs-standalone:
+- segment-reporting
+- goodwill-exceptional-items-and-other-income
+- leases-ind-as-116
+- diluted-eps-and-dilution
+- desi-bites-cooks-the-books
+- sum-of-the-parts
+- normalised-earnings
+- reading-quarterly-results
 contingent-liabilities-pledges-and-promoter-holding:
 - reading-a-drhp
 - free-float-and-promoter-holding
@@ -357,8 +366,8 @@ creditor-days:
 - capstone-britannia-end-to-end
 - reading-a-balance-sheet
 - inventory-days
-- gross-margin
 - equity-multiplier
+- gross-margin
 - roa
 currency-risk:
 - international-funds
@@ -366,8 +375,8 @@ currency-risk:
 - inflation-and-real-returns
 - foreign-stocks-and-schedule-fa
 - debt-funds-explained
-- diversification-is-a-correlation-problem
 - arbitrage-funds
+- diversification-is-a-correlation-problem
 - sips-xirr-and-timing-myths
 current-ratio:
 - net-working-capital
@@ -393,15 +402,15 @@ debt-funds-gold-and-the-rest:
 - how-investment-income-is-taxed
 - equity-and-equity-funds
 - esops-and-rsus
-- before-you-file
 - nri-investment-income
+- before-you-file
 - foreign-stocks-and-schedule-fa
 debt-to-equity:
 - equity-multiplier
 - roce
 - roe
-- reading-a-balance-sheet
 - why-ratios-break-on-a-bank
+- reading-a-balance-sheet
 - interest-coverage
 - roa
 - net-debt-ebitda
@@ -424,14 +433,14 @@ demat-trading-bank-accounts:
 - exit-load
 - scores-and-smart-odr
 depreciation-and-amortisation:
-- effective-tax-rate
 - goodwill-exceptional-items-and-other-income
+- effective-tax-rate
 - ev-ebitda
-- reading-an-income-statement
 - desi-bites-cooks-the-books
 - forecasting-free-cash-flow
+- reading-an-income-statement
 - ebitda-margin
-- why-one-set-of-ratios-doesnt-fit
+- leases-ind-as-116
 desi-bites-cooks-the-books:
 - reading-a-cash-flow-statement
 - reading-an-income-statement
@@ -440,7 +449,16 @@ desi-bites-cooks-the-books:
 - capstone-britannia-end-to-end
 - ocf-pat
 - forecasting-free-cash-flow
-- free-cash-flow
+- consolidated-vs-standalone
+diluted-eps-and-dilution:
+- eps
+- esops-and-rsus
+- consolidated-vs-standalone
+- leases-ind-as-116
+- segment-reporting
+- price-to-earnings
+- rights-issues
+- authorised-issued-paid-up-capital
 discounting-time-value-of-money:
 - terminal-value-and-the-full-dcf
 - margin-of-safety-and-sensitivity
@@ -448,8 +466,8 @@ discounting-time-value-of-money:
 - yield-to-maturity
 - wacc-cost-of-capital
 - relative-valuation-comparables
+- sum-of-the-parts
 - debt-funds-explained
-- valuing-a-bank-price-to-book
 diversification-is-a-correlation-problem:
 - portfolio-overlap
 - beta
@@ -475,8 +493,8 @@ dividends-and-interest:
 - before-you-file
 - reits-and-invits
 - buyback-taxation
-- elss-and-the-deduction-that-moved
 - bonds-debentures-and-sgbs
+- elss-and-the-deduction-that-moved
 do-gaps-get-filled:
 - stop-loss-placement
 - stochastic-oscillator
@@ -487,8 +505,8 @@ do-gaps-get-filled:
 - position-sizing-and-the-one-percent-rule
 - breakouts-and-false-breakouts
 drawdown:
-- volatility-and-sharpe
 - reading-a-factsheet
+- volatility-and-sharpe
 - sips-xirr-and-timing-myths
 - the-arithmetic-of-losses
 - behavioural-biases-indian-edition
@@ -508,10 +526,10 @@ earnings-yield-and-fcf-yield:
 - free-cash-flow
 - price-to-earnings
 - dividend-yield
-- ev-ebitda
-- eps
 - capstone-britannia-end-to-end
+- ev-ebitda
 - yield-to-maturity
+- eps
 - forecasting-free-cash-flow
 ebitda-margin:
 - reading-an-income-statement
@@ -520,16 +538,16 @@ ebitda-margin:
 - reading-a-cash-flow-statement
 - ocf-pat
 - free-cash-flow
+- leases-ind-as-116
 - roe
-- depreciation-and-amortisation
 effective-tax-rate:
 - roce
 - depreciation-and-amortisation
-- equity-and-equity-funds
 - how-investment-income-is-taxed
+- equity-and-equity-funds
 - reading-an-income-statement
-- desi-bites-cooks-the-books
 - dividends-and-interest
+- desi-bites-cooks-the-books
 - wacc-cost-of-capital
 elss-and-the-deduction-that-moved:
 - dividends-and-interest
@@ -539,7 +557,7 @@ elss-and-the-deduction-that-moved:
 - sips-and-fifo
 - losses-set-off-and-harvesting
 - fo-is-business-income
-- ppf-how-it-works
+- exit-load
 emergency-fund-sizing:
 - fixed-deposit-vs-debt-fund
 - inflation-and-real-returns
@@ -552,13 +570,14 @@ emergency-fund-sizing:
 enterprise-value:
 - ev-ebitda
 - net-debt-ebitda
-- relative-valuation-comparables
 - reading-a-balance-sheet
+- relative-valuation-comparables
 - roce
 - debt-to-equity
-- goodwill-exceptional-items-and-other-income
-- terminal-value-and-the-full-dcf
+- sum-of-the-parts
+- leases-ind-as-116
 eps:
+- diluted-eps-and-dilution
 - price-to-earnings
 - book-value-per-share
 - dividend-yield
@@ -566,41 +585,40 @@ eps:
 - earnings-yield-and-fcf-yield
 - relative-valuation-comparables
 - reading-a-drhp
-- payout-ratio
 equity-and-equity-funds:
 - short-term-vs-long-term
 - how-investment-income-is-taxed
 - losses-set-off-and-harvesting
 - nri-investment-income
 - before-you-file
-- fo-is-business-income
 - bonds-debentures-and-sgbs
-- debt-funds-gold-and-the-rest
+- fo-is-business-income
+- buyback-taxation
 equity-multiplier:
 - debt-to-equity
 - roa
 - roce
 - creditor-days
 - dupont-roe-decomposition
-- roe
 - net-debt-ebitda
+- roe
 - reading-a-balance-sheet
 esops-and-rsus:
 - foreign-stocks-and-schedule-fa
-- short-term-vs-long-term
 - how-investment-income-is-taxed
+- short-term-vs-long-term
 - advance-tax-for-investors
 - debt-funds-gold-and-the-rest
 - buyback-taxation
 - fo-is-business-income
-- equity-and-equity-funds
+- diluted-eps-and-dilution
 ev-ebitda:
 - price-to-earnings
 - enterprise-value
 - relative-valuation-comparables
 - price-to-book
-- net-debt-ebitda
 - roe
+- net-debt-ebitda
 - earnings-yield-and-fcf-yield
 - capstone-britannia-end-to-end
 exit-load:
@@ -615,8 +633,8 @@ exit-load:
 expense-ratios-direct-vs-regular:
 - what-a-mutual-fund-is
 - exit-load
-- tracking-error-and-tracking-difference
 - reading-a-factsheet
+- tracking-error-and-tracking-difference
 - nfos
 - aum
 - index-funds-vs-etfs
@@ -661,11 +679,11 @@ fmcg-volume-growth-vs-price-growth:
 - reading-quarterly-results
 - why-one-set-of-ratios-doesnt-fit
 - cement-ebitda-per-tonne-capacity-utilisation
+- normalised-earnings
 - hospitals-arpob-occupancy
 - it-services-constant-currency-utilisation-attrition
-- telecom-arpu-and-the-limits-of-sector-lenses
 - operating-leverage
-- retail-sssg-revenue-per-sq-ft
+- telecom-arpu-and-the-limits-of-sector-lenses
 fo-is-business-income:
 - losses-set-off-and-harvesting
 - buyback-taxation
@@ -740,8 +758,8 @@ g-secs-and-t-bills:
 - credit-ratings-explained
 gifts-and-clubbing:
 - equity-and-equity-funds
-- buyback-taxation
 - dividends-and-interest
+- buyback-taxation
 - how-investment-income-is-taxed
 - nri-investment-income
 - elss-and-the-deduction-that-moved
@@ -772,8 +790,8 @@ goal-based-investing:
 - step-up-sips
 - stp-and-swp
 - margin-of-safety-and-sensitivity
-- terminal-value-and-the-full-dcf
 - sequence-of-returns-risk
+- terminal-value-and-the-full-dcf
 golden-and-death-cross:
 - moving-averages
 - how-to-backtest-honestly
@@ -785,13 +803,13 @@ golden-and-death-cross:
 - budget-day-and-muhurat-trading
 goodwill-exceptional-items-and-other-income:
 - capital-allocation
+- consolidated-vs-standalone
+- segment-reporting
 - desi-bites-cooks-the-books
 - reading-quarterly-results
 - reading-an-income-statement
+- normalised-earnings
 - reading-an-annual-report
-- relative-valuation-comparables
-- net-margin
-- reading-a-cash-flow-statement
 gross-margin:
 - reading-an-income-statement
 - net-margin
@@ -961,15 +979,15 @@ ipo-application-asba-upi:
 - t-plus-1-settlement
 - offer-for-sale-and-delisting
 - rights-issues
-- bulk-and-block-deals
 - mergers-and-demergers
+- demat-trading-bank-accounts
 it-services-constant-currency-utilisation-attrition:
 - why-one-set-of-ratios-doesnt-fit
 - international-funds
-- airlines-load-factor-rask-cask
 - currency-risk
-- hospitals-arpob-occupancy
+- airlines-load-factor-rask-cask
 - pharma-rd-intensity-us-generics-usfda
+- hospitals-arpob-occupancy
 - cement-ebitda-per-tonne-capacity-utilisation
 - goodwill-exceptional-items-and-other-income
 kelly-criterion-and-risk-of-ruin:
@@ -978,9 +996,18 @@ kelly-criterion-and-risk-of-ruin:
 - fat-tails
 - diversification-is-a-correlation-problem
 - the-arithmetic-of-losses
-- insurance-as-risk-transfer
 - concentration-risk
+- insurance-as-risk-transfer
 - how-to-backtest-honestly
+leases-ind-as-116:
+- airlines-load-factor-rask-cask
+- telecom-arpu-and-the-limits-of-sector-lenses
+- consolidated-vs-standalone
+- segment-reporting
+- reading-an-income-statement
+- enterprise-value
+- diluted-eps-and-dilution
+- desi-bites-cooks-the-books
 leverage-and-margin:
 - margin-calls-and-peak-margin
 - call-and-put-options
@@ -998,7 +1025,7 @@ life-insurers-embedded-value-vnb-margin:
 - nim-and-the-spread
 - capital-adequacy
 - it-services-constant-currency-utilisation-attrition
-- hospitals-arpob-occupancy
+- valuing-a-bank-price-to-book
 limits-of-model-portfolios:
 - asset-allocation
 - asset-classes
@@ -1023,16 +1050,16 @@ liquidity-risk:
 - market-cap
 - portfolio-turnover-ratio
 - sebi-fund-categories-decoded
-- the-riskometer
 - segregated-portfolios
+- the-riskometer
 - volume
 losses-set-off-and-harvesting:
 - sips-and-fifo
 - equity-and-equity-funds
 - fo-is-business-income
 - before-you-file
-- short-term-vs-long-term
 - how-investment-income-is-taxed
+- short-term-vs-long-term
 - buyback-taxation
 - exit-load
 macd:
@@ -1040,8 +1067,8 @@ macd:
 - rsi
 - indicator-confluence-and-double-counting
 - what-technical-analysis-cannot-do
-- multiple-timeframe-analysis
 - what-technical-analysis-is
+- multiple-timeframe-analysis
 - bollinger-bands-and-atr
 - how-to-backtest-honestly
 manager-changes-and-style-drift:
@@ -1069,13 +1096,13 @@ margin-of-safety-and-sensitivity:
 - forecasting-free-cash-flow
 - beta
 - goal-based-investing
+- sum-of-the-parts
 - relative-valuation-comparables
-- capstone-britannia-end-to-end
 market-cap:
 - sebi-fund-categories-decoded
 - free-float-and-promoter-holding
-- index-weights-free-float
 - liquidity-risk
+- index-weights-free-float
 - book-value-per-share
 - ev-ebitda
 - aum
@@ -1084,20 +1111,20 @@ meet-desi-bites-foods:
 - reading-a-cash-flow-statement
 - reading-a-balance-sheet
 - reading-an-income-statement
+- segment-reporting
 - capstone-britannia-end-to-end
 - reading-an-annual-report
 - relative-valuation-comparables
 - contingent-liabilities-pledges-and-promoter-holding
-- why-ratios-break-on-a-bank
 mergers-and-demergers:
 - rights-issues
 - offer-for-sale-and-delisting
-- reading-a-drhp
 - ipo-application-asba-upi
+- reading-a-drhp
 - segregated-portfolios
 - record-date-and-ex-date
-- face-value-splits-and-bonuses
 - nfos
+- face-value-splits-and-bonuses
 modified-duration:
 - yield-to-maturity
 - g-secs-and-t-bills
@@ -1159,16 +1186,16 @@ net-margin:
 - roe
 - dupont-roe-decomposition
 - asset-turnover
-- goodwill-exceptional-items-and-other-income
 - operating-leverage
+- goodwill-exceptional-items-and-other-income
 net-working-capital:
 - current-ratio
 - quick-ratio
 - reading-a-balance-sheet
 - ocf-pat
-- creditor-days
 - net-debt-ebitda
 - inventory-days
+- creditor-days
 - reading-a-cash-flow-statement
 nfos:
 - what-a-mutual-fund-is
@@ -1187,16 +1214,25 @@ nim-and-the-spread:
 - valuing-a-bank-price-to-book
 - capital-adequacy
 - roe
-- wacc-cost-of-capital
+- fixed-deposit-vs-debt-fund
 nomination-demat-folios:
 - demat-trading-bank-accounts
 - sips-and-fifo
 - broker-and-counterparty-risk
 - segregated-portfolios
-- index-funds-vs-etfs
 - gifts-and-clubbing
+- index-funds-vs-etfs
 - scores-and-smart-odr
 - before-you-file
+normalised-earnings:
+- goodwill-exceptional-items-and-other-income
+- consolidated-vs-standalone
+- fmcg-volume-growth-vs-price-growth
+- segment-reporting
+- reading-quarterly-results
+- relative-valuation-comparables
+- reading-a-drhp
+- ev-ebitda
 nps-exit-rules:
 - stp-and-swp
 - ppf-how-it-works
@@ -1223,14 +1259,14 @@ obv-and-vwap:
 - rsi
 - bollinger-bands-and-atr
 - bulk-and-block-deals
-- stochastic-oscillator
+- reading-a-candlestick-chart
 ocf-pat:
 - reading-a-cash-flow-statement
 - net-working-capital
 - free-cash-flow
-- ebitda-margin
-- debtor-days
 - cash-conversion-cycle
+- debtor-days
+- ebitda-margin
 - creditor-days
 - capstone-britannia-end-to-end
 offer-for-sale-and-delisting:
@@ -1257,9 +1293,9 @@ operating-leverage:
 - forecasting-free-cash-flow
 - interest-coverage
 - net-margin
+- leases-ind-as-116
+- payout-ratio
 - goodwill-exceptional-items-and-other-income
-- ebitda-margin
-- capex-intensity
 option-expiry-and-settlement:
 - call-and-put-options
 - option-writing-and-margin
@@ -1310,8 +1346,8 @@ overtrading-and-costs:
 - fo-is-business-income
 - option-writing-and-margin
 - call-and-put-options
-- behavioural-biases-indian-edition
 - contract-note-charges
+- behavioural-biases-indian-edition
 - leverage-and-margin
 - portfolio-turnover-ratio
 payout-ratio:
@@ -1328,17 +1364,17 @@ peg-ratio:
 - capstone-britannia-end-to-end
 - ev-ebitda
 - relative-valuation-comparables
-- earnings-yield-and-fcf-yield
 - valuing-a-bank-price-to-book
-- eps
+- earnings-yield-and-fcf-yield
 - roe
+- eps
 pharma-rd-intensity-us-generics-usfda:
 - why-one-set-of-ratios-doesnt-fit
 - it-services-constant-currency-utilisation-attrition
 - cement-ebitda-per-tonne-capacity-utilisation
 - telecom-arpu-and-the-limits-of-sector-lenses
-- hospitals-arpob-occupancy
 - retail-sssg-revenue-per-sq-ft
+- hospitals-arpob-occupancy
 - fmcg-volume-growth-vs-price-growth
 - reading-an-income-statement
 pivot-points-and-round-numbers:
@@ -1358,7 +1394,7 @@ point-to-point-returns:
 - the-arithmetic-of-losses
 - benchmarks-and-comparing-like-with-like
 - sortino-and-information-ratio
-- what-fund-metrics-cant-tell-you
+- why-star-ratings-mislead
 portfolio-overlap:
 - diversification-is-a-correlation-problem
 - manager-changes-and-style-drift
@@ -1385,7 +1421,7 @@ position-sizing-and-the-one-percent-rule:
 - how-to-backtest-honestly
 - do-gaps-get-filled
 - supertrend-indicator
-- rsi
+- what-technical-analysis-is
 ppf-how-it-works:
 - elss-and-the-deduction-that-moved
 - fixed-deposit-vs-debt-fund
@@ -1397,16 +1433,16 @@ ppf-how-it-works:
 - bonds-debentures-and-sgbs
 price-to-book:
 - price-to-earnings
-- book-value-per-share
 - valuing-a-bank-price-to-book
+- book-value-per-share
 - ev-ebitda
 - relative-valuation-comparables
 - roe
 - capstone-britannia-end-to-end
 - roa
 price-to-earnings:
-- eps
 - peg-ratio
+- eps
 - ev-ebitda
 - price-to-book
 - earnings-yield-and-fcf-yield
@@ -1454,16 +1490,16 @@ reading-a-balance-sheet:
 - reading-an-income-statement
 - roa
 - enterprise-value
-- meet-desi-bites-foods
 - debt-to-equity
 - net-working-capital
+- meet-desi-bites-foods
 - creditor-days
 reading-a-candlestick-chart:
 - chart-patterns
 - what-technical-analysis-is
 - do-gaps-get-filled
-- what-technical-analysis-cannot-do
 - bollinger-bands-and-atr
+- what-technical-analysis-cannot-do
 - volume
 - support-and-resistance
 - obv-and-vwap
@@ -1496,13 +1532,13 @@ reading-a-factsheet:
 - volatility-and-sharpe
 reading-an-annual-report:
 - reading-a-drhp
-- goodwill-exceptional-items-and-other-income
 - desi-bites-cooks-the-books
+- goodwill-exceptional-items-and-other-income
 - contingent-liabilities-pledges-and-promoter-holding
 - reading-quarterly-results
-- meet-desi-bites-foods
-- capital-allocation
 - capstone-britannia-end-to-end
+- capital-allocation
+- meet-desi-bites-foods
 reading-an-income-statement:
 - ebitda-margin
 - gross-margin
@@ -1516,8 +1552,8 @@ reading-quarterly-results:
 - goodwill-exceptional-items-and-other-income
 - reading-an-annual-report
 - desi-bites-cooks-the-books
-- reading-an-income-statement
 - fmcg-volume-growth-vs-price-growth
+- reading-an-income-statement
 - inventory-days
 - cement-ebitda-per-tonne-capacity-utilisation
 - food-delivery-take-rate-contribution
@@ -1543,8 +1579,8 @@ reit-structure:
 - reits-and-invits
 - growth-vs-idcw
 - index-funds-vs-etfs
-- bonds-debentures-and-sgbs
 - payout-ratio
+- bonds-debentures-and-sgbs
 - what-a-mutual-fund-is
 - contingent-liabilities-pledges-and-promoter-holding
 - offer-for-sale-and-delisting
@@ -1571,10 +1607,10 @@ relative-valuation-comparables:
 - book-value-per-share
 - capstone-britannia-end-to-end
 - price-to-earnings
+- sum-of-the-parts
 - valuing-a-bank-price-to-book
 - price-to-book
 - enterprise-value
-- reading-a-drhp
 retail-sssg-revenue-per-sq-ft:
 - hospitals-arpob-occupancy
 - airlines-load-factor-rask-cask
@@ -1583,7 +1619,7 @@ retail-sssg-revenue-per-sq-ft:
 - operating-leverage
 - reading-quarterly-results
 - fmcg-volume-growth-vs-price-growth
-- why-one-set-of-ratios-doesnt-fit
+- pharma-rd-intensity-us-generics-usfda
 rights-issues:
 - reading-a-drhp
 - record-date-and-ex-date
@@ -1607,19 +1643,19 @@ roce:
 - roa
 - debt-to-equity
 - asset-turnover
-- enterprise-value
 - capital-allocation
 - equity-multiplier
+- enterprise-value
 - capstone-britannia-end-to-end
 roe:
 - roce
 - roa
-- net-margin
 - asset-turnover
+- net-margin
 - dupont-roe-decomposition
 - debt-to-equity
+- valuing-a-bank-price-to-book
 - capital-allocation
-- capstone-britannia-end-to-end
 rolling-returns:
 - point-to-point-returns
 - investment-horizon
@@ -1628,7 +1664,7 @@ rolling-returns:
 - glide-path
 - sips-xirr-and-timing-myths
 - why-star-ratings-mislead
-- sell-in-may-and-month-of-year
+- arbitrage-funds
 rsi:
 - adx-trend-strength
 - stochastic-oscillator
@@ -1643,8 +1679,8 @@ scores-and-smart-odr:
 - broker-and-counterparty-risk
 - contract-note-charges
 - how-finfluencers-make-money
-- nps-exit-rules
 - demat-trading-bank-accounts
+- nps-exit-rules
 - asm-and-gsm-surveillance
 - nomination-demat-folios
 sebi-fund-categories-decoded:
@@ -1656,6 +1692,15 @@ sebi-fund-categories-decoded:
 - the-riskometer
 - benchmarks-and-comparing-like-with-like
 - reading-a-factsheet
+segment-reporting:
+- consolidated-vs-standalone
+- goodwill-exceptional-items-and-other-income
+- leases-ind-as-116
+- diluted-eps-and-dilution
+- reading-quarterly-results
+- sum-of-the-parts
+- normalised-earnings
+- meet-desi-bites-foods
 segregated-portfolios:
 - liquidity-risk
 - the-riskometer
@@ -1764,13 +1809,22 @@ stp-and-swp:
 - debt-funds-explained
 - liquid-and-overnight-funds
 - arbitrage-funds
+sum-of-the-parts:
+- relative-valuation-comparables
+- terminal-value-and-the-full-dcf
+- enterprise-value
+- consolidated-vs-standalone
+- wacc-cost-of-capital
+- ev-ebitda
+- segment-reporting
+- margin-of-safety-and-sensitivity
 supertrend-indicator:
 - stop-loss-placement
 - how-to-backtest-honestly
 - bollinger-bands-and-atr
 - position-sizing-and-the-one-percent-rule
-- adx-trend-strength
 - multiple-timeframe-analysis
+- adx-trend-strength
 - golden-and-death-cross
 - do-gaps-get-filled
 support-and-resistance:
@@ -1779,8 +1833,8 @@ support-and-resistance:
 - fibonacci-retracements
 - breakouts-and-false-breakouts
 - what-technical-analysis-is
-- reading-a-candlestick-chart
 - volume
+- reading-a-candlestick-chart
 - chart-patterns
 survivorship-bias-in-fund-tables:
 - benchmarks-and-comparing-like-with-like
@@ -1788,8 +1842,8 @@ survivorship-bias-in-fund-tables:
 - what-fund-metrics-cant-tell-you
 - up-and-down-capture-ratios
 - sortino-and-information-ratio
-- sebi-fund-categories-decoded
 - reading-a-factsheet
+- sebi-fund-categories-decoded
 - alpha
 t-plus-1-settlement:
 - broker-and-counterparty-risk
@@ -1802,21 +1856,21 @@ t-plus-1-settlement:
 - margin-calls-and-peak-margin
 telecom-arpu-and-the-limits-of-sector-lenses:
 - why-one-set-of-ratios-doesnt-fit
+- leases-ind-as-116
 - airlines-load-factor-rask-cask
 - hospitals-arpob-occupancy
 - cement-ebitda-per-tonne-capacity-utilisation
 - pharma-rd-intensity-us-generics-usfda
 - fmcg-volume-growth-vs-price-growth
 - ebitda-margin
-- forecasting-free-cash-flow
 terminal-value-and-the-full-dcf:
 - forecasting-free-cash-flow
 - discounting-time-value-of-money
 - margin-of-safety-and-sensitivity
+- sum-of-the-parts
 - wacc-cost-of-capital
 - relative-valuation-comparables
 - valuing-a-bank-price-to-book
-- ev-ebitda
 - enterprise-value
 the-arithmetic-of-losses:
 - volatility-and-sharpe
@@ -1848,8 +1902,8 @@ tracking-error-and-tracking-difference:
 trend-lines:
 - support-and-resistance
 - fibonacci-retracements
-- multiple-timeframe-analysis
 - chart-patterns
+- multiple-timeframe-analysis
 - what-technical-analysis-cannot-do
 - what-technical-analysis-is
 - breakouts-and-false-breakouts
@@ -1871,7 +1925,7 @@ up-and-down-capture-ratios:
 - alpha
 - price-vs-total-return-index
 - reading-a-factsheet
-- relative-strength-vs-the-index
+- hybrid-funds
 value-at-risk:
 - fat-tails
 - stop-loss-placement
@@ -1884,8 +1938,8 @@ value-at-risk:
 valuing-a-bank-price-to-book:
 - why-ratios-break-on-a-bank
 - price-to-book
-- relative-valuation-comparables
 - nbfcs-vs-banks-spread-borrowing-alm
+- relative-valuation-comparables
 - nim-and-the-spread
 - face-value-splits-and-bonuses
 - capstone-britannia-end-to-end
@@ -1915,8 +1969,8 @@ wacc-cost-of-capital:
 - discounting-time-value-of-money
 - relative-valuation-comparables
 - roce
-- forecasting-free-cash-flow
 - alpha
+- forecasting-free-cash-flow
 what-a-mutual-fund-is:
 - nfos
 - growth-vs-idcw
@@ -1949,10 +2003,10 @@ what-technical-analysis-is:
 - how-to-backtest-honestly
 - bollinger-bands-and-atr
 - indicator-confluence-and-double-counting
-- rsi
 - obv-and-vwap
+- rsi
 - volume
-- capstone-britannia-end-to-end
+- moving-averages
 what-the-fo-numbers-actually-say:
 - overtrading-and-costs
 - fo-is-business-income
@@ -1981,8 +2035,8 @@ why-ratios-break-on-a-bank:
 - debt-to-equity
 - capstone-britannia-end-to-end
 why-star-ratings-mislead:
-- what-fund-metrics-cant-tell-you
 - benchmarks-and-comparing-like-with-like
+- what-fund-metrics-cant-tell-you
 - survivorship-bias-in-fund-tables
 - sebi-fund-categories-decoded
 - reading-a-factsheet
@@ -2002,8 +2056,8 @@ yield-to-maturity:
 - modified-duration
 - g-secs-and-t-bills
 - bonds-debentures-and-sgbs
-- discounting-time-value-of-money
 - debt-funds-explained
+- discounting-time-value-of-money
 - credit-ratings-explained
 - yield-curve-and-repo-rate
 - earnings-yield-and-fcf-yield

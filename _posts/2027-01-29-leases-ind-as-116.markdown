@@ -1,0 +1,159 @@
+---
+layout: post
+title: "Leases under Ind AS 116: how rent became debt"
+description: "Ind AS 116 puts most leases on the balance sheet as an asset and a debt. What that does to operating profit, interest cover and net debt, worked through."
+image: /assets/og/leases-ind-as-116.png
+date: 2027-01-29 09:00:00 +0530
+series: fundamental-analysis
+term: "Lease accounting (Ind AS 116)"
+---
+
+{% assign l = site.data.fa5.leases %}
+{% assign rc = l.rent_case %}
+{% assign lc = l.lease_case %}
+{% assign y1 = l.schedule[0] %}
+{% assign y5 = l.schedule[4] %}
+
+## What Ind AS 116 changed
+
+A company that rents a warehouse for five years has, in substance, borrowed
+the warehouse: it has the use of an asset and a fixed obligation to pay for
+it. **Ind AS 116** (the Indian Accounting Standard on leases) makes the
+renter, the lessee, account for it that way. At the start of the lease it
+records a **right-of-use asset** and a **lease liability** (paragraph 22).
+The yearly rent disappears from operating costs; in its place come
+depreciation on the asset and interest on the liability (paragraphs 31–32
+and 36–38), shown separately in the profit and loss (P&L) statement
+(paragraph 49).
+
+The rent is the same cash either way. What changes is where it shows up,
+and that moves several ratios readers lean on. It's part of
+[Fundamental Analysis]({{ '/series/fundamental-analysis/' | relative_url }}).
+
+Two exemptions let a lessee keep the old rent-as-expense treatment: leases
+of 12 months or less, and leases of low-value assets (paragraph 5).
+
+## The formula
+
+```
+Lease liability at the start  =  present value of the lease payments,
+                                 discounted at the rate implicit in the lease
+                                 or, failing that, the lessee's incremental
+                                 borrowing rate                     (para 26)
+
+Right-of-use asset at the start  ≈  the lease liability (plus any upfront costs)
+
+Each year:
+  Interest     =  opening liability × rate
+  Liability    =  opening + interest − payment
+  Depreciation =  right-of-use asset / lease term    (straight line, in this example)
+  P&L charge   =  depreciation + interest            (rent no longer in opex)
+```
+
+Discounting is explained in the
+[discounting post]({% post_url 2026-09-27-discounting-time-value-of-money %}).
+
+## Worked example: a warehouse lease, on Desi Bites' FY26 numbers
+
+[Desi Bites Foods]({{ '/case-study/' | relative_url }}) is fictional, and
+its FY26 accounts have no leases. Suppose it signs one: a warehouse for
+{{ l.years }} years at ₹{{ l.rent }} lakh a year, paid at the end of each
+year, with an incremental borrowing rate of {{ l.rate_pct }}%. All three
+numbers are assumptions.
+
+**Step 1: the liability.** The present value of five payments of
+₹{{ l.rent }} lakh at {{ l.rate_pct }}% is ₹{{ l.liability0 }} lakh. That's
+the lease liability, and the right-of-use asset starts at the same figure.
+
+**Step 2: the five years.**
+
+| Year | Opening liability | Interest | Payment | Closing liability | Depreciation | P&L charge | Rent, if expensed |
+|---:|---:|---:|---:|---:|---:|---:|---:|
+{% for y in l.schedule -%}
+| {{ y.year }} | {{ y.opening }} | {{ y.interest }} | {{ y.payment }} | {{ y.closing }} | {{ y.depreciation }} | {{ y.charge }} | {{ y.rent_charge }} |
+{% endfor %}
+
+Over the five years both columns total ₹{{ l.total_charge }} lakh. But the
+Ind AS 116 charge is front-loaded: ₹{{ y1.charge }} lakh in year 1, above the
+rent, falling to ₹{{ y5.charge }} lakh in year 5, below it. Interest is
+highest when the liability is largest.
+
+**Step 3: what year 1 does to the ratios.** Desi Bites' actual FY26 figures
+with the lease added, both ways, at the FY26 year-end: in both cases the
+year's ₹{{ l.rent }} lakh has been paid from cash, and under Ind AS 116 the
+year-end liability is the closing ₹{{ l.liability_close }} lakh. EBITDA is
+earnings before interest, tax, depreciation and amortisation (see the
+[EBITDA margin post]({% post_url 2026-08-28-ebitda-margin %})); EBIT is
+earnings before interest and tax. Figures in ₹ lakh.
+
+| FY26, ₹ lakh | Rent as an expense | Ind AS 116 |
+|---|---:|---:|
+| EBITDA | {{ rc.ebitda }} | {{ lc.ebitda }} |
+| EBITDA margin | {{ rc.ebitda_margin_pct }}% | {{ lc.ebitda_margin_pct }}% |
+| EBIT | {{ rc.ebit }} | {{ lc.ebit }} |
+| Interest | {{ rc.interest }} | {{ lc.interest }} |
+| Interest cover (EBIT ÷ interest) | {{ rc.interest_cover }}× | {{ lc.interest_cover }}× |
+| Profit before tax | {{ rc.pbt }} | {{ lc.pbt }} |
+| Net debt (debt − cash; negative = net cash) | {{ rc.net_debt | replace: "-", "−" }} | {{ lc.net_debt | replace: "-", "−" }} |
+| Cash from operations | {{ rc.cfo }} | {{ lc.cfo }} |
+
+What moved, and why:
+
+1. **EBITDA rose by the whole rent.** Rent left operating costs; depreciation
+   and interest are both below EBITDA. The EBITDA margin went from
+   {{ rc.ebitda_margin_pct }}% to {{ lc.ebitda_margin_pct }}% with nothing
+   about the business changed.
+2. **Interest cover fell.** EBIT rose a little (rent out, smaller
+   depreciation in), but interest rose by the lease interest, so the
+   [interest coverage]({% post_url 2026-09-17-interest-coverage %}) ratio
+   dropped from {{ rc.interest_cover }}× to {{ lc.interest_cover }}×.
+3. **Debt appeared.** Desi Bites has net cash, and the year-end lease
+   liability of ₹{{ l.liability_close }} lakh cut it. A company with net debt would see
+   [net debt to EBITDA]({% post_url 2026-09-18-net-debt-ebitda %}) change
+   in both its parts at once.
+4. **Cash from operations rose by the whole rent.** Ind AS 116's paragraph
+   50 puts both parts of each payment, principal and interest, in financing
+   cash flows. So operating cash flow is ₹{{ l.rent }} lakh higher; total cash
+   out is the same ₹{{ l.rent }} lakh.
+5. **Year-1 profit fell slightly.** The P&L charge was
+   ₹{{ l.y1_charge_minus_rent }} lakh more than the rent, so profit before
+   tax was lower. The charge stays above the rent in years 2 and 3 and
+   falls below it from year 4.
+
+## Common mistakes
+
+1. **Comparing EBITDA across the change.** A retailer, airline or hospital
+   that leases most of its space reports a far higher EBITDA under Ind AS
+   116 than under the old rules, or than a peer whose rents stay in operating
+   costs (short-term, low-value or sales-linked leases). Against a peer that
+   owns its buildings it now looks alike: both carry the cost below EBITDA. The
+   sector posts on [telecom]({% post_url 2026-10-23-telecom-arpu-and-the-limits-of-sector-lenses %})
+   and [airlines]({% post_url 2026-12-15-airlines-load-factor-rask-cask %})
+   show the measures readers and companies use around this, such as EBITDA
+   after lease costs and EBITDAR (EBITDA before rentals).
+2. **Counting lease liabilities in some ratios and not others.** If EBITDA
+   excludes the rent, debt should include the lease liability, and
+   [enterprise value]({% post_url 2026-10-13-enterprise-value %}) too.
+   Mixing an Ind AS 116 EBITDA with a debt figure that leaves out leases
+   flatters the company.
+3. **Reading higher operating cash flow as better business.** The same rent
+   is still paid; under Ind AS 116 all of it has moved to financing. A free
+   cash flow figure that subtracts only capex leaves the lease payments out.
+4. **Assuming every lease is on the balance sheet.** Short-term and
+   low-value leases can stay as an expense, and variable payments, such as
+   rent tied to sales, are generally left out of the liability. The notes
+   say which.
+
+**Takeaway:** Ind AS 116 turns a multi-year rent into an asset and a debt,
+so the same cash shows up as depreciation and interest instead of rent. EBITDA
+rises, interest cover falls and net debt grows, with nothing about the
+business changed, so compare companies on the same basis.
+
+## Sources
+
+- Ind AS 116, *Leases*, paragraphs 5, 22, 26–27, 31–32, 36–38, 49–50, B8 and Appendix A
+  (short-term lease), read on 21 November 2026 in
+  [a copy of the notified standard](https://ca2013.com/rule/indian-accounting-standard-ind-116-2/)
+  on the Companies Act Integrated Ready Reckoner, a third-party site, because
+  the Ministry of Corporate Affairs' (MCA's) [Ind AS page](https://www.mca.gov.in/content/mca/global/en/acts-rules/ebooks/accounting-standards.html)
+  refuses automated requests. Check against MCA's current text.

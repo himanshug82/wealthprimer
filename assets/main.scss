@@ -217,18 +217,48 @@ hr {
     transition: color 0.15s ease, background-color 0.15s ease;
 
     &:hover { color: var(--ink); background: var(--surface-2); text-decoration: none; }
-    &[aria-current="page"] { color: var(--brand); background: var(--brand-soft); }
+    // "page" = this is the section page; "true" = a post or page inside that section.
+    &[aria-current] { color: var(--brand); background: var(--brand-soft); }
   }
 
   .menu-icon > svg path { fill: var(--ink); }
 }
 
-@media screen and (min-width: 700px) {
+// Header search box (decision D2). Shown when there is room for it beside the six nav
+// items; below that the nav carries a "Search" link to /search/ instead.
+.site-search {
+  display: none;
+  margin: 0 1rem 0 auto;
+
+  input {
+    width: 13rem;
+    padding: 0.45rem 0.9rem;
+    font: inherit;
+    font-size: 0.9rem;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--rule-strong);
+    border-radius: 999px;
+
+    &::placeholder { color: var(--muted); }
+    &:focus { outline: 2px solid var(--brand); outline-offset: 1px; border-color: var(--brand); }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .site-search { display: block; }
+  .site-nav .page-link-search { display: none; }
+}
+
+// The six section links plus "Search" need about 820px beside the wordmark; below that the
+// header uses the menu button (minima's checkbox menu), so labels never wrap mid-word.
+@media screen and (min-width: 820px) {
   .site-nav .trigger { display: flex; gap: 0.15rem; }
+  .site-nav .page-link { white-space: nowrap; }
   .site-nav .page-link:not(:last-child) { margin-right: 0; }
 }
 
-@media screen and (max-width: 699px) {
+@media screen and (max-width: 819px) {
   .site-nav {
     position: absolute;
     top: 0.75rem;
@@ -1120,6 +1150,65 @@ div.language-python {
 // ---------------------------------------------------------------------------
 // Series pages (/series/<slug>/) and the /series/ index
 // ---------------------------------------------------------------------------
+// Journey pages (/learn/, /analyse/, /portfolio/, /risk-and-tax/): _layouts/journey.html.
+.journey-intro {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  line-height: 1.55;
+  color: var(--muted);
+  margin-bottom: 1.6em;
+}
+.post-content .journey-series { grid-template-columns: 1fr; margin-bottom: 2em; }
+.post-content .journey-series .series-card-title { margin-top: 0; }
+.journey-links { font-family: var(--font-sans); }
+
+// Search page (/search/): assets/js/search.js fills #search-results.
+.search-page-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0 0 1.4rem;
+  font-family: var(--font-sans);
+
+  input {
+    flex: 1 1 16rem;
+    padding: 0.7rem 1rem;
+    font: inherit;
+    font-size: 1rem;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--rule-strong);
+    border-radius: 999px;
+    &:focus { outline: 2px solid var(--brand); outline-offset: 1px; border-color: var(--brand); }
+  }
+  button {
+    padding: 0.7rem 1.3rem;
+    font: inherit;
+    font-weight: 600;
+    color: #fff;
+    background: var(--brand);
+    border: 0;
+    border-radius: 999px;
+    cursor: pointer;
+    &:hover { background: var(--brand-strong); }
+  }
+}
+// Space is reserved for the status line and results, which arrive after search.json
+// loads, so the footer doesn't jump (layout shift).
+.search-status { font-family: var(--font-sans); color: var(--muted); font-size: 0.95rem; min-height: 1.5em; }
+.search-results {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  min-height: 70vh;
+  font-family: var(--font-sans);
+
+  li { padding: 0.9rem 0; border-top: 1px solid var(--rule); }
+  a { font-weight: 600; font-size: 1.05rem; color: var(--ink); }
+  .search-meta { display: block; font-size: 0.82rem; color: var(--muted); margin: 0.15rem 0 0.3rem; }
+  p { margin: 0; font-size: 0.93rem; line-height: 1.5; color: var(--text); }
+}
+
 .series-description {
   font-family: var(--font-serif);
   font-size: 1.2rem;

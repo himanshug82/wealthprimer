@@ -13,6 +13,16 @@
       <span class="site-title-text">{{ site.title | escape }}</span>
     </a>
 
+    {%- comment -%}
+      Site search (decision D2). A plain GET form, so it works without JavaScript as far as
+      /search/?q=..., where assets/js/search.js filters /search.json. Hidden on phones, where
+      the menu has a "Search" link instead.
+    {%- endcomment -%}
+    <form class="site-search" role="search" action="{{ '/search/' | relative_url }}" method="get">
+      <label class="visually-hidden" for="site-search-q">Search Wealth Primer</label>
+      <input id="site-search-q" type="search" name="q" placeholder="Search explainers" autocomplete="off">
+    </form>
+
     {%- if page_paths -%}
       <nav class="site-nav" aria-label="Main">
         <input type="checkbox" id="nav-trigger" class="nav-trigger" />
@@ -25,16 +35,35 @@
           </span>
         </label>
 
+        {%- comment -%}
+          Which nav item is "current": the page's own `nav_section` (journey pages, glossary,
+          case study, methodology, tools, about), else the journey that owns its series
+          (posts and /series/<slug>/ pages, via _data/journeys.yml), else `tools` for the
+          tool pages. A post's section is marked aria-current="true" (it is in that section,
+          not on its page); only the section page itself gets aria-current="page".
+        {%- endcomment -%}
+        {%- assign section = page.nav_section -%}
+        {%- unless section -%}
+          {%- assign s_slug = page.series | default: page.series_slug -%}
+          {%- if s_slug -%}
+            {%- for j in site.data.journeys -%}
+              {%- if j.series contains s_slug -%}{%- assign section = j.slug -%}{%- endif -%}
+            {%- endfor -%}
+          {%- elsif page.collection == "tools" -%}
+            {%- assign section = "tools" -%}
+          {%- endif -%}
+        {%- endunless -%}
         <div class="trigger">
           {%- for path in page_paths -%}
             {%- assign my_page = site.pages | where: "path", path | first -%}
             {%- if my_page.title -%}
-            {%- assign is_current = false -%}
-            {%- if page.url == my_page.url -%}{%- assign is_current = true -%}{%- endif -%}
-            {%- if my_page.url == '/series/' and page.url contains '/series/' -%}{%- assign is_current = true -%}{%- endif -%}
-            <a class="page-link" href="{{ my_page.url | relative_url }}"{% if is_current %} aria-current="page"{% endif %}>{{ my_page.nav_title | default: my_page.title | escape }}</a>
+            {%- assign current_attr = "" -%}
+            {%- if page.url == my_page.url -%}{%- assign current_attr = ' aria-current="page"' -%}
+            {%- elsif section and my_page.nav_section == section -%}{%- assign current_attr = ' aria-current="true"' -%}{%- endif -%}
+            <a class="page-link" href="{{ my_page.url | relative_url }}"{{ current_attr }}>{{ my_page.nav_title | default: my_page.title | escape }}</a>
             {%- endif -%}
           {%- endfor -%}
+          <a class="page-link page-link-search" href="{{ '/search/' | relative_url }}"{% if page.url == '/search/' %} aria-current="page"{% endif %}>Search</a>
         </div>
       </nav>
     {%- endif -%}

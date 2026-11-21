@@ -1,0 +1,44 @@
+# The reader journeys in the top navigation (decision D2, 21 Nov 2026; see
+# WEALTH_PRIMER_MASTER_PLAN.md §5). Each has a page at /<slug>/ drawn by
+# _layouts/journey.html from this file.
+#
+#   series   series slugs (from _data/series.yml) that belong to this journey. A post in one of
+#            them lights up this journey in the header. A series belongs to one journey only.
+#   start    post slugs to offer first, in order. Only published ones show, so a scheduled
+#            post appears on its date with no edit here.
+#   links    other pages that belong here (glossary, case study...).
+#
+# Guides (the five flagship guides) will be listed here once they exist.
+- slug: learn
+  title: "Learn"
+  intro: "Start here when a term in a report or a news story stops you. Each explainer takes one word or ratio, shows the formula and works an example on real or fictional Indian numbers."
+  series: [jargon, market-basics]
+  start: [price-to-earnings, what-a-mutual-fund-is, sips-xirr-and-timing-myths, market-cap]
+  links:
+    - title: "Glossary"
+      url: /glossary/
+      note: "Every term explained on the site, A to Z."
+
+- slug: analyse
+  title: "Analyse"
+  intro: "How to read a company from its own filings, what charts and indicators measure (and don't), and how to judge a mutual fund by its numbers rather than its marketing."
+  series: [fundamental-analysis, technical-analysis, mutual-funds]
+  start: [reading-a-balance-sheet, reading-an-income-statement, reading-a-cash-flow-statement, rolling-returns, what-technical-analysis-is]
+  links:
+    - title: "The Desi Bites Foods case study"
+      url: /case-study/
+      note: "One fictional company with one set of books, used for every ratio."
+
+- slug: portfolio
+  title: "Portfolio"
+  intro: "The money decisions underneath investing: a cash buffer, where safe money waits, why diversification is about correlation, how overlap creeps in, and what rebalancing does."
+  series: [money-before-markets]
+  start: [emergency-fund-sizing, fixed-deposit-vs-debt-fund, diversification-is-a-correlation-problem, concentration-risk, portfolio-overlap, inflation-and-real-returns, sequence-of-returns-risk, stp-and-swp, rebalancing-arithmetic]
+  links: []
+
+- slug: risk-and-tax
+  title: "Risk & Tax"
+  intro: "What losses and leverage do to a portfolio, what SEBI's F&O studies found, the biases that turn a fall into a loss, and how capital gains, dividends and losses are taxed in India."
+  series: [risk, tax]
+  start: [the-arithmetic-of-losses, what-the-fo-numbers-actually-say, how-investment-income-is-taxed, short-term-vs-long-term]
+  links: []

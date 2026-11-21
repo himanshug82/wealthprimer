@@ -1,0 +1,31 @@
+---
+layout: null
+sitemap: false
+permalink: /search.json
+---
+{%- comment -%}
+The index /search/ filters (assets/js/search.js): every published post, every tool page, and
+the site's indexable pages. Built at deploy time, so a post enters the search on its publish
+date. Keys are short to keep the file small: t title, u url, d description, k glossary term,
+s section label, dt date (posts only).
+{%- endcomment -%}
+[
+{%- for p in site.posts -%}
+{%- assign meta = site.data.series | where: "slug", p.series | first -%}
+{%- assign label = meta.title | default: "" | split: " — " | first | default: "" -%}
+{"t":{{ p.title | jsonify }},"u":{{ p.url | relative_url | jsonify }},"d":{{ p.description | default: "" | jsonify }},"k":{{ p.term | default: "" | jsonify }},"s":{{ label | jsonify }},"dt":{{ p.date | date: "%-d %b %Y" | jsonify }}},
+{%- endfor -%}
+{%- for p in site.tools -%}
+{"t":{{ p.title | jsonify }},"u":{{ p.url | relative_url | jsonify }},"d":{{ p.description | default: "" | jsonify }},"k":"","s":"Calculator"},
+{%- endfor -%}
+{%- for p in site.pages -%}
+{%- unless p.description -%}{%- continue -%}{%- endunless -%}
+{%- if p.noindex or p.sitemap == false -%}{%- continue -%}{%- endif -%}
+{%- if p.layout == "series" and p.series_slug -%}
+{%- assign _n = site.posts | where: "series", p.series_slug | size -%}
+{%- if _n == 0 -%}{%- continue -%}{%- endif -%}
+{%- endif -%}
+{"t":{{ p.title | jsonify }},"u":{{ p.url | relative_url | jsonify }},"d":{{ p.description | jsonify }},"k":"","s":"Page"},
+{%- endfor -%}
+{"t":"","u":"","d":"","k":"","s":""}
+]

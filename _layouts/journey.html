@@ -1,0 +1,59 @@
+---
+layout: page
+---
+{%- comment -%}
+A reader-journey page (/learn/, /analyse/, /portfolio/, /risk-and-tax/), one of the top-nav
+sections chosen in decision D2. Everything comes from _data/journeys.yml (`journey:` in the
+page's front matter picks the entry) and _data/series.yml, and only published posts show, so a
+scheduled post or a new series appears on its date with no edit here.
+{%- endcomment -%}
+{%- assign j = site.data.journeys | where: "slug", page.journey | first -%}
+
+<p class="journey-intro">{{ j.intro }}</p>
+
+{{ content }}
+
+{%- capture start_items -%}
+{%- for s in j.start -%}
+{%- assign p = site.posts | where: "slug", s | first -%}
+{%- if p -%}
+{%- assign meta = site.data.series | where: "slug", p.series | first %}
+<li><a href="{{ p.url | relative_url }}">{{ p.title | escape }}</a>{% if meta %} <span class="series-date">{{ meta.title | split: " — " | first }}</span>{% endif %}</li>
+{%- endif -%}
+{%- endfor -%}
+{%- endcapture -%}
+
+{%- if start_items != "" %}
+<h2>Start here</h2>
+<ol class="series-list">{{ start_items }}
+</ol>
+{%- endif -%}
+
+{%- capture cards -%}
+{%- for slug in j.series -%}
+{%- assign s = site.data.series | where: "slug", slug | first -%}
+{%- assign in_series = site.posts | where: "series", slug | sort: "date" -%}
+{%- if in_series.size == 0 -%}{%- continue -%}{%- endif -%}
+{%- assign first_post = in_series | first %}
+<a class="series-card" href="{{ '/series/' | append: slug | append: '/' | relative_url }}">
+  <h3 class="series-card-title">{{ s.title }}</h3>
+  <p class="series-card-desc">{{ s.description }}</p>
+  <p class="series-card-meta">{{ in_series.size }} post{% if in_series.size != 1 %}s{% endif %} &middot; start with &ldquo;{{ first_post.title | split: ":" | first | escape | truncatewords: 9 }}&rdquo;</p>
+</a>
+{%- endfor -%}
+{%- endcapture -%}
+
+{%- if cards != "" %}
+<h2>Series in this section</h2>
+<div class="series-cards journey-series">{{ cards }}
+</div>
+{%- endif -%}
+
+{%- if j.links.size > 0 %}
+<h2>Also here</h2>
+<ul class="journey-links">
+  {%- for l in j.links %}
+  <li><a href="{{ l.url | relative_url }}">{{ l.title }}</a> &mdash; {{ l.note }}</li>
+  {%- endfor %}
+</ul>
+{%- endif %}

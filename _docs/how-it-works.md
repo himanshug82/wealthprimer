@@ -17,9 +17,10 @@ Moved out of `TODO.md` on 25 Oct 2026. `CLAUDE.md` is the writing rulebook; this
   GitHub's own builder (Jekyll 3.10) also rebuilt main on every push and raced
   the workflow: whichever finished last was live. The workflow builds with
   `bundle exec jekyll build`, the Gemfile's versions, same as local and PR checks.
-- **Cadence: one post per series per day.** Several posts share a date (one
-  per series); `check_posts.py` only warns when two posts from the SAME
-  series share one. A series skips a day when its next post links to a post
+- **Cadence: Mon/Wed/Fri, one post a day site-wide** (owner decision D6,
+  21 Nov 2026; before that one a day, D1, and earlier one per series per day).
+  Current list: `_review/schedule-2026-11-21-d6.md`. `check_posts.py` only
+  warns when two posts from the SAME series share a date. A series skips a day when its next post links to a post
   that hasn't published yet — never reorder posts within a series, and never
   add a forward `post_url` to make a date work.
 - **Rescheduling:** rename the file (`YYYY-MM-DD-slug.markdown`), change

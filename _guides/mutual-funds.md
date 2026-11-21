@@ -72,7 +72,7 @@ stages:
         why: "Measuring the holdings two funds share"
   - title: "Know the limits"
     posts:
-      - post: 2026-12-22-what-fund-metrics-cant-tell-you
+      - post: 2027-01-04-what-fund-metrics-cant-tell-you
         title: "What mutual fund metrics can't tell you"
         why: "What no number on a factsheet can settle"
 after:

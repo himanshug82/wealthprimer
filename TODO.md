@@ -75,7 +75,7 @@ Each claim is in a post, worded cautiously, but rests on a secondary source or m
 
 ## Open — content and tooling
 
-- **Newsletter (live 2 Nov 2026, Buttondown `wealthprimer`, weekly digest).** Owner: sign up once on the live site to confirm the form reaches Buttondown (buttondown.com/wealthprimer returned 404 on 2 Nov, so the account couldn't be checked from outside); set up the weekly RSS-to-email automation from `/feed.xml`; keep double opt-in on. Delete this item once a test signup has arrived.
+- **Newsletter removed 21 Nov 2026 (owner).** The signup form is gone; the end-of-post box offers RSS only. Owner: close or pause the Buttondown account `wealthprimer` (export the list first if anyone subscribed).
 
 - **SEO:** *margin of safety and sensitivity* (1 Oct) and *capital allocation* (8 Oct) still have no external link; add a primary source only if one genuinely fits (Graham's book has no authoritative online text).
 - **Calculators still to build** (approved plan): ratio calculator (phase 3) and Colab notebooks (phase 4). Built 2 Nov 2026 and verified by the owner: bond price/YTM/duration (YTM and modified-duration posts) and position size (position-sizing post). Add each to `_data/tools.yml` and link it from the posts a reader would use it in.

@@ -26,7 +26,7 @@ Turn Wealth Primer from a concept-by-concept finance blog into **an independent 
 1. Increase organic search traffic.
 2. Improve content quality and differentiation.
 3. Improve engagement and returning readership.
-4. Build a newsletter audience.
+4. ~~Build a newsletter audience.~~ Dropped 21 Nov 2026 (owner): the email newsletter was removed; readers follow by RSS.
 5. Establish a credible financial education brand.
 6. Generate AdSense revenue.
 7. Later: premium educational resources and investor tools.
@@ -99,7 +99,7 @@ Each is a hub page in one shared template, **guide option A with question cards*
 5. The Desi Bites case study and real-world examples.
 6. How we work: lagged data, scripted numbers, no tips, no paid promotions (links Methodology).
 7. Latest posts (short list).
-8. Newsletter.
+8. Follow box (RSS).
 
 Option B (tools-first) was not chosen: its hero needs an on-page rolling-returns calculator, three of the eight tools are Google Sheets, and it promises more than the tools deliver today. Until a guide exists, its goal card links to the matching series page.
 
@@ -121,7 +121,7 @@ Keep the stack. Improve, in this order:
 4. Design tokens extracted from `assets/main.scss`, then the hub/guide layout and homepage.
 5. Client-side search over a generated JSON index.
 6. An on-page rolling-returns calculator (and possibly SIP/XIRR), keeping the Sheets as "make a copy" downloads.
-7. GA4 events: calculator use, Sheet opens, newsletter sign-ups, outbound source clicks.
+7. GA4 events: calculator use, Sheet opens, outbound source clicks.
 8. Editorial standards and corrections page; author page.
 
 Not planned: generator migration, permalink changes, CMS, database, AMP.
@@ -134,7 +134,7 @@ Not planned: generator migration, permalink changes, CMS, database, AMP.
 | 2 | 3–4 | Owner decisions D1–D5 (**all decided** 21 Nov 2026); hygiene fixes (done: A1–A3); information architecture; homepage and hub wireframes (done; options chosen); design tokens (done: named in `assets/main.scss`, reference `_docs/design-tokens.md`) | **Done** 21 Nov 2026 |
 | 3 | 5–6 | Build, in order: (1) navigation and site search (**done**, PR #43); (2) the guide template and (3) the mutual funds guide (**done**, PR #44); (4) the new homepage (**done**; goal cards and featured calculators edited in `index.markdown`) | **Done** 21 Nov 2026 |
 | 4 | 7–8 | Content consolidation, internal linking, first flagship guides. **Done:** guides 1–4 (mutual funds PR #44, stocks #46, risk #47, portfolio #50); Money Before Markets module 2 written to fill the portfolio gap (#48, #49); FA module 5 drafted (#51); IMPROVE queue begun: GNPA answer (#53), direct answers on four not-indexed posts (#54), six indexing requests (#55). **Left:** guide 5, the Taxation Handbook (after the 1 Feb 2027 Budget re-check); choosing one owner post per head term (CONSOLIDATE); the rest of the IMPROVE queue (57 posts) | **In progress** |
-| 5 | 9–10 | Calculator experience, newsletter offer, analytics events. Ahead of schedule: the on-page goal-based investing calculator (#49), built under the D3 scope rule (#52). Analytics events wait on the owner's GA4 internal-traffic filter; the newsletter offer waits on the subscriber count | Not started (one calculator built early) |
+| 5 | 9–10 | Calculator experience and analytics events (the newsletter offer was dropped with the newsletter, 21 Nov 2026). Ahead of schedule: the on-page goal-based investing calculator (#49), built under the D3 scope rule (#52). Analytics events wait on the owner's GA4 internal-traffic filter | Not started (one calculator built early) |
 | 6 | 11–12 | SEO validation, distribution process, monitoring, next-quarter backlog | Not started |
 
 Sprint 2 backlog: `_review/sprint-1/sprint-2-recommendations.md`.
@@ -149,7 +149,6 @@ Leading indicators until the baseline is large enough to set honest targets. Ref
 | Search impressions (28 days) | To read at Sprint 2 start | Up |
 | Organic sessions | 21 since 1 Aug (all countries) | Up |
 | Returning users | 0 | Above 0, then up |
-| Newsletter subscribers | Unknown (owner to supply) | Up |
 
 ## 10. Top risks
 
@@ -179,6 +178,7 @@ Full register: `_review/sprint-1/technical-risk-register.md`.
 | D3 | Scope rule for decision-support tools | **Decided** (owner): generic inputs only | 21 Nov 2026 | Tools run on the reader's own assumptions and show the mechanics. They never rank, screen or score real securities or funds, review a reader's holdings, or say what to do; tools don't load real-fund data. Written into `CLAUDE.md`. First case: the goal-based investing calculator (PR #49) |
 | D4 | AdSense timing | **Decided** (owner): defer to a traffic bar | 21 Nov 2026 | Revisit when organic search brings 5,000+ sessions a month for two months running (GA4, internal and bot traffic filtered). Before any ad goes live: `ads.txt`, a consent tool, a privacy page update and category blocking (trading, crypto, betting), so ads can't contradict the no-paid-promotions promise |
 | D5 | Inventory actions | **Decided** (owner): approve, IMPROVE first | 21 Nov 2026 | Labels in `content-inventory.csv` approved as proposed (KEEP 58, IMPROVE 62, CONSOLIDATE 37; no redirects or deletions). IMPROVE posts are refreshed in Search Console order, pages with impressions first, one small PR each (`refresh-post`). CONSOLIDATE = link under the guides and pick one owner per head term, never merge |
+| — | Newsletter | **Decided** (owner): removed | 21 Nov 2026 | Email signup (Buttondown) removed from posts, guides and the homepage; the box at the end now offers the RSS feed only. Privacy page and the finfluencer post's disclosure updated to say there is no email list |
 
 Add each new decision as a row; never delete a row — mark it superseded.
 
@@ -186,7 +186,8 @@ Add each new decision as a row; never delete a row — mark it superseded.
 
 - ~~Resubmit `sitemap.xml` in Search Console.~~ Done: resubmitted and read on 21 Nov 2026, status Success, 179 pages discovered.
 - Add a GA4 internal-traffic filter; list the current key events.
-- Supply the Buttondown subscriber count and the AdSense application status.
+- Supply the AdSense application status.
+- Close or pause the Buttondown account (`wealthprimer`) now that the signup form is gone; export the list first if any subscribers should hear about RSS.
 - Check organic sessions monthly against the D4 bar (5,000+ a month, two months running).
 
 ## 13. Sprint record

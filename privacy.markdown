@@ -34,7 +34,6 @@ information to read it.
 {% assign has_ga = false %}{% if site.google_analytics and site.google_analytics != '' %}{% assign has_ga = true %}{% endif %}
 {% assign has_gc = false %}{% if site.goatcounter and site.goatcounter != '' %}{% assign has_gc = true %}{% endif %}
 {% assign has_comments = false %}{% if site.giscus.repo_id != '' and site.giscus.category_id != '' %}{% assign has_comments = true %}{% endif %}
-{% assign has_list = false %}{% if site.newsletter.action and site.newsletter.action != '' %}{% assign has_list = true %}{% endif %}
 {% if has_ga %}
 - **Analytics**: this site uses [Google Analytics 4](https://marketingplatform.google.com/about/analytics/)
   to count visits and see which posts are read. It records the page visited,
@@ -99,17 +98,9 @@ information to read it.
 - **Comments**: none. There is no comment system, so nothing is collected
   through one.
 {% endif %}
-{% if has_list %}
-- **Email list**: if you subscribe, the address you enter is stored by
-  {% if site.newsletter.provider == 'buttondown' %}[Buttondown](https://buttondown.com/legal/privacy){% else %}[Mailchimp](https://www.intuit.com/privacy/statement/){% endif %},
-  which runs the list, and is used only to send new posts. It is never sold or
-  shared, and every email carries a one-click unsubscribe link that removes you
-  immediately. The signup form posts directly to the provider — no signup
-  script or tracking pixel runs on this site.
-{% else %}
-- **Email**: there is no mailing list. If you write to the address below, your
-  message sits in an ordinary mailbox and isn't added to any list.
-{% endif %}
+- **Email**: there is no mailing list and no signup form, so no email address
+  is collected. If you write to the address below, your message sits in an
+  ordinary mailbox and isn't added to any list.
 - **Server logs**: this site is hosted on GitHub Pages, which — like any web
   host — receives and may log standard request data such as your IP address
   and browser user-agent in the course of serving the page. That processing
@@ -117,10 +108,10 @@ information to read it.
   [GitHub's Privacy Statement](https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement).
 
 <!--
-MAINTENANCE: the analytics, cookie, third-party, comments and email bullets
+MAINTENANCE: the analytics, cookie, third-party and comments bullets
 above are CONDITIONAL on the same _config.yml keys that switch the features on
-(`google_analytics:`, `goatcounter:`, `giscus.repo_id`/`category_id`, and
-`newsletter.action`). Turn a feature on and its disclosure turns on with it —
+(`google_analytics:`, `goatcounter:` and `giscus.repo_id`/`category_id`).
+Turn a feature on and its disclosure turns on with it —
 the two cannot silently disagree, which is the failure mode this page most
 needs to avoid.
 

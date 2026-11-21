@@ -51,5 +51,5 @@
 - slug: market-basics
   title: "Your first year in the market"
   description: "What actually happens when you open a demat account, nominate someone, place an order, apply for an IPO, or file a complaint in India."
-  about: "For the plumbing between you and your first trade: the accounts, the nomination rules, order types, the charges on a contract note, how an IPO application blocks and releases your money, where complaints go, and what a merger does to your holding. Rules are dated and sourced to SEBI, the exchanges and the depositories, and nothing here tells you what to buy."
-  planned: 7   # Module 1 (7): demat accounts, nomination, order types, contract note, IPO application, SCORES and SMART ODR, mergers and demergers
+  about: "For the plumbing between you and your first trade: the accounts, the nomination rules, order types, the charges on a contract note, how an IPO application blocks and releases your money, where complaints go, what a merger does to your holding, and then what's inside a demat account: the consolidated account statement, KYC, the opening and closing auctions, delivery vs intraday trades, margin pledges and corporate actions. Rules are dated and sourced to SEBI, the exchanges and the depositories, and nothing here tells you what to buy."
+  planned: 13   # Module 1 (7): demat accounts, nomination, order types, contract note, IPO application, SCORES and SMART ODR, mergers and demergers + Module 2 (6): CAS, KYC, pre-open and closing auction, delivery vs intraday, margin pledge, corporate actions

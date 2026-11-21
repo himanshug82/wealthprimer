@@ -2,7 +2,7 @@
 layout: post
 title: "GNPA, NNPA, provision coverage and credit cost: the loans that don't come back"
 seo_title: "GNPA, NNPA and provision coverage explained"
-description: "A bank's real cost of goods is the loans that fail. How a missed EMI becomes an NPA, how provisions turn gross into net, and why profit is partly a choice."
+description: "GNPA vs NNPA: gross NPA counts every bad loan in full; net NPA subtracts the provisions already set aside. Both ratios, worked on HDFC Bank's FY25 figures."
 image: /assets/og/gnpa-nnpa-and-provisions.png
 date: 2026-10-13 09:00:00 +0530
 series: fundamental-analysis
@@ -16,6 +16,13 @@ term: "Gross NPA and net NPA"
 {% assign d = b.derived_fy25 %}
 
 ## The cost that arrives late
+
+**GNPA vs NNPA, in short:** gross NPA (GNPA) is the full balance of every
+loan that has stopped paying, which in India means more than 90 days
+overdue. Net NPA (NNPA) is what's left after subtracting the provisions the
+bank has already set aside against those loans. GNPA shows how much went
+bad; NNPA shows how much of that the bank hasn't yet absorbed in its
+profits. The rest of this post builds up to both, with a worked example.
 
 A manufacturer knows its cost of goods when it ships. A bank finds out its
 real cost of goods over the next several years, as it learns which loans
@@ -35,7 +42,7 @@ clock starts. In India the classification is rule-based (the Reserve Bank of
 India's, or RBI's, income recognition and asset
 classification norms), which is what makes it comparable across banks:
 
-![NPA lifecycle]({{ '/assets/charts/bank-npa-lifecycle.svg' | relative_url }}){: width="760" height="330"}
+![How a loan moves from standard to SMA, sub-standard, doubtful, loss and write-off as days overdue rise]({{ '/assets/charts/bank-npa-lifecycle.svg' | relative_url }}){: width="760" height="330"}
 
 | Stage | Definition (simplified) | What the bank does |
 |---|---|---|

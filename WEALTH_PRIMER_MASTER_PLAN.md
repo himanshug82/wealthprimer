@@ -3,11 +3,12 @@
 The single, permanent reference for the Wealth Primer 2.0 transformation: what we are building, the rules it must respect, where it stands, and what has been decided. Keep it current. When a sprint ends or a decision is made, update the **Status** and **Decision log** sections here and link the evidence.
 
 - **Started:** 21 November 2026
-- **Last updated:** 21 November 2026 (Phases 1–3 done; Phase 4 in progress: four of five guides built, two modules drafted, D1–D5 decided, IMPROVE queue started)
+- **Last updated:** 21 November 2026 (Phases 1–3 done; Phase 4 in progress: four of five guides built, two modules drafted, D1–D5 decided, IMPROVE queue started; brief v2 merged, D6–D11 decided, D8 deferred)
 - **House rules for writing:** `CLAUDE.md` (they take precedence over anything here)
 - **How the site builds and publishes:** `_docs/how-it-works.md`
 - **Open editorial tasks:** `TODO.md`
 - **Sprint evidence:** `_review/sprint-<n>/`
+- **Brief v2 (21 Nov 2026):** a revised owner brief was merged into this plan rather than starting over; what it changes, and the decisions it led to (D6–D11), are in §1 → *Brief v2* and §11
 
 ---
 
@@ -21,6 +22,26 @@ Turn Wealth Primer from a concept-by-concept finance blog into **an independent 
 
 **What "decision support" means here.** Frameworks, checklists, worked examples and calculators that run on the reader's own generic inputs and show the mechanics. It never means ranking, screening or scoring real securities, reviewing a reader's holdings, or telling anyone what to do. (Scope rule decided 21 Nov 2026, D3; written into `CLAUDE.md` under Calculators and code.)
 
+### Brief v2 (21 Nov 2026)
+
+The owner issued a revised transformation brief on 21 Nov 2026. It restates most of what this plan already covers (stay on Jekyll and GitHub Pages, preserve URLs, education not advice, evidence before decisions, small reviewable changes, a 12-week programme), so it is folded in here instead of restarting the programme. Its "Sprint 1, assessment only" step was already done (§13, sprint 1); the work continues from Phase 4.
+
+**Positioning statement (brief v2).** *An independent financial education and decision-support platform that helps Indian investors learn financial concepts, understand the underlying mathematics, analyse investments and make more informed financial decisions.* Core philosophy: **Learn → Analyse → Decide → Manage Risk.** It is not to become a stock-tips site, a news aggregator, an affiliate site, a generic AI-written blog, or a source of return promises. This matches §1 and the D3 scope rule; "Decide" means the reader decides with frameworks and their own inputs, never that the site decides for them.
+
+**What brief v2 adds or changes**
+
+| Area | Brief v2 | Where it lands in this plan |
+|---|---|---|
+| Content volume | "Not pursuing article volume as a growth strategy"; new articles must pass a justification gate | **D6 decided:** 2–3 posts a week (supersedes D1); the gate is in §6 |
+| Distribution | Organic search, newsletter, LinkedIn, repurposing; no paid ads | **D7 decided:** RSS plus LinkedIn; no newsletter for now |
+| Monetisation | Premium programmes, advanced tools, downloads, courses, membership | §2 has AdSense (objective 6) gated by D4. **D8 deferred** until traffic nears the D4 bar |
+| Navigation | Learn · Analyse · Manage Wealth · Risk & Tax · Tools | **D9 decided:** keep "Portfolio" (D2, live) |
+| Inventory labels | Keep · Improve · Consolidate · Redirect · Retire · **Monitor** | **D10 decided:** MONITOR added to the D5 labels (§6) |
+| Credibility | Editorial principles, correction and update policy, last-reviewed information, author credibility | §7 item 8, now expanded |
+| Analytics | Events for calculator starts and completions, learning-pathway progression, internal navigation, subscriptions | §7 item 7, now expanded; §9 |
+| Documentation | Twelve documents in `/docs` | One master plan plus `_review/` evidence; **D11 decided**; mapping in §11 |
+| Article audit criteria | Accuracy, originality, intent, performance, authority, depth, linking, freshness, duplication, relevance, pathway fit | Most are columns in `content-inventory.csv` already; originality, freshness and pathway fit to be added when the IMPROVE queue reaches each post |
+
 ## 2. Business objectives, in order
 
 1. Increase organic search traffic.
@@ -28,7 +49,7 @@ Turn Wealth Primer from a concept-by-concept finance blog into **an independent 
 3. Improve engagement and returning readership.
 4. ~~Build a newsletter audience.~~ Dropped 21 Nov 2026 (owner): the email newsletter was removed; readers follow by RSS.
 5. Establish a credible financial education brand.
-6. Generate AdSense revenue.
+6. Generate AdSense revenue. *(Brief v2 lists premium learning, tools, downloads, courses and membership instead and does not mention ads; which model leads is open as D8.)*
 7. Later: premium educational resources and investor tools.
 
 Objectives 1–5 come before 6 and 7. A finance site earns ads and paid products only after it has earned trust and traffic.
@@ -105,11 +126,13 @@ Option B (tools-first) was not chosen: its hero needs an on-page rolling-returns
 
 ## 6. Content strategy
 
-- **Publish daily, improve in parallel.** The owner set one post a day (D1, 21 Nov 2026): the written backlog now runs to 1 Feb 2027 (Money Before Markets M2 and FA M5 drafted 21 Nov). Four modules approved 21 Nov 2026 cover 2–25 Feb 2027 (MF M5, Jargon M10, Market basics M2, Tax M4 after the Budget); after that the site needs new modules again. Improving and interlinking existing posts (hubs, refreshes) runs alongside, and the indexed share of published posts is the check on whether the pace is hurting.
+- **Fewer posts, improve in parallel.** D6 (21 Nov 2026) sets 2–3 posts a week, superseding D1's one a day. Time-sensitive posts and tax posts keep their dates; the other 68 were re-dated to Mon/Wed/Fri, 16 Dec 2026 – 21 May 2027 (PR #64). Under D1 the written backlog ran to 1 Feb 2027 (Money Before Markets M2 and FA M5 drafted 21 Nov). Four modules approved 21 Nov 2026 cover 2–25 Feb 2027 (MF M5, Jargon M10, Market basics M2, Tax M4 after the Budget); at the slower pace that backlog lasts well into 2027, so no new module is planned until the indexed share rises, and any that is must pass the gate below. Improving and interlinking existing posts (hubs, refreshes) runs alongside, and the indexed share of published posts is the check on whether the pace is hurting.
 - **Every published post has a proposed action** in `_review/sprint-1/content-inventory.csv`: KEEP 58 · IMPROVE 62 · CONSOLIDATE 37 · REDIRECT 0 · RETIRE 0 (59 scheduled posts not yet labelled). Labels approved 21 Nov 2026 (D5): IMPROVE posts are worked first, in Search Console order (pages with impressions first), one small PR at a time. CONSOLIDATE is largely served by the four flagship guides; the remaining work is choosing one owner per head term.
 - **CONSOLIDATE** means connect overlapping posts under a hub and choose which one owns the head term. It does not mean merge or redirect.
 - **Priority clusters** (from Search Console): rolling returns (14 query variants, the only calculator demand); exit load / expense ratio / NAV; ex-date vs record date; trend lines; banking ratios.
 - **Tax content** stays mechanics-only with primary sources, and is re-checked after each Union Budget.
+- **MONITOR label (D10).** Added to the D5 labels for posts under about 90 days old, or with too little Search Console data to judge. They are re-labelled at the monthly review. `content-inventory.csv` gets the label when the 90 scheduled posts are first labelled.
+- **New-article gate (brief v2).** A new article is proposed only if it does at least one of: build credibility and topical authority; capture meaningful, relevant search demand; fill an important knowledge gap; strengthen an existing learning pathway; give a distinctive, evidence-based explanation the site lacks. The proposal states the reader problem, audience, search intent, primary and secondary keywords, the evidence of demand (or the authority rationale), overlapping Wealth Primer posts and why they can't serve the need, the unique value, the primary sources needed, and the expected contribution. No two articles chase the same intent. `plan-module` roadmaps should carry these fields from the next module on; modules already approved (2–25 Feb 2027) are not re-gated unless D6 says so.
 
 ## 7. Technical strategy
 
@@ -121,8 +144,8 @@ Keep the stack. Improve, in this order:
 4. Design tokens extracted from `assets/main.scss`, then the hub/guide layout and homepage.
 5. Client-side search over a generated JSON index.
 6. An on-page rolling-returns calculator (and possibly SIP/XIRR), keeping the Sheets as "make a copy" downloads.
-7. GA4 events: calculator use, Sheet opens, outbound source clicks.
-8. Editorial standards and corrections page; author page.
+7. GA4 events: calculator starts and completions, Sheet opens, outbound source clicks, guide (learning-pathway) progression, internal post-to-post and post-to-tool navigation, follow/RSS clicks (and subscriptions if D7 brings a newsletter back). Needs the owner's internal-traffic filter first.
+8. Editorial standards page (principles, how numbers are produced, sourcing), a corrections and update policy with a visible "last reviewed" date on posts, and a stronger author page.
 
 Not planned: generator migration, permalink changes, CMS, database, AMP.
 
@@ -156,7 +179,7 @@ Full register: `_review/sprint-1/technical-risk-register.md`.
 
 | Risk | Mitigation |
 |---|---|
-| Google judges the site low-value (fast volume, new YMYL domain) | Daily pace chosen (D1); offset with improving and interlinking, hubs, visible editorial standards; monthly indexed-share check |
+| Google judges the site low-value (fast volume, new YMYL domain) | Pace cut to three posts a week from 16 Dec 2026 (D6); offset with improving and interlinking, hubs, visible editorial standards; monthly indexed-share check |
 | "Decision support" drifts into advice | Scope rule D3 in `CLAUDE.md` before building evaluation tools |
 | ~~Production and CI build differently~~ | **Resolved 21 Nov 2026**: workflow builds with the Gemfile; Pages source is GitHub Actions |
 | Rule/tax accuracy without professional review | Existing `needs_review` safeguards; post-Budget re-check |
@@ -171,7 +194,7 @@ Full register: `_review/sprint-1/technical-risk-register.md`.
 | — | Production builds only through the Actions workflow with the Gemfile; Pages source set to "GitHub Actions" | **Decided** (owner) | 21 Nov 2026 | PR #36 and settings change; ends the race with GitHub's Jekyll 3.10 builder |
 | — | No URL changes, deletions or redirects without approval | **Decided** (brief) | 21 Nov 2026 | |
 | — | No professional tax review; process safeguards instead | **Decided** (owner) | 26 Oct 2026 | See `CLAUDE.md` → Professional review |
-| D1 | Publishing pace for the 59 scheduled posts | **Decided** (owner): one post a day | 21 Nov 2026 | 22 Nov 2026 – 19 Jan 2027, same order (`_review/schedule-2026-11-21.md`). Sprint 1 had recommended slowing down; watch the indexed share monthly and revisit if it falls |
+| D1 | Publishing pace for the 59 scheduled posts | **Decided** (owner): one post a day | 21 Nov 2026 | 22 Nov 2026 – 19 Jan 2027, same order (`_review/schedule-2026-11-21.md`). Sprint 1 had recommended slowing down; watch the indexed share monthly and revisit if it falls. **Superseded by D6** (21 Nov 2026) |
 | D2 | Navigation labels | **Decided** (owner): Learn · Analyse · Portfolio · Risk & Tax · Tools · About, plus search | 21 Nov 2026 | Series, Glossary, Case study, Methodology leave the top bar (see §5) |
 | — | Homepage direction | **Decided** (owner): option A, problem-first | 21 Nov 2026 | [Wireframes](https://claude.ai/artifact/HxbMJTyDtRPqJsMAVf2VQV); option B (tools-first) set aside |
 | — | Guide page template | **Decided** (owner): option A (ordered path) with option B's question cards | 21 Nov 2026 | First built for the mutual funds guide |
@@ -179,6 +202,13 @@ Full register: `_review/sprint-1/technical-risk-register.md`.
 | D4 | AdSense timing | **Decided** (owner): defer to a traffic bar | 21 Nov 2026 | Revisit when organic search brings 5,000+ sessions a month for two months running (GA4, internal and bot traffic filtered). Before any ad goes live: `ads.txt`, a consent tool, a privacy page update and category blocking (trading, crypto, betting), so ads can't contradict the no-paid-promotions promise |
 | D5 | Inventory actions | **Decided** (owner): approve, IMPROVE first | 21 Nov 2026 | Labels in `content-inventory.csv` approved as proposed (KEEP 58, IMPROVE 62, CONSOLIDATE 37; no redirects or deletions). IMPROVE posts are refreshed in Search Console order, pages with impressions first, one small PR each (`refresh-post`). CONSOLIDATE = link under the guides and pick one owner per head term, never merge |
 | — | Newsletter | **Decided** (owner): removed | 21 Nov 2026 | Email signup (Buttondown) removed from posts, guides and the homepage; the box at the end now offers the RSS feed only. Privacy page and the finfluencer post's disclosure updated to say there is no email list |
+
+| D6 | Publishing pace under brief v2 ("not volume") | **Decided** (owner): 2–3 posts a week, new-article gate on unapproved modules | 21 Nov 2026 | Supersedes D1. Time-sensitive and tax posts keep their dates; the rest move to 2–3 a week until the indexed share of published posts rises, then revisit. The §6 new-article gate applies to every module not yet approved. Reversible. **Applied 21 Nov 2026** (PR #64): the 22 posts of 22 Nov – 13 Dec 2026 keep their dates; the other 68 publish Mon/Wed/Fri, 16 Dec 2026 – 21 May 2027 (`_review/schedule-2026-11-21-d6.md`) |
+| D7 | Distribution channels | **Decided** (owner): RSS plus LinkedIn, no newsletter for now | 21 Nov 2026 | Brief v2 names newsletter and LinkedIn; the newsletter was removed the same day. Chosen: RSS plus LinkedIn, until there are returning readers worth emailing. LinkedIn posts follow the Twitter rule (hook plus link, no duplicate threads) |
+| D8 | Monetisation model | **Deferred** (owner): decide before the D4 traffic bar is near | 21 Nov 2026 | AdSense (objective 6, D4) or brief v2's premium resources, courses and membership, or both. Either waits for the D4 traffic bar; decide before that bar is near |
+| D9 | Third navigation label | **Decided** (owner): keep "Portfolio" | 21 Nov 2026 | "Portfolio" (D2, live) or brief v2's "Manage Wealth". Kept: "Portfolio" is shorter, already live, and matches the guide title |
+| D10 | Add a MONITOR inventory label | **Decided** (owner): yes | 21 Nov 2026 | For posts under about 90 days old or with too little Search Console data to judge; they are re-labelled at the monthly review |
+| D11 | Project documentation structure | **Decided** (owner): one master plan, no `/docs` set | 21 Nov 2026 | Brief v2 asks for twelve documents in `/docs` but also says to avoid redundancy. Kept: this plan is the one living document and split a section out only when it outgrows it. Mapping: charter, strategy and positioning → §1–3; current-state audit → §4 and `_review/sprint-1/`; information architecture → §5; SEO strategy → §6–7 and `_review/sprint-1/technical-seo-audit.md`; content audit → `_review/sprint-1/content-inventory.csv`; editorial guidelines → `CLAUDE.md`; technical blueprint → §7 and `_docs/how-it-works.md`; analytics plan → §7 item 7 and §9; backlog → §8 and `TODO.md`; decision log → §11; changelog → §13 and git history |
 
 Add each new decision as a row; never delete a row — mark it superseded.
 
@@ -189,6 +219,8 @@ Add each new decision as a row; never delete a row — mark it superseded.
 - Supply the AdSense application status.
 - Close or pause the Buttondown account (`wealthprimer`) now that the signup form is gone; export the list first if any subscribers should hear about RSS.
 - Check organic sessions monthly against the D4 bar (5,000+ a month, two months running).
+- D6–D11 decided 21 Nov 2026 (D8 deferred). Revisit D8 before the D4 traffic bar is near.
+- Set up a LinkedIn page or profile for Wealth Primer distribution (D7), if one doesn't exist.
 
 ## 13. Sprint record
 

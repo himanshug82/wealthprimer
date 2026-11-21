@@ -39,7 +39,7 @@ Every post in the learning series (jargon glossary is the exception — see belo
 2. **Formula** — the actual formula/calculation, shown clearly (use a code block or table, not prose, for the math itself).
 3. **Worked example** — a real, numbered walkthrough using 3-month-lagged price/financial data, with the as-of date stated.
 4. **Common mistakes** — 2–4 ways beginners misread or misapply this concept. This section is a big part of what makes the blog worth reading over a generic explainer, so don't skip it or phone it in.
-5. **Takeaway** — a 2–3 sentence summary, written to be quotable/tweetable on its own (see Twitter section below). Start the paragraph with `**Takeaway:**` exactly — the post layout styles it as a card. The **first sentence must stand alone at ≤280 characters**; most takeaways in the Sept 2026 review ran 60–90 words and weren't tweetable. Don't pack it with figures.
+5. **Takeaway** — a 2–3 sentence summary, written to be quotable/tweetable on its own (see the Twitter and LinkedIn section below). Start the paragraph with `**Takeaway:**` exactly — the post layout styles it as a card. The **first sentence must stand alone at ≤280 characters**; most takeaways in the Sept 2026 review ran 60–90 words and weren't tweetable. Don't pack it with figures.
 
 Glossary-series posts (jargon/ratios) can be shorter — definition → formula → one small worked example → takeaway — since "common mistakes" often collapses into the definition for a single-ratio explainer. Use judgment; don't pad.
 
@@ -95,9 +95,9 @@ Google Sheet calculators and Python/pandas snippets are woven in **where the top
 
 **Scope rule for tools (owner decision D3, 21 Nov 2026).** Every calculator, sheet or other reader tool runs on the reader's own generic inputs (amounts, rates, years, assumptions) and shows the mechanics. A tool never ranks, screens or scores real securities or funds, never reviews a reader's holdings, never loads real-fund or real-company data for the reader to pick from, and never says what to do. Defaults may reproduce a post's worked example, labelled as such. The goal-based investing calculator is the model case.
 
-## Twitter
+## Twitter and LinkedIn
 
-Twitter is a distribution channel, not a second content stream. Don't write threads that duplicate a post's content — write a short hook (often the post's takeaway line) plus a link. This is also why the "takeaway" section of every post should be able to stand alone as a tweet.
+Twitter and LinkedIn are distribution channels, not a second content stream (LinkedIn added by owner decision D7, 21 Nov 2026; there is no email newsletter). Don't write threads or LinkedIn articles that duplicate a post's content — write a short hook (often the post's takeaway line) plus a link. The same compliance rules apply as in posts: no calls, no verdicts, no hype words. This is also why the "takeaway" section of every post should be able to stand alone as a tweet.
 
 ## Accuracy rules (learned the hard way)
 

@@ -1,0 +1,100 @@
+---
+layout: post
+title: "DSCR: covering repayments, not just interest"
+seo_title: "DSCR (debt service coverage ratio): formula and example"
+description: "DSCR compares the cash a business generates with everything it owes lenders in a year, principal included. The formula, its versions, and Desi Bites' FY26."
+image: /assets/og/dscr.png
+date: 2027-02-12 09:00:00 +0530
+series: jargon
+term: "DSCR (debt service coverage ratio)"
+---
+
+{% assign d = site.data.jargon_m10.dscr %}
+{% assign a = d.FY25 %}
+{% assign b = d.FY26 %}
+
+## What DSCR means
+
+The **debt service coverage ratio (DSCR)** compares what a business earns in
+cash terms with its **debt service**: everything it must pay lenders in the
+year, both interest and the principal repayments falling due.
+[Interest coverage]({% post_url 2026-09-17-interest-coverage %}) asks only
+whether profit covers the interest. DSCR asks whether it covers the
+repayments too, which is the question a lender cares about when a loan is
+being paid down in instalments.
+
+A DSCR above 1 means the year's earnings covered the year's debt service;
+below 1, the gap had to come from elsewhere: cash in hand, new borrowing, asset
+sales or new equity. Lenders
+define the numerator in different ways, so this post shows two. It's part of
+[Jargon, Decoded]({{ '/series/jargon/' | relative_url }}).
+
+## The formula
+
+```
+Debt service  =  interest  +  principal repaid in the year
+
+DSCR (a common lender version)  =  (PAT + depreciation and amortisation + interest) ÷ debt service
+DSCR (EBITDA version)           =  EBITDA ÷ debt service
+```
+
+PAT is profit after tax ([net margin]({% post_url 2026-08-30-net-margin %})
+explains it); [EBITDA]({% post_url 2026-08-28-ebitda-margin %}) is earnings
+before interest, tax, depreciation and amortisation. The first version adds back the non-cash
+depreciation and the interest that's being covered; the second starts before
+tax. Some lenders also use cash from operations, or subtract tax and capex.
+The definition in a loan agreement is the one that counts for that loan.
+
+## Worked example: Desi Bites, FY25 and FY26
+
+[Desi Bites Foods]({{ '/case-study/' | relative_url }}) is fictional. It has
+one term loan, repaid by ₹{{ b.repaid }} lakh a year in both years. Figures
+in ₹ lakh.
+
+| ₹ lakh | FY25 | FY26 |
+|---|---:|---:|
+| PAT | {{ a.pat }} | {{ b.pat }} |
+| Depreciation and amortisation | {{ a.da }} | {{ b.da }} |
+| Interest | {{ a.interest }} | {{ b.interest }} |
+| EBITDA | {{ a.ebitda }} | {{ b.ebitda }} |
+| Principal repaid | {{ a.repaid }} | {{ b.repaid }} |
+| **Debt service** | **{{ a.service }}** | **{{ b.service }}** |
+| DSCR, lender version | {{ a.dscr_lender }}× | {{ b.dscr_lender }}× |
+| DSCR, EBITDA version | {{ a.dscr_ebitda }}× | {{ b.dscr_ebitda }}× |
+| For comparison: interest cover | {{ a.interest_cover }}× | {{ b.interest_cover }}× |
+
+**Why DSCR is lower than interest cover.** Interest cover divides by
+interest alone. Adding the principal more than doubles the denominator, while
+the numerator rises only modestly, so the cover is smaller.
+
+**What the two versions pick up.** Because it starts from PAT, the lender
+version includes FY26's ₹{{ b.other_income }} lakh of other income (interest
+on the IPO cash) and the ₹{{ b.exceptional | abs }} lakh one-off cost; the
+EBITDA version includes neither. Taking the other income out, after tax, the
+lender version would be {{ b.dscr_lender_ex_oi }}×. FY25 had neither item.
+
+**What a bullet repayment does.** Suppose that in a later year, with FY26's
+earnings and interest, the remaining ₹{{ d.bullet.repaid }} lakh of the term
+loan fell due at once instead of in instalments. Debt service would be
+₹{{ d.bullet.service }} lakh and the lender-version DSCR
+{{ d.bullet.dscr_lender }}×. The business is the same; the repayment
+schedule changed the ratio. With its IPO (initial public offering) cash,
+Desi Bites could pay either way; a company without the cash would need to
+refinance or find it elsewhere.
+
+## Common mistakes
+
+1. **Using interest cover when the loan amortises.** A company can cover its
+   interest comfortably and still struggle to meet instalments. DSCR is the
+   test for repayments.
+2. **Comparing DSCRs built differently.** One source's DSCR may start from
+   EBITDA, another's from cash flow after tax. Check the formula before
+   comparing.
+3. **Reading one year's DSCR as the loan's safety.** Repayment schedules
+   change: a bullet year can pull DSCR down sharply even when the business
+   hasn't changed, as the example shows.
+
+**Takeaway:** DSCR asks whether a year's earnings cover everything owed to
+lenders, interest and principal, not just the interest. Lenders define it in
+different ways, and a lumpy repayment year can move it far more than the
+business does.

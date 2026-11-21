@@ -1,0 +1,108 @@
+---
+layout: post
+title: "ROIC: return on the capital actually invested"
+description: "ROIC is after-tax operating profit over the capital invested in the business, cash left out. The formula, how it differs from ROCE, and Desi Bites' FY26."
+image: /assets/og/roic.png
+date: 2027-02-08 09:00:00 +0530
+series: jargon
+term: "ROIC (return on invested capital)"
+---
+
+{% assign r = site.data.jargon_m10.roic %}
+{% assign a = r.FY25 %}
+{% assign b = r.FY26 %}
+
+## What ROIC means
+
+**ROIC, return on invested capital,** asks what the business earns, after
+tax, on the money actually tied up in running it. It uses operating profit
+after tax, called NOPAT (net operating profit after tax), and divides it by
+invested capital: what shareholders and lenders have put in, *minus* the cash
+the business is just holding.
+
+That last step is the difference from [ROCE]({% post_url 2026-09-03-roce %})
+(return on capital employed), which counts all of equity and borrowings,
+cash included. For a company sitting on a pile of cash, the two can tell
+quite different stories, as Desi Bites shows. ROIC has no single official
+definition, so this post states the one it uses. It's part of
+[Jargon, Decoded]({{ '/series/jargon/' | relative_url }}).
+
+## The formula
+
+EBIT is earnings before interest and tax: operating profit, before other
+income.
+
+```
+NOPAT             =  EBIT × (1 − tax rate)
+Invested capital  =  equity + borrowings − cash
+ROIC              =  NOPAT ÷ average invested capital
+
+For comparison:
+ROCE              =  EBIT ÷ average (equity + borrowings)        (pre-tax, cash included)
+```
+
+The tax rate here is the year's
+[effective rate]({% post_url 2026-12-04-effective-tax-rate %}): tax ÷
+profit before tax. Averages use the opening and closing balances, as the
+ROCE post does.
+
+## Worked example: Desi Bites, FY25 and FY26
+
+[Desi Bites Foods]({{ '/case-study/' | relative_url }}) is fictional. Figures
+in ₹ lakh. FY26 is the year it listed and raised IPO (initial public
+offering) money in June 2025.
+
+| ₹ lakh | FY25 | FY26 |
+|---|---:|---:|
+| EBIT | {{ a.ebit }} | {{ b.ebit }} |
+| Effective tax rate | {{ a.tax_rate_pct }}% | {{ b.tax_rate_pct }}% |
+| NOPAT | {{ a.nopat }} | {{ b.nopat }} |
+| Equity + borrowings − cash, at year-end | {{ a.invested_capital }} | {{ b.invested_capital }} |
+| Average invested capital | {{ a.invested_capital_avg }} | {{ b.invested_capital_avg }} |
+| **ROIC** | **{{ a.roic_pct }}%** | **{{ b.roic_pct }}%** |
+| Average capital employed (cash included) | {{ a.capital_employed_avg }} | {{ b.capital_employed_avg }} |
+| ROCE (pre-tax) | {{ a.roce_pct }}% | {{ b.roce_pct }}% |
+| ROCE after tax, for like-with-like | {{ a.roce_post_tax_pct }}% | {{ b.roce_post_tax_pct }}% |
+
+What it shows:
+
+1. **Even in FY25, ROIC was ahead.** On an after-tax basis it was
+   {{ a.roic_pct }}% against ROCE's {{ a.roce_post_tax_pct }}%, a gap of
+   {{ a.gap_pts }} points, because cash was already about
+   {{ a.cash_share_pct }}% of average capital employed.
+2. **In FY26 the gap widened to {{ b.gap_pts }} points.** Year-end cash,
+   swollen by the IPO, was ₹{% include inr.html n=b.cash %} lakh, and cash
+   averaged about {{ b.cash_share_pct }}% of capital employed. ROCE counts that
+   cash as capital the business must earn on, and fell to {{ b.roce_pct }}%
+   (pre-tax). But on this blog's EBIT, ROCE leaves out the
+   ₹{{ b.other_income }} lakh of interest the cash earned; with it included,
+   pre-tax ROCE would be {{ b.roce_incl_oi_pct }}%. ROIC leaves both the cash
+   and its interest out, and came to {{ b.roic_pct }}%: what the operating
+   business earned on the capital it uses.
+3. **The averaging matters in a year like this.** On the closing balance
+   alone, FY26 ROIC would be {{ b.roic_closing_pct }}%, partly because the
+   year-end includes the Chatpata acquisition, bought only in October, and
+   the year's capex.
+
+ROIC is often compared with the cost of capital: a business earning more on
+its invested capital than that capital costs is adding value, the idea the
+[capital allocation post]({% post_url 2026-10-08-capital-allocation %}) and
+the [WACC (weighted average cost of capital) post]({% post_url 2026-09-28-wacc-cost-of-capital %})
+work through.
+Whether Desi Bites clears that bar isn't assessed here.
+
+## Common mistakes
+
+1. **Comparing ROIC with a pre-tax ROCE.** ROIC is after tax; ROCE is usually
+   before. Put them on the same basis first, as the table's last row does.
+2. **Assuming everyone defines invested capital the same way.** Some subtract
+   all cash, some only "excess" cash; some take out goodwill, some don't (it's
+   in here). Check the definition before comparing two sources' figures.
+3. **Reading one year's ROIC as the business's level.** An acquisition or a
+   big capex year moves the denominator before the profit arrives. Look at
+   several years.
+
+**Takeaway:** ROIC divides after-tax operating profit by the capital actually
+invested in the business, leaving idle cash out, so it shows what the operating
+business earns. Next to ROCE, it separates operating returns from the drag of
+cash held.

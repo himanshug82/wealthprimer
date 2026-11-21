@@ -8,7 +8,7 @@ advance-tax-for-investors:
 - fo-is-business-income
 - esops-and-rsus
 - bonds-debentures-and-sgbs
-- losses-set-off-and-harvesting
+- equity-and-equity-funds
 adx-trend-strength:
 - rsi
 - bollinger-bands-and-atr
@@ -39,39 +39,39 @@ alpha:
 arbitrage-funds:
 - hybrid-funds
 - debt-funds-explained
-- liquid-and-overnight-funds
 - futures-basis-and-cost-of-carry
+- liquid-and-overnight-funds
 - stp-and-swp
 - bid-ask-spread-and-liquidity
 - index-funds-vs-etfs
-- the-riskometer
+- leverage-and-margin
 asm-and-gsm-surveillance:
 - pump-and-dump-and-operator-stocks
 - circuit-limits-and-price-bands
 - short-selling-mechanics
 - option-expiry-and-settlement
-- bulk-and-block-deals
 - scores-and-smart-odr
+- bulk-and-block-deals
 - t-plus-1-settlement
 - call-and-put-options
 asset-allocation:
 - asset-classes
 - limits-of-model-portfolios
 - rebalancing-arithmetic
-- investment-horizon
 - glide-path
+- investment-horizon
+- gold-silver-etfs-and-fofs
 - hybrid-funds
 - volatility-and-sharpe
-- diversification-is-a-correlation-problem
 asset-classes:
 - asset-allocation
 - investment-horizon
 - limits-of-model-portfolios
+- gold-silver-etfs-and-fofs
 - inflation-and-real-returns
 - price-vs-total-return-index
 - liquid-and-overnight-funds
 - rebalancing-arithmetic
-- fixed-deposit-vs-debt-fund
 asset-turnover:
 - roa
 - roe
@@ -86,25 +86,25 @@ aum:
 - what-a-mutual-fund-is
 - reading-a-factsheet
 - nfos
-- sebi-fund-categories-decoded
 - expense-ratios-direct-vs-regular
+- sebi-fund-categories-decoded
 - liquidity-risk
-- international-funds
+- exit-load
 authorised-issued-paid-up-capital:
 - face-value-splits-and-bonuses
 - book-value-per-share
 - rights-issues
 - diluted-eps-and-dilution
 - capital-allocation
-- eps
 - enterprise-value
+- eps
 - goodwill-exceptional-items-and-other-income
 before-you-file:
 - dividends-and-interest
 - equity-and-equity-funds
 - sips-and-fifo
-- losses-set-off-and-harvesting
 - how-investment-income-is-taxed
+- losses-set-off-and-harvesting
 - debt-funds-gold-and-the-rest
 - nri-investment-income
 - short-term-vs-long-term
@@ -152,14 +152,14 @@ bollinger-bands-and-atr:
 - what-technical-analysis-is
 - supertrend-indicator
 - what-technical-analysis-cannot-do
-- indicator-confluence-and-double-counting
+- pivot-points-and-round-numbers
 bonds-debentures-and-sgbs:
 - debt-funds-gold-and-the-rest
 - reits-and-invits
 - short-term-vs-long-term
 - how-investment-income-is-taxed
-- nri-investment-income
 - dividends-and-interest
+- nri-investment-income
 - buyback-taxation
 - equity-and-equity-funds
 book-value-per-share:
@@ -177,8 +177,8 @@ breakouts-and-false-breakouts:
 - support-and-resistance
 - indicator-confluence-and-double-counting
 - do-gaps-get-filled
-- volume
 - trend-lines
+- volume
 - obv-and-vwap
 broker-and-counterparty-risk:
 - t-plus-1-settlement
@@ -187,8 +187,8 @@ broker-and-counterparty-risk:
 - contingent-liabilities-pledges-and-promoter-holding
 - ipo-application-asba-upi
 - short-selling-mechanics
-- bulk-and-block-deals
 - margin-calls-and-peak-margin
+- contract-note-charges
 budget-day-and-muhurat-trading:
 - sell-in-may-and-month-of-year
 - stochastic-oscillator
@@ -205,15 +205,15 @@ bulk-and-block-deals:
 - t-plus-1-settlement
 - offer-for-sale-and-delisting
 - broker-and-counterparty-risk
-- circuit-limits-and-price-bands
 - contract-note-charges
+- circuit-limits-and-price-bands
 buyback-taxation:
 - dividends-and-interest
 - fo-is-business-income
 - esops-and-rsus
 - how-investment-income-is-taxed
-- equity-and-equity-funds
 - reits-and-invits
+- equity-and-equity-funds
 - foreign-stocks-and-schedule-fa
 - bonds-debentures-and-sgbs
 call-and-put-options:
@@ -239,8 +239,8 @@ capital-adequacy:
 - gnpa-nnpa-and-provisions
 - nim-and-the-spread
 - nbfcs-vs-banks-spread-borrowing-alm
-- valuing-a-bank-price-to-book
 - casa-and-the-deposit-franchise
+- valuing-a-bank-price-to-book
 - life-insurers-embedded-value-vnb-margin
 - interest-coverage
 capital-allocation:
@@ -259,8 +259,8 @@ capstone-britannia-end-to-end:
 - creditor-days
 - peg-ratio
 - roce
-- current-ratio
 - asset-turnover
+- quick-ratio
 casa-and-the-deposit-franchise:
 - nim-and-the-spread
 - why-ratios-break-on-a-bank
@@ -285,8 +285,8 @@ cement-ebitda-per-tonne-capacity-utilisation:
 - retail-sssg-revenue-per-sq-ft
 - airlines-load-factor-rask-cask
 - reading-quarterly-results
-- hospitals-arpob-occupancy
 - it-services-constant-currency-utilisation-attrition
+- hospitals-arpob-occupancy
 - telecom-arpu-and-the-limits-of-sector-lenses
 chart-patterns:
 - what-technical-analysis-cannot-do
@@ -296,16 +296,16 @@ chart-patterns:
 - what-technical-analysis-is
 - multiple-timeframe-analysis
 - adx-trend-strength
-- rsi
+- bollinger-bands-and-atr
 circuit-limits-and-price-bands:
 - order-types-explained
 - pump-and-dump-and-operator-stocks
 - asm-and-gsm-surveillance
 - bollinger-bands-and-atr
-- t-plus-1-settlement
 - bid-ask-spread-and-liquidity
+- t-plus-1-settlement
 - short-selling-mechanics
-- bulk-and-block-deals
+- volume
 compounding-and-time:
 - goal-based-investing
 - sips-xirr-and-timing-myths
@@ -314,7 +314,7 @@ compounding-and-time:
 - sequence-of-returns-risk
 - price-vs-total-return-index
 - asset-classes
-- asset-allocation
+- glide-path
 concentration-risk:
 - diversification-is-a-correlation-problem
 - beta
@@ -345,21 +345,21 @@ contingent-liabilities-pledges-and-promoter-holding:
 contract-note-charges:
 - demat-trading-bank-accounts
 - portfolio-turnover-ratio
-- order-types-explained
 - fo-is-business-income
+- order-types-explained
 - option-expiry-and-settlement
 - what-the-fo-numbers-actually-say
 - short-selling-mechanics
 - overtrading-and-costs
 credit-ratings-explained:
+- reading-a-debt-fund-portfolio
 - yield-to-maturity
 - modified-duration
-- the-riskometer
 - yield-curve-and-repo-rate
 - debt-funds-explained
+- the-riskometer
 - net-debt-ebitda
 - g-secs-and-t-bills
-- why-star-ratings-mislead
 creditor-days:
 - cash-conversion-cycle
 - debtor-days
@@ -375,8 +375,8 @@ currency-risk:
 - inflation-and-real-returns
 - foreign-stocks-and-schedule-fa
 - debt-funds-explained
-- arbitrage-funds
 - diversification-is-a-correlation-problem
+- arbitrage-funds
 - sips-xirr-and-timing-myths
 current-ratio:
 - net-working-capital
@@ -391,19 +391,19 @@ debt-funds-explained:
 - liquid-and-overnight-funds
 - modified-duration
 - yield-to-maturity
+- reading-a-debt-fund-portfolio
 - arbitrage-funds
 - sebi-fund-categories-decoded
 - g-secs-and-t-bills
 - credit-ratings-explained
-- fixed-deposit-vs-debt-fund
 debt-funds-gold-and-the-rest:
 - short-term-vs-long-term
 - bonds-debentures-and-sgbs
 - how-investment-income-is-taxed
 - equity-and-equity-funds
 - esops-and-rsus
-- nri-investment-income
 - before-you-file
+- nri-investment-income
 - foreign-stocks-and-schedule-fa
 debt-to-equity:
 - equity-multiplier
@@ -428,13 +428,13 @@ demat-trading-bank-accounts:
 - contract-note-charges
 - t-plus-1-settlement
 - nomination-demat-folios
-- index-funds-vs-etfs
 - short-selling-mechanics
+- index-funds-vs-etfs
 - exit-load
 - scores-and-smart-odr
 depreciation-and-amortisation:
-- goodwill-exceptional-items-and-other-income
 - effective-tax-rate
+- goodwill-exceptional-items-and-other-income
 - ev-ebitda
 - desi-bites-cooks-the-books
 - forecasting-free-cash-flow
@@ -448,7 +448,7 @@ desi-bites-cooks-the-books:
 - reading-an-annual-report
 - capstone-britannia-end-to-end
 - ocf-pat
-- forecasting-free-cash-flow
+- free-cash-flow
 - consolidated-vs-standalone
 diluted-eps-and-dilution:
 - eps
@@ -473,8 +473,8 @@ diversification-is-a-correlation-problem:
 - beta
 - concentration-risk
 - reading-a-factsheet
-- the-riskometer
 - hybrid-funds
+- the-riskometer
 - asset-allocation
 - volatility-and-sharpe
 dividend-yield:
@@ -493,13 +493,13 @@ dividends-and-interest:
 - before-you-file
 - reits-and-invits
 - buyback-taxation
-- bonds-debentures-and-sgbs
 - elss-and-the-deduction-that-moved
+- bonds-debentures-and-sgbs
 do-gaps-get-filled:
 - stop-loss-placement
+- bollinger-bands-and-atr
 - stochastic-oscillator
 - reading-a-candlestick-chart
-- bollinger-bands-and-atr
 - momentum-vs-mean-reversion
 - pivot-points-and-round-numbers
 - position-sizing-and-the-one-percent-rule
@@ -510,8 +510,8 @@ drawdown:
 - sips-xirr-and-timing-myths
 - the-arithmetic-of-losses
 - behavioural-biases-indian-edition
-- point-to-point-returns
 - sequence-of-returns-risk
+- point-to-point-returns
 - rolling-returns
 dupont-roe-decomposition:
 - asset-turnover
@@ -526,8 +526,8 @@ earnings-yield-and-fcf-yield:
 - free-cash-flow
 - price-to-earnings
 - dividend-yield
-- capstone-britannia-end-to-end
 - ev-ebitda
+- capstone-britannia-end-to-end
 - yield-to-maturity
 - eps
 - forecasting-free-cash-flow
@@ -555,9 +555,9 @@ elss-and-the-deduction-that-moved:
 - how-investment-income-is-taxed
 - buyback-taxation
 - sips-and-fifo
-- losses-set-off-and-harvesting
 - fo-is-business-income
-- exit-load
+- losses-set-off-and-harvesting
+- ppf-how-it-works
 emergency-fund-sizing:
 - fixed-deposit-vs-debt-fund
 - inflation-and-real-returns
@@ -566,7 +566,7 @@ emergency-fund-sizing:
 - exit-load
 - stp-and-swp
 - debt-funds-explained
-- arbitrage-funds
+- nav-cut-off-and-allotment
 enterprise-value:
 - ev-ebitda
 - net-debt-ebitda
@@ -591,9 +591,9 @@ equity-and-equity-funds:
 - losses-set-off-and-harvesting
 - nri-investment-income
 - before-you-file
-- bonds-debentures-and-sgbs
 - fo-is-business-income
 - buyback-taxation
+- debt-funds-gold-and-the-rest
 equity-multiplier:
 - debt-to-equity
 - roa
@@ -606,12 +606,12 @@ equity-multiplier:
 esops-and-rsus:
 - foreign-stocks-and-schedule-fa
 - how-investment-income-is-taxed
-- short-term-vs-long-term
 - advance-tax-for-investors
+- short-term-vs-long-term
 - debt-funds-gold-and-the-rest
 - buyback-taxation
-- fo-is-business-income
 - diluted-eps-and-dilution
+- fo-is-business-income
 ev-ebitda:
 - price-to-earnings
 - enterprise-value
@@ -627,14 +627,14 @@ exit-load:
 - stp-and-swp
 - what-a-mutual-fund-is
 - sips-xirr-and-timing-myths
+- scheme-mergers-and-wind-ups
 - elss-and-the-deduction-that-moved
-- losses-set-off-and-harvesting
-- nfos
+- nav-cut-off-and-allotment
 expense-ratios-direct-vs-regular:
 - what-a-mutual-fund-is
 - exit-load
-- reading-a-factsheet
 - tracking-error-and-tracking-difference
+- reading-a-factsheet
 - nfos
 - aum
 - index-funds-vs-etfs
@@ -658,9 +658,9 @@ fat-tails:
 - sell-in-may-and-month-of-year
 - leverage-and-margin
 fibonacci-retracements:
-- support-and-resistance
 - pivot-points-and-round-numbers
 - trend-lines
+- support-and-resistance
 - momentum-vs-mean-reversion
 - bollinger-bands-and-atr
 - do-gaps-get-filled
@@ -673,8 +673,8 @@ fixed-deposit-vs-debt-fund:
 - debt-funds-explained
 - nbfcs-vs-banks-spread-borrowing-alm
 - ppf-how-it-works
-- debt-funds-gold-and-the-rest
 - casa-and-the-deposit-franchise
+- debt-funds-gold-and-the-rest
 fmcg-volume-growth-vs-price-growth:
 - reading-quarterly-results
 - why-one-set-of-ratios-doesnt-fit
@@ -682,8 +682,8 @@ fmcg-volume-growth-vs-price-growth:
 - normalised-earnings
 - hospitals-arpob-occupancy
 - it-services-constant-currency-utilisation-attrition
-- operating-leverage
 - telecom-arpu-and-the-limits-of-sector-lenses
+- operating-leverage
 fo-is-business-income:
 - losses-set-off-and-harvesting
 - buyback-taxation
@@ -755,25 +755,25 @@ g-secs-and-t-bills:
 - debt-funds-explained
 - yield-curve-and-repo-rate
 - earnings-yield-and-fcf-yield
-- credit-ratings-explained
+- reading-a-debt-fund-portfolio
 gifts-and-clubbing:
 - equity-and-equity-funds
-- dividends-and-interest
 - buyback-taxation
+- dividends-and-interest
 - how-investment-income-is-taxed
 - nri-investment-income
-- elss-and-the-deduction-that-moved
 - reits-and-invits
+- elss-and-the-deduction-that-moved
 - bonds-debentures-and-sgbs
 glide-path:
-- investment-horizon
 - asset-allocation
+- investment-horizon
 - rebalancing-arithmetic
+- life-cycle-funds
 - limits-of-model-portfolios
 - asset-classes
 - step-up-sips
 - rolling-returns
-- goal-based-investing
 gnpa-nnpa-and-provisions:
 - why-ratios-break-on-a-bank
 - nim-and-the-spread
@@ -790,8 +790,17 @@ goal-based-investing:
 - step-up-sips
 - stp-and-swp
 - margin-of-safety-and-sensitivity
-- sequence-of-returns-risk
 - terminal-value-and-the-full-dcf
+- sequence-of-returns-risk
+gold-silver-etfs-and-fofs:
+- index-funds-vs-etfs
+- asset-classes
+- international-funds
+- asset-allocation
+- investment-horizon
+- tracking-error-and-tracking-difference
+- limits-of-model-portfolios
+- life-cycle-funds
 golden-and-death-cross:
 - moving-averages
 - how-to-backtest-honestly
@@ -824,8 +833,8 @@ growth-vs-idcw:
 - index-funds-vs-etfs
 - reit-structure
 - nri-investment-income
-- nfos
 - dividends-and-interest
+- nfos
 - reits-and-invits
 - stp-and-swp
 hospitals-arpob-occupancy:
@@ -867,12 +876,12 @@ how-to-backtest-honestly:
 hybrid-funds:
 - arbitrage-funds
 - sebi-fund-categories-decoded
-- the-riskometer
 - debt-funds-explained
+- the-riskometer
 - diversification-is-a-correlation-problem
 - up-and-down-capture-ratios
-- liquid-and-overnight-funds
 - asset-allocation
+- liquid-and-overnight-funds
 implied-volatility:
 - option-time-value
 - option-payoff-and-breakeven
@@ -883,6 +892,7 @@ implied-volatility:
 - volatility-and-sharpe
 - option-expiry-and-settlement
 index-funds-vs-etfs:
+- gold-silver-etfs-and-fofs
 - tracking-error-and-tracking-difference
 - growth-vs-idcw
 - nfos
@@ -890,7 +900,6 @@ index-funds-vs-etfs:
 - bid-ask-spread-and-liquidity
 - price-vs-total-return-index
 - expense-ratios-direct-vs-regular
-- international-funds
 index-weights-free-float:
 - free-float-and-promoter-holding
 - price-vs-total-return-index
@@ -899,7 +908,7 @@ index-weights-free-float:
 - portfolio-overlap
 - rebalancing-arithmetic
 - the-riskometer
-- capital-adequacy
+- beta
 india-vix:
 - implied-volatility
 - option-payoff-and-breakeven
@@ -907,8 +916,8 @@ india-vix:
 - volatility-and-sharpe
 - call-and-put-options
 - protective-put-hedging
-- option-expiry-and-settlement
 - beta
+- option-expiry-and-settlement
 indicator-confluence-and-double-counting:
 - stochastic-oscillator
 - macd
@@ -925,7 +934,7 @@ inflation-and-real-returns:
 - debt-funds-explained
 - expense-ratios-direct-vs-regular
 - investment-horizon
-- currency-risk
+- the-arithmetic-of-losses
 - hybrid-funds
 insurance-as-risk-transfer:
 - ulip-charges
@@ -947,13 +956,13 @@ interest-coverage:
 - net-margin
 international-funds:
 - currency-risk
+- gold-silver-etfs-and-fofs
 - it-services-constant-currency-utilisation-attrition
 - index-funds-vs-etfs
 - aum
 - nfos
 - liquidity-risk
 - what-a-mutual-fund-is
-- exit-load
 inventory-days:
 - cash-conversion-cycle
 - gross-margin
@@ -965,21 +974,21 @@ inventory-days:
 - net-margin
 investment-horizon:
 - asset-classes
-- limits-of-model-portfolios
 - glide-path
+- limits-of-model-portfolios
 - asset-allocation
 - goal-based-investing
 - rolling-returns
+- gold-silver-etfs-and-fofs
 - inflation-and-real-returns
-- debt-funds-explained
 ipo-application-asba-upi:
 - broker-and-counterparty-risk
 - reading-a-drhp
 - scores-and-smart-odr
+- nav-cut-off-and-allotment
 - t-plus-1-settlement
 - offer-for-sale-and-delisting
 - rights-issues
-- mergers-and-demergers
 - demat-trading-bank-accounts
 it-services-constant-currency-utilisation-attrition:
 - why-one-set-of-ratios-doesnt-fit
@@ -996,8 +1005,8 @@ kelly-criterion-and-risk-of-ruin:
 - fat-tails
 - diversification-is-a-correlation-problem
 - the-arithmetic-of-losses
-- concentration-risk
 - insurance-as-risk-transfer
+- concentration-risk
 - how-to-backtest-honestly
 leases-ind-as-116:
 - airlines-load-factor-rask-cask
@@ -1017,6 +1026,15 @@ leverage-and-margin:
 - the-arithmetic-of-losses
 - futures-basis-and-cost-of-carry
 - equity-multiplier
+life-cycle-funds:
+- glide-path
+- sebi-fund-categories-decoded
+- liquid-and-overnight-funds
+- manager-changes-and-style-drift
+- gold-silver-etfs-and-fofs
+- exit-load
+- hybrid-funds
+- asset-allocation
 life-insurers-embedded-value-vnb-margin:
 - why-one-set-of-ratios-doesnt-fit
 - insurance-as-risk-transfer
@@ -1033,26 +1051,26 @@ limits-of-model-portfolios:
 - rebalancing-arithmetic
 - glide-path
 - why-star-ratings-mislead
+- gold-silver-etfs-and-fofs
 - point-to-point-returns
-- benchmarks-and-comparing-like-with-like
 liquid-and-overnight-funds:
 - debt-funds-explained
 - fixed-deposit-vs-debt-fund
 - emergency-fund-sizing
-- arbitrage-funds
 - g-secs-and-t-bills
+- arbitrage-funds
+- nav-cut-off-and-allotment
 - stp-and-swp
-- exit-load
 - modified-duration
 liquidity-risk:
 - bid-ask-spread-and-liquidity
 - aum
 - market-cap
 - portfolio-turnover-ratio
-- sebi-fund-categories-decoded
-- segregated-portfolios
-- the-riskometer
 - volume
+- sebi-fund-categories-decoded
+- the-riskometer
+- segregated-portfolios
 losses-set-off-and-harvesting:
 - sips-and-fifo
 - equity-and-equity-funds
@@ -1077,9 +1095,9 @@ manager-changes-and-style-drift:
 - portfolio-overlap
 - the-riskometer
 - hybrid-funds
+- scheme-mergers-and-wind-ups
 - portfolio-turnover-ratio
-- what-fund-metrics-cant-tell-you
-- index-weights-free-float
+- life-cycle-funds
 margin-calls-and-peak-margin:
 - option-writing-and-margin
 - call-and-put-options
@@ -1101,8 +1119,8 @@ margin-of-safety-and-sensitivity:
 market-cap:
 - sebi-fund-categories-decoded
 - free-float-and-promoter-holding
-- liquidity-risk
 - index-weights-free-float
+- liquidity-risk
 - book-value-per-share
 - ev-ebitda
 - aum
@@ -1117,28 +1135,28 @@ meet-desi-bites-foods:
 - relative-valuation-comparables
 - contingent-liabilities-pledges-and-promoter-holding
 mergers-and-demergers:
+- scheme-mergers-and-wind-ups
 - rights-issues
 - offer-for-sale-and-delisting
-- ipo-application-asba-upi
 - reading-a-drhp
-- segregated-portfolios
+- ipo-application-asba-upi
 - record-date-and-ex-date
-- nfos
 - face-value-splits-and-bonuses
+- esops-and-rsus
 modified-duration:
 - yield-to-maturity
+- reading-a-debt-fund-portfolio
 - g-secs-and-t-bills
 - yield-curve-and-repo-rate
 - debt-funds-explained
 - credit-ratings-explained
 - bonds-debentures-and-sgbs
 - liquid-and-overnight-funds
-- earnings-yield-and-fcf-yield
 momentum-vs-mean-reversion:
 - sell-in-may-and-month-of-year
 - what-technical-analysis-cannot-do
-- do-gaps-get-filled
 - fibonacci-retracements
+- do-gaps-get-filled
 - bollinger-bands-and-atr
 - how-to-backtest-honestly
 - multiple-timeframe-analysis
@@ -1148,10 +1166,10 @@ moving-averages:
 - what-technical-analysis-cannot-do
 - how-to-backtest-honestly
 - golden-and-death-cross
-- multiple-timeframe-analysis
 - what-technical-analysis-is
-- rsi
+- multiple-timeframe-analysis
 - bollinger-bands-and-atr
+- rsi
 multiple-timeframe-analysis:
 - stochastic-oscillator
 - rsi
@@ -1159,8 +1177,17 @@ multiple-timeframe-analysis:
 - trend-lines
 - moving-averages
 - bollinger-bands-and-atr
-- macd
 - how-to-backtest-honestly
+- macd
+nav-cut-off-and-allotment:
+- liquid-and-overnight-funds
+- exit-load
+- scheme-mergers-and-wind-ups
+- ipo-application-asba-upi
+- emergency-fund-sizing
+- t-plus-1-settlement
+- bulk-and-block-deals
+- arbitrage-funds
 nbfcs-vs-banks-spread-borrowing-alm:
 - why-ratios-break-on-a-bank
 - nim-and-the-spread
@@ -1178,7 +1205,7 @@ net-debt-ebitda:
 - roce
 - quick-ratio
 - net-working-capital
-- credit-ratings-explained
+- current-ratio
 net-margin:
 - gross-margin
 - reading-an-income-statement
@@ -1204,8 +1231,8 @@ nfos:
 - expense-ratios-direct-vs-regular
 - tracking-error-and-tracking-difference
 - reading-a-factsheet
+- scheme-mergers-and-wind-ups
 - exit-load
-- liquidity-risk
 nim-and-the-spread:
 - why-ratios-break-on-a-bank
 - casa-and-the-deposit-franchise
@@ -1222,8 +1249,8 @@ nomination-demat-folios:
 - segregated-portfolios
 - gifts-and-clubbing
 - index-funds-vs-etfs
-- scores-and-smart-odr
 - before-you-file
+- scores-and-smart-odr
 normalised-earnings:
 - goodwill-exceptional-items-and-other-income
 - consolidated-vs-standalone
@@ -1231,8 +1258,8 @@ normalised-earnings:
 - segment-reporting
 - reading-quarterly-results
 - relative-valuation-comparables
-- reading-a-drhp
 - ev-ebitda
+- enterprise-value
 nps-exit-rules:
 - stp-and-swp
 - ppf-how-it-works
@@ -1240,13 +1267,13 @@ nps-exit-rules:
 - exit-load
 - step-up-sips
 - scores-and-smart-odr
+- specialised-investment-funds
 - liquid-and-overnight-funds
-- elss-and-the-deduction-that-moved
 nri-investment-income:
 - foreign-stocks-and-schedule-fa
 - dividends-and-interest
-- bonds-debentures-and-sgbs
 - advance-tax-for-investors
+- bonds-debentures-and-sgbs
 - equity-and-equity-funds
 - reits-and-invits
 - how-investment-income-is-taxed
@@ -1256,8 +1283,8 @@ obv-and-vwap:
 - option-expiry-and-settlement
 - do-gaps-get-filled
 - what-technical-analysis-is
-- rsi
 - bollinger-bands-and-atr
+- rsi
 - bulk-and-block-deals
 - reading-a-candlestick-chart
 ocf-pat:
@@ -1265,8 +1292,8 @@ ocf-pat:
 - net-working-capital
 - free-cash-flow
 - cash-conversion-cycle
-- debtor-days
 - ebitda-margin
+- debtor-days
 - creditor-days
 - capstone-britannia-end-to-end
 offer-for-sale-and-delisting:
@@ -1295,7 +1322,7 @@ operating-leverage:
 - net-margin
 - leases-ind-as-116
 - payout-ratio
-- goodwill-exceptional-items-and-other-income
+- reading-quarterly-results
 option-expiry-and-settlement:
 - call-and-put-options
 - option-writing-and-margin
@@ -1304,7 +1331,7 @@ option-expiry-and-settlement:
 - short-selling-mechanics
 - open-interest
 - obv-and-vwap
-- bulk-and-block-deals
+- option-time-value
 option-payoff-and-breakeven:
 - protective-put-hedging
 - call-and-put-options
@@ -1327,8 +1354,8 @@ option-writing-and-margin:
 - call-and-put-options
 - option-expiry-and-settlement
 - option-payoff-and-breakeven
-- margin-calls-and-peak-margin
 - protective-put-hedging
+- margin-calls-and-peak-margin
 - option-time-value
 - leverage-and-margin
 - what-the-fo-numbers-actually-say
@@ -1339,15 +1366,15 @@ order-types-explained:
 - stop-loss-placement
 - do-gaps-get-filled
 - pump-and-dump-and-operator-stocks
-- demat-trading-bank-accounts
 - india-vix
+- demat-trading-bank-accounts
 overtrading-and-costs:
 - what-the-fo-numbers-actually-say
 - fo-is-business-income
 - option-writing-and-margin
 - call-and-put-options
-- contract-note-charges
 - behavioural-biases-indian-edition
+- contract-note-charges
 - leverage-and-margin
 - portfolio-turnover-ratio
 payout-ratio:
@@ -1364,8 +1391,8 @@ peg-ratio:
 - capstone-britannia-end-to-end
 - ev-ebitda
 - relative-valuation-comparables
-- valuing-a-bank-price-to-book
 - earnings-yield-and-fcf-yield
+- valuing-a-bank-price-to-book
 - roe
 - eps
 pharma-rd-intensity-us-generics-usfda:
@@ -1378,8 +1405,8 @@ pharma-rd-intensity-us-generics-usfda:
 - fmcg-volume-growth-vs-price-growth
 - reading-an-income-statement
 pivot-points-and-round-numbers:
-- support-and-resistance
 - fibonacci-retracements
+- support-and-resistance
 - bollinger-bands-and-atr
 - do-gaps-get-filled
 - breakouts-and-false-breakouts
@@ -1410,8 +1437,8 @@ portfolio-turnover-ratio:
 - contract-note-charges
 - bid-ask-spread-and-liquidity
 - liquidity-risk
-- the-riskometer
 - what-fund-metrics-cant-tell-you
+- the-riskometer
 - nfos
 position-sizing-and-the-one-percent-rule:
 - stop-loss-placement
@@ -1512,6 +1539,15 @@ reading-a-cash-flow-statement:
 - forecasting-free-cash-flow
 - meet-desi-bites-foods
 - ebitda-margin
+reading-a-debt-fund-portfolio:
+- credit-ratings-explained
+- modified-duration
+- the-riskometer
+- yield-to-maturity
+- debt-funds-explained
+- yield-curve-and-repo-rate
+- sebi-fund-categories-decoded
+- why-star-ratings-mislead
 reading-a-drhp:
 - contingent-liabilities-pledges-and-promoter-holding
 - reading-an-annual-report
@@ -1528,8 +1564,8 @@ reading-a-factsheet:
 - aum
 - expense-ratios-direct-vs-regular
 - benchmarks-and-comparing-like-with-like
-- what-a-mutual-fund-is
 - volatility-and-sharpe
+- what-a-mutual-fund-is
 reading-an-annual-report:
 - reading-a-drhp
 - desi-bites-cooks-the-books
@@ -1572,8 +1608,8 @@ record-date-and-ex-date:
 - face-value-splits-and-bonuses
 - rights-issues
 - payout-ratio
-- mergers-and-demergers
 - valuing-a-bank-price-to-book
+- mergers-and-demergers
 - bid-ask-spread-and-liquidity
 reit-structure:
 - reits-and-invits
@@ -1605,8 +1641,8 @@ relative-strength-vs-the-index:
 relative-valuation-comparables:
 - ev-ebitda
 - book-value-per-share
-- capstone-britannia-end-to-end
 - price-to-earnings
+- capstone-britannia-end-to-end
 - sum-of-the-parts
 - valuing-a-bank-price-to-book
 - price-to-book
@@ -1664,7 +1700,7 @@ rolling-returns:
 - glide-path
 - sips-xirr-and-timing-myths
 - why-star-ratings-mislead
-- arbitrage-funds
+- sell-in-may-and-month-of-year
 rsi:
 - adx-trend-strength
 - stochastic-oscillator
@@ -1674,24 +1710,33 @@ rsi:
 - relative-strength-vs-the-index
 - indicator-confluence-and-double-counting
 - what-technical-analysis-is
+scheme-mergers-and-wind-ups:
+- mergers-and-demergers
+- segregated-portfolios
+- nfos
+- exit-load
+- nav-cut-off-and-allotment
+- manager-changes-and-style-drift
+- growth-vs-idcw
+- the-riskometer
 scores-and-smart-odr:
 - ipo-application-asba-upi
 - broker-and-counterparty-risk
 - contract-note-charges
 - how-finfluencers-make-money
-- demat-trading-bank-accounts
 - nps-exit-rules
+- demat-trading-bank-accounts
 - asm-and-gsm-surveillance
 - nomination-demat-folios
 sebi-fund-categories-decoded:
 - manager-changes-and-style-drift
-- debt-funds-explained
 - market-cap
+- debt-funds-explained
+- life-cycle-funds
 - aum
 - hybrid-funds
+- reading-a-debt-fund-portfolio
 - the-riskometer
-- benchmarks-and-comparing-like-with-like
-- reading-a-factsheet
 segment-reporting:
 - consolidated-vs-standalone
 - goodwill-exceptional-items-and-other-income
@@ -1702,14 +1747,14 @@ segment-reporting:
 - normalised-earnings
 - meet-desi-bites-foods
 segregated-portfolios:
+- scheme-mergers-and-wind-ups
 - liquidity-risk
 - the-riskometer
 - debt-funds-explained
 - nfos
 - credit-ratings-explained
-- sebi-fund-categories-decoded
 - what-a-mutual-fund-is
-- aum
+- sebi-fund-categories-decoded
 sell-in-may-and-month-of-year:
 - budget-day-and-muhurat-trading
 - momentum-vs-mean-reversion
@@ -1726,16 +1771,16 @@ sequence-of-returns-risk:
 - the-arithmetic-of-losses
 - compounding-and-time
 - drawdown
-- goal-based-investing
 - point-to-point-returns
+- goal-based-investing
 short-selling-mechanics:
 - t-plus-1-settlement
 - option-expiry-and-settlement
 - call-and-put-options
 - contract-note-charges
-- bulk-and-block-deals
 - option-writing-and-margin
 - asm-and-gsm-surveillance
+- bulk-and-block-deals
 - margin-calls-and-peak-margin
 short-term-vs-long-term:
 - debt-funds-gold-and-the-rest
@@ -1759,11 +1804,11 @@ sips-xirr-and-timing-myths:
 - step-up-sips
 - sequence-of-returns-risk
 - point-to-point-returns
-- compounding-and-time
 - stp-and-swp
+- compounding-and-time
 - drawdown
 - goal-based-investing
-- sips-and-fifo
+- rolling-returns
 sortino-and-information-ratio:
 - up-and-down-capture-ratios
 - what-fund-metrics-cant-tell-you
@@ -1773,13 +1818,22 @@ sortino-and-information-ratio:
 - alpha
 - price-vs-total-return-index
 - reading-a-factsheet
+specialised-investment-funds:
+- scheme-mergers-and-wind-ups
+- nfos
+- exit-load
+- aum
+- nps-exit-rules
+- sebi-fund-categories-decoded
+- hybrid-funds
+- nav-cut-off-and-allotment
 step-up-sips:
 - sips-xirr-and-timing-myths
 - sequence-of-returns-risk
 - compounding-and-time
 - goal-based-investing
-- exit-load
 - stp-and-swp
+- exit-load
 - glide-path
 - nfos
 stochastic-oscillator:
@@ -1823,8 +1877,8 @@ supertrend-indicator:
 - how-to-backtest-honestly
 - bollinger-bands-and-atr
 - position-sizing-and-the-one-percent-rule
-- multiple-timeframe-analysis
 - adx-trend-strength
+- multiple-timeframe-analysis
 - golden-and-death-cross
 - do-gaps-get-filled
 support-and-resistance:
@@ -1843,8 +1897,8 @@ survivorship-bias-in-fund-tables:
 - up-and-down-capture-ratios
 - sortino-and-information-ratio
 - reading-a-factsheet
-- sebi-fund-categories-decoded
 - alpha
+- sebi-fund-categories-decoded
 t-plus-1-settlement:
 - broker-and-counterparty-risk
 - record-date-and-ex-date
@@ -1852,8 +1906,8 @@ t-plus-1-settlement:
 - option-expiry-and-settlement
 - demat-trading-bank-accounts
 - circuit-limits-and-price-bands
-- bulk-and-block-deals
 - margin-calls-and-peak-margin
+- bulk-and-block-deals
 telecom-arpu-and-the-limits-of-sector-lenses:
 - why-one-set-of-ratios-doesnt-fit
 - leases-ind-as-116
@@ -1882,14 +1936,14 @@ the-arithmetic-of-losses:
 - leverage-and-margin
 - asset-classes
 the-riskometer:
+- reading-a-debt-fund-portfolio
 - sebi-fund-categories-decoded
 - hybrid-funds
-- credit-ratings-explained
 - debt-funds-explained
+- credit-ratings-explained
 - liquidity-risk
 - reading-a-factsheet
 - arbitrage-funds
-- what-fund-metrics-cant-tell-you
 tracking-error-and-tracking-difference:
 - sortino-and-information-ratio
 - benchmarks-and-comparing-like-with-like
@@ -1902,11 +1956,11 @@ tracking-error-and-tracking-difference:
 trend-lines:
 - support-and-resistance
 - fibonacci-retracements
-- chart-patterns
 - multiple-timeframe-analysis
+- chart-patterns
 - what-technical-analysis-cannot-do
-- what-technical-analysis-is
 - breakouts-and-false-breakouts
+- what-technical-analysis-is
 - momentum-vs-mean-reversion
 ulip-charges:
 - insurance-as-risk-transfer
@@ -1925,7 +1979,7 @@ up-and-down-capture-ratios:
 - alpha
 - price-vs-total-return-index
 - reading-a-factsheet
-- hybrid-funds
+- relative-strength-vs-the-index
 value-at-risk:
 - fat-tails
 - stop-loss-placement
@@ -1938,8 +1992,8 @@ value-at-risk:
 valuing-a-bank-price-to-book:
 - why-ratios-break-on-a-bank
 - price-to-book
-- nbfcs-vs-banks-spread-borrowing-alm
 - relative-valuation-comparables
+- nbfcs-vs-banks-spread-borrowing-alm
 - nim-and-the-spread
 - face-value-splits-and-bonuses
 - capstone-britannia-end-to-end
@@ -1968,8 +2022,8 @@ wacc-cost-of-capital:
 - terminal-value-and-the-full-dcf
 - discounting-time-value-of-money
 - relative-valuation-comparables
-- roce
 - alpha
+- roce
 - forecasting-free-cash-flow
 what-a-mutual-fund-is:
 - nfos
@@ -2003,8 +2057,8 @@ what-technical-analysis-is:
 - how-to-backtest-honestly
 - bollinger-bands-and-atr
 - indicator-confluence-and-double-counting
-- obv-and-vwap
 - rsi
+- obv-and-vwap
 - volume
 - moving-averages
 what-the-fo-numbers-actually-say:
@@ -2035,29 +2089,29 @@ why-ratios-break-on-a-bank:
 - debt-to-equity
 - capstone-britannia-end-to-end
 why-star-ratings-mislead:
-- benchmarks-and-comparing-like-with-like
 - what-fund-metrics-cant-tell-you
+- benchmarks-and-comparing-like-with-like
 - survivorship-bias-in-fund-tables
-- sebi-fund-categories-decoded
+- reading-a-debt-fund-portfolio
 - reading-a-factsheet
+- sebi-fund-categories-decoded
 - point-to-point-returns
 - rolling-returns
-- limits-of-model-portfolios
 yield-curve-and-repo-rate:
 - modified-duration
 - g-secs-and-t-bills
 - yield-to-maturity
+- reading-a-debt-fund-portfolio
 - credit-ratings-explained
 - debt-funds-explained
 - earnings-yield-and-fcf-yield
 - bonds-debentures-and-sgbs
-- nim-and-the-spread
 yield-to-maturity:
 - modified-duration
 - g-secs-and-t-bills
+- reading-a-debt-fund-portfolio
 - bonds-debentures-and-sgbs
 - debt-funds-explained
 - discounting-time-value-of-money
 - credit-ratings-explained
 - yield-curve-and-repo-rate
-- earnings-yield-and-fcf-yield

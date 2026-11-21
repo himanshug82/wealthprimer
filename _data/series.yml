@@ -32,7 +32,7 @@
   title: "Mutual Funds, Minus the Marketing"
   description: "Rolling returns, expense ratios, drawdowns, SIP myths, and how to actually read a factsheet."
   about: "For judging a fund by its numbers rather than its marketing: NAV, returns measured properly, costs, drawdowns, risk ratios, SIP arithmetic, categories and factsheets, each worked on real AMFI NAV history. No fund is recommended; the aim is to read any fund's numbers yourself."
-  planned: 30   # MF-1..9 (9) + Module 2 (6) + Module 3 (8) + Module 4 (7)
+  planned: 36   # MF-1..9 (9) + Module 2 (6) + Module 3 (8) + Module 4 (7) + Module 5 (6)
 - slug: tax
   title: "The Tax Side of Investing"
   description: "How capital gains, dividends and losses are actually taxed in India — mechanics first, with worked examples on real fund data."

@@ -37,24 +37,6 @@ giscus:
   category: "Comments"
   category_id: "DIC_kwDOT8LCnc4DKL7c"
 
-# --- email list ---
-# Renders _includes/newsletter.html on every post and the homepage. Nothing is
-# emitted until `action` is non-empty, so a half-configured list ships nothing.
-# Mailchimp: paste the whole <form action="..."> URL from the embedded-form
-# builder (it already carries ?u=...&id=...), then copy that form's hidden
-# bot-trap field NAME — b_<u>_<id> — into `honeypot`.
-# Buttondown: set provider to `buttondown`, action to
-# https://buttondown.com/api/emails/embed-subscribe/USERNAME, honeypot to "".
-# Full setup notes live in _includes/newsletter.html.
-newsletter:
-  provider: buttondown
-  action: "https://buttondown.com/api/emails/embed-subscribe/wealthprimer"
-  honeypot: ""
-  heading: "One email a week"
-  blurb: >-
-    The week's explainers in one email. No tips, no calls, no hype.
-    Unsubscribe whenever.
-
 # --- theme ---
 theme: minima
 sass:

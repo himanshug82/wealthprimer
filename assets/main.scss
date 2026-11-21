@@ -1530,7 +1530,7 @@ a.guide-step-title:hover { color: var(--brand); }
 }
 
 // ---------------------------------------------------------------------------
-// Newsletter: email form once configured, RSS/follow box until then (_includes/newsletter.html)
+// Follow box (RSS) at the end of posts, guides and the homepage (_includes/newsletter.html)
 // ---------------------------------------------------------------------------
 .newsletter {
   margin: 3rem 0 1.5rem;
@@ -1553,43 +1553,6 @@ a.guide-step-title:hover { color: var(--brand); }
   max-width: 38em;
 }
 
-.newsletter-form {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin: 0 0 0.8rem;
-}
-
-.newsletter-email {
-  flex: 1 1 15em;
-  min-width: 0;                 // lets the input actually shrink inside flex
-  padding: 0.7rem 1rem;
-  font-size: var(--fs-md);
-  font-family: inherit;
-  border: 1px solid var(--rule-strong);
-  border-radius: var(--radius-pill);
-  background: var(--surface);
-  color: var(--ink);
-
-  &:focus-visible { outline: 2px solid var(--brand); outline-offset: 1px; border-color: var(--brand); }
-}
-
-.newsletter-button {
-  flex: 0 0 auto;
-  padding: 0.7rem 1.4rem;
-  font-size: var(--fs-md);
-  font-family: inherit;
-  font-weight: var(--fw-semibold);
-  color: var(--on-brand);
-  background: var(--brand);
-  border: 1px solid var(--brand);
-  border-radius: var(--radius-pill);
-  cursor: pointer;
-
-  &:hover { background: var(--brand-strong); border-color: var(--brand-strong); }
-  &:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
-}
-
 .newsletter-actions {
   display: flex;
   flex-wrap: wrap;
@@ -1602,17 +1565,6 @@ a.guide-step-title:hover { color: var(--brand); }
   line-height: 1.45;
   color: var(--muted);
   margin: 0;
-}
-
-// Honeypot: must be reachable by bots parsing the DOM but invisible and
-// unfocusable for humans — so it is positioned off-screen, NOT display:none
-// (which some bots detect and skip).
-.newsletter-trap {
-  position: absolute;
-  left: -5000px;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
 }
 
 .visually-hidden {
@@ -1775,7 +1727,6 @@ a.guide-step-title:hover { color: var(--brand); }
   .series-nav { grid-template-columns: 1fr; }
   .series-nav-next { text-align: left; }
   .newsletter { padding: 1.3rem 1.2rem; }
-  .newsletter-button { flex: 1 1 100%; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,64 +1,14 @@
 {%- comment -%}
-Email signup. Renders ONLY when `newsletter.action` is set in _config.yml, so
-nothing half-built ever ships — an unset key means the block simply isn't there.
-
-Deliberately a plain HTML form POSTing straight to the provider: no provider
-JavaScript, no tracking pixel, no third-party stylesheet. That keeps the site's
-"loads no external resources" property true for every page render; the only
-request to the provider happens when a reader actually submits the form.
-
-MAILCHIMP setup:
-  Audience > Signup forms > Embedded form. From the generated <form action="...">
-  copy the WHOLE url (it already contains ?u=...&id=...) into `action` below.
-  Then find the hidden bot-trap input near the end of their markup — it is named
-  b_<u-value>_<id-value> — and copy that field NAME into `honeypot`.
-  Leave `provider: mailchimp` so the email field is named EMAIL, which is what
-  Mailchimp expects.
-
-BUTTONDOWN setup:
-  action: https://buttondown.com/api/emails/embed-subscribe/YOUR-USERNAME
-  provider: buttondown        (email field becomes `email`, no honeypot needed)
-  honeypot: ""
-
-Switching providers is these three keys — no template change.
-{%- endcomment -%}
-{%- assign nl = site.newsletter -%}
-{%- if nl.action and nl.action != '' -%}
-{%- if nl.provider == 'buttondown' -%}
-  {%- assign email_field = 'email' -%}
-{%- else -%}
-  {%- assign email_field = 'EMAIL' -%}
-{%- endif -%}
-<aside class="newsletter" aria-labelledby="newsletter-heading">
-  <h2 id="newsletter-heading">{{ nl.heading | default: "One email a week" }}</h2>
-  <p class="newsletter-blurb">
-    {{ nl.blurb | default: "The week's explainers in one email. No tips, no calls, no hype. Unsubscribe whenever." }}
-  </p>
-  <form class="newsletter-form" action="{{ nl.action }}" method="post" target="_blank" novalidate>
-    <label class="visually-hidden" for="newsletter-email">Email address</label>
-    <input class="newsletter-email" id="newsletter-email" type="email" name="{{ email_field }}"
-           placeholder="you@example.com" autocomplete="email" required>
-    {%- if nl.honeypot and nl.honeypot != '' -%}
-    {%- comment -%}Bot trap: off-screen, never focusable, never announced.{%- endcomment -%}
-    <div class="newsletter-trap" aria-hidden="true"><input type="text" name="{{ nl.honeypot }}" tabindex="-1" value="" autocomplete="off"></div>
-    {%- endif -%}
-    <button class="newsletter-button" type="submit">Subscribe</button>
-  </form>
-  <p class="newsletter-fineprint">
-    Educational posts only — never a recommendation to buy or sell anything.
-    Or subscribe <a href="{{ '/feed.xml' | relative_url }}">via RSS</a> instead.
-  </p>
-</aside>
-{%- else -%}
-{%- comment -%}
-No email list configured yet: still give the reader a way to come back. RSS
-needs no third party, so this is complete as it stands; it gives way to the
-email form above the day `newsletter.action` is set.
+"Follow along" box at the end of posts, guides and the homepage. RSS only: the
+email newsletter (Buttondown) was removed by the owner on 21 Nov 2026, so there
+is no signup form and nothing is collected. RSS needs no third party, which
+keeps the site's "loads no external resources" property. The file keeps its
+name so the layouts' includes don't change.
 {%- endcomment -%}
 <aside class="newsletter newsletter-follow" aria-labelledby="newsletter-heading">
   <h2 id="newsletter-heading">Follow along</h2>
   <p class="newsletter-blurb">
-    {{ nl.blurb | default: "One concept at a time, every day. No tips, no calls, no hype — just the explainers." }}
+    One concept at a time, every day. No tips, no calls, no hype — just the explainers.
   </p>
   <p class="newsletter-actions">
     <a class="button button-primary" href="{{ '/feed.xml' | relative_url }}" type="application/atom+xml">Subscribe via RSS</a>
@@ -71,4 +21,3 @@ email form above the day `newsletter.action` is set.
     Educational posts only — never a recommendation to buy or sell anything.
   </p>
 </aside>
-{%- endif -%}

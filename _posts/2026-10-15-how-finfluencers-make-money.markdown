@@ -5,7 +5,7 @@ description: "Referral fees, paid courses, sponsored posts and the pump: the inc
 image: /assets/og/how-finfluencers-make-money.png
 date: 2026-10-15 09:00:00 +0530
 series: risk
-last_modified_at: 2026-10-25
+last_modified_at: 2026-11-21
 ---
 
 {% assign f = site.data.fno %}
@@ -153,9 +153,9 @@ The same question, asked of Wealth Primer.
 - **No ads.**
 - **Analytics** run on this site (Google Analytics), so I can see which posts
   are read. That's disclosed on the privacy page.
-- **A newsletter signup** appears on posts. It's free, and the only thing it
-  earns is a reader who comes back. If that ever changes, it'll be written
-  here first.
+- **No email list.** Posts end with an RSS feed link instead, which needs no
+  sign-up and collects nothing. If that ever changes, it'll be written here
+  first.
 - **Registration:** I'm not a SEBI-registered Investment Adviser or Research
   Analyst, which is why nothing on this site is a recommendation and every
   real figure is lagged.

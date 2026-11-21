@@ -184,7 +184,7 @@ Add each new decision as a row; never delete a row — mark it superseded.
 
 ## 12. Owner actions outstanding
 
-- Resubmit `sitemap.xml` in Search Console.
+- ~~Resubmit `sitemap.xml` in Search Console.~~ Done: resubmitted and read on 21 Nov 2026, status Success, 179 pages discovered.
 - Add a GA4 internal-traffic filter; list the current key events.
 - Supply the Buttondown subscriber count and the AdSense application status.
 - Check organic sessions monthly against the D4 bar (5,000+ a month, two months running).

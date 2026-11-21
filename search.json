@@ -15,6 +15,9 @@ s section label, dt date (posts only).
 {%- assign label = meta.title | default: "" | split: " — " | first | default: "" -%}
 {"t":{{ p.title | jsonify }},"u":{{ p.url | relative_url | jsonify }},"d":{{ p.description | default: "" | jsonify }},"k":{{ p.term | default: "" | jsonify }},"s":{{ label | jsonify }},"dt":{{ p.date | date: "%-d %b %Y" | jsonify }}},
 {%- endfor -%}
+{%- for p in site.guides -%}
+{"t":{{ p.title | jsonify }},"u":{{ p.url | relative_url | jsonify }},"d":{{ p.description | default: "" | jsonify }},"k":"","s":"Guide"},
+{%- endfor -%}
 {%- for p in site.tools -%}
 {"t":{{ p.title | jsonify }},"u":{{ p.url | relative_url | jsonify }},"d":{{ p.description | default: "" | jsonify }},"k":"","s":"Calculator"},
 {%- endfor -%}

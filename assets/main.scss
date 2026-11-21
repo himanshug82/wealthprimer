@@ -1150,6 +1150,121 @@ div.language-python {
 // ---------------------------------------------------------------------------
 // Series pages (/series/<slug>/) and the /series/ index
 // ---------------------------------------------------------------------------
+// Guides (/guides/<id>/): _layouts/guide.html. Wider than a post: a reading path beside a
+// sidebar, which drops below the path on narrow screens.
+.guide { max-width: 64rem; margin: 0 auto; font-family: var(--font-sans); }
+.breadcrumb { font-size: 0.88rem; color: var(--muted); margin-bottom: 1rem; }
+.breadcrumb a { color: var(--muted); }
+.guide-header { max-width: 48rem; margin-bottom: 2.2rem; }
+.guide-eyebrow {
+  margin: 0 0 0.6rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand);
+}
+.guide-title { font-size: 2.4rem; line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 1rem; color: var(--ink); }
+.guide-intro p { font-family: var(--font-serif); font-size: 1.18rem; line-height: 1.6; color: var(--text); margin: 0 0 0.8em; }
+
+.guide-questions { margin-bottom: 2.6rem; }
+.guide h2 { font-size: 1.35rem; margin: 0 0 1rem; color: var(--ink); }
+.guide-question-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 0.8rem; }
+.guide-question,
+.guide-question:visited {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1rem 1.15rem;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+
+  strong { color: var(--ink); font-size: 1.02rem; line-height: 1.35; }
+  span { color: var(--link); font-size: 0.88rem; }
+  &:hover, &:focus-visible { border-color: var(--brand); box-shadow: var(--shadow-md); text-decoration: none; }
+}
+
+.guide-body { display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start; margin-bottom: 2.5rem; }
+.guide-path { flex: 999 1 32rem; min-width: 0; }
+.guide-aside { flex: 1 1 15rem; display: flex; flex-direction: column; gap: 1rem; }
+
+.guide-stage { margin-bottom: 1.8rem; }
+.guide-stage h3 { font-size: 1.15rem; margin: 0 0 0.7rem; color: var(--ink); }
+.guide-stage-num {
+  display: inline-block;
+  min-width: 1.7rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--brand);
+  background: var(--brand-soft);
+  border-radius: 6px;
+  padding: 0.1rem 0.4rem;
+  margin-right: 0.35rem;
+  text-align: center;
+}
+.guide-steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.55rem; }
+.guide-step {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0.85rem 1.05rem;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-sm);
+}
+.guide-step-title { font-weight: 650; font-size: 1rem; color: var(--ink); line-height: 1.4; }
+a.guide-step-title:hover { color: var(--brand); }
+.guide-step-why { font-size: 0.9rem; color: var(--muted); }
+.guide-step-tool,
+.guide-step-tool:visited {
+  align-self: flex-start;
+  margin-top: 0.35rem;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--warm-ink);
+  background: var(--warm-bg);
+  border: 1px solid var(--warm-rule);
+  border-radius: 999px;
+  &:hover { text-decoration: none; border-color: var(--warm-ink); }
+}
+.guide-step-upcoming { background: transparent; border-style: dashed; }
+.guide-step-upcoming .guide-step-title { color: var(--muted); font-weight: 600; }
+
+.guide-next {
+  padding: 1.2rem 1.4rem;
+  background: var(--brand-soft);
+  border: 1px solid var(--brand-tint);
+  border-radius: var(--radius);
+  h2 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+  ul { margin: 0; padding-left: 1.1rem; }
+  li { margin: 0.25rem 0; }
+}
+
+.guide-box {
+  padding: 1.1rem 1.2rem;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  h2 { font-size: 0.98rem; margin: 0 0 0.5rem; }
+  ul { margin: 0; padding-left: 1.1rem; }
+  li { margin: 0.2rem 0; font-size: 0.93rem; }
+  p { margin: 0; font-size: 0.9rem; line-height: 1.5; }
+}
+.guide-box-warm { background: var(--warm-bg); border-color: var(--warm-rule); }
+
+// "Part of a guide" line under a post's title (_layouts/post.html).
+.post-guide-line { font-family: var(--font-sans); font-size: 0.9rem; color: var(--muted); margin: 0.6rem 0 0; }
+
+@media screen and (max-width: 699px) {
+  .guide-title { font-size: 1.85rem; }
+  .guide-intro p { font-size: 1.06rem; }
+}
+
 // Journey pages (/learn/, /analyse/, /portfolio/, /risk-and-tax/): _layouts/journey.html.
 .journey-intro {
   font-family: var(--font-serif);

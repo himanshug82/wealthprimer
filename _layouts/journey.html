@@ -13,6 +13,20 @@ scheduled post or a new series appears on its date with no edit here.
 
 {{ content }}
 
+{%- assign guides = site.guides | where: "journey", page.journey -%}
+{%- if guides.size > 0 %}
+<h2>Guides</h2>
+<div class="series-cards journey-series">
+  {%- for g in guides %}
+  <a class="series-card" href="{{ g.url | relative_url }}">
+    <h3 class="series-card-title">{{ g.title | escape }}</h3>
+    <p class="series-card-desc">{{ g.description | escape }}</p>
+    <p class="series-card-meta">Guide &middot; {{ g.stages.size }} stages</p>
+  </a>
+  {%- endfor %}
+</div>
+{%- endif -%}
+
 {%- capture start_items -%}
 {%- for s in j.start -%}
 {%- assign p = site.posts | where: "slug", s | first -%}

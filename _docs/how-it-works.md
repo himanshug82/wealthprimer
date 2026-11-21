@@ -154,6 +154,15 @@ three weeks of written backlog so a skipped week leaves no gap.
   and extra links. A post lights up its journey in the header through its
   series; other pages set `nav_section:`. Below 820px the nav becomes the menu
   button.
+- **Guides** (`/guides/<id>/`): one file per guide in `_guides/`, drawn by
+  `_layouts/guide.html`. Front matter holds `journey`, `questions`
+  (question → post), `stages` (posts in reading order, each with a `why` and
+  optional `tool`), `after` (not `next`, which Jekyll reserves) and
+  `data_note`. Posts are named by file name without extension, as in
+  `post_url`; a post not yet published shows its date. Rescheduling a post
+  means updating its guide too: `check_posts.py` errors on a key with no file,
+  an unknown tool or journey. Each post in a guide shows a "Part of" line
+  under its title, and the journey page lists its guides.
 - **Search** (`/search/`, noindexed): `search.json` is built with the site
   (published posts, tools and indexable pages) and `assets/js/search.js`
   filters it in the browser. Nothing is sent anywhere. The header box shows

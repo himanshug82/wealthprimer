@@ -46,6 +46,20 @@ the header line; the same include renders the prev/next block after the body.
       {%- if page.author -%}
         &middot; <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
       {%- endif -%}</p>
+    {%- comment -%}
+      "Part of <guide>": a post listed in a guide's stages (_guides/*.md) links back to it.
+      Keys are the post's file name without extension, as in the guide's front matter.
+    {%- endcomment -%}
+    {%- assign my_key = page.relative_path | remove_first: "_posts/" | remove: ".markdown" -%}
+    {%- for g in site.guides -%}
+      {%- for st in g.stages -%}
+        {%- for it in st.posts -%}
+          {%- if it.post == my_key %}
+    <p class="post-guide-line">Part of <a href="{{ g.url | relative_url }}">{{ g.title | escape }}</a> &middot; {{ st.title | escape }}</p>
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endfor -%}
+    {%- endfor %}
   </header>
 
   {%- include review-notice.html -%}

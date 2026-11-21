@@ -45,8 +45,8 @@
   planned: 28   # Module 1 (8) + Module 2 (8) + Module 3 options, mechanically (6) + Module 4 measuring and managing exposure (6)
 - slug: money-before-markets
   title: "Money Before Markets"
-  description: "How the safe-money basics work before you invest in markets: emergency funds, FDs, G-secs, PPF, EPF, NPS, ULIPs and REITs."
-  about: "For the money decisions that sit underneath investing: how big a cash buffer is and where it waits, how a fixed deposit differs from a debt fund, and how government securities, PPF and NPS exit rules work. It ends with what a ULIP's charges take and how a REIT is built. Rates and rules are dated and sourced to the issuing body, and nothing here tells you what to choose."
+  description: "The money decisions underneath investing: emergency funds, FDs, G-secs, PPF, NPS, ULIPs and REITs, then compounding, asset classes and allocation."
+  about: "For the money decisions that sit underneath investing: how big a cash buffer is and where it waits, how a fixed deposit differs from a debt fund, how government securities, PPF and NPS exit rules work, what a ULIP's charges take and how a REIT is built. Later posts cover putting a portfolio together: compounding, asset classes, horizon, asset allocation and goal arithmetic. Rates and rules are dated and sourced to the issuing body, and nothing here tells you what to choose."
   planned: 7   # Module 1: emergency fund, FD vs debt fund, G-secs, PPF, NPS exit rules, ULIP charges, REIT structure written; EPF (12 Nov slot) pending its primary sources, then bump to 8
 - slug: market-basics
   title: "Your first year in the market"

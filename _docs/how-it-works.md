@@ -146,6 +146,18 @@ three weeks of written backlog so a skipped week leaves no gap.
   multiple — never a real listed company.
 
 ## Site features
+- **Top navigation** (decision D2): Learn · Analyse · Portfolio · Risk & Tax ·
+  Tools · About, from `header_pages` in `_config.yml`. The four journey pages
+  (`/learn/`, `/analyse/`, `/portfolio/`, `/risk-and-tax/`) are drawn by
+  `_layouts/journey.html` from `_data/journeys.yml`: which series belong to
+  each journey, the posts to start with (scheduled ones appear on their date)
+  and extra links. A post lights up its journey in the header through its
+  series; other pages set `nav_section:`. Below 820px the nav becomes the menu
+  button.
+- **Search** (`/search/`, noindexed): `search.json` is built with the site
+  (published posts, tools and indexable pages) and `assets/js/search.js`
+  filters it in the browser. Nothing is sent anywhere. The header box shows
+  from 1000px; narrower screens get a "Search" link.
 - **Series nav** ("Part N of M", prev/next): M is `planned:` in
   `_data/series.yml` — bump it when a series grows. Series with no published
   posts are hidden from the homepage, `/series/` and the footer.

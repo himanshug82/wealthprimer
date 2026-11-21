@@ -91,12 +91,16 @@ rss: RSS
 # With four series pages now under /series/, the nav needs explicit control —
 # the individual series pages are reached from /series/, not the top nav.
 header_pages:
-  - series.markdown
-  - glossary.markdown
+  - learn.markdown
+  - analyse.markdown
+  - portfolio.markdown
+  - risk-and-tax.markdown
   - tools.markdown
-  - case-study.markdown
-  - methodology.markdown
   - about.markdown
+# Decision D2 (21 Nov 2026): Learn · Analyse · Portfolio · Risk & Tax · Tools · About, plus search.
+# Series, Glossary, Case study and Methodology moved to the journey pages and the footer.
+# Each header page sets `nav_section`; _includes/header.html lights up the section of the
+# current page from its own `nav_section`, its series (via _data/journeys.yml) or the tools collection.
 # privacy.markdown lives in the footer (and every post's disclaimer links to
 # it) — six nav items wrapped the header onto two lines on laptops.
 

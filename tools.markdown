@@ -1,4 +1,5 @@
 ---
+nav_section: tools
 layout: page
 title: "Tools"
 permalink: /tools/

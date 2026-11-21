@@ -1,4 +1,5 @@
 ---
+nav_section: about
 layout: page
 title: "Data & methodology"
 nav_title: "Methodology"   # short label for the header nav; `title` stays the page H1

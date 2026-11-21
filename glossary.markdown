@@ -1,4 +1,5 @@
 ---
+nav_section: learn
 layout: page
 title: "Glossary"
 permalink: /glossary/

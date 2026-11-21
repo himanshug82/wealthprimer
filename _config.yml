@@ -151,6 +151,7 @@ defaults:
 exclude:
   - CLAUDE.md
   - TODO.md
+  - WEALTH_PRIMER_MASTER_PLAN.md
   - Gemfile
   - Gemfile.lock
   - README.md

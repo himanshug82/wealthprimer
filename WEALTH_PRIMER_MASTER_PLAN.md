@@ -19,7 +19,7 @@ Turn Wealth Primer from a concept-by-concept finance blog into **an independent 
 
 **Audience:** Indian self-directed investors who want to make better decisions by understanding investments, evaluating risk and managing portfolios. Default reader: an intelligent beginner; depth layered in.
 
-**What "decision support" means here.** Frameworks, checklists, worked examples and calculators that run on the reader's own generic inputs and show the mechanics. It never means ranking, screening or scoring real securities, reviewing a reader's holdings, or telling anyone what to do. (Proposed scope rule, pending decision D3.)
+**What "decision support" means here.** Frameworks, checklists, worked examples and calculators that run on the reader's own generic inputs and show the mechanics. It never means ranking, screening or scoring real securities, reviewing a reader's holdings, or telling anyone what to do. (Scope rule decided 21 Nov 2026, D3; written into `CLAUDE.md` under Calculators and code.)
 
 ## 2. Business objectives, in order
 
@@ -105,8 +105,8 @@ Option B (tools-first) was not chosen: its hero needs an on-page rolling-returns
 
 ## 6. Content strategy
 
-- **Publish daily, improve in parallel.** The owner set one post a day (D1, 21 Nov 2026): the written backlog runs out on 19 Jan 2027, after which the site needs seven new posts a week. Improving and interlinking existing posts (hubs, refreshes) runs alongside, and the indexed share of published posts is the check on whether the pace is hurting.
-- **Every published post has a proposed action** in `_review/sprint-1/content-inventory.csv`: KEEP 58 · IMPROVE 62 · CONSOLIDATE 37 · REDIRECT 0 · RETIRE 0 (59 scheduled posts not yet labelled). Proposals only, pending D5.
+- **Publish daily, improve in parallel.** The owner set one post a day (D1, 21 Nov 2026): the written backlog now runs to 1 Feb 2027 (Money Before Markets M2 and FA M5 drafted 21 Nov), after which the site needs seven new posts a week. Improving and interlinking existing posts (hubs, refreshes) runs alongside, and the indexed share of published posts is the check on whether the pace is hurting.
+- **Every published post has a proposed action** in `_review/sprint-1/content-inventory.csv`: KEEP 58 · IMPROVE 62 · CONSOLIDATE 37 · REDIRECT 0 · RETIRE 0 (59 scheduled posts not yet labelled). Labels approved 21 Nov 2026 (D5): IMPROVE posts are worked first, in Search Console order (pages with impressions first), one small PR at a time. CONSOLIDATE is largely served by the four flagship guides; the remaining work is choosing one owner per head term.
 - **CONSOLIDATE** means connect overlapping posts under a hub and choose which one owns the head term. It does not mean merge or redirect.
 - **Priority clusters** (from Search Console): rolling returns (14 query variants, the only calculator demand); exit load / expense ratio / NAV; ex-date vs record date; trend lines; banking ratios.
 - **Tax content** stays mechanics-only with primary sources, and is re-checked after each Union Budget.
@@ -131,7 +131,7 @@ Not planned: generator migration, permalink changes, CMS, database, AMP.
 | Phase | Weeks | Focus | Status |
 |---|---|---|---|
 | 1 | 1–2 | Repository assessment, analytics baseline, content inventory, SEO audit | **Done** (21 Nov 2026, PR #34) |
-| 2 | 3–4 | Owner decisions D1–D5; hygiene fixes (done: A1–A3); information architecture; homepage and hub wireframes (done; options chosen); design tokens | **In progress** |
+| 2 | 3–4 | Owner decisions D1–D5 (**all decided** 21 Nov 2026); hygiene fixes (done: A1–A3); information architecture; homepage and hub wireframes (done; options chosen); design tokens | **In progress** (design tokens left) |
 | 3 | 5–6 | Build, in order: (1) navigation and site search (**done**, PR #43); (2) the guide template and (3) the mutual funds guide (**done**, PR #44); (4) the new homepage (**done**; goal cards and featured calculators edited in `index.markdown`) | **Done** 21 Nov 2026 |
 | 4 | 7–8 | Content consolidation, internal linking, first flagship guides | Not started |
 | 5 | 9–10 | Calculator experience, newsletter offer, analytics events | Not started |
@@ -176,9 +176,9 @@ Full register: `_review/sprint-1/technical-risk-register.md`.
 | D2 | Navigation labels | **Decided** (owner): Learn · Analyse · Portfolio · Risk & Tax · Tools · About, plus search | 21 Nov 2026 | Series, Glossary, Case study, Methodology leave the top bar (see §5) |
 | — | Homepage direction | **Decided** (owner): option A, problem-first | 21 Nov 2026 | [Wireframes](https://claude.ai/artifact/HxbMJTyDtRPqJsMAVf2VQV); option B (tools-first) set aside |
 | — | Guide page template | **Decided** (owner): option A (ordered path) with option B's question cards | 21 Nov 2026 | First built for the mutual funds guide |
-| D3 | Scope rule for decision-support tools | **Pending** (one case approved) | 21 Nov 2026 | Generic inputs, mechanics only, no ranking/scoring of securities or holdings review. The owner approved an on-page goal-based investing calculator (generic assumptions in, lump sum and SIP out) for the 24 Jan 2027 post; the general rule is still to be decided |
-| D4 | AdSense timing | **Pending** | — | Recommended: defer until organic traffic is meaningful |
-| D5 | Inventory actions | **Pending** | — | Approve or amend `content-inventory.csv` proposals |
+| D3 | Scope rule for decision-support tools | **Decided** (owner): generic inputs only | 21 Nov 2026 | Tools run on the reader's own assumptions and show the mechanics. They never rank, screen or score real securities or funds, review a reader's holdings, or say what to do; tools don't load real-fund data. Written into `CLAUDE.md`. First case: the goal-based investing calculator (PR #49) |
+| D4 | AdSense timing | **Decided** (owner): defer to a traffic bar | 21 Nov 2026 | Revisit when organic search brings 5,000+ sessions a month for two months running (GA4, internal and bot traffic filtered). Before any ad goes live: `ads.txt`, a consent tool, a privacy page update and category blocking (trading, crypto, betting), so ads can't contradict the no-paid-promotions promise |
+| D5 | Inventory actions | **Decided** (owner): approve, IMPROVE first | 21 Nov 2026 | Labels in `content-inventory.csv` approved as proposed (KEEP 58, IMPROVE 62, CONSOLIDATE 37; no redirects or deletions). IMPROVE posts are refreshed in Search Console order, pages with impressions first, one small PR each (`refresh-post`). CONSOLIDATE = link under the guides and pick one owner per head term, never merge |
 
 Add each new decision as a row; never delete a row — mark it superseded.
 
@@ -187,7 +187,7 @@ Add each new decision as a row; never delete a row — mark it superseded.
 - Resubmit `sitemap.xml` in Search Console.
 - Add a GA4 internal-traffic filter; list the current key events.
 - Supply the Buttondown subscriber count and the AdSense application status.
-- Decide D3–D5 (D1 and D2 decided 21 Nov 2026).
+- Check organic sessions monthly against the D4 bar (5,000+ a month, two months running).
 
 ## 13. Sprint record
 

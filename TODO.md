@@ -21,6 +21,8 @@ Current state (1 Nov 2026): **198 posts written** (Jargon 59 · FA 29 · TA 22 �
   - **[Proposed]** tax — Cost basis and filing mechanics: 6 posts, 2026-12-29 → 2027-01-03 (one a day). Roadmap: _review/roadmaps/2026-11-06-tax.md. Brief: _review/research/2026-11-06.md.
   - **[Proposed]** mutual-funds — Newer fund rules and wrappers: 6 posts, 2027-01-22 → 2027-01-27 (one a day). Roadmap: _review/roadmaps/2026-11-06-mutual-funds.md. Brief: _review/research/2026-11-06.md.
   The Sunday drafting routine caps at 8 posts a week, so the 10 Nov dates will slip unless drafted by hand; check `planned:` in `_data/series.yml` (already bumped) against written counts and move dates if needed.
+- **IMPROVE queue (D5, decided 21 Nov 2026).** Work the 62 IMPROVE posts in `_review/sprint-1/content-inventory.csv` in Search Console order, pages with impressions first, one small PR each with `refresh-post`. No merges or redirects; CONSOLIDATE means linking under the guides and choosing one owner per head term.
+- **AdSense bar (D4, decided 21 Nov 2026).** Revisit only when organic search brings 5,000+ GA4 sessions a month for two months running (with internal and bot traffic filtered). Before any ad goes live: `ads.txt`, a consent tool, a privacy page update and category blocking (trading, crypto, betting).
 - **Search Console (monthly).** Export queries at position 8–20 and refresh those posts (`refresh-post`; `last_modified_at` only for substantive changes). Watch Pages indexed, Sitemaps (Success), Breadcrumbs (≈ number of posts) and Core Web Vitals (no CLS issues). Don't rename dated URLs without owner approval; if one must move, add `redirect_from:` to the post (see `_docs/how-it-works.md`).
 
 ## Open — links owed once targets publish

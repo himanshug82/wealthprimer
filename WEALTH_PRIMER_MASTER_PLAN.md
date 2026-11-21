@@ -3,7 +3,7 @@
 The single, permanent reference for the Wealth Primer 2.0 transformation: what we are building, the rules it must respect, where it stands, and what has been decided. Keep it current. When a sprint ends or a decision is made, update the **Status** and **Decision log** sections here and link the evidence.
 
 - **Started:** 21 November 2026
-- **Last updated:** 21 November 2026 (Sprint 1 done; first Sprint 2 hygiene fixes shipped)
+- **Last updated:** 21 November 2026 (Phases 1 and 3 done; Phase 2 down to design tokens; Phase 4 in progress: four of five guides built, two modules drafted, D1–D5 decided, IMPROVE queue started)
 - **House rules for writing:** `CLAUDE.md` (they take precedence over anything here)
 - **How the site builds and publishes:** `_docs/how-it-works.md`
 - **Open editorial tasks:** `TODO.md`
@@ -133,8 +133,8 @@ Not planned: generator migration, permalink changes, CMS, database, AMP.
 | 1 | 1–2 | Repository assessment, analytics baseline, content inventory, SEO audit | **Done** (21 Nov 2026, PR #34) |
 | 2 | 3–4 | Owner decisions D1–D5 (**all decided** 21 Nov 2026); hygiene fixes (done: A1–A3); information architecture; homepage and hub wireframes (done; options chosen); design tokens | **In progress** (design tokens left) |
 | 3 | 5–6 | Build, in order: (1) navigation and site search (**done**, PR #43); (2) the guide template and (3) the mutual funds guide (**done**, PR #44); (4) the new homepage (**done**; goal cards and featured calculators edited in `index.markdown`) | **Done** 21 Nov 2026 |
-| 4 | 7–8 | Content consolidation, internal linking, first flagship guides | Not started |
-| 5 | 9–10 | Calculator experience, newsletter offer, analytics events | Not started |
+| 4 | 7–8 | Content consolidation, internal linking, first flagship guides. **Done:** guides 1–4 (mutual funds PR #44, stocks #46, risk #47, portfolio #50); Money Before Markets module 2 written to fill the portfolio gap (#48, #49); FA module 5 drafted (#51); IMPROVE queue begun: GNPA answer (#53), direct answers on four not-indexed posts (#54), six indexing requests (#55). **Left:** guide 5, the Taxation Handbook (after the 1 Feb 2027 Budget re-check); choosing one owner post per head term (CONSOLIDATE); the rest of the IMPROVE queue (57 posts) | **In progress** |
+| 5 | 9–10 | Calculator experience, newsletter offer, analytics events. Ahead of schedule: the on-page goal-based investing calculator (#49), built under the D3 scope rule (#52). Analytics events wait on the owner's GA4 internal-traffic filter; the newsletter offer waits on the subscriber count | Not started (one calculator built early) |
 | 6 | 11–12 | SEO validation, distribution process, monitoring, next-quarter backlog | Not started |
 
 Sprint 2 backlog: `_review/sprint-1/sprint-2-recommendations.md`.
@@ -194,5 +194,6 @@ Add each new decision as a row; never delete a row — mark it superseded.
 | Sprint | Dates | Output | Evidence |
 |---|---|---|---|
 | 1 | 21 Nov 2026 | Assessment: repository, inventory, SEO, UX, risks, Sprint 2 recommendations, analytics baseline | `_review/sprint-1/`, PR #34 |
-| 2 (in progress) | from 21 Nov 2026 | D1 decided: one post a day to 19 Jan 2027. D2 decided; homepage option A and guide option A (with question cards) chosen from the wireframes. Hygiene: plain links to unpublished posts now checked (6 fixed, 6 RELINK markers swept); production builds with the Gemfile and Pages source is GitHub Actions; `jekyll-redirect-from` added | PRs #35, #36 |
-| 3 (Phase 3 build) | 21 Nov 2026 | New navigation (Learn · Analyse · Portfolio · Risk & Tax · Tools · About), four journey pages and client-side search; guide template and the mutual funds guide; homepage option A | PRs #43, #44 and the homepage PR |
+| 2 (in progress) | from 21 Nov 2026 | D1 decided: one post a day (backlog now to 1 Feb 2027). D2 decided; D3–D5 decided in sprint 4 (#52); homepage option A and guide option A (with question cards) chosen from the wireframes. Hygiene: plain links to unpublished posts now checked (6 fixed, 6 RELINK markers swept); production builds with the Gemfile and Pages source is GitHub Actions; `jekyll-redirect-from` added; `scripts/` no longer published. Left: design tokens | PRs #35–#42 |
+| 3 (Phase 3 build) | 21 Nov 2026 | New navigation (Learn · Analyse · Portfolio · Risk & Tax · Tools · About), four journey pages and client-side search; guide template and the mutual funds guide; homepage option A | PRs #43, #44, #45 |
+| 4 (Phase 4, guides and content) | 21 Nov 2026 | Guides: *How to Analyse Stocks* (24 posts, 7 stages), *Understanding Investment Risk* (18 posts, 5 stages), *Building Your Investment Portfolio* (20 posts, 6 stages); homepage goal cards repointed. Content: Money Before Markets module 2 (7 posts, 20–26 Jan 2027, with `derive_mbm2.py` and a UTI Gold ETF series) and the on-page goal calculator; FA module 5 (6 posts, 27 Jan – 1 Feb 2027, with `derive_fa5.py`); both reviewed by `post-auditor` and every P0 fixed before merge. Decisions D3 (tool scope rule, in `CLAUDE.md`), D4 (AdSense deferred to 5,000+ organic sessions a month), D5 (inventory labels approved, IMPROVE first). IMPROVE queue: GNPA direct answer and description; "In short" openings on trend lines, Fibonacci, Bollinger/ATR and CASA; indexing requested for those six pages; sitemap confirmed read (Success, 179 pages). Finding: links aren't the bottleneck (5–12 inbound each); Search Console hides most queries | PRs #46–#55 |

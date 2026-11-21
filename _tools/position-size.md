@@ -1,5 +1,6 @@
 ---
 tool: position-size
+date: 2026-11-02
 title: "Position size calculator: shares from a risk budget"
 description: "Free position size calculator: turn a risk percentage and an ATR-based stop into a number of shares. The 1% and 2× ATR are conventions, not advice."
 image: /assets/og/tool-position-size.png

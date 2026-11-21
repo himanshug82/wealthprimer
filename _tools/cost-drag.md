@@ -1,5 +1,6 @@
 ---
 tool: cost-drag
+date: 2026-10-28
 title: "Cost drag calculator: direct vs regular plan"
 description: "Free calculator: what an extra annual cost, like a regular plan's higher expense ratio, takes out of a lump sum over any number of years, in rupees."
 image: /assets/og/tool-cost-drag.png

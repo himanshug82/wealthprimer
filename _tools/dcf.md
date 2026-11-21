@@ -1,5 +1,6 @@
 ---
 tool: dcf
+date: 2026-10-25
 title: "DCF calculator, worked on a fictional company"
 description: "A free DCF calculator on Desi Bites Foods, our fictional company: change the forecast, WACC or terminal growth and watch the value per share move."
 image: /assets/og/tool-dcf.png

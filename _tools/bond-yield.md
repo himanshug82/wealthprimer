@@ -1,5 +1,6 @@
 ---
 tool: bond-yield
+date: 2026-11-02
 title: "Bond price, yield and duration calculator (YTM)"
 description: "Free bond calculator: turn a yield into a price and duration, or a price into the yield to maturity. Annual coupons, whole years, a fictional bond."
 image: /assets/og/tool-bond-yield.png

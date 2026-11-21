@@ -1,5 +1,6 @@
 ---
 tool: sip-xirr
+date: 2026-10-25
 title: "SIP and XIRR calculator"
 description: "A free SIP and XIRR calculator: see what a monthly SIP into a fund became between any two dates, or the XIRR of any list of dated cash flows."
 image: /assets/og/tool-sip-xirr.png

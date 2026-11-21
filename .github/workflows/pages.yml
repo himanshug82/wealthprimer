@@ -45,10 +45,16 @@ jobs:
           ruby-version: '3.3'
           bundler-cache: true
       - uses: actions/configure-pages@v5
-      - uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./
-          destination: ./_site
+        id: pages
+      # Build with the Gemfile's versions (Jekyll 4.4, jekyll-seo-tag 2.9), the same as
+      # local builds and pr-checks.yml. actions/jekyll-build-pages ignored the Gemfile and
+      # built with GitHub's own gem set (Jekyll 3.10), so a PR could pass on one version and
+      # deploy on another. Switched 21 Nov 2026 after checking the two builds render the
+      # same text and identical screenshots. JEKYLL_ENV=production turns on analytics.
+      - name: Build with Jekyll
+        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        env:
+          JEKYLL_ENV: production
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./_site

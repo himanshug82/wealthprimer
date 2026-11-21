@@ -20,9 +20,12 @@ Moved out of `TODO.md` on 25 Oct 2026. `CLAUDE.md` is the writing rulebook; this
   `date:` to match, and rewrite every `{% post_url old-name %}` that points at
   it (`grep -rn "post_url OLD" _posts`). Then run `check_posts.py`. URLs of
   already-live posts must never change. Two posts compute their data lag from
-  `page.date` (TA 1, Bollinger), so moving posts doesn't break them. `actions/jekyll-build-pages` runs Jekyll in **safe mode**: no custom
-  plugins, which is why number formatting, the TOC and series nav are pure
-  Liquid includes. Don't "simplify" them into `_plugins/`.
+  `page.date` (TA 1, Bollinger), so moving posts doesn't break them. Production builds
+  with `bundle exec jekyll build` (Gemfile versions, since 21 Nov 2026; it used
+  `actions/jekyll-build-pages`, Jekyll 3.10 in safe mode, before). Number
+  formatting, the TOC and series nav are pure Liquid includes from the
+  safe-mode days; they work, so leave them there rather than moving them into
+  `_plugins/`.
 - **`{% post_url %}` may only point at an earlier-dated post** — a link to a
   future post fails the whole build on the linking post's publish date.
 - **A line starting with a number or a Liquid value + ". "** mid-paragraph

@@ -2,7 +2,7 @@
 
 A financial education blog for Indian retail investors, live at <https://wealthprimer.in>. It **teaches concepts**; it does not give stock tips, predictions, target prices or personalised advice. That line is both the brand ("credibility-first") and the legal position (no SEBI Research Analyst / Investment Adviser registration needed).
 
-Built with Jekyll on GitHub Pages. Six series today (Jargon, Fundamental Analysis, Technical Analysis, Mutual Funds, Tax, Risk), with new series and a standalone-explainers bucket possible via `new-series`, one fictional case-study company (Desi Bites Foods) and a set of Claude Code skills, an agent pair and scheduled tasks that make writing, checking and shipping safer.
+Built with Jekyll on GitHub Pages. Eight series today (Jargon, Fundamental Analysis, Technical Analysis, Mutual Funds, Tax, Risk, Money Before Markets, Market basics; canonical list in `_data/series.yml`), four flagship guides, with new series and a standalone-explainers bucket possible via `new-series`, one fictional case-study company (Desi Bites Foods) and a set of Claude Code skills, an agent pair and scheduled tasks that make writing, checking and shipping safer.
 
 - Rules every post must follow: [`CLAUDE.md`](CLAUDE.md)
 - What is open / parked: [`TODO.md`](TODO.md). How the repo builds, schedules and handles data: [`_docs/how-it-works.md`](_docs/how-it-works.md)
@@ -25,7 +25,7 @@ You don't need to memorise anything. Describe what you want in plain words in a 
 | "Tweet for today's post" | `social-hooks` |
 | "Create PR and merge" | `ship` |
 
-Nothing is published by Claude. A post goes live on its own `date:` when the daily GitHub Pages build runs (09:00 IST). Nothing is opened, merged or tweeted unless you ask.
+Nothing is published by Claude. A post goes live on its own `date:` when the daily GitHub Pages build runs (four runs from 09:01 IST). Posts are dated Mondays, Wednesdays and Fridays (owner decision D6). Nothing is opened, merged or tweeted unless you ask.
 
 ### Local commands
 
@@ -75,7 +75,7 @@ Skills live in `.claude/skills/<name>/SKILL.md`. Claude loads one automatically 
 ### `plan-module` — decide what to write next
 - **Purpose:** produce a roadmap (about 4–8 posts) for one series, for you to approve. Output is a table and a `TODO.md` entry, never posts.
 - **Use when:** a series' written backlog is running out, or you ask "what next".
-- **How:** "Run plan-module for the risk series." It reads series state, owned terms (`term:` front matter: one term, one owner), promises of "later in this series", and proposes topics, order, dates (one post per series per day), data needs, and compliance risks. It stops at an approval gate.
+- **How:** "Run plan-module for the risk series." It reads series state, owned terms (`term:` front matter: one term, one owner), promises of "later in this series", and proposes topics, order, dates (Mondays, Wednesdays and Fridays, one a day site-wide, D6), a new-article gate card per post, data needs, and compliance risks. It stops at an approval gate.
 - **You then:** approve, edit, or reject topics. Nothing is written before that.
 
 ### `write-post` — draft, edit, audit, SEO-check
@@ -165,7 +165,7 @@ Manage them with the Claude routines UI or ask Claude to pause, change or delete
 ## 6. Hooks, settings and CI
 
 - `.claude/settings.json` + `.claude/hooks/session-start.sh`: in Claude cloud sessions, installs the Python packages the scripts need (pandas, numpy, pyyaml, matplotlib, pillow, requests). Local sessions: no effect.
-- `.github/workflows/pages.yml`: build and deploy; daily rebuild at 09:00 IST publishes posts whose date has arrived (`future: false`). Its `og-cards` job is advisory and must never block publishing.
+- `.github/workflows/pages.yml`: build and deploy; daily rebuilds (09:01, 09:37, 10:13 and 11:49 IST) publish posts whose date has arrived (`future: false`). Its `og-cards` job is advisory and must never block publishing.
 - `.github/workflows/pr-checks.yml`: on pull requests runs `check_posts.py`, lint on changed posts, OG cards, image dimensions and `jekyll build --future`. Separate from publishing; make it a required check only if you choose to.
 
 ---

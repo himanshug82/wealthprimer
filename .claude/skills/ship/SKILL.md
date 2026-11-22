@@ -7,8 +7,9 @@ description: Run the pre-merge checks for Wealth Primer, open the PR, and (only 
 
 ## Working agreement
 
-- Develop on the session branch (`claude/happy-babbage-45qbnc`). **Open a PR only when asked; merge only when asked** ("create PR and merge" = both).
-- After a merge, restart the branch from main: `git fetch -q origin main && git checkout -q -B <branch> origin/main`; later pushes use `--force-with-lease`.
+- Develop on a short-lived branch per change, cut from `origin/main` and named for it (`claude/<topic>`). **Open a PR only when asked; merge only when asked** ("create PR and merge" = both).
+- Squash-merge, then delete the branch on GitHub and locally (`gh pr merge N --squash --delete-branch`; `git switch main && git pull --ff-only`). Start the next change on a new branch.
+- Commit with the owner's GitHub noreply address (`32442498+himanshug82@users.noreply.github.com`): GitHub rejects pushes that carry the private email.
 
 ## Steps
 

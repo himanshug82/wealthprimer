@@ -141,11 +141,11 @@ Keep the stack. Improve, in this order:
 1. ~~Build production with the Gemfile.~~ **Done 21 Nov 2026** (PR #36; Pages source switched from "Deploy from a branch" to "GitHub Actions"). Live site now reports Jekyll 4.4.1.
 2. ~~Check plain links to future-dated posts in `check_posts.py`.~~ **Done 21 Nov 2026** (PR #35).
 3. ~~Add `jekyll-redirect-from`, with no redirects configured.~~ **Done 21 Nov 2026** (v0.17; `redirect_from:` in front matter; still owner approval for any URL change).
-4. Design tokens extracted from `assets/main.scss`, then the hub/guide layout and homepage.
-5. Client-side search over a generated JSON index.
-6. An on-page rolling-returns calculator (and possibly SIP/XIRR), keeping the Sheets as "make a copy" downloads.
+4. ~~Design tokens extracted from `assets/main.scss`, then the hub/guide layout and homepage.~~ **Done 21 Nov 2026** (tokens in `_docs/design-tokens.md`; guides PR #44, homepage).
+5. ~~Client-side search over a generated JSON index.~~ **Done 21 Nov 2026** (PR #43, `/search/`).
+6. ~~An on-page rolling-returns calculator, keeping the Sheet as a "make a copy" download.~~ **Done 22 Nov 2026** (PR #72; spec `_review/calculators/2026-11-22-rolling-returns-onpage.md`). Judge it about mid-January 2027 on Search Console impressions for the calculator queries and on `calculator_start` / `calculator_complete`; decide on SIP/XIRR only after that.
 7. GA4 events (**built 22 Nov 2026**: `calculator_start`, `calculator_complete`, `internal_click` with link type, location and guide; earlier: series navigation, outbound and Sheet clicks, scroll depth). Planned list was: calculator starts and completions, Sheet opens, outbound source clicks, guide (learning-pathway) progression, internal post-to-post and post-to-tool navigation, follow/RSS clicks (and subscriptions if D7 brings a newsletter back). Needs the owner's internal-traffic filter first.
-8. Editorial standards page (principles, how numbers are produced, sourcing), a corrections and update policy with a visible "last reviewed" date on posts, and a stronger author page.
+8. ~~Editorial standards page, corrections and update policy, a visible "last reviewed" date on posts, and a stronger author page.~~ **Done 22 Nov 2026**: `/editorial-standards/` with a corrections log (PR #65); every post now has a byline linking to `/about/`; an optional `last_checked:` date ("Checked …" in the post header), set only when a post really is re-checked against its data and sources; `/about/` rewritten with what the author is not, what the blog covers, how it works, and ProfilePage/Person structured data.
 
 Not planned: generator migration, permalink changes, CMS, database, AMP.
 
@@ -157,7 +157,7 @@ Not planned: generator migration, permalink changes, CMS, database, AMP.
 | 2 | 3–4 | Owner decisions D1–D5 (**all decided** 21 Nov 2026); hygiene fixes (done: A1–A3); information architecture; homepage and hub wireframes (done; options chosen); design tokens (done: named in `assets/main.scss`, reference `_docs/design-tokens.md`) | **Done** 21 Nov 2026 |
 | 3 | 5–6 | Build, in order: (1) navigation and site search (**done**, PR #43); (2) the guide template and (3) the mutual funds guide (**done**, PR #44); (4) the new homepage (**done**; goal cards and featured calculators edited in `index.markdown`) | **Done** 21 Nov 2026 |
 | 4 | 7–8 | Content consolidation, internal linking, first flagship guides. **Done:** guides 1–4 (mutual funds PR #44, stocks #46, risk #47, portfolio #50); Money Before Markets module 2 written to fill the portfolio gap (#48, #49); FA module 5 drafted (#51); IMPROVE queue begun: GNPA answer (#53), direct answers on four not-indexed posts (#54), six indexing requests (#55). **Left:** guide 5, the Taxation Handbook (after the 1 Feb 2027 Budget re-check); choosing one owner post per head term (CONSOLIDATE); the rest of the IMPROVE queue (57 posts) | **In progress** |
-| 5 | 9–10 | Calculator experience and analytics events (the newsletter offer was dropped with the newsletter, 21 Nov 2026). Ahead of schedule: the on-page goal-based investing calculator (#49), built under the D3 scope rule (#52). Analytics events wait on the owner's GA4 internal-traffic filter | Not started (one calculator built early) |
+| 5 | 9–10 | Calculator experience and analytics events (the newsletter offer was dropped with the newsletter, 21 Nov 2026). **Done early:** the goal-based investing calculator (#49, D3 scope rule #52); GA4 internal-traffic switch (#69) and events (#71); the on-page rolling-returns calculator (#72); editorial standards, corrections, bylines and author page (#65 and the item 8 PR). **Left:** the owner's GA4 filter and custom dimensions; judging the rolling-returns calculator in mid-January | **Mostly done** (ahead of schedule) |
 | 6 | 11–12 | SEO validation, distribution process, monitoring, next-quarter backlog | Not started |
 
 Sprint 2 backlog: `_review/sprint-1/sprint-2-recommendations.md`.

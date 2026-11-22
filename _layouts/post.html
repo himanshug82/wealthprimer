@@ -40,11 +40,20 @@ the header line; the same include renders the prev/next block after the body.
       {%- if page.last_modified_at %}
         &middot; Updated <time class="dt-updated" datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">{{ page.last_modified_at | date: date_format }}</time>
       {%- endif -%}
+      {%- comment -%}
+        last_checked: set only when the whole post was really re-checked against its data and
+        sources (refresh-post, the post-Budget re-check), even if nothing needed changing.
+        It is not a professional review and never changes dateModified. Policy: /editorial-standards/.
+      {%- endcomment -%}
+      {%- if page.last_checked %}
+        &middot; <a class="post-checked" href="{{ '/editorial-standards/#dates-on-a-post' | relative_url }}">Checked <time datetime="{{ page.last_checked | date_to_xmlschema }}">{{ page.last_checked | date: date_format }}</time></a>
+      {%- endif -%}
       {%- assign words = content | strip_html | number_of_words -%}
       {%- assign minutes = words | divided_by: 220 | at_least: 1 -%}
       &middot; {{ minutes }} min read
-      {%- if page.author -%}
-        &middot; <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
+      {%- assign byline = page.author | default: site.author -%}
+      {%- if byline %}
+        &middot; By <span itemprop="author" itemscope itemtype="http://schema.org/Person"><a class="p-author h-card" itemprop="url" href="{{ '/about/' | relative_url }}"><span itemprop="name">{{ byline }}</span></a></span>
       {%- endif -%}</p>
     {%- comment -%}
       "Part of <guide>": a post listed in a guide's stages (_guides/*.md) links back to it.

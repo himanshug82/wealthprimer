@@ -331,6 +331,8 @@ hr {
   color: var(--muted);
   font-size: var(--fs-sm);
   font-family: var(--font-sans);
+  a { color: inherit; text-decoration: underline; text-decoration-color: var(--rule-strong); text-underline-offset: 0.15em; }
+  a:hover { color: var(--link); }
 }
 
 .post-series-line {

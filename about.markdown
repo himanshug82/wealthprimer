@@ -28,7 +28,9 @@ version.
 Every number on this blog is sourced and lagged, and most are derived by
 script from committed data files rather than typed in — the
 [data & methodology page]({{ '/methodology/' | relative_url }}) lists each
-dataset, its source and the rules the posts follow.
+dataset, its source and the rules the posts follow. How posts are checked,
+what they will never contain, and how mistakes are corrected are on the
+[editorial standards page]({{ '/editorial-standards/' | relative_url }}).
 
 ## Elsewhere
 

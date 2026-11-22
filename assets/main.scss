@@ -650,6 +650,24 @@ div.language-python {
   p:last-child { margin-bottom: 0; }
 }
 
+// Dated correction notes at the end of a post (_includes/corrections.html).
+.post-corrections {
+  margin: 2em 0 0;
+  padding: 0.9em 1.15em;
+  background: var(--surface-2);
+  border-left: 4px solid var(--brand);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+  color: var(--text);
+
+  h2 { margin: 0 0 0.4em; font-size: var(--fs-md); font-weight: var(--fw-semibold); }
+  ul { margin: 0 0 0.5em 1.1em; }
+  li { margin-bottom: 0.3em; }
+  .post-corrections-policy { margin: 0; color: var(--muted); }
+}
+
 // ---------------------------------------------------------------------------
 // Table of contents
 // ---------------------------------------------------------------------------

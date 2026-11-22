@@ -19,8 +19,9 @@ figure from an illustrative one.
    position is on the [privacy & disclaimer page]({{ '/privacy/' | relative_url }}).
 2. **Real data is at least three months old.** Any price, NAV or financial figure
    from a real company or fund is lagged by at least three months at the time
-   the post publishes — SEBI's expectation for educational content. Every post
-   states the as-of date of the figures it uses.
+   the post publishes. This is a house rule, set on the cautious side, not a
+   quotation of a regulation. Every post states the as-of date of the figures
+   it uses.
 3. **One source per dataset, cited.** Each dataset below has a single primary
    source, named in the post and in the data file. Where two independent
    sources overlap (for example, the same closing price appearing in two feeds),
@@ -64,7 +65,7 @@ Britannia or a named fund, it is real and sourced below.
 | UTI Nifty 50 ETF — NAV history (AMFI 135320) | AMFI daily NAV via [mfapi.in](https://api.mfapi.in/mf/135320) · [CSV]({{ '/assets/data/uti-nifty50-etf-nav.csv' | relative_url }}) | 2 September 2015 – 31 March 2026 (NAV only; no market-price series) | Mutual Funds module 2 (index fund vs ETF) |
 | HDFC Bank Ltd — standalone audited results (FY25, with FY24 comparatives) | [Results release for the quarter and year ended 31 March 2025, filed as a Form 6-K exhibit with the US SEC, 21 April 2025](https://www.sec.gov/Archives/edgar/data/1144967/000119312525087787/d930582dex99.htm) | Year ended 31 March 2025 | Fundamental Analysis (banks and NBFCs module) |
 | SEBI studies of individual traders in equity derivatives | [SEBI, Jan 2023 study](https://www.sebi.gov.in/reports-and-statistics/research/jan-2023/study-analysis-of-profit-and-loss-of-individual-traders-dealing-in-equity-fando-segment_67525.html); [SEBI press release 37/2024](https://www.sebi.gov.in/media-and-notifications/press-releases/sep-2024/updated-sebi-study-reveals-93-of-individual-traders-incurred-losses-in-equity-fando-between-fy22-and-fy24-aggregate-losses-exceed-1-8-lakh-crores-over-three-years_86906.html); [SEBI, Aug 2026 FY25–FY26 study](https://www.sebi.gov.in/reports-and-statistics/research/aug-2026/study-profitability-of-individual-traders-in-the-equity-derivatives-segment-fy25-fy26-_103835.html) (headline figures from SEBI's own pages; several detail figures from two independent secondary reports of the study, flagged as such in the data file) | FY22 – FY26 | Risk series (F&O reality check); Tax (F&O as business income) |
-| Indian capital-gains, dividend and interest tax rules | Public sources, verified August 2026 (Budget 2026 position; Income-tax Act, 2025 in force from 1 April 2026) | Financial year 2026-27 | Tax |
+| Indian capital-gains, dividend and interest tax rules | Official gazette text of the Finance Act, 2026 and the Income-tax Rules, 2026 (Income-tax Act, 2025 in force from 1 April 2026), checked November 2026; each post shows the date its rules were checked | Tax Year 2026-27 | Tax |
 | UTI hybrid and arbitrage funds — NAV history: Aggressive Hybrid (AMFI 100684/120674), Equity Savings (144484/144490), Balanced Advantage (151882), Arbitrage (104075/120795) | AMFI daily NAV via [mfapi.in](https://api.mfapi.in/mf/100684) · [CSV]({{ '/assets/data/uti-aggressive-hybrid-fund-nav.csv' | relative_url }}) · [CSV]({{ '/assets/data/uti-equity-savings-fund-nav.csv' | relative_url }}) · [CSV]({{ '/assets/data/uti-balanced-advantage-fund-nav.csv' | relative_url }}) · [CSV]({{ '/assets/data/uti-arbitrage-fund-nav.csv' | relative_url }}) | From each fund's first NAV to 31 March 2026 | Mutual Funds (module 3) |
 | Navi Nifty 50 Index Fund — NAV history, regular (AMFI 149040) and direct (149039) | AMFI daily NAV via [mfapi.in](https://api.mfapi.in/mf/149040) · [CSV]({{ '/assets/data/navi-nifty50-index-fund-nav.csv' | relative_url }}) | 16 July 2021 to 31 March 2026 | Mutual Funds (NFOs) |
 | USD/INR — RBI reference rate (to 9 July 2018), then FBIL reference rate | RBI and FBIL published reference rates · [CSV]({{ '/assets/data/usd-inr-reference-rate.csv' | relative_url }}) | 2 January 2006 to 30 March 2026 | Risk (currency risk), Mutual Funds (international funds) |
@@ -90,9 +91,11 @@ number beside it.
 ## Known limits
 
 - Tax posts teach mechanics and deliberately avoid leaning on section numbers,
-  which were renumbered by the Income-tax Act, 2025. Rates are verified against
-  public sources, not the primary text of the Act. They are not a substitute
-  for a tax professional.
+  which were renumbered by the Income-tax Act, 2025. The Tax series was checked
+  against the gazette text of the Finance Act, 2026 and the Income-tax Rules,
+  2026 in November 2026; a few older posts that mention tax only in passing
+  were not re-checked. No tax professional has reviewed them, and they are not
+  a substitute for one.
 - Britannia's figures are for one financial year. They illustrate a
   calculation; they say nothing about the company's prospects.
 - Data files are frozen at the dates above and are **not** extended toward the
@@ -101,6 +104,7 @@ number beside it.
 ## Corrections
 
 Found a number that doesn't reconcile? Email
-[{{ site.email }}](mailto:{{ site.email }}) or open an issue on the
-[site repository](https://github.com/himanshug82/wealthprimer/issues). Fixes are
-made in the data file so every post that uses the figure updates together.
+[{{ site.email }}](mailto:{{ site.email }}). Fixes are made in the data file so
+every post that uses the figure updates together, and material errors get a
+dated note on the post. The full policy and the correction log are on the
+[editorial standards page]({{ '/editorial-standards/' | relative_url }}).

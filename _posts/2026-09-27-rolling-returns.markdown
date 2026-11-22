@@ -90,8 +90,8 @@ number at every holding period. Holding longer did not raise the typical
 return.
 
 **The range collapses.** Three-year windows ran from {% include inr.html n=rr.years_3.min %}% to {{ rr.years_3.max }}% — a spread
-of nearly 37 percentage points. Ten-year windows ran from {{ rr.years_10.min }}% to {{ rr.years_10.max }}%, a
-spread of under 12. The dispersion of outcomes shrank dramatically.
+of {{ rr.years_3.max | minus: rr.years_3.min | round: 1 }} percentage points. Ten-year windows ran from {{ rr.years_10.min }}% to {{ rr.years_10.max }}%, a
+spread of {{ rr.years_10.max | minus: rr.years_10.min | round: 1 }}. The dispersion of outcomes shrank dramatically.
 
 **Negative outcomes disappear.** {{ rr.years_3.pct_negative }}% of three-year windows lost money.
 By seven years, none did.

@@ -16,6 +16,8 @@
 #            an on-page calculator, which lives on its own page
 #   calc     on-page calculators only: the form in _includes/calc/<calc>.html,
 #            run by assets/js/calc.js, defaults from _data/tool_defaults.json
+#   sheet    optional, on-page calculators only: a Google Sheet version, shown
+#            on the tool's page as a "make a copy" alternative
 #   summary  one or two sentences on what it does, in plain words
 #   data     what comes prefilled, with its source and as-of date
 #   post     slug of the post that explains the method (shown on /tools/
@@ -31,17 +33,19 @@
 
 - id: rolling-returns
   name: Rolling returns calculator
-  kind: Google Sheet
-  url: "https://docs.google.com/spreadsheets/d/1O8HKLVxA5V3rzWz1FfQ12wVqvQ0MfyvKEEK4EUTN3v4/edit?usp=sharing"
+  kind: Calculator
+  calc: rolling-returns
+  sheet: "https://docs.google.com/spreadsheets/d/1O8HKLVxA5V3rzWz1FfQ12wVqvQ0MfyvKEEK4EUTN3v4/edit?usp=sharing"
   summary: >-
     Paste any daily NAV or index series and see the spread of N-year CAGRs
     (compound annual growth rates) across every start date: windows counted,
-    minimum, median, maximum and the share of windows below a threshold.
-  data: "UTI Nifty 50 Index Fund (regular, growth) NAV to 31 March 2026, from AMFI via mfapi.in"
+    worst, median and best, and the share of windows below zero or below a
+    threshold. Your data stays in your browser.
+  data: "the explainer post's worked example, the UTI Nifty 50 Index Fund (regular plan, growth) NAV to 31 March 2026 from AMFI via mfapi.in, shown on the page and loaded with one button"
   post: rolling-returns
   series: mutual-funds
   used_in: [rolling-returns]
-  built: 2026-10-25
+  built: 2026-11-22
 
 - id: sip-xirr
   name: SIP and XIRR calculator

@@ -1,0 +1,83 @@
+{%- comment -%}
+Rolling returns calculator (spec: _review/calculators/2026-11-22-rolling-returns-onpage.md).
+The reader pastes or opens their own daily series; nothing leaves the browser. The
+worked example (the rolling returns post's table, from _data/mf.yml) is shown as
+static HTML until the reader adds data, and "Load the worked example" fetches the
+post's committed CSV (first two columns: date, regular-plan growth NAV). Formulas,
+parsing and rendering: assets/js/calc.js (parseSeries, rollingReturns, setupRolling),
+checked against the post's figures by scripts/check_tools.mjs.
+{%- endcomment -%}
+{%- assign f = site.data.mf.index_fund -%}
+{%- assign rr = site.data.mf.rolling_returns -%}
+{%- assign d = site.data.tool_defaults["rolling-returns"].defaults -%}
+<form class="calc calc-rolling" data-calc="rolling-returns" novalidate>
+<fieldset>
+<legend>Your series</legend>
+<label class="rr-series">Dates and values, one day per line
+<span class="calc-unit">Two columns, date then value (NAV or index level), separated by a comma, tab or semicolon. Dates like 2026-03-31, 31-03-2026 or 31-Mar-2026 (day first). A header line is fine; extra columns are ignored.</span>
+<textarea name="series" rows="7" spellcheck="false" autocomplete="off" placeholder="2006-04-03,22.0557&#10;2006-04-04,22.1181&#10;…"></textarea>
+</label>
+<div class="rr-sources">
+<label class="rr-file">Or open a CSV file<input name="file" type="file" accept=".csv,.txt,text/csv,text/plain"></label>
+<button type="button" class="calc-reset rr-load" data-src="{{ f.csv_path | relative_url }}">Load the worked example</button>
+</div>
+<p class="calc-note">Your data stays in your browser: nothing you paste or open is uploaded or saved.</p>
+</fieldset>
+<fieldset>
+<legend>What to measure</legend>
+<div class="calc-inputs rr-options">
+<label>The series is
+<select name="kind">
+<option value="nav" selected>A fund's growth NAV</option>
+<option value="tri">A total return index</option>
+<option value="price">A price index</option>
+</select>
+</label>
+<label>Share of windows below <span class="calc-unit">% a year</span><input name="threshold" type="text" inputmode="decimal" autocomplete="off" value="{{ d.threshold }}"></label>
+<label>Extra holding period <span class="calc-unit">whole years, optional</span><input name="custom_years" type="text" inputmode="numeric" autocomplete="off" placeholder="e.g. 15"></label>
+</div>
+<div class="rr-periods" role="group" aria-label="Holding periods">
+<span class="rr-periods-label">Holding periods</span>
+{%- for y in d.years %}
+<label class="rr-check"><input type="checkbox" name="period" value="{{ y }}" checked> {{ y }} {% if y == 1 %}year{% else %}years{% endif %}</label>
+{%- endfor %}
+</div>
+</fieldset>
+
+<p class="calc-error" role="alert"></p>
+
+<div class="rr-example">
+<h2 class="rr-heading">Worked example</h2>
+<p class="calc-note">{{ f.name }}, {{ f.plan_regular }}, {{ f.regular_start | date: "%-d %B %Y" }} to {{ f.regular_end | date: "%-d %B %Y" }} ({{ f.source_label }}). Every daily start date with a full window. Historical data, for illustration only: <button type="button" class="rr-inline-load">load it</button> to change the periods or threshold.</p>
+<div class="table-wrap"><table class="rr-table">
+<thead><tr><th scope="col">Period</th><th scope="col">Windows</th><th scope="col">Worst</th><th scope="col">Median</th><th scope="col">Best</th><th scope="col">% negative</th><th scope="col">% below 8%</th></tr></thead>
+<tbody>
+{%- for y in d.years -%}
+{%- assign key = "years_" | append: y -%}
+{%- assign r = rr[key] -%}
+{%- if r.min %}
+<tr><th scope="row">{{ y }} years</th><td>{% include inr.html n=r.windows %}</td><td>{{ r.min | replace: "-", "−" }}%</td><td>{{ r.median }}%</td><td>{{ r.max }}%</td><td>{{ r.pct_negative }}%</td><td>{{ r.pct_below_8 }}%</td></tr>
+{%- endif -%}
+{%- endfor %}
+</tbody>
+</table></div>
+</div>
+
+<div class="calc-result rr-live" aria-live="polite" hidden>
+<h2 class="rr-heading">Your results</h2>
+<p class="calc-note rr-meta"></p>
+<div class="table-wrap"><table class="rr-table">
+<thead><tr><th scope="col">Period</th><th scope="col">Windows</th><th scope="col">Worst</th><th scope="col">Median</th><th scope="col">Best</th><th scope="col">% negative</th><th scope="col" class="rr-thr-head">% below 8%</th></tr></thead>
+<tbody class="rr-body"></tbody>
+</table></div>
+<div class="rr-chart-wrap"></div>
+<p class="calc-note rr-chart-key">Each bar runs from the worst to the best window; the dot is the median; the dashed line is the threshold.</p>
+<p class="calc-warn"></p>
+<p class="calc-note rr-note"></p>
+</div>
+
+<div class="calc-actions"><button type="button" class="calc-reset">Clear</button></div>
+<p class="calc-note">Returns are CAGR (compound annual growth rate) in % a year, from each start date to the same date N years later (or the last earlier day with a value). Before tax; a fund's NAV is after its expenses.</p>
+<noscript><p class="calc-note">This calculator needs JavaScript. The worked example above shows its output for the post's data.</p></noscript>
+<script src="{{ '/assets/js/calc.js' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}" defer></script>
+</form>

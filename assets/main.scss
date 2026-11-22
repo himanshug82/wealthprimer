@@ -895,6 +895,71 @@ div.language-python {
   }
 }
 
+// Rolling returns calculator (_includes/calc/rolling-returns.html): a pasted series,
+// a results table and an inline SVG range chart.
+.post-content .calc-rolling {
+  .rr-series { margin-bottom: 0.7rem; }
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 9rem;
+    padding: 0.5rem 0.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--ink);
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-sm);
+    resize: vertical;
+    &:focus { outline: 2px solid var(--brand); outline-offset: 1px; border-color: var(--brand); }
+  }
+  .rr-sources { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 0.6rem 1rem; }
+  .rr-file input { padding: 0.3rem 0; border: 0; background: transparent; font-size: 0.85rem; }
+  select {
+    width: 100%;
+    margin-top: auto;
+    padding: 0.45rem 0.6rem;
+    font: inherit;
+    font-size: 1rem;
+    color: var(--ink);
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-sm);
+  }
+  .rr-periods { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 1rem; margin-top: 0.8rem; }
+  .rr-periods-label { font-size: 0.85rem; font-weight: var(--fw-semibold); color: var(--text); }
+  .rr-check { flex-direction: row; align-items: center; gap: 0.35rem; font-weight: var(--fw-regular); }
+  .rr-check input { width: auto; margin: 0; accent-color: var(--brand); }
+  .rr-heading { margin: 0.4em 0 0.2em; font-size: var(--fs-md); font-weight: var(--fw-strong); }
+  .rr-table {
+    width: 100%;
+    margin: 0.6em 0 0;
+    font-size: var(--fs-sm);
+    font-variant-numeric: tabular-nums;
+    th, td { padding: 0.35rem 0.5rem; text-align: right; vertical-align: top; white-space: nowrap; }
+    th:first-child { text-align: left; }
+  }
+  .rr-date { display: block; font-size: var(--fs-2xs); font-weight: var(--fw-regular); color: var(--muted); }
+  .rr-inline-load {
+    padding: 0;
+    font: inherit;
+    color: var(--link);
+    text-decoration: underline;
+    background: none;
+    border: 0;
+    cursor: pointer;
+  }
+  .rr-chart { display: block; width: 100%; height: auto; margin: 1em 0 0; font-family: var(--font-sans); }
+  .rr-range { stroke: var(--brand-tint); stroke-width: 10; stroke-linecap: round; }
+  .rr-median { fill: var(--brand); }
+  .rr-zero { stroke: var(--rule-strong); stroke-width: 1; }
+  .rr-thr { stroke: var(--warm-ink); stroke-width: 1.5; stroke-dasharray: 4 3; }
+  .rr-thr-label { fill: var(--warm-ink); font-size: 12px; font-weight: var(--fw-semibold); }
+  .rr-row-label { fill: var(--text); font-size: 13px; font-weight: var(--fw-semibold); }
+  .rr-end { fill: var(--muted); font-size: 11px; }
+  .calc-invalid .calc-result, &.calc-invalid .calc-result { opacity: 1; }
+}
+
 // A tool's own page, /tools/<id>/ (_layouts/tool.html).
 .tool-page {
   .tool-lede { margin: 0.6em 0 0; font-size: 1.05rem; line-height: 1.55; color: var(--muted); }

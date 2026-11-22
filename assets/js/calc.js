@@ -135,6 +135,106 @@
         step_last: first * Math.pow(1 + s, Math.round(i.years) - 1),
         step_paid: first * paid(s)
       };
+    },
+
+    // Rolling returns: parse a pasted two-column series (date, value). Returns
+    // { dates: [UTC ms], values: [], rows, error, gap } — `error` is a message for
+    // the first bad line; `gap` is the first jump of more than 10 calendar days.
+    // Separators: tab, semicolon, comma (double quotes respected, so "24,123.45"
+    // stays one field) or spaces. Dates: 2026-03-31, 31-03-2026, 31/03/2026,
+    // 31-Mar-2026 (day first). A first line that isn't data is a header and is
+    // skipped. A repeated date keeps its last row. Extra columns are ignored.
+    parseSeries: function (text) {
+      var MONTHS = { jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6, jul: 7, aug: 8, sep: 9, oct: 10, nov: 11, dec: 12 };
+      function fields(line) {
+        if (line.indexOf("\t") >= 0) return line.split("\t");
+        if (line.indexOf(";") >= 0) return line.split(";");
+        if (line.indexOf(",") >= 0) {
+          var out = [], cur = "", q = false;
+          for (var k = 0; k < line.length; k++) {
+            var ch = line[k];
+            if (ch === '"') q = !q;
+            else if (ch === "," && !q) { out.push(cur); cur = ""; }
+            else cur += ch;
+          }
+          out.push(cur);
+          return out;
+        }
+        return line.trim().split(/\s+/);
+      }
+      function day(s) {
+        var m, y, mo, d;
+        s = s.trim().replace(/^"|"$/g, "");
+        if ((m = s.match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/))) { y = +m[1]; mo = +m[2]; d = +m[3]; }
+        else if ((m = s.match(/^(\d{1,2})[-\/.](\d{1,2})[-\/.](\d{4})$/))) { d = +m[1]; mo = +m[2]; y = +m[3]; }
+        else if ((m = s.match(/^(\d{1,2})[- ]([A-Za-z]{3})[A-Za-z]*[- ](\d{4})$/)) && MONTHS[m[2].toLowerCase()]) { d = +m[1]; mo = MONTHS[m[2].toLowerCase()]; y = +m[3]; }
+        else return NaN;
+        var t = Date.UTC(y, mo - 1, d), c = new Date(t);
+        return c.getUTCFullYear() === y && c.getUTCMonth() === mo - 1 && c.getUTCDate() === d ? t : NaN;
+      }
+      function num(s) {
+        s = (s || "").trim().replace(/^"|"$/g, "").replace(/,/g, "").replace(/−/g, "-");
+        return s === "" ? NaN : Number(s);
+      }
+      var lines = String(text).split(/\r\n|\n|\r/), byDate = {}, first = true;
+      for (var i = 0; i < lines.length; i++) {
+        if (!lines[i].trim()) continue;
+        var f = fields(lines[i]), t = day(f[0] || ""), v = num(f[1]);
+        if (isNaN(t) && f.length >= 4 && !/[\t;,]/.test(lines[i])) { // "29 Feb 2024 123.4"
+          t = day(f.slice(0, 3).join(" ")); v = num(f[3]);
+        }
+        if (first && isNaN(t)) { first = false; continue; } // header
+        first = false;
+        if (isNaN(t)) return { error: "Line " + (i + 1) + ": the first column isn't a date this calculator reads (use 2026-03-31, 31-03-2026 or 31-Mar-2026)." };
+        if (!(v > 0)) return { error: "Line " + (i + 1) + ": the value must be a number above 0." };
+        byDate[t] = v;
+      }
+      var dates = Object.keys(byDate).map(Number).sort(function (a, b) { return a - b; });
+      if (dates.length > 25000) return { error: "That's more than 25,000 rows. Paste daily data of up to about 100 years." };
+      if (dates.length < 2) return { error: "Paste at least two rows: a date and a value on each line, oldest or newest first." };
+      var gap = null;
+      for (var j = 1; j < dates.length && !gap; j++) if (dates[j] - dates[j - 1] > 10 * 864e5) gap = [dates[j - 1], dates[j]];
+      return { dates: dates, values: dates.map(function (t) { return byDate[t]; }), rows: dates.length, gap: gap };
+    },
+
+    // Every start date d with d + N calendar years inside the data (29 Feb ->
+    // 28 Feb); the end value is the last one on or before that date; CAGR in %.
+    // The same method as the rolling returns post (pandas DateOffset + asof).
+    rollingReturns: function (dates, values, years, threshold) {
+      var last = dates[dates.length - 1], cagr = [], starts = [];
+      function plusYears(t) {
+        var d = new Date(t), y = d.getUTCFullYear() + years, m = d.getUTCMonth();
+        var dim = new Date(Date.UTC(y, m + 1, 0)).getUTCDate();
+        return Date.UTC(y, m, Math.min(d.getUTCDate(), dim));
+      }
+      function asof(t) { // index of the last date <= t
+        var lo = 0, hi = dates.length - 1;
+        while (lo < hi) { var mid = (lo + hi + 1) >> 1; if (dates[mid] <= t) lo = mid; else hi = mid - 1; }
+        return lo;
+      }
+      for (var i = 0; i < dates.length; i++) {
+        var end = plusYears(dates[i]);
+        if (end > last) break;
+        cagr.push((Math.pow(values[asof(end)] / values[i], 1 / years) - 1) * 100);
+        starts.push(dates[i]);
+      }
+      var n = cagr.length;
+      if (!n) return { windows: 0 };
+      var lo = 0, hi = 0, neg = 0, below = 0;
+      for (var k = 0; k < n; k++) {
+        if (cagr[k] < cagr[lo]) lo = k;
+        if (cagr[k] > cagr[hi]) hi = k;
+        if (cagr[k] < 0) neg++;
+        if (cagr[k] < threshold) below++;
+      }
+      var s = cagr.slice().sort(function (a, b) { return a - b; });
+      var iso = function (t) { return new Date(t).toISOString().slice(0, 10); };
+      return {
+        windows: n, min: cagr[lo], max: cagr[hi],
+        median: n % 2 ? s[(n - 1) / 2] : (s[n / 2 - 1] + s[n / 2]) / 2,
+        worst_start: iso(starts[lo]), best_start: iso(starts[hi]),
+        pct_negative: neg / n * 100, pct_below: below / n * 100
+      };
     }
   };
 
@@ -268,7 +368,127 @@
     });
   }
 
+  // ---- rolling returns: a pasted series, a results table and a range chart ----
+  var NOTES = {
+    nav: "A fund's growth NAV includes reinvested dividends and is after the fund's expenses.",
+    tri: "A total return index includes reinvested dividends and has no costs; a fund that tracks it earns a little less.",
+    price: "A price index leaves out dividends, so these returns understate what an investor in the index earned."
+  };
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function dmy(t) { return new Date(t).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" }); }
+
+  function rollingChart(rows, threshold, width) {
+    var ok = rows.filter(function (r) { return r.res.windows; });
+    if (!ok.length) return "";
+    var lo = Math.min(0, threshold), hi = Math.max(0, threshold);
+    ok.forEach(function (r) { lo = Math.min(lo, r.res.min); hi = Math.max(hi, r.res.max); });
+    var pad = (hi - lo) * 0.06 || 1; lo -= pad; hi += pad;
+    // Drawn at the container's own width (320–600) so the text stays readable on a phone.
+    var W = Math.round(Math.max(320, Math.min(600, width || 600))), L = W < 420 ? 64 : 104, R = W < 420 ? 44 : 58;
+    var top = 26, rowH = 30, H = top + ok.length * rowH + 8;
+    var x = function (v) { return (L + (v - lo) / (hi - lo) * (W - L - R)).toFixed(1); };
+    var svg = '<svg class="rr-chart" viewBox="0 0 ' + W + " " + H + '" role="img" aria-labelledby="rr-chart-t"><title id="rr-chart-t">Range of rolling returns by holding period: ' +
+      ok.map(function (r) { return r.years + " years from " + pct(r.res.min, 2) + " to " + pct(r.res.max, 2) + ", median " + pct(r.res.median, 2); }).join("; ") + ".</title>";
+    svg += '<line class="rr-zero" x1="' + x(0) + '" x2="' + x(0) + '" y1="' + (top - 6) + '" y2="' + (H - 4) + '"/>';
+    svg += '<line class="rr-thr" x1="' + x(threshold) + '" x2="' + x(threshold) + '" y1="' + (top - 6) + '" y2="' + (H - 4) + '"/>';
+    svg += '<text class="rr-thr-label" x="' + x(threshold) + '" y="' + (top - 10) + '" text-anchor="middle">' + esc(pct(threshold, 2)) + "</text>";
+    ok.forEach(function (r, k) {
+      var y = top + k * rowH + rowH / 2;
+      svg += '<text class="rr-row-label" x="0" y="' + (y + 4) + '" text-anchor="start">' + r.years + (W < 420 ? " y" : r.years > 1 ? " years" : " year") + "</text>";
+      svg += '<line class="rr-range" x1="' + x(r.res.min) + '" x2="' + x(r.res.max) + '" y1="' + y + '" y2="' + y + '"/>';
+      svg += '<circle class="rr-median" cx="' + x(r.res.median) + '" cy="' + y + '" r="5"/>';
+      svg += '<text class="rr-end" x="' + (+x(r.res.min) - 9) + '" y="' + (y + 4) + '" text-anchor="end">' + esc(pct(r.res.min, 1)) + "</text>";
+      svg += '<text class="rr-end" x="' + (+x(r.res.max) + 9) + '" y="' + (y + 4) + '" text-anchor="start">' + esc(pct(r.res.max, 1)) + "</text>";
+    });
+    return svg + "</svg>";
+  }
+
+  function setupRolling(form) {
+    var box = form.elements.series, err = form.querySelector(".calc-error"), warn = form.querySelector(".calc-warn");
+    var live = form.querySelector(".rr-live"), example = form.querySelector(".rr-example");
+    var timer = null;
+    function fail(msg) { form.classList.add("calc-invalid"); err.textContent = msg || ""; live.hidden = true; example.hidden = !!msg; }
+    function periods() {
+      var ys = [].slice.call(form.querySelectorAll('input[name="period"]:checked')).map(function (c) { return +c.value; });
+      var c = form.elements.custom_years.value.trim();
+      if (c !== "") {
+        var n = Number(c);
+        if (!(Number.isInteger(n) && n >= 1 && n <= 30)) return "Enter the extra holding period as whole years, from 1 to 30.";
+        if (ys.indexOf(n) < 0) ys.push(n);
+      }
+      if (!ys.length) return "Tick at least one holding period.";
+      return ys.sort(function (a, b) { return a - b; });
+    }
+    function render() {
+      warn.textContent = "";
+      if (!box.value.trim()) { fail(""); example.hidden = false; return; }
+      var thrRaw = form.elements.threshold.value.trim().replace(MINUS, "-"), thr = Number(thrRaw);
+      if (thrRaw === "" || !(thr > -50 && thr < 100)) return fail("Enter a threshold between −50% and 100% a year.");
+      var ys = periods();
+      if (typeof ys === "string") return fail(ys);
+      var p = F.parseSeries(box.value);
+      if (p.error) return fail(p.error);
+      var rows = ys.map(function (y) { return { years: y, res: F.rollingReturns(p.dates, p.values, y, thr) }; });
+      if (!rows.some(function (r) { return r.res.windows; })) return fail("The series is too short: the shortest holding period ticked needs " + ys[0] + " year" + (ys[0] > 1 ? "s" : "") + " of data, plus a day.");
+      form.classList.remove("calc-invalid"); err.textContent = ""; example.hidden = true; live.hidden = false;
+      var warnings = [];
+      if (p.gap) warnings.push("There is a gap of more than 10 days between " + dmy(p.gap[0]) + " and " + dmy(p.gap[1]) + ": check for missing data.");
+      var thin = rows.filter(function (r) { return r.res.windows && r.res.windows < 250; }).map(function (r) { return r.years + "-year"; });
+      if (thin.length) warnings.push("Fewer than 250 windows for the " + thin.join(", ") + " period" + (thin.length > 1 ? "s" : "") + ": a series only a little longer than the holding period says very little.");
+      warn.textContent = warnings.join(" ");
+      form.querySelector(".rr-meta").textContent = grp.format(p.rows) + " rows, " + dmy(p.dates[0]) + " to " + dmy(p.dates[p.rows - 1]) + ".";
+      form.querySelector(".rr-thr-head").textContent = "% below " + pct(thr, 2);
+      form.querySelector(".rr-body").innerHTML = rows.map(function (r) {
+        var o = r.res;
+        if (!o.windows) return "<tr><th scope=\"row\">" + r.years + " years</th><td colspan=\"6\">Needs at least " + r.years + " years of data</td></tr>";
+        return "<tr><th scope=\"row\">" + r.years + (r.years > 1 ? " years" : " year") + "</th><td>" + grp.format(o.windows) + "</td><td>" + pct(o.min, 2) +
+          "<span class=\"rr-date\">from " + dmy(Date.parse(o.worst_start)) + "</span></td><td>" + pct(o.median, 2) + "</td><td>" + pct(o.max, 2) +
+          "<span class=\"rr-date\">from " + dmy(Date.parse(o.best_start)) + "</span></td><td>" + pct(o.pct_negative, 1) + "</td><td>" + pct(o.pct_below, 1) + "</td></tr>";
+      }).join("");
+      var wrap = form.querySelector(".rr-chart-wrap");
+      wrap.innerHTML = rollingChart(rows, thr, wrap.clientWidth);
+      form.querySelector(".rr-note").textContent = NOTES[form.elements.kind.value] + " Past windows describe what happened in this series; they don't predict the next window.";
+    }
+    form.addEventListener("input", function (e) {
+      clearTimeout(timer);
+      if (e.target === box) timer = setTimeout(render, 250); else render();
+    });
+    form.addEventListener("change", function (e) { if (e.target.type === "checkbox" || e.target.tagName === "SELECT") render(); });
+    form.addEventListener("submit", function (e) { e.preventDefault(); });
+    function fill(text) {
+      box.value = text;
+      box.dispatchEvent(new Event("input", { bubbles: true })); // also starts the analytics timer
+    }
+    var file = form.elements.file;
+    if (file) file.addEventListener("change", function () {
+      var f = file.files && file.files[0];
+      if (!f) return;
+      var rd = new FileReader();
+      rd.onload = function () { fill(String(rd.result)); };
+      rd.onerror = function () { fail("Couldn't read that file. Paste its two columns instead."); };
+      rd.readAsText(f);
+    });
+    var load = form.querySelector(".rr-load");
+    if (load) load.addEventListener("click", function () {
+      load.disabled = true;
+      fetch(load.dataset.src).then(function (r) { if (!r.ok) throw 0; return r.text(); })
+        .then(function (t) { // keep the date and the regular-plan column only
+          form.elements.kind.value = "nav";
+          fill(t.split(/\r?\n/).map(function (l) { return l.split(",").slice(0, 2).join(","); }).join("\n"));
+        })
+        .catch(function () { fail("Couldn't load the worked example. Check your connection and try again."); })
+        .then(function () { load.disabled = false; });
+    });
+    var inline = form.querySelector(".rr-inline-load");
+    if (inline && load) inline.addEventListener("click", function () { load.click(); });
+    var reset = form.querySelector(".calc-actions .calc-reset");
+    if (reset) reset.addEventListener("click", function () { box.value = ""; if (file) file.value = ""; render(); });
+    form.classList.add("calc-ready");
+    render();
+  }
+
   function setup(form) {
+    if (form.dataset.calc === "rolling-returns") return setupRolling(form);
     var defaults = JSON.parse(form.dataset.defaults);
     function reset() {
       Object.keys(defaults).forEach(function (n) { if (form.elements[n]) form.elements[n].value = defaults[n]; });

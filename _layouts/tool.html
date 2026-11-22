@@ -26,10 +26,15 @@ An on-page calculator (`calc:` set) is drawn in place of the "Open" button.
       {%- else %}
       <a class="button button-primary" href="{{ t.url }}">Open the {{ t.kind | escape }}</a>
       {%- endif %}
+      {%- if t.sheet %}
+      <p class="tool-sheet">Prefer a spreadsheet? <a href="{{ t.sheet }}">Open the Google Sheet version</a>: it runs the same windows. It opens view-only; use <strong>File → Make a copy</strong> to edit it.</p>
+      {%- endif %}
       {%- if t.kind == "Google Sheet" %}
       <p>It opens view-only. Use <strong>File → Make a copy</strong> to get your own editable version; nothing you type is shared with us or anyone else.</p>
       {%- endif %}
+      {%- unless t.sheet %}
       <p class="tool-data">Prefilled with: {{ t.data | escape }}.</p>
+      {%- endunless %}
     </div>
 
     {%- capture body -%}{% include inr-tables.html html=content %}{%- endcapture -%}

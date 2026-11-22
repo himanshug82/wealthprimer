@@ -20,8 +20,8 @@ the real JavaScript in Node against the same cases.
 
 Inputs: _data/risk.yml (losses, leverage), _data/risk2.yml (inflation, incl. the
 unrounded growth_factor / cpi_factor that scripts/derive_risk2.py writes for this),
-assets/data/parag-parikh-flexicap-nav.csv (expense ratio). Re-run after any of
-those change.
+assets/data/parag-parikh-flexicap-nav.csv (expense ratio), _data/mf.yml (rolling
+returns). Re-run after any of those change.
 """
 import csv
 import json
@@ -270,9 +270,41 @@ for calc, inp, exp in g_cases:
         assert round(got[key], d) == round(want, d), (inp, key, got[key], want)
 out["goal"] = {"defaults": g_base, "cases": [{"calc": c, "inputs": i, "expect": e} for c, i, e in g_cases]}
 
+# ---- rolling returns (Rolling returns in mutual funds; _data/mf.yml) --------------
+# No precision to choose: the calculator reads a whole series. The cases are the
+# post's table, which scripts/check_tools.mjs reproduces by running calc.js on the
+# committed CSV (column 2 = regular-plan growth NAV), plus parser cases.
+rr = mf["rolling_returns"]
+rr_csv = {"csv": mf["index_fund"]["csv_path"].lstrip("/"), "column": "nav_regular_growth"}
+rr_cases = [{"calc": "rollingReturns", "series": rr_csv, "inputs": {"years": 1, "threshold": 8},
+             "expect": {"windows": [rr["years_1"]["windows"], 0],
+                        "pct_negative": [round(100 - rr["years_1"]["pct_positive"], 1), 1]}}]
+for y in (3, 5, 7, 10):
+    r = rr[f"years_{y}"]
+    rr_cases.append({"calc": "rollingReturns", "series": rr_csv, "inputs": {"years": y, "threshold": 8},
+                     "expect": {"windows": [r["windows"], 0], "min": [r["min"], 2], "median": [r["median"], 2],
+                                "max": [r["max"], 2], "pct_negative": [r["pct_negative"], 1],
+                                "pct_below": [r["pct_below_8"], 1], "worst_start": [r["worst_window_start"], None],
+                                "best_start": [r["best_window_start"], None]}})
+rr_cases += [
+    # AMFI-style dates, a header, a quoted Indian-grouped value, newest first, a repeated date
+    {"calc": "parseSeries", "text": "Date,NAV\n31-Mar-2026,\"1,00,000.5\"\n30/03/2026,99\n30-03-2026,98\n",
+     "expect": {"rows": [2, 0], "first": ["2026-03-30", None], "last": ["2026-03-31", None], "last_value": [100000.5, 1],
+                "first_value": [98, 0]}},
+    # tabs and spaces, a month written out, a gap of more than 10 days
+    {"calc": "parseSeries", "text": "2024-02-29\t5\n15 Mar 2024 6\n",
+     "expect": {"rows": [2, 0], "first": ["2024-02-29", None], "gap_from": ["2024-02-29", None]}},
+    {"calc": "parseSeries", "text": "2026-03-01,0\n2026-03-02,6\n",
+     "expect": {"error": ["Line 1: the value must be a number above 0.", None]}},
+    # 29 February start: the window ends 28 February (or the last earlier value)
+    {"calc": "rollingReturns", "series": {"text": "2020-02-29,100\n2021-02-26,110\n2021-03-01,120\n"},
+     "inputs": {"years": 1, "threshold": 0}, "expect": {"windows": [1, 0], "median": [10, 6]}},
+]
+out["rolling-returns"] = {"defaults": {"years": [1, 3, 5, 7, 10], "threshold": 8}, "cases": rr_cases}
+
 with open(OUT, "w", encoding="utf-8") as fh:
     json.dump(out, fh, ensure_ascii=False, indent=2)
     fh.write("\n")
 print("wrote", os.path.relpath(OUT, ROOT))
-for k in ("loss-recovery", "cost-drag", "real-return", "bond-yield", "position-size", "goal"):
+for k in ("loss-recovery", "cost-drag", "real-return", "bond-yield", "position-size", "goal", "rolling-returns"):
     print(" ", k, json.dumps(out[k]["defaults"]), f"({len(out[k]['cases'])} cases)")

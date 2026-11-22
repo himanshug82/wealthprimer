@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Contingent liabilities, pledged shares and promoter holding: the page after the balance sheet"
-seo_title: "Contingent liabilities, pledged shares, promoter holding"
+seo_title: "Contingent liabilities and pledged promoter shares"
 description: "Three disclosures outside the statements that can outweigh them: a tax demand not yet booked, promoter shares pledged for a loan, and who owns the company."
 image: /assets/og/contingent-liabilities-pledges-and-promoter-holding.png
 date: 2026-10-06 09:00:00 +0530
@@ -142,7 +142,9 @@ company until it stops.
 ## 3. The shareholding pattern itself
 
 Beyond pledges, the quarterly shareholding pattern answers three questions
-that no ratio can:
+that no ratio can. (What promoter holding and free float are, and how
+they're counted, is in
+[free float and promoter holding]({{ '/2026/10/18/free-float-and-promoter-holding/' | relative_url }}).)
 
 **Is the promoter buying or selling?** A promoter stake that drifts down a
 percent a quarter, with no stated reason, is the people who know most

@@ -112,7 +112,9 @@ in the table.
   here, from {{ b.fy25.beta }} to {{ b.fy26.beta }} on adjacent years.
 - **Reading low beta as low risk.** Beta only captures the market-wide part
   of the movement. A stock with a beta of 0.4 and an R² of {{ f.r_squared }} has most of
-  its risk in the part beta *doesn't* measure.
+  its risk in the part beta *doesn't* measure. The return left over once
+  beta's share is taken out is
+  [alpha]({{ '/2026/10/03/alpha/' | relative_url }}).
 - **Plugging a two-decimal beta into CAPM and reporting the cost of equity to
   two decimals.** The input has one significant figure of confidence; the
   output can't have more. This is why the

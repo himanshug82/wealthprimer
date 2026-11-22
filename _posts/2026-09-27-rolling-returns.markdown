@@ -23,6 +23,11 @@ a choice.
 compute the return for *every possible* start date, then look at the whole
 distribution.
 
+*Looking for the calculator? The free
+[rolling returns calculator]({{ '/tools/rolling-returns/' | relative_url }})
+runs the same arithmetic on any daily NAV or index series you paste in. This
+post explains what it computes and how to read the result.*
+
 Take every day in the fund's history, measure the five-year return from that
 day, and you get thousands of five-year returns rather than one. Now you can
 ask much better questions: what was the worst? How often was it negative? How

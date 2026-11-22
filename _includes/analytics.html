@@ -55,9 +55,40 @@ disclosure on there in the same commit.
     events.forEach(function (t) { addEventListener(t, load, { once: true, passive: true }); });
     setTimeout(load, 10000);
   })();
+  /* Owner's "this is me" switch (22 Nov 2026). Visiting any page with ?internal=1 stores a flag in
+     that browser's localStorage; every later hit from the browser then carries traffic_type=internal,
+     which GA4's "Internal Traffic" data filter drops (Admin > Data filters). ?internal=0 clears it.
+     Works whatever the IP address (Indian ISPs rotate them; phones on mobile data differ), alongside
+     the IP rule in Admin > Data streams > Configure tag settings > Define internal traffic. The
+     parameter is removed from the address before the pageview is recorded. Nothing is set for a
+     visitor who never uses the parameter; /privacy/ says so. */
+  var wpInternal = false;
+  (function () {
+    var KEY = 'wp_internal_traffic', q = location.search.match(/[?&]internal=([01])(?:&|$)/), msg = '';
+    try {
+      if (q) {
+        if (q[1] === '1') { localStorage.setItem(KEY, '1'); msg = 'This browser is now marked as internal traffic.'; }
+        else { localStorage.removeItem(KEY); msg = 'This browser is no longer marked as internal traffic.'; }
+      }
+      wpInternal = localStorage.getItem(KEY) === '1';
+    } catch (e) { if (q) msg = 'Could not save the setting: this browser blocks site storage.'; }
+    if (q && history.replaceState) {
+      var s = location.search.replace(/([?&])internal=[01](&|$)/, function (m, a, b) { return b ? a : ''; });
+      history.replaceState(null, '', location.pathname + (s === '?' ? '' : s) + location.hash);
+    }
+    if (msg) addEventListener('DOMContentLoaded', function () {
+      var n = document.createElement('div');
+      n.setAttribute('role', 'status');
+      n.textContent = msg;
+      n.style.cssText = 'position:fixed;left:50%;bottom:1.25rem;transform:translateX(-50%);z-index:999;max-width:calc(100% - 2rem);padding:.6em 1em;border-radius:8px;background:var(--brand);color:var(--on-brand);font:500 .88rem/1.4 var(--font-sans);box-shadow:var(--shadow-md)';
+      document.body.appendChild(n);
+      setTimeout(function () { n.remove(); }, 5000);
+    });
+  })();
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+  if (wpInternal) gtag('set', { traffic_type: 'internal' });
   gtag('config', '{{ site.google_analytics }}', {
     allow_google_signals: false,
     allow_ad_personalization_signals: false,

@@ -215,7 +215,7 @@ Add each new decision as a row; never delete a row — mark it superseded.
 ## 12. Owner actions outstanding
 
 - ~~Resubmit `sitemap.xml` in Search Console.~~ Done: resubmitted and read on 21 Nov 2026, status Success, 179 pages discovered.
-- Add a GA4 internal-traffic filter; list the current key events.
+- Add a GA4 internal-traffic filter; list the current key events. Steps: define an IP rule (Admin → Data streams → Configure tag settings → Define internal traffic); open the site once with `?internal=1` in each browser you use (the site's own switch, added 22 Nov 2026, works whatever the IP); check the "Internal Traffic" data filter catches your visits in Testing, then set it to Active.
 - Supply the AdSense application status.
 - ~~Close or pause the Buttondown account (`wealthprimer`).~~ Done by the owner (confirmed 22 Nov 2026).
 - Check organic sessions monthly against the D4 bar (5,000+ a month, two months running).

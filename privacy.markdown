@@ -38,7 +38,11 @@ information to read it.
 - **Analytics**: this site uses [Google Analytics 4](https://marketingplatform.google.com/about/analytics/)
   to count visits and see which posts are read. It records the page visited,
   the referring site, rough location (IP addresses are anonymised by Google
-  before storage), device and browser type, and time on page. Google Signals
+  before storage), device and browser type, and time on page. It also records
+  a few actions on the page: how far down you scroll, which links you follow
+  (to other pages here or to other sites), and when you start using an
+  on-page calculator and when it shows you a result. It never records what
+  you type into a calculator or the result you get. Google Signals
   and ads personalisation are switched **off**, so visits here are not used to
   build advertising profiles. Google's
   [privacy policy](https://policies.google.com/privacy) and its page on

@@ -100,18 +100,65 @@ disclosure on there in the same commit.
   });
 </script>
 <script>
-  /* Custom GA4 events: outbound/sheet clicks, series navigation and scroll
-     depth (25/50/75/100). No personal data is sent. */
+  /* Custom GA4 events. No personal data is sent: never a calculator input or result, only which
+     calculator, link or section. Event-scoped custom dimensions to register in GA4 (Admin > Data
+     display > Custom definitions): calculator_id, link_type, link_location, guide_id.
+       outbound_click / calculator_click  a link off the site (calculator_click: a Google Sheet or notebook)
+       series_nav_click                   prev/next in a series
+       internal_click                     a link to another page of this site from the content itself
+                                          (post body, guide, related cards, tool callout, "Part of" line,
+                                          the RSS follow box: link_type 'feed');
+                                          header and footer links are site chrome and not counted
+       calculator_start                   first change to an on-page calculator's inputs (per calculator, per page view)
+       calculator_complete                the reader stops typing for 2 s with a valid result, after changing
+                                          an input (once per calculator per page view; calc.js marks an
+                                          invalid result with the calc-invalid class)
+       scroll_depth                       25/50/75/100% of the page */
   (function () {
     function ev(n, p) { if (window.gtag) gtag('event', n, p || {}); }
+    var LOCATIONS = [
+      ['.guide-question', 'guide_question'], ['.guide-step-tool', 'guide_tool'], ['.guide-step', 'guide_step'],
+      ['.guide-next', 'guide_next'], ['.guide-aside', 'guide_sidebar'], ['.post-guide-line', 'post_guide_line'],
+      ['.related-card', 'related'], ['.tool-callout', 'tool_callout'], ['.newsletter', 'follow_box'], ['.guide', 'guide_other'],
+      ['.post-content', 'body'], ['.page-content', 'body']
+    ];
+    function linkType(path) {
+      if (/\.xml$/.test(path)) return 'feed';
+      if (/^\/\d{4}\/\d{2}\/\d{2}\//.test(path)) return 'post';
+      var m = path.match(/^\/(tools|guides|series|glossary)\//);
+      return m ? { tools: 'tool', guides: 'guide', series: 'series', glossary: 'glossary' }[m[1]] : 'page';
+    }
+    function guideId(path) { var m = path.match(/^\/guides\/([^\/]+)\//); return m ? m[1] : undefined; }
     document.addEventListener('click', function (e) {
       var a = e.target.closest && e.target.closest('a[href]');
       if (!a) return;
-      if (a.closest('.series-nav')) ev('series_nav_click', { link_url: a.href });
+      if (a.closest('.series-nav')) { ev('series_nav_click', { link_url: a.href }); return; }
       if (a.host && a.host !== location.host) {
         var sheet = /docs\.google\.com\/spreadsheets|colab\.research|\.ipynb/.test(a.href);
         ev(sheet ? 'calculator_click' : 'outbound_click', { link_url: a.href });
+        return;
       }
+      if (a.pathname === location.pathname) return;            // a jump within the same page
+      var loc = null;
+      for (var k = 0; k < LOCATIONS.length && !loc; k++) if (a.closest(LOCATIONS[k][0])) loc = LOCATIONS[k][1];
+      if (!loc) return;                                       // header, footer, menus
+      var p = { link_url: a.pathname, link_type: linkType(a.pathname), link_location: loc };
+      var g = guideId(location.pathname) || (loc === 'post_guide_line' ? guideId(a.pathname) : undefined);
+      if (g) p.guide_id = g;
+      ev('internal_click', p);
+    });
+    var started = {}, done = {}, timers = {};
+    document.addEventListener('input', function (e) {
+      var f = e.target.closest && e.target.closest('form.calc[data-calc]');
+      if (!f) return;
+      var id = f.dataset.calc;
+      if (!started[id]) { started[id] = 1; ev('calculator_start', { calculator_id: id }); }
+      if (done[id]) return;
+      clearTimeout(timers[id]);
+      timers[id] = setTimeout(function () {
+        var bad = f.classList.contains('calc-invalid') || f.querySelector('.calc-invalid');
+        if (!bad && !done[id]) { done[id] = 1; ev('calculator_complete', { calculator_id: id }); }
+      }, 2000);
     });
     var seen = {};
     addEventListener('scroll', function () {

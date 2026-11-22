@@ -199,7 +199,12 @@ three weeks of written backlog so a skipped week leaves no gap.
   "Internal Traffic" data filter drops (`?internal=0` clears it). A short
   message confirms the change. Use it alongside the IP rule in GA4 (Admin →
   Data streams → Configure tag settings → Define internal traffic), since
-  Indian ISPs rotate IP addresses.
+  Indian ISPs rotate IP addresses. **Events** (list and rules in the comment
+  in `_includes/analytics.html`): `calculator_start`, `calculator_complete`,
+  `internal_click` (with `link_type`, `link_location`, `guide_id`),
+  `series_nav_click`, `outbound_click`, `calculator_click` (Sheets) and
+  `scroll_depth`. Register `calculator_id`, `link_type`, `link_location` and
+  `guide_id` as event-scoped custom dimensions in GA4 to report on them.
 - **Nav:** Series · Glossary · Case study · Methodology · About
   (`header_pages`); Privacy lives in the footer. Pages can set `nav_title:`.
 - **Links between posts:** a post links an *earlier* post with `{% post_url %}`;

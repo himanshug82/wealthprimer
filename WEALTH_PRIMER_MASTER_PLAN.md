@@ -144,7 +144,7 @@ Keep the stack. Improve, in this order:
 4. Design tokens extracted from `assets/main.scss`, then the hub/guide layout and homepage.
 5. Client-side search over a generated JSON index.
 6. An on-page rolling-returns calculator (and possibly SIP/XIRR), keeping the Sheets as "make a copy" downloads.
-7. GA4 events: calculator starts and completions, Sheet opens, outbound source clicks, guide (learning-pathway) progression, internal post-to-post and post-to-tool navigation, follow/RSS clicks (and subscriptions if D7 brings a newsletter back). Needs the owner's internal-traffic filter first.
+7. GA4 events (**built 22 Nov 2026**: `calculator_start`, `calculator_complete`, `internal_click` with link type, location and guide; earlier: series navigation, outbound and Sheet clicks, scroll depth). Planned list was: calculator starts and completions, Sheet opens, outbound source clicks, guide (learning-pathway) progression, internal post-to-post and post-to-tool navigation, follow/RSS clicks (and subscriptions if D7 brings a newsletter back). Needs the owner's internal-traffic filter first.
 8. Editorial standards page (principles, how numbers are produced, sourcing), a corrections and update policy with a visible "last reviewed" date on posts, and a stronger author page.
 
 Not planned: generator migration, permalink changes, CMS, database, AMP.

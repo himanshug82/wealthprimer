@@ -178,6 +178,32 @@ def main():
             if "term" not in fm:
                 print(f"WARN  {name}: no term: (won't appear in /glossary/)")
                 warnings += 1
+        # Correction notes (_includes/corrections.html; policy on /editorial-standards/):
+        # each entry needs an ISO date on or after the post's date and not in the future,
+        # plus a note, and a corrected post must also carry last_modified_at.
+        if "corrections" in fm:
+            block = text[3:text.find("\n---", 3)]
+            block = block[block.find("\ncorrections:"):]
+            entries = re.findall(r"^\s*-\s*date:\s*(\S+)\s*\n\s*note:\s*(.*)$", block, re.M)
+            if not entries:
+                print(f"ERROR {name}: corrections: needs entries of '- date: YYYY-MM-DD' then 'note: \"...\"'")
+                errors += 1
+            for cdate, note in entries:
+                try:
+                    cd = date.fromisoformat(cdate)
+                except ValueError:
+                    print(f"ERROR {name}: correction date '{cdate}' is not YYYY-MM-DD")
+                    errors += 1
+                    continue
+                if cd < d or cd > today:
+                    print(f"ERROR {name}: correction dated {cd} is before the post ({d}) or in the future")
+                    errors += 1
+                if not note.strip().strip("\"'"):
+                    print(f"ERROR {name}: correction dated {cd} has an empty note")
+                    errors += 1
+            if "last_modified_at" not in fm:
+                print(f"ERROR {name}: a corrected post must also set last_modified_at")
+                errors += 1
         if "_posts" in path and key[11:] not in related_keys:
             print(f"WARN  {name}: not in _data/related.yml (run scripts/build_related.py)")
             warnings += 1

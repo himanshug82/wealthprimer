@@ -164,6 +164,12 @@ three weeks of written backlog so a skipped week leaves no gap.
   means updating its guide too: `check_posts.py` errors on a key with no file,
   an unknown tool or journey. Each post in a guide shows a "Part of" line
   under its title, and the journey page lists its guides.
+- **Corrections and editorial standards**: `/editorial-standards/` states what
+  posts never contain, how numbers and rules are sourced, what the dates on a
+  post mean, and the corrections policy. A post's `corrections:` front matter
+  (see `CLAUDE.md` → File conventions) renders as a dated box after the body
+  (`_includes/corrections.html`) and feeds the page's correction log;
+  `check_posts.py` validates the entries.
 - **Search** (`/search/`, noindexed): `search.json` is built with the site
   (published posts, tools and indexable pages) and `assets/js/search.js`
   filters it in the browser. Nothing is sent anywhere. The header box shows

@@ -1,0 +1,20 @@
+{%- comment -%}
+Dated correction notes at the end of a post (editorial standards: /editorial-standards/#corrections).
+Front matter:
+  corrections:
+    - date: 2026-11-22
+      note: "The FY25 ROCE was shown as 31.2%; it is 29.8%. The table and the takeaway now use the corrected figure."
+A material fix (a wrong number, rule, sign or interpretation) gets an entry and also sets last_modified_at.
+Typos and broken links are fixed without a note. Never delete an entry.
+{%- endcomment -%}
+{%- if page.corrections and page.corrections.size > 0 -%}
+<aside class="post-corrections" id="corrections" aria-labelledby="corrections-heading">
+  <h2 id="corrections-heading">Corrections</h2>
+  <ul>
+    {%- for c in page.corrections -%}
+    <li><time datetime="{{ c.date | date: '%Y-%m-%d' }}">{{ c.date | date: "%-d %B %Y" }}</time>: {{ c.note | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>
+    {%- endfor -%}
+  </ul>
+  <p class="post-corrections-policy">How and when we correct posts: <a href="{{ '/editorial-standards/#corrections' | relative_url }}">editorial standards</a>.</p>
+</aside>
+{%- endif -%}

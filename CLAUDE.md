@@ -150,5 +150,13 @@ The author is **not** a tax professional (or any other licensed professional), a
 - Front matter: `title`, `date`, `series` (a slug from `_data/series.yml`), `description` (140–155 characters — it feeds the homepage, meta description and RSS), `image` (an OG card in `assets/og/`, made with `scripts/make_og_cards.py`), and `term` for glossary posts.
 - **`{% post_url %}` may only point to a post dated on or before the linking post.** A link to a future post fails the whole build on the day the linking post publishes.
 - **Never start a line with a number or a Liquid value followed by ". "** in the middle of a paragraph (`48. That's…`, `2030. It carries…`) — kramdown turns it into a list item and the sentence breaks. Reflow the line.
+- **Corrections (policy on `/editorial-standards/`).** A material error found in a live post (a wrong figure, rule, sign or interpretation) is fixed at its source and gets a dated note in front matter, which `_includes/corrections.html` renders at the end of the post and the editorial standards page lists in its correction log:
+  ```yaml
+  last_modified_at: 2026-11-22
+  corrections:
+    - date: 2026-11-22
+      note: "The FY25 ROCE was shown as 31.2%; it is 29.8%. The table and takeaway now use the corrected figure."
+  ```
+  Say what was wrong and what changed, plainly. Set `last_modified_at` with it (`check_posts.py` errors otherwise). Typos and broken links get no note. Never delete or reword an old entry.
 - The disclaimer, table-of-contents, series navigation, related-reading cards, follow/RSS box and number formatting are shared includes in `_includes/`; don't paste boilerplate ("Read next", "Subscribe") into posts. After adding or retitling a post, run `python3 scripts/build_related.py` to refresh `_data/related.yml`.
 - Before scheduling a post: run `python3 scripts/check_posts.py` (must report 0 errors) and build with future posts included (`bundle exec jekyll build --future`) to catch Liquid and link errors, then read the rendered page.

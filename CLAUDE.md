@@ -147,7 +147,7 @@ The author is **not** a tax professional (or any other licensed professional), a
 ## File conventions (Jekyll)
 
 - Posts live in `_posts/`, named `YYYY-MM-DD-slug.markdown`. Posts publish on their date via a daily rebuild (`future: false`).
-- Front matter: `title`, `date`, `series` (a slug from `_data/series.yml`), `description` (140–155 characters — it feeds the homepage, meta description and RSS), `image` (an OG card in `assets/og/`, made with `scripts/make_og_cards.py`), and `term` for glossary posts.
+- Front matter: `title`, `date`, `series` (a slug from `_data/series.yml`), `description` (140–155 characters — it feeds the homepage, meta description and RSS), `image` (an OG card in `assets/og/`, made with `scripts/make_og_cards.py`), and `term` for glossary posts. Optional `last_checked: YYYY-MM-DD` ("Checked" in the post header) only when the whole post was really re-checked against its data and sources; it is the author's check, not a professional review, and doesn't change `last_modified_at`.
 - **`{% post_url %}` may only point to a post dated on or before the linking post.** A link to a future post fails the whole build on the day the linking post publishes.
 - **Never start a line with a number or a Liquid value followed by ". "** in the middle of a paragraph (`48. That's…`, `2030. It carries…`) — kramdown turns it into a list item and the sentence breaks. Reflow the line.
 - **Corrections (policy on `/editorial-standards/`).** A material error found in a live post (a wrong figure, rule, sign or interpretation) is fixed at its source and gets a dated note in front matter, which `_includes/corrections.html` renders at the end of the post and the editorial standards page lists in its correction log:

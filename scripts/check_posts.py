@@ -178,6 +178,17 @@ def main():
             if "term" not in fm:
                 print(f"WARN  {name}: no term: (won't appear in /glossary/)")
                 warnings += 1
+        # last_checked (the "Checked" date in the post header): an ISO date, not before the
+        # post and not in the future. Set only when the post was really re-checked.
+        if fm.get("last_checked"):
+            try:
+                lc = date.fromisoformat(str(fm["last_checked"]).strip("\"'"))
+                if lc < d or lc > today:
+                    print(f"ERROR {name}: last_checked {lc} is before the post ({d}) or in the future")
+                    errors += 1
+            except ValueError:
+                print(f"ERROR {name}: last_checked '{fm['last_checked']}' is not YYYY-MM-DD")
+                errors += 1
         # Correction notes (_includes/corrections.html; policy on /editorial-standards/):
         # each entry needs an ISO date on or after the post's date and not in the future,
         # plus a note, and a corrected post must also carry last_modified_at.

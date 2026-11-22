@@ -95,8 +95,15 @@ reader money. So:
 - **Updated** appears only when a post has been changed in substance: a
   correction, a rule that changed, or new data. Fixing a typo or a broken link
   doesn't change it.
+- **Checked** is the date the whole post was last re-read against its data
+  files and sources, whether or not anything needed changing. It is the
+  author's own check, not a review by a professional, and it appears only on
+  posts that have had one.
 - **Rules as at** (on tax and regulation posts) is the date the rules were last
   checked against their sources.
+
+Every post names its author, who is responsible for what it says. Who that is
+and how the blog is run are on the [about page]({{ '/about/' | relative_url }}).
 
 ## Corrections
 

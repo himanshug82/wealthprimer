@@ -33,7 +33,7 @@ The owner issued a revised transformation brief on 21 Nov 2026. It restates most
 | Area | Brief v2 | Where it lands in this plan |
 |---|---|---|
 | Content volume | "Not pursuing article volume as a growth strategy"; new articles must pass a justification gate | **D6 decided:** 2–3 posts a week (supersedes D1); the gate is in §6 |
-| Distribution | Organic search, newsletter, LinkedIn, repurposing; no paid ads | **D7 decided:** RSS plus LinkedIn; no newsletter for now |
+| Distribution | Organic search, newsletter, LinkedIn, repurposing; no paid ads | **D7, revised by D12:** Twitter plus RSS; no newsletter; LinkedIn deferred |
 | Monetisation | Premium programmes, advanced tools, downloads, courses, membership | §2 has AdSense (objective 6) gated by D4. **D8 deferred** until traffic nears the D4 bar |
 | Navigation | Learn · Analyse · Manage Wealth · Risk & Tax · Tools | **D9 decided:** keep "Portfolio" (D2, live) |
 | Inventory labels | Keep · Improve · Consolidate · Redirect · Retire · **Monitor** | **D10 decided:** MONITOR added to the D5 labels (§6) |
@@ -204,11 +204,12 @@ Full register: `_review/sprint-1/technical-risk-register.md`.
 | — | Newsletter | **Decided** (owner): removed | 21 Nov 2026 | Email signup (Buttondown) removed from posts, guides and the homepage; the box at the end now offers the RSS feed only. Privacy page and the finfluencer post's disclosure updated to say there is no email list |
 
 | D6 | Publishing pace under brief v2 ("not volume") | **Decided** (owner): 2–3 posts a week, new-article gate on unapproved modules | 21 Nov 2026 | Supersedes D1. Time-sensitive and tax posts keep their dates; the rest move to 2–3 a week until the indexed share of published posts rises, then revisit. The §6 new-article gate applies to every module not yet approved. Reversible. **Applied 21 Nov 2026** (PR #64): the 22 posts of 22 Nov – 13 Dec 2026 keep their dates; the other 68 publish Mon/Wed/Fri, 16 Dec 2026 – 21 May 2027 (`_review/schedule-2026-11-21-d6.md`) |
-| D7 | Distribution channels | **Decided** (owner): RSS plus LinkedIn, no newsletter for now | 21 Nov 2026 | Brief v2 names newsletter and LinkedIn; the newsletter was removed the same day. Chosen: RSS plus LinkedIn, until there are returning readers worth emailing. LinkedIn posts follow the Twitter rule (hook plus link, no duplicate threads) |
+| D7 | Distribution channels | **Superseded by D12** (owner): RSS plus LinkedIn, no newsletter for now | 21 Nov 2026 | Brief v2 names newsletter and LinkedIn; the newsletter was removed the same day. Chosen: RSS plus LinkedIn, until there are returning readers worth emailing. LinkedIn posts follow the Twitter rule (hook plus link, no duplicate threads) |
 | D8 | Monetisation model | **Deferred** (owner): decide before the D4 traffic bar is near | 21 Nov 2026 | AdSense (objective 6, D4) or brief v2's premium resources, courses and membership, or both. Either waits for the D4 traffic bar; decide before that bar is near |
 | D9 | Third navigation label | **Decided** (owner): keep "Portfolio" | 21 Nov 2026 | "Portfolio" (D2, live) or brief v2's "Manage Wealth". Kept: "Portfolio" is shorter, already live, and matches the guide title |
 | D10 | Add a MONITOR inventory label | **Decided** (owner): yes | 21 Nov 2026 | For posts under about 90 days old or with too little Search Console data to judge; they are re-labelled at the monthly review |
 | D11 | Project documentation structure | **Decided** (owner): one master plan, no `/docs` set | 21 Nov 2026 | Brief v2 asks for twelve documents in `/docs` but also says to avoid redundancy. Kept: this plan is the one living document and split a section out only when it outgrows it. Mapping: charter, strategy and positioning → §1–3; current-state audit → §4 and `_review/sprint-1/`; information architecture → §5; SEO strategy → §6–7 and `_review/sprint-1/technical-seo-audit.md`; content audit → `_review/sprint-1/content-inventory.csv`; editorial guidelines → `CLAUDE.md`; technical blueprint → §7 and `_docs/how-it-works.md`; analytics plan → §7 item 7 and §9; backlog → §8 and `TODO.md`; decision log → §11; changelog → §13 and git history |
+| D12 | Distribution channels (revises D7) | **Decided** (owner): Twitter plus RSS; no newsletter; LinkedIn deferred | 22 Nov 2026 | Twitter (@wealthprimer_in) is already set up and linked from the site, and one channel is easier to keep up alone; search stays the main growth channel. Posts follow the hook-plus-link rule in `CLAUDE.md`. Revisit LinkedIn if a channel's absence starts to cost readers; the cheapest first step then is linking the author's own profile from the About page |
 
 Add each new decision as a row; never delete a row — mark it superseded.
 
@@ -220,7 +221,7 @@ Add each new decision as a row; never delete a row — mark it superseded.
 - ~~Close or pause the Buttondown account (`wealthprimer`).~~ Done by the owner (confirmed 22 Nov 2026).
 - Check organic sessions monthly against the D4 bar (5,000+ a month, two months running).
 - D6–D11 decided 21 Nov 2026 (D8 deferred). Revisit D8 before the D4 traffic bar is near.
-- Set up a LinkedIn page or profile for Wealth Primer distribution (D7), if one doesn't exist.
+- ~~Set up a LinkedIn page or profile (D7).~~ Not needed: D12 (22 Nov 2026) keeps distribution to Twitter plus RSS.
 
 ## 13. Sprint record
 

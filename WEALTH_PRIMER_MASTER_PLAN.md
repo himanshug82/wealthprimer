@@ -217,7 +217,7 @@ Add each new decision as a row; never delete a row — mark it superseded.
 - ~~Resubmit `sitemap.xml` in Search Console.~~ Done: resubmitted and read on 21 Nov 2026, status Success, 179 pages discovered.
 - Add a GA4 internal-traffic filter; list the current key events.
 - Supply the AdSense application status.
-- Close or pause the Buttondown account (`wealthprimer`) now that the signup form is gone; export the list first if any subscribers should hear about RSS.
+- ~~Close or pause the Buttondown account (`wealthprimer`).~~ Done by the owner (confirmed 22 Nov 2026).
 - Check organic sessions monthly against the D4 bar (5,000+ a month, two months running).
 - D6–D11 decided 21 Nov 2026 (D8 deferred). Revisit D8 before the D4 traffic bar is near.
 - Set up a LinkedIn page or profile for Wealth Primer distribution (D7), if one doesn't exist.

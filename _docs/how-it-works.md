@@ -82,7 +82,7 @@ the owner as the gate between them. Neither merges or pushes to `main`.
    scheduled build publishes each post on its date.
 
 Dates follow the cadence rules above: the roadmap gives each post a date
-(first free day after the series' latest post, one per series per day); if
+(first free Monday, Wednesday or Friday after the site's latest post, D6); if
 that date is taken by the time drafting runs, the routine moves it and later
 posts of that roadmap to the next free days, keeping their order. Keep two to
 three weeks of written backlog so a skipped week leaves no gap.

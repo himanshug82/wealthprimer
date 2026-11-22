@@ -51,4 +51,4 @@ Run on the **rendered meaning**, not the Liquid. The Sept 2026 review (git commi
 
 - [ ] `grep -l` the same real company across the new files: are verdicts or praise accumulating? Frame as one-year facts.
 - [ ] No two new posts own the same term/intent; every internal link points to an earlier-dated post; owed links logged.
-- [ ] `planned:` in `_data/series.yml` bumped; one post per series per day; Tax posts (if any) all flagged `needs_review: tax` with `rules_as_of`.
+- [ ] `planned:` in `_data/series.yml` bumped; one post a day site-wide on Mon/Wed/Fri (D6); Tax posts (if any) all flagged `needs_review: tax` with `rules_as_of`.

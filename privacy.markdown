@@ -60,7 +60,11 @@ information to read it.
   `_ga_…`) that hold a random identifier so repeat visits from the same
   browser can be counted as one visitor. They contain no personal
   information. Wealth Primer itself sets no other cookies. Clear or block
-  cookies in your browser and the site works exactly the same.
+  cookies in your browser and the site works exactly the same. One exception,
+  used only by the author: opening a page with `?internal=1` at the end of its
+  address saves a flag in that browser's local storage, so the author's own
+  visits are marked and left out of the statistics (`?internal=0` removes it).
+  Nothing is saved for anyone who doesn't use that address.
 {% else %}
 - **Cookies**: none. Wealth Primer sets no cookies of its own.
 {% endif %}

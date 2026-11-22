@@ -193,7 +193,13 @@ three weeks of written backlog so a skipped week leaves no gap.
 - **Analytics:** GA4 is live (`G-6KTY7W7VCR`, Google Signals and ads
   personalisation off — `/privacy/` asserts this, keep them in sync);
   GoatCounter optional. `/privacy/` turns each disclosure on from the same
-  config keys that enable the feature.
+  config keys that enable the feature. **Owner's own visits:** open any page
+  with `?internal=1` once in each browser you use; a localStorage flag then
+  tags every hit from that browser `traffic_type=internal`, which GA4's
+  "Internal Traffic" data filter drops (`?internal=0` clears it). A short
+  message confirms the change. Use it alongside the IP rule in GA4 (Admin →
+  Data streams → Configure tag settings → Define internal traffic), since
+  Indian ISPs rotate IP addresses.
 - **Nav:** Series · Glossary · Case study · Methodology · About
   (`header_pages`); Privacy lives in the footer. Pages can set `nav_title:`.
 - **Links between posts:** a post links an *earlier* post with `{% post_url %}`;
